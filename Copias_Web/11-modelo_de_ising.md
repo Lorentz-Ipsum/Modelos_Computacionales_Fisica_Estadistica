@@ -1,0 +1,58 @@
+# Experimento 11: Modelo de Ising
+
+El ferromagnetismo, que aparece en muchos metales ordinarios como el hierro y el níquel, es la presencia de magnetización espontánea incluso cuando no hay campo magnético externo. Se debe a que una fracción importante de los momentos magnéticos (o espines) de los átomos se alinean en la misma dirección debido a la interacción entre los mismos, dando lugar a que la muestra se imane. Este alineamiento se produce únicamente a temperaturas bajas, por debajo de una temperatura característica llamada *temperatura de Curie*, $T_C$.
+
+Por encima de dicha temperatura los espines están orientados al azar, de forma que no hay un campo magnético neto. En la temperatura de Curie, $T_C$, como en toda transición, aparece una fenomenología diferente: por ejemplo, el calor específico es divergente y la energía y la magnetización tienen derivada discontínua.
+
+El modelo de Ising es un modelo sencillo para el estudio de la transición ferromagnética, que es resoluble analíticamente. Se parte de una red regular, que imita la red cristalina del hierro o níquel, en cuyos sitios se colocan un momento magnético o espín $s_i$ que puede tomar los valores +1 ó -1. La energía de interacción entre los espines $i$ y $j$ (supuesto que están en sitios contiguos de la red) es de la forma:
+
+(1)
+$$
+H_{ij} = -J s_i s_j
+$$
+
+en la que $J$ es la energía de interacción, supuesta positiva, $J>0$. La forma del hamiltoniano es tal que favorece que los espines estén alineados, porque si $s_i = s_j$ entonces la energía disminuye en una cantidad $J$. Si existe un campo magnético externo, $B$, los momentos magnéticos interaccionan con él con una energía: $H_B = -B s_i$. El hamiltoniano total es entonces:
+
+(2)
+$$
+H(\{s_i\}) = -J \sum_{\langle i, j \rangle}s_i s_j - B\sum_i s_i
+$$
+
+donde la notación $\langle i, j \rangle$ indica suma a espines contiguos.
+
+¿Por qué se produce la transición de fase? Si sólo tuviéramos en cuenta la energía y tratáramos de minimizarla, entonces la fase del sistema sería una fase perfectamente ordenada, y, por tanto, ferromagnética. Sin embargo, existe el efecto de la temperatura que provoca un efecto aleatorio en el que los espines pueden cambiar su valor al azar. Este efecto es más alto cuánto más alta es la temepratura, y por ello, temperaturas altas dan lugar a fases desordenadas. Dependiendo de cuál sea el efecto dominante entre ambos (energía versus temperatura), aparecerán fases ferromagnéticas o no.
+
+La magnetización del sistema es el valor medio de la suma de los valores de los momentos magnéticos:
+
+(3)
+$$
+M = \left \langle \sum_i s_i \right \rangle
+$$
+
+Esta magnetización puede calcularse utilizando la colectividad canónica por medio de la función de partición
+
+(4)
+$$
+Z(T,B) = \sum_{s_1} \sum_{s_2}...\sum_{s_N} \exp \left( -\frac{H(\{s_i\})}{k_B T} \right)
+$$
+
+a partir de la cual se puede calcular la magnetización como:
+
+(5)
+$$
+M = - \frac{1}{k_B T} \left( \frac{\partial \ln Z}{\partial B} \right)_ {B=0}
+$$
+
+Se puede comprobar fácilmente que la expresión (5) coincide con (3).
+
+Para sistemas en dimensión 1, se puede calcular (4) y (5) de forma sencilla, comprobándose que *no existe transición de fase*. En dimensión 1 los efectos del desorden inducido por la temperatura son siempre dominantes. Sin embargo, en dimensión 2 y superiores sí que existe la transición de fase. En dos dimensiones, el cálculo de (4) y (5) es posible aunque muy complicado (ver el libro de Huang). Se encuentra que la temperatura de transición (cuando $B=0$) está en:
+
+$$
+\frac{J}{k_B T_C} \equiv j_C = 0.4407
+$$
+
+En esta ecuación hemos definido $j \equiv \frac{J}{k_B T_C}$, que es el único parámetro relevante al tomar $B=0$.
+
+El applet que hemos preparado realiza una simulación [Monte Carlo](adicional/monte_carlo.md) del modelo de Ising bidimensional. Se puede elegir el tamaño de la red desde $8\times 8$ hasta $128 \times 128$, así como el dato inicial (espines +1 ó -1 de forma aleatoria o bien todos fijados a -1), y la constante de interacción $j$. Al pulsar **GENERA RED** comienza la simulación. En el panel de la izquierda se muestran los espines ($s_i = +1$ en amarillo y $s_i = -1$ en azul), y en el de la derecha la magnetización. La línea azul está localizada en la temperatura crítica $T_C$.
+
+Los simulaciones realizadas a temperaturas altas ($j$ pequeño) relajan rápidamente a su valor de equilibrio. Sin embargo, a temperaturas bajas ($j$ grande) puede tardar más, salvo que se parta de una configuración con todos los espines con valor -1. En temperaturas cercanas a la crítica, $T \simeq T_C$ ó $j \simeq j_C$, la relajación es también muy lenta, dado que $T_C$ es un punto crítico, con correlaciones de largo alcance y fluctuaciones muy importantes.
