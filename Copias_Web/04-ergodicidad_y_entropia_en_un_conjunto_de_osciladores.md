@@ -31,9 +31,9 @@ La Física Estadística nos dice que si el sistema es ergódico debe alcanzar es
 
 Todo ello se ilustra en el applet que mostramos a continuación. Dicho applet realiza la simulación de los osciladores en los que se pueden elegir las frecuencias, $\omega_i$ de manera:
 
-1) aleatorias, con lo que $\omega_i / \omega_j$ es, en buena aproximación inconmensurable.
-2) casi iguales, que son aleatorias pero próximas entre sí
-3) equiespaciadas, por lo que $\omega_i / \omega_j = i/j$ y, por tanto, conmensurables y no ergódico.
+1. aleatorias, con lo que $\omega_i / \omega_j$ es, en buena aproximación inconmensurable.
+2. casi iguales, que son aleatorias pero próximas entre sí
+3. equiespaciadas, por lo que $\omega_i / \omega_j = i/j$ y, por tanto, conmensurables y no ergódico.
 
 También se pueden elegir las fases, o bien todas iguales (los osciladores comienzan en el mismo punto), o bien aleatorias en el círculo. Finalmente, podemos elegir el número de osciladores $N$ y el número de sectores $M$.
 

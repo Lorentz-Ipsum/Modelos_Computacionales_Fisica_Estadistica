@@ -24,8 +24,8 @@ Nuestra propuesta para ilustrar ambos conceptos se basa en el estudio del *calor
 El applet permite introducir el tamaño de la red a través de los números $N_x$ y $N_y$. Pulsando el botón **CALCULAR**, dibuja el calor específico por partícula $C_V$. El applet dibuja, además los calores específicos exactos de las redes 1 y 2 dimensionales infinitas. Como se observa en estas últimas, el calor específico unidimensional es un función analítica, mientras que el bidimensional tiene una divergencia en $T_C \approx 2.269$. Las unidades de simulación son $J/k_B = 1$.
 
 Sugerimos hacer varias experiencias:
-1) calcular todas las redes cuadradas, desde $2 \times 2$ hasta $5 \times 5$, para ver cómo el máximo de $c_V$ se acerca a $T_C$ (aunque $c_V$ es continuo, finito y analítico en todas ellas),
-2) Redes con un número similar de espines, como por ejemplo $1 \times 24$, $2 \times 12$, $3 \times 8$, $4 \times 6$ y $5 \times 5$, para observar cómo se pasa de un comportamiento tipo unidimensional a otro tipo bidimensional,
-3) redes con $N_x$ fijo y $N_y$ creciente.
+1. calcular todas las redes cuadradas, desde $2 \times 2$ hasta $5 \times 5$, para ver cómo el máximo de $c_V$ se acerca a $T_C$ (aunque $c_V$ es continuo, finito y analítico en todas ellas),
+2. Redes con un número similar de espines, como por ejemplo $1 \times 24$, $2 \times 12$, $3 \times 8$, $4 \times 6$ y $5 \times 5$, para observar cómo se pasa de un comportamiento tipo unidimensional a otro tipo bidimensional,
+3. redes con $N_x$ fijo y $N_y$ creciente.
 
 [Pincha aquí](/11-Modelo_de_Ising.md) para ver otro experimento relacionado con el modelo de Ising bidimensional que incluye el cálculo [Monte Carlo](valbuena.fis.ucm.es/expint/html/fises/MonteCarlo/MonteCarlo.html) de la magnetización.
