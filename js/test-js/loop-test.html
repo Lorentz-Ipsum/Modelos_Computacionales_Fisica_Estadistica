@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <title>LoopTest</title>
+  </head>
+
+  <body>
+    <button id="startBTN" type="button" name="StartBTN">START</button>
+    <button id="stopBTN" type="button" name="StopBTN">STOP</button>
+    <script type="text/javascript">
+      interval = null;
+
+      startBTN.onclick = function() {
+        var i = 0;
+        interval = setInterval(function() {
+          console.log(i++); // this is inside your loop
+        }, 100);
+      };
+
+      stopBTN.onclick = function() {
+        clearInterval(interval);
+      };
+    </script>
+  </body>
+
+</html>

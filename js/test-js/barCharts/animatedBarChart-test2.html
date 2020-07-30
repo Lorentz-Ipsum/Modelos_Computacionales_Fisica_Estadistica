@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>bar chart test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <style type="text/css">
+      text {
+        text-anchor: middle;
+        font-family: monospace;
+        font-size: 11px;
+      }
+
+      /* Create three equal columns that floats next to each other */
+      .column {
+        float: left;
+        width: 50%;
+      }
+
+      /* Clear floats after the columns */
+      .row:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+
+      /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+      @media screen and (max-width: 600px) {
+        .column {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <p>Aqui el texto explicando el applet y demás.</p>
+    <p>No consigo que los Sliders sean indepentientes. Voy a empezar otro archivo.</p>
+    <!-- El container donde esta todo el applet -->
+    <div class="container">
+      <div class="row">
+        <div class="column">
+          <!-- La visualización -->
+          <svg></svg>
+        </div>
+        <div class="column">
+          <!-- Los controles -->
+          <button id="random">Random</button>
+          <button id="start">Start</button>
+          <button id="stop">Stop</button>
+          <!-- Sliders -->
+          <div class="slidecontainer">
+            <input type="range" min="1" max="150" class="slider" id="nRadius">
+            Máximo: <span id="nRadius-value">50</span>
+            <br>
+            <input type="range" min="1" max="10" class="slider" id="vel">
+            Velocidad: <span id="vel-value">5</span>
+          </div>
+          <!-- Botones de seleccion -->
+          <div class="container">
+            <input type="radio" name="tipo" checked="checked" id="tipo_dados" value="dados">
+            Dados (del 1 al 6)
+            <br>
+            <input type="radio" name="tipo" id="tipo_moneda" value="moneda">
+            Moneda (0 ó 1)
+            <br>
+            <input type="radio" name="tipo" id="tipo_continuo" value="continuo">
+            Entre 0 y 1 de forma continua
+            <br>
+          </div>
+          <br>
+          <!-- Seleccion multiple -->
+          <div class="container">
+            <select id="stateSelect" name="stateSelect">
+              <option value="0">Select car:</option>
+              <option value="1">Audi</option>
+              <option value="2">BMW</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Codigo del applet -->
+    <script type="text/javascript" src="animatedBarChart-test2.js">
+    </script>
+  </body>
+
+</html>

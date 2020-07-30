@@ -4,12 +4,122 @@
 3. Dibujar la gaussiana.
 4. Dibujar el histograma de frecuencias.
 
+## Widgets necesarios
+
+
+## Funciones necesarias
+
+```python
+import random
+random.seed(123)
+
+def Genera_Dado():
+    result = random.randint(1,6)
+    return result
+
+def Genera_Moneda():
+    result = random.randint(0,1)
+    return result
+
+def Genera_Continuo():
+    result = random.uniform(0,1)
+    return result
+
+def Generar_Variable_Suma(N, Tipo):
+    Y = 0
+    if Tipo == 'Dado':
+        for i in range(N):
+            X = Genera_Dado()
+            Y += X
+    if Tipo == 'Moneda':
+        for i in range(N):
+            X = Genera_Moneda()
+            Y += X
+    if Tipo == 'Continuo':
+        for i in range(N):
+            X = Genera_Continuo()
+            Y += X
+    return Y
+```
+
 # 2. Anillo
 1. Generar N casillas.
 2. Disponer M sitios al azar.
 3. Establecer cc periodicas.
 4. Establecer ley de cambio de casilla al pasar por un sitio.
 5. Mover casillas.
+
+```python
+# Imports
+import numpy as np
+import random
+
+import matplotlib.pyplot as plt
+import matplotlib.animation as animation
+from matplotlib import style
+
+# Definamos funciones
+def Genera_Anillo(N, M, condicion = "random"):
+    X = []
+    S = (random.sample(range(1,N), M))
+    for i in range(0, N):
+        X.append(bool(random.getrandbits(1)))
+        # comprobar que no se repitan sitios, si se repite uno, volver a generarlo
+    return X, S
+
+def Anillo_Step(X, S):
+    X_s = []
+    for i in range(0, len(X)):
+        if i in S:
+            X_s.append(not X[i-1])
+        else:
+            X_s.append(X[i-1])
+    return X_s
+
+# Probemos a plotearlo
+fig = plt.figure(figsize=(5,10))
+ax = plt.subplot(111, projection = 'polar')
+
+ax.set_theta_zero_location('N')
+ax.set_yticklabels([])
+
+def Plot_Anillo(X, X_t, S):
+    #fig = plt.figure(figsize=(5,10))
+    #ax = plt.subplot(111, projection = 'polar')
+
+    ax.clear()
+
+    r = 1
+    theta = 2 * np.pi / len(X)
+
+    ax.set_xticks(np.arange(0, 2*np.pi, theta))
+    ax.set_xticklabels(range(1,N+1))
+
+    for i in range(0, len(X)):
+        if X[i] == True:
+            plt.polar(theta*i, 1, 'bo')
+        elif X[i] == False:
+            plt.polar(theta*i, 1, 'ro')
+
+        if X_t[i] == True:
+            plt.polar(theta*i, 0.8, 'bo')
+        elif X_t[i] == False:
+            plt.polar(theta*i, 0.8, 'ro')
+
+    for i in range(0, len(S)):
+        plt.polar(theta*S[i] - theta / 2, 0.9, 'go')
+    plt.show()
+
+# Probemoslo
+N = 50
+M = 5
+
+X, S = Genera_Anillo(N, M)
+Plot_Anillo(X, X, S)
+
+X_1 = Anillo_Step(X, S)
+Plot_Anillo(X, X_1, S)
+```
 
 # 3. Transformaciones
 #### Panadero
