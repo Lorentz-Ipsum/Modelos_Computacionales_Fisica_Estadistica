@@ -43,11 +43,14 @@ https://alwaysemmyhope.com/es/python/687206-display-animation-outside-of-jupyter
 
 [Templates for Jupyter layouts](https://blog.jupyter.org/introducing-templates-for-jupyter-widget-layouts-f72bcb35a662)
 
-### Preguntas
+## Preguntas
+
 [How to display matplotlib plots in a Jupyter tab widget?](https://stackoverflow.com/questions/50842160/how-to-display-matplotlib-plots-in-a-jupyter-tab-widget)
+
 [How can I display a matplotlib Pie chart in an ipywidget out widget? I am using Jupyter Notebook, presently nothing gets displayed](https://stackoverflow.com/questions/60150375/how-can-i-display-a-matplotlib-pie-chart-in-an-ipywidget-out-widget-i-am-using)
 
 ### Errores
+
 [interact + plotting with ipywidgets 6.0.0 produces many graphs or none ](https://github.com/jupyter-widgets/ipywidgets/issues/1179)
 
 ## Otras librerias de python
@@ -60,5 +63,5 @@ https://alwaysemmyhope.com/es/python/687206-display-animation-outside-of-jupyter
 - holoviews
 - plotly
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA2NTY3NDc5NV19
+eyJoaXN0b3J5IjpbMjk0NzQwNF19
 -->
