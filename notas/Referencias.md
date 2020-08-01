@@ -80,17 +80,17 @@ https://alwaysemmyhope.com/es/python/687206-display-animation-outside-of-jupyter
 - plotly
 
 ## Links de Python a Tratar
-# jupyter
+### jupyter
 
 https://searx.be/ | animation live jupyter - Searx Belgium
 https://www.google.com/search?client=firefox-b-d&q=Interactive+Visualization+Approaches+In+Jupyter+Notebooks | Interactive Visualization Approaches In Jupyter Notebooks - Google Search
 
-## ipywidgets doks
+### ipywidgets doks
 
 https://ipywidgets.readthedocs.io/en/latest/examples/Widget%20Events.html | Widget Events — Jupyter Widgets 7.5.1 documentation
 https://ipywidgets.readthedocs.io/en/latest/examples/Widget%20Styling.html#Predefined-styles | Layout and Styling of Jupyter widgets — Jupyter Widgets 7.5.1 documentation
 
-## youtube
+### youtube
 
 https://www.youtube.com/watch?v=IZ56W_DLMrs | Tutorial de Widgets interactivos de IPython 3.0 - ... - YouTube
 https://www.youtube.com/c/UaEsAlicante/search?query=python | UA - Universitat d'Alacant / Universidad de Alicante - YouTube
@@ -106,16 +106,16 @@ https://www.youtube.com/watch?v=MiHddLYZ6cQ | Gustavo Patino - Making your code 
 https://www.youtube.com/watch?v=XAnX50OlCms | Using Jupyter Notebooks for JavaScript #1: Installation - YouTube
 https://www.youtube.com/watch?v=yX3I8qumJes&t=194s | Deploying Python, Jupyter Notebook & Flask Apps in the Cloud in Real-Time - YouTube
 
-## medium
+### medium
 
-### muy buenos
+#### muy buenos
 
 https://towardsdatascience.com/a-very-simple-demo-of-interactive-controls-on-jupyter-notebook-4429cf46aabd | A very simple demo of interactive controls on Jupyter notebook - by Tirthajyoti Sarkar - Towards Data Science
 https://medium.com/@jdchipox/how-to-interact-with-jupyter-33a98686f24e | How to create buttons in Jupyter. Learn how to start interacting with… - by Diego Penilla - Medium
 https://medium.com/dunder-data/create-a-bar-chart-race-animation-in-python-with-matplotlib-477ed1590096 | Creating a Bar Chart Race Animation in Python with Matplotlib - by Ted Petrou - Dunder Data - Medium
 https://medium.com/@grvsinghal/speed-up-your-python-code-using-multiprocessing-on-windows-and-jupyter-or-ipython-2714b49d6fac | Multiprocessing in Python on Windows and Jupyter/Ipython — Making it work - by Gaurav Singhal - Medium
 
-### normales
+#### normales
 
 https://blog.jupyter.org/ipython-7-0-async-repl-a35ce050f7f7 | IPython 7.0, Async REPL. Today we are pleased to announce the… - by Matthias Bussonnier - Jupyter Blog
 https://towardsdatascience.com/getting-started-with-geospatial-works-1f7b47955438 | Getting Started with Geospatial Works - by Dhrumil - Towards Data Science
@@ -123,7 +123,7 @@ https://towardsdatascience.com/kepler-qgis-a-brief-analysis-of-the-open-source-g
 https://towardsdatascience.com/web-scraping-5649074f3ead | Web Scraping Using Python and BeautifulSoup - Towards Data Science
 https://towardsdatascience.com/how-googles-dataset-search-engine-work-928fa5237787 | How Google’s Dataset Search Engine Work - by Dhrumil - Towards Data Science
 
-## stackoverflow
+### stackoverflow
 
 https://stackoverflow.com/questions/39658717/plot-dynamically-changing-graph-using-matplotlib-in-jupyter-notebook | python - Plot dynamically changing graph using matplotlib in Jupyter Notebook - Stack Overflow
 https://stackoverflow.com/questions/5618620/create-dynamic-updated-graph-with-python | Create dynamic updated graph with Python - Stack Overflow
@@ -135,5 +135,5 @@ https://stackoverflow.com/questions/47518874/how-do-i-run-python-asyncio-code-in
 https://stackoverflow.com/questions/16732379/stop-start-pause-in-python-matplotlib-animation | stop / start / pause in python matplotlib animation - Stack Overflow
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwNTM5NDE3Ml19
+eyJoaXN0b3J5IjpbMTE5MTU1MDI3NF19
 -->
