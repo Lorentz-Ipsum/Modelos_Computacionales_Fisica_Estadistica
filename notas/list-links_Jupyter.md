@@ -1,4 +1,4 @@
-# Lista de Links
+# Bibliografía y referencias
 
 ---
 
@@ -50,5 +50,5 @@ https://alwaysemmyhope.com/es/python/687206-display-animation-outside-of-jupyter
 - holoviews
 - plotly
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTM1MjI1MTIwXX0=
+eyJoaXN0b3J5IjpbODIzMzM4MzcwXX0=
 -->
