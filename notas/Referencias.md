@@ -27,7 +27,7 @@
 
 ### YouTube
 
-## BlogPosts
+### BlogPosts
 
 https://pythonforundergradengineers.com/piston-motion-with-python-matplotlib.html
 
@@ -43,7 +43,7 @@ https://alwaysemmyhope.com/es/python/687206-display-animation-outside-of-jupyter
 
 [Templates for Jupyter layouts](https://blog.jupyter.org/introducing-templates-for-jupyter-widget-layouts-f72bcb35a662)
 
-## Preguntas
+### Preguntas
 
 [How to display matplotlib plots in a Jupyter tab widget?](https://stackoverflow.com/questions/50842160/how-to-display-matplotlib-plots-in-a-jupyter-tab-widget)
 
@@ -63,5 +63,5 @@ https://alwaysemmyhope.com/es/python/687206-display-animation-outside-of-jupyter
 - holoviews
 - plotly
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjk0NzQwNF19
+eyJoaXN0b3J5IjpbMTc3OTMwMzMzMF19
 -->
