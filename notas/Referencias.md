@@ -11,8 +11,11 @@
 
 # PYTHON
 
-## Tkint
-## Tutoriales de Jupyter
+## Tkinter
+
+## Flask
+
+## Jupyter
 
 [Cython Ising Model]()
 
@@ -60,5 +63,5 @@ https://alwaysemmyhope.com/es/python/687206-display-animation-outside-of-jupyter
 - holoviews
 - plotly
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA3MjUwNjA0MV19
+eyJoaXN0b3J5IjpbLTE3MjU3MDYwMjJdfQ==
 -->
