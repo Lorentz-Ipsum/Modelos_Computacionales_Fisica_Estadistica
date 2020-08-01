@@ -125,14 +125,14 @@ Plot_Anillo(X, X_1, S)
 ```
 
 ## 3. Transformaciones
-#### Panadero
+### Panadero
 1. Dada una imagen:
    1. Contrae y expande cada eje correspondientemente
    2. Corta y pega la región que queda fuera.
    3. Mostrar la nueva imagen.
 2. Si se pulsa **ITERA**, vuelve a 1.
 3. Añadir una opción para iterar automáticamente, que pare cuando los puntos empiecen a colapsar.
-##### Arnold
+### Arnold
 1. Dada una imagen y unos valores:
    1. Calcular el cuarto valor.
    2. Aplicar la transformación.
@@ -196,5 +196,5 @@ Plot_Anillo(X, X_1, S)
    3. Calcula la magnetización
 3. Repite 2.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4NDA3OTc5NzVdfQ==
+eyJoaXN0b3J5IjpbLTE4ODY5NDYyMF19
 -->
