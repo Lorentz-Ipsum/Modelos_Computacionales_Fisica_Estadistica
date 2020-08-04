@@ -37,44 +37,47 @@
   <body>
     <div class="row">
       <div class="column">
-        <div id="anillo" style="width: 300px; height: 300px;">
+        <div id="anillo" style="width: 100px; height: 100px;">
           <!-- Plotly chart will be drawn inside this DIV -->
         </div>
+      </div>
+
+      <div class="column">
         <div id="graph" style="width: 300px; height: 300px;">
           <!-- Plotly chart will be drawn inside this DIV -->
         </div>
       </div>
-
-
-      <div class="column">
-        <label>Numero de partículas:</label>
-        <output id="numero" class="numero" name="numero">20</output>
-        <input type="range" id="numero" class="slider" name="numero" min="1" max="50" value="20" step="1">
-        </br>
-        </br>
-        <label>Número de sectores:</label>
-        <output id="sectores" class="sectores" name="sectores">5</output>
-        <input type="range" id="sectores" class="slider" name="sectores" min="1" max="50" value="5" step="1">
-        </br>
-        </br>
-        <label>Velocidad:</label>
-        <output id="velocidad" class="velocidad" name="velocidad">5</output>
-        <input type="range" id="velocidad" class="slider" name="velocidad" min="1" max="50" value="5" step="1">
-        </br>
-        </br>
-        <button id="start">Start</button>
-        <button id="stop">Stop</button>
-        </br>
-        </br>
-        <select id="stateSelect" name="stateSelect">
-          <option value="0">Aleatorio (30/70)</option>
-          <option value="1">Aleatorio (70/30)</option>
-          <option value="2">Todos azules</option>
-          <option value="3">Alternando</option>
-        </select>
-      </div>
-
     </div>
+
+
+    <div class="row">
+      <label>Numero de partículas:</label>
+      <output id="numero" class="numero" name="numero">20</output>
+      <input type="range" id="numero" class="slider" name="numero" min="1" max="50" value="20" step="1">
+      </br>
+      </br>
+      <label>Número de sectores:</label>
+      <output id="sectores" class="sectores" name="sectores">5</output>
+      <input type="range" id="sectores" class="slider" name="sectores" min="1" max="50" value="5" step="1">
+      </br>
+      </br>
+      <label>Velocidad:</label>
+      <output id="velocidad" class="velocidad" name="velocidad">5</output>
+      <input type="range" id="velocidad" class="slider" name="velocidad" min="1" max="50" value="5" step="1">
+      </br>
+      </br>
+      <button id="start">Start</button>
+      <button id="stop">Stop</button>
+      </br>
+      </br>
+      <select id="stateSelect" name="stateSelect">
+        <option value="0">Aleatorio (30/70)</option>
+        <option value="1">Aleatorio (70/30)</option>
+        <option value="2">Todos azules</option>
+        <option value="3">Alternando</option>
+      </select>
+    </div>
+
 
     <script>
       // JAVASCRIPT CODE GOES HERE
@@ -183,7 +186,7 @@
             red.push(i);
           }
         }
-        return [blue, red]
+        return [blue, red];
       }
 
       function getTheta(arr, n) {
@@ -191,7 +194,7 @@
         for (var i = 0; i < arr.length; i++) {
           thArr.push(360 * (arr[i]) / n);
         }
-        return thArr
+        return thArr;
       }
 
       function generaRadio(n, r) {
@@ -266,6 +269,9 @@
         };
         var data = [numsTrace]; // Cargamos las trazas
         var layout = {
+          autosize: false,
+          width: 500,
+          height: 500,
           title: 'Diferencia de números',
           font: {
             size: 15
@@ -346,6 +352,9 @@
         //
         // Plotly.restyle('anillo', data, layout);
         var layout = {
+          autosize: false,
+          width: 300,
+          height: 300,
           title: 'Anillo de Kac',
           font: {
             size: 15
