@@ -67,11 +67,11 @@
 
       <div class="column">
         <label>Numero:</label>
-        <output id="numero" class="numero" name="numero">20</output> <input type="range" id="numero" class="slider" name="numero" min="1" max="50" value="20" step="1">
+        <output id="numeroOut" name="numeroOut">20</output> <input type="range" id="numero" class="slider" name="numero" min="1" max="50" value="20" step="1">
         </br>
         </br>
         <label>Velocidad:</label>
-        <output id="velocidad" class="velocidad" name="velocidad">5</output> <input type="range" id="velocidad" class="slider" name="velocidad" min="1" max="10" value="5" step="1">
+        <output id="velocidadOut" name="velocidadOut">5</output> <input type="range" id="velocidad" class="slider" name="velocidad" min="1" max="10" value="5" step="1">
         </br>
         </br>
         <button id="start">Start</button>
@@ -83,7 +83,6 @@
           <option value="1"> Moneda (0 ó 1)</option>
           <option value="2">Entre 0 y 1 de forma continua</option>
         </select>
-        </p>
       </div>
 
     </div>
@@ -101,12 +100,16 @@
         // También, quitar la interactividad de las gráficas.
         var trace = {
           x: nums,
-          type: "histogram"
+          type: "histogram",
+          histnorm: 'probability',
+          marker: {
+            color: 'rgb(0,0,255)',
+          },
         };
         var data = [trace];
 
         var layout = {
-          title: "Distribution Graph"
+          title: "Distribution Graph",
         };
 
         Plotly.newPlot("myDiv", data, layout);
@@ -152,8 +155,8 @@
           var selectElement = document.querySelector('#stateSelect');
           var output = selectElement.value;
 
-          var n = numero[0].value,
-            vel = velocidad[0].value;
+          var n = numero.value,
+            vel = velocidad.value;
 
           var i = 0,
             val = [];
@@ -176,24 +179,13 @@
           clearInterval(interval);
         });
 
-        // BUTTON
-        $("button").click(function(event) {
-          var n = numero.value,
-            vel = velocidad.value;
-
-          for (var i = 0; i < 10; i++) {
-            var newX = Math.floor(Math.random()),
-              newY = Math.floor(Math.random());
-
-          }
-
-        });
         // document.getElementById("start").onclick = startMove;
       });
 
       // Contadores para los slider
       $(document).on('input', 'input[type="range"]', function(e) {
-        document.querySelector('output.' + this.id).innerHTML = e.target.value;
+        var changes = this.id + 'Out';
+        document.getElementById(changes).innerHTML = e.target.value;
       });
     </script>
   </body>

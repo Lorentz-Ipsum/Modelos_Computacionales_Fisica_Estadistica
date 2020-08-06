@@ -4,7 +4,7 @@
 <html>
 
   <head>
-    <title>PolarTest2</title>
+    <title>PolarTest3</title>
     <!-- Numeric.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/numeric/1.2.6/numeric.min.js"></script>
     <!-- Plotly.js -->
@@ -52,29 +52,29 @@
 
     <div class="row">
       <label>Numero de partículas:</label>
-      <output id="numero" class="numero" name="numero">20</output>
+      <output id="numeroOut" class="numeroOut" name="numeroOut">20</output>
       <input type="range" id="numero" class="slider" name="numero" min="1" max="50" value="20" step="1">
       </br>
       </br>
       <label>Número de sectores:</label>
-      <output id="sectores" class="sectores" name="sectores">5</output>
+      <output id="sectoresOut" class="sectoresOut" name="sectoresOut">5</output>
       <input type="range" id="sectores" class="slider" name="sectores" min="1" max="50" value="5" step="1">
       </br>
       </br>
       <label>Velocidad:</label>
-      <output id="velocidad" class="velocidad" name="velocidad">5</output>
+      <output id="velocidadOut" class="velocidadOut" name="velocidadOut">5</output>
       <input type="range" id="velocidad" class="slider" name="velocidad" min="1" max="50" value="5" step="1">
       </br>
       </br>
-      <button id="start">Start</button>
-      <button id="stop">Stop</button>
+      <label class="input-check"><input type="checkbox" value="something" name="test" /> Start / Stop </label>
       </br>
       </br>
       <select id="stateSelect" name="stateSelect">
-        <option value="0">Aleatorio (30/70)</option>
-        <option value="1">Aleatorio (70/30)</option>
-        <option value="2">Todos azules</option>
-        <option value="3">Alternando</option>
+        <option value="0">Aleatorio (50/50)</option>
+        <option value="1">Aleatorio (30/70)</option>
+        <option value="2">Aleatorio (70/30)</option>
+        <option value="3">Todos azules</option>
+        <option value="4">Alternando</option>
       </select>
     </div>
 
@@ -84,90 +84,85 @@
 
       // Contadores para los slider
       $(document).on('input', 'input[type="range"]', function(e) {
-        document.querySelector('output.' + this.id).innerHTML = e.target.value;
+        var changes = this.id + 'Out';
+        document.getElementById(changes).innerHTML = e.target.value;
       });
 
       // CODIGO PRINCIPAL
       $(document).ready(function() {
+        $('input[type=checkbox][name=test]').change(function(e) {
+          if (this.checked) {
+            /* START */
+            console.log("START");
+            var f = 0;
 
-        // Boton para parar el loop
-        $("#stop").click(function(event) {
-          /* Act on the event */
-          console.log("STOP");
-          clearInterval(interval);
-        });
-
-
-
-
-
-        // EVENTO DE START
-        $("#start").click(function(event) {
-          console.log("START");
-          var f = 0;
-          // Inicializar los valores de los sliders
-          var selectElement = document.querySelector('#stateSelect');
-          var tipo = selectElement.value;
-          var n = numero.value,
-            m = sectores.value,
-            vel = velocidad.value * 10;
-          // Generar el anillo externo y las divisiones, dibujarlos
-          var ring = generaAnillo(n, m, tipo);
-          var S = ring[0],
-            X0 = ring[1];
-          var ext = transformaX(X0, S);
-          var blueExt = ext[0],
-            redExt = ext[1];
-          var radBlueExt = generaRadio(blueExt.length, 2),
-            radRedExt = generaRadio(redExt.length, 2),
-            thBlueExt = getTheta(blueExt, n),
-            thRedExt = getTheta(redExt, n);
-          // DIVISIONES
-          var radDiv = generaRadio(S.length, 1.7),
-            thDiv = getTheta(S, n);
-          // OFFSET para que las divisiones aparezcan ENTRE puntos
-          for (var i = 0; i < thDiv.length; i++) {
-            thDiv[i] -= 360 / (n * 2);
-          }
-          //PARA LA PRIMERA ITERACION
-          var blueInt = blueExt,
-            redInt = redExt,
-            X = X0;
-          var frames = [],
-            dif = [];
-
-          frames.push(f);
-
-          // LOOP DE PLOT
-          // Empezar el loop en si
-          interval = setInterval(function() {
-            console.log(f++);
-
-            var radBlueInt = generaRadio(blueInt.length, 1.5),
-              radRedInt = generaRadio(redInt.length, 1.5),
-              thBlueInt = getTheta(blueInt, n),
-              thRedInt = getTheta(redInt, n);
-
-            // Dibuja el anillo interior y la diferencia de numeros
-            plotAnillo(radBlueExt, thBlueExt, radRedExt, thRedExt, radBlueInt, thBlueInt, radRedInt, thRedInt, radDiv, thDiv);
-
-            dif.push(blueInt.length - redInt.length);
-            plotNumber(frames, dif);
+            // Inicializar los valores de los sliders
+            var selectElement = document.querySelector('#stateSelect');
+            var tipo = selectElement.value;
+            var n = numero.value,
+              m = sectores.value,
+              vel = velocidad.value;
+            // Generar el anillo externo y las divisiones, dibujarlos
+            var ring = generaAnillo(n, m, tipo);
+            var S = ring[0],
+              X0 = ring[1];
+            var ext = transformaX(X0, S);
+            var blueExt = ext[0],
+              redExt = ext[1];
+            var radBlueExt = generaRadio(blueExt.length, 2),
+              radRedExt = generaRadio(redExt.length, 2),
+              thBlueExt = getTheta(blueExt, n),
+              thRedExt = getTheta(redExt, n);
+            // DIVISIONES
+            var radDiv = generaRadio(S.length, 1.7),
+              thDiv = getTheta(S, n);
+            // OFFSET para que las divisiones aparezcan ENTRE puntos
+            for (var i = 0; i < thDiv.length; i++) {
+              thDiv[i] -= 360 / (n * 2);
+            }
+            //PARA LA PRIMERA ITERACION
+            var blueInt = blueExt,
+              redInt = redExt,
+              X = X0;
+            var frames = [],
+              dif = [];
 
             frames.push(f);
 
-            // Avanza un paso
-            var N = anilloStep(X, S);
+            // LOOP DE PLOT
+            // Empezar el loop en si
+            interval = setInterval(function() {
+              console.log(f++);
 
-            var int = transformaX(N, S);
-            blueInt = int[0];
-            redInt = int[1];
+              var radBlueInt = generaRadio(blueInt.length, 1.5),
+                radRedInt = generaRadio(redInt.length, 1.5),
+                thBlueInt = getTheta(blueInt, n),
+                thRedInt = getTheta(redInt, n);
 
-            X = N;
-            // Repite
-          }, vel);
+              // Dibuja el anillo interior y la diferencia de numeros
+              plotAnillo(radBlueExt, thBlueExt, radRedExt, thRedExt, radBlueInt, thBlueInt, radRedInt, thRedInt, radDiv, thDiv);
+
+              dif.push(blueInt.length - redInt.length);
+              plotNumber(frames, dif);
+
+              frames.push(f);
+
+              // Avanza un paso
+              var N = anilloStep(X, S);
+
+              var int = transformaX(N, S);
+              blueInt = int[0];
+              redInt = int[1];
+
+              X = N;
+              // Repite
+            }, (1 / vel) * 100);
+          } else {
+            /* Act on the event */
+            console.log("STOP");
+            clearInterval(interval);
+          }
         });
-
       }); // Fin de document.ready
 
 
@@ -215,19 +210,68 @@
           S = [],
           blue = [],
           red = [];
+
+        // Genera los sectores
         for (var i = 0; i < m; i++) {
-          var j = Math.floor(n * Math.random(1, n + 1));
-          S.push(j);
-        };
-        for (var i = 0; i < n; i++) {
-          // Aqui poner un switch para cada tipo
-          var j = (Math.random() >= 0.5);
-          X.push(j);
-          if (j) {
-            blue.push(i);
+          var l = Math.floor(n * Math.random(1, n + 1));
+          if (S.includes(l)) {
+            i -= i;
           } else {
-            red.push(i);
+            S.push(l);
           }
+        };
+        switch (tipo) {
+          case "0":
+            for (var i = 0; i < n; i++) {
+              var j = (Math.random() >= 0.5);
+              X.push(j);
+              if (j) {
+                blue.push(i);
+              } else {
+                red.push(i);
+              }
+            }
+            break;
+          case "1":
+            for (var i = 0; i < n; i++) {
+              var j = (Math.random() >= 0.3);
+              X.push(j);
+              if (j) {
+                blue.push(i);
+              } else {
+                red.push(i);
+              }
+            }
+            break;
+          case "2":
+            for (var i = 0; i < n; i++) {
+              var j = (Math.random() >= 0.7);
+              X.push(j);
+              if (j) {
+                blue.push(i);
+              } else {
+                red.push(i);
+              }
+            }
+            break;
+          case 3:
+            var j = true;
+            for (var i = 0; i < n; i++) {
+              X.push(j);
+              blue.push(i);
+            }
+            break;
+          case "4":
+            for (var i = 0; i < n; i++) {
+              var j = (i % 2 == 0);
+              X.push(j);
+              if (j) {
+                blue.push(i);
+              } else {
+                red.push(i);
+              }
+            }
+            break;
         };
         return [S, X, blue, red];
       }
@@ -280,7 +324,11 @@
           plot_bgcolor: 'rgb(223, 223, 223)'
         };
 
-        Plotly.newPlot('graph', data, layout);
+        var config = {
+          staticPlot: true
+        }
+
+        Plotly.newPlot('graph', data, layout, config);
       }
 
       function plotAnillo(radBlueExt, thBlueExt, radRedExt, thRedExt, radBlueInt, thBlueInt, radRedInt, thRedInt, radDiv, thDiv) {
@@ -362,12 +410,33 @@
             size: 15
           },
           plot_bgcolor: 'rgb(223, 223, 223)',
+          radialaxis: {
+            tickcolor: 'rgb(253,253,253)',
+            showgrid: false,
+            zeroline: false,
+            showline: false,
+            autotick: false,
+            ticks: '',
+            showticklabels: false
+          },
           angularaxis: {
-            tickcolor: 'rgb(253,253,253)'
-          }
+            tickcolor: 'rgb(253,253,253)',
+            showgrid: false,
+            zeroline: false,
+            showline: false,
+            autotick: false,
+            ticks: '',
+            showticklabels: false
+          },
+          showlegend: false,
+          showticklabels: false
         };
 
-        Plotly.plot('anillo', data, layout);
+        var config = {
+          staticPlot: true
+        }
+
+        Plotly.newPlot('anillo', data, layout, config);
       }
     </script>
   </body>
