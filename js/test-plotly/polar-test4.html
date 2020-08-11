@@ -4,7 +4,7 @@
 <html>
 
   <head>
-    <title>PolarTest3</title>
+    <title>PolarTest4</title>
     <!-- Numeric.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/numeric/1.2.6/numeric.min.js"></script>
     <!-- Plotly.js -->
@@ -94,6 +94,9 @@
             /* START */
             console.log("START");
             var f = 0;
+            var frames = [],
+              dif = [];
+            frames.push(f);
 
             // Inicializar los valores de los sliders
             var selectElement = document.querySelector('#stateSelect');
@@ -105,36 +108,31 @@
             var ring = generaAnillo(n, m, tipo);
             var S = ring[0],
               X0 = ring[1];
-            var ext = transformaX(X0, S);
-            var blueExt = ext[0],
-              redExt = ext[1];
-            var radBlueExt = generaRadio(blueExt.length, 2),
-              radRedExt = generaRadio(redExt.length, 2),
-              thBlueExt = getTheta(blueExt, n),
-              thRedExt = getTheta(redExt, n);
+            var ext = getBlueRed(X0, S);
+            var radBlueExt = getRadio(ext[0].length, 2),
+              radRedExt = getRadio(ext[1].length, 2),
+              thBlueExt = getTheta(ext[0], n),
+              thRedExt = getTheta(ext[1], n);
             // DIVISIONES
-            var radDiv = generaRadio(S.length, 1.7),
+            var radDiv = getRadio(S.length, 1.7),
               thDiv = getTheta(S, n);
             // OFFSET para que las divisiones aparezcan ENTRE puntos
             for (var i = 0; i < thDiv.length; i++) {
               thDiv[i] -= 360 / (n * 2);
             }
             //PARA LA PRIMERA ITERACION
-            var blueInt = blueExt,
-              redInt = redExt,
+            var blueInt = ext[0],
+              redInt = ext[1],
               X = X0;
-            var frames = [],
-              dif = [];
-
-            frames.push(f);
 
             // LOOP DE PLOT
-            // Empezar el loop en si
+            ///////////////
+
             interval = setInterval(function() {
               console.log(f++);
 
-              var radBlueInt = generaRadio(blueInt.length, 1.5),
-                radRedInt = generaRadio(redInt.length, 1.5),
+              var radBlueInt = getRadio(blueInt.length, 1.5),
+                radRedInt = getRadio(redInt.length, 1.5),
                 thBlueInt = getTheta(blueInt, n),
                 thRedInt = getTheta(redInt, n);
 
@@ -149,7 +147,7 @@
               // Avanza un paso
               var N = anilloStep(X, S);
 
-              var int = transformaX(N, S);
+              var int = getBlueRed(N, S);
               blueInt = int[0];
               redInt = int[1];
 
@@ -167,42 +165,13 @@
 
 
 
-
-      // DEFINICION DE FUNCIONES
-
-      function transformaX(X) {
-        var blue = [],
-          red = [];
-        for (var i = 0; i < X.length; i++) {
-          if (X[i]) {
-            blue.push(i);
-          } else {
-            red.push(i);
-          }
-        }
-        return [blue, red];
-      }
-
-      function getTheta(arr, n) {
-        var thArr = [];
-        for (var i = 0; i < arr.length; i++) {
-          thArr.push(360 * (arr[i]) / n);
-        }
-        return thArr;
-      }
-
-      function generaRadio(n, r) {
-        var rad = [];
-        for (var i = 0; i < n; i++) {
-          rad.push(r);
-        }
-        return rad;
-      }
+      /////////////////////////////
+      // DEFINICION DE FUNCIONES //
+      /////////////////////////////
 
 
-
-
-
+      // FUNCIONES DE CALCULO
+      ///////////////////////
 
       function generaAnillo(n, m, tipo) {
         var X = [],
@@ -219,60 +188,39 @@
             S.push(l);
           }
         };
-        switch (tipo) {
-          case "0":
+        switch (Number(tipo)) {
+          case 0:
             for (var i = 0; i < n; i++) {
               var j = (Math.random() >= 0.5);
               X.push(j);
-              if (j) {
-                blue.push(i);
-              } else {
-                red.push(i);
-              }
             }
             break;
-          case "1":
+          case 1:
             for (var i = 0; i < n; i++) {
               var j = (Math.random() >= 0.3);
               X.push(j);
-              if (j) {
-                blue.push(i);
-              } else {
-                red.push(i);
-              }
             }
             break;
-          case "2":
+          case 2:
             for (var i = 0; i < n; i++) {
               var j = (Math.random() >= 0.7);
               X.push(j);
-              if (j) {
-                blue.push(i);
-              } else {
-                red.push(i);
-              }
             }
             break;
           case 3:
             var j = true;
             for (var i = 0; i < n; i++) {
               X.push(j);
-              blue.push(i);
             }
             break;
-          case "4":
+          case 4:
             for (var i = 0; i < n; i++) {
               var j = (i % 2 == 0);
               X.push(j);
-              if (j) {
-                blue.push(i);
-              } else {
-                red.push(i);
-              }
             }
             break;
         };
-        return [S, X, blue, red];
+        return [S, X];
       }
 
       function anilloStep(X, S) {
@@ -295,6 +243,37 @@
 
 
 
+      // FUNCIONES DE PLOT
+      ////////////////////
+
+      function getBlueRed(X) {
+        var blue = [],
+          red = [];
+        for (var i = 0; i < X.length; i++) {
+          if (X[i]) {
+            blue.push(i);
+          } else {
+            red.push(i);
+          }
+        }
+        return [blue, red];
+      }
+
+      function getTheta(arr, n) {
+        var thArr = [];
+        for (var i = 0; i < arr.length; i++) {
+          thArr.push(360 * (arr[i]) / n);
+        }
+        return thArr;
+      }
+
+      function getRadio(n, r) {
+        var rad = [];
+        for (var i = 0; i < n; i++) {
+          rad.push(r);
+        }
+        return rad;
+      }
 
 
       function plotNumber(frames, dif) {

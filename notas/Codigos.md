@@ -195,6 +195,3 @@ Plot_Anillo(X, X_1, S)
    2. Cambiar (o no, dependiendo de la T) la orientación de los sitios.
    3. Calcula la magnetización
 3. Repite 2.
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4ODY5NDYyMF19
--->

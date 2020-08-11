@@ -42,7 +42,3 @@
 #### Modelo de Ising
 
 ## Conclusiones
-
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5OTY5NjQzMTJdfQ==
--->
