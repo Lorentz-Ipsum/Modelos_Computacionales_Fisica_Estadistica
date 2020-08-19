@@ -1,6 +1,9 @@
 var img = new Image();
 img.crossOrigin = "Anonymous";
-img.src = 'imagen1.png';
+
+var imageSelect = document.querySelector('#imageSelect');
+img.src = 'imagen.png';
+// Añadir un selector de imagen
 img.onload = function() {
     draw(this);
 };
@@ -13,7 +16,7 @@ function draw(img) {
     img.style.display = 'none';
     var imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
     var data = imageData.data;
-    var zoomctx = document.getElementById('zoom').getContext('2d');
+    // var zoomctx = document.getElementById('zoom').getContext('2d');
     var stretchctx = document.getElementById('stretch').getContext('2d');
 
     var invert = function() {
@@ -62,38 +65,42 @@ function draw(img) {
         ctx.putImageData(imageData, 0, 0);
     };
 
-
-    // Codigo del zoom
-    var smoothbtn = document.getElementById('smoothbtn');
-    var toggleSmoothing = function(event) {
-        zoomctx.imageSmoothingEnabled = this.checked;
-        zoomctx.mozImageSmoothingEnabled = this.checked;
-        zoomctx.webkitImageSmoothingEnabled = this.checked;
-        zoomctx.msImageSmoothingEnabled = this.checked;
-    };
-    smoothbtn.addEventListener('change', toggleSmoothing);
-
-    var zoom = function(event) {
-        var x = event.layerX;
-        var y = event.layerY;
-        zoomctx.drawImage(canvas,
-            Math.min(Math.max(0, x - 5), img.width - 10),
-            Math.min(Math.max(0, y - 5), img.height - 10),
-            10, 10,
-            0, 0,
-            200, 200);
-    };
-
-    canvas.addEventListener('mousemove', zoom);
-
     // Para usar los botones
-    var invertbtn = document.getElementById('invertbtn');
-    invertbtn.addEventListener('click', invert);
-    var grayscalebtn = document.getElementById('grayscalebtn');
-    grayscalebtn.addEventListener('click', grayscale);
+    // var invertbtn = document.getElementById('invertbtn');
+    // invertbtn.addEventListener('click', invert);
+    // var grayscalebtn = document.getElementById('grayscalebtn');
+    // grayscalebtn.addEventListener('click', grayscale);
     var bakerbtn = document.getElementById('bakerbtn');
     bakerbtn.addEventListener('click', baker1);
     bakerbtn.addEventListener('click', baker2);
     var remapbtn = document.getElementById('remapbtn');
     remapbtn.addEventListener('click', remap);
+    var iterabtn = document.getElementById('iterabtn');
+    iterabtn.addEventListener('click', baker1);
+    iterabtn.addEventListener('click', baker2);
+    iterabtn.addEventListener('click', remap);
+
+
+    // Codigo del zoom
+    // var smoothbtn = document.getElementById('smoothbtn');
+    // var toggleSmoothing = function(event) {
+    //     zoomctx.imageSmoothingEnabled = this.checked;
+    //     zoomctx.mozImageSmoothingEnabled = this.checked;
+    //     zoomctx.webkitImageSmoothingEnabled = this.checked;
+    //     zoomctx.msImageSmoothingEnabled = this.checked;
+    // };
+    // smoothbtn.addEventListener('change', toggleSmoothing);
+    //
+    // var zoom = function(event) {
+    //     var x = event.layerX;
+    //     var y = event.layerY;
+    //     zoomctx.drawImage(canvas,
+    //         Math.min(Math.max(0, x - 5), img.width - 10),
+    //         Math.min(Math.max(0, y - 5), img.height - 10),
+    //         10, 10,
+    //         0, 0,
+    //         200, 200);
+    // };
+    //
+    // canvas.addEventListener('mousemove', zoom);
 }

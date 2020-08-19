@@ -229,6 +229,7 @@ Sugerimos hacer varias experiencias:
 </video>
 
 # Experimento 6: Moléculas Diatómicas
+
 El objeto de esta práctica es el estudio de las propiedades de un gas de moléculas diatómicas, cuyo hamiltomiano para el par de átomos (1 y 2) que componen la molécula es:
 
 (1)
