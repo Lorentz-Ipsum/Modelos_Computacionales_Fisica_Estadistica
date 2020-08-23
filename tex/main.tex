@@ -1,0 +1,369 @@
+\documentclass[11pt, a4paper]{article} %tamaño mínimo de letra 11pto.
+
+\usepackage{graphicx}
+\usepackage[spanish]{babel} %Español
+\usepackage[utf8]{inputenc} %Para poder poner tildes
+\usepackage{vmargin} %Para modificar los márgenes
+
+%%% PACK EXTRA %%%
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{tocloft}
+\usepackage{appendix}
+%%% FIN PACK EXTRA %%%
+
+%%% CONFIG EXTRA %%%
+\usepackage{amsthm}
+\newtheorem*{theorem}{Teorema}
+\newtheoremstyle{named}{}{}{\itshape}{}{\bfseries}{.}{.5em}{#3}
+\theoremstyle{named}
+\newtheorem*{namedtheorem}{}
+%%% FIN CONFIG EXTRA %%%
+
+\setmargins{2.5cm}{1.5cm}{16.5cm}{23.42cm}{10pt}{1cm}{0pt}{2cm}
+%margen izquierdo, superior, anchura del texto, altura del texto, altura de los encabezados, espacio entre el texto y los encabezados, altura del pie de página, espacio entre el texto y el pie de página
+
+\begin{document}
+%%%%%%Portada%%%%%%%
+\begin{titlepage}
+\centering
+{ \bfseries \Large UNIVERSIDAD COMPLUTENSE DE MADRID}
+\vspace{0.5cm}
+
+{\bfseries  \Large FACULTAD DE CIENCIAS FÍSICAS}
+\vspace{1cm}
+
+{\large DEPARTAMENTO DE ESTRUCTURA DE LA MATERIA, FÍSICA TÉRMICA Y ELECTRÓNICA}
+\vspace{0.8cm}
+
+%%%%Logo Complutense%%%%%
+{\includegraphics[width=0.35\textwidth]{logo_UCM}} %Para ajustar la portada a una sola página se puede reducir el tamaño del logo
+\vspace{0.8cm}
+
+{\bfseries \Large TRABAJO DE FIN DE GRADO}
+\vspace{2cm}
+
+{\Large Código de TFG:  ETE37 } \vspace{5mm}
+
+{\Large Modelos Computacionales en Física Estadística}\vspace{5mm}
+
+{\Large Computational models in Statistical Physics}\vspace{5mm}
+
+{\Large Supervisor/es: Ricardo Brito López}\vspace{20mm}
+
+{\bfseries \LARGE Manuel Fdez-Arroyo Soriano}\vspace{5mm}
+
+{\large Grado en Física}\vspace{5mm}
+
+{\large Curso acad\'emico 2019-20}\vspace{5mm}
+
+{\large Convocatoria Extraordinaria}\vspace{5mm}
+
+\end{titlepage}
+\newpage
+
+{\bfseries \large [Simulaciones Interactivas como recurso didáctico] }\vspace{10mm}
+
+{\bfseries \large Resumen:} \vspace{5mm}
+
+Esto es una prueba para probar el formato del Resumen. Esto es una prueba para probar el formato del ResumenEsto es una prueba para probar el formato del ResumenEsto es una prueba para probar el formato del ResumenEsto es una prueba para probar el formato del ResumenEsto es una prueba para probar el formato del ResumenEsto es una prueba para probar el formato del ResumenEsto es una prueba para probar el formato del ResumenEsto es una prueba para probar el formato del ResumenEsto es una prueba para probar el formato del ResumenEsto es una prueba para probar el formato del ResumenEsto es una prueba para probar el formato del ResumenEsto es una prueba para probar el formato del ResumenEsto es una prueba para probar el formato del ResumenEsto es una prueba para probar el formato del Resumen.
+\vspace{1cm}
+
+{\bfseries \large Abstract: }\vspace{5mm}
+
+This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.
+\vspace{1cm}
+
+{\Large\textbf{Nota}: el título extendido (si procede), el resumen y el abstract deben estar en una misma página y su extensión no debe superar una página. Tamaño mínimo 11pto }\\
+
+{\Large\textbf{Extensión máxima 20 páginas sin contar portada ni resumen (sí se incluye índice, introducción, conclusiones y bibliografía}}
+\newpage
+
+%%Inicio:
+\tableofcontents
+
+\newpage
+\section{Introducción}
+\label{sec:intro}
+
+    En física hay muchos conceptos que son complicados de entender la primera vez que se aprenden.
+
+    Las nuevas tecnologías y en concreto, las aplicaciones web, ofrecen la posibilidad de ilustrar los conceptos de manera interactiva.
+
+    Las herramientas computacionales juegan un papel clave en la física moderna. Por lo que programar simulaciones y aprender a tratar con datos en el ordenador son habilidades casi imprescindibles.
+
+\subsection{Física estadística}\label{sec:fises}
+
+    En especial, en física estadística, muchos conceptos son confusos para el estudiante novel.
+
+    Por un lado, la estadística es una de las ramas de la matemática más contraintuitiva, los sesgos cognitivos....
+
+    Por otro lado, las numerosas aparentes paradojas de la física estadística....
+
+    \subsection{Simulaciones interactivas}
+    \label{sec:sims}
+
+        Originalmente se creó una página con un montón de applets de física. Java quedó obsoleto y ya no funcionan.
+
+        El objetivo de este trabajo es devolverlos a la vida. Al menos a la parte de física estadística. Y dejar los pasos marcados para tal vez continuar rehaciendo la página original y ampliarla con las ideas de nuevos estudiantes.
+
+        Simulaciones numéricas.
+
+        Por qué son importantes?
+
+        Enfoque docente.
+
+    \subsection{Programación}
+    \label{sec:code}
+
+        Primer intento en Python.
+
+        Python vs Javascript.
+
+        Javascript como paradigma open-source para la web.
+
+        Librerías utilizadas.
+
+        Dificultades de creación de los applets.
+
+    \subsection{Recursos didácticos en física}
+
+        La importancia del aprendizaje interactivo.
+
+        La gamificación.
+
+\newpage
+\section{Breve repaso de mecánica estadística}
+
+    \textit{Esta sección y la siguiente deberían ocupar una página y media o dos. Cada vez que se nombra un nuevo concepto, debería haber un enlace al applet que lo ilustra.}
+
+    La mecánica que gobierna los procesos microscópicos de la materia es invariante bajo inversión temporal, es decir, reversible. Sin embargo, los procesos macroscópicos que observamos son irreversibles. ¿Cómo puede emerger una dinámica irreversible a partir de procesos reversibles?
+
+    Paradoja de Loschmidt.
+
+    Ludwig Boltzmann reflexionó profundamente sobre este tema y enunció el llamado teorema H. Este teorema es el fundamento estadístico de la segunda ley de la termodinámica.
+
+    Hipótesis del caos molecular.
+
+    Irreversibilidad y ergodicidad.
+
+    Tiempo de recurrencia de Poincaré.
+
+    \cite{cineticos}
+
+\section{Modelos computacionales}
+
+    \textit{En esta sección sólo comentar cosas importantes de los modelos, y algunos que no se discutan a fondo en este TFG. Debería haber un enlace a un apéndice en que se explique el método de Monte Carlo.}
+
+    Problemas a la hora de generar números aleatorios
+
+    Discusión del método de Monte Carlo.
+
+\newpage
+%%%%%% APPS %%%%%%
+\section{Los applets}\label{sec:apps}
+
+    % \subsubsection{Esquema de ejemplo de un applet:}
+    % Conceptos introductorios, historia.
+    % Importancia en física. Aplicaciones.
+    % Explicación del applet.
+    % Opcional (Algoritmo: Pseudocódigo).
+    % Resultados y análisis.
+
+    %%% APP 1 %%%
+    \subsection{Teorema del límite central}\label{sec:central}
+
+        El teorema del límite central (CLT, por sus siglas en inglés) establece que la suma de variables aleatorias sigue una distribución normal (siempre que el número de variables sumadas sea suficientemente grande). La única condición es que las variables que se suman sean independientes y generadas por la misma distribución de probabilidad, de valor esperado y varianza finitas.
+
+        \begin{namedtheorem}[Teorema del límite central]
+            Sean $X_i, i = 1,\dots, N$ un conjunto de $N$ variables aleatorias independientes, todas distribuidas según la misma distribución de probabilidad de media $\mu$ y varianza $\sigma^2 \neq 0$ finitas.
+            Entonces, cuando $N$ es suficientemente grande (de forma rigurosa, tendiendo a infinito), la probabilidad de que la variable aleatoria $Y$ definida como la suma de las anteriores ($Y = X_1 + X_2 + \dots + X_N$) tome el valor $y$ sigue una distribución gaussiana de media $\mu_Y = N \mu$ y varianza $\sigma_Y^2 = \sigma^2/n$:
+
+            \begin{equation}
+            P_{Y}(y)=\frac{1}{\sqrt{2 \pi N \sigma^{2}}} \exp \left[-\frac{(y-N \mu)^{2}}{2 N \sigma^{2}}\right]
+            \end{equation}
+        \end{namedtheorem}
+
+        Hay otras versiones del teorema más generales. Por ejemplo en la de Lyapunov se permite que las variables $X_i$ no estén distribuidas idénticamente, pero se imponen ciertas condiciones sobre los momentos de órden superior de las distribuciones individuales.
+
+        Es un ejemplo de la aplicación de la ley de los grandes números de la teoría de la probabilidad.
+
+        En el applet se puede elegir el número de variables aleatorias y la distribución de éstas.
+
+        En la versión original se podía elegir la distribución con que se generan las variables aleatorias $X_i$ entre tres opciones: Como un dado (del 1 al 6), como una moneda (0 ó 1) y uniformemente distribuidas entre 0 y 1 (ambos incluidos).
+
+        En esta nueva versión he añadido otras dos opciones, para ilustrar que no importa que la distribución de partida no sea uniforme: una distribución triangular y una distribución de Poisson ambas normalizadas entre 0 y 1.
+
+        [Posible figura: Dos columnas, 5 filas. En cada fila a la izquierda está la distribucion de las X y a la derecha el histograma normalizado de Y para N = 25, tras 20 tiradas.]
+
+        Aplicaciones del CLT.
+
+        \noindent\rule{\linewidth}{0.4pt}
+
+        \textit{Debería añadir distribuciones de probabilidad no uniformes, para ejemplificar mejor el contenido del teorema.}
+
+    \newpage
+    %%% APP 3 %%%
+    \subsection{Transformaciones del panadero y de Arnold}\label{sec:transformations}
+
+        \subsubsection{Transformaciones del panadero}\label{sec:panadero}
+
+            Esta transformación actúa sobre la región $[0,1] \times [0,1]$, contrayendo la dirección $y$ en un factor 1/2 y expandiendo la dirección $x$ en un factor 2. A continuación, la región con $x >1$ se corta y se coloca en la parte superior del intervalo $[0,1]$. La transformación de un punto $(x,y)$ es:
+
+            $$
+            \begin{array}{l}
+            {x^{\prime}=2 x(\bmod 1)} \\
+            {y^{\prime}=\left\{\begin{array}{ll}
+            {y / 2} & {\text { si } x<1 / 2} \\
+            {y / 2+1 / 2} & {\text { si } x>1 / 2}
+            \end{array}\right.}
+            \end{array}
+            $$
+
+            Puede verificarse de manera sencilla que esta transformación conserva el área del espacio $\Gamma$.
+
+            Tiene aplicaciones en óptica, mecánica de fluidos, reconocimiento de patrones
+
+        \subsubsection{Transformaciones de Arnold}\label{sec:arnold}
+
+            También llamado (Arnold's Cat Map, ya que originalmente arnold lo ejemplificó con un dibujo de un gato).
+
+        \subsubsection{Transformaciones de Arnold no ergódicas}\label{sec:arnold-no-ergo}
+
+    \newpage
+    %%% APP 2 %%%
+    \subsection{Anillo de Kac}\label{sec:ring}
+
+        El modelo del anillo de Kac es un sencillo modelo matemático que ilustra perfectamente la compatibilidad entre estados macroscópicos y microscópicos, el tiempo de recurrencia de Poincaré y otros aspectos de teoría cinética que en principio pueden parecer paradójicos. Su dinámica es la siguiente:
+
+        \begin{namedtheorem}[Modelo del anillo de Kac]
+            Disponemos $N$ casillas en un círculo. En cada casilla colocamos una bolita, que puede ser de color azul o rojo. También marcamos al azar $M$ sitios o "túneles" entre bolitas. En cada instante de tiempo las bolitas saltan de su casilla a la contigua, siguiendo el sentido de las agujas del reloj. Si en este salto una bolita pasa sobre uno de los $M$ "túneles", al llegar a la nueva casilla habrá cambiado de color.
+        \end{namedtheorem}
+
+        A nivel macroscópico, podemos describir el sistema con la cantidad de bolitas de cada color que hay en cada instante de tiempo: $B(t)$ para las azules y $R(t)$ para las rojas. Definamos también el número de bolitas que tienen un sitio marcado delante (aquellas que cambiarán de color en el siguiente instante de tiempo) como $b(t)$ y $r(t)$. En estos términos las ecuaciones de evolución o de balance del sistema serán:
+
+        \begin{equation}
+            B(t+1) = B(t) - b(t) + r(t) \qquad
+            R(t+1) = R(t) - r(t) + b(t)
+        \end{equation}
+
+        Con estas ecuaciones no disponemos de información suficiente para resolver la dinámica macroscópica del sistema. Necesitamos una hipótesis adicional, que juega un papel similar al de la hipótesis de caos molecular en la ecuación de Boltzmann \cite{haro}.
+
+        Hipótesis de caos molecular. \cite{gottwald}
+
+        Periodicidad y modificación para no periodicidad.
+
+        \noindent\rule{\linewidth}{0.4pt}
+
+        La simulación es...
+
+        \textit{Podría añadir más opciones con que distribuir las marcas entre casillas para ejemplificar las gráficas de \cite{gottwald}.}
+
+    \newpage
+    %%% APP 4 %%%
+    \subsection{Ergodicidad y entropía en un conjunto de osciladores armónicos}\label{sec:osciladores}
+
+        Este applet nos servirá para ilustrar el concepto de ergodicidad:
+
+        Tenemos un sistema de $N$ osciladores independientes, cada uno con su frecuencia $\omega_i$, $i = 1,2,...,N$. Podemos describir el estado de cada oscilador con una variable ángulo $\phi_i (t) \in [0,2\pi)$, de forma que la evolución de cada oscilador viene dada por $\phi_i (t) = \phi_i (0) + \omega_i t$, donde $\phi_i(0)$ es la fase incial del oscilador. La evolución de cada oscilador está determinada por su frecuencia y su fase.
+
+        En principio puede parecer que el sistema siempre será periódico, ya que se trata de un conjunto de osciladores armónicos, cuyo comportamiento individual es \textit{extremadamente predecible}. Sin embargo, eligiendo adecuadamente la forma de obtener las frecuencias, el sistema será ergódico, llegando a un estado de equilibrio, de entropía máxima y no periódico.
+
+        La condición que ha de cumplirse para que dos osciladores estén sincronizados es que sus frecuencias tengan algún factor común. Para un periodo $T$ tendremos que $\phi_1(T) = \phi_1(0) + \omega_1 T$ y $\phi_2(T) = \phi_2(0) + \omega_2 T$. Si el factor común $r_{ij}={\omega_i}/{\omega_j}$ es irracional para todo par de osciladores, el sistema es ergódico.
+
+        \textit{Esto tengo que trabajarlo más.  Tal vez preguntar a Parrondo sobre el tema,, ya que la idea del modelo y el applet es suya al parecer.}
+
+        En este caso la distribución de probabilidad microcanónica es:
+
+        $$
+        \rho (x) = \frac{1}{(2\pi)^N}
+        $$
+
+        El volumen de un toro $N$-dimensional donde se mueven las variables $\phi$.
+
+        \noindent\rule{\linewidth}{0.4pt}
+
+        En el applet aparecen representados los osciladores como manecillas de reloj, el ángulo de la manecilla es el estado del oscilador. Podemos elegir tanto $N$ como las forma en que se eligen las frecuencias y las fases iniciales.
+
+    \newpage
+    %%% APP 6 y 7 %%%
+    \subsection{Vibraciones moleculares}
+
+        He decidido juntar estos dos applets en un sólo apartado porque ambos tienen una temática similar: Ejemplificar funciones de física atómica en gráficas a las que puedes cambiar los parámetros.
+
+        %%% APP 6 %%%
+        \subsubsection{Calor específico de un gas de moléculas diatómicas}\label{sec:diatomicas}
+
+            Contribución de vibración y contribución de rotación. En el applet original no aparece la expresión final que ploteamos, debería sacarla y ponerla.
+
+            Comentar más a fondo qué significan las lineas horizontales y verticales que se  marcan.
+
+        %%% APP 7 %%%
+        \subsubsection{Teoría de Debye: Vibraciones de sólidos cristsalinos}\label{sec:debye}
+
+            Este applet es sencillo:
+
+            Derivar la ecuación del calor específico en un sólido cristalino como hacemos en Física del Estado Sólido:
+
+            $$
+            C_{V}=9 N k_{B}\left(\frac{T}{\Theta_{D}}\right)^{3} \int_{0}^{\Theta_{D} / T} d x \frac{x^{4} e^{x}}{\left(e^{x}-1\right)^{2}}
+            $$
+
+            Y representarlo para distintas temperaturas de Debye.
+
+            Comentar sobre el gas de electrones, de fonones, la aproximación del campo medio y demás.
+
+    % \subsubsection{Vibraciones de sólidos cristsalinos}
+    % \label{sec:cristales}
+
+    \newpage
+    %%% APP 8 y 9 %%%
+    \subsection{Expansión libre de un gas}\label{sec:gases}
+
+        \textit{Estos dos también los he juntado por la temática común muy obvia del gas. De hecho el código será muy  parecido.}
+
+        %%% APP 8 %%%
+        \subsubsection{Irreversibilidad y fluctuaciones en equilibrio}\label{sec:equilibrio}
+
+            Gas de particulas con y sin interacción.
+
+            Expansión libre en sí.
+
+        %%% APP 9 %%%
+        \subsubsection{Colectividad macrocanónica}\label{sec:macrocanonica}
+
+            Ahondar el concepto de función de macropartición.
+
+            Diferentes experiencias para distintos tamaños de la región.
+
+    \newpage
+    %%% APP 10 %%%
+    \subsection{Estadísticas de bosones y fermiones}\label{sec:bosefermi}
+
+    \newpage
+    %%% APP 5 y 11 %%%
+    \subsection{Modelo de Ising}\label{sec:ising}
+
+        \subsubsection{Dimensión y límite termodinámico}\label{sec:lt}
+
+        \subsubsection{Transiciones de fase y magnetización}\label{sec:transiciones}
+
+%%%%%% CONCLUSIONES %%%%%%
+\newpage
+\section{Conclusiones}\label{sec:conclusiones}
+
+%%%%%% APENDICES %%%%%%
+\newpage
+\appendix
+\section{Método de Monte-Carlo}\label{sec:app-MC}
+
+    Metropolis Monte-Carlo
+
+%%%%%% BIBLIOGRAFIA %%%%%%
+\nocite{einstein}
+\nocite{max}
+
+\bibliographystyle{unsrt}
+\bibliography{bib}
+
+\end{document}

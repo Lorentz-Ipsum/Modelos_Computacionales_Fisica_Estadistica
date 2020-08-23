@@ -12,18 +12,15 @@ Web del trabajo de fin de grado
 ---
 ## Applets
 
-[Enlaces a los applets en javascript](codes/js/Apps/AppsJS.html)
+[Enlaces a los applets en javascript](Apps/AppsJS.html)
+[Enlace a los pseudocodigos de los applets](Pseudocodigos.html)
 
-[Enlaces a los nuevos textos (aún no añadidos)](notas/Applets.html)
-[Enlaces a los textos de applets originales (todos juntos)](notas/Applets_Originales/todos_juntos.html)
-
-[Test de otra plantilla para los applets originales](notas/Applets_Originales/todos_juntos-markdown_preview_firefox.html)
-
-[Enlace a los pseudocodigos de los applets](notas/Pseudocodigos.html)
+[Enlaces a los nuevos textos (aún no añadidos todos)](Nuevos.html)
+[Enlaces a los textos de applets originales (todos juntos)](Viejos.html)
 
 ## PDF
 
-[Última versión del PDF](tex/Memoria.pdf)
+[Última versión del PDF](Memoria.pdf)
 
 ---
 ## Enlaces
