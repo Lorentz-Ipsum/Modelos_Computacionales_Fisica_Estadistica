@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+<!--
+	An Ising model simulation in JavaScript, using an HTML5 canvas for graphics output
+	By Dan Schroeder, Weber State University, February 2013
+	Modified March 2013 to include user-controlled size, steps per frame, and pixel graphics option
+	For a simpler version, see http://physics.weber.edu/thermal/isingHTML5.html
+-->
+<html>
+
+  <head>
+    <title>Ising Model Demo</title>
+    <style>
+      body {
+        background-color: #e0e0e0;
+        text-align: center;
+      }
+
+      /* gray background, center everything */
+      p {
+        margin: 0.6em auto 0.6em auto;
+        width: 600px;
+      }
+
+      /* keep paragraphs centered */
+      input[type=button] {
+        font-size: large;
+      }
+
+      input[type=text] {
+        background-color: #e0e0e0;
+        border: 0px
+      }
+
+      /* these are read-only so style as plain text */
+    </style>
+  </head>
+
+  <body>
+
+    <!--Here's the HTML to create the canvas, text, and GUI controls...-->
+    <h2>Ising Model</h2>
+
+    <p>By <a href="http://physics.weber.edu/schroeder/">Daniel V. Schroeder</a>,
+      <a href="http://physics.weber.edu">Physics Department</a>,
+      <a href="http://weber.edu">Weber State University</a></p>
+
+    <p style="text-align:left">This is a simulation of an
+      <a href="http://en.wikipedia.org/wiki/Ising_model">idealized</a> two-dimensional
+      magnetic material in which each particle can have only two possible alignments,
+      represented by the two colors. The energy is lower when neighboring
+      particles have the same alignment, but there are random fluctuations that
+      become more important at higher temperature. The main purposes of this particular
+      page are to demonstrate the feasibility of doing this kind of simulation with
+      JavaScript and the HTML5 canvas element, and to test the performance on
+      different browsers.</p>
+
+    <hr>
+    <div><canvas id="theCanvas" width="500" height="500"></canvas></div>
+
+    <div>
+      Size =
+      <select id="sizeSelect" onchange="resize()">
+        <option value="25">25</option> <!-- These values must divide the canvas size -->
+        <option value="50">50</option>
+        <option value="100">100</option>
+        <option value="250">250</option>
+        <option value="500">500</option>
+      </select>
+      &nbsp;&nbsp;&nbsp;
+      Temperature = <input id="tempReadout" type="text" readonly size="5" value="2.27">
+      <input id="tempSlider" type="range" min="0.01" max="10" step="0.01" value="2.27" onchange="showTemp()" style="width:180px">
+      &nbsp;&nbsp;&nbsp;
+      <input id="startButton" type="button" onclick="startStop()" value="  Start  ">
+    </div>
+
+    <p>
+      Steps per frame = <input id="spfReadout" type="text" readonly size="7" value="10000">
+      <input id="spfSlider" type="range" min="0" max="18" step="1" value="12" onchange="adjustSPF()">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <input id="pixelCheck" type="checkbox" onchange="selectGraphicsMode()">Use pixel graphics
+    </p>
+
+    <p>Steps per second: <span id="speedReadout">0</span></p>
+
+    <hr>
+
+    <script src="Ising.js"> </script>
+
+  </body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8">
+    <title>Arnold's Cat Map - Jason Davies</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="catmap.css">
+    <link href="jquery-ui-1.css" rel="stylesheet">
+    <script src="jquery.js"></script>
+    <script src="jquery-ui-1.js"></script>
+  </head>
+
+  <body>
+    <h1>Arnold's Cat Map</h1>
+    <p>Arnold's Cat Map is a transformation that can be applied to an image.
+      The pixels of the image appear to be randomly rearranged, but when the transformation is repeated enough times, the original image will reappear!</p>
+    <script>
+      <!--
+      if (typeof FileReader !== 'undefined') {
+        document.write('<p><label for="imagefile">Choose your own image:</label>' +
+          '<input type="file" id="imagefile" onchange="handleFiles(this.files)" /></p><p>...or enter');
+      } else {
+        document.write('<p>Enter');
+      }
+      document.write(' any image URL: <input type="text" id="imageurl" /> ' +
+        '<input type="button" value="Update" onclick="location.hash = \'#\' + $(\'#imageurl\').val()" /></p>');
+      //
+      -->
+    </script>
+    <div id="preview"><img src="catmap.jpg" /></div>
+    <div style="margin: 20px 0">
+      <canvas id="vis" width="500" height="500"></canvas>
+    </div>
+    <div id="controls">
+      <p>Iteration currently showing: <span id="iteration-count">0</span></p>
+      <p>
+        <input type="button" value="&lt;&lt;" id="step-back" />
+        <input type="button" value="&gt;&gt;" id="step-forward" />
+        <input type="button" value="Iterate until original image reappears" id="play" />
+      </p>
+      <p>Iteration: <span id="iterations"></span> <span id="iteration-target">0</span></p>
+    </div>
+    <hr>
+    <label for="t11">T11:</label>
+    <input type="number" id="t11" name="t11" value="2" step="0.1"></br>
+    </br>
+    <label for="t12">T12:</label>
+    <input type="number" id="t12" name="t12" value="1" step="0.1"></br>
+    </br>
+    <label for="t21">T21:</label>
+    <input type="number" id="t21" name="t21" value="1" step="0.1"></br>
+    </br>
+    <script src="catmap.js"></script>
+  </body>
+
+</html>
+<p class="copyright">&copy; <a href="http://www.jasondavies.com/">Jason Davies</a> 2012.
