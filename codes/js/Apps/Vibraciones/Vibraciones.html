@@ -2,13 +2,13 @@
 <html lang="es">
 
   <head>
-    <title>Limite Central</title>
+    <title>Vibraciones</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../../../../web/css/bootstrap.css">
     <!-- Activamos el código Javascript de Bootstrap y de jQuery -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="../js/bootstrap.js"></script>
+    <script src="../../../../web/js/bootstrap.js"></script>
     <!-- Numeric.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/numeric/1.2.6/numeric.min.js"></script>
     <!-- Plotly.js -->
@@ -98,18 +98,18 @@
                 <a class="dropdown-item" href="apps/Osciladores.html">Conjunto de osciladores armónicos</a>
                 <div class="dropdown-divider"></div>
                 <h6 class="dropdown-header">Vibraciones moleculares</h6>
-                <a class="dropdown-item" href="Vibraciones.html#diatomicas">Gas de moléculas diatómicas</a>
+                <a class="dropdown-item active" href="Vibraciones.html#diatomicas">Gas de moléculas diatómicas</a>
                 <a class="dropdown-item" href="Vibraciones.html#debye">Teoría de Debye de los sólidos cristalinos</a>
                 <div class="dropdown-divider"></div>
                 <h6 class="dropdown-header">Gas ideal</h6>
-                <a class="dropdown-item" href="Gas.html#fluctuaciones">Expansión libre de un gas</a>
-                <a class="dropdown-item" href="Gas.html#macro">Colectividad macrocanónica</a>
+                <a class="dropdown-item" href="Fluctuaciones.html">Expansión libre de un gas</a>
+                <a class="dropdown-item" href="Macro.html">Colectividad macrocanónica</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item active" href="Bosefermi.html">Estadísticas de bosones y fermiones</a>
+                <a class="dropdown-item" href="Bosefermi.html">Estadísticas de bosones y fermiones</a>
                 <div class="dropdown-divider"></div>
                 <h6 class="dropdown-header">Modelo de Ising</h6>
-                <a class="dropdown-item" href="Ising.html#lt">Dimensionalidad y límite termodinámico</a>
-                <a class="dropdown-item" href="Ising.html#magnet">Magnetización y transiciones de fase</a>
+                <a class="dropdown-item" href="LT.html">Dimensionalidad y límite termodinámico</a>
+                <a class="dropdown-item" href="Ising.html">Magnetización y transiciones de fase</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="Originales.html">Applets originales</a>
               </div>
@@ -137,7 +137,7 @@
       <!-- Contenidos  ================================================== -->
       <div class="container" role="main">
         <div class="main-content">
-          <h1 id="bosefemi">Teorema del Límite Central</h1>
+          <h1 id="diatomicas">Vibraciones de moléculas diatómicas</h1>
           <p>Este es un texto de prueba para comprobar que Mathjax va bien.</p>
 
           <p>
@@ -160,39 +160,48 @@
           <hr>
           <!-- El applet empieza aqui -->
           <div style="text-align: center">
-            <div class="container">
-              <div id="myDiv" style="width: 480px; height: 300px;">
-                <!-- Plotly chart will be drawn inside this DIV -->
-              </div>
+            <div id="divDiat" style="width: 800px; height: 500px; margin:auto">
+              <!-- Plotly chart will be drawn inside this DIV -->
             </div>
-
             <!-- BOTONERA -->
-            <div class="container">
-              <label>Numero:</label>
-              <output id="numeroOut" name="numeroOut">20</output>
-              <input type="range" id="numero" class="slider" name="numero" min="1" max="50" value="20" step="1">
-              </br>
-              </br>
-              <label>Velocidad:</label>
-              <output id="velocidadOut" name="velocidadOut">5</output>
-              <input type="range" id="velocidad" class="slider" name="velocidad" min="1" max="100" value="5" step="5">
-              </br>
-              </br>
-              <label class="input-check"><input type="checkbox" value="something" name="test" /> Start / Stop </label>
-              </br>
-              </br>
-              <select id="stateSelect" name="stateSelect">
-                <option value="0"> Dados (del 1 al 6)</option>
-                <option value="1"> Moneda (0 ó 1)</option>
-                <option value="2">Entre 0 y 1 de forma continua</option>
-              </select>
+            <label for="tempRot">Temperatura de rotación:</label>
+            <input type="number" id="tempRot" name="tempRot" min="0" max="" value="30" step="0.001"></br>
+            </br>
+            <label for="tempVib">Temperatura de vibración:</label>
+            <input type="number" id="tempVib" name="tempVib" min="0" max="" value="3000"></br>
+            </br>
+            <input type="button" id="calculaDiatBtn" value="Calcula">
+          </div>
+        </div>
+
+        <!-- CAMBIO DE APPLET -->
+        <div class="main-content">
+          <hr>
+          <h1 id="debye">Teoría de Debye: Vibraciones de sólidos cristalinos</h1>
+          <p>
+            La teoría de Debye solucionó un problema al que se enfrentaba la física del estado sólico a principios del siglo XX: Las desviaciones de la ley de Dulong-Petit respecto a las medidas experimentales para bajas temperaturas. Debye aplicó la
+            teoría cuántica y resolvió exitosamente estas diferencias.
+          </p>
+
+          <hr>
+          <!-- El applet empieza aqui -->
+          <div style="text-align: center">
+            <div id="divDeb" style="width: 800px; height: 500px; margin:auto">
+              <!-- Plotly chart will be drawn inside this DIV -->
             </div>
+            <!-- BOTONERA -->
+            <label for="temperatura">Temperatura:</label>
+            <input type="number" id="temperatura" name="temperatura" min="0" max="" value="200"></br>
+            </br>
+            <input class="btn btn-primary" type="button" id="calculaDebBtn" value="Calcula">
           </div>
         </div>
       </div>
-    </div>
+    </div> <!-- Final del contenedor -->
 
-    <script type="text/javascript" src="LimiteCentral.js"></script>
+
+    <script src="Debye.js"> </script>
+    <script src="Diatomicas.js"> </script>
     <!-- CODIGO DE DERIVATIVE BY MAURICIO POPP -->
     <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script>
     <script>

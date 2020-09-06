@@ -47,6 +47,11 @@ El primer enlace es la última versión. Las demás estan para ver la progresió
 
 ## Pruebas de estilos
 
+- [ ] Estilos de Slider
+- [ ] Estilos de MultipleSelection
+- [ ] ¿? Estilos de Barra lateral
+- [ ] 
+
 > Aquí irán links a los archivos de pruebas de estilos.
 > Hay que probar tanto estilos de las Apps y sus botones como estilos para el texto y la web.
 > Hay que probar cómo combinar ambos.

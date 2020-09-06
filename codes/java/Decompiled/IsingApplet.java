@@ -58,17 +58,17 @@ public class IsingApplet extends Applet implements ActionListener, AdjustmentLis
       boolean var7 = false;
       this.espines.FG_BG(false);
 
-      for(long var3 = 0L; var3 < this.SIZE; ++var3) {
-         int var1 = (int)Math.floor((double)(this.anchura + 1) * Math.random() / (double)this.pixelsize);
-         int var2 = (int)Math.floor((double)(this.altura + 1) * Math.random() / (double)this.pixelsize);
-         int var9 = this.energia(var1, var2);
-         if (Math.random() <= this.razon[(var9 + 4) / 2]) {
-            int[] var10000 = this.spin[var1];
-            var10000[var2] *= -1;
-            this.plotSpin(var1, var2);
-            double[] var8 = this.imanacion;
-            int var10001 = this.indice;
-            var8[var10001] += (double)(2 * this.spin[var1][var2]);
+      for(long i = 0L; i < this.SIZE; ++i) {
+         int spinX = (int)Math.floor((double)(this.anchura + 1) * Math.random() / (double)this.pixelsize);
+         int spinY = (int)Math.floor((double)(this.altura + 1) * Math.random() / (double)this.pixelsize);
+         int E = this.energia(spinX, spinY);
+         if (Math.random() <= this.razon[(E + 4) / 2]) {
+            int[] spinColumn = this.spin[spinX];
+            spinColumn[spinY] *= -1;
+            this.plotSpin(spinX, spinY);
+            double[] valImanacion = this.imanacion;
+            int index = this.indice;
+            valImanacion[index] += (double)(2 * this.spin[spinX][spinY]);
          }
       }
 
@@ -76,8 +76,8 @@ public class IsingApplet extends Applet implements ActionListener, AdjustmentLis
       this.pintaMag();
    }
 
-   public synchronized void actionPerformed(ActionEvent var1) {
-      if (var1.getSource() == this.calc) {
+   public synchronized void actionPerformed(ActionEvent eventAction) {
+      if (eventAction.getSource() == this.calc) {
          if (!this.corriendo) {
             this.runner.start();
             this.corriendo = true;
@@ -86,7 +86,7 @@ public class IsingApplet extends Applet implements ActionListener, AdjustmentLis
          this.iniRed();
          this.iniRazon();
          this.magnetizacion.Limpia();
-      } else if (var1.getSource() == this.pausa) {
+     } else if (eventAction.getSource() == this.pausa) {
          if (!this.corriendo) {
             return;
          }
@@ -104,7 +104,7 @@ public class IsingApplet extends Applet implements ActionListener, AdjustmentLis
 
    }
 
-   public void adjustmentValueChanged(AdjustmentEvent var1) {
+   public void adjustmentValueChanged(AdjustmentEvent eventAdjust) {
       this.indiceold = this.indice;
       this.indice = this.setcanje.getValue();
       this.canje = (double)this.indice / (double)this.PASO;
@@ -113,28 +113,28 @@ public class IsingApplet extends Applet implements ActionListener, AdjustmentLis
       this.iniRazon();
    }
 
-   int energia(int var1, int var2) {
+   int energia(int X, int Y) {
       boolean var7 = false;
-      int var3 = IsingApplet.Vecinos.Left(var1, this.anchura / this.pixelsize);
-      int var4 = IsingApplet.Vecinos.Right(var1, this.anchura / this.pixelsize);
-      int var6 = IsingApplet.Vecinos.Down(var2, this.altura / this.pixelsize);
-      int var5 = IsingApplet.Vecinos.Up(var2, this.altura / this.pixelsize);
-      int var8 = this.spin[var3][var2] + this.spin[var4][var2] + this.spin[var1][var6] + this.spin[var1][var5];
-      return this.spin[var1][var2] * var8;
+      int Xleft = IsingApplet.Vecinos.Left(X, this.anchura / this.pixelsize);
+      int Xright = IsingApplet.Vecinos.Right(X, this.anchura / this.pixelsize);
+      int Xup = IsingApplet.Vecinos.Down(Y, this.altura / this.pixelsize);
+      int Xdown = IsingApplet.Vecinos.Up(Y, this.altura / this.pixelsize);
+      int spinSum = this.spin[Xleft][Y] + this.spin[Xright][Y] + this.spin[X][Xup] + this.spin[var1][Xdown];
+      return this.spin[X][Y] * spinSum;
    }
 
    void iniRazon() {
-      for(int var1 = 0; var1 <= 4; ++var1) {
-         this.razon[var1] = Math.exp(-2.0D * (2.0D * (double)var1 - 4.0D) * this.canje);
+      for(int i = 0; i <= 4; ++i) {
+         this.razon[i] = Math.exp(-2.0D * (2.0D * (double)i - 4.0D) * this.canje);
       }
 
    }
 
    void iniRed() {
-      int var3 = (int)Math.floor(this.canje * 50.0D);
+      int energiaCanje = (int)Math.floor(this.canje * 50.0D);
 
-      for(int var4 = 0; var4 <= 50; ++var4) {
-         this.imanacion[var4] = 0.0D;
+      for(int i = 0; var4 <= 50; ++i) {
+         this.imanacion[i] = 0.0D;
       }
 
       this.pixelsize = (int)Math.pow(2.0D, 1.0D + (double)this.system_size.getSelectedIndex());
@@ -147,18 +147,18 @@ public class IsingApplet extends Applet implements ActionListener, AdjustmentLis
       this.SIZE = (long)((this.altura / this.pixelsize + 1) * (this.anchura / this.pixelsize + 1));
       this.espines.FG_BG(false);
 
-      for(int var1 = 0; var1 <= this.anchura / this.pixelsize; ++var1) {
-         for(int var2 = 0; var2 <= this.altura / this.pixelsize; ++var2) {
-            int var10002;
+      for(int i = 0; i <= this.anchura / this.pixelsize; ++i) {
+         for(int j = 0; j <= this.altura / this.pixelsize; ++j) {
+            int imanacionInstant;
             if (Math.random() > this.C) {
-               this.spin[var1][var2] = 1;
-               var10002 = this.imanacion[var3]++;
+               this.spin[i][j] = 1;
+               imanacionInstant = this.imanacion[energiaCanje]++;
             } else {
-               this.spin[var1][var2] = -1;
-               var10002 = this.imanacion[var3]--;
+               this.spin[i][j] = -1;
+               imanacionInstant = this.imanacion[energiaCanje]--;
             }
 
-            this.plotSpin(var1, var2);
+            this.plotSpin(i, j);
          }
       }
 
@@ -167,8 +167,8 @@ public class IsingApplet extends Applet implements ActionListener, AdjustmentLis
    }
 
    public void init() {
-      Font var1 = new Font("SansSerif", 0, 12);
-      this.setFont(var1);
+      Font fuente = new Font("SansSerif", 0, 12);
+      this.setFont(fuente);
       this.setBackground(Color.gray.brighter());
       this.anchura = this.altura = 256;
       this.SIZE = (long)((this.altura / this.pixelsize + 1) * (this.anchura / this.pixelsize + 1));
@@ -218,24 +218,24 @@ public class IsingApplet extends Applet implements ActionListener, AdjustmentLis
    }
 
    void pintaMag() {
-      int var1 = this.setcanje.getValue();
-      this.canje = (double)var1 / (double)this.PASO;
+      int canjeValue = this.setcanje.getValue();
+      this.canje = (double)canjeValue / (double)this.PASO;
       this.magnetizacion.FG_BG(false);
       this.magnetizacion.Limpia();
       this.magnetizacion.setCol(Color.blue);
       this.magnetizacion.Recta(0.43D, -1.1D, 0.43D, 1.1D);
       this.magnetizacion.setCol(Color.red);
 
-      for(int var2 = 0; var2 <= 50; ++var2) {
-         this.magnetizacion.CirculoRelleno((double)var2 / 50.0D, this.imanacion[var2] / (double)this.SIZE, 2);
+      for(int i = 0; i <= 50; ++i) {
+         this.magnetizacion.CirculoRelleno((double)i / 50.0D, this.imanacion[i] / (double)this.SIZE, 2);
       }
 
       this.magnetizacion.FG_BG(true);
    }
 
-   void plotSpin(int var1, int var2) {
-      this.espines.setCol(this.paleta[this.spin[var1][var2] + 1]);
-      this.espines.CuadradoRelleno((double)(this.pixelsize * var1), (double)(this.pixelsize * var2), this.pixelsize, this.pixelsize);
+   void plotSpin(int i, int j) {
+      this.espines.setCol(this.paleta[this.spin[i][j] + 1]);
+      this.espines.CuadradoRelleno((double)(this.pixelsize * i), (double)(this.pixelsize * j), this.pixelsize, this.pixelsize);
    }
 
    public void run() {

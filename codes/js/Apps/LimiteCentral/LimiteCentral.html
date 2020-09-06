@@ -1,16 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 
   <head>
+    <title>Limite Central</title>
     <meta charset="utf-8">
-    <title>Teorema del Límite Central</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../../web/css/bootstrap.css">
+    <!-- Activamos el código Javascript de Bootstrap y de jQuery -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="../../../../web/js/bootstrap.js"></script>
     <!-- Numeric.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/numeric/1.2.6/numeric.min.js"></script>
     <!-- Plotly.js -->
-    <script src="https://cdn.plot.ly/plotly-latest.min.js">
-    </script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"> </script>
     <!-- JQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <!-- Importamos MathJax para visualizar LaTeX -->
+
     <style type="text/css">
       /* Create three equal columns that floats next to each other */
       .column {
@@ -30,44 +36,224 @@
         .column {
           width: 100%;
         }
+
+        .container {
+          display: flex;
+        }
+
+        .fixed {
+          width: 300px;
+        }
+
+        .flex-item {
+          flex-grow: 1;
+        }
       }
     </style>
+    <style media="screen">
+      .main-content {
+        padding: 3rem 1.5rem;
+      }
+    </style>
+
   </head>
 
   <body>
-    <div class="row">
-      <div class="column">
-        <div id="myDiv" style="width: 480px; height: 300px;">
-          <!-- Plotly chart will be drawn inside this DIV -->
+    <!-- Contenedor
+    ================================================== -->
+    <div class="container">
+
+      <!-- Barra de navegación ======================= -->
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="../index.html">\(\int f(x) dx\)</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Elementos que se agrupan al minimizar-->
+        <div class="collapse navbar-collapse" id="navbarsExample03">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../Memoria.html">Memoria</a>
+            </li>
+            <!-- <li class="nav-item">
+              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+            </li> -->
+            <li class="nav-item dropdown active">
+              <a class="nav-link dropdown-toggle" href="#" id="dropdownApplets" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Applets <span class="sr-only">(current)</span></a>
+              <div class="dropdown-menu" aria-labelledby="dropdownApplets">
+                <a class="dropdown-item" href="../Apps.html">Índice de applets</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="LimiteCentral.html">Teorema del límite central</a>
+                <div class="dropdown-divider"></div>
+                <h6 class="dropdown-header">Transformaciones sobre el espacio de fases</h6>
+                <a class="dropdown-item" href="Transformaciones.html#baker">Transformación del panadero</a>
+                <a class="dropdown-item" href="Transformaciones.html#arnold">Transformación de Arnold</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="Kac.html">Anillo de Kac</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="apps/Osciladores.html">Conjunto de osciladores armónicos</a>
+                <div class="dropdown-divider"></div>
+                <h6 class="dropdown-header">Vibraciones moleculares</h6>
+                <a class="dropdown-item" href="Vibraciones.html#diatomicas">Gas de moléculas diatómicas</a>
+                <a class="dropdown-item" href="Vibraciones.html#debye">Teoría de Debye de los sólidos cristalinos</a>
+                <div class="dropdown-divider"></div>
+                <h6 class="dropdown-header">Gas ideal</h6>
+                <a class="dropdown-item" href="Fluctuaciones.html">Expansión libre de un gas</a>
+                <a class="dropdown-item" href="Macro.html">Colectividad macrocanónica</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item active" href="Bosefermi.html">Estadísticas de bosones y fermiones</a>
+                <div class="dropdown-divider"></div>
+                <h6 class="dropdown-header">Modelo de Ising</h6>
+                <a class="dropdown-item" href="LT.html">Dimensionalidad y límite termodinámico</a>
+                <a class="dropdown-item" href="Ising.html">Magnetización y transiciones de fase</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="Originales.html">Applets originales</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../Codigos.html">Códigos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../Bibliografia.html">Bibliografía</a>
+            </li>
+            <li class="nav-item">
+            </li>
+          </ul>
+          <ul class="navbar-nav">
+            <li>
+              <a class="nav-link" href="../About.html">About</a>
+            </li>
+          </ul>
+          <!-- <form class="form-inline my-2 my-md-0">
+            <input class="form-control" type="text" placeholder="Search">
+          </form> -->
+        </div>
+      </nav>
+
+      <!-- Contenidos  ================================================== -->
+      <div class="container" role="main">
+        <div class="main-content">
+          <h1 id="bosefemi">Teorema del Límite Central</h1>
+          <p>Este es un texto de prueba para comprobar que Mathjax va bien.</p>
+
+          <p>
+            Si nombramos $M = 2m$ como la masa total de la molécula y $\mu = m/2$ como la masa reducida, el hamiltoniano se reescribe como:
+          </p>
+
+          \begin{equation}\label{eq:diatHtot}
+          \begin{array}{cc}
+          H_{12}&=\frac{\mathbf{P}^{2}}{2 M}+\frac{\mathbf{L}^{2}}{2 \mu r^{2}}+{\frac{p^{2}}{2 \mu}+V(r)} \\
+          &=H_{T}+H_{rot}+H_{vib}
+          \end{array}
+          \end{equation}
+
+          <p>Hay ecuaciones como \eqref{eq:diatHtot}, referencias... Etc</p>
+
+          <hr>
+
+          En la simulación podemos introducir las temperaturas \button{De rotación} y \button{De vibración},
+
+          <hr>
+          <!-- El applet empieza aqui -->
+          <div style="text-align: center">
+            <div class="container">
+              <div id="myDiv" style="width: 480px; height: 300px;">
+                <!-- Plotly chart will be drawn inside this DIV -->
+              </div>
+            </div>
+
+            <!-- BOTONERA -->
+            <div class="container">
+              <label>Numero:</label>
+              <output id="numeroOut" name="numeroOut">20</output>
+              <input type="range" id="numero" class="slider" name="numero" min="1" max="50" value="20" step="1">
+              </br>
+              </br>
+              <label>Velocidad:</label>
+              <output id="velocidadOut" name="velocidadOut">5</output>
+              <input type="range" id="velocidad" class="slider" name="velocidad" min="1" max="100" value="5" step="5">
+              </br>
+              </br>
+              <label class="input-check"><input type="checkbox" value="something" name="test" /> Start / Stop </label>
+              </br>
+              </br>
+              <select id="stateSelect" name="stateSelect">
+                <option value="0"> Dados (del 1 al 6)</option>
+                <option value="1"> Moneda (0 ó 1)</option>
+                <option value="2">Entre 0 y 1 de forma continua</option>
+              </select>
+            </div>
+          </div>
         </div>
       </div>
-
-
-      <div class="column">
-        <label>Numero:</label>
-        <output id="numeroOut" name="numeroOut">20</output>
-        <input type="range" id="numero" class="slider" name="numero" min="1" max="50" value="20" step="1">
-        </br>
-        </br>
-        <label>Velocidad:</label>
-        <output id="velocidadOut" name="velocidadOut">5</output>
-        <input type="range" id="velocidad" class="slider" name="velocidad" min="1" max="100" value="5" step="5">
-        </br>
-        </br>
-        <label class="input-check"><input type="checkbox" value="something" name="test" /> Start / Stop </label>
-        </br>
-        </br>
-        <select id="stateSelect" name="stateSelect">
-          <option value="0"> Dados (del 1 al 6)</option>
-          <option value="1"> Moneda (0 ó 1)</option>
-          <option value="2">Entre 0 y 1 de forma continua</option>
-        </select>
-      </div>
-
     </div>
 
+    <script type="text/javascript" src="LimiteCentral.js"></script>
+    <!-- CODIGO DE DERIVATIVE BY MAURICIO POPP -->
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script>
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [
+            ['$', '$'],
+            ['\\(', '\\)']
+          ],
+          processEscapes: true,
+          processEnvironments: true,
+          tags: "ams",
+          macros: {
+            edge: '\\mathrel{-}',
+            notedge: '\\not\\edge',
+            deg: ['#1^°', 1],
+            tbold: ['\\textbf{#1}', 1],
+            mbold: ['\\mathbf{#1}', 1],
+            unit: ['\\widehat{\\mathbf{#1}}', 1],
+            v: ['\\overrightarrow{#1}', 1],
+            vnorm: ['\\norm{\\v{#1}}', 1],
+            overunder: ['\\overset{#2}{\\underset{#3}{#1}}', 3],
+            cuv: ['\\overunder{#1}{|}{|}', 1],
+            magnitude: ['\\left \\| #1 \\right \\|', 1],
+            norm: ['\\lvert #1 \\rvert', 1],
+            divides: ['\\,|\\,'],
+            cost: ['\\cos{\\theta}'],
+            sint: ['\\sin{\\theta}'],
+            sqrti: ['\\frac{1}{\\sqrt{2}}'],
+            ci: ['\\perp\\!\\!\\!\\perp'],
+            given: ['\\:\\vert\\:'],
+            bordermatrix: ['\\raise{0.7em}{\\begin{matrix} & \\begin{matrix}#1\\end{matrix} \\\\ \\begin{matrix}#2\\end{matrix} \\hspace{-1em} & #3 \\end{matrix}}', 3]
+          }
+        },
+        options: {
+          skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+          ignoreHtmlClass: 'tex2jax_ignore',
+          processHtmlClass: 'tex2jax_process'
+        }
+      };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" id="MathJax-script"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+    <style>
+      svg text {
+        font-size: 10px;
+      }
 
-    <script src="LimiteCentral.js"> </script>
+      svg .title {
+        font-size: 25px;
+      }
+
+      .function-plot {
+        margin: 0px auto 20px;
+        display: block;
+      }
+
+      .function-plot text {
+        font-size: 15px;
+      }
+    </style>
   </body>
 
 </html>

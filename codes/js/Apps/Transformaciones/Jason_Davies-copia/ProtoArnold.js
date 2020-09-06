@@ -14,8 +14,7 @@ try {
 $('#reset').click(function() {
     iterations = 0;
     $('#iterations').value = 0;
-    $('#iteration-target').value = 0;
-    $('#iteration-count').value = 0;
+    document.getElementById('iteration-count').value = 0;
     init();
 });
 

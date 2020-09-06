@@ -2,7 +2,7 @@
 <html lang="es">
 
   <head>
-    <title>Limite Central</title>
+    <title>Gas Ideal</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/bootstrap.css">
@@ -98,101 +98,128 @@
                 <a class="dropdown-item" href="apps/Osciladores.html">Conjunto de osciladores armónicos</a>
                 <div class="dropdown-divider"></div>
                 <h6 class="dropdown-header">Vibraciones moleculares</h6>
-                <a class="dropdown-item" href="Vibraciones.html#diatomicas">Gas de moléculas diatómicas</a>
+                <a class="dropdown-item active" href="Vibraciones.html#diatomicas">Gas de moléculas diatómicas</a>
                 <a class="dropdown-item" href="Vibraciones.html#debye">Teoría de Debye de los sólidos cristalinos</a>
                 <div class="dropdown-divider"></div>
                 <h6 class="dropdown-header">Gas ideal</h6>
                 <a class="dropdown-item" href="Gas.html#fluctuaciones">Expansión libre de un gas</a>
                 <a class="dropdown-item" href="Gas.html#macro">Colectividad macrocanónica</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item active" href="Bosefermi.html">Estadísticas de bosones y fermiones</a>
+                <a class="dropdown-item" href="Bosefermi.html">Estadísticas de bosones y fermiones</a>
                 <div class="dropdown-divider"></div>
                 <h6 class="dropdown-header">Modelo de Ising</h6>
                 <a class="dropdown-item" href="Ising.html#lt">Dimensionalidad y límite termodinámico</a>
                 <a class="dropdown-item" href="Ising.html#magnet">Magnetización y transiciones de fase</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="Originales.html">Applets originales</a>
+                <div class=" dropdown-divider">
               </div>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="../Codigos.html">Códigos</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="../Bibliografia.html">Bibliografía</a>
-            </li>
-            <li class="nav-item">
-            </li>
-          </ul>
-          <ul class="navbar-nav">
-            <li>
-              <a class="nav-link" href="../About.html">About</a>
-            </li>
-          </ul>
-          <!-- <form class="form-inline my-2 my-md-0">
+              <a class="dropdown-item" href="Originales.html">Applets originales</a>
+        </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../Codigos.html">Códigos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../Bibliografia.html">Bibliografía</a>
+        </li>
+        <li class="nav-item">
+        </li>
+        </ul>
+        <ul class="navbar-nav">
+          <li>
+            <a class="nav-link" href="../About.html">About</a>
+          </li>
+        </ul>
+        <!-- <form class="form-inline my-2 my-md-0">
             <input class="form-control" type="text" placeholder="Search">
           </form> -->
+    </div>
+    </nav>
+
+    <!-- Contenidos  ================================================== -->
+    <div class="container" role="main">
+      <div class="main-content">
+        <h1 id="fluctuaciones">Irreversibilidad y fluctuaciones en el equilibrio</h1>
+        <p>Este es un texto de prueba para comprobar que Mathjax va bien.</p>
+
+        <p>
+          Si nombramos $M = 2m$ como la masa total de la molécula y $\mu = m/2$ como la masa reducida, el hamiltoniano se reescribe como:
+        </p>
+
+        \begin{equation}\label{eq:diatHtot}
+        \begin{array}{cc}
+        H_{12}&=\frac{\mathbf{P}^{2}}{2 M}+\frac{\mathbf{L}^{2}}{2 \mu r^{2}}+{\frac{p^{2}}{2 \mu}+V(r)} \\
+        &=H_{T}+H_{rot}+H_{vib}
+        \end{array}
+        \end{equation}
+
+        <p>Hay ecuaciones como \eqref{eq:diatHtot}, referencias... Etc</p>
+
+        <hr>
+
+        En la simulación podemos introducir las temperaturas \button{De rotación} y \button{De vibración},
+
+        <hr>
+        <!-- El applet empieza aqui -->
+        <div style="text-align: center">
+          <div>
+            <canvas id="canvasFluctuaciones" style="width: 500px; height: 500px;"></canvas>
+            <div id="graphFluctuaciones" style="width: 480px; height: 300px;">
+              <!-- Plotly chart will be drawn inside this DIV -->
+            </div>
+          </div>
+          <!-- BOTONERA -->
+          <div>
+            <label for="nFluctuaciones">Número de partículas (<300): </label>
+                <input type="number" id="nFluctuaciones" name="nFluctuaciones" min="0" max="300" value="100"></br>
+                </br>
+                <label for="tempFluctuaciones">Temperatura: </label>
+                <input type="number" id="tempFluctuaciones" name="tempFluctuaciones" min="0" max="300" value="1"></br>
+                </br>
+                <input type="button" id="startBtnFluc" value="Start">
+                <input type="button" id="activaBtnFluc" value="Activa">
+          </div>
         </div>
-      </nav>
+      </div>
 
-      <!-- Contenidos  ================================================== -->
-      <div class="container" role="main">
-        <div class="main-content">
-          <h1 id="bosefemi">Teorema del Límite Central</h1>
-          <p>Este es un texto de prueba para comprobar que Mathjax va bien.</p>
+      <!-- CAMBIO DE APPLET -->
+      <div class="main-content">
+        <hr>
+        <h1 id="macro">Colectividad Macrocanónica</h1>
+        <p>
+          La teoría de Debye solucionó un problema al que se enfrentaba la física del estado sólico a principios del siglo XX: Las desviaciones de la ley de Dulong-Petit respecto a las medidas experimentales para bajas temperaturas. Debye aplicó la
+          teoría cuántica y resolvió exitosamente estas diferencias.
+        </p>
 
-          <p>
-            Si nombramos $M = 2m$ como la masa total de la molécula y $\mu = m/2$ como la masa reducida, el hamiltoniano se reescribe como:
-          </p>
-
-          \begin{equation}\label{eq:diatHtot}
-          \begin{array}{cc}
-          H_{12}&=\frac{\mathbf{P}^{2}}{2 M}+\frac{\mathbf{L}^{2}}{2 \mu r^{2}}+{\frac{p^{2}}{2 \mu}+V(r)} \\
-          &=H_{T}+H_{rot}+H_{vib}
-          \end{array}
-          \end{equation}
-
-          <p>Hay ecuaciones como \eqref{eq:diatHtot}, referencias... Etc</p>
-
-          <hr>
-
-          En la simulación podemos introducir las temperaturas \button{De rotación} y \button{De vibración},
-
-          <hr>
-          <!-- El applet empieza aqui -->
-          <div style="text-align: center">
-            <div class="container">
-              <div id="myDiv" style="width: 480px; height: 300px;">
-                <!-- Plotly chart will be drawn inside this DIV -->
-              </div>
+        <hr>
+        <!-- El applet empieza aqui -->
+        <div style="text-align: center">
+          <div>
+            <canvas id="canvasMacro" width="500" height="500" style="position: absolute;"></canvas>
+            <canvas id="canvasMacroCuadrado" width="500" height="500" style="position: relative;"></canvas>
+            <div id="graphMacro" style="width: 480px; height: 300px;">
+              <!-- Plotly chart will be drawn inside this DIV -->
             </div>
+          </div>
+          <!-- BOTONERA -->
+          <div>
+            <label for="nMacro">Número de partículas (<300): </label>
+                <input type="number" id="nMacro" name="nMacro" min="0" max="300" value="100"></br>
 
-            <!-- BOTONERA -->
-            <div class="container">
-              <label>Numero:</label>
-              <output id="numeroOut" name="numeroOut">20</output>
-              <input type="range" id="numero" class="slider" name="numero" min="1" max="50" value="20" step="1">
-              </br>
-              </br>
-              <label>Velocidad:</label>
-              <output id="velocidadOut" name="velocidadOut">5</output>
-              <input type="range" id="velocidad" class="slider" name="velocidad" min="1" max="100" value="5" step="5">
-              </br>
-              </br>
-              <label class="input-check"><input type="checkbox" value="something" name="test" /> Start / Stop </label>
-              </br>
-              </br>
-              <select id="stateSelect" name="stateSelect">
-                <option value="0"> Dados (del 1 al 6)</option>
-                <option value="1"> Moneda (0 ó 1)</option>
-                <option value="2">Entre 0 y 1 de forma continua</option>
-              </select>
-            </div>
+                </br>
+                <label for="tempMacro">Temperatura: </label>
+                <input type="number" id="tempMacro" name="tempMacro" min="0" max="300" value="1"></br>
+                </br>
+                <input type="button" id="startBtnMacro" value="Start">
+                <input type="button" id="activaBtnMacro" value="Activa">
           </div>
         </div>
       </div>
     </div>
+    </div> <!-- Final del contenedor -->
 
-    <script type="text/javascript" src="LimiteCentral.js"></script>
+
+    <script src="Fluctuaciones.js"> </script>
+    <script src="Macro.js"> </script>
     <!-- CODIGO DE DERIVATIVE BY MAURICIO POPP -->
     <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script>
     <script>

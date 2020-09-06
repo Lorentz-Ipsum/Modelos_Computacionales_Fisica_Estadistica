@@ -76,12 +76,15 @@ $(document).ready(function() {
                 // Botón del histograma. Cuando se pulsa debe pausarse la simulación
                 var coord = montecarlo(Niv, occB, occF, hisB, hisF, sumB, sumF, maxHistB, maxHistF, beta, levelshift, radio, anchura, altura, marginVert);
                 plotFront(coord, radio);
-                histBosBtn.onclick = function() {
-                    plotHistBos(hisB);
-                };
-                histFerBtn.onclick = function() {
-                    plotHistFer(hisF);
-                };
+                // histBosBtn.onclick = function() {
+                //     plotHistBos(hisB);
+                // };
+                // plotHistBos(hisB);
+                // histFerBtn.onclick = function() {
+                //     plotHistFer(hisF);
+                // };
+                // plotHistFer(hisF);
+                plotHist(hisB, hisF)
 
                 // Repite
                 console.log("Fin de iteración " + f++);
@@ -95,6 +98,86 @@ $(document).ready(function() {
 
 
     // Funciones de plot
+    function plotHist(hisB, hisF) {
+        var freqB = [],
+            freqF = [],
+            levels = [],
+            maxB = Math.max.apply(Math, hisB),
+            maxF = Math.max.apply(Math, hisF);
+        for (var i = 0; i < hisB.length; i++) {
+            levels[i] = i + 1;
+            freqB[i] = hisB[i] / maxB;
+            freqF[i] = hisF[i] / maxF;
+        }
+
+        var traceB = {
+            x: levels,
+            y: freqB,
+            type: "markers",
+        };
+        var traceF = {
+            x: levels,
+            y: freqF,
+            xaxis: 'x2',
+            yaxis: 'y2',
+            type: "markers",
+        };
+        var data = [traceB, traceF];
+        var layout = {
+            grid: {
+                rows: 1,
+                columns: 2,
+                pattern: 'independent'
+            },
+            title: "Histogramas de ocupación",
+            xaxis: {
+                title: "Nivel de energía"
+            },
+            yaxis: {
+                title: "Frecuencia Bosones"
+            },
+            yaxis2: {
+                title: "Frecuencia Fermiones"
+            },
+            xaxis2: {
+                title: "Nivel de energía"
+            },
+            // autosize: true,
+            annotations: [{
+                    text: "Histograma Bosones",
+                    font: {
+                        size: 16,
+                        color: 'blue',
+                    },
+                    showarrow: false,
+                    align: 'center',
+                    x: 0.2,
+                    y: 1.4,
+                    xref: 'paper',
+                    yref: 'paper',
+                },
+                {
+                    text: "Histograma Fermiones",
+                    font: {
+                        size: 16,
+                        color: 'orange',
+                    },
+                    showarrow: false,
+                    align: 'center',
+                    x: 0.8,
+                    y: 1.4,
+                    xref: 'paper',
+                    yref: 'paper',
+                }
+            ],
+        };
+        var config = {
+            responsive: true
+        }
+
+        Plotly.newPlot("graph", data, layout, config);
+    }
+
     function plotHistBos(hisB) {
         var freq = [],
             levels = [],
@@ -111,7 +194,7 @@ $(document).ready(function() {
         var data = [trace];
 
         var layout = {
-            title: "Histograma"
+            title: "Histograma Bosones"
         };
 
         Plotly.newPlot("graphBos", data, layout);
@@ -134,7 +217,7 @@ $(document).ready(function() {
         var data = [trace];
 
         var layout = {
-            title: "histograma"
+            title: "histograma Fermiones"
         };
 
         Plotly.newPlot("graphFer", data, layout);

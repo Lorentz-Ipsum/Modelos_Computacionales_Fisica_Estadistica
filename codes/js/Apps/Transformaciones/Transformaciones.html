@@ -2,13 +2,13 @@
 <html lang="es">
 
   <head>
-    <title>Limite Central</title>
+    <title>Transformaciones</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../../../../web/css/bootstrap.css">
     <!-- Activamos el código Javascript de Bootstrap y de jQuery -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="../js/bootstrap.js"></script>
+    <script src="../../../../web/js/bootstrap.js"></script>
     <!-- Numeric.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/numeric/1.2.6/numeric.min.js"></script>
     <!-- Plotly.js -->
@@ -16,7 +16,12 @@
     <!-- JQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <!-- Importamos MathJax para visualizar LaTeX -->
-
+    <!-- Cosas extra de jasondavies -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="catmap.css">
+    <link href="jquery-ui-1.css" rel="stylesheet">
+    <script src="jquery.js"></script>
+    <script src="jquery-ui-1.js"></script>
     <style type="text/css">
       /* Create three equal columns that floats next to each other */
       .column {
@@ -98,18 +103,18 @@
                 <a class="dropdown-item" href="apps/Osciladores.html">Conjunto de osciladores armónicos</a>
                 <div class="dropdown-divider"></div>
                 <h6 class="dropdown-header">Vibraciones moleculares</h6>
-                <a class="dropdown-item" href="Vibraciones.html#diatomicas">Gas de moléculas diatómicas</a>
+                <a class="dropdown-item active" href="Vibraciones.html#diatomicas">Gas de moléculas diatómicas</a>
                 <a class="dropdown-item" href="Vibraciones.html#debye">Teoría de Debye de los sólidos cristalinos</a>
                 <div class="dropdown-divider"></div>
                 <h6 class="dropdown-header">Gas ideal</h6>
-                <a class="dropdown-item" href="Gas.html#fluctuaciones">Expansión libre de un gas</a>
-                <a class="dropdown-item" href="Gas.html#macro">Colectividad macrocanónica</a>
+                <a class="dropdown-item" href="Fluctuaciones.html">Expansión libre de un gas</a>
+                <a class="dropdown-item" href="Macro.html">Colectividad macrocanónica</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item active" href="Bosefermi.html">Estadísticas de bosones y fermiones</a>
+                <a class="dropdown-item" href="Bosefermi.html">Estadísticas de bosones y fermiones</a>
                 <div class="dropdown-divider"></div>
                 <h6 class="dropdown-header">Modelo de Ising</h6>
-                <a class="dropdown-item" href="Ising.html#lt">Dimensionalidad y límite termodinámico</a>
-                <a class="dropdown-item" href="Ising.html#magnet">Magnetización y transiciones de fase</a>
+                <a class="dropdown-item" href="LT.html">Dimensionalidad y límite termodinámico</a>
+                <a class="dropdown-item" href="Ising.html">Magnetización y transiciones de fase</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="Originales.html">Applets originales</a>
               </div>
@@ -137,7 +142,7 @@
       <!-- Contenidos  ================================================== -->
       <div class="container" role="main">
         <div class="main-content">
-          <h1 id="bosefemi">Teorema del Límite Central</h1>
+          <h1 id="diatomicas">Transformación del panadero</h1>
           <p>Este es un texto de prueba para comprobar que Mathjax va bien.</p>
 
           <p>
@@ -161,38 +166,73 @@
           <!-- El applet empieza aqui -->
           <div style="text-align: center">
             <div class="container">
-              <div id="myDiv" style="width: 480px; height: 300px;">
-                <!-- Plotly chart will be drawn inside this DIV -->
-              </div>
+              <canvas id="canvasBaker" width="300" height="300" style="position:absolute"></canvas>
+              <canvas id="canvasBaker2" width="300" height="300" style="position:relative"></canvas>
             </div>
-
             <!-- BOTONERA -->
             <div class="container">
-              <label>Numero:</label>
-              <output id="numeroOut" name="numeroOut">20</output>
-              <input type="range" id="numero" class="slider" name="numero" min="1" max="50" value="20" step="1">
-              </br>
-              </br>
-              <label>Velocidad:</label>
-              <output id="velocidadOut" name="velocidadOut">5</output>
-              <input type="range" id="velocidad" class="slider" name="velocidad" min="1" max="100" value="5" step="5">
-              </br>
-              </br>
-              <label class="input-check"><input type="checkbox" value="something" name="test" /> Start / Stop </label>
-              </br>
-              </br>
-              <select id="stateSelect" name="stateSelect">
-                <option value="0"> Dados (del 1 al 6)</option>
-                <option value="1"> Moneda (0 ó 1)</option>
-                <option value="2">Entre 0 y 1 de forma continua</option>
+              <label>Imagen:</label>
+              <select id="imageSelect" name="imageSelect" onchange="reImage()">
+                <option value="0">f(x)</option>
+                <option value="1">Invariante Ising-Tartan</option>
+                <option value="2">Gato</option>
               </select>
+              <div>
+                <input id="bakerBtn" value="Baker" type="button">
+                <input id="remapBtnBaker" value="Remap" type="button">
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
 
-    <script type="text/javascript" src="LimiteCentral.js"></script>
+        <!-- CAMBIO DE APPLET -->
+        <div class="main-content">
+          <hr>
+          <h1 id="debye">Transformación de Arnold</h1>
+          <p>
+            Esta de Arnold aún tiene un montón de errores. El problema es que hay muchas posibilidades de matrices y algunas dan comportamientos extraños que son dificiles de distinguir de dichos errores.
+          </p>
+          <p>
+            El botón de reset hace su trabajo más o menos, pero lo mejor es cambiar los valores de la matriz y recargar la página, así se quedan esos valores por defecto.
+          </p>
+
+          <hr>
+          <!-- El applet empieza aqui -->
+          <div style="text-align: center">
+            <div id="preview"><img src="catmap.jpg" /></div>
+            <div style="margin: 20px 0">
+              <canvas id="vis" width="500" height="500"></canvas>
+            </div>
+            <!-- BOTONERA -->
+            <div id="controls">
+              <p>Iteration currently showing: <span id="iteration-count">0</span></p>
+              <p>
+                <input type="button" value="&lt;&lt;" id="step-back" />
+                <input type="button" value="&gt;&gt;" id="step-forward" />
+                <input type="button" value="Iterate until original image reappears" id="play" />
+                <input type="button" value="Reset" id="reset" />
+              </p>
+              <p>Iteration: <span id="iterations"></span> <span id="iteration-target">0</span></p>
+            </div>
+            <hr>
+            <label for="t11">T11:</label>
+            <input type="number" id="t11" name="t11" value="2" step="0.1"></br>
+            </br>
+            <label for="t12">T12:</label>
+            <input type="number" id="t12" name="t12" value="1" step="0.1"></br>
+            </br>
+            <label for="t21">T21:</label>
+            <input type="number" id="t21" name="t21" value="1" step="0.1"></br>
+            </br>
+          </div>
+        </div>
+      </div>
+    </div> <!-- Final del contenedor -->
+
+
+    <script src="Baker.js"> </script>
+    <script src="Arnold.js"> </script>
+    <!-- <script src="Arnold.js"> </script> -->
     <!-- CODIGO DE DERIVATIVE BY MAURICIO POPP -->
     <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script>
     <script>

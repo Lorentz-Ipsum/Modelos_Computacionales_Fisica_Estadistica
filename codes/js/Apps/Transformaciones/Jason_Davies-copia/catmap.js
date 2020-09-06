@@ -5,6 +5,21 @@ var resetError = function() {
     $('span.error #imageurl').unwrap().next('span.reason').remove();
 };
 try {
+    init();
+} catch (e) {
+    console.error(e);
+    $('#preview').show();
+    $('#controls').html('<p><em>Sorry, HTML canvas support is needed to view this demo.  Please use a compatible browser such as <a href="http://www.google.com/chrome/">Google Chrome</a>.</em></p>');
+}
+$('#reset').click(function() {
+    iterations = 0;
+    $('#iterations').value = 0;
+    $('#iteration-target').value = 0;
+    $('#iteration-count').value = 0;
+    init();
+});
+
+function init() {
     var c = canvas.getContext("2d");
     var iterations = 0,
         stopIteration = 0;
@@ -13,7 +28,11 @@ try {
     var t11 = document.getElementById('t11').value,
         t12 = document.getElementById('t12').value,
         t21 = document.getElementById('t21').value;
-    var t22 = (t12 * t21 + 1) / t11;
+    var t22 = redondea((t12 * t21 + 1) / t11, 4);
+
+    function redondea(num, places) {
+        return +(Math.round(num + "e+" + places) + "e-" + places);
+    }
 
     function handleURL(url) {
         if (!url) return;
@@ -156,8 +175,4 @@ try {
         $('#iterations').slider('value', stopIteration);
         $('#iteration-target').text(stopIteration);
     });
-} catch (e) {
-    console.error(e);
-    $('#preview').show();
-    $('#controls').html('<p><em>Sorry, HTML canvas support is needed to view this demo.  Please use a compatible browser such as <a href="http://www.google.com/chrome/">Google Chrome</a>.</em></p>');
 }
