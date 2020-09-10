@@ -3,23 +3,18 @@
 // Global variables:
 var canvas = document.getElementById('theCanvas');
 var context = canvas.getContext('2d');
-var canvasMag = document.getElementById('theMag');
-var contextMag = canvasMag.getContext('2d');
-contextMag.clearRect(0, 0, canvasMag.width, canvasMag.height);
-contextMag.fillStyle = "black";
-contextMag.fillRect(0, 0, canvasMag.width, canvasMag.height);
 var startButton = document.getElementById('startButton');
 var tempSlider = document.getElementById('tempSlider');
-var tempReadout = document.getElementById('tempReadout');
+var tempLectura = document.getElementById('tempLectura');
 var sizeSelectX = document.getElementById('sizeSelectX');
-var sizeSelectY = document.getElementById('sizeSelectY');
-var speedReadout = document.getElementById('speedReadout');
+var sizeSelectY = document.getElementById('sizeSelectX');
+// var sizeSelectY = document.getElementById('sizeSelectY');
+// var speedReadout = document.getElementById('speedReadout');
 var spfSlider = document.getElementById('spfSlider');
-var spfReadout = document.getElementById('spfReadout');
+var spfLectura = document.getElementById('spfLectura');
 var pixelCheck = document.getElementById('pixelCheck');
 var mobile = navigator.userAgent.match(/iPhone|iPad|iPod|Android|BlackBerry|Opera Mini|IEMobile/i)
 var image = context.createImageData(canvas.width, canvas.height); // for direct pixel manipulation (faster than fillRect)
-var imageMag = context.createImageData(canvasMag.width, canvasMag.height);
 // Loops to initialize the canvas
 for (var i = 0; i < image.data.length; i += 4) {
     //image.data[i] = 0;					// set red to zero (not needed when set in colorSquare)
@@ -32,7 +27,8 @@ var maxSize = canvas.width;
 sizeSelectX.selectedIndex = 2;
 if (mobile) sizeSelectX.selectedIndex = 1; // smaller works better on mobile platforms
 var sizeX = Number(sizeSelectX.options[sizeSelectX.selectedIndex].text);
-var sizeY = Number(sizeSelectY.options[sizeSelectY.selectedIndex].text);
+var sizeY = Number(sizeSelectX.options[sizeSelectX.selectedIndex].text);
+// var sizeY = Number(sizeSelectY.options[sizeSelectY.selectedIndex].text);
 var squareWidth = canvas.width / sizeX; // width of each lattice site in pixels
 var squareHeight = canvas.height / sizeY;
 
@@ -98,7 +94,7 @@ function simulate() {
         plotMag(imanacion);
         stepCount += stepsPerFrame;
         var elapsedTime = ((new Date()).getTime() - startTime) / 1000; // time in seconds
-        speedReadout.innerHTML = Number(stepCount / elapsedTime).toFixed(0);
+        // speedReadout.innerHTML = Number(stepCount / elapsedTime).toFixed(0);
     }
     window.setTimeout(simulate, 1); // come back in 1 ms
 }
@@ -162,7 +158,7 @@ function startStop() {
 
 // Function to update the temperature readout:
 function showTemp() {
-    tempReadout.value = Number(tempSlider.value).toFixed(2);
+    tempLectura.textContent = Number(tempSlider.value).toFixed(2);
 }
 
 // Resize the lattice (block-spin transformaiton):
@@ -183,8 +179,9 @@ function resize() {
     }
     // Get new size from GUI selector:
     sizeX = Number(sizeSelectX.options[sizeSelectX.selectedIndex].text);
+    sizeY = Number(sizeSelectX.options[sizeSelectX.selectedIndex].text);
+    // sizeY = Number(sizeSelectY.options[sizeSelectY.selectedIndex].text);
     squareWidth = canvas.width / sizeX;
-    sizeY = Number(sizeSelectY.options[sizeSelectY.selectedIndex].text);
     squareHeight = canvas.height / sizeY;
     // Now re-create the spin array, down-sampling from temporary array
     s = new Array(sizeX);
@@ -224,7 +221,7 @@ function adjustSPF() {
         spf *= 5;
     }
     stepsPerFrame = spf;
-    spfReadout.value = spf;
+    spfLectura.textContent = spf;
     reset();
 }
 
@@ -239,7 +236,7 @@ function adjustJ() {
         spf *= 5;
     }
     stepsPerFrame = spf;
-    spfReadout.value = spf;
+    canjeLectura.value = spf;
 }
 
 // Function to select the graphics mode, based on checkbox state:
@@ -277,25 +274,30 @@ function plotMag(magnetizacion) {
     };
     var data = [trace];
     var layout = {
-        autosize: false,
+        height: 400,
         title: 'Magnetización',
         xaxis: {
-            range: [0, 1],
-            title: 'j',
+            title: 'T',
         },
         yaxis: {
-            range: [-1, 1],
             title: 'M',
+            range: [-1, 1],
         },
         font: {
-            size: 15
+            size: 18,
         },
+        margin: {
+            l: 60,
+            r: 30,
+            d: 20,
+        },
+        showlegend: false,
         plot_bgcolor: 'rgb(223, 223, 223)'
     };
 
     var config = {
         staticPlot: true,
-        responsive: false,
+        responsive: true,
     }
 
     Plotly.newPlot('graph', data, layout, config);

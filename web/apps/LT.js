@@ -56,18 +56,15 @@ function plotExacto(unaD, dosD) {
         x: XunaD,
         y: YunaD,
         type: "lines",
+        name: '1D'
     };
     var twoD = {
         x: XdosD,
         y: YdosD,
         type: "lines",
+        name: '2D Perfecta'
     };
-    var vert = {
-        x: XdosD,
-        y: YdosD,
-        type: "lines",
-    };
-    var data = [oneD, twoD, vert];
+    var data = [oneD, twoD];
 
     var layout = {
         title: "Exactas",
@@ -87,24 +84,32 @@ function plotExacto(unaD, dosD) {
                 x1: 2.27,
                 y1: 2,
                 line: {
-                    color: 'red',
+                    color: 'black',
                     width: 1,
                     dash: 'dot'
                 }
             }
-        ]
+        ],
+        legend: {
+            x: 1,
+            xanchor: 'right',
+            y: 1
+        }
+    };
+    config = {
+        staticPlot: true,
+        responsive: true,
     };
 
-    Plotly.newPlot("myDiv", data, layout);
+    Plotly.newPlot("myDiv", data, layout, config);
 }
 
-function plotCv(cv) { // Funcion cutre. Arreglar que repita todo el proceso de plot cada vez.
-    // También, quitar la interactividad de las gráficas.
-
+function plotCv(cv) {
     var trace = {
         x: cv[0],
         y: cv[1],
         type: "lines",
+        name: nx.value + 'x' + ny.value,
     };
     var data = [trace];
 

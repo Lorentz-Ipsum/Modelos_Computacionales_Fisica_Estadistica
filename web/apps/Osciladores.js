@@ -1,3 +1,19 @@
+// Variables de los sliders
+var nSlider = document.getElementById('numeroSlider');
+var nLectura = document.getElementById('numeroLectura');
+var mSlider = document.getElementById('sectorSlider');
+var mLectura = document.getElementById('sectorLectura');
+var vSlider = document.getElementById('velocidadSlider');
+var vLectura = document.getElementById('velocidadLectura');
+var freqSelect = document.getElementById('freqSelect');
+var faseSelect = document.getElementById('faseSelect');
+var n = nSlider.value,
+    m = mSlider.value,
+    vel = 1000;
+var freq = faseSelect.value;
+var fase = faseSelect.value;
+
+// Variables del canvas
 var canvasSec = document.getElementById("canvasSec");
 var ctxSec = canvasSec.getContext("2d");
 var canvasOsc = document.getElementById("canvasOsc");
@@ -5,258 +21,118 @@ var ctxOsc = canvasOsc.getContext("2d");
 var freqSelect = document.querySelector('#freqSelect');
 var faseSelect = document.querySelector('#faseSelect');
 var speedSelect = document.querySelector('#speedSelect');
+var w = canvasSec.width;
 
-var interval;
+var frames = [],
+    dif = [];
+var f = 0;
+frames.push(f);
+var barras = 100;
+var running = false;
+var osc = generaOsc(n, freq, fase);
+var freqArr = osc[0],
+    faseArr = osc[1],
+    arrS = [],
+    histo = [];
+for (var i = 0; i < barras; i++) {
+    histo[i] = 0;
+}
+var maxHist = 0;
+arrS.push(getEntropy(m, faseArr));
+histo[Math.floor(arrS[0] * barras)]++;
 
+drawSec(m);
+plotNormEntropy(f, arrS);
 
-// Contadores para los slider
-$(document).on('input', 'input[type="range"]', function(e) {
-    var changes = this.id + 'Out';
-    document.getElementById(changes).innerHTML = e.target.value;
-});
+simulate();
 
+//////////////////////////
+// FUNCIONES DE CALCULO //
+//////////////////////////
 
-// CODIGO PRINCIPAL
-$(document).ready(function() {
+function simulate() {
+    if (running) {
+        drawOsc(faseArr);
+        plotNormEntropy(f, arrS);
+        faseArr = stepOsc(freqArr, faseArr);
+        arrS.push(getEntropy(m, faseArr));
+        histo[Math.floor(arrS[f] * barras)]++;
+        if (histo[f] > maxHist) {
+            maxHist = histo[f];
+        };
+        console.log("Fin de iteración " + f++);
+    }
+    window.setTimeout(simulate, vel); //Aqui iria el ajuste de velocidad
+}
 
-    histogram.onclick = function() {
-        var win = window.open("", "Title", "toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width=780,height=200,top=" + (screen.height - 400) + ",left=" + (screen.width - 840));
-        win.document.body.innerHTML = "<div style='max-height:300px'>  <div id='graphHist' style='width: 300px; height: 300px; position: relative;'>    <!-- Plotly chart will be drawn inside this DIV -->  </div></div>";
-        plotHist(f, arrS);
-    };
-
-    $('input[type=checkbox][name=test]').change(function(e) {
-        if (this.checked) {
-            console.log("START");
-            var f = 0;
-            var frames = [],
-                dif = [];
-            frames.push(f);
-
-            // Inicializar los valores de los sliders
-            var freq = freqSelect.value,
-                fase = faseSelect.value;
-            var n = numero.value,
-                m = sectores.value,
-                vel,
-                barras = 100;
-
-            switch (Number(speedSelect.value)) {
-                case 0:
-                    vel = 1000;
-                    break;
-                case 1:
-                    vel = 500;
-                    break;
-                case 2:
-                    vel = 100;
-                    break;
-                case 3:
-                    vel = 10;
-                    break;
-                case 4:
-                    vel = 0.001;
-                    break;
-            }
-
-            drawSec(m);
-            var osc = generaOsc(n, freq, fase);
-            var freqArr = osc[0],
-                faseArr = osc[1],
-                arrS = [],
-                histo = [];
-
-            for (var i = 0; i < barras; i++) {
-                histo[i] = 0;
-            }
-            var maxHist;
-
-            arrS.push(getEntropy(m, faseArr));
-            histo[Math.floor(arrS[0] * barras)]++;
-
-            interval = setInterval(function() {
-                // LOOP DE PLOT
-                ///////////////
-                drawOsc(faseArr);
-                plotNormEntropy(f, arrS);
-
-                faseArr = stepOsc(freqArr, faseArr);
-                arrS.push(getEntropy(m, faseArr));
-
-                histo[Math.floor(arrS[f] * barras)]++;
-                if (histo[f] > maxHist) {
-                    maxHist = histo[f];
-                }
-                // Botón del histograma. Cuando se pulsa debe pausarse la simulación
-                histBtn.onclick = function() {
-                    plotHist(histo, barras);
-                };
-
-                // Repite
-                console.log("Fin de iteración " + f++);
-            }, vel);
-        } else {
-            console.log("STOP");
-            clearInterval(interval);
-        }
-    });
-}); // Fin de document.ready
-
-
-
-/////////////////////////////
-// DEFINICION DE FUNCIONES //
-/////////////////////////////
-
-// FUNCIONES DE PLOT
-////////////////////
-
-function drawOsc(faseArr) {
-    ctxOsc.setTransform(1, 0, 0, 1, 0, 0);
-    ctxOsc.clearRect(0, 0, canvasOsc.width, canvasOsc.height);
-    ctxOsc.translate(canvasOsc.width / 2, canvasOsc.height / 2);
-
-    var r1 = 10;
-    var r2 = 170;
-
-    // Dibuja las bolitas
-    for (var i = 0; i < faseArr.length; i++) {
-        var theta = faseArr[i];
-
-        var x1 = r1 * Math.cos(theta);
-        var y1 = r1 * Math.sin(theta);
-        var x2 = r2 * Math.cos(theta);
-        var y2 = r2 * Math.sin(theta);
-
-        ctxOsc.beginPath();
-        ctxOsc.moveTo(x1, y1);
-        ctxOsc.lineTo(x2, y2);
-        ctxOsc.lineWidth = 3;
-        ctxOsc.strokeStyle = 'red';
-        ctxOsc.stroke();
+// Funcion para empezar o pausar la simulacion
+function startStop() {
+    running = !running;
+    if (running) {
+        console.log("START");
+        i = 0;
+        startButton.value = " Pause ";
+        // reset();
+    } else {
+        startButton.value = "Resume";
     }
 }
 
-function drawSec(m) {
-    ctxSec.setTransform(1, 0, 0, 1, 0, 0);
-    ctxSec.clearRect(0, 0, canvasSec.width, canvasSec.height);
-    ctxSec.fillStyle = "white";
-    ctxSec.fillRect(0, 0, canvasOsc.width, canvasOsc.height);
-    ctxSec.translate(canvasSec.width / 2, canvasSec.height / 2);
-
-    // Dibuja el circulo
-    ctxSec.beginPath();
-    ctxSec.arc(0, 0, 200, 0, 2 * Math.PI, true);
-    ctxSec.lineWidth = 3;
-    ctxSec.strokeStyle = 'black';
-    ctxSec.stroke();
-
-    var r1 = 150;
-    var r2 = 250;
-
-    // Dibuja los sectores
-    for (var i = 0; i < m; i++) {
-        var theta = ((2 * Math.PI) / m) * i;
-
-        var x1 = r1 * Math.cos(theta);
-        var y1 = r1 * Math.sin(theta);
-        var x2 = r2 * Math.cos(theta);
-        var y2 = r2 * Math.sin(theta);
-
-        ctxSec.beginPath();
-        ctxSec.moveTo(x1, y1);
-        ctxSec.lineTo(x2, y2);
-        ctxSec.lineWidth = 5;
-        ctxSec.strokeStyle = 'green';
-        ctxSec.stroke();
-    }
-}
-
-function plotNormEntropy(frames, arrS) {
-    // Trazas
-    var numsTrace = {
-        x: frames,
-        y: arrS,
-        mode: 'lines',
-        name: 'Diferencia',
-        line: {
-            color: 'rgb(0,0,255)',
-            width: 1,
-            opacity: 0.7
-        }
-    };
-    var data = [numsTrace];
-    var layout = {
-        autosize: true,
-        width: 500,
-        height: 300,
-        title: 'Entropía normalizada',
-        font: {
-            size: 15
-        },
-        plot_bgcolor: 'rgb(223, 223, 223)'
-    };
-
-    var config = {
-        staticPlot: true
-    }
-
-    Plotly.newPlot('graph', data, layout, config);
-}
-
-function plotHist(histo, barras) {
-
-    var threshold = 0;
-
+// Funcion para restaurar la grafica
+function resetPlot() {
+    running = false;
+    startButton.value = " Start ";
+    frames = [];
+    dif = [];
+    f = 0;
+    frames.push(f);
+    barras = 100;
+    osc = generaOsc(n, freq, fase);
+    freqArr = osc[0];
+    faseArr = osc[1];
+    arrS = [];
+    histo = [];
     for (var i = 0; i < barras; i++) {
-        if (histo[i] > 1 && threshold == 0) {
-            threshold = i;
-        }
+        histo[i] = 0;
     }
+    var maxHist;
+    arrS.push(getEntropy(m, faseArr));
+    histo[Math.floor(arrS[0] * barras)]++;
 
-    // GraficoAuxiliar var4 = new GraficoAuxiliar(this.anchura, this.altura, (double) var2 / (double) this.BARRAS, 1.0 D, 0.0 D, Math.floor(Math.log((double) this.maxHist)) + 1.0 D, "S", "N(S)");
-    // var4.cuadro.FG_BG(false);
-    // var4.cuadro.setCol(Color.blue);
-    var S = [],
-        Ns = [];
-
-    for (var i = threshold; i < barras; i++) {
-        S.push(i / barras);
-        Ns.push(Math.log(histo[i]));
-    }
-
-    // var4.cuadro.FG_BG(true);
-
-
-    // Trazas
-    var numsTrace = {
-        x: S,
-        y: Ns,
-        mode: 'markers',
-        name: 'Diferencia',
-    };
-    var data = [numsTrace];
-    var layout = {
-        autosize: true,
-        width: 500,
-        height: 300,
-        title: 'Logaritmo',
-        font: {
-            size: 15
-        },
-        plot_bgcolor: 'rgb(223, 223, 223)'
-    };
-
-    var config = {
-        staticPlot: true
-    }
-
-    Plotly.newPlot('graphHist', data, layout, config);
+    drawSec(m);
+    drawOsc(faseArr);
+    plotNormEntropy(f, arrS);
 }
 
-// FUNCIONES DE CALCULO
-///////////////////////
+// Funcion para actualizar la lectura de N
+function updateNum() {
+    nLectura.textContent = Number(nSlider.value);
+    n = nSlider.value;
+}
 
+// Funcion para actualizar la lectura de M
+function updateSec() {
+    mLectura.textContent = Number(mSlider.value);
+    m = mSlider.value;
+}
+
+// Funcion para actualizar la lectura de la velocidad
+function updateVel() {
+    vLectura.textContent = Number(vSlider.value);
+    vel = (1 / Math.pow(vSlider.value, 5)) * 1000;
+}
+
+// Funcion para actualizar el tipo de distribucion de frecuencias
+function updateFreq() {
+    freq = freqSelect.value;
+}
+
+// Funcion para actualizar el tipo de distribucion de fases
+function updateFase() {
+    fase = faseSelect.value;
+}
+
+// Funcion que genera el array de osciladores
 function generaOsc(n, freq, fase) {
     var freqArr = [],
         faseArr = [];
@@ -298,7 +174,7 @@ function generaOsc(n, freq, fase) {
     return [freqArr, faseArr];
 }
 
-
+// Funcion que evoluciona el estado de los osciladores
 function stepOsc(freqArr, faseArr) {
     for (var i = 0; i < freqArr.length; i++) {
         faseArr[i] += freqArr[i] / 4;
@@ -306,14 +182,13 @@ function stepOsc(freqArr, faseArr) {
     return faseArr;
 }
 
-
+// Funcion que calcula la entropia de los osciladores
 function getEntropy(m, faseArr) {
     var Smax = Math.log(m),
         n = faseArr.length;
     var S = 0;
     var alpha = [];
     var theta0, theta1, faseAbsoluta;
-
     for (var i = 0; i < m; i++) {
         alpha.push(0);
         theta0 = ((2 * Math.PI) / m) * i;
@@ -330,4 +205,144 @@ function getEntropy(m, faseArr) {
     }
     S = -S / Smax;
     return S;
+}
+
+///////////////////////
+// FUNCIONES DE PLOT //
+///////////////////////
+
+// Funcion para dibujar el circulo y los sectores
+function drawSec(m) {
+    ctxSec.setTransform(1, 0, 0, 1, 0, 0);
+    ctxSec.clearRect(0, 0, w, w);
+    ctxSec.fillStyle = "white";
+    ctxSec.fillRect(0, 0, w, w);
+    ctxSec.translate(w / 2, w / 2);
+    ctxSec.beginPath();
+    ctxSec.arc(0, 0, w / 2 - 30, 0, 2 * Math.PI, true);
+    ctxSec.lineWidth = 5;
+    ctxSec.strokeStyle = 'black';
+    ctxSec.stroke();
+    var r1 = w / 2 - 20;
+    var r2 = w / 2 - 60;
+    // Dibuja los sectores
+    for (var i = 0; i < m; i++) {
+        var theta = ((2 * Math.PI) / m) * i;
+        var x1 = r1 * Math.cos(theta);
+        var y1 = r1 * Math.sin(theta);
+        var x2 = r2 * Math.cos(theta);
+        var y2 = r2 * Math.sin(theta);
+        ctxSec.beginPath();
+        ctxSec.moveTo(x1, y1);
+        ctxSec.lineTo(x2, y2);
+        ctxSec.lineWidth = 5;
+        ctxSec.strokeStyle = 'green';
+        ctxSec.stroke();
+    }
+}
+
+// Funcion para dibujar el estado instantaneo de los osciladores
+function drawOsc(faseArr) {
+    ctxOsc.setTransform(1, 0, 0, 1, 0, 0);
+    ctxOsc.clearRect(0, 0, w, w);
+    ctxOsc.translate(w / 2, w / 2);
+    var r1 = w / 20;
+    var r2 = 3 * w / 8;
+    for (var i = 0; i < faseArr.length; i++) {
+        var theta = faseArr[i];
+        var x1 = r1 * Math.cos(theta);
+        var y1 = r1 * Math.sin(theta);
+        var x2 = r2 * Math.cos(theta);
+        var y2 = r2 * Math.sin(theta);
+        ctxOsc.beginPath();
+        ctxOsc.moveTo(x1, y1);
+        ctxOsc.lineTo(x2, y2);
+        ctxOsc.lineWidth = 3;
+        ctxOsc.strokeStyle = 'red';
+        ctxOsc.stroke();
+    }
+}
+
+// Funcion para dibujar la entropia normalizada
+function plotNormEntropy(frames, arrS) {
+    var numsTrace = {
+        x: frames,
+        y: arrS,
+        mode: 'lines',
+        name: 'Diferencia',
+        line: {
+            color: 'rgb(0,0,255)',
+            width: 1,
+            opacity: 0.7
+        }
+    };
+    var data = [numsTrace];
+    var layout = {
+        title: 'Entropía normalizada',
+        xaxis: {
+            title: 't',
+        },
+        yaxis: {
+            title: 'S',
+            range: [0, 1],
+        },
+        font: {
+            size: 18,
+        },
+        margin: {
+            u: 30,
+            l: 60,
+            r: 30,
+            d: 20,
+        },
+        showlegend: false,
+        plot_bgcolor: 'rgb(223, 223, 223)'
+    };
+    var config = {
+        staticPlot: true,
+        responsive: true,
+    }
+    Plotly.newPlot('graph', data, layout, config);
+}
+
+// Funcion para dibujar el histograma
+function plotHist() {
+    var threshold = 0;
+    for (var i = 0; i < barras; i++) {
+        if (histo[i] > 1 && threshold == 0) {
+            threshold = i;
+        }
+    }
+    var S = [],
+        Ns = [];
+    for (var i = threshold; i < barras; i++) {
+        S.push(i / barras);
+        Ns.push(Math.log(histo[i]));
+    }
+    var numsTrace = {
+        x: S,
+        y: Ns,
+        mode: 'markers',
+        name: 'Diferencia',
+    };
+    var data = [numsTrace];
+    var layout = {
+        width: 450,
+        title: 'Logaritmo',
+        font: {
+            size: 15
+        },
+        xaxis: {
+            title: 'S',
+        },
+        yaxis: {
+            title: 'N(s)',
+        },
+        plot_bgcolor: 'rgb(223, 223, 223)'
+    };
+    var config = {
+        staticPlot: true,
+        responsive: true,
+    }
+    Plotly.newPlot('graphHist', data, layout, config);
 }

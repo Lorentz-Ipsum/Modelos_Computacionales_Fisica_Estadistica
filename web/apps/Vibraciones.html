@@ -4,7 +4,8 @@
   <head>
     <title>Vibraciones</title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="../img/favicon.ico">
     <link rel="stylesheet" href="../css/bootstrap.css">
     <!-- Activamos el código Javascript de Bootstrap y de jQuery -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -18,36 +19,8 @@
     <!-- Importamos MathJax para visualizar LaTeX -->
 
     <style type="text/css">
-      /* Create three equal columns that floats next to each other */
-      .column {
-        float: left;
-        width: 50%;
-      }
-
-      /* Clear floats after the columns */
-      .row:after {
-        content: "";
-        display: table;
-        clear: both;
-      }
-
-      /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
-      @media screen and (max-width: 600px) {
-        .column {
-          width: 100%;
-        }
-
-        .container {
-          display: flex;
-        }
-
-        .fixed {
-          width: 300px;
-        }
-
-        .flex-item {
-          flex-grow: 1;
-        }
+      body {
+        padding: 45px 0 0 0;
       }
     </style>
     <style media="screen">
@@ -64,7 +37,7 @@
     <div class="container">
 
       <!-- Barra de navegación ======================= -->
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top">
         <a class="navbar-brand" href="../index.html">\(\int f(x) dx\)</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -95,11 +68,11 @@
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="Kac.html">Anillo de Kac</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="apps/Osciladores.html">Conjunto de osciladores armónicos</a>
+                <a class="dropdown-item" href="Osciladores.html">Conjunto de osciladores armónicos</a>
                 <div class="dropdown-divider"></div>
                 <h6 class="dropdown-header">Vibraciones moleculares</h6>
                 <a class="dropdown-item active" href="Vibraciones.html#diatomicas">Gas de moléculas diatómicas</a>
-                <a class="dropdown-item" href="Vibraciones.html#debye">Teoría de Debye de los sólidos cristalinos</a>
+                <a class="dropdown-item active" href="Vibraciones.html#debye">Teoría de Debye de los sólidos cristalinos</a>
                 <div class="dropdown-divider"></div>
                 <h6 class="dropdown-header">Gas ideal</h6>
                 <a class="dropdown-item" href="Gas.html#fluctuaciones">Expansión libre de un gas</a>
@@ -160,17 +133,28 @@
           <hr>
           <!-- El applet empieza aqui -->
           <div style="text-align: center">
-            <div id="divDiat" style="width: 800px; height: 500px; margin:auto">
-              <!-- Plotly chart will be drawn inside this DIV -->
+            <div class="card card-body bg-light">
+              <div id="divDiat" style="height: 400px;">
+                <!-- Plotly chart will be drawn inside this DIV -->
+              </div>
             </div>
+            <br>
             <!-- BOTONERA -->
-            <label for="tempRot">Temperatura de rotación:</label>
-            <input type="number" id="tempRot" name="tempRot" min="0" max="" value="30" step="0.001"></br>
-            </br>
-            <label for="tempVib">Temperatura de vibración:</label>
-            <input type="number" id="tempVib" name="tempVib" min="0" max="" value="3000"></br>
-            </br>
-            <input type="button" id="calculaDiatBtn" value="Calcula">
+            <form class="form-group card card-body bg-light">
+              <div class="col-md-12" style="max-height:400px">
+                <label for="tempRot">Temperatura de rotación:</label>
+                <input type="number" id="tempRot" class="form-control" min="0" max="" value="30" step="0.001"></br>
+              </div>
+              </br>
+              <div class="col-md-12">
+                <label for="tempVib">Temperatura de vibración:</label>
+                <input type="number" id="tempVib" class="form-control" min="0" max="" value="3000"></br>
+              </div>
+              </br>
+              <div class="col-md-12">
+                <input type="button" id="calculaDiatBtn" value="Calcula" onclick="simulate()" class="btn btn-primary">
+              </div>
+            </form>
           </div>
         </div>
 

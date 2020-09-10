@@ -4,7 +4,8 @@
   <head>
     <title>Gas Ideal</title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="../img/favicon.ico">
     <link rel="stylesheet" href="../css/bootstrap.css">
     <!-- Activamos el código Javascript de Bootstrap y de jQuery -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -18,36 +19,8 @@
     <!-- Importamos MathJax para visualizar LaTeX -->
 
     <style type="text/css">
-      /* Create three equal columns that floats next to each other */
-      .column {
-        float: left;
-        width: 50%;
-      }
-
-      /* Clear floats after the columns */
-      .row:after {
-        content: "";
-        display: table;
-        clear: both;
-      }
-
-      /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
-      @media screen and (max-width: 600px) {
-        .column {
-          width: 100%;
-        }
-
-        .container {
-          display: flex;
-        }
-
-        .fixed {
-          width: 300px;
-        }
-
-        .flex-item {
-          flex-grow: 1;
-        }
+      body {
+        padding: 45px 0 0 0;
       }
     </style>
     <style media="screen">
@@ -64,7 +37,7 @@
     <div class="container">
 
       <!-- Barra de navegación ======================= -->
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top">
         <a class="navbar-brand" href="../index.html">\(\int f(x) dx\)</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -95,15 +68,15 @@
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="Kac.html">Anillo de Kac</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="apps/Osciladores.html">Conjunto de osciladores armónicos</a>
+                <a class="dropdown-item" href="Osciladores.html">Conjunto de osciladores armónicos</a>
                 <div class="dropdown-divider"></div>
                 <h6 class="dropdown-header">Vibraciones moleculares</h6>
-                <a class="dropdown-item active" href="Vibraciones.html#diatomicas">Gas de moléculas diatómicas</a>
+                <a class="dropdown-item" href="Vibraciones.html#diatomicas">Gas de moléculas diatómicas</a>
                 <a class="dropdown-item" href="Vibraciones.html#debye">Teoría de Debye de los sólidos cristalinos</a>
                 <div class="dropdown-divider"></div>
                 <h6 class="dropdown-header">Gas ideal</h6>
-                <a class="dropdown-item" href="Gas.html#fluctuaciones">Expansión libre de un gas</a>
-                <a class="dropdown-item" href="Gas.html#macro">Colectividad macrocanónica</a>
+                <a class="dropdown-item active" href="Gas.html#fluctuaciones">Expansión libre de un gas</a>
+                <a class="dropdown-item active" href="Gas.html#macro">Colectividad macrocanónica</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="Bosefermi.html">Estadísticas de bosones y fermiones</a>
                 <div class="dropdown-divider"></div>
@@ -111,110 +84,148 @@
                 <a class="dropdown-item" href="Ising.html#lt">Dimensionalidad y límite termodinámico</a>
                 <a class="dropdown-item" href="Ising.html#magnet">Magnetización y transiciones de fase</a>
                 <div class=" dropdown-divider">
+                </div>
+                <a class="dropdown-item" href="Originales.html">Applets originales</a>
               </div>
-              <a class="dropdown-item" href="Originales.html">Applets originales</a>
-        </div>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="../Codigos.html">Códigos</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="../Bibliografia.html">Bibliografía</a>
-        </li>
-        <li class="nav-item">
-        </li>
-        </ul>
-        <ul class="navbar-nav">
-          <li>
-            <a class="nav-link" href="../About.html">About</a>
-          </li>
-        </ul>
-        <!-- <form class="form-inline my-2 my-md-0">
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../Codigos.html">Códigos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../Bibliografia.html">Bibliografía</a>
+            </li>
+            <li class="nav-item">
+            </li>
+          </ul>
+          <ul class="navbar-nav">
+            <li>
+              <a class="nav-link" href="../About.html">About</a>
+            </li>
+          </ul>
+          <!-- <form class="form-inline my-2 my-md-0">
             <input class="form-control" type="text" placeholder="Search">
           </form> -->
-    </div>
-    </nav>
+        </div>
+      </nav>
 
-    <!-- Contenidos  ================================================== -->
-    <div class="container" role="main">
-      <div class="main-content">
-        <h1 id="fluctuaciones">Irreversibilidad y fluctuaciones en el equilibrio</h1>
-        <p>Este es un texto de prueba para comprobar que Mathjax va bien.</p>
+      <!-- Contenidos  ================================================== -->
+      <div class="container" role="main">
+        <div class="main-content">
+          <h1 id="fluctuaciones">Irreversibilidad y fluctuaciones en el equilibrio</h1>
+          <p>Este es un texto de prueba para comprobar que Mathjax va bien.</p>
 
-        <p>
-          Si nombramos $M = 2m$ como la masa total de la molécula y $\mu = m/2$ como la masa reducida, el hamiltoniano se reescribe como:
-        </p>
+          <p>
+            Si nombramos $M = 2m$ como la masa total de la molécula y $\mu = m/2$ como la masa reducida, el hamiltoniano se reescribe como:
+          </p>
 
-        \begin{equation}\label{eq:diatHtot}
-        \begin{array}{cc}
-        H_{12}&=\frac{\mathbf{P}^{2}}{2 M}+\frac{\mathbf{L}^{2}}{2 \mu r^{2}}+{\frac{p^{2}}{2 \mu}+V(r)} \\
-        &=H_{T}+H_{rot}+H_{vib}
-        \end{array}
-        \end{equation}
+          \begin{equation}\label{eq:diatHtot}
+          \begin{array}{cc}
+          H_{12}&=\frac{\mathbf{P}^{2}}{2 M}+\frac{\mathbf{L}^{2}}{2 \mu r^{2}}+{\frac{p^{2}}{2 \mu}+V(r)} \\
+          &=H_{T}+H_{rot}+H_{vib}
+          \end{array}
+          \end{equation}
 
-        <p>Hay ecuaciones como \eqref{eq:diatHtot}, referencias... Etc</p>
+          <p>Hay ecuaciones como \eqref{eq:diatHtot}, referencias... Etc</p>
 
-        <hr>
+          <hr>
 
-        En la simulación podemos introducir las temperaturas \button{De rotación} y \button{De vibración},
+          En la simulación podemos introducir las temperaturas \button{De rotación} y \button{De vibración},
 
-        <hr>
-        <!-- El applet empieza aqui -->
-        <div style="text-align: center">
-          <div>
-            <canvas id="canvasFluctuaciones" style="width: 500px; height: 500px;"></canvas>
-            <div id="graphFluctuaciones" style="width: 480px; height: 300px;">
-              <!-- Plotly chart will be drawn inside this DIV -->
+          <hr>
+          <!-- El applet empieza aqui -->
+          <div style="text-align: center">
+            <div class="card card-body bg-light">
+              <div class="row">
+                <div class="col-md">
+                  <canvas id="canvasFluctuaciones" style="width: 400px; height: 400px;position:absolute"></canvas>
+                  <canvas id="canvasFluctuacionesMarco" style="width: 400px; height: 400px;position:relative"></canvas>
+                </div>
+                <div class="col-md">
+                  <div id="graphFluctuaciones" style="height: 400px;">
+                  </div>
+                </div>
+                <!-- Plotly chart will be drawn inside this DIV -->
+              </div>
             </div>
+            <br>
+            <!-- BOTONERA -->
+            <form class="class= card card-body bg-light">
+              <div class="row">
+                <div class="col-md-6">
+                  <label for="nFluctuaciones">Número de partículas (<300): </label>
+                </div>
+                <div class="col-md-6">
+                  <input type="number" id="nFluctuaciones" name="nFluctuaciones" min="0" max="300" value="100" class="form-control"></br>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <label for="tempFluctuaciones">Temperatura: </label>
+                </div>
+                <div class="col-md-6">
+                  <input type="number" id="tempFluctuaciones" name="tempFluctuaciones" min="0" max="300" value="1" class="form-control"></br>
+                </div>
+              </div>
+              <div class="form-group col-md-12">
+                <input type="button" id="startBtnFluc" value="Start" class="btn btn-primary">
+                <input type="button" id="activaBtnFluc" value="Reset" class="btn btn-danger">
+              </div>
+            </form>
           </div>
-          <!-- BOTONERA -->
-          <div>
-            <label for="nFluctuaciones">Número de partículas (<300): </label>
-                <input type="number" id="nFluctuaciones" name="nFluctuaciones" min="0" max="300" value="100"></br>
-                </br>
-                <label for="tempFluctuaciones">Temperatura: </label>
-                <input type="number" id="tempFluctuaciones" name="tempFluctuaciones" min="0" max="300" value="1"></br>
-                </br>
-                <input type="button" id="startBtnFluc" value="Start">
-                <input type="button" id="activaBtnFluc" value="Activa">
+        </div>
+
+        <!-- CAMBIO DE APPLET -->
+        <div class="main-content">
+          <hr>
+          <h1 id="macro">Colectividad Macrocanónica</h1>
+          <p>
+            La teoría de Debye solucionó un problema al que se enfrentaba la física del estado sólico a principios del siglo XX: Las desviaciones de la ley de Dulong-Petit respecto a las medidas experimentales para bajas temperaturas. Debye aplicó la
+            teoría cuántica y resolvió exitosamente estas diferencias.
+          </p>
+
+          <hr>
+          <!-- El applet empieza aqui -->
+          <div style="text-align: center">
+            <div class="card card-body bg-light">
+              <div class="row">
+                <div class="col-md">
+                  <canvas id="canvasMacro" width="400" height="400" style="position: absolute;"></canvas>
+                  <canvas id="canvasMacroCuadrado" width="400" height="400" style="position: relative;"></canvas>
+                </div>
+                <div class="col-md">
+                  <div id="graphMacro" style="height:400px;">
+                    <!-- Plotly chart will be drawn inside this DIV -->
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br>
+            <!-- BOTONERA -->
+            <form class="class= card card-body bg-light">
+              <div class="row">
+                <div class="col-md-6">
+                  <label for="nMacro">Número de partículas (<300): </label>
+                </div>
+                <div class="col-md-6">
+                  <input type="number" id="nMacro" name="nMacro" min="0" max="300" value="100" class="form-control"></br>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <label for="tempMacro">Temperatura: </label>
+                </div>
+                <div class="col-md-6">
+                  <input type="number" id="tempMacro" name="tempMacro" min="0" max="300" value="1" class="form-control"></br>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <input type="button" id="startBtnMacro" value="Start" class="btn btn-primary">
+                <input type="button" id="activaBtnMacro" value="Reset" class="btn btn-danger">
+              </div>
+            </form>
           </div>
         </div>
       </div>
-
-      <!-- CAMBIO DE APPLET -->
-      <div class="main-content">
-        <hr>
-        <h1 id="macro">Colectividad Macrocanónica</h1>
-        <p>
-          La teoría de Debye solucionó un problema al que se enfrentaba la física del estado sólico a principios del siglo XX: Las desviaciones de la ley de Dulong-Petit respecto a las medidas experimentales para bajas temperaturas. Debye aplicó la
-          teoría cuántica y resolvió exitosamente estas diferencias.
-        </p>
-
-        <hr>
-        <!-- El applet empieza aqui -->
-        <div style="text-align: center">
-          <div>
-            <canvas id="canvasMacro" width="500" height="500" style="position: absolute;"></canvas>
-            <canvas id="canvasMacroCuadrado" width="500" height="500" style="position: relative;"></canvas>
-            <div id="graphMacro" style="width: 480px; height: 300px;">
-              <!-- Plotly chart will be drawn inside this DIV -->
-            </div>
-          </div>
-          <!-- BOTONERA -->
-          <div>
-            <label for="nMacro">Número de partículas (<300): </label>
-                <input type="number" id="nMacro" name="nMacro" min="0" max="300" value="100"></br>
-
-                </br>
-                <label for="tempMacro">Temperatura: </label>
-                <input type="number" id="tempMacro" name="tempMacro" min="0" max="300" value="1"></br>
-                </br>
-                <input type="button" id="startBtnMacro" value="Start">
-                <input type="button" id="activaBtnMacro" value="Activa">
-          </div>
-        </div>
-      </div>
-    </div>
     </div> <!-- Final del contenedor -->
 
 

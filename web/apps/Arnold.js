@@ -1,178 +1,118 @@
 var canvas = document.getElementById('vis');
 var preview = document.getElementById('preview');
+var ctx = canvas.getContext("2d");
+
+var imageSelect = document.querySelector('#imageSelectArnold');
 var w = 0;
-var resetError = function() {
-    $('span.error #imageurl').unwrap().next('span.reason').remove();
-};
-try {
-    init();
-} catch (e) {
-    console.error(e);
-    $('#preview').show();
-    $('#controls').html('<p><em>Sorry, HTML canvas support is needed to view this demo.  Please use a compatible browser such as <a href="http://www.google.com/chrome/">Google Chrome</a>.</em></p>');
+
+var iterations = 0,
+    stopIteration = 0;
+var imageData, data, imgNext, originalImage;
+var play = false;
+
+var t11, t12, t21, t22;
+changeValsT();
+
+function redondea(num, places) {
+    return +(Math.round(num + "e+" + places) + "e-" + places);
 }
-$('#reset').click(function() {
-    iterations = 0;
-    $('#iterations').value = 0;
-    $('#iteration-target').value = 0;
-    $('#iteration-count').value = 0;
-    init();
+
+function iteration() {
+    var i = stopIteration;
+    var diff = Math.abs(iterations - i);
+    if (diff == 0 && !play) return;
+    if (!imageData) return;
+    var data = imageData.data;
+    var nextData = imgNext.data;
+    var src = 0;
+    var dataWidth = Math.sqrt(data.length >> 2);
+    for (var y = 0; y < dataWidth; y++) {
+        for (var x = 0; x < dataWidth; x++) {
+            var xNew = (t11 * x + t21 * y) % dataWidth;
+            var yNew = (t12 * x + t22 * y) % dataWidth;
+            if (yNew < 0) {
+                yNew = dataWidth + yNew;
+            }
+            var dst = (yNew * dataWidth + xNew) * 4;
+            if (iterations < i) {
+                for (var j = 0; j < 4; j++) nextData[dst++] = data[src++];
+            } else {
+                for (var j = 0; j < 4; j++) nextData[src++] = data[dst++];
+            }
+        }
+    }
+    var tmp = imageData;
+    imageData = imgNext;
+    imgNext = tmp;
+    iterations += (iterations < i) ? 1 : -1;
+    $('#iteration-count').text(iterations);
+    if (play) {
+        for (var j = 0; j < 20; j++) {
+            if (imageData.data[j] !== originalImage.data[j]) break;
+            if (j === 19 || iterations == stopIteration) {
+                stopIteration = iterations;
+                play = false;
+                $('#iterations').slider('enable').focus();
+                $('#step-back, #step-forward').removeAttr('disabled');
+            }
+        }
+        $('#iterations').slider('value', iterations);
+    }
+    var diff = Math.abs(iterations - stopIteration);
+    if (diff < 10 || diff % 10 == 0) ctx.putImageData(imageData, 0, 0);
+}
+setInterval(iteration, 1);
+resetData();
+$('#play').click(function() {
+    play = true;
+    stopIteration = 3 * w;
+    $('#step-back, #step-forward').attr('disabled', 'disabled');
+});
+$('#step-back').click(function() {
+    stopIteration--;
+});
+$('#step-forward').click(function() {
+    stopIteration++;
 });
 
-function init() {
-    var c = canvas.getContext("2d");
-    var iterations = 0,
-        stopIteration = 0;
-    var imageData, data, imgNext, originalImage;
-    var play = false;
-    var t11 = document.getElementById('t11').value,
-        t12 = document.getElementById('t12').value,
-        t21 = document.getElementById('t21').value;
-    var t22 = redondea((t12 * t21 + 1) / t11, 4);
+function createImage() {
+    var img = new Image();
+    img.onload = function() {
+        w = 400;
+        ctx.width = canvas.width;
+        ctx.height = canvas.height;
+        ctx.drawImage(img, 0, 0, ctx.width, ctx.height);
+        imageData = ctx.getImageData(0, 0, ctx.width, ctx.height);
+        originalImage = ctx.getImageData(0, 0, ctx.width, ctx.height);
+        imgNext = ctx.getImageData(0, 0, ctx.width, ctx.height);
+    }
+    return img;
+}
 
-    function redondea(num, places) {
-        return +(Math.round(num + "e+" + places) + "e-" + places);
-    }
-
-    function handleURL(url) {
-        if (!url) return;
-        var img = createImage();
-        img.src = "http://www.jasondavies.com/xhr?url=" + encodeURIComponent(url);
-    }
-    $(function() {
-        $(window).bind('hashchange', function(e) {
-            resetError();
-            var url = location.hash.substr(1);
-            $('#imageurl').val(url);
-            handleURL(url);
-        });
-        $(window).trigger('hashchange');
-    });
-
-    function handleFiles(files) {
-        resetError();
-        for (var i = 0; i < files.length; i++) {
-            var file = files[i];
-            var imageType = /image.*/;
-
-            if (!file.type.match(imageType)) {
-                continue;
-            }
-            var img = createImage();
-            var reader = new FileReader();
-            reader.onload = (function(aImg) {
-                return function(e) {
-                    aImg.src = e.target.result;
-                };
-            })(img);
-            reader.readAsDataURL(file);
-        }
-    }
-    var dragenterover = function(e) {
-        e.stopPropagation();
-        e.preventDefault();
-    }
-    var createImage = function() {
-        var img = new Image();
-        img.onload = function() {
-            w = Math.min(img.width, img.height);
-            $(canvas).attr('width', w);
-            $(canvas).attr('height', w);
-            c.width = w;
-            c.height = w;
-            c.drawImage(img, 0, 0, w, w);
-            imageData = c.getImageData(0, 0, c.width, c.height);
-            originalImage = c.getImageData(0, 0, c.width, c.height);
-            imgNext = c.getImageData(0, 0, c.width, c.height);
-            $('#iterations').slider('option', 'max', 3 * w);
-        }
-        return img;
-    }
-    var drop = function(e) {
-        e.stopPropagation();
-        e.preventDefault();
-
-        var dt = e.dataTransfer;
-        var files = dt.files;
-        //var img = createImage();
-        //img.src = dt.getData('URL');
-
-        handleFiles(files);
-    }
-    canvas.addEventListener("dragenter", dragenterover, false);
-    canvas.addEventListener("dragover", dragenterover, false);
-    canvas.addEventListener("drop", drop, false);
-    var resetData = function() {
-        var img = createImage();
-        img.src = 'catmap.jpg';
-    }
-    var iteration = function() {
-        var i = stopIteration;
-        var diff = Math.abs(iterations - i);
-        if (diff == 0 && !play) return;
-        if (!imageData) return;
-        var data = imageData.data;
-        var nextData = imgNext.data;
-        var src = 0;
-        var dataWidth = Math.sqrt(data.length >> 2);
-        for (var y = 0; y < dataWidth; y++) {
-            for (var x = 0; x < dataWidth; x++) {
-                var xNew = (t11 * x + t21 * y) % dataWidth;
-                var yNew = (t12 * x + t22 * y) % dataWidth;
-                var dst = (yNew * dataWidth + xNew) * 4;
-                if (iterations < i) {
-                    for (var j = 0; j < 4; j++) nextData[dst++] = data[src++];
-                } else {
-                    for (var j = 0; j < 4; j++) nextData[src++] = data[dst++];
-                }
-            }
-        }
-        var tmp = imageData;
-        imageData = imgNext;
-        imgNext = tmp;
-        iterations += (iterations < i) ? 1 : -1;
-        $('#iteration-count').text(iterations);
-        if (play) {
-            for (var j = 0; j < 20; j++) {
-                if (imageData.data[j] !== originalImage.data[j]) break;
-                if (j === 19 || iterations == stopIteration) {
-                    stopIteration = iterations;
-                    play = false;
-                    $('#iterations').slider('enable').focus();
-                    $('#step-back, #step-forward').removeAttr('disabled');
-                }
-            }
-            $('#iterations').slider('value', iterations);
-            $('#iteration-target').text(iterations);
-        }
-        var diff = Math.abs(iterations - stopIteration);
-        if (diff < 10 || diff % 10 == 0) c.putImageData(imageData, 0, 0);
-    }
-    setInterval(iteration, 1);
+function changeValsT() {
     resetData();
-    $('#iterations').slider({
-        value: 0,
-        min: 0,
-        max: 100,
-        slide: function(e, ui) {
-            stopIteration = ui.value;
-            $('#iteration-target').text(ui.value);
-        }
-    }).change();
-    $('#play').click(function() {
-        play = true;
-        stopIteration = 3 * w;
-        $('#iterations').slider('disable');
-        $('#step-back, #step-forward').attr('disabled', 'disabled');
-    });
-    $('#step-back').click(function() {
-        stopIteration--;
-        $('#iterations').slider('value', stopIteration);
-        $('#iteration-target').text(stopIteration);
-    });
-    $('#step-forward').click(function() {
-        stopIteration++;
-        $('#iterations').slider('value', stopIteration);
-        $('#iteration-target').text(stopIteration);
-    });
+    t11 = document.getElementById('t11').value;
+    t12 = document.getElementById('t12').value;
+    t21 = document.getElementById('t21').value;
+    t22 = redondea((t12 * t21 + 1) / t11, 4);
+}
+
+
+function resetData() {
+    var img = createImage();
+    play = false;
+    stopIteration = 0;
+    iterations = 0;
+    $('#iteration-count').text(iterations);
+    switch (Number(imageSelectArnold.value)) {
+        case 0:
+            img.src = 'imagen.png';
+            break;
+        case 1:
+            img.src = 'Ising-tartan.png';
+            break;
+        case 2:
+            img.src = 'catmap.jpg';
+            break;
+    };
 }

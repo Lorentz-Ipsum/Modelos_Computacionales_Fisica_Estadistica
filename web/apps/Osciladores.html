@@ -4,7 +4,8 @@
   <head>
     <title>Osciladores</title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="../img/favicon.ico">
     <link rel="stylesheet" href="../css/bootstrap.css">
     <!-- Activamos el código Javascript de Bootstrap y de jQuery -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -18,36 +19,8 @@
     <!-- Importamos MathJax para visualizar LaTeX -->
 
     <style type="text/css">
-      /* Create three equal columns that floats next to each other */
-      .column {
-        float: left;
-        width: 50%;
-      }
-
-      /* Clear floats after the columns */
-      .row:after {
-        content: "";
-        display: table;
-        clear: both;
-      }
-
-      /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
-      @media screen and (max-width: 600px) {
-        .column {
-          width: 100%;
-        }
-
-        .container {
-          display: flex;
-        }
-
-        .fixed {
-          width: 300px;
-        }
-
-        .flex-item {
-          flex-grow: 1;
-        }
+      body {
+        padding: 45px 0 0 0;
       }
     </style>
     <style media="screen">
@@ -63,7 +36,7 @@
     ================================================== -->
     <div class="container">
       <!-- Barra de navegación ======================= -->
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top">
         <a class="navbar-brand" href="../index.html">\(\int f(x) dx\)</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -94,7 +67,7 @@
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="Kac.html">Anillo de Kac</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="apps/Osciladores.html">Conjunto de osciladores armónicos</a>
+                <a class="dropdown-item active" href="Osciladores.html">Conjunto de osciladores armónicos</a>
                 <div class="dropdown-divider"></div>
                 <h6 class="dropdown-header">Vibraciones moleculares</h6>
                 <a class="dropdown-item" href="Vibraciones.html#diatomicas">Gas de moléculas diatómicas</a>
@@ -104,7 +77,7 @@
                 <a class="dropdown-item" href="Gas.html#fluctuaciones">Expansión libre de un gas</a>
                 <a class="dropdown-item" href="Gas.html#macro">Colectividad macrocanónica</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item active" href="Bosefermi.html">Estadísticas de bosones y fermiones</a>
+                <a class="dropdown-item" href="Bosefermi.html">Estadísticas de bosones y fermiones</a>
                 <div class="dropdown-divider"></div>
                 <h6 class="dropdown-header">Modelo de Ising</h6>
                 <a class="dropdown-item" href="Ising.html#lt">Dimensionalidad y límite termodinámico</a>
@@ -159,60 +132,58 @@
           <hr>
           <!-- El applet empieza aqui -->
           <div style="text-align: center">
-            <div class="container">
-              <canvas id="canvasSec" width="500" height="500" style="position:absolute;">
-                Please update your browser
-              </canvas>
-              <canvas id="canvasOsc" width="500" height="500" style="position:relative;"> </canvas>
-              <div style="max-height:500px; text-align: center">
-                <div id="graph" style="width: 300px; height: 300px; position: relative;">
-                  <!-- Plotly chart will be drawn inside this DIV -->
+            <div class="class= card card-body bg-light">
+              <div class="row">
+                <div class="col-md">
+                  <canvas id="canvasSec" width="400" height="400" style="position:absolute;">
+                    Please update your browser
+                  </canvas>
+                  <canvas id="canvasOsc" width="400" height="400" style="position:relative;"> </canvas>
+                </div>
+                <div class="col-md" style="max-height:400px">
+                  <div id="graph" style="height: 400px;">
+                    <!-- Plotly chart will be drawn inside this DIV -->
+                  </div>
                 </div>
               </div>
             </div>
-
+            <br>
             <!-- BOTONERA -->
-            <div class="container">
-              <div style="text-align:center; margin-right:100px; line-height:160%;">
-                <label>Numero de osciladores:</label>
-                <span id="numeroOut" style="display:inline-block; width:1em;">20</span>
-                <input type="range" id="numero" class="slider" name="numero" min="1" max="100" value="20" step="1">
-                <br>
-                <label>Número de sectores:</label>
-                <span id="sectoresOut" style="display:inline-block; width:1em;">5</span>
-                <input type="range" id="sectores" class="slider" name="sectores" min="1" max="100" value="5" step="1">
-                <br>
-                <label>Frecuencias iniciales:</label>
-                <select id="freqSelect" name="freqSelect">
+            <form class="class= card card-body bg-light">
+              <div class="form-group col-md-12">
+                <label>Numero de osciladores: &nbsp;<span id="numeroLectura">20</span></label>
+                <input type="range" id="numeroSlider" class="slider custom-range" name="numeroSlider" onchange="updateNum()" min="1" max="100" value="20" step="1">
+              </div>
+              <div class="form-group col-md-12">
+                <label>Numero de sectores: &nbsp;<span id="sectorLectura">5</span></label>
+                <input type="range" id="sectorSlider" class="slider custom-range" name="sectorSlider" onchange="updateSec()" min="1" max="100" value="5" step="1">
+              </div>
+              <div class="form-group col-md-12">
+                <label for="freqSelect">Frecuencias iniciales:</label>
+                <select id="freqSelect" name="freqSelect" onchange="updateFreq()" class="form-control">
                   <option value="0">Aleatorias</option>
                   <option value="1">Casi iguales</option>
                   <option value="2">Equiespaciadas</option>
                 </select>
-                <br>
-                <label>Fases iniciales:</label>
-                <select id="faseSelect" name="faseSelect">
+              </div>
+              <div class="form-group col-md-12">
+                <label for="faseSelect">Fases iniciales:</label>
+                <select id="faseSelect" name="faseSelect" onchange="updateFase()" class="form-control">
                   <option value="0">Aleatorias</option>
                   <option value="1">Nulas</option>
                 </select>
-                <br>
-                <label>Velocidad:</label>
-                <select id="speedSelect" name="speedSelect">
-                  <option value="0">Lenta</option>
-                  <option value="1">Media</option>
-                  <option value="2">Rápida</option>
-                  <option value="3">Muy rápida</option>
-                  <option value="4">Lightspeed</option>
-                </select>
               </div>
-              <br>
-              <label class="input-check"><input type="checkbox" value="something" name="test" /> Start / Stop </label>
-              <div class="col-lg-4">
-                <!-- Boton para abrir otra ventana -->
-                <button class="btn btn-primary" type="button" name="histogram" id="histogram">Abrir otra ventana</button>
-                <!-- Pruebas de boton que abra un modal de bootstrap -->
-                <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#myModal" id="histBtn">Histograma</button>
+              <div class="form-group col-md-12">
+                <label>Velocidad: &nbsp;<span id="velocidadLectura">1</span></label>
+                <input type="range" id="velocidadSlider" class="slider custom-range" name="velocidadSlider" onchange="updateVel()" min="1" max="10" value="1" step="1">
               </div>
-            </div>
+              <div class="form-group col-md-12">
+                <input id="startButton" type="button" onclick="startStop()" value="  Start  " class="btn btn-primary">
+                <input id="resetButton" type="button" onclick="resetPlot()" value="  Reset  " class="btn btn-danger">
+                <!-- Boton que abra el modal de bootstrap -->
+                <button class="btn btn-warning" type="button" data-toggle="modal" data-target="#myModal" id="histBtn" onclick="plotHist()">Histograma</button>
+              </div>
+            </form>
           </div>
         </div>
       </div>
@@ -222,15 +193,15 @@
           <!-- Modal content-->
           <div class="modal-content">
             <div class="modal-header">
+              <h4 class="modal-title">Histograma</h4>
               <button type="button" class="close" data-dismiss="modal">&times;</button>
-              <h4 class="modal-title">Modal Header</h4>
             </div>
             <div class="modal-body">
               <!-- Here is the inside of the modal -->
               <p>Some text in the modal.</p>
 
-              <div style="max-height:300px">
-                <div id="graphHist" style="width: 300px; height: 300px; position: relative;">
+              <div style="max-width: 500;max-height:400px">
+                <div id="graphHist" style="height: 400px; position: relative;">
                   <!-- Plotly chart will be drawn inside this DIV -->
                 </div>
               </div>

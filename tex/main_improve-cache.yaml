@@ -1,0 +1,3985 @@
+version: 0.12.2
+filePath: main_improve.tex
+options:
+  $BIBINPUTS:
+    - $ROOTDIR
+    - $ROOTDIR/$OUTDIR
+    - ''
+  $TEXINPUTS:
+    - $ROOTDIR
+    - $ROOTDIR/$OUTDIR
+    - ''
+  bibtexEngine: bibtex
+  cleanPatterns:
+    - '**/*.aux'
+    - '**/*.aux.bak'
+    - '**/*.bbl'
+    - '**/*.bcf'
+    - '**/*.blg'
+    - '**/*.dvi'
+    - '**/*.fdb_latexmk'
+    - '**/*.fls'
+    - '**/*.idx'
+    - '**/*.idx.bak'
+    - '**/*.ilg'
+    - '**/*.ind'
+    - '**/*.lof'
+    - '**/*.log'
+    - '**/*.lol'
+    - '**/*.lot'
+    - '**/*.nav'
+    - '**/*.out'
+    - '**/*.pdf'
+    - '**/*.ps'
+    - '**/*.snm'
+    - '**/*.synctex.gz'
+    - '**/*.toc'
+    - '/**/_minted-${JOB}'
+    - '/${OUTDIR}/sage-plots-for-${JOB}.tex'
+    - /missfont.log
+    - /texput.log
+    - /texput.aux
+  dviToPdfEngine: xdvipdfmx
+  engine: pdflatex
+  epstopdfBoundingBox: default
+  epstopdfOutputPath: $DIR_0/$NAME_0.pdf
+  indexAutomaticRanges: true
+  indexEngine: makeindex
+  indexOrdering: word
+  indexSorting: default
+  knitrConcordance: true
+  knitrOutputPath: $JOB.tex
+  lhs2texStyle: poly
+  literateAgdaEngine: agda
+  literateHaskellEngine: lhs2TeX
+  loadCache: true
+  loadUserOptions: true
+  outputFormat: pdf
+  phaseCycles: 20
+  pweaveCacheDirectory: pweave-cache-for-$JOB
+  pweaveFigureDirectory: pweave-figures-for-$JOB
+  pweaveKernel: python3
+  pweaveOutputFormat: tex
+  pweaveOutputPath: $JOB.tex
+  saveCache: true
+  severity: info
+  validateCache: true
+  synctex: true
+  copyTargetsToRoot: true
+  outputDirectory: ''
+  intermediatePostScript: false
+  $PATH: >-
+    %SystemDrive%\texlive\2017\bin\win32;%SystemDrive%\texlive\2016\bin\win32;%SystemDrive%\texlive\2015\bin\win32;%ProgramFiles%\MiKTeX
+    2.9\miktex\bin\x64;%ProgramFiles(x86)%\MiKTeX 2.9\miktex\bin;$PATH
+files:
+  dicy-instance.yaml-ParsedYAML:
+    timeStamp: 2020-09-10T16:56:24.712Z
+    jobNames: []
+    value:
+      severity: info
+    type: ParsedYAML
+  dicy.yaml-ParsedYAML:
+    jobNames: []
+    type: ParsedYAML
+  main_improve.yaml-ParsedYAML:
+    jobNames: []
+    type: ParsedYAML
+  main_improve.tex-ParsedLaTeXMagic:
+    timeStamp: 2020-09-08T13:09:05.544Z
+    jobNames: []
+    value: {}
+    type: ParsedLaTeXMagic
+  'C:\Users\Lorentz-Ipsum\AppData\Roaming\dicy\config.yaml-ParsedYAML':
+    timeStamp: 2020-09-08T13:09:05.537Z
+    jobNames: []
+    value:
+      synctex: true
+      engine: pdflatex
+      severity: warning
+      copyTargetsToRoot: true
+      outputDirectory: ''
+      outputFormat: pdf
+      cleanPatterns:
+        - '**/*.aux'
+        - '**/*.aux.bak'
+        - '**/*.bbl'
+        - '**/*.bcf'
+        - '**/*.blg'
+        - '**/*.dvi'
+        - '**/*.fdb_latexmk'
+        - '**/*.fls'
+        - '**/*.idx'
+        - '**/*.idx.bak'
+        - '**/*.ilg'
+        - '**/*.ind'
+        - '**/*.lof'
+        - '**/*.log'
+        - '**/*.lol'
+        - '**/*.lot'
+        - '**/*.nav'
+        - '**/*.out'
+        - '**/*.pdf'
+        - '**/*.ps'
+        - '**/*.snm'
+        - '**/*.synctex.gz'
+        - '**/*.toc'
+        - '/**/_minted-${JOB}'
+        - '/${OUTDIR}/sage-plots-for-${JOB}.tex'
+        - /missfont.log
+        - /texput.log
+        - /texput.aux
+      intermediatePostScript: false
+      $PATH: >-
+        %SystemDrive%\texlive\2017\bin\win32;%SystemDrive%\texlive\2016\bin\win32;%SystemDrive%\texlive\2015\bin\win32;%ProgramFiles%\MiKTeX
+        2.9\miktex\bin\x64;%ProgramFiles(x86)%\MiKTeX 2.9\miktex\bin;$PATH
+    type: ParsedYAML
+  main_improve.tex:
+    timeStamp: 2020-09-10T16:56:59.812Z
+    jobNames: []
+    hash: W8v6CaBhO84zv6f49zJg70y2qG0VLZJ+xczetDlEmQ8=
+    type: LaTeX
+    subType: article
+  'C:\Users\Lorentz-Ipsum\AppData\Roaming\dicy\config.yaml':
+    timeStamp: 2020-09-10T16:56:24.735Z
+    jobNames: []
+    type: YAML
+  x.y-Nil:
+    jobNames: []
+    type: Nil
+  main_improve.log:
+    timeStamp: 2020-09-10T16:57:10.696Z
+    jobNames: []
+    hash: /7EdY9/kv1NZrMfn3rSpOqZdIVwQw4FB6DY5GNecu+M=
+    type: LaTeXLog
+    subType: pdfTeX
+  main_improve.fls-ParsedFileListing:
+    timeStamp: 2020-09-10T16:56:31.892Z
+    jobNames: []
+    value:
+      messages: []
+      inputs:
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
+        - 'C:\Users\Lorentz-Ipsum\AppData\Local\MiKTeX\pdftex\config\pdftex.map'
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\symbol\psyr.tfm
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\zapfding\pzdr.tfm
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex8.tfm
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam10.tfm
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam5.tfm
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam7.tfm
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm5.tfm
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm7.tfm
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx10.tfm
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmex10.tfm
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmmi10.tfm
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmmi6.tfm
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmmi8.tfm
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr10.tfm
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr12.tfm
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr6.tfm
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr8.tfm
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmss8.tfm
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmsy10.tfm
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmsy6.tfm
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmsy8.tfm
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmti10.tfm
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmtt10.tfm
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx10.pfb
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx12.pfb
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmex10.pfb
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi10.pfb
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi6.pfb
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi8.pfb
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr10.pfb
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr12.pfb
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr6.pfb
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr8.pfb
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmss8.pfb
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy10.pfb
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy6.pfb
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy8.pfb
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmti10.pfb
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmtt10.pfb
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\atbegshi\atbegshi.sty
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\babel\babel.def
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\babel\babel.sty
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\babel\txtbabel.def
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\bigintcalc\bigintcalc.sty
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\bitset\bitset.sty
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\etexcmds\etexcmds.sty
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\gettitlestring\gettitlestring.sty
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\iftex\iftex.sty
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\infwarerr\infwarerr.sty
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\intcalc\intcalc.sty
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\kvdefinekeys\kvdefinekeys.sty
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\kvsetkeys\kvsetkeys.sty
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\ltxcmds\ltxcmds.sty
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pdfescape\pdfescape.sty
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pdftexcmds\pdftexcmds.sty
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcore.code.tex
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcorearrows.code.tex
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcoreexternal.code.tex
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcoregraphicstate.code.tex
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcoreimage.code.tex
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcorelayers.code.tex
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcoreobjects.code.tex
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcorepathconstruct.code.tex
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcorepathprocessing.code.tex
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcorepathusage.code.tex
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcorepatterns.code.tex
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcorepoints.code.tex
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcorequick.code.tex
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcorerdf.code.tex
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcorescopes.code.tex
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcoreshade.code.tex
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcoretransformations.code.tex
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcoretransparency.code.tex
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibraryfadings.code.tex
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibraryshadows.code.tex
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibrarytopaths.code.tex
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\frontendlayer\tikz\tikz.code.tex
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\libraries\pgflibraryfadings.code.tex
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\libraries\pgflibraryplothandlers.code.tex
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\math\pgfint.code.tex
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\math\pgfmath.code.tex
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\math\pgfmathcalc.code.tex
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\math\pgfmathfloat.code.tex
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\math\pgfmathfunctions.base.code.tex
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\math\pgfmathfunctions.basic.code.tex
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\math\pgfmathfunctions.code.tex
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\math\pgfmathfunctions.comparison.code.tex
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\math\pgfmathfunctions.integerarithmetics.code.tex
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\math\pgfmathfunctions.misc.code.tex
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\math\pgfmathfunctions.random.code.tex
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\math\pgfmathfunctions.round.code.tex
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\math\pgfmathfunctions.trigonometric.code.tex
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\math\pgfmathparser.code.tex
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\math\pgfmathutil.code.tex
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\modules\pgfmodulematrix.code.tex
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\modules\pgfmoduleplot.code.tex
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\modules\pgfmoduleshapes.code.tex
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\pgf.revision.tex
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\systemlayer\pgf.cfg
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\systemlayer\pgfsys-common-pdf.def
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\systemlayer\pgfsys-pdftex.def
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\systemlayer\pgfsys.code.tex
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\systemlayer\pgfsysprotocol.code.tex
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\systemlayer\pgfsyssoftpath.code.tex
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\utilities\pgffor.code.tex
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\utilities\pgfkeys.code.tex
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\utilities\pgfkeysfiltered.code.tex
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\utilities\pgfrcs.code.tex
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\utilities\pgfutil-common-lists.tex
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\utilities\pgfutil-common.tex
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\utilities\pgfutil-latex.def
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\uniquecounter\uniquecounter.sty
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\amscls\amsthm.sty
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\amsfonts.sty
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\amssymb.sty
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\umsa.fd
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\umsb.fd
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsbsy.sty
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsgen.sty
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsmath.sty
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsopn.sty
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amstext.sty
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\appendix\appendix.sty
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\arabi\bblopts.cfg
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\atveryend\atveryend.sty
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\auxhook\auxhook.sty
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\babel-spanish\spanish.ldf
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\base\article.cls
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\base\inputenc.sty
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\base\size11.clo
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\enumitem\enumitem.sty
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\epstopdf-pkg\epstopdf-base.sty
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\graphics-cfg\color.cfg
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\graphics-cfg\graphics.cfg
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\graphics-def\pdftex.def
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\graphics\graphics.sty
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\graphics\graphicx.sty
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\graphics\keyval.sty
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\graphics\trig.sty
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\hycolor\hycolor.sty
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\hyperref\hpdftex.def
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\hyperref\hyperref.sty
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\hyperref\nameref.sty
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\hyperref\pd1enc.def
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\kvoptions\kvoptions.sty
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\l3backend\l3backend-pdftex.def
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\letltxmacro\letltxmacro.sty
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\ms\everyshi.sty
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\pgf\basiclayer\pgf.sty
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\pgf\basiclayer\pgfcore.sty
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\pgf\compatibility\pgfcomp-version-0-65.sty
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\pgf\compatibility\pgfcomp-version-1-18.sty
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\pgf\frontendlayer\tikz.sty
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\pgf\math\pgfmath.sty
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\pgf\systemlayer\pgfsys.sty
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\pgf\utilities\pgffor.sty
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\pgf\utilities\pgfkeys.sty
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\pgf\utilities\pgfrcs.sty
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\psnfss\pifont.sty
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\psnfss\upsy.fd
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\psnfss\upzd.fd
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\refcount\refcount.sty
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\rerunfilecheck\rerunfilecheck.sty
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\tocbibind\tocbibind.sty
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\tocloft\tocloft.sty
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\url\url.sty
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\vmargin\vmargin.sty
+        - >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\xcolor\xcolor.sty
+        - logo_UCM.png
+        - main_improve.aux
+        - main_improve.bbl
+        - main_improve.out
+        - main_improve.tex
+        - main_improve.toc
+      outputs:
+        - main_improve.aux
+        - main_improve.log
+        - main_improve.out
+        - main_improve.pdf
+        - main_improve.toc
+      calls: []
+    type: ParsedFileListing
+  main_improve.log-ParsedLaTeXLog:
+    timeStamp: 2020-09-10T16:57:10.882Z
+    jobNames: []
+    value:
+      messages:
+        - name: pdfTeX
+          severity: info
+          text: 'graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)'
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\graphics\graphicx.sty
+          log:
+            file: main_improve.log
+            range:
+              start: 31
+              end: 31
+        - name: pdfTeX
+          severity: info
+          text: keyval 2014/10/28 v1.15 key=value parser (DPC)
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\graphics\keyval.sty
+          log:
+            file: main_improve.log
+            range:
+              start: 35
+              end: 35
+        - name: pdfTeX
+          severity: info
+          text: 'graphics 2019/11/30 v1.4a Standard LaTeX Graphics (DPC,SPQR)'
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\graphics\graphics.sty
+          log:
+            file: main_improve.log
+            range:
+              start: 40
+              end: 40
+        - name: pdfTeX
+          severity: info
+          text: trig 2016/01/03 v1.10 sin cos tan (DPC)
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\graphics\trig.s
+          log:
+            file: main_improve.log
+            range:
+              start: 44
+              end: 44
+        - severity: info
+          name: pdfTeX
+          category: Package graphics
+          text: 'Driver file: pdftex.def'
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\graphics\graphics.sty
+            range:
+              start: 105
+              end: 105
+          log:
+            file: main_improve.log
+            range:
+              start: 50
+              end: 50
+        - name: pdfTeX
+          severity: info
+          text: babel 2020/09/01 3.48 The Babel package
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\babel\babel.s
+          log:
+            file: main_improve.log
+            range:
+              start: 61
+              end: 61
+        - severity: info
+          name: pdfTeX
+          category: Package babel
+          text: Making " an active character
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\babel-spanish\spanish.ldf
+            range:
+              start: 561
+              end: 561
+          log:
+            file: main_improve.log
+            range:
+              start: 89
+              end: 89
+        - severity: info
+          name: pdfTeX
+          category: Package babel
+          text: Making . an active character
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\babel-spanish\spanish.ldf
+            range:
+              start: 662
+              end: 662
+          log:
+            file: main_improve.log
+            range:
+              start: 90
+              end: 90
+        - severity: info
+          name: pdfTeX
+          category: Package babel
+          text: Making < an active character
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\babel-spanish\spanish.ldf
+            range:
+              start: 707
+              end: 707
+          log:
+            file: main_improve.log
+            range:
+              start: 91
+              end: 91
+        - severity: info
+          name: pdfTeX
+          category: Package babel
+          text: Making > an active character
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\babel-spanish\spanish.ldf
+            range:
+              start: 707
+              end: 707
+          log:
+            file: main_improve.log
+            range:
+              start: 92
+              end: 92
+        - name: pdfTeX
+          severity: info
+          text: inputenc 2018/08/11 v1.3c Input encoding file
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\base\inputenc.s
+          log:
+            file: main_improve.log
+            range:
+              start: 96
+              end: 96
+        - name: pdfTeX
+          severity: info
+          text: vmargin 2004/07/15 V2.5 set document margins (VK)
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\vmargin\vmargin.sty
+          log:
+            file: main_improve.log
+            range:
+              start: 102
+              end: 102
+        - name: pdfTeX
+          severity: info
+          text: vmargin 2004/07/15 V2.5 set document margins (VK)
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\vmargin\vmargin.sty
+          log:
+            file: main_improve.log
+            range:
+              start: 103
+              end: 103
+        - name: pdfTeX
+          severity: info
+          text: amsmath 2020/01/20 v2.17e AMS math features
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsmath.sty
+          log:
+            file: main_improve.log
+            range:
+              start: 109
+              end: 109
+        - name: pdfTeX
+          severity: info
+          text: amstext 2000/06/29 v2.01 AMS text
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amstext.sty
+          log:
+            file: main_improve.log
+            range:
+              start: 115
+              end: 115
+        - name: pdfTeX
+          severity: info
+          text: amsbsy 1999/11/29 v1.2d Bold Symbols
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsbsy.
+          log:
+            file: main_improve.log
+            range:
+              start: 125
+              end: 125
+        - name: pdfTeX
+          severity: info
+          text: amsopn 2016/03/08 v2.02 operator names
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsopn.
+          log:
+            file: main_improve.log
+            range:
+              start: 130
+              end: 130
+        - severity: info
+          name: pdfTeX
+          category: LaTeX
+          text: Redefining \frac
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsmath.sty
+            range:
+              start: 227
+              end: 227
+          log:
+            file: main_improve.log
+            range:
+              start: 133
+              end: 133
+        - severity: info
+          name: pdfTeX
+          category: LaTeX
+          text: Redefining \overline
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsmath.sty
+            range:
+              start: 389
+              end: 389
+          log:
+            file: main_improve.log
+            range:
+              start: 136
+              end: 136
+        - severity: info
+          name: pdfTeX
+          category: LaTeX
+          text: Redefining \ldots
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsmath.sty
+            range:
+              start: 486
+              end: 486
+          log:
+            file: main_improve.log
+            range:
+              start: 139
+              end: 139
+        - severity: info
+          name: pdfTeX
+          category: LaTeX
+          text: Redefining \dots
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsmath.sty
+            range:
+              start: 489
+              end: 489
+          log:
+            file: main_improve.log
+            range:
+              start: 140
+              end: 140
+        - severity: info
+          name: pdfTeX
+          category: LaTeX
+          text: Redefining \cdots
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsmath.sty
+            range:
+              start: 610
+              end: 610
+          log:
+            file: main_improve.log
+            range:
+              start: 141
+              end: 141
+        - severity: info
+          name: pdfTeX
+          category: LaTeX Font
+          text: Redeclaring font encoding OML
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsmath.sty
+            range:
+              start: 733
+              end: 733
+          log:
+            file: main_improve.log
+            range:
+              start: 145
+              end: 145
+        - severity: info
+          name: pdfTeX
+          category: LaTeX Font
+          text: Redeclaring font encoding OMS
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsmath.sty
+            range:
+              start: 734
+              end: 734
+          log:
+            file: main_improve.log
+            range:
+              start: 146
+              end: 146
+        - severity: info
+          name: pdfTeX
+          category: LaTeX
+          text: 'Redefining \['
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsmath.sty
+            range:
+              start: 2859
+              end: 2859
+          log:
+            file: main_improve.log
+            range:
+              start: 167
+              end: 167
+        - severity: info
+          name: pdfTeX
+          category: LaTeX
+          text: 'Redefining \]'
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsmath.sty
+            range:
+              start: 2860
+              end: 2860
+          log:
+            file: main_improve.log
+            range:
+              start: 168
+              end: 168
+        - name: pdfTeX
+          severity: info
+          text: hyperref 2020-05-15 v7.00e Hypertext links for LaTeX
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\hyperref\hyperref.sty
+          log:
+            file: main_improve.log
+            range:
+              start: 172
+              end: 172
+        - name: pdfTeX
+          severity: info
+          text: ltxcmds 2019/12/15 v1.24 LaTeX kernel commands for general use (HO)
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\ltxcmds\ltxcmds.sty
+          log:
+            file: main_improve.log
+            range:
+              start: 176
+              end: 176
+        - name: pdfTeX
+          severity: info
+          text: iftex 2020/03/06 v1.0d TeX engine tests
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\iftex\iftex.s
+          log:
+            file: main_improve.log
+            range:
+              start: 180
+              end: 180
+        - name: pdfTeX
+          severity: info
+          text: >-
+            pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX
+            (HO)
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pdftexcmds\pdftexcmds.sty
+          log:
+            file: main_improve.log
+            range:
+              start: 184
+              end: 185
+        - name: pdfTeX
+          severity: info
+          text: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\infwarerr\infwarerr.sty
+          log:
+            file: main_improve.log
+            range:
+              start: 189
+              end: 189
+        - severity: info
+          name: pdfTeX
+          category: Package pdftexcmds
+          text: \pdf@primitive is available.
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pdftexcmds\pdftexcmds.sty
+          log:
+            file: main_improve.log
+            range:
+              start: 191
+              end: 191
+        - severity: info
+          name: pdfTeX
+          category: Package pdftexcmds
+          text: \pdf@ifprimitive is available.
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pdftexcmds\pdftexcmds.sty
+          log:
+            file: main_improve.log
+            range:
+              start: 192
+              end: 192
+        - severity: info
+          name: pdfTeX
+          category: Package pdftexcmds
+          text: \pdfdraftmode found.
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pdftexcmds\pdftexcmds.sty
+          log:
+            file: main_improve.log
+            range:
+              start: 193
+              end: 193
+        - name: pdfTeX
+          severity: info
+          text: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\kvsetkeys\kvsetkeys.sty
+          log:
+            file: main_improve.log
+            range:
+              start: 197
+              end: 197
+        - name: pdfTeX
+          severity: info
+          text: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\kvdefinekeys\kvdefinekeys.sty
+          log:
+            file: main_improve.log
+            range:
+              start: 201
+              end: 201
+        - name: pdfTeX
+          severity: info
+          text: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pdfescape\pdfescape.sty
+          log:
+            file: main_improve.log
+            range:
+              start: 205
+              end: 205
+        - name: pdfTeX
+          severity: info
+          text: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\hycolor\hycolor.sty
+          log:
+            file: main_improve.log
+            range:
+              start: 209
+              end: 209
+        - name: pdfTeX
+          severity: info
+          text: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\letltxmacro\letltxmacro.sty
+          log:
+            file: main_improve.log
+            range:
+              start: 213
+              end: 213
+        - name: pdfTeX
+          severity: info
+          text: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\auxhook\auxhook.sty
+          log:
+            file: main_improve.log
+            range:
+              start: 217
+              end: 217
+        - name: pdfTeX
+          severity: info
+          text: kvoptions 2019/11/29 v3.13 Key value format for package options (HO)
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\kvoptions\kvoptions.sty
+          log:
+            file: main_improve.log
+            range:
+              start: 221
+              end: 221
+        - name: pdfTeX
+          severity: info
+          text: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\intcalc\intcalc.sty
+          log:
+            file: main_improve.log
+            range:
+              start: 235
+              end: 235
+        - name: pdfTeX
+          severity: info
+          text: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\etexcmds\etexcmds.sty
+          log:
+            file: main_improve.log
+            range:
+              start: 239
+              end: 239
+        - severity: info
+          name: pdfTeX
+          category: Package hyperref
+          text: Hyper figures OFF
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\hyperref\hyperref.sty
+            range:
+              start: 4464
+              end: 4464
+          log:
+            file: main_improve.log
+            range:
+              start: 242
+              end: 242
+        - severity: info
+          name: pdfTeX
+          category: Package hyperref
+          text: Link nesting OFF
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\hyperref\hyperref.sty
+            range:
+              start: 4469
+              end: 4469
+          log:
+            file: main_improve.log
+            range:
+              start: 243
+              end: 243
+        - severity: info
+          name: pdfTeX
+          category: Package hyperref
+          text: Hyper index ON
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\hyperref\hyperref.sty
+            range:
+              start: 4472
+              end: 4472
+          log:
+            file: main_improve.log
+            range:
+              start: 244
+              end: 244
+        - severity: info
+          name: pdfTeX
+          category: Package hyperref
+          text: Plain pages OFF
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\hyperref\hyperref.sty
+            range:
+              start: 4479
+              end: 4479
+          log:
+            file: main_improve.log
+            range:
+              start: 245
+              end: 245
+        - severity: info
+          name: pdfTeX
+          category: Package hyperref
+          text: Backreferencing OFF
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\hyperref\hyperref.sty
+            range:
+              start: 4484
+              end: 4484
+          log:
+            file: main_improve.log
+            range:
+              start: 246
+              end: 246
+        - severity: info
+          name: pdfTeX
+          category: Package hyperref
+          text: Implicit mode ON; LaTeX internals redefined.
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\hyperref\hyperref.sty
+          log:
+            file: main_improve.log
+            range:
+              start: 247
+              end: 247
+        - severity: info
+          name: pdfTeX
+          category: Package hyperref
+          text: Bookmarks ON
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\hyperref\hyperref.sty
+            range:
+              start: 4717
+              end: 4717
+          log:
+            file: main_improve.log
+            range:
+              start: 248
+              end: 248
+        - name: pdfTeX
+          severity: info
+          text: 'url 2013/09/16 ver 3.4 Verb mode for urls, etc.'
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\url\url.sty
+          log:
+            file: main_improve.log
+            range:
+              start: 252
+              end: 252
+        - severity: info
+          name: pdfTeX
+          category: LaTeX
+          text: Redefining \url
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\hyperref\hyperref.sty
+            range:
+              start: 5076
+              end: 5076
+          log:
+            file: main_improve.log
+            range:
+              start: 254
+              end: 254
+        - name: pdfTeX
+          severity: info
+          text: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\bitset\bitset.sty
+          log:
+            file: main_improve.log
+            range:
+              start: 259
+              end: 259
+        - name: pdfTeX
+          severity: info
+          text: >-
+            bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers
+            (HO)
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\bigintcalc\bigintcalc.sty
+          log:
+            file: main_improve.log
+            range:
+              start: 263
+              end: 264
+        - severity: info
+          name: pdfTeX
+          category: Package hyperref
+          text: Hyper figures OFF
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\hyperref\hyperref.sty
+            range:
+              start: 6347
+              end: 6347
+          log:
+            file: main_improve.log
+            range:
+              start: 269
+              end: 269
+        - severity: info
+          name: pdfTeX
+          category: Package hyperref
+          text: Link nesting OFF
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\hyperref\hyperref.sty
+            range:
+              start: 6352
+              end: 6352
+          log:
+            file: main_improve.log
+            range:
+              start: 270
+              end: 270
+        - severity: info
+          name: pdfTeX
+          category: Package hyperref
+          text: Hyper index ON
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\hyperref\hyperref.sty
+            range:
+              start: 6355
+              end: 6355
+          log:
+            file: main_improve.log
+            range:
+              start: 271
+              end: 271
+        - severity: info
+          name: pdfTeX
+          category: Package hyperref
+          text: backreferencing OFF
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\hyperref\hyperref.sty
+            range:
+              start: 6362
+              end: 6362
+          log:
+            file: main_improve.log
+            range:
+              start: 272
+              end: 272
+        - severity: info
+          name: pdfTeX
+          category: Package hyperref
+          text: Link coloring OFF
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\hyperref\hyperref.sty
+            range:
+              start: 6367
+              end: 6367
+          log:
+            file: main_improve.log
+            range:
+              start: 273
+              end: 273
+        - severity: info
+          name: pdfTeX
+          category: Package hyperref
+          text: Link coloring with OCG OFF
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\hyperref\hyperref.sty
+            range:
+              start: 6372
+              end: 6372
+          log:
+            file: main_improve.log
+            range:
+              start: 274
+              end: 274
+        - severity: info
+          name: pdfTeX
+          category: Package hyperref
+          text: PDF/A mode OFF
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\hyperref\hyperref.sty
+            range:
+              start: 6377
+              end: 6377
+          log:
+            file: main_improve.log
+            range:
+              start: 275
+              end: 275
+        - severity: info
+          name: pdfTeX
+          category: LaTeX
+          text: Redefining \ref
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\hyperref\hyperref.sty
+            range:
+              start: 6417
+              end: 6417
+          log:
+            file: main_improve.log
+            range:
+              start: 276
+              end: 276
+        - severity: info
+          name: pdfTeX
+          category: LaTeX
+          text: Redefining \pageref
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\hyperref\hyperref.sty
+            range:
+              start: 6421
+              end: 6421
+          log:
+            file: main_improve.log
+            range:
+              start: 277
+              end: 277
+        - name: pdfTeX
+          severity: info
+          text: atbegshi 2019/12/05 v1.19 At begin shipout hook (HO)
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\atbegshi\atbegshi.sty
+          log:
+            file: main_improve.log
+            range:
+              start: 281
+              end: 281
+        - severity: info
+          name: pdfTeX
+          category: Package hyperref
+          text: 'Driver (autodetected): hpdftex.'
+          source:
+            file: main_improve.tex
+          log:
+            file: main_improve.log
+            range:
+              start: 287
+              end: 287
+        - name: pdfTeX
+          severity: info
+          text: atveryend 2019-12-11 v1.11 Hooks at the very end of document (HO)
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\atveryend\atveryend.sty
+          log:
+            file: main_improve.log
+            range:
+              start: 295
+              end: 295
+        - severity: info
+          name: pdfTeX
+          category: Package atveryend
+          text: \enddocument detected (standard20110627).
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\atveryend\atveryend.sty
+          log:
+            file: main_improve.log
+            range:
+              start: 296
+              end: 296
+        - name: pdfTeX
+          severity: info
+          text: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\rerunfilecheck\rerunfilecheck.sty
+          log:
+            file: main_improve.log
+            range:
+              start: 303
+              end: 303
+        - name: pdfTeX
+          severity: info
+          text: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\uniquecounter\uniquecounter.sty
+          log:
+            file: main_improve.log
+            range:
+              start: 307
+              end: 307
+        - severity: info
+          name: pdfTeX
+          category: Package uniquecounter
+          text: New unique counter `rerunfilecheck'
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\rerunfilecheck\rerunfilecheck.sty
+            range:
+              start: 286
+              end: 286
+          log:
+            file: main_improve.log
+            range:
+              start: 309
+              end: 310
+        - name: pdfTeX
+          severity: info
+          text: 'tocloft 2017/08/31 v2.3i parameterised ToC, etc., typesetting'
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\tocloft\tocloft.sty
+          log:
+            file: main_improve.log
+            range:
+              start: 316
+              end: 316
+        - severity: info
+          name: pdfTeX
+          category: Package tocloft
+          text: The document has section divisions
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\tocloft\tocloft.sty
+            range:
+              start: 51
+              end: 51
+          log:
+            file: main_improve.log
+            range:
+              start: 317
+              end: 317
+        - name: pdfTeX
+          severity: info
+          text: appendix 2020/02/08 v1.2c extra appendix facilities
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\appendix\appendix.sty
+          log:
+            file: main_improve.log
+            range:
+              start: 354
+              end: 354
+        - name: pdfTeX
+          severity: info
+          text: pgfrcs 2020/01/08 v3.1.5b (3.1.5b)
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\utilities\pgfrcs.code.tex
+          log:
+            file: main_improve.log
+            range:
+              start: 384
+              end: 384
+        - name: pdfTeX
+          severity: info
+          text: pgf 2020/01/08 v3.1.5b (3.1.5b)
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\pgf\basiclayer\pgf.sty
+          log:
+            file: main_improve.log
+            range:
+              start: 386
+              end: 386
+        - name: pdfTeX
+          severity: info
+          text: pgfsys 2020/01/08 v3.1.5b (3.1.5b)
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\systemlayer\pgfsys.code.tex
+          log:
+            file: main_improve.log
+            range:
+              start: 394
+              end: 394
+        - name: pdfTeX
+          severity: info
+          text: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\xcolor\xcolor.s
+          log:
+            file: main_improve.log
+            range:
+              start: 452
+              end: 452
+        - severity: info
+          name: pdfTeX
+          category: Package xcolor
+          text: 'Driver file: pdftex.def'
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\xcolor\xcolor.s
+            range:
+              start: 225
+              end: 225
+          log:
+            file: main_improve.log
+            range:
+              start: 458
+              end: 458
+        - severity: info
+          name: pdfTeX
+          category: Package xcolor
+          text: Model `cmy' substituted by `cmy0'
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\xcolor\xcolor.s
+            range:
+              start: 1348
+              end: 1348
+          log:
+            file: main_improve.log
+            range:
+              start: 459
+              end: 459
+        - severity: info
+          name: pdfTeX
+          category: Package xcolor
+          text: Model `hsb' substituted by `rgb'
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\xcolor\xcolor.s
+            range:
+              start: 1352
+              end: 1352
+          log:
+            file: main_improve.log
+            range:
+              start: 460
+              end: 460
+        - severity: info
+          name: pdfTeX
+          category: Package xcolor
+          text: Model `RGB' extended
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\xcolor\xcolor.s
+            range:
+              start: 1364
+              end: 1364
+          log:
+            file: main_improve.log
+            range:
+              start: 461
+              end: 461
+        - severity: info
+          name: pdfTeX
+          category: Package xcolor
+          text: Model `HTML' substituted by `rgb'
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\xcolor\xcolor.s
+            range:
+              start: 1366
+              end: 1366
+          log:
+            file: main_improve.log
+            range:
+              start: 462
+              end: 462
+        - severity: info
+          name: pdfTeX
+          category: Package xcolor
+          text: Model `Hsb' substituted by `hsb'
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\xcolor\xcolor.s
+            range:
+              start: 1367
+              end: 1367
+          log:
+            file: main_improve.log
+            range:
+              start: 463
+              end: 463
+        - severity: info
+          name: pdfTeX
+          category: Package xcolor
+          text: Model `tHsb' substituted by `hsb'
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\xcolor\xcolor.s
+            range:
+              start: 1368
+              end: 1368
+          log:
+            file: main_improve.log
+            range:
+              start: 464
+              end: 464
+        - severity: info
+          name: pdfTeX
+          category: Package xcolor
+          text: Model `HSB' substituted by `hsb'
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\xcolor\xcolor.s
+            range:
+              start: 1369
+              end: 1369
+          log:
+            file: main_improve.log
+            range:
+              start: 465
+              end: 465
+        - severity: info
+          name: pdfTeX
+          category: Package xcolor
+          text: Model `Gray' substituted by `gray'
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\xcolor\xcolor.s
+            range:
+              start: 1370
+              end: 1370
+          log:
+            file: main_improve.log
+            range:
+              start: 466
+              end: 466
+        - severity: info
+          name: pdfTeX
+          category: Package xcolor
+          text: Model `wave' substituted by `hsb'
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\xcolor\xcolor.s
+            range:
+              start: 1371
+              end: 1371
+          log:
+            file: main_improve.log
+            range:
+              start: 467
+              end: 467
+        - name: pdfTeX
+          severity: info
+          text: pgfcore 2020/01/08 v3.1.5b (3.1.5b)
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcore.code.tex
+          log:
+            file: main_improve.log
+            range:
+              start: 471
+              end: 471
+        - name: pdfTeX
+          severity: info
+          text: pgfcomp-version-0-65 2020/01/08 v3.1.5b (3.1.5b)
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\pgf\compatibility\pgfcomp-version-0-65.sty
+          log:
+            file: main_improve.log
+            range:
+              start: 622
+              end: 622
+        - name: pdfTeX
+          severity: info
+          text: pgfcomp-version-1-18 2020/01/08 v3.1.5b (3.1.5b)
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\pgf\compatibility\pgfcomp-version-1-18.sty
+          log:
+            file: main_improve.log
+            range:
+              start: 628
+              end: 628
+        - name: pdfTeX
+          severity: info
+          text: pgffor 2020/01/08 v3.1.5b (3.1.5b)
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\utilities\pgffor.code.tex
+          log:
+            file: main_improve.log
+            range:
+              start: 642
+              end: 642
+        - name: pdfTeX
+          severity: info
+          text: tikz 2020/01/08 v3.1.5b (3.1.5b)
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\frontendlayer\tikz\tikz.code.tex
+          log:
+            file: main_improve.log
+            range:
+              start: 653
+              end: 653
+        - name: pdfTeX
+          severity: info
+          text: amsthm 2020/05/29 v2.20.6
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\amscls\amsthm.s
+          log:
+            file: main_improve.log
+            range:
+              start: 705
+              end: 705
+        - name: pdfTeX
+          severity: info
+          text: tocbibind 2010/10/13 v1.5k extra ToC listings
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\tocbibind\tocbibind.sty
+          log:
+            file: main_improve.log
+            range:
+              start: 718
+              end: 718
+        - severity: info
+          name: pdfTeX
+          category: Package tocbibind
+          text: The document has section divisions
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\tocbibind\tocbibind.sty
+            range:
+              start: 50
+              end: 50
+          log:
+            file: main_improve.log
+            range:
+              start: 719
+              end: 719
+        - name: pdfTeX
+          severity: info
+          text: enumitem 2019/06/20 v3.9 Customized lists
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\enumitem\enumitem.sty
+          log:
+            file: main_improve.log
+            range:
+              start: 726
+              end: 726
+        - name: pdfTeX
+          severity: info
+          text: amssymb 2013/01/14 v3.01 AMS font symbols
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\amssymb.sty
+          log:
+            file: main_improve.log
+            range:
+              start: 736
+              end: 736
+        - name: pdfTeX
+          severity: info
+          text: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\amsfonts.sty
+          log:
+            file: main_improve.log
+            range:
+              start: 740
+              end: 740
+        - severity: info
+          name: pdfTeX
+          category: LaTeX Font
+          text: Redeclaring math symbol \hbar
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\amsfonts.sty
+            range:
+              start: 98
+              end: 98
+          log:
+            file: main_improve.log
+            range:
+              start: 743
+              end: 743
+        - severity: info
+          name: pdfTeX
+          category: LaTeX Font
+          text: >-
+            Overwriting math alphabet `\mathfrak' in version `bold' U/euf/m/n
+            --> U/euf/b/n.
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\amsfonts.sty
+            range:
+              start: 106
+              end: 106
+          log:
+            file: main_improve.log
+            range:
+              start: 744
+              end: 745
+        - name: pdfTeX
+          severity: info
+          text: pifont 2020/03/25 PSNFSS-v9.3 Pi font support (SPQR)
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\psnfss\pifont.s
+          log:
+            file: main_improve.log
+            range:
+              start: 749
+              end: 749
+        - severity: info
+          name: pdfTeX
+          category: LaTeX Font
+          text: Trying to load font information for U+pzd
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\psnfss\pifont.s
+            range:
+              start: 63
+              end: 63
+          log:
+            file: main_improve.log
+            range:
+              start: 750
+              end: 750
+        - severity: info
+          name: pdfTeX
+          category: LaTeX Font
+          text: Trying to load font information for U+psy
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\psnfss\pifont.s
+            range:
+              start: 64
+              end: 64
+          log:
+            file: main_improve.log
+            range:
+              start: 755
+              end: 755
+        - severity: info
+          name: pdfTeX
+          category: LaTeX
+          text: Redefining \.
+          source:
+            file: main_improve.aux
+            range:
+              start: 25
+              end: 25
+          log:
+            file: main_improve.log
+            range:
+              start: 770
+              end: 770
+        - severity: info
+          name: pdfTeX
+          category: LaTeX
+          text: Redefining \%
+          source:
+            file: main_improve.aux
+            range:
+              start: 25
+              end: 25
+          log:
+            file: main_improve.log
+            range:
+              start: 771
+              end: 771
+        - severity: info
+          name: pdfTeX
+          category: LaTeX Font
+          text: Checking defaults for OML/cmm/m/it ... okay
+          source:
+            file: main_improve.tex
+            range:
+              start: 60
+              end: 60
+          log:
+            file: main_improve.log
+            range:
+              start: 775
+              end: 776
+        - severity: info
+          name: pdfTeX
+          category: LaTeX Font
+          text: Checking defaults for OMS/cmsy/m/n ... okay
+          source:
+            file: main_improve.tex
+            range:
+              start: 60
+              end: 60
+          log:
+            file: main_improve.log
+            range:
+              start: 777
+              end: 778
+        - severity: info
+          name: pdfTeX
+          category: LaTeX Font
+          text: Checking defaults for OT1/cmr/m/n ... okay
+          source:
+            file: main_improve.tex
+            range:
+              start: 60
+              end: 60
+          log:
+            file: main_improve.log
+            range:
+              start: 779
+              end: 780
+        - severity: info
+          name: pdfTeX
+          category: LaTeX Font
+          text: Checking defaults for T1/cmr/m/n ... okay
+          source:
+            file: main_improve.tex
+            range:
+              start: 60
+              end: 60
+          log:
+            file: main_improve.log
+            range:
+              start: 781
+              end: 782
+        - severity: info
+          name: pdfTeX
+          category: LaTeX Font
+          text: Checking defaults for TS1/cmr/m/n ... okay
+          source:
+            file: main_improve.tex
+            range:
+              start: 60
+              end: 60
+          log:
+            file: main_improve.log
+            range:
+              start: 783
+              end: 784
+        - severity: info
+          name: pdfTeX
+          category: LaTeX Font
+          text: Checking defaults for OMX/cmex/m/n ... okay
+          source:
+            file: main_improve.tex
+            range:
+              start: 60
+              end: 60
+          log:
+            file: main_improve.log
+            range:
+              start: 785
+              end: 786
+        - severity: info
+          name: pdfTeX
+          category: LaTeX Font
+          text: Checking defaults for U/cmr/m/n ... okay
+          source:
+            file: main_improve.tex
+            range:
+              start: 60
+              end: 60
+          log:
+            file: main_improve.log
+            range:
+              start: 787
+              end: 788
+        - severity: info
+          name: pdfTeX
+          category: LaTeX Font
+          text: Checking defaults for PD1/pdf/m/n ... okay
+          source:
+            file: main_improve.tex
+            range:
+              start: 60
+              end: 60
+          log:
+            file: main_improve.log
+            range:
+              start: 789
+              end: 790
+        - name: pdfTeX
+          severity: info
+          text: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\epstopdf-pkg\epstopdf-base.sty
+          log:
+            file: main_improve.log
+            range:
+              start: 809
+              end: 809
+        - severity: info
+          name: pdfTeX
+          category: Package epstopdf-base
+          text: Redefining graphics rule for `.eps'
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\epstopdf-pkg\epstopdf-base.sty
+            range:
+              start: 485
+              end: 485
+          log:
+            file: main_improve.log
+            range:
+              start: 810
+              end: 811
+        - severity: info
+          name: pdfTeX
+          category: LaTeX
+          text: Redefining \.
+          source:
+            file: main_improve.tex
+            range:
+              start: 60
+              end: 60
+          log:
+            file: main_improve.log
+            range:
+              start: 813
+              end: 813
+        - severity: info
+          name: pdfTeX
+          category: LaTeX
+          text: Redefining \%
+          source:
+            file: main_improve.tex
+            range:
+              start: 60
+              end: 60
+          log:
+            file: main_improve.log
+            range:
+              start: 814
+              end: 814
+        - severity: info
+          name: pdfTeX
+          category: Package hyperref
+          text: Link coloring OFF
+          source:
+            file: main_improve.tex
+            range:
+              start: 60
+              end: 60
+          log:
+            file: main_improve.log
+            range:
+              start: 816
+              end: 816
+        - name: pdfTeX
+          severity: info
+          text: nameref 2019/09/16 v2.46 Cross-referencing by name of section
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\hyperref\nameref.sty
+          log:
+            file: main_improve.log
+            range:
+              start: 820
+              end: 820
+        - name: pdfTeX
+          severity: info
+          text: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\refcount\refcount.sty
+          log:
+            file: main_improve.log
+            range:
+              start: 824
+              end: 824
+        - name: pdfTeX
+          severity: info
+          text: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+          source:
+            file: >-
+              C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\gettitlestring\gettitlestring.sty
+          log:
+            file: main_improve.log
+            range:
+              start: 828
+              end: 828
+        - severity: info
+          name: pdfTeX
+          category: LaTeX
+          text: Redefining \ref
+          source:
+            file: main_improve.tex
+            range:
+              start: 60
+              end: 60
+          log:
+            file: main_improve.log
+            range:
+              start: 832
+              end: 832
+        - severity: info
+          name: pdfTeX
+          category: LaTeX
+          text: Redefining \pageref
+          source:
+            file: main_improve.tex
+            range:
+              start: 60
+              end: 60
+          log:
+            file: main_improve.log
+            range:
+              start: 833
+              end: 833
+        - severity: info
+          name: pdfTeX
+          category: LaTeX
+          text: Redefining \nameref
+          source:
+            file: main_improve.tex
+            range:
+              start: 60
+              end: 60
+          log:
+            file: main_improve.log
+            range:
+              start: 834
+              end: 834
+        - severity: info
+          name: pdfTeX
+          category: Package pdftex.def
+          text: 'logo_UCM.png used Requested size: 164.31752pt x 191.52466pt.'
+          source:
+            file: main_improve.tex
+            range:
+              start: 74
+              end: 74
+          log:
+            file: main_improve.log
+            range:
+              start: 847
+              end: 848
+        - severity: info
+          name: pdfTeX
+          category: LaTeX
+          text: Redefining \.
+          source:
+            file: main_improve.toc
+            range:
+              start: 1
+              end: 1
+          log:
+            file: main_improve.log
+            range:
+              start: 861
+              end: 861
+        - severity: info
+          name: pdfTeX
+          category: LaTeX
+          text: Redefining \%
+          source:
+            file: main_improve.toc
+            range:
+              start: 1
+              end: 1
+          log:
+            file: main_improve.log
+            range:
+              start: 862
+              end: 862
+        - severity: info
+          name: pdfTeX
+          category: LaTeX Font
+          text: Trying to load font information for U+msa
+          source:
+            file: main_improve.toc
+            range:
+              start: 2
+              end: 2
+          log:
+            file: main_improve.log
+            range:
+              start: 863
+              end: 863
+        - severity: info
+          name: pdfTeX
+          category: LaTeX Font
+          text: Trying to load font information for U+msb
+          source:
+            file: main_improve.toc
+            range:
+              start: 2
+              end: 2
+          log:
+            file: main_improve.log
+            range:
+              start: 869
+              end: 869
+        - severity: warning
+          name: pdfTeX
+          category: LaTeX
+          text: Citation `dyson' undefined
+          source:
+            file: main_improve.tex
+            range:
+              start: 1092
+              end: 1092
+          log:
+            file: main_improve.log
+            range:
+              start: 881
+              end: 881
+        - severity: info
+          name: pdfTeX
+          category: Package atveryend
+          text: Empty hook `BeforeClearDocument'
+          source:
+            file: main_improve.tex
+            range:
+              start: 1097
+              end: 1097
+          log:
+            file: main_improve.log
+            range:
+              start: 886
+              end: 886
+        - severity: info
+          name: pdfTeX
+          category: Package atveryend
+          text: Empty hook `AfterLastShipout'
+          source:
+            file: main_improve.tex
+            range:
+              start: 1097
+              end: 1097
+          log:
+            file: main_improve.log
+            range:
+              start: 887
+              end: 887
+        - severity: info
+          name: pdfTeX
+          category: LaTeX
+          text: Redefining \.
+          source:
+            file: main_improve.aux
+            range:
+              start: 25
+              end: 25
+          log:
+            file: main_improve.log
+            range:
+              start: 891
+              end: 891
+        - severity: info
+          name: pdfTeX
+          category: LaTeX
+          text: Redefining \%
+          source:
+            file: main_improve.aux
+            range:
+              start: 25
+              end: 25
+          log:
+            file: main_improve.log
+            range:
+              start: 892
+              end: 892
+        - severity: info
+          name: pdfTeX
+          category: Package atveryend
+          text: Executing hook `AtVeryEndDocument'
+          source:
+            file: main_improve.tex
+            range:
+              start: 1097
+              end: 1097
+          log:
+            file: main_improve.log
+            range:
+              start: 894
+              end: 894
+        - severity: info
+          name: pdfTeX
+          category: Package atveryend
+          text: Executing hook `AtEndAfterFileList'
+          source:
+            file: main_improve.tex
+            range:
+              start: 1097
+              end: 1097
+          log:
+            file: main_improve.log
+            range:
+              start: 895
+              end: 895
+        - severity: info
+          name: pdfTeX
+          category: Package rerunfilecheck
+          text: >-
+            File `main_improve.out' has not changed. Checksum:
+            65C4437C36B367B4D2C5C0ABBE7E989A;2557.
+          source:
+            file: main_improve.tex
+          log:
+            file: main_improve.log
+            range:
+              start: 897
+              end: 898
+        - severity: warning
+          name: pdfTeX
+          category: LaTeX
+          text: There were undefined references.
+          source:
+            file: main_improve.tex
+          log:
+            file: main_improve.log
+            range:
+              start: 900
+              end: 900
+        - severity: info
+          name: pdfTeX
+          category: Package atveryend
+          text: Empty hook `AtVeryVeryEnd'
+          source:
+            file: main_improve.tex
+            range:
+              start: 1097
+              end: 1097
+          log:
+            file: main_improve.log
+            range:
+              start: 902
+              end: 902
+      inputs: []
+      outputs:
+        - main_improve.pdf
+      calls: []
+    type: ParsedLaTeXLog
+  main_improve.pdf:
+    timeStamp: 2020-09-10T16:57:10.693Z
+    jobNames: []
+    hash: v22z6PSS2aS7fk1+GNraqAoNpvsNsNiFzm9aXWkgiNU=
+    type: PortableDocumentFormat
+  main_improve.aux:
+    timeStamp: 2020-09-10T16:57:10.558Z
+    jobNames: []
+    hash: nIu/NHhL5ZWAUNKt3RGwZx8uChAc4Qg+zlHjFeGlrhI=
+    type: LaTeXAuxilary
+  main_improve.fls:
+    timeStamp: 2020-09-10T16:57:10.699Z
+    jobNames: []
+    hash: j0KDhkNlv8gjhAhSXiWazMq6z2ROkYMmhCyTFObWqYE=
+    type: FileListing
+  main_improve.synctex.gz:
+    timeStamp: 2020-09-10T16:57:10.694Z
+    jobNames: []
+    hash: Fmbi4m4WSTT9n7OZbaFg9uhiYHARSGksxlKT7hofSVs=
+    type: SyncTeX
+  main_improve.aux-ParsedLaTeXAuxilary:
+    timeStamp: 2020-09-10T16:57:04.426Z
+    jobNames: []
+    value:
+      commands:
+        - relax
+        - providecommand
+        - providecommand
+        - '@nameuse'
+        - catcode
+        - catcode
+        - catcode
+        - '@nameuse'
+        - providecommand
+        - HyperFirstAtBeginDocument
+        - global
+        - gdef
+        - global
+        - gdef
+        - gdef
+        - AtEndDocument
+        - let
+        - let
+        - fi
+        - fi
+        - global
+        - gdef
+        - providecommand
+        - providecommand
+        - babel@aux
+        - citation
+        - '@writefile'
+        - newlabel
+        - '@writefile'
+        - newlabel
+        - '@writefile'
+        - '@writefile'
+        - newlabel
+        - '@writefile'
+        - citation
+        - '@writefile'
+        - '@writefile'
+        - '@writefile'
+        - '@writefile'
+        - newlabel
+        - '@writefile'
+        - '@writefile'
+        - newlabel
+        - '@writefile'
+        - newlabel
+        - '@writefile'
+        - '@writefile'
+        - newlabel
+        - '@writefile'
+        - newlabel
+        - newlabel
+        - citation
+        - citation
+        - '@writefile'
+        - newlabel
+        - newlabel
+        - newlabel
+        - newlabel
+        - citation
+        - '@writefile'
+        - newlabel
+        - newlabel
+        - newlabel
+        - '@writefile'
+        - newlabel
+        - '@writefile'
+        - newlabel
+        - '@writefile'
+        - newlabel
+        - '@writefile'
+        - newlabel
+        - '@writefile'
+        - newlabel
+        - newlabel
+        - newlabel
+        - '@writefile'
+        - newlabel
+        - newlabel
+        - newlabel
+        - '@writefile'
+        - newlabel
+        - '@writefile'
+        - '@writefile'
+        - '@writefile'
+        - newlabel
+        - '@writefile'
+        - newlabel
+        - citation
+        - newlabel
+        - newlabel
+        - newlabel
+        - newlabel
+        - '@writefile'
+        - newlabel
+        - '@writefile'
+        - newlabel
+        - '@writefile'
+        - newlabel
+        - '@writefile'
+        - newlabel
+        - newlabel
+        - newlabel
+        - newlabel
+        - '@writefile'
+        - '@writefile'
+        - newlabel
+        - citation
+        - citation
+        - citation
+        - citation
+        - citation
+        - citation
+        - citation
+        - citation
+        - citation
+        - citation
+        - citation
+        - citation
+        - citation
+        - citation
+        - bibstyle
+        - bibdata
+        - bibcite
+        - bibcite
+        - bibcite
+        - bibcite
+        - bibcite
+        - bibcite
+        - bibcite
+        - bibcite
+        - bibcite
+        - bibcite
+        - bibcite
+        - bibcite
+        - bibcite
+        - '@writefile'
+    type: ParsedLaTeXAuxilary
+  main_improve.blg-ParsedBibTeXLog:
+    timeStamp: 2020-09-10T16:56:33.328Z
+    jobNames: []
+    value:
+      messages:
+        - severity: warning
+          name: BibTeX
+          text: I didn't find a database entry for "dyson"
+          log:
+            file: main_improve.blg
+            range:
+              start: 8
+              end: 8
+      inputs:
+        - "main_improve.aux\r"
+        - "C:\\Users\\Lorentz-Ipsum\\AppData\\Local\\Programs\\MiKTeX\\bibtex\\bst\\bibtex\\unsrt.bst\r"
+        - "bib.bib\r"
+      outputs: []
+      calls: []
+    type: ParsedBibTeXLog
+  'C:\Users\Lorentz-Ipsum\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt':
+    timeStamp: 2020-09-08T12:36:55.128Z
+    jobNames: []
+  'C:\Users\Lorentz-Ipsum\AppData\Local\MiKTeX\pdftex\config\pdftex.map':
+    timeStamp: 2020-09-08T12:43:07.590Z
+    jobNames: []
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\symbol\psyr.tfm':
+    timeStamp: 2006-01-09T01:04:14.000Z
+    jobNames: []
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\zapfding\pzdr.tfm':
+    timeStamp: 2006-01-09T01:04:14.000Z
+    jobNames: []
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm':
+    timeStamp: 2009-02-06T20:24:08.000Z
+    jobNames: []
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex8.tfm':
+    timeStamp: 2009-02-06T20:24:08.000Z
+    jobNames: []
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam10.tfm':
+    timeStamp: 2009-02-06T20:24:14.000Z
+    jobNames: []
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam5.tfm':
+    timeStamp: 2009-02-06T20:24:14.000Z
+    jobNames: []
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam7.tfm':
+    timeStamp: 2009-02-06T20:24:14.000Z
+    jobNames: []
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm':
+    timeStamp: 2009-02-06T20:24:14.000Z
+    jobNames: []
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm5.tfm':
+    timeStamp: 2009-02-06T20:24:14.000Z
+    jobNames: []
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm7.tfm':
+    timeStamp: 2009-02-06T20:24:14.000Z
+    jobNames: []
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx10.tfm':
+    timeStamp: 2006-01-09T00:04:13.000Z
+    jobNames: []
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm':
+    timeStamp: 2006-01-09T00:04:13.000Z
+    jobNames: []
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx5.tfm':
+    timeStamp: 2006-01-09T00:04:13.000Z
+    jobNames: []
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx6.tfm':
+    timeStamp: 2006-01-09T00:04:13.000Z
+    jobNames: []
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx8.tfm':
+    timeStamp: 2006-01-09T00:04:13.000Z
+    jobNames: []
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmex10.tfm':
+    timeStamp: 2006-01-09T00:04:13.000Z
+    jobNames: []
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmmi10.tfm':
+    timeStamp: 2006-01-09T00:04:13.000Z
+    jobNames: []
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmmi6.tfm':
+    timeStamp: 2006-01-09T00:04:13.000Z
+    jobNames: []
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmmi8.tfm':
+    timeStamp: 2006-01-09T00:04:13.000Z
+    jobNames: []
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr10.tfm':
+    timeStamp: 2006-01-09T00:04:13.000Z
+    jobNames: []
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr12.tfm':
+    timeStamp: 2006-01-09T00:04:13.000Z
+    jobNames: []
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr6.tfm':
+    timeStamp: 2006-01-09T00:04:13.000Z
+    jobNames: []
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr8.tfm':
+    timeStamp: 2006-01-09T00:04:13.000Z
+    jobNames: []
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmss8.tfm':
+    timeStamp: 2006-01-09T00:04:13.000Z
+    jobNames: []
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmsy10.tfm':
+    timeStamp: 2006-01-09T00:04:13.000Z
+    jobNames: []
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmsy6.tfm':
+    timeStamp: 2006-01-09T00:04:13.000Z
+    jobNames: []
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmsy8.tfm':
+    timeStamp: 2006-01-09T00:04:13.000Z
+    jobNames: []
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmti10.tfm':
+    timeStamp: 2006-01-09T00:04:13.000Z
+    jobNames: []
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmtt10.tfm':
+    timeStamp: 2006-01-09T00:04:13.000Z
+    jobNames: []
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx10.pfb':
+    timeStamp: 2009-07-14T18:37:46.000Z
+    jobNames: []
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx12.pfb':
+    timeStamp: 2009-07-14T18:37:46.000Z
+    jobNames: []
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmex10.pfb':
+    timeStamp: 2009-07-14T18:37:47.000Z
+    jobNames: []
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi10.pfb':
+    timeStamp: 2009-07-14T18:37:47.000Z
+    jobNames: []
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi6.pfb':
+    timeStamp: 2009-07-14T18:37:46.000Z
+    jobNames: []
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi8.pfb':
+    timeStamp: 2009-07-14T18:37:46.000Z
+    jobNames: []
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr10.pfb':
+    timeStamp: 2009-07-14T18:37:47.000Z
+    jobNames: []
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr12.pfb':
+    timeStamp: 2009-07-14T18:37:47.000Z
+    jobNames: []
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr6.pfb':
+    timeStamp: 2009-07-14T18:37:47.000Z
+    jobNames: []
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr8.pfb':
+    timeStamp: 2009-07-14T18:37:47.000Z
+    jobNames: []
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmss8.pfb':
+    timeStamp: 2009-07-14T18:37:47.000Z
+    jobNames: []
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy10.pfb':
+    timeStamp: 2009-07-14T18:37:47.000Z
+    jobNames: []
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy6.pfb':
+    timeStamp: 2009-07-14T18:37:47.000Z
+    jobNames: []
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy8.pfb':
+    timeStamp: 2009-07-14T18:37:47.000Z
+    jobNames: []
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmti10.pfb':
+    timeStamp: 2009-07-14T18:37:47.000Z
+    jobNames: []
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmtt10.pfb':
+    timeStamp: 2009-07-14T18:37:47.000Z
+    jobNames: []
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\symbols\msbm10.pfb':
+    timeStamp: 2009-07-14T18:37:53.000Z
+    jobNames: []
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\context\base\mkii\supp-pdf.mkii':
+    timeStamp: 2020-01-30T13:15:58.000Z
+    jobNames: []
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\atbegshi\atbegshi.sty':
+    timeStamp: 2019-12-05T18:38:20.000Z
+    jobNames: []
+    type: LaTeXStyle
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\babel\babel.def':
+    timeStamp: 2020-09-01T11:47:38.000Z
+    jobNames: []
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\babel\babel.sty':
+    timeStamp: 2020-09-01T11:47:38.000Z
+    jobNames: []
+    type: LaTeXStyle
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\babel\txtbabel.def':
+    timeStamp: 2020-09-01T11:47:38.000Z
+    jobNames: []
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\bigintcalc\bigintcalc.sty':
+    timeStamp: 2019-12-15T18:13:22.000Z
+    jobNames: []
+    type: LaTeXStyle
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\bitset\bitset.sty':
+    timeStamp: 2019-12-09T21:22:56.000Z
+    jobNames: []
+    type: LaTeXStyle
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\etexcmds\etexcmds.sty':
+    timeStamp: 2019-12-15T18:13:58.000Z
+    jobNames: []
+    type: LaTeXStyle
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\gettitlestring\gettitlestring.sty':
+    timeStamp: 2019-12-15T18:14:26.000Z
+    jobNames: []
+    type: LaTeXStyle
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\iftex\iftex.sty':
+    timeStamp: 2020-03-06T19:36:40.000Z
+    jobNames: []
+    type: LaTeXStyle
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\infwarerr\infwarerr.sty':
+    timeStamp: 2019-12-03T18:58:28.000Z
+    jobNames: []
+    type: LaTeXStyle
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\intcalc\intcalc.sty':
+    timeStamp: 2019-12-15T18:16:04.000Z
+    jobNames: []
+    type: LaTeXStyle
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\kvdefinekeys\kvdefinekeys.sty':
+    timeStamp: 2019-12-19T13:48:24.000Z
+    jobNames: []
+    type: LaTeXStyle
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\kvsetkeys\kvsetkeys.sty':
+    timeStamp: 2019-12-15T18:17:00.000Z
+    jobNames: []
+    type: LaTeXStyle
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\ltxcmds\ltxcmds.sty':
+    timeStamp: 2019-12-15T18:18:20.000Z
+    jobNames: []
+    type: LaTeXStyle
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pdfescape\pdfescape.sty':
+    timeStamp: 2019-12-09T21:25:00.000Z
+    jobNames: []
+    type: LaTeXStyle
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pdftexcmds\pdftexcmds.sty':
+    timeStamp: 2020-06-29T15:12:20.000Z
+    jobNames: []
+    type: LaTeXStyle
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcore.code.tex':
+    timeStamp: 2020-01-08T01:30:59.000Z
+    jobNames: []
+    type: TeX
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcorearrows.code.tex':
+    timeStamp: 2020-01-08T01:30:59.000Z
+    jobNames: []
+    type: TeX
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcoreexternal.code.tex':
+    timeStamp: 2020-01-08T01:30:59.000Z
+    jobNames: []
+    type: TeX
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcoregraphicstate.code.tex':
+    timeStamp: 2020-01-08T01:30:59.000Z
+    jobNames: []
+    type: TeX
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcoreimage.code.tex':
+    timeStamp: 2020-01-08T01:30:59.000Z
+    jobNames: []
+    type: TeX
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcorelayers.code.tex':
+    timeStamp: 2020-01-08T01:30:59.000Z
+    jobNames: []
+    type: TeX
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcoreobjects.code.tex':
+    timeStamp: 2020-01-08T01:30:59.000Z
+    jobNames: []
+    type: TeX
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcorepathconstruct.code.tex':
+    timeStamp: 2020-01-08T01:30:59.000Z
+    jobNames: []
+    type: TeX
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcorepathprocessing.code.tex':
+    timeStamp: 2020-01-08T01:30:59.000Z
+    jobNames: []
+    type: TeX
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcorepathusage.code.tex':
+    timeStamp: 2020-01-08T01:30:59.000Z
+    jobNames: []
+    type: TeX
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcorepatterns.code.tex':
+    timeStamp: 2020-01-08T01:30:59.000Z
+    jobNames: []
+    type: TeX
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcorepoints.code.tex':
+    timeStamp: 2020-01-08T01:30:59.000Z
+    jobNames: []
+    type: TeX
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcorequick.code.tex':
+    timeStamp: 2020-01-08T01:30:59.000Z
+    jobNames: []
+    type: TeX
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcorerdf.code.tex':
+    timeStamp: 2020-01-08T01:30:59.000Z
+    jobNames: []
+    type: TeX
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcorescopes.code.tex':
+    timeStamp: 2020-01-08T01:30:59.000Z
+    jobNames: []
+    type: TeX
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcoreshade.code.tex':
+    timeStamp: 2020-01-08T01:30:59.000Z
+    jobNames: []
+    type: TeX
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcoretransformations.code.tex':
+    timeStamp: 2020-01-08T01:30:59.000Z
+    jobNames: []
+    type: TeX
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcoretransparency.code.tex':
+    timeStamp: 2020-01-08T01:30:59.000Z
+    jobNames: []
+    type: TeX
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibraryfadings.code.tex':
+    timeStamp: 2020-01-08T01:30:59.000Z
+    jobNames: []
+    type: TeX
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibraryshadows.code.tex':
+    timeStamp: 2020-01-08T01:30:59.000Z
+    jobNames: []
+    type: TeX
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibrarytopaths.code.tex':
+    timeStamp: 2020-01-08T01:30:59.000Z
+    jobNames: []
+    type: TeX
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\frontendlayer\tikz\tikz.code.tex':
+    timeStamp: 2020-01-08T01:30:59.000Z
+    jobNames: []
+    type: TeX
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\libraries\pgflibraryfadings.code.tex':
+    timeStamp: 2020-01-08T01:30:59.000Z
+    jobNames: []
+    type: TeX
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\libraries\pgflibraryplothandlers.code.tex':
+    timeStamp: 2020-01-08T01:30:59.000Z
+    jobNames: []
+    type: TeX
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\math\pgfint.code.tex':
+    timeStamp: 2020-01-08T01:30:59.000Z
+    jobNames: []
+    type: TeX
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\math\pgfmath.code.tex':
+    timeStamp: 2020-01-08T01:30:59.000Z
+    jobNames: []
+    type: TeX
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\math\pgfmathcalc.code.tex':
+    timeStamp: 2020-01-08T01:30:59.000Z
+    jobNames: []
+    type: TeX
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\math\pgfmathfloat.code.tex':
+    timeStamp: 2020-01-08T01:30:59.000Z
+    jobNames: []
+    type: TeX
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\math\pgfmathfunctions.base.code.tex':
+    timeStamp: 2020-01-08T01:30:59.000Z
+    jobNames: []
+    type: TeX
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\math\pgfmathfunctions.basic.code.tex':
+    timeStamp: 2020-01-08T01:30:59.000Z
+    jobNames: []
+    type: TeX
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\math\pgfmathfunctions.code.tex':
+    timeStamp: 2020-01-08T01:30:59.000Z
+    jobNames: []
+    type: TeX
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\math\pgfmathfunctions.comparison.code.tex':
+    timeStamp: 2020-01-08T01:30:59.000Z
+    jobNames: []
+    type: TeX
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\math\pgfmathfunctions.integerarithmetics.code.tex':
+    timeStamp: 2020-01-08T01:30:59.000Z
+    jobNames: []
+    type: TeX
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\math\pgfmathfunctions.misc.code.tex':
+    timeStamp: 2020-01-08T01:30:59.000Z
+    jobNames: []
+    type: TeX
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\math\pgfmathfunctions.random.code.tex':
+    timeStamp: 2020-01-08T01:30:59.000Z
+    jobNames: []
+    type: TeX
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\math\pgfmathfunctions.round.code.tex':
+    timeStamp: 2020-01-08T01:30:59.000Z
+    jobNames: []
+    type: TeX
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\math\pgfmathfunctions.trigonometric.code.tex':
+    timeStamp: 2020-01-08T01:30:59.000Z
+    jobNames: []
+    type: TeX
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\math\pgfmathparser.code.tex':
+    timeStamp: 2020-01-08T01:30:59.000Z
+    jobNames: []
+    type: TeX
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\math\pgfmathutil.code.tex':
+    timeStamp: 2020-01-08T01:30:59.000Z
+    jobNames: []
+    type: TeX
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\modules\pgfmodulematrix.code.tex':
+    timeStamp: 2020-01-08T01:30:59.000Z
+    jobNames: []
+    type: TeX
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\modules\pgfmoduleplot.code.tex':
+    timeStamp: 2020-01-08T01:30:59.000Z
+    jobNames: []
+    type: TeX
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\modules\pgfmoduleshapes.code.tex':
+    timeStamp: 2020-01-08T01:30:59.000Z
+    jobNames: []
+    type: TeX
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\pgf.revision.tex':
+    timeStamp: 2020-01-08T01:31:11.000Z
+    jobNames: []
+    type: TeX
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\systemlayer\pgf.cfg':
+    timeStamp: 2020-01-08T01:30:59.000Z
+    jobNames: []
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\systemlayer\pgfsys-common-pdf.def':
+    timeStamp: 2020-01-08T01:30:59.000Z
+    jobNames: []
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\systemlayer\pgfsys-pdftex.def':
+    timeStamp: 2020-01-08T01:30:59.000Z
+    jobNames: []
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\systemlayer\pgfsys.code.tex':
+    timeStamp: 2020-01-08T01:30:59.000Z
+    jobNames: []
+    type: TeX
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\systemlayer\pgfsysprotocol.code.tex':
+    timeStamp: 2020-01-08T01:30:59.000Z
+    jobNames: []
+    type: TeX
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\systemlayer\pgfsyssoftpath.code.tex':
+    timeStamp: 2020-01-08T01:30:59.000Z
+    jobNames: []
+    type: TeX
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\utilities\pgffor.code.tex':
+    timeStamp: 2020-01-08T01:30:59.000Z
+    jobNames: []
+    type: TeX
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\utilities\pgfkeys.code.tex':
+    timeStamp: 2020-01-08T01:30:59.000Z
+    jobNames: []
+    type: TeX
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\utilities\pgfkeysfiltered.code.tex':
+    timeStamp: 2020-01-08T01:30:59.000Z
+    jobNames: []
+    type: TeX
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\utilities\pgfrcs.code.tex':
+    timeStamp: 2020-01-08T01:30:59.000Z
+    jobNames: []
+    type: TeX
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\utilities\pgfutil-common-lists.tex':
+    timeStamp: 2020-01-08T01:30:59.000Z
+    jobNames: []
+    type: TeX
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\utilities\pgfutil-common.tex':
+    timeStamp: 2020-01-08T01:30:59.000Z
+    jobNames: []
+    type: TeX
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\utilities\pgfutil-latex.def':
+    timeStamp: 2020-01-08T01:30:59.000Z
+    jobNames: []
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\uniquecounter\uniquecounter.sty':
+    timeStamp: 2019-12-15T18:20:12.000Z
+    jobNames: []
+    type: LaTeXStyle
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\amscls\amsthm.sty':
+    timeStamp: 2020-06-01T15:00:09.000Z
+    jobNames: []
+    type: LaTeXStyle
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\amsfonts.sty':
+    timeStamp: 2013-01-14T21:09:32.000Z
+    jobNames: []
+    type: LaTeXStyle
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\amssymb.sty':
+    timeStamp: 2013-01-14T21:09:32.000Z
+    jobNames: []
+    type: LaTeXStyle
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\umsa.fd':
+    timeStamp: 2013-01-14T21:09:32.000Z
+    jobNames: []
+    type: FontDescription
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\umsb.fd':
+    timeStamp: 2013-01-14T21:09:32.000Z
+    jobNames: []
+    type: FontDescription
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsbsy.sty':
+    timeStamp: 2020-02-03T16:16:15.000Z
+    jobNames: []
+    type: LaTeXStyle
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsgen.sty':
+    timeStamp: 2020-02-03T16:16:17.000Z
+    jobNames: []
+    type: LaTeXStyle
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsmath.sty':
+    timeStamp: 2020-02-03T16:16:18.000Z
+    jobNames: []
+    type: LaTeXStyle
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsopn.sty':
+    timeStamp: 2020-02-03T16:16:19.000Z
+    jobNames: []
+    type: LaTeXStyle
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amstext.sty':
+    timeStamp: 2020-02-03T16:16:20.000Z
+    jobNames: []
+    type: LaTeXStyle
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\appendix\appendix.sty':
+    timeStamp: 2020-02-09T10:37:48.000Z
+    jobNames: []
+    type: LaTeXStyle
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\arabi\bblopts.cfg':
+    timeStamp: 2006-02-15T00:00:00.000Z
+    jobNames: []
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\atveryend\atveryend.sty':
+    timeStamp: 2019-12-11T21:51:50.000Z
+    jobNames: []
+    type: LaTeXStyle
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\auxhook\auxhook.sty':
+    timeStamp: 2019-12-16T23:25:32.000Z
+    jobNames: []
+    type: LaTeXStyle
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\babel-spanish\spanish.ldf':
+    timeStamp: 2016-03-09T14:09:53.000Z
+    jobNames: []
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\base\article.cls':
+    timeStamp: 2020-02-28T06:34:26.000Z
+    jobNames: []
+    type: LaTeXClass
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\base\inputenc.sty':
+    timeStamp: 2020-02-28T06:34:26.000Z
+    jobNames: []
+    type: LaTeXStyle
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\base\size11.clo':
+    timeStamp: 2020-02-28T06:34:26.000Z
+    jobNames: []
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\enumitem\enumitem.sty':
+    timeStamp: 2019-06-20T14:10:20.000Z
+    jobNames: []
+    type: LaTeXStyle
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\epstopdf-pkg\epstopdf-base.sty':
+    timeStamp: 2020-01-26T12:25:42.000Z
+    jobNames: []
+    type: LaTeXStyle
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\graphics-cfg\color.cfg':
+    timeStamp: 2016-06-14T08:51:32.000Z
+    jobNames: []
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\graphics-cfg\graphics.cfg':
+    timeStamp: 2016-06-14T08:51:32.000Z
+    jobNames: []
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\graphics-def\pdftex.def':
+    timeStamp: 2020-09-01T10:07:30.000Z
+    jobNames: []
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\graphics\graphics.sty':
+    timeStamp: 2020-02-03T16:15:42.000Z
+    jobNames: []
+    type: LaTeXStyle
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\graphics\graphicx.sty':
+    timeStamp: 2020-02-03T16:15:42.000Z
+    jobNames: []
+    type: LaTeXStyle
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\graphics\keyval.sty':
+    timeStamp: 2020-02-03T16:15:42.000Z
+    jobNames: []
+    type: LaTeXStyle
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\graphics\trig.sty':
+    timeStamp: 2020-02-03T16:15:42.000Z
+    jobNames: []
+    type: LaTeXStyle
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\hycolor\hycolor.sty':
+    timeStamp: 2020-01-30T10:39:52.000Z
+    jobNames: []
+    type: LaTeXStyle
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\hyperref\hpdftex.def':
+    timeStamp: 2020-05-15T22:48:56.000Z
+    jobNames: []
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\hyperref\hyperref.sty':
+    timeStamp: 2020-05-15T22:48:56.000Z
+    jobNames: []
+    type: LaTeXStyle
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\hyperref\nameref.sty':
+    timeStamp: 2020-05-15T22:48:56.000Z
+    jobNames: []
+    type: LaTeXStyle
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\hyperref\pd1enc.def':
+    timeStamp: 2020-05-15T22:48:58.000Z
+    jobNames: []
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\kvoptions\kvoptions.sty':
+    timeStamp: 2019-11-29T20:31:22.000Z
+    jobNames: []
+    type: LaTeXStyle
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\l3backend\l3backend-pdftex.def':
+    timeStamp: 2020-09-01T13:37:14.000Z
+    jobNames: []
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\letltxmacro\letltxmacro.sty':
+    timeStamp: 2019-12-03T18:58:56.000Z
+    jobNames: []
+    type: LaTeXStyle
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\ms\everyshi.sty':
+    timeStamp: 2019-08-02T15:05:28.000Z
+    jobNames: []
+    type: LaTeXStyle
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\pgf\basiclayer\pgf.sty':
+    timeStamp: 2020-01-08T01:30:59.000Z
+    jobNames: []
+    type: LaTeXStyle
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\pgf\basiclayer\pgfcore.sty':
+    timeStamp: 2020-01-08T01:30:59.000Z
+    jobNames: []
+    type: LaTeXStyle
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\pgf\compatibility\pgfcomp-version-0-65.sty':
+    timeStamp: 2020-01-08T01:30:59.000Z
+    jobNames: []
+    type: LaTeXStyle
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\pgf\compatibility\pgfcomp-version-1-18.sty':
+    timeStamp: 2020-01-08T01:30:59.000Z
+    jobNames: []
+    type: LaTeXStyle
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\pgf\frontendlayer\tikz.sty':
+    timeStamp: 2020-01-08T01:30:59.000Z
+    jobNames: []
+    type: LaTeXStyle
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\pgf\math\pgfmath.sty':
+    timeStamp: 2020-01-08T01:30:59.000Z
+    jobNames: []
+    type: LaTeXStyle
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\pgf\systemlayer\pgfsys.sty':
+    timeStamp: 2020-01-08T01:30:59.000Z
+    jobNames: []
+    type: LaTeXStyle
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\pgf\utilities\pgffor.sty':
+    timeStamp: 2020-01-08T01:30:59.000Z
+    jobNames: []
+    type: LaTeXStyle
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\pgf\utilities\pgfkeys.sty':
+    timeStamp: 2020-01-08T01:30:59.000Z
+    jobNames: []
+    type: LaTeXStyle
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\pgf\utilities\pgfrcs.sty':
+    timeStamp: 2020-01-08T01:30:59.000Z
+    jobNames: []
+    type: LaTeXStyle
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\psnfss\pifont.sty':
+    timeStamp: 2020-04-03T15:12:51.000Z
+    jobNames: []
+    type: LaTeXStyle
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\psnfss\upsy.fd':
+    timeStamp: 2020-03-26T20:16:18.000Z
+    jobNames: []
+    type: FontDescription
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\psnfss\upzd.fd':
+    timeStamp: 2020-03-26T20:16:18.000Z
+    jobNames: []
+    type: FontDescription
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\refcount\refcount.sty':
+    timeStamp: 2019-12-15T18:19:12.000Z
+    jobNames: []
+    type: LaTeXStyle
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\rerunfilecheck\rerunfilecheck.sty':
+    timeStamp: 2019-12-05T18:41:22.000Z
+    jobNames: []
+    type: LaTeXStyle
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\tocbibind\tocbibind.sty':
+    timeStamp: 2010-10-13T08:19:56.000Z
+    jobNames: []
+    type: LaTeXStyle
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\tocloft\tocloft.sty':
+    timeStamp: 2020-01-13T09:46:03.000Z
+    jobNames: []
+    type: LaTeXStyle
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\url\url.sty':
+    timeStamp: 2013-12-31T11:47:32.000Z
+    jobNames: []
+    type: LaTeXStyle
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\vmargin\vmargin.sty':
+    timeStamp: 2004-07-22T19:05:24.000Z
+    jobNames: []
+    type: LaTeXStyle
+  'C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\xcolor\xcolor.sty':
+    timeStamp: 2016-05-13T10:33:01.000Z
+    jobNames: []
+    type: LaTeXStyle
+  logo_UCM.png:
+    timeStamp: 2020-08-23T18:14:29.433Z
+    jobNames: []
+    hash: zYJ070DrNIv5W3Iczx11ROs2l+ID1QBn9k02Q+u1mUs=
+  main_improve.out:
+    timeStamp: 2020-09-10T16:57:10.561Z
+    jobNames: []
+    hash: wEmDLpsd2wAsMMSpTvyrmTUKvgJocMoRZlYWXu/wm9E=
+    type: OUT
+  main_improve.toc:
+    timeStamp: 2020-09-10T16:57:10.577Z
+    jobNames: []
+    hash: Rzz9s9SxdrWaL4lphi9+a1rap8TnKNRYdrZ95AhLzBU=
+    type: TableOfContents
+  main_improve.bbl:
+    timeStamp: 2020-09-10T16:57:05.872Z
+    jobNames: []
+    hash: ZturzW6dM679+Vi24ZEcCcCRVP2XtDcYy0K589kjWlQ=
+  main_improve.blg:
+    timeStamp: 2020-09-10T16:57:05.872Z
+    jobNames: []
+    hash: vLt625WezKC08GxErDH3Vm57JH8AOb62Oc56/WNNMAs=
+    type: BibTeXLog
+    subType: BibTeX
+rules:
+  - name: ApplyOptions
+    command: load
+    phase: initialize
+    parameters: []
+    inputs:
+      - file: dicy.yaml-ParsedYAML
+        type: default
+      - file: main_improve.yaml-ParsedYAML
+        type: default
+      - file: main_improve.tex-ParsedLaTeXMagic
+        type: default
+      - file: dicy-instance.yaml-ParsedYAML
+        type: default
+      - file: 'C:\Users\Lorentz-Ipsum\AppData\Roaming\dicy\config.yaml-ParsedYAML'
+        type: default
+    outputs: []
+  - name: LoadAndValidateCache
+    command: load
+    phase: initialize
+    parameters: []
+    inputs: []
+    outputs: []
+  - name: Migrate
+    command: load
+    phase: initialize
+    parameters: []
+    inputs: []
+    outputs: []
+  - name: ApplyOptions
+    command: load
+    phase: execute
+    parameters: []
+    inputs:
+      - file: dicy.yaml-ParsedYAML
+        type: default
+      - file: main_improve.yaml-ParsedYAML
+        type: default
+      - file: main_improve.tex-ParsedLaTeXMagic
+        type: default
+      - file: dicy-instance.yaml-ParsedYAML
+        type: default
+      - file: 'C:\Users\Lorentz-Ipsum\AppData\Roaming\dicy\config.yaml-ParsedYAML'
+        type: default
+    outputs: []
+  - name: ParseOptionsFile
+    command: load
+    phase: execute
+    parameters: []
+    inputs:
+      - file: 'C:\Users\Lorentz-Ipsum\AppData\Roaming\dicy\config.yaml'
+        type: default
+    outputs:
+      - file: 'C:\Users\Lorentz-Ipsum\AppData\Roaming\dicy\config.yaml-ParsedYAML'
+        type: default
+  - name: ParseLaTeXMagic
+    command: load
+    phase: execute
+    parameters:
+      - main_improve.tex
+    inputs:
+      - file: main_improve.tex
+        type: default
+    outputs:
+      - file: main_improve.tex-ParsedLaTeXMagic
+        type: default
+  - name: AssignJobNames
+    command: load
+    phase: finalize
+    parameters: []
+    inputs: []
+    outputs: []
+  - name: FindLogFiles
+    command: build
+    phase: initialize
+    parameters: []
+    inputs: []
+    outputs: []
+  - name: LaTeX
+    command: build
+    phase: execute
+    parameters:
+      - main_improve.tex
+    inputs:
+      - file: main_improve.tex
+        type: default
+      - file: main_improve.fls-ParsedFileListing
+        type: default
+      - file: main_improve.log-ParsedLaTeXLog
+        type: default
+      - file: main_improve.aux
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
+        type: default
+      - file: 'C:\Users\Lorentz-Ipsum\AppData\Local\MiKTeX\pdftex\config\pdftex.map'
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\symbol\psyr.tfm
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\zapfding\pzdr.tfm
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex8.tfm
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam10.tfm
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam5.tfm
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam7.tfm
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm5.tfm
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm7.tfm
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx10.tfm
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx5.tfm
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx6.tfm
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx8.tfm
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmex10.tfm
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmmi10.tfm
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmmi6.tfm
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmmi8.tfm
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr10.tfm
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr12.tfm
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr6.tfm
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr8.tfm
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmss8.tfm
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmsy10.tfm
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmsy6.tfm
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmsy8.tfm
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmti10.tfm
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmtt10.tfm
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx10.pfb
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx12.pfb
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmex10.pfb
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi10.pfb
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi6.pfb
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi8.pfb
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr10.pfb
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr12.pfb
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr6.pfb
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr8.pfb
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmss8.pfb
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy10.pfb
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy6.pfb
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy8.pfb
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmti10.pfb
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmtt10.pfb
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\symbols\msbm10.pfb
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\atbegshi\atbegshi.sty
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\babel\babel.def
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\babel\babel.sty
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\babel\txtbabel.def
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\bigintcalc\bigintcalc.sty
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\bitset\bitset.sty
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\etexcmds\etexcmds.sty
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\gettitlestring\gettitlestring.sty
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\iftex\iftex.sty
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\infwarerr\infwarerr.sty
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\intcalc\intcalc.sty
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\kvdefinekeys\kvdefinekeys.sty
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\kvsetkeys\kvsetkeys.sty
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\ltxcmds\ltxcmds.sty
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pdfescape\pdfescape.sty
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pdftexcmds\pdftexcmds.sty
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcore.code.tex
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcorearrows.code.tex
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcoreexternal.code.tex
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcoregraphicstate.code.tex
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcoreimage.code.tex
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcorelayers.code.tex
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcoreobjects.code.tex
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcorepathconstruct.code.tex
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcorepathprocessing.code.tex
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcorepathusage.code.tex
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcorepatterns.code.tex
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcorepoints.code.tex
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcorequick.code.tex
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcorerdf.code.tex
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcorescopes.code.tex
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcoreshade.code.tex
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcoretransformations.code.tex
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcoretransparency.code.tex
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibraryfadings.code.tex
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibraryshadows.code.tex
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibrarytopaths.code.tex
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\frontendlayer\tikz\tikz.code.tex
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\libraries\pgflibraryfadings.code.tex
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\libraries\pgflibraryplothandlers.code.tex
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\math\pgfint.code.tex
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\math\pgfmath.code.tex
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\math\pgfmathcalc.code.tex
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\math\pgfmathfloat.code.tex
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\math\pgfmathfunctions.base.code.tex
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\math\pgfmathfunctions.basic.code.tex
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\math\pgfmathfunctions.code.tex
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\math\pgfmathfunctions.comparison.code.tex
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\math\pgfmathfunctions.integerarithmetics.code.tex
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\math\pgfmathfunctions.misc.code.tex
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\math\pgfmathfunctions.random.code.tex
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\math\pgfmathfunctions.round.code.tex
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\math\pgfmathfunctions.trigonometric.code.tex
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\math\pgfmathparser.code.tex
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\math\pgfmathutil.code.tex
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\modules\pgfmodulematrix.code.tex
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\modules\pgfmoduleplot.code.tex
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\modules\pgfmoduleshapes.code.tex
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\pgf.revision.tex
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\systemlayer\pgf.cfg
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\systemlayer\pgfsys-common-pdf.def
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\systemlayer\pgfsys-pdftex.def
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\systemlayer\pgfsys.code.tex
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\systemlayer\pgfsysprotocol.code.tex
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\systemlayer\pgfsyssoftpath.code.tex
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\utilities\pgffor.code.tex
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\utilities\pgfkeys.code.tex
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\utilities\pgfkeysfiltered.code.tex
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\utilities\pgfrcs.code.tex
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\utilities\pgfutil-common-lists.tex
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\utilities\pgfutil-common.tex
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\pgf\utilities\pgfutil-latex.def
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\generic\uniquecounter\uniquecounter.sty
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\amscls\amsthm.sty
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\amsfonts.sty
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\amssymb.sty
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\umsa.fd
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\umsb.fd
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsbsy.sty
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsgen.sty
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsmath.sty
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsopn.sty
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amstext.sty
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\appendix\appendix.sty
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\arabi\bblopts.cfg
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\atveryend\atveryend.sty
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\auxhook\auxhook.sty
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\babel-spanish\spanish.ldf
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\base\article.cls
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\base\inputenc.sty
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\base\size11.clo
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\enumitem\enumitem.sty
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\epstopdf-pkg\epstopdf-base.sty
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\graphics-cfg\color.cfg
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\graphics-cfg\graphics.cfg
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\graphics-def\pdftex.def
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\graphics\graphics.sty
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\graphics\graphicx.sty
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\graphics\keyval.sty
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\graphics\trig.sty
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\hycolor\hycolor.sty
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\hyperref\hpdftex.def
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\hyperref\hyperref.sty
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\hyperref\nameref.sty
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\hyperref\pd1enc.def
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\kvoptions\kvoptions.sty
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\l3backend\l3backend-pdftex.def
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\letltxmacro\letltxmacro.sty
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\ms\everyshi.sty
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\pgf\basiclayer\pgf.sty
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\pgf\basiclayer\pgfcore.sty
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\pgf\compatibility\pgfcomp-version-0-65.sty
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\pgf\compatibility\pgfcomp-version-1-18.sty
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\pgf\frontendlayer\tikz.sty
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\pgf\math\pgfmath.sty
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\pgf\systemlayer\pgfsys.sty
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\pgf\utilities\pgffor.sty
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\pgf\utilities\pgfkeys.sty
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\pgf\utilities\pgfrcs.sty
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\psnfss\pifont.sty
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\psnfss\upsy.fd
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\psnfss\upzd.fd
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\refcount\refcount.sty
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\rerunfilecheck\rerunfilecheck.sty
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\tocbibind\tocbibind.sty
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\tocloft\tocloft.sty
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\url\url.sty
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\vmargin\vmargin.sty
+        type: default
+      - file: >-
+          C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\xcolor\xcolor.sty
+        type: default
+      - file: logo_UCM.png
+        type: default
+      - file: main_improve.out
+        type: default
+      - file: main_improve.toc
+        type: default
+      - file: main_improve.bbl
+        type: default
+    outputs:
+      - file: main_improve.pdf
+        type: target
+      - file: main_improve.aux
+        type: default
+      - file: main_improve.fls
+        type: default
+      - file: main_improve.log
+        type: default
+      - file: main_improve.synctex.gz
+        type: target
+      - file: main_improve.out
+        type: default
+      - file: main_improve.toc
+        type: default
+  - name: ParseLaTeXLog
+    command: build
+    phase: execute
+    parameters:
+      - main_improve.log
+    inputs:
+      - file: main_improve.log
+        type: default
+    outputs:
+      - file: main_improve.log-ParsedLaTeXLog
+        type: default
+  - name: ParseLaTeXAuxilary
+    command: build
+    phase: execute
+    parameters:
+      - main_improve.aux
+    inputs:
+      - file: main_improve.aux
+        type: default
+    outputs:
+      - file: main_improve.aux-ParsedLaTeXAuxilary
+        type: default
+  - name: ParseFileListing
+    command: build
+    phase: execute
+    parameters:
+      - main_improve.fls
+    inputs:
+      - file: main_improve.fls
+        type: default
+    outputs:
+      - file: main_improve.fls-ParsedFileListing
+        type: default
+  - name: BibTeX
+    command: build
+    phase: execute
+    parameters:
+      - main_improve.aux
+      - main_improve.aux-ParsedLaTeXAuxilary
+    inputs:
+      - file: main_improve.aux
+        type: default
+      - file: main_improve.aux-ParsedLaTeXAuxilary
+        type: default
+      - file: main_improve.log-ParsedLaTeXLog
+        type: default
+      - file: main_improve.blg-ParsedBibTeXLog
+        type: default
+    outputs:
+      - file: main_improve.bbl
+        type: default
+      - file: main_improve.blg
+        type: default
+  - name: ParseBibTeXLog
+    command: build
+    phase: execute
+    parameters:
+      - main_improve.blg
+    inputs:
+      - file: main_improve.blg
+        type: default
+    outputs:
+      - file: main_improve.blg-ParsedBibTeXLog
+        type: default
+  - name: LogProducedTargets
+    command: build
+    phase: finalize
+    parameters: []
+    inputs: []
+    outputs: []
+  - name: CheckForMissingBuildRule
+    command: build
+    phase: finalize
+    parameters:
+      - main_improve.tex
+    inputs:
+      - file: main_improve.tex
+        type: default
+    outputs: []
+  - name: FindLogFiles
+    command: log
+    phase: initialize
+    parameters: []
+    inputs: []
+    outputs: []
+  - name: ParseLaTeXLog
+    command: log
+    phase: execute
+    parameters:
+      - main_improve.log
+    inputs:
+      - file: main_improve.log
+        type: default
+    outputs:
+      - file: main_improve.log-ParsedLaTeXLog
+        type: default
+  - name: ReportLogMessages
+    command: log
+    phase: execute
+    parameters:
+      - main_improve.log-ParsedLaTeXLog
+    inputs:
+      - file: main_improve.log-ParsedLaTeXLog
+        type: default
+    outputs: []
+  - name: ReportLogMessages
+    command: log
+    phase: execute
+    parameters:
+      - main_improve.blg-ParsedBibTeXLog
+    inputs:
+      - file: main_improve.blg-ParsedBibTeXLog
+        type: default
+    outputs: []
+  - name: ParseBibTeXLog
+    command: log
+    phase: execute
+    parameters:
+      - main_improve.blg
+    inputs:
+      - file: main_improve.blg
+        type: default
+    outputs:
+      - file: main_improve.blg-ParsedBibTeXLog
+        type: default
+  - name: SaveCache
+    command: save
+    phase: execute
+    parameters: []
+    inputs: []
+    outputs: []

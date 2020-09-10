@@ -1,0 +1,72 @@
+\begin{thebibliography}{10}
+
+\bibitem{schroeder}
+Daniel~V. Schroeder.
+\newblock
+  \href{https://physics.weber.edu/schroeder/html5/TutorialPacket.pdf}{Creating
+  Interactive Web Simulations Using HTML5 and JavaScript}.
+
+\bibitem{salcido}
+A.~Calles A.~Salcido, R.~Rechtman.
+\newblock \href{https://rmf.smf.mx/ojs/rmf/article/view/2101/2069}{Simulaciones
+  de modelos de teoría cinética como recursos didácticos}.
+\newblock {\em Revista Mexicana de Física}, 36(1):131--145, 1989.
+
+\bibitem{haro}
+A.~Santos M.~López~de Haro.
+\newblock
+  \href{http://www.eweb.unex.es/eweb/fisteor/andres/publications/Boltzmann_ms.pdf}{Boltzmann
+  y la Segunda Ley}.
+
+\bibitem{gottwald}
+M.~Oliver G.~A.~Gottwald.
+\newblock
+  {\href{http://www.maths.usyd.edu.au/u/gottwald/preprints/kac-ring.pdf}{Boltzmann’s
+  dilemma – an introduction to statistical mechanics via the Kac ring}}.
+
+\bibitem{huang}
+Paul Adrien~Maurice Dirac.
+\newblock {\em The Principles of Quantum Mechanics}.
+\newblock International series of monographs on physics. Clarendon Press, 1981.
+
+\bibitem{pathria}
+PD~Beale RK~Pathria, Rogel-Salazar.
+\newblock {\em Statistical Mechanics, 3rd edn.}
+\newblock Taylor \& Francis, 2011.
+
+\bibitem{allen}
+Michael~P Allen and Dominic~J Tildesley.
+\newblock {\em Computer simulation of liquids}.
+\newblock Oxford university press, 2017.
+
+\bibitem{krauth}
+Werner Krauth.
+\newblock {\em Statistical mechanics: algorithms and computations}, volume~13.
+\newblock OUP Oxford, 2006.
+
+\bibitem{greinier}
+Walter Greiner, Ludwig Neise, and Horst St{\"o}cker.
+\newblock {\em Thermodynamics and statistical mechanics}.
+\newblock Springer Science \& Business Media, 2012.
+
+\bibitem{koonin}
+Steven~E Koonin.
+\newblock {\em Computational physics: Fortran version}.
+\newblock CRC Press, 2018.
+
+\bibitem{wannier}
+G.H. Wannier.
+\newblock {\em Statistical Physics}.
+\newblock Dover Books on Physics. Dover Publications, 1987.
+
+\bibitem{reif}
+F.~Reif.
+\newblock {\em F{\'\i}sica estad{\'\i}stica}.
+\newblock Number v. 5 in Berkeley physics course. Revert{\'e}, 1996.
+
+\bibitem{ashcroft}
+Neil~W Ashcroft, N~David Mermin, et~al.
+\newblock Solid state physics [by] neil w. ashcroft [and] n. david mermin.,
+  1976.
+
+\end{thebibliography}

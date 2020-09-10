@@ -1,18 +1,37 @@
+var canvas = document.getElementById('canvasFluctuaciones'),
+    ctx = canvas.getContext('2d'),
+    canvasMarco = document.getElementById('canvasFluctuacionesMarco'),
+    ctxMarco = canvas.getContext('2d'),
+    w = canvas.width = window.innerWidth,
+    h = canvas.height = window.innerHeight,
+    defRadius = document.getElementById('defradius');
+
+var opts = {
+    // bg: "white",
+    ballsAmount: nFluctuaciones.value,
+    lineWidth: 3
+};
+
+drawMarco();
+
+function drawMarco() {
+    ctxMarco.fillStyle = 'white';
+    ctxMarco.fillRect(0, 0, w, h);
+    ctxMarco.beginPath();
+    ctxMarco.moveTo(w / 2, 0);
+    ctxMarco.lineTo(w / 2, h);
+    ctx.setLineDash([5, 15]);
+    ctxMarco.lineWidth = 3;
+    ctxMarco.strokeStyle = 'black';
+    ctxMarco.stroke();
+}
+
 startBtnFluc.onclick = function() {
     'use strict';
-    var canvas = document.getElementById('canvasFluctuaciones'),
-        ctx = canvas.getContext('2d'),
-        w = canvas.width = window.innerWidth,
-        h = canvas.height = window.innerHeight,
-        defRadius = document.getElementById('defradius');
 
+    drawMarco();
     var kT = tempFluctuaciones.value;
 
-    var opts = {
-        bg: "white",
-        ballsAmount: nFluctuaciones.value,
-        lineWidth: 3
-    };
     var mouse = {
         x: w / 2,
         y: h / 2
@@ -124,9 +143,10 @@ startBtnFluc.onclick = function() {
 
     function animate() {
         window.requestAnimationFrame(animate);
-
-        ctx.fillStyle = opts.bg;
-        ctx.fillRect(0, 0, w, h);
+        ctx.clearRect(0, 0, w, h);
+        drawMarco();
+        // ctx.fillStyle = opts.bg;
+        // ctx.fillRect(0, 0, w, h);
         balls.forEach(function(ball) {
             ball.draw();
             ball.update();

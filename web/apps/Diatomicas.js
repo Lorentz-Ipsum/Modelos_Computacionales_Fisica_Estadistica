@@ -1,20 +1,17 @@
-// CODIGO PRINCIPAL
-$(document).ready(function() {
-    // Boton Start / Stop
-    calculaDiatBtn.onclick = function() {
-        /* START */
-        console.log("START");
+function simulate() {
+    console.log("START");
 
-        // Variables de los sliders
-        var Trot = tempRot.value,
-            Tvib = tempVib.value;
-        var dens = [];
+    // Variables de los sliders
+    var Trot = tempRot.value,
+        Tvib = tempVib.value;
+    var dens = [];
 
-        dens = calculaDiat(Trot, Tvib);
-        plotDistrDiat(dens[0], dens[1]);
-    };
-});
-
+    dens = calculaDiat(Trot, Tvib);
+    plotDistrDiat(dens[0], dens[1]);
+}
+var nums = [],
+    dens = [];
+plotDistrDiat(nums, dens);
 
 // Funciones de plot
 function plotDistrDiat(nums, dens) { // Funcion cutre. Arreglar que repita todo el proceso de plot cada vez.
@@ -23,18 +20,36 @@ function plotDistrDiat(nums, dens) { // Funcion cutre. Arreglar que repita todo 
         x: nums,
         y: dens,
         type: "lines",
+
     };
     var data = [trace];
 
     var layout = {
         title: "Distribution Graph",
+        autosize: true,
         xaxis: {
             range: [nums[0], nums[nums.length]],
             title: 'log(T)',
         },
+        yaxis: {
+            title: 'c_v'
+        },
+        font: {
+            size: 13,
+        },
+        margin: {
+            l: 60,
+            r: 60,
+            d: 60,
+        },
+        showlegend: false,
+    };
+    config = {
+        staticPlot: true,
+        responsive: true,
     };
 
-    Plotly.newPlot("divDiat", data, layout);
+    Plotly.newPlot("divDiat", data, layout, config);
 }
 
 

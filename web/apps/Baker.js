@@ -32,7 +32,6 @@ function draw(img) {
     img.style.display = 'none';
     var imageData = ctxBak.getImageData(0, 0, canvasBak.width, canvasBak.height);
     var data = imageData.data;
-
 };
 
 function baker() {

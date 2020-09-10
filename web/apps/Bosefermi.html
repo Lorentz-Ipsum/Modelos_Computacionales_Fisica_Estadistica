@@ -4,7 +4,8 @@
   <head>
     <title>Bose Fermi</title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="../img/favicon.ico">
     <link rel="stylesheet" href="../css/bootstrap.css">
     <!-- Activamos el código Javascript de Bootstrap y de jQuery -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -18,36 +19,8 @@
     <!-- Importamos MathJax para visualizar LaTeX -->
 
     <style type="text/css">
-      /* Create three equal columns that floats next to each other */
-      .column {
-        float: left;
-        width: 50%;
-      }
-
-      /* Clear floats after the columns */
-      .row:after {
-        content: "";
-        display: table;
-        clear: both;
-      }
-
-      /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
-      @media screen and (max-width: 600px) {
-        .column {
-          width: 100%;
-        }
-
-        .container {
-          display: flex;
-        }
-
-        .fixed {
-          width: 300px;
-        }
-
-        .flex-item {
-          flex-grow: 1;
-        }
+      body {
+        padding: 45px 0 0 0;
       }
     </style>
     <style media="screen">
@@ -64,7 +37,7 @@
     <div class="container">
 
       <!-- Barra de navegación ======================= -->
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top">
         <a class="navbar-brand" href="../index.html">\(\int f(x) dx\)</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -95,7 +68,7 @@
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="Kac.html">Anillo de Kac</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="apps/Osciladores.html">Conjunto de osciladores armónicos</a>
+                <a class="dropdown-item" href="Osciladores.html">Conjunto de osciladores armónicos</a>
                 <div class="dropdown-divider"></div>
                 <h6 class="dropdown-header">Vibraciones moleculares</h6>
                 <a class="dropdown-item" href="Vibraciones.html#diatomicas">Gas de moléculas diatómicas</a>
@@ -160,20 +133,23 @@
           <hr>
           <!-- El applet empieza aqui -->
           <div style="text-align: center">
-            <div class="container" style="margin-left:auto; margin-right:auto; background-color:#c0c0c0;">
-              <div>
-                <canvas id="canvasBackBose" width="350" height="500" style="position:absolute;"> </canvas>
-                <canvas id="canvasFrontBose" width="350" height="500" style="position:relative;"> </canvas>
-                <canvas id="canvasBackFermi" width="350" height="500" style="position:absolute;"> </canvas>
-                <canvas id="canvasFrontFermi" width="350" height="500" style="position:relative;"> </canvas>
+            <div class="class= card card-body bg-light">
+              <div class="row">
+                <div class="col-md">
+                  <canvas id="canvasBackBose" width="300" height="400" style="position:absolute;"> </canvas>
+                  <canvas id="canvasFrontBose" width="300" height="400" style="position:relative;"> </canvas>
+                  <div id="graphBos" style="width:300px;height:300px;"> </div>
+                </div>
+                <div class="col-md">
+                  <canvas id="canvasBackFermi" width="300" height="400" style="position:absolute;"> </canvas>
+                  <canvas id="canvasFrontFermi" width="300" height="400" style="position:relative;"> </canvas>
+                  <div id="graphFer" style="height:300px;"> </div>
+                </div>
               </div>
             </div>
-            <div class="fixed">
-              <div id="graph" style="width:800px;height:300px;"> </div>
-            </div>
-
+            <br>
             <!-- BOTONERA -->
-            <div>
+            <form class="form-group card card-body bg-light">
               <label for="n">Número de partículas:</label>
               <input type="number" id="n" name="n" min="0" max="20" value="10"></br>
               </br>
@@ -185,13 +161,8 @@
               </br>
               <label class="input-check"><input type="checkbox" value="something" name="test" /> Start / Stop </label>
 
-              <input type="button" id="calculaBtn" value="Inicia">
-              <!-- <input type="button" id="histBose" value="Histograma Bosones">
-                    <input type="button" id="histFermi" value="Histograma Fermiones"> -->
-
-              <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#modalBos" id="histBosBtn">Histograma Bosones</button>
-              <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#modalFer" id="histFerBtn">Histograma Fermiones</button>
-            </div>
+              <input type="button" id="calculaBtn" value="Inicia" class="btn btn-primary">
+            </form>
           </div>
         </div>
         <!-- Modal BOSONES-->

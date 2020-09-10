@@ -182,8 +182,6 @@ startBtnMacro.onclick = function() {
         var data = [numsTrace];
         var layout = {
             autosize: true,
-            width: 500,
-            height: 300,
             title: 'Diferencia de números',
             font: {
                 size: 15
@@ -192,7 +190,8 @@ startBtnMacro.onclick = function() {
         };
 
         var config = {
-            staticPlot: true
+            staticPlot: true,
+            responsive: true,
         }
 
         Plotly.newPlot('graphMacro', data, layout, config);
@@ -253,5 +252,3 @@ var sale = function() {
     ctx2.fillStyle = "black";
     ctx2.fillRect(0, 0, canvasRect.width, canvasRect.height);
 };
-
-initRect();
