@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - 2D Ising Model</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<body>
+  <h1>2D Ising Model</h1>
+
+  <hr />
+
+  <canvas id="canvas" width="400" height="400" data-up='{"r": 170, "g": 204, "b": 170}' data-down='{"r": 255, "g": 255, "b": 255}'></canvas>
+
+  <hr />
+
+  <p>Magnetization of a ferromagnetic material is dependent on the temperature of the material. We can model this process using JavaScript and a bit of statistical mechanics. If you would like to read more, here is a (dense) introduction to the <a href="http://www.jstor.org/stable/2322600?seq=1#page_scan_tab_contents">Ising Model</a>.</p>
+  <p>The 2D Ising model simulates the ferromagnetization of a two-dimensional solid lattice structure. In this implementation, the Monte Carlo method, more specifically, the Metropolis algorithm, is used to calculate the lattice site dipoles.</p>
+  <h2>The Algorithm</h2>
+  <p>First the algorithm randomizes the dipoles to have either a spin value of 1 or -1 to represent the two possible states. Each step of the simulation carries out the following actions:</p>
+  <ol>
+    <li>Choose a random lattice site to inspect.</li>
+    <li>Calculate the energy at that site before and after a theoretical spin flip.</li>
+    <li>Determine whether the flip should succeed based on 2 criteria:
+      <ol>
+        <li>If the change in energy of the flip ultimately lowers to total energy, then the flip will be made.</li>
+        <li>If not, then still make the flip with a probability of &#x212F;<sup>-&Delta;E / T</sup> then make this flip.</li>
+      </ol>
+      If both tests fail, then the flip is not made.
+    </li>
+  </ol>
+  <p>The algorithm employs periodic boundary conditions (PBC). PBC essentially means the program considers the entire system to be the pattern displayed but repeated infinitely in both the x and y directions. Each site essentially represents an atom in a
+    solid and to simulate any measurable able material would require many orders more or lattice sites. Since we don't have that computing power, we employ PBC to simulat this as best as we can. This also leads to the (likely) obvious conclusion that
+    the larger the simulation array, the more accurate it will be. </p>
+  <h2>Critical Temperature</h2>
+  <p>There is a critical temperature at which no magnetization occurs above it. The literature value for this is 2.269. This is the temperature at which spontaneous magnetization disappears. Below this value, the system is in a ferromagnetic state, above
+    this value it is in a paramagnetic state.</p>
+  <h2>Specific Heat</h2>
+  <p>The specific heat tells us the rate of change of energy versus temperature. At the critical temperature this value should be at its highest. At temperature above or below the critical temperature, the specific heat will be lower and tend to 0 as temperature
+    approaches 0 or infinity. Remember that this is true in the event that time goes to infinity. Let the simulation play out for a while and this will become evident.</p>
+  <h2>Antiferromagnetism</h2>
+  <p>Another interesting observation is on the effects of J. J is a parameter used in the calculation of the exchange energy which ultimately determines how the dipoles prefer to orient themselves in relation to each other. In the case of ferromagnetism,
+    J is greater than 0 and the dipoles prefer to be parallel.</p>
+  <p>If J is negative, the dipoles prefer to be antiparallel, which is called antiferromagnetism. In this case the spins will show an alternating order, evident by the checkerboard pattern. As with ferromagnetism, above the critical temperature, entropy
+    wins and completely disorder is attained. At the critical temperature, little magnetization occurs and the specific heat is at its highest again. Below the critical temperature, energy minimization can be achieved and the full checkerboard pattern
+    can be observed.</p>
+
+  <hr />
+
+  <footer>
+    <h4>Credit</h4>
+    <p><small>Up and down sampling (changing size of lattice) was adapted from <a href="https://physics.weber.edu/schroeder/software/demos/IsingModel.html">Weber State University</a></small></p>
+  </footer>
+</body>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>

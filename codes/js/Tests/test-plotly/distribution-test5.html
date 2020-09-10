@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>DistrTest5</title>
+    <!-- Numeric.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/numeric/1.2.6/numeric.min.js"></script>
+    <!-- Plotly.js -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js">
+    </script>
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <style type="text/css">
+      /* Create three equal columns that floats next to each other */
+      .column {
+        float: left;
+        width: 50%;
+      }
+
+      /* Clear floats after the columns */
+      .row:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+
+      /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+      @media screen and (max-width: 600px) {
+        .column {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="row">
+      <div class="column">
+        <div id="myDiv" style="width: 480px; height: 300px;">
+          <!-- Plotly chart will be drawn inside this DIV -->
+        </div>
+      </div>
+
+
+      <div class="column">
+        <label>Numero:</label>
+        <output id="numeroOut" name="numeroOut">20</output>
+        <input type="range" id="numero" class="slider" name="numero" min="1" max="50" value="20" step="1">
+        </br>
+        </br>
+        <label>Velocidad:</label>
+        <output id="velocidadOut" name="velocidadOut">5</output>
+        <input type="range" id="velocidad" class="slider" name="velocidad" min="1" max="100" value="5" step="5">
+        </br>
+        </br>
+        <label class="input-check"><input type="checkbox" value="something" name="test" /> Start / Stop </label>
+        </br>
+        </br>
+        <select id="stateSelect" name="stateSelect">
+          <option value="0"> Dados (del 1 al 6)</option>
+          <option value="1"> Moneda (0 ó 1)</option>
+          <option value="2">Entre 0 y 1 de forma continua</option>
+        </select>
+      </div>
+
+    </div>
+
+
+    <script>
+      // Contadores para los slider
+      $(document).on('input', 'input[type="range"]', function(e) {
+        var changes = this.id + 'Out';
+        document.getElementById(changes).innerHTML = e.target.value;
+      });
+
+      // CODIGO PRINCIPAL
+      $(document).ready(function() {
+        // Boton Start / Stop
+        $('input[type=checkbox][name=test]').change(function(e) {
+          if (this.checked) {
+            /* START */
+            console.log("START");
+            var i = 0;
+
+            // Variables de los sliders
+            var selectElement = document.querySelector('#stateSelect');
+            var state = selectElement.value;
+            var n = numero.value,
+              vel = velocidad.value,
+              Y = [];
+
+            // Obtener los puntos para dibujar la gaussiana
+            var traceGauss = calculaGaussiana(n, state);
+
+            interval = setInterval(function() {
+              /* LOOP */
+              // Obtener un nuevo Y y añadirlo al array
+              var j = 0;
+              j = randomCompound(n, state);
+              Y.push(j);
+
+              plotDistr(Y, traceGauss);
+              console.log(i++ + ": " + j);
+            }, (1 / vel) * 100);
+          } else {
+            /* STOP */
+            console.log("STOP"); // Esta forma de parar el bucle tiene un bug.
+            clearInterval(interval);
+          }
+        });
+      });
+
+
+      // Funciones de plot
+      function plotDistr(nums, gauss) { // Funcion cutre. Arreglar que repita todo el proceso de plot cada vez.
+        // También, quitar la interactividad de las gráficas.
+
+        var trace = {
+          x: nums,
+          type: "histogram",
+          histnorm: 'probability',
+        };
+        var data = [trace, gauss];
+
+        var layout = {
+          title: "Distribution Graph"
+        };
+
+        Plotly.newPlot("myDiv", data, layout);
+      }
+
+
+      // Funciones de calculo
+      function randomCompound(n, tipo) {
+        var X, Y = 0;
+        if (tipo == "0") {
+          for (var i = 0; i < n; i++) {
+            X = Math.floor(Math.random() * 6) + 1;
+            Y += X;
+          }
+          return Y;
+        } else if (tipo == "1") {
+          for (var i = 0; i < n; i++) {
+            X = Math.floor(Math.random() * 2);
+            Y += X;
+          }
+          return Y;
+        } else {
+          for (var i = 0; i < n; i++) {
+            X = Math.random();
+            Y += X;
+          }
+          return Y;
+        };
+      }
+
+      function calculaGaussiana(n, state) {
+        var mu, s2, Ymu, Ys2, max, scale, k,
+          X = [],
+          Y = [];
+        if (state == "0") {
+          mu = 3.5;
+          s2 = 105 / 36; //Esta fraccion es la varianza de un solo dado
+          max = 6 * n;
+          scale = 6;
+        } else if (state == "1") {
+          mu = 0.5;
+          s2 = 1 / 2;
+          max = n;
+          scale = 10;
+        } else {
+          mu = 0.5;
+          s2 = 1 / 12;
+          max = n;
+          scale = 10;
+        };
+        Ymu = mu * n;
+        Ys2 = s2 / n;
+        k = 0;
+        for (var i = 0; i < max; i++) {
+          for (var j = 0; j < scale; j++) {
+            X.push(i + (j + 1) / scale);
+            Y.push((1 / Math.sqrt(2 * n * n * Math.PI * Ys2)) / Math.pow(Math.E, Math.pow(X[k] - Ymu, 2) / (2 * n * n * Ys2)));
+            k++;
+          }
+        };
+
+        var traceGauss = {
+          x: X,
+          y: Y,
+          mode: 'lines',
+          line: {
+            color: 'rgb(255,0,0)',
+            width: 1,
+            opacity: 0.7
+          }
+        }
+        return traceGauss
+      }
+    </script>
+  </body>
+
+</html>

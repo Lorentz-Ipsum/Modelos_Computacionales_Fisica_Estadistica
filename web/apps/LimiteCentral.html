@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="es">
+
+  <head>
+    <title>Limite Central</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="../img/favicon.ico">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/bootstrap-slider.min.css">
+    <!-- Activamos el código Javascript de Bootstrap y de jQuery -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="../js/bootstrap.js"></script>
+    <script src="../js/bootstrap-slider.min.js"></script>
+    <!-- Numeric.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/numeric/1.2.6/numeric.min.js"></script>
+    <!-- Plotly.js -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"> </script>
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <!-- Importamos MathJax para visualizar LaTeX -->
+
+    <style type="text/css">
+      body {
+        padding: 45px 0 0 0;
+      }
+
+      blockquote {
+        font-size: 16px !important;
+        font-style: italic;
+      }
+
+      /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+      @media screen and (max-width: 600px) {
+        .column {
+          width: 100%;
+        }
+
+        .container {
+          display: flex;
+        }
+
+        .fixed {
+          width: 300px;
+        }
+
+        .flex-item {
+          flex-grow: 1;
+        }
+      }
+    </style>
+    <style media="screen">
+      .main-content {
+        padding: 3rem 1.5rem;
+      }
+    </style>
+
+  </head>
+
+  <body>
+    <!-- Contenedor
+    ================================================== -->
+    <div class="container">
+
+      <!-- Barra de navegación ======================= -->
+      <nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="../index.html">\(\int f(x) dx\)</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Elementos que se agrupan al minimizar-->
+        <div class="collapse navbar-collapse" id="navbarsExample03">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../Memoria.html">Memoria</a>
+            </li>
+            <!-- <li class="nav-item">
+              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+            </li> -->
+            <li class="nav-item dropdown active">
+              <a class="nav-link dropdown-toggle" href="#" id="dropdownApplets" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Applets <span class="sr-only">(current)</span></a>
+              <div class="dropdown-menu" aria-labelledby="dropdownApplets">
+                <a class="dropdown-item" href="../Apps.html">Índice de applets</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item active" href="LimiteCentral.html">Teorema del límite central</a>
+                <div class="dropdown-divider"></div>
+                <h6 class="dropdown-header">Transformaciones sobre el espacio de fases</h6>
+                <a class="dropdown-item" href="Transformaciones.html#baker">Transformación del panadero</a>
+                <a class="dropdown-item" href="Transformaciones.html#arnold">Transformación de Arnold</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="Kac.html">Anillo de Kac</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="Osciladores.html">Conjunto de osciladores armónicos</a>
+                <div class="dropdown-divider"></div>
+                <h6 class="dropdown-header">Vibraciones moleculares</h6>
+                <a class="dropdown-item" href="Vibraciones.html#diatomicas">Gas de moléculas diatómicas</a>
+                <a class="dropdown-item" href="Vibraciones.html#debye">Teoría de Debye de los sólidos cristalinos</a>
+                <div class="dropdown-divider"></div>
+                <h6 class="dropdown-header">Gas ideal</h6>
+                <a class="dropdown-item" href="Gas.html#fluctuaciones">Expansión libre de un gas</a>
+                <a class="dropdown-item" href="Gas.html#macro">Colectividad macrocanónica</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="Bosefermi.html">Estadísticas de bosones y fermiones</a>
+                <div class="dropdown-divider"></div>
+                <h6 class="dropdown-header">Modelo de Ising</h6>
+                <a class="dropdown-item" href="Ising.html#lt">Dimensionalidad y límite termodinámico</a>
+                <a class="dropdown-item" href="Ising.html#magnet">Magnetización y transiciones de fase</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="Originales.html">Applets originales</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../Codigos.html">Códigos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../Bibliografia.html">Bibliografía</a>
+            </li>
+            <li class="nav-item">
+            </li>
+          </ul>
+          <ul class="navbar-nav">
+            <li>
+              <a class="nav-link" href="../About.html">About</a>
+            </li>
+          </ul>
+          <!-- <form class="form-inline my-2 my-md-0">
+            <input class="form-control" type="text" placeholder="Search">
+          </form> -->
+        </div>
+      </nav>
+
+      <!-- Contenidos  ================================================== -->
+      <div class="container" role="main">
+        <div class="main-content">
+          <h1 id="bosefemi">Teorema del Límite Central</h1>
+          <div>
+            <p>
+              El teorema del límite central (CLT, por sus siglas en inglés) establece que la suma de variables aleatorias sigue una distribución normal (siempre que el número de variables sumadas sea suficientemente grande). La única condición es que
+              las variables que se suman sean independientes y generadas por la misma distribución de probabilidad, de valor esperado y varianza finitas.
+            </p>
+
+            <blockquote class="blockquote">
+              <h3>Enunciado del teorema</h3>
+              <p>
+                Sean $X_i, i = 1,\dots, N$ un conjunto de $N$ variables aleatorias independientes, todas distribuidas según la misma distribución de probabilidad de media $\mu$ y varianza $\sigma^2 \neq 0$ finitas.
+                Entonces, cuando $N$ es suficientemente grande (de forma rigurosa, tendiendo a infinito), la probabilidad de que la variable aleatoria $Y$ definida como la suma de las anteriores ($Y = X_1 + X_2 + \dots + X_N$) tome el valor $y$ sigue
+                una
+                distribución gaussiana:
+
+                \begin{equation}\label{eq:Gauss}
+                P_{Y}(y)=\frac{1}{\sqrt{2 \pi N \sigma^{2}}} \exp \left[-\frac{(y-N \mu)^{2}}{2 N \sigma^{2}}\right]
+                \end{equation}
+
+                de media $\mu_Y = N \mu$ y varianza $\sigma_Y^2 = \sigma^2/n$.
+              </p>
+            </blockquote>
+
+            <p>
+              Hay otras versiones del teorema más generales. Por ejemplo en la de Lyapunov [añadir referencia] se permite que las variables $X_i$ no estén distribuidas idénticamente, pero se imponen ciertas condiciones sobre los momentos de órden
+              superior de las distribuciones individuales.
+            </p>
+
+            <p>
+              Interpretemos el resultado: da igual cuál sea la distribución con la que generamos variables aleatorias, su suma \textit{siempre sigue una distribución gaussiana}, y más estrecha cuantas más variables sumemos. Esta es la causa de que la
+              distribución gaussiana tenga un papel tan importante en física: \textit{el efecto cooperativo de muchos factores aleatorios da como resultado una distribución gaussiana}.
+            </p>
+
+            <p>
+              Es un ejemplo de la aplicación de la ley de los grandes números de la teoría de la probabilidad. \textcolor{red}{TODO}
+            </p>
+
+            <hr>
+
+            <p>
+              En el applet se puede elegir el número de variables aleatorias \button{N} y su \button{Distribución}, además de la velocidad con que éstas se generan, con el objetivo de que sea más fácil ver que la suma de éstas acaba siquiendo la
+              distribución gaussiana.
+            </p>
+
+            <p>
+              En la versión original se podía elegir la distribución con que se generan las variables aleatorias $X_i$ entre tres opciones: Como un dado (del 1 al 6), como una moneda (0 ó 1) y uniformemente distribuidas entre 0 y 1 (ambos incluidos).
+            </p>
+
+            <p>
+              En esta nueva versión he añadido otras dos opciones, para ilustrar que no importa que la distribución de partida no sea uniforme: una distribución triangular y una distribución de Poisson ambas normalizadas entre 0 y 1.
+            </p>
+
+            <p>
+              Pulsando \button{Inicia} se comienzan a generar variables $Y$, y se construye el histograma de frecuencias, normalizado a la unidad. Superpuesto al histograma, en azul, se muestra la distribución gaussiana predicha por la ecuación
+              \eqref{eq:Gauss}.
+            </p>
+
+            <p>
+              Se recomienda comprobar que cuando $N\gg1$, la distribución de $Y$ se aproxima a la curva de la distribución gaussiana, para todas las distribuciones individuales disponibles. Por el contrario, cuando $N$ es pequeño, no sucede así.
+            </p>
+          </div>
+          <hr>
+          <!-- El applet empieza aqui -->
+          <div style="text-align: center">
+            <div class="card card-body bg-light">
+              <div id="myDiv" style="height: 400px;">
+                <!-- Plotly chart will be drawn inside this DIV -->
+              </div>
+            </div>
+            <br>
+            <!-- BOTONERA -->
+            <form class="form-group card card-body bg-light">
+              <div class="col-md-12">
+                <label>Numero de variables: &nbsp;<span id="numeroLectura"> 20</span></label>
+                <input type="range" id="numeroSlider" class="slider custom-range" onchange="updateNum()" min="1" max="50" value="20" step="1">
+                <label>Velocidad: &nbsp;<span id="velocidadLectura"> 1</span></label>
+                <input type="range" id="velocidadSlider" class="slider custom-range" onchange="updateVel()" min="1" max="10" value="1" step="1">
+              </div>
+              <div class="form-group col-md-12">
+                <label for="stateSelect">Tipo de variable</label>
+                <select id="stateSelect" class="form-control" onchange="updateState()">
+                  <option value="0"> Dados (del 1 al 6)</option>
+                  <option value="1"> Moneda (0 ó 1)</option>
+                  <option value="2">Entre 0 y 1 de forma continua</option>
+                </select>
+              </div>
+              <div class="form-group col-md-12">
+                <input id="startButton" type="button" onclick="startStop()" value="  Start  " class="btn btn-primary">
+                <input id="resetButton" type="button" onclick="resetNums()" value="  Reset  " class="btn btn-danger">
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="LimiteCentral.js"></script>
+    <!-- CODIGO DE DERIVATIVE BY MAURICIO POPP -->
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script>
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [
+            ['$', '$'],
+            ['\\(', '\\)']
+          ],
+          processEscapes: true,
+          processEnvironments: true,
+          tags: "ams",
+          macros: {
+            edge: '\\mathrel{-}',
+            notedge: '\\not\\edge',
+            deg: ['#1^°', 1],
+            tbold: ['\\textbf{#1}', 1],
+            mbold: ['\\mathbf{#1}', 1],
+            unit: ['\\widehat{\\mathbf{#1}}', 1],
+            v: ['\\overrightarrow{#1}', 1],
+            vnorm: ['\\norm{\\v{#1}}', 1],
+            overunder: ['\\overset{#2}{\\underset{#3}{#1}}', 3],
+            cuv: ['\\overunder{#1}{|}{|}', 1],
+            magnitude: ['\\left \\| #1 \\right \\|', 1],
+            norm: ['\\lvert #1 \\rvert', 1],
+            divides: ['\\,|\\,'],
+            cost: ['\\cos{\\theta}'],
+            sint: ['\\sin{\\theta}'],
+            sqrti: ['\\frac{1}{\\sqrt{2}}'],
+            ci: ['\\perp\\!\\!\\!\\perp'],
+            given: ['\\:\\vert\\:'],
+            bordermatrix: ['\\raise{0.7em}{\\begin{matrix} & \\begin{matrix}#1\\end{matrix} \\\\ \\begin{matrix}#2\\end{matrix} \\hspace{-1em} & #3 \\end{matrix}}', 3]
+          }
+        },
+        options: {
+          skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+          ignoreHtmlClass: 'tex2jax_ignore',
+          processHtmlClass: 'tex2jax_process'
+        }
+      };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" id="MathJax-script"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+    <style>
+      svg text {
+        font-size: 10px;
+      }
+
+      svg .title {
+        font-size: 25px;
+      }
+
+      .function-plot {
+        margin: 0px auto 20px;
+        display: block;
+      }
+
+      .function-plot text {
+        font-size: 15px;
+      }
+    </style>
+  </body>
+
+</html>

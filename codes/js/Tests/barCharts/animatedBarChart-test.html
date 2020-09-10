@@ -1,0 +1,225 @@
+<!doctype html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>bar chart test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <style type="text/css">
+      text {
+        text-anchor: middle;
+        font-family: monospace;
+        font-size: 11px;
+      }
+
+      /* Create three equal columns that floats next to each other */
+      .column {
+        float: left;
+        width: 50%;
+      }
+
+      /* Clear floats after the columns */
+      .row:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+
+      /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+      @media screen and (max-width: 600px) {
+        .column {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <p>Aqui el texto explicando el applet y demás.</p>
+    <!-- El container donde esta todo el applet -->
+    <div class="container">
+      <div class="row">
+        <div class="column">
+          <!-- La visualización -->
+          <svg></svg>
+        </div>
+        <div class="column">
+          <!-- Los controles -->
+          <button>Random</button>
+          <!-- Slider -->
+          <div class="slidecontainer">
+            <input type="range" min="1" max="150" class="slider" id="nRadius">
+            Máximo: <span id="nRadius-value">67</span>
+          </div>
+          <!-- Botones de seleccion -->
+          <div class="container">
+            <input type="radio" name="tipo" checked="checked" id="tipo_dados" value="dados">
+            Dados (del 1 al 6)
+            <br>
+            <input type="radio" name="tipo" id="tipo_moneda" value="moneda">
+            Moneda (0 ó 1)
+            <br>
+            <input type="radio" name="tipo" id="tipo_continuo" value="continuo">
+            Entre 0 y 1 de forma continua
+            <br>
+          </div>
+          <br>
+          <!-- Seleccion multiple -->
+          <div class="container">
+            <select id="stateSelect" name="stateSelect">
+              <option value="0">Select car:</option>
+              <option value="1">Audi</option>
+              <option value="2">BMW</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Codigo del applet -->
+    <script type="text/javascript">
+      var w = 400,
+        h = 300,
+        maxValue = 100;
+
+
+      var dataset = [5, 10, 13, 19, 21, 24, 22, 18, 15, 13,
+        11, 12, 15, 20, 18, 17, 16, 18, 23, 25
+      ];
+
+      var svg = d3.select('svg')
+        .attr('width', w)
+        .attr('height', h);
+
+      var xScale = d3.scaleBand()
+        .domain(d3.range(dataset.length))
+        .rangeRound([0, w])
+        .paddingInner(0.05);
+      var yScale = d3.scaleLinear()
+        .domain([0, d3.max(dataset)])
+        .range([0, h]);
+
+      svg.selectAll('rect')
+        .data(dataset)
+        .enter()
+        .append('rect')
+        .attr('x', function(d, i) {
+          return xScale(i);
+        })
+        .attr('y', function(d) {
+          return h - yScale(d);
+        })
+        .attr('width', xScale.bandwidth())
+        .attr('height', function(d) {
+          return yScale(d);
+        })
+        .attr('fill', function(d) {
+          return 'rgb(50, 150, ' + Math.round(d * 10) + ')';
+        });
+
+      svg.selectAll('text')
+        .data(dataset)
+        .enter()
+        .append('text')
+        .text(function(d) {
+          return d;
+        })
+        .attr('x', function(d, i) {
+          return xScale(i) + xScale.bandwidth() / 2;
+        })
+        .attr('y', function(d) {
+          return d > 5 ? (h - yScale(d) + 14) : (h - yScale(d) - 6);
+        })
+        .attr('fill', function(d) {
+          return d > 5 ? '#fff' : '#000';
+        });
+
+      d3.select('button')
+        .on('click', function() {
+          var newDataset = [];
+          for (var i = 0; i < dataset.length; i++) {
+            newDataset.push(Math.floor(Math.random() * maxValue));
+          }
+          yScale.domain([0, d3.max(newDataset)])
+
+          svg.selectAll('rect')
+            .data(newDataset)
+            .transition()
+            .delay(function(d, i) {
+              return i / newDataset.length * 700;
+            })
+            .duration(300)
+            .ease(d3.easeLinear)
+            .attr('y', function(d) {
+              return h - yScale(d);
+            })
+            .attr('height', function(d) {
+              return yScale(d);
+            })
+            .attr('fill', function(d) {
+              return 'rgb(50, 150, ' + Math.round(d * 10) + ')';
+            });
+
+          svg.selectAll('text')
+            .data(newDataset)
+            .transition()
+            .delay(function(d, i) {
+              return i / dataset.length * 700;
+            })
+            .duration(300)
+            .ease(d3.easeLinear)
+            .text(function(d) {
+              return d;
+            })
+            .attr('y', function(d) {
+              return d > 5 ? (h - yScale(d) + 14) : (h - yScale(d) - 6);
+            })
+            .attr('fill', function(d) {
+              return d > 5 ? '#fff' : '#000';
+            });
+        });
+      //
+      // // Codigo para el slider
+      // var slider = document.getElementById("myRange");
+      // var output = document.getElementById("demo");
+      // output.innerHTML = slider.value; // Display the default slider value
+      //
+      // // Update the current slider value (each time you drag the slider handle)
+      // slider.oninput = function() {
+      //   output.innerHTML = this.value;
+      // }
+      //
+      // Prueba para cambiar el ancho de columna
+      d3.select("#nRadius").on("input", function() {
+        update(+this.value);
+      });
+
+      function update(nRadius) {
+        // adjust the text on the range slider
+        d3.select("#nRadius-value").text(nRadius);
+        d3.select("#nRadius").property("value", nRadius);
+
+        // update the circle radius
+        // svg.selectAll("rect")
+        //   .attr('x', function(d, i) {
+        //     return xScale(i) + nRadius;
+        //   });
+
+        // Modificado para que cambie el numero maximo al que llega la distro aleatoria
+        maxValue = nRadius;
+      }
+
+      //
+      // Prueba para los botones radio
+      if (document.getElementById('tipo_dados').checked) {
+
+      } else if (document.getElementById('tipo_moneda').checked) {
+
+      } else if (document.getElementById('tipo_continuo').checked) {
+
+      }
+    </script>
+  </body>
+
+</html>

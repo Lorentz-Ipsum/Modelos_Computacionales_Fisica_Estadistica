@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Hello, world!</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/bootstrap-slider.css">
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Hello, world!</h1>
+
+      <p>Los <a href="https://github.com/seiyria/bootstrap-slider">sliders de Bootstrap</a> dan problemas de compatibilidad....</p>
+      <p>Puedes chequear la compatibilidad de un paquete en <a href="https://caniuse.com/#feat=input-range">Can I Use ____?</a>.</p>
+
+      <p>
+        <label for="amount">Price range:</label>
+        <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
+      </p>
+
+      <div id="slider-range"></div>
+
+      <h1>Audio settings:</h1>
+      <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range">Página de Mozilla Developer</a>
+      <div>
+        <input type="range" id="volume" name="volume" min="0" max="11">
+        <label for="volume">Volume</label>
+      </div>
+
+      <div>
+        <input type="range" id="cowbell" name="cowbell" min="0" max="100" value="90" step="10">
+        <label for="cowbell">Cowbell</label>
+      </div>
+
+      <h1>Otros slider</h1>
+      <p>Sacados de <a href="https://www.w3schools.com/howto/howto_js_scroll_indicator.asp">la página de W3Schools, sección More > Range sliders</a>. En esa página hay muchas ideas buenas. Podrías intentar meter un Scroll Indicator a cada artículo,
+        una vez que tengas los frames de los applets.</p>
+      <div class="slidecontainer">
+        <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+        <p>Value: <span id="demo"></span></p>
+      </div>
+
+      <script src="js/sliders-w3.js">
+      </script>
+    </div>
+  </body>
+
+</html>

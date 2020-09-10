@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>ExGaussDistr</title>
+    <!-- Numeric.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/numeric/1.2.6/numeric.min.js"></script>
+    <!-- Plotly.js -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js">
+    </script>
+  </head>
+
+  <body>
+    <div id="myDiv" style="width: 480px; height: 300px;">
+      <!-- Plotly chart will be drawn inside this DIV -->
+    </div>
+    <script>
+      // JAVASCRIPT CODE GOES HERE
+
+      // from https://codepen.io/aidanpirish/pen/vrabEQ
+      // Sample from a normal distribution with mean 0, stddev 1.
+      var x = [];
+      for (var i = 0; i < 10000; i++) {
+        x[i] = gaussianRand();
+      }
+
+      var trace = {
+        x: x,
+        type: "histogram"
+      };
+      var data = [trace];
+
+      var layout = {
+        title: "Distribution Graph"
+      };
+
+      Plotly.newPlot("myDiv", data, layout);
+
+      function gaussianRand() {
+        var rand = 0;
+
+        for (var i = 0; i < 6; i += 1) {
+          rand += Math.random();
+        }
+
+        return rand / 6;
+      }
+    </script>
+  </body>
+
+</html>

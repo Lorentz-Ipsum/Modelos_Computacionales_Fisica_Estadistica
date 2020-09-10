@@ -1,0 +1,106 @@
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>Transformations</title>
+    <style>
+      input[type="range"] {
+        width: 140px;
+        padding: 0px;
+        /* remove extra space in IE */
+        -webkit-user-select: none;
+        -moz-user-select: -moz-none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      input[type="range"]::-ms-tooltip {
+        display: none;
+        /* hide automatic readout in IE */
+      }
+
+      input[type="range"]::-ms-track {
+        color: transparent;
+        /* hide tick marks in IE */
+      }
+    </style>
+  </head>
+
+  <body style="width:500px; margin-left:auto; margin-right:auto;
+        background-color:#c0c0c0; font-family:sans-serif;">
+
+    <h1 style="text-align:center; font-size:150%;">Transformations</h1>
+    <p style="text-align:left">A demonstration of coordinate transformations with the
+      HTML5 canvas element. Notice that y increases downward, θ is measured in the clockwise
+      direction, and stroke widths are scaled along with everything else.</p>
+    <canvas id="theCanvas" width="500" height="300">Please update your browser!</canvas>
+    <div style="text-align:right; margin-right:150px; line-height:160%;">
+      Δx = <span id="xReadout" style="display:inline-block; width:1.8em;">248</span>
+      <input type="range" id="xSlider" min="0" max="500" value="250" oninput="drawArrow();" onchange="drawArrow();"><br>
+      Δy = <span id="yReadout" style="display:inline-block; width:1.8em;">150</span>
+      <input type="range" id="ySlider" min="0" max="300" value="150" oninput="drawArrow();" onchange="drawArrow();"><br>
+      Scale = <span id="scaleReadout">1.89</span>
+      <input type="range" id="scaleSlider" min="0.1" max="3" step="0.01" value="1" oninput="drawArrow();" onchange="drawArrow();"><br>
+      θ = <span id="rotReadout" style="display:inline-block; width:2.5em;">−0.69</span>
+      <input type="range" id="rotSlider" min="-3.14" max="3.14" step="0.01" value="0" oninput="drawArrow();" onchange="drawArrow();">
+    </div>
+
+    <script>
+      var theCanvas = document.getElementById("theCanvas");
+      var theContext = theCanvas.getContext("2d");
+      var xSlider = document.getElementById("xSlider");
+      var ySlider = document.getElementById("ySlider");
+      var scaleSlider = document.getElementById("scaleSlider");
+      var rotSlider = document.getElementById("rotSlider");
+      var xReadout = document.getElementById("xReadout");
+      var yReadout = document.getElementById("yReadout");
+      var scaleReadout = document.getElementById("scaleReadout");
+      var rotReadout = document.getElementById("rotReadout");
+
+      drawArrow();
+
+      function drawArrow() {
+
+        // First update the slider readouts:
+        xReadout.innerHTML = Number(xSlider.value);
+        yReadout.innerHTML = Number(ySlider.value);
+        scaleReadout.innerHTML = Number(scaleSlider.value).toFixed(2);
+        var minusSign = String.fromCharCode(parseInt('2212', 16)); // get a real minus sign
+        rotReadout.innerHTML = Number(rotSlider.value).toFixed(2).replace("-", minusSign); // hyphens for minus signs drive me nuts
+
+        // Undo previous transformations and erase the canvas:
+        theContext.setTransform(1, 0, 0, 1, 0, 0);
+        theContext.fillStyle = "white";
+        theContext.fillRect(0, 0, theCanvas.width, theCanvas.height);
+
+        // Transformations (translate first; order of scale and rotate doesn't matter):
+        theContext.translate(xSlider.value, ySlider.value);
+        theContext.scale(scaleSlider.value, scaleSlider.value);
+        theContext.rotate(rotSlider.value);
+
+        // Unscaled arrow dimensions:
+        var shaftLength = 100;
+        var shaftWidth = 10;
+        var headLength = 30;
+        var headWidth = 30;
+
+        // Now draw the arrow:
+        theContext.beginPath();
+        theContext.moveTo(0, -shaftWidth / 2); // start at upper-left corner
+        theContext.lineTo(shaftLength, -shaftWidth / 2);
+        theContext.lineTo(shaftLength, -headWidth / 2); // upper barb
+        theContext.lineTo(shaftLength + headLength, 0); // tip
+        theContext.lineTo(shaftLength, headWidth / 2); // lower barb
+        theContext.lineTo(shaftLength, shaftWidth / 2);
+        theContext.lineTo(0, shaftWidth / 2); // lower-left corner
+        theContext.closePath();
+        theContext.strokeStyle = "#8000ff"; // purple
+        theContext.lineWidth = 2;
+        theContext.stroke();
+      }
+    </script>
+
+
+  </body>
+
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>DistrTest</title>
+    <!-- Numeric.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/numeric/1.2.6/numeric.min.js"></script>
+    <!-- Plotly.js -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js">
+    </script>
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <style type="text/css">
+      /* Create three equal columns that floats next to each other */
+      .column {
+        float: left;
+        width: 50%;
+      }
+
+      /* Clear floats after the columns */
+      .row:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+
+      /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+      @media screen and (max-width: 600px) {
+        .column {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="row">
+      <div class="column">
+        <div id="myDiv" style="width: 480px; height: 300px;">
+          <!-- Plotly chart will be drawn inside this DIV -->
+        </div>
+      </div>
+
+
+      <div class="column">
+        <label>Radio:</label>
+        <output id="radio" class="radio" name="radio">20</output> <input type="range" id="radio" class="slider" name="radio" min="1" max="150" value="20" step="1">
+        </br>
+        </br>
+        <label>Velocidad:</label>
+        <output id="velocidad" class="velocidad" name="velocidad">5</output> <input type="range" id="velocidad" class="slider" name="velocidad" min="1" max="10" value="5" step="1">
+        </br>
+        </br>
+        <button id="start">Start</button>
+        <button id="stop">Stop</button>
+        </br>
+        </br>
+        <select id="stateSelect" name="stateSelect">
+          <option value="0"> Dados (del 1 al 6)</option>
+          <option value="1"> Moneda (0 ó 1)</option>
+          <option value="2">Entre 0 y 1 de forma continua</option>
+        </select>
+        </p>
+      </div>
+
+    </div>
+
+
+    <script>
+      // JAVASCRIPT CODE GOES HERE
+
+      // CODIGO ORIGINAL
+      // Distribución normal
+      // from https://codepen.io/aidanpirish/pen/vrabEQ
+      // Sample from a normal distribution with mean 0, stddev 1.
+
+      function plotDistr() { // Funcion cutre. Arreglar que repita todo el proceso de plot cada vez.
+        var x = [];
+        for (var i = 0; i < 10000; i++) {
+          x[i] = gaussianRand();
+        }
+
+        // También, quitar la interactividad de las gráficas.
+        var trace = {
+          x: x,
+          type: "histogram"
+        };
+        var data = [trace];
+
+        var layout = {
+          title: "Distribution Graph"
+        };
+
+        Plotly.newPlot("myDiv", data, layout);
+      }
+
+      // Función para un numero aleatorio gaussiano.
+      function gaussianRand() {
+        var rand = 0;
+
+        for (var i = 0; i < 6; i += 1) {
+          rand += Math.random();
+        }
+
+        return rand / 6;
+      }
+
+
+      // CODIGO EXTRA
+      // Contadores para los slider
+      $(document).ready(function() {
+        $("#start").click(function(event) {
+          /* Act on the event */
+          console.log("START");
+          var i = 0;
+          interval = setInterval(function() {
+            console.log(i++); // this is inside your loop
+            plotDistr();
+          }, 100);
+        });
+        $("#stop").click(function(event) {
+          /* Act on the event */
+          console.log("STOP");
+          clearInterval(interval);
+        });
+
+        // BUTTON
+        $("button").click(function(event) {
+          var r = radio.value,
+            vel = velocidad.value;
+
+          for (var i = 0; i < 10; i++) {
+            var newX = Math.floor(Math.random()),
+              newY = Math.floor(Math.random());
+
+            $("#b").animate({
+              "left": newX,
+              "top": newY
+            }, vel * 100);
+            var oldX = newX,
+              oldY = newY;
+          }
+
+        });
+        // document.getElementById("start").onclick = startMove;
+      });
+
+      $(document).on('input', 'input[type="range"]', function(e) {
+        document.querySelector('output.' + this.id).innerHTML = e.target.value;
+      });
+    </script>
+  </body>
+
+</html>

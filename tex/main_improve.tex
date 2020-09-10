@@ -1,0 +1,1097 @@
+\documentclass[11pt, a4paper]{article} %tamaño mínimo de letra 11pto.
+
+\usepackage{graphicx}
+\usepackage[spanish]{babel} %Español
+\usepackage[utf8]{inputenc} %Para poder poner tildes
+\usepackage{vmargin} %Para modificar los márgenes
+
+%%% PACK EXTRA %%%
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{tocloft}
+\usepackage{appendix}
+\usepackage{tikz}
+\usetikzlibrary{shadows}
+\usepackage{amsthm} % Necesario para la definición de \button{} mas abajo
+\renewcommand\refname{Bibliografía}
+\usepackage[nottoc]{tocbibind} % Para que la Bibiliogrfía aparezca en la TOC
+
+%% Paquetes para la lista de To do
+\usepackage{enumitem,amssymb}
+\usepackage{pifont}
+%%% FIN PACK EXTRA %%%
+
+%%% CONFIG EXTRA %%%
+\newtheorem*{theorem}{Teorema}
+\newtheoremstyle{named}{}{}{\itshape}{}{\bfseries}{.}{.5em}{#3}
+\theoremstyle{named}
+\newtheorem*{namedtheorem}{}
+
+% Comando para los botones
+% From https://tex.stackexchange.com/questions/5226/keyboard-font-for-latex
+\newcommand*\button[1]{
+\tikz[baseline=(key.base)]
+\node[%
+draw,
+fill=white,
+drop shadow={shadow xshift=0.25ex,shadow yshift=-0.25ex,fill=black,opacity=0.75},
+rectangle,
+rounded corners=2pt,
+inner sep=1pt,
+line width=0.5pt,
+font=\scriptsize\sffamily
+](key) {#1\strut}
+;
+}
+% Comando para los to do
+% From https://tex.stackexchange.com/questions/247681/how-to-create-checkbox-todo-list/313337
+\newlist{todolist}{itemize}{2}
+\setlist[todolist]{label=$\square$}
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+\newcommand{\done}{\rlap{$\square$}{\raisebox{2pt}{\large\hspace{1pt}\cmark}}%
+\hspace{-2.5pt}}
+\newcommand{\wontfix}{\rlap{$\square$}{\large\hspace{1pt}\xmark}}
+%%% FIN CONFIG EXTRA %%%
+
+\setmargins{2.5cm}{1.5cm}{16.5cm}{23.42cm}{10pt}{1cm}{0pt}{2cm}
+%margen izquierdo, superior, anchura del texto, altura del texto, altura de los encabezados, espacio entre el texto y los encabezados, altura del pie de página, espacio entre el texto y el pie de página
+
+\begin{document}
+%%%%%%Portada%%%%%%%
+\begin{titlepage}
+\centering
+{ \bfseries \Large UNIVERSIDAD COMPLUTENSE DE MADRID}
+\vspace{0.5cm}
+
+{\bfseries  \Large FACULTAD DE CIENCIAS FÍSICAS}
+\vspace{1cm}
+
+{\large DEPARTAMENTO DE ESTRUCTURA DE LA MATERIA, FÍSICA TÉRMICA Y ELECTRÓNICA}
+\vspace{0.8cm}
+
+%%%%Logo Complutense%%%%%
+{\includegraphics[width=0.35\textwidth]{logo_UCM}} %Para ajustar la portada a una sola página se puede reducir el tamaño del logo
+\vspace{0.8cm}
+
+{\bfseries \Large TRABAJO DE FIN DE GRADO}
+\vspace{2cm}
+
+{\Large Código de TFG:  ETE37 } \vspace{5mm}
+
+{\Large Modelos Computacionales en Física Estadística}\vspace{5mm}
+
+{\Large Computational models in Statistical Physics}\vspace{5mm}
+
+{\Large Supervisor/es: Ricardo Brito López}\vspace{20mm}
+
+{\bfseries \LARGE Manuel Fdez-Arroyo Soriano}\vspace{5mm}
+
+{\large Grado en Física}\vspace{5mm}
+
+{\large Curso acad\'emico 2019-20}\vspace{5mm}
+
+{\large Convocatoria Extraordinaria}\vspace{5mm}
+
+\end{titlepage}
+\newpage
+
+{\bfseries \large [Simulaciones interactivas en Javascript como recurso didáctico] }\vspace{10mm}
+
+{\bfseries \large Resumen:} \vspace{5mm}
+
+Este trabajo trata de recuperar la página web de simulaciones interactivas que se construyó. Los navegadores modernos han dejado de usar Java y las versiones originales ya no son accesibles, así que el objetivo es modernizarlas y preparar un método para hacer interfaces.
+Empezamos con un breve repaso de los conceptos de mecánica estadística que ejemplificaremos con las simulaciones.A continuación se detallan los modelos descritos, así como unas breves conclusiones de los conceptos.
+Es, por tanto, un trabajo con finalidad didáctica, en el cual
+
+\vspace{1cm}
+
+{\bfseries \large Abstract: }\vspace{5mm}
+
+This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.
+\vspace{1cm}
+
+% {\Large\textbf{Nota}: el título extendido (si procede), el resumen y el abstract deben estar en una misma página y su extensión no debe superar una página. Tamaño mínimo 11pto }\\
+
+% {\Large\textbf{Extensión máxima 20 páginas sin contar portada ni resumen (sí se incluye índice, introducción, conclusiones y bibliografía}}
+\newpage
+
+%%Inicio:
+\tableofcontents
+
+\newpage
+\section{Introducción}
+\label{sec:intro}
+
+La característica fundamental de la física estadística es tratar con un número grande de grados de libertad, para así deducir el comportamiento de los sistemas que estudia. El tipo de desarrollos teóricos y matemáticos que se derivan de este enfoque pueden resultar confusos y contradictorios para el estudiante novel. Las aplicaciones interactivas por ordenador, y en contreto, del navegador, pueden ser de una ayuda inestimable para entender mejor estos conceptos. El uso de ordenadores, además, entronca con una de los métodos de estudio principales de la física estadística: la simulación computacional. De esta forma, no sólo visualizarlas para entender los conceptos, sino aprender a programar esta clase de programas, resulta una ahbilidad intestimable para el físico moderno.
+
+En este trabajo se presentan $10$ simulaciones interactivas, que ilustran conceptos fundamentales de la física estadística como la ireversibilidad o la dimensionalidad.
+
+%%%%%% COMPU %%%%%%
+%%%%%% COMPU %%%%%%
+%%%%%% COMPU %%%%%%
+%%%%%% COMPU %%%%%%
+\subsection{Simulaciones interactivas}
+\label{sec:sims}
+
+Originalmente se creó una página con un montón de applets de física. Java quedó obsoleto y ya no funcionan.
+
+Para llevar a cabo estas prácticas
+
+El objetivo de este trabajo es devolverlos a la vida. Al menos a la parte de física estadística. Y dejar los pasos marcados para tal vez continuar rehaciendo la página original y ampliarla con las ideas de nuevos estudiantes.
+
+Simulaciones numéricas.
+
+Por qué son importantes?
+
+\subsection{Recursos didácticos en física}
+
+Enfoque docente.
+
+Applets: El término se refiere a un pequeño programa dedicado, normalmente diseñado para funcionar dentro de un programa más grande. Normalmente el término se aplica al lenguaje de programación Java, ya que se popularizaron en la web gracias dicho lenguaje.  Actualmente, la mayoría de programas de este tipo están programados en Javascript, una de las principales tecnologías de la web, junto con HTML y CSS. La facilidad a la hora de subirlo y la accesibilidad al código \cite{schroeder}.
+
+Referencia a los Physlets y las simulaciones de Schroeder.
+
+La importancia del aprendizaje interactivo.
+
+La gamificación.
+
+%%%%%% FISES %%%%%%
+%%%%%% FISES %%%%%%
+%%%%%% FISES %%%%%%
+%%%%%% FISES %%%%%%
+\section{Breve repaso de mecánica estadística}\label{sec:fises}
+
+En especial, en física estadística, muchos conceptos son confusos para el estudiante novel.
+
+Por un lado, la estadística es una de las ramas de la matemática más contraintuitiva.
+
+Con objeto de entender mejor los modelos que presentamos, es necesario introducir algunos conceptos de uso común en física estadística.
+
+
+\subsection{Teoría cinética}
+
+La mecánica que gobierna los procesos microscópicos (tanto aquellos de naturaleza cuántica como los que consideramos en la aproximación clásica) de la materia es reversible, es decir, invariante bajo inversión temporal. Sin embargo, los procesos macroscópicos que observamos son irreversibles. ¿Cómo puede emerger una dinámica irreversible a partir de procesos reversibles? A esta aparente contradicción se le llama Paradoja de Loschmidt.
+
+Ludwig Boltzmann reflexionó profundamente sobre este tema. El punto clave a tener en cuenta es que los sistemas de estudio de la física estadística están compuestos por un gran número de partículas. y enunció el llamado teorema H. Este teorema es el fundamento estadístico de la segunda ley de la termodinámica, ya que enuncia que para cualquier sistema compuesto por un gran número de grados de libertad habrá una función $H$ definida de cierta forma que aumentará su valor.
+
+Esta cantidad H se asoció más tarde por [] a la entropía, pero la paradoja de Lochsmidt siguió sin resolverse hasta que, una vez más, Boltzmann, planteó su hipótesis del caos molecular o Stosszahlansatz. Ésta asume que las colisiones entre moleculas cuando el sistema es muy grande no están correlacionadas entre sí. Esto implica que
+
+Irreversibilidad y ergodicidad.
+
+Tiempo de recurrencia de Poincaré.
+
+Función de partición.
+
+Energñia libre.
+
+Espacio de fases
+
+\subsection{Colectividades}
+
+Cuando estudiamos sistemas como los de la física estadística, no hay un sólo enfoque para tratarlos. Podemos estudiar el sistema atendiendo a distintos tipos de variables, como si lo estudiáramos en escalas diferentes.
+
+Aquí es donde entran en juego las colectividades. Las más comunes son la microcanónica, la canónica, y la macrocanónica, en cada una de las cuales usamos las siguientes variables:
+
+Para más información, se puede consultar el capítulo [tal] del libro \cite{salcido} o cccreo que mejro no
+
+\subsection{Cuántica}
+
+La física cuántica también trata con distribuciones de probabilidad.
+
+Y la física estadística estudia sistemas que en el fondo son cuánticos.
+
+Aquí hay rollito.
+
+\subsection{Física estadística fuera del equilibrio}
+
+Todo el desarrollo de las secciones anteriores es al respecto de la física estadística del \textit{equilibrio}. Como hemos dicho, planteamos hipótesis y en
+
+\section{Programación de las simulaciones}\label{sec:programa}
+
+\subsection{Java}
+\subsection{HTML y Javascript}\label{sec:html}
+
+A lo largo del Grado, varias
+
+Primer intento en Python.
+
+Python vs Javascript.
+
+Javascript como paradigma open-source para la web.
+
+Librerías utilizadas.
+
+Dificultades de creación de los applets.
+
+\subsection{Ingeniería inversa}\label{sec:inversa}
+
+\subsection{Servidor}
+
+\newpage
+
+%%%%%% APPS %%%%%%
+\section{Los applets}\label{sec:apps}
+
+%%%%%%% Esquema de ejemplo de un applet:
+% Conceptos introductorios, historia. Importancia en física. Aplicaciones.
+% Explicación del applet. Opcional (Algoritmo: Pseudocódigo).
+% Resultados y análisis.
+
+Las explicaciones que vienen a continuación son una revisión de las originales. Los applets están alojados en \url{http://funcionando.works/TFG/index.html}.
+Junto a cada simulación se incluye la descripción que aparece en este documento, así como una breve discusión de dificultades a la hora de programarla.
+%%% APP 1 %%%
+\subsection{Teorema del límite central}\label{sec:central}
+
+El teorema del límite central (CLT, por sus siglas en inglés) establece que la suma de variables aleatorias sigue una distribución normal (siempre que el número de variables sumadas sea suficientemente grande). La única condición es que las variables que se suman sean independientes y generadas por la misma distribución de probabilidad, de valor esperado y varianza finitas.
+
+\begin{namedtheorem}[Teorema del límite central]
+Sean $X_i, i = 1,\dots, N$ un conjunto de $N$ variables aleatorias independientes, todas distribuidas según la misma distribución de probabilidad de media $\mu$ y varianza $\sigma^2 \neq 0$ finitas.
+Entonces, cuando $N$ es suficientemente grande (de forma rigurosa, tendiendo a infinito), la probabilidad de que la variable aleatoria $Y$ definida como la suma de las anteriores ($Y = X_1 + X_2 + \dots + X_N$) tome el valor $y$ sigue una distribución gaussiana:
+
+\begin{equation}\label{eq:Gauss}
+P_{Y}(y)=\frac{1}{\sqrt{2 \pi N \sigma^{2}}} \exp \left[-\frac{(y-N \mu)^{2}}{2 N \sigma^{2}}\right]
+\end{equation}
+
+de media $\mu_Y = N \mu$ y varianza $\sigma_Y^2 = \sigma^2/n$.
+\end{namedtheorem}
+
+Hay otras versiones del teorema más generales. Por ejemplo en la de Lyapunov [añadir referencia] se permite que las variables $X_i$ no estén distribuidas idénticamente, pero se imponen ciertas condiciones sobre los momentos de órden superior de las distribuciones individuales.
+
+Interpretemos el resultado: da igual cuál sea la distribución con la que generamos variables aleatorias, su suma \textit{siempre sigue una distribución gaussiana}, y más estrecha cuantas más variables sumemos. Esta es la causa de que la distribución gaussiana tenga un papel tan importante en física: \textit{el efecto cooperativo de muchos factores aleatorios da como resultado una distribución gaussiana}.
+
+Es un ejemplo de la aplicación de la \textit{ley de los grandes números} de la teoría de la probabilidad. Este conjunto de teoremas (entre los que se incluye el teorema del límite central) estudian el comportamiento estadístico de una sucesión de ensayos sobre una distribución, y por ellotiene especial significancia no sólo en física estadística, sino también para la física cuántica.
+
+\noindent\rule{\linewidth}{0.4pt}
+
+En el applet se puede elegir el número de variables aleatorias \button{N} y el \button{Tipo de distribución} de la que tomamos muestras: como un dado (del 1 al 6), como una moneda (0 ó 1) y uniformemente distribuidas entre 0 y 1 (ambos incluidos). Con el objetivo de que sea más fácil ver que la suma converge a la distribución gaussiana, también se puede modificar la velocidad con que se generan las variables.
+
+Una posible ampliación de la simulación sería añadir la posibilidad de muestrear distribuciones asimétricas, como la distribución triangular y la distribución de Poisson, para ilustrar que no importa que la distribución de partida no sea uniforme.
+
+Pulsando \button{Inicia} se comienzan a generar variables $Y$, y se construye el histograma de frecuencias, normalizado a la unidad. Superpuesto al histograma, en rojo, se muestra la distribución gaussiana predicha por la ecuación \eqref{eq:Gauss}. Pulsando \button{Reset} se limpia la gráfica, que puede acabar siendo confusa si se cambia el número de variables o la distribución mientras la simulación se está ejecutando.
+
+Se recomienda comprobar que cuando $N\gg1$, la distribución de $Y$ se aproxima a la curva de la distribución gaussiana, para todas las distribuciones individuales disponibles. Por el contrario, cuando $N$ es pequeño, no sucede así.
+
+%%% APP 2 %%%
+\subsection{Anillo de Kac}\label{sec:ring}
+
+El modelo del anillo de Kac es un sencillo modelo matemático que ilustra la compatibilidad entre estados macroscópicos y microscópicos, el tiempo de recurrencia de Poincaré y otros aspectos de teoría cinética que en principio pueden parecer paradójicos. Su dinámica es la siguiente:
+
+\begin{namedtheorem}[Modelo del anillo de Kac]
+Disponemos $N$ casillas en un círculo. En cada casilla colocamos una bolita, que puede ser de color azul o rojo. También marcamos al azar $M$ sitios o ``túneles'' entre bolitas. En cada instante de tiempo las bolitas saltan de su casilla a la contigua, siguiendo el sentido de las agujas del reloj. Si en este salto una bolita pasa sobre uno de los $M$ sitios marcados, al llegar a la nueva casilla habrá cambiado de color.
+\end{namedtheorem}
+
+Con estas reglas, el modelo es reversible y periódico. Al cabo de $T = 2N$ iteraciones, cada partícula ha dado dos vueltas completas al círculo, y ha cambiado de color un número par de veces, $2M$. Es decir, habrá vuelto a su color y posición original. Si $M$ es par, con $T=N$ iteraciones es suficiente. Este periodo se corresponde con el tiempo de recurrencia de Poincaré.
+
+Podemos describir el sistema estudiando el \textbf{número de bolitas de cada color} que hay en cada instante de tiempo: $B(t)$ para las azules y $R(t)$ para las rojas. Definamos también la \textbf{cantidad de bolitas que tienen un sitio marcado delante} (y que por tanto cambiarán de color en el siguiente instante de tiempo) como $b(t)$ y $r(t)$. En estos términos las ecuaciones de evolución o ecuaciones de balance del sistema serán:
+
+\begin{equation}\label{eq:kacEvol}
+B(t+1) = B(t) - b(t) + r(t), \qquad
+R(t+1) = R(t) - r(t) + b(t)
+\end{equation}
+
+Con estas ecuaciones no disponemos de información suficiente para resolver la dinámica del sistema. Necesitamos una hipótesis adicional, que consiste en considerar que la fracción de bolas \textit{de un color} que tiene delante un sitio marcado es la misma que la fracción \textit{total} de bolas con un sitio marcado delante:
+
+\begin{equation}\label{eq:kacHip}
+\frac{b(t)}{B(t)} = \frac{r(t)}{R(t)} = \frac{b(t) + r(t)}{B(t) + R(t)} = \frac{M}{N} \equiv \eta
+\end{equation}
+
+Gracias a esta hipótesis, podemos resolver las ecuaciones \eqref{eq:kacEvol}, restándolas entre sí, para obtener:
+
+\begin{equation}\label{eq_kacSol}
+\begin{aligned}
+B(t)-R(t) &=\left(1-2 \frac{M}{N}\right)\left[B(t-1)-R(t-1)\right] \\
+&=\left(1-2 \eta\right)^{t}\left[B(0)-R(0)\right]
+\end{aligned}
+\end{equation}
+
+Esta solución nos dice que, pasado un número grande de iteraciones, la diferencia en el número de bolas de cada color tiende a cero, y que por tanto el sistema \textit{no es periódico ni reversible}, lo cual contradice nuestro modelo de partida. Esta discrepancia viene de la hipótesis \eqref{eq:kacHip}.
+
+Esta hipótesis juega un papel similar al de la hipótesis de caos molecular en la ecuación de Boltzmann \cite{haro}: elimina las correlaciones entre las componentes de nuestro sistema \cite{gottwald}. Es por esto que puede considerarse una hipótesis que aplicamos a la descripción \textit{macroscópica} del sistema. Al eliminar las correlaciones que se crean en el sistema, perdemos la información de reversibilidad.
+
+La realidad es que el modelo de Kac como lo hemos enunciado no satisface la condición \eqref{eq:kacHip}, aunque se aproxime a ella en el límite $N \rightarrow \infty$. Podríamos modificar el modelo, de forma que la ubicación de los sitios marcados cambie cada cierto número de iteraciones (menor que el tiempo de recurrencia), y así sí se satisfaría la hipótesis de caos molecular.
+
+\noindent\rule{\linewidth}{0.4pt}
+
+En el primer panel de la simulación se visualiza el anillo, con los sitios marcados representados por líneas verdes. El anillo exterior representa la configuración inicial, y el interior la evolución temporal. El segundo panel dibuja la diferencia entre el número de bolas rojas y azules.
+
+Se pueden elegir \button{N}, \button{M}, y la \button{Distribución de colores de las bolas}, así como la velocidad a la que evoluciona el sistema. Las distribuciones disponibles para elegir los colores son: azules y rojas alternadas, aleatorios, aleatorios con un $70\%$ de bolas azules y $30\%$ de rojas, o todas azules.
+
+Para los dos últimos casos se dibuja además la solución \eqref{eq_kacSol} en azul. Se puede apreciar que para tiempos cortos es válida, pero a tiempos largos la recurrencia del sistema se hace evidente.
+
+Como ya hemos dicho, una posible mejora del programa sería añadir la opción de recalcular los sitios marcados cada cierto tiempo, en cuyo caso la diferencia de colores sí que seguiría la curva azul antes mencionada. Otra forma de ampliarlo sería añadir una opción para elegir cómo se distribuyen los sitios marcados. Por ejemplo, cuando todos los sitios se sitúan en posiciones adyacentes, la diferencia de colores se mantendrá casi constante, salvo por pequeñas fluctuaciones que ocurren periódicamente. Se puede encontrar una discusión más detallada de este modelo en \cite{haro}.
+
+%%% APP 4 %%%
+\subsection{Ergodicidad y entropía en un conjunto de osciladores armónicos}\label{sec:osciladores}
+
+Esta simulación servirá para ilustrar el concepto de ergodicidad y de \textit{coarse graining}.
+
+\begin{namedtheorem}[Conjunto de osciladores independientes]
+Tenemos un sistema de $N$ osciladores independientes, cada uno con su frecuencia $\omega_i$, $i = 1,2,...,N$. Podemos describir el estado de cada oscilador con una variable ángulo $\phi_i (t) \in [0,2\pi)$, de forma que la evolución de cada oscilador viene dada por $\phi_i (t) = \phi_i (0) + \omega_i t$, donde $\phi_i(0)$ es la fase incial del oscilador. La evolución de cada oscilador está determinada por su frecuencia y su fase.
+\end{namedtheorem}
+
+En principio puede parecer que el sistema siempre será periódico, ya que comportamiento individual de cada oscilador armónico es predecible. Un análisis más detallado nos permite entender que, eligiendo adecuadamente las frecuencias, podemos preparar un estado no periódico. En este caso aparecerá un comportamiento ergódico, llegando a un estado de entropía máxima, de equilibrio.
+
+La condición que ha de cumplirse es que las frecuencias de los osciladores sean inconmensurables. Matemáticamente esto quiere decir que $r_{ij}={\omega_i}/{\omega_j}$ debe ser irracional para todo $i, j$. Así, no importa cuanto tiempo pase, nunca volverán a estar en sus posiciones iniciales con la misma diferencia entre las fases. Demostrémoslo con dos osciladores:
+
+Asumiendo fases iniciales nulas por simplicidad, y frecuencias $\omega_1$ y $\omega_2$, para un tiempo $t$ el estado de los osciladores será $\phi_1(t) =  \omega_1 t$ y $\phi_2(t) = \omega_2 t$. Cada oscilador volverá a su posición inicial en un periodo $T_i = 2\pi / \omega_i$. Supongamos que para que ambos estén en dicha posición a la vez, el primero debe haber pasado $n$ periodos, y el segundo, $m$. La condición de que estén sincronizados implica que $T = nT_1 = mT_2$, entonces:
+
+$$
+\frac{nT_1}{mT_2} = \frac{n \omega_2}{m \omega_1} = 1
+$$
+
+Si $\omega_1 / \omega_2$ es irracional, esto no puede cumplirse, así que el sistema nunca volverá al estado inicial, y por tanto, será ergódico.
+
+Volvamos al sistema de estudio, si es ergódico tenemos que la distribución de probabilidad microcanónica equivale al volumen del toro $N$-dimensional donde se mueven las variables $\phi$:
+
+$$
+\rho (x) = \frac{1}{(2\pi)^N}
+$$
+
+Para poder aplicar el formalismo de física estadística, necesitamos disponer de algún tipo de macroestado con el cual estudiar el sistema. Aquí es donde entra en juego el concepto de \textit{coarse graining}, que implica simplificar los componentes de nuestro sistema para estudiar sus propiedades ``suavizadas''. Normalmente se aplica en simulaciones de dinámica molecular, reduciendo moléculas o átomos a estructuras más sencillas como esferas.
+
+Para ello, dividimos la circunferencia en $M$ sectores, todos equiespaciados. La fracción de osciladores en cada sector la llamaremos $\alpha_i$, y el conjunto $\{\alpha_i\}_{i=1}^M$ será nuestro macroestado.
+Cuando $N \gg 1, M \gg 1$ y $N \gg M$, podemos escribir la entropía de dicho macroestado como:
+
+\begin{equation}\label{eq:oscS}
+S=-N k_{B} \sum_{j} \alpha_{j} \ln \alpha_{j}
+\end{equation}
+
+De esta expresión podemos deducir que la entropía máxima posible será:
+
+\begin{equation}\label{eq:oscSmax}
+S_{\mathrm{max}}=N k_{B} \ln M
+\end{equation}
+
+Que corresponde con el macroestado en que $\alpha_j = 1/M$ para todo $j$. Como hemos dicho, este macroestado de entropía máxima sólo se alcanzará si el sistema es ergódico. Si no lo es, el sistema será periódico y su entropía puede crecer o decrecer.
+
+\noindent\rule{\linewidth}{0.4pt}
+
+En el applet podemos elegir \button{N} y \button{M}. También las \button{Fases iniciales}, todas iguales o aleatorias, y la \button{Distribución de frecuencias}:
+
+\begin{itemize}
+\item Aleatorias, de forma que $r_{ij}$ es en buena medida inconmensurable.
+\item Casi iguales, aleatorias pero próximas entre sí.
+\item Equiespaciadas, de forma que $r_{ij} = i/j$, y por tanto el sistema no es ergódico.
+\end{itemize}
+
+En el panel izquierdo aparecen representados los osciladores como manecillas de reloj, el ángulo de la manecilla es el estado del oscilador, $\phi_i(t)$. Los sectores aparecen dividiendo el círculo externo. En el panel derecho se representa la entropía normalizada del sistema, según la fórmula \eqref{eq:oscS}, con un factor de normalización dado por la entropía máxima \eqref{eq:oscSmax}, de forma que dicha entropía máxima corresponde al valor $1$.
+
+Una vez ajustados los parámetros deseados, hay que pulsar \button{Reset} para inicializarlos antes de pulsar \button{Inicia} para iniciar la simulación. Cuando partimos de fases iniciales nulas la entropía empieza siendo baja, y aumenta según los osciladores se distribuyen por la circunferencia. Cuando las frecuencias son aleatorias, llega a un valor máximo y no decrece salvo pequeñas fluctuaciones, que son más pequeñas cuanto mayor es el número de osciladores. Por otro lado, cuando las frecuencias son conmensurables, las fluctuaciones son mucho más grandes y el comportamiento periódico se hace patente, al cabo de cierto número de iteraciones tenemos una fluctuación muy grande de entropía que corresponde al retorno al estado inicial.
+
+Esta periodicidad es más difícil de observar cuando las fases iniciales son aleatorias, ya que entonces estamos partiendo de un estado de entropía máxima, y es difícil que las fluctuaciones sean grandes, sean como sean las frecuencias. Con esto se confirma una de las ideas de Boltzmann acerca de la irreversibilidad: La evolución temporal a estados de desorden se produce porque partimos de sistemas muy ordenados.
+
+El botón \button{Histograma} calcula el histograma de la distribución del logaritmo de las frecuencias, mostrando que se comportan de manera exponencial según la fórmula de Einstein: $N(S) = \exp{S/k_B}.$
+
+La simulación original fue desarrollada sobre una idea y material de Juan M.R. Parrondo.
+
+Una ampliación a este modelo es el Modelo de Kuramoto, en el que se introduce cierto acoplo entre osciladores, de forma que cuando dos de ellos están cerca sus frecuencias tienden a igualarse, induciéndose así comportamientos colectivos.
+
+%%% APP 3 %%%
+\subsection{Transformaciones sobre el espacio de fases}\label{sec:transformations}
+
+Las transformaciones que presentamos en esta sección pertenecen a una clase llamada mapas o transformaciones caóticas. Su relevancia en física estadística aparece en el contexto del estudio del espacio de fases $\Gamma$ de un sistema dinámico, ya que pueden verse como un tipo de función de evolución de sistemas dinámicos.
+
+Las transformaciones que veremos actúan sobre el espacio de dos dimensiones, aunque es posible generalizarlas a un número mayor. La primera es la \textit{Transformación del panadero} (llamada así porque es similar a una técnica usada para estirar la masa de la harina). La segunda es la \textit{transformación de Arnold} (\textit{Arnold's Cat Map}, el nombre viene de que originalmente Arnold ejemplificó su modelo con la imagen de un gato). Ambas son ejemplos de caos determinista y son ergódicas.
+
+\subsubsection{Transformación del panadero}\label{sec:panadero}
+
+Esta transformación actúa sobre el cuadrado unidad $[0,1] \times [0,1]$. Primero contraemos la dirección $y$ en un factor 1/2 y expandimos la dirección $x$ en un factor 2, desplazando el cuadrado a la región $[0,1/2] \times [0,2]$. Entonces, la parte de la imagen que sale del cuadrado unidad ($x >1$) se corta y se coloca en la parte superior del intervalo $[0,1]$, restableciendo el cuadrado. La expresión matemática de la transformación para un punto $(x,y)$ es:
+
+$$
+\begin{array}{l}
+{x^{\prime}=2 x(\bmod 1)} \\
+y^{\prime}=\left\{
+\begin{array}{ll}
+{y / 2} & {\text { si } x<1 / 2} \\
+{y / 2+1 / 2} & {\text { si } x>1 / 2}
+\end{array}\right.
+\end{array}
+$$
+
+Puede verificarse de manera sencilla que esta transformación conserva el área del espacio $\Gamma$.
+
+Esta transformación es ergódica y \textit{strong mixing}, que quiere decir que al cabo de pocas iteraciones los puntos del espacio de fases se han redistribuido uniformemente.
+Tiene aplicaciones en óptica, mecánica de fluidos, reconocimiento de patrones.
+Puede entenderse como un operador traslación sobre una recta bi-infinita.
+
+\noindent\rule{\linewidth}{0.4pt}
+
+El funcionamiento applet es muy sencillo, se puede elegir la imagen inicial y pulsando el botón \button{Itera} se aplica la transformación. Tras unas cuantas iteraciones, los puntos de la figura inicial se han distribuido por todo el espacio formando una imagen homogénea.
+
+En el applet original de Java si pulsábamos el botón suficientes veces los  puntos dejaban de ocupar el espacio de forma uniforme, y se formaban unas bandas que convergían hacia el origen. Esto era debido a la precisión finita de los cálculos (ver apéndice \ref{sec:precision}). En lugar de usar puntos infinitamente precisos, el programa redondea los números muy pequeños, introduciendo cierto error. En esta nueva versión las imágenes que usamos son tienen más resolución y dicho comportamiento deja de ser perceptible.
+
+Una de las opciones es el \textit{invariante de Ising-Tartan}, un patrón fractal que queda invariante bajo la acción de la transformación del panadero. Debido a la naturaleza finita de la simulación, esto no ocurre en el applet que presentamos. En las primeras iteraciones la imagen se mantiene casi idéntica, pero al cabo de unas pocas se mezcla como las demás opciones.
+
+\subsubsection{Transformación de Arnold}\label{sec:arnold}
+
+La visión moderna de la mecánica hamiltoniana es que aplicamos transformaciones al espacio de fases que conserven el volumen (teorema de Liouville). Citando a Arnold: "\textit{La mecánica hamiltoniana es geometría en el espacio de fases}".
+
+Un aspecto interesante de esta teoría es que, cuando tenemos un sistema con tantas variables como grados de libertad (en cuyo caso decimos que el sisetma es integrable), podemos reducir la geometría del espacio de fases a la de un toro hiperdimensional, usando las llamadas \textit{variables acción-ángulo}. En estos casos, estudiar la dinámica del sistema se simplifica a comprobar si la periodicidad de estas variables acción-ángulo es conmensurable. Si el ratio entre sus frecuencias es racional, las trayectorias en el espacio de fases serán cerradas. Podemos visualizarlo como una hélice alrededor del toro que vuelve al punto de partida. Si el ratio es irracional, la hélice nunca se cierra y el sistema es caótico y ergódico, de igual forma a la simulación \ref{sec:osciladores}.
+
+Para visualizar esto, Arnold ideó la transformación matemática que lleva su nombre. Ésta pertenece a una clase de transformaciones llamada \textit{automorfismos torales}. Matemáticamente, un cuadrado con las condiciones de contorno adecuadas es isomorfo a un toro de dos dimensiones. El mapa de Arnold es una transformación de éste cuadrado en sí mismo. Se define en función de una matriz $T$, que transforma un punto $(x, y)$ en  $(x', y')$ según:
+
+$$
+\left(\begin{array}{l}
+{x^{\prime}} \\
+{y^{\prime}}
+\end{array}\right)=T\left(\begin{array}{l}
+{x} \\
+{y}
+\end{array}\right)=\left(\begin{array}{ll}
+{t_{11}} & {t_{12}} \\
+{t_{21}} & {t_{22}}
+\end{array}\right)\left(\begin{array}{l}
+{x} \\
+{y}
+\end{array}\right) \quad(\bmod 1)
+$$
+
+Las condiciones sobre la matriz $T$ son:
+
+\begin{enumerate}
+    \item $det(T) = 1$. Esta condición es necesaria para que se conserve el área.
+    \item Para que el mapa sea ergódico, los autovalores de $T$ deben ser reales y distintos de $1$.
+\end{enumerate}
+
+Para garantizar la segunda condición, se suele exigir que los elementos de matriz de $T$ sean enteros positivos, de forma que sus autovectores sean ortogonales, y por tanto un autovalor será mayor que $1$ y el otro menor que $1$. La dirección del autovector de autovalor mayor que $1$ se expande, y la dirección del otro autovector se contrae.
+
+Cuando los autovalores de la matriz $T$ no satisfacen la condición $2.$, la transformación de Arnold deja de ser ergódica, y al cabo de un cierto número de iteraciones restablecemos la imágen original. Por ejemplo, las matrices de rotación tienen autovalores complejos:
+
+$$
+T = \begin{pmatrix} 1 & -1 \\ 1 & 0
+\end{pmatrix}, \qquad
+T = \begin{pmatrix} \cos\phi & \sin\phi \\ \sin\phi & \cos\phi
+\end{pmatrix}
+$$
+
+Hay que hacer notar otro problema con este applet, y es que la transformación de Arnold sólo puede ser ergódica para el caso continuo. En el mapa discreto, aunque se cumplan las condiciones enunciadas, siempre habrá periodicidad. Como las simulaciones por ordenador se basan en el tratamiento de pixels, no es posible obtener el comportamiento ergódico.
+
+Sin embargo, hay ciertas matrices espacialmente problemáticas, aquellas que, aunque tengan autovalores reales, no son diagonalizables. Con estas matrices, el mapa muestra un comportamiento extraño, y por ello, en el caso del mapa discreto a veces no muestran periodicidad. Por ejemplo:
+
+$$
+T = \begin{pmatrix} 2 & 0 \\ 1 & 1/2
+\end{pmatrix}, \qquad
+T = \begin{pmatrix} 2 & 1 \\ 0 & 1/2
+\end{pmatrix}
+$$
+
+\noindent\rule{\linewidth}{0.4pt}
+
+En este applet, además de poder elegir la imagen, se pueden elegir tres de los cuatro elementos de la matriz $T$. El cuarto lo determina el programa a partir de la condición de $\det{T} = 1$. Los valores elegidos por defecto son los que aparecen en la mayoría de referencias y los que usó Arnold.
+
+Pulsando en las flechas se aplica o se deshace la transformación.
+
+Se puede observar cómo al cabo de cierto número de iteraciones, dependiente de los valores de los elementos de $T$, la imagen se distribuye uniformemente, como en la transformación del panadero. Sin embargo, tarde o temprano se volverá a obtener la imágen original, a no ser que se aplique una matriz patológica de las comentadas.
+
+Se puede ver la aplicación repetida de la transformación hasta obtener la imagen original pulsando el botón \button{Itera hasta restablecer la imágen original}.
+
+Se recomienda probar el applet con todas las matrices presentadas, y comprobar sus efectos sobre la imágen.
+
+De todas las simulaciones realizadas en éste trabajo, esta es la que más \textit{bugs} tiene.
+
+%%% APP 8 y 9 %%%
+\subsection{Gas ideal bidimensional}\label{sec:gases}
+
+Con estas dos simulaciones estudiaremos el comportamiento de un gas ideal, usando un gas de partículas en dos dimensiones. Primero, la expansión libre ilustrará los conceptos de irreversibilidad y fluctuaciones en equilibrio. Y segundo, el estudio de una región específica del gas sirve de ejemplo de sistema en contacto con un foco térmico y de partículas, cuyo análisis se lleva a cabo mediante la colectividad macrocanónica.
+
+%%% APP 8 %%%
+\subsubsection{Irreversibilidad y fluctuaciones en equilibrio}\label{sec:equilibrio}
+
+\begin{namedtheorem}[Expansión libre de un gas] Nuestro sistema es un recipiente dividido en dos por una pared. En una de las mitades hay un gas a temperatura $T$. El experimento empieza cuando retiramos la pared (de forma instantánea). Entonces, el gas se expande hasta ocupar todo el recipiente, y permanece en este estado de quilibrio. Nunca se observa lo contrario. Decimos que hay una secuencia de estados determinada, el proceso es irreversible.
+\end{namedtheorem}
+
+Expresado en el lenguaje de la física estadística, partimos de un estado muy poco probable, por lo que en la evolución del sistema tendrá una dirección muy marcada: aquella en que los estados sean más probables. Para que esto ocurra, necesitamos que haya un número grande de grados de libertad. Si el sistema está compuesto por pocas partículas, es más probable que todas acaben en sólo una mitad del recipiente, por tanto podríamos ver la secuencia inversa. Las fluctuaciones de densidad, en el caso de pocas partículas, tienen más peso a la hora de caracterizar el macroestado. Veamos por qué.
+
+Estudiemos la probabilidad de que haya $N_d$ partículas en el lado derecho y $N_i$ en el izquierdo, con $N = N_i + N_d$. Como ambas regiones tienen el mismo volumen, si consideramos que las partículas son independientes entre sí (siguiendo la Hipótesis del Caos Molecular) la probabilidad de que una partícula cualquiera esté en uno de los lados es $p={1/2}$. La probabilidad de tener $N_d$ y $N_i$ viene dada por
+
+\begin{equation}\label{eq:gasBinom}
+p\left(N_{d}, N_{i}\right)=\left(\begin{array}{c}
+{N_{d}+N_{i}} \\
+{N_{d}}
+\end{array}\right) p^{N_{d}}(1-p)^{N_{i}}=\left(\begin{array}{c}
+{N} \\
+{N_{d}}
+\end{array}\right)\left(\frac{1}{2}\right)^{N}
+\end{equation}
+
+que es la distribución binomial. De esta expresión ya podemos extraer consecuencias importantes. El máximo de esta distribución ocurre cuando $N_d = N/2$, por lo que ésta es la distribución más probable. Las situaciones más improbables son aquellas en que $N_i$ ó $N_d$ son cero.
+
+¿Cómo de grande es la diferencia entre estas probabilides? Calculemos el cociente entre $p(N, 0)$ y $p(N / 2, N / 2)$:
+
+\begin{equation}
+\frac{p(N, 0)}{p(N / 2, N / 2)}=\frac{N ! /(N ! 0 !)}{N ! /[(N / 2) !(N / 2) !]}=\frac{[(N / 2) !]^{2}}{N !}
+\end{equation}
+
+Para evaluar este cociente utilizamos la aproximación de Stirling para $n ! \simeq n^{n} e^{-n} \sqrt{2 \pi n},$ válida con un error menor del 1\% si $n \geq 5$. Obtenemos entonces que:
+
+\begin{equation}
+\frac{p(N, 0)}{p(N / 2, N / 2)} \simeq \sqrt{\frac{\pi N}{2}} 2^{-N}
+\end{equation}
+
+Es decir, la probabilidad de encontrar todas las partículas concentradas en una región disminuye \textit{exponencialmente} con el número de partículas. Veamos algunos ejemplos concretos:
+
+$$
+\begin{array}{lr}
+\frac{p(6,0)}{p(3,3)} = 0.05 \qquad &
+\frac{p(20,0)}{p(10,10)} = 5.54\times10^{-6} \\ \\
+\frac{p(100,0)}{p(50,50)} = 9.9\times10^{-30} \qquad &
+\frac{p(300,0)}{p(150,150)} = 6.8\times10^{-90}
+\end{array}
+$$
+
+Es decir, para $6$ partículas, por ejemplo, observaremos que todas se concentran en el mismo lado del recipiente un $5\%$ de las veces. Y ésta probabilidad decaerá más rápido cuantas más partículas tengamos, por lo que sólo con $300$ patículas ya tenemos números extraordinariamente pequeño, incluso cuando este número todavía está muy lejos del número de Avogadro de partículas $N=6.023 \times 10^{23}$. Con este cálculo se muestra que \textbf{la irreversibilidad aparece como consecuencia del enorme número de partículas que componen un sistema macroscópico}.
+
+Calculemos ahora las fluctuaciones respecto al estado más probable, $N_{d}=N_{i}=N / 2$.
+
+Si definimos $x$ como la desviación relativa respecto a dicho estado  $x=\left(N_{d}-N_{i}\right) / N$, podemos escribir que: $N_{d}=N(1+x) / 2$. Introduciendo esta expresión en la ecuación \eqref{eq:gasBinom} y utilizando el desarrollo de Stirling obtenemos que la probabilidad de encontrar una desviación $x$ sigue una distribución gaussiana:
+
+\begin{equation}\label{eq:gasGauss}
+p_{N}(x) \simeq \sqrt{\frac{2}{\pi N}} e^{-(N-1) z^{2} / 2}
+\end{equation}
+
+de dispersión $\sigma^{2}=1 /(N-1)$, esto es, más estrecha cuantas más particulas haya en el sistema. Por tanto, una fluctuación es más improbable cuanto más grande sea el sistema.
+Si volvemos a escribir \eqref{eq:gasGauss} en función de $N_{d}-N_{i}=\Delta$, se obtiene que la dispersión en la variable $\Delta$ es $\sigma_{\Delta}^{2}=N$:
+
+\begin{equation}
+p_{N}(\Delta) \simeq \sqrt{\frac{2}{\pi N}} e^{-\Delta^{2} /(2 N)}
+\end{equation}
+
+\noindent\rule{\linewidth}{0.4pt}
+
+En el applet se puede elegir el \button{Número de partículas} y la \button{Temperatura} del gas. El botón \button{Histograma} muestra una gráfica con la distribución de la diferencia de partículas en cada zona.
+
+En el panel de la izquierda se dibuja el recipiente con el gas. La línea vertical es donde originalmente está la pared. Al pulsar \button{Start} empieza la evolución del sistema, con todas las partículas en la mitad derecha del recipiente. En el panel derecho se muestra la diferencia entre el número de partículas entre los lados izquierdo y derecho del recipiente. Las dos lineas horizontales representan el valor de $\pm \sqrt{\sigma_{\Delta}^{2}}$ (entre el que $x$ se encuentra el $68 \%$ de las veces) y el valor $\pm 3 \sqrt{\sigma_{\Delta}^{2}}$ ($99.7\%$).
+
+También se puede elegir si queremos que puedan chocar unas con otras o no pulsando el botón de partículas \button{Con o Sin interacción} (cuando chocan lo hacen como discos duros), ya que todo este desarrollo es válido en ambos casos. De hecho, todo este desarrollo es válido para un modelo mucho más sencillo: El \button{Modelo de las urnas de Ehrenfest}, en el que las partículas no forman parte de un gas, sino que consideramos cada lado del recipiente como una urna independiente con partículas. En cada paso de tiempo cogemos al azar una partícula de una de las urnas y la movemos al otro lado de la caja. La dinámica de las fluctuaciones sigue la misma ley que antes: se distribuye de forma gaussiana con dispersión $\sigma^2 = 1/(N-1)$.
+
+Cuando el gas está compuesto de $20$ partículas, por ejemplo, la diferencia de partículas entre ambas mitades del recipiente se equilibra rápidamente, y una vez en este estado comienza a flutuar alrededor de $0$. La amplitud de estas fluctuaciones puede llegar a ser de $10$ partículas, en cuyo caso hay $5$ partículas en una región y $15$ en la otra, pero es muy raro observar que las $20$ partículas se acumulen en la misma región. Sin embargo, si disminuimos el número de partículas a $6$ no es raro en absoluto ver que todas se concentren en un lado. Se observa en este caso un proceso imposible según las leyes de la termodinámica: un proceso en el que se invierte la evolución temporal y la entropía crece.
+
+
+Equilibrio dinmámico.
+
+
+%%% APP 9 %%%
+\subsubsection{Colectividad macrocanónica}\label{sec:macrocanonica}
+
+Al estudiar termodinámica y física estadística es común hablar de sistemas aislados de los alrededores. Decimos que estos sistemas no intercambian energía ni partículas para simplificar los cálculos, pero en realidad es extremadamente difícil conseguir este tipo de estados.
+
+En los casos en que este intercambio de energía y partículas es relevante decimos que tenemos un foco térmico y de partículas en contacto con nuestro sistema, y en física estadística usamos la colectividad macrocanónica para describirlos, estudiando la probabilidad de que el sistema tenga una energía $E$ y $N$ partículas. Para ello, partimos del sistema total, incluyendo nuestro sistema (con $E$ y $N$), y los alrededores (o \textit{foco}), con $E_F\gg E$ y $N_F \gg N$.
+
+En este caso, si $H(q,p)$ es el hamiltoniano del sistema y $\omega$ es el volumen del espacio de fases de la hoja caracterizada por $E$, $N$ y $V$, la probabilidad de encontrar al sistema con energía $E$ y $N$ partículas es:
+
+\begin{equation}\label{eq:macroProb}
+p(E, N) \sim \omega(E, N, V) z^{N} e^{-\beta E}=z^{N} e^{-\beta H\left(\theta_{0}\right)}
+\end{equation}
+
+Donde la constante $\beta$ es el inverso de la temperatura: $\beta=1 / k_{B} T$ y $z=\exp (\beta \mu)$ es la \textit{fugacidad} del sistema, con $\mu$ el potencial quimico. La probabilidad $p(E, N)$ no está debidamente normalizada, y por eso escribimos el simbolo $\sim$. La constante de normalización se llama \textit{función de partición macrocanónica o función de macropartición}:
+
+\begin{equation}
+    Q(\beta, z, V)=\sum_{N} \int d E \omega(E, N, V) z^{N} e^{-\beta E}
+\end{equation}
+
+Integrando la probabilidad \eqref{eq:macroProb}, debidamente normalizada, a todas las energías posibles obtenemos la probabilidad de encontrar $N$ partículass en el sistema:
+
+\begin{equation}
+    p(N)=\frac{1}{Q} z^{N} \int d E \omega(E, N, V) e^{e^{-\beta E}}=\frac{1}{Q} z^{N} Z(N, \beta, V)
+\end{equation}
+
+En esta ecuación, $Z(N, \beta, V)=\int d E \omega(E, N, V) e^{-\beta E}=\int d q \ d p \ e^{-\beta H(q,p)}$ es la función de partición del sistema.
+
+Particularizando ahora a un gas ideal, tenemos:
+
+\begin{equation}
+Z(N, \beta, V)=\frac{1}{N !}\left(\frac{V}{\Lambda^{3}}\right)^{N}, \quad Q(z, \beta, V)=e^{x V / \Lambda^{3}}
+\end{equation}
+
+Y así, la probabilidad de encontrar $N$ partículas en el sistema resulta ser una distribución de Poisson con parámetro $zV / \Lambda^3$:
+
+\begin{equation}\label{eq:macroPoiss}
+    p(N)=\frac{1}{N !}\left(\frac{z V}{\Lambda^{3}}\right)^{N} e^{-z V / \Lambda^{2}}
+\end{equation}
+
+\noindent\rule{\linewidth}{0.4pt}
+
+Haciendo uso de esta simulación queremos demostrar que, efectivamente, un gas ideal satisface la distribución \eqref{eq:macroPoiss}. Para ello, se presenta un gas de partículas sin interacción como el de \ref{sec:equilibrio}, en este caso distribuido en todo el recinto.
+
+\button{Pulsando y arrastrando con el ratón se puede elegir una región del recinto}, que será nuestro sistema. El área no seleccionada será el foco térmico y de partículas. En dicha área seleccionada se verificará la relación \eqref{eq:macroPoiss}. En el panel derecho se muestra el número de partículas en nuestro sistema en función del tiempo, y pulsando \button{Histograma} se muestra la distribución del número de partículas. La línea roja representa la distribución de Poisson.
+
+Para regiones pequeñas la distribución sigue correctamente la dada por \eqref{eq:macroPoiss}, mientras que para regiones grandes, esto no es así. Esti se debe a que el desarrollo expuesto deja de ser válido, ya que no se cumple la hipotesis de que $N_F \gg N$. En el caso más extremo en que se selecciona todo el recinto, el sistema tendrá siempre el número de partículas total, u por tanto observaremos $p(N) = \delta(N - N_\text{part})$.
+
+% %%% APP 6 y 7 %%%
+
+%%% APP 6 %%%
+% \subsection{Calor específico de un gas de moléculas diatómicas}\label{sec:diatomicas}
+
+% En esta práctica estudiaremos un gas de moléculas diatómicas usando la colectividad canónica. El hamiltoniano de una molécula, con el par de átomos idénticos $1$ y $2$ es:
+
+% $$
+% H_{12}=\frac{\mathbf{p}_{1}^{2}}{2 m}+\frac{\mathbf{p}_{2}^{2}}{2 m}+V\left(\left|\mathbf{r}_{1}-\mathbf{r}_{2}\right|\right)
+% $$
+
+% Que puede separarse en dos partes: el movimiento del centro de masas de la molécula y el movimiento de los átomos respecto a dicho centro de masas. Si usamos las coordenadas relativas
+
+% $$
+% P = p_1 + p_2; \quad p = p_1 - p_2; \quad r = |r_1 - r_2|
+% $$
+
+% y nombramos $M = 2m$ como la masa total de la molécula y $\mu = m/2$ como la masa reducida, el hamiltoniano se reescribe como:
+
+% \begin{equation}\label{eq:diatHtot}
+%     \begin{aligned}
+%         H_{12}&=\frac{\mathbf{P}^{2}}{2 M}+\frac{\mathbf{L}^{2}}{2 \mu r^{2}}+{\frac{p^{2}}{2 \mu}+V(r)} \nonumber \\
+%         &=H_{T}+H_{rot}+H_{vib}
+%     \end{aligned}
+% \end{equation}
+
+% Estos tres términos se corresponden con las tres formas de moverse que tiene la molécula: Traslación, rotación y vibración. Entonces, por el teorema de equipartición, la función de partición de una sóla molécula se puede descomponer como
+
+% \begin{equation}
+%     Z_{12} = Z_T \cdot Z_{rot} \cdot Z_{vib}
+% \end{equation}
+
+% y, como tratamos con el sistema ideal, para $N$ moléculas tenemos:
+
+% $$
+% Z(\beta, N, V) = \frac{1}{N!} Z_{12}^N
+% $$
+
+% Mantenemos fijo $N$ pero no $E$, por lo que podemos calcular el calor específico por partícula como
+
+% \begin{equation}\label{eq:diatCtot}
+%     c_{v}=\frac{1}{N} \frac{\partial E}{\partial T} ; \quad E=\frac{1}{\beta} \frac{\partial \ln Z}{\partial \beta}=\frac{1}{\beta}\left(\frac{\partial \ln Z_{T}}{\partial \beta}+\frac{\partial \ln Z_{r o t}}{\partial \beta}+\frac{\partial \ln Z_{vib}}{\partial \beta}\right)
+% \end{equation}
+
+% donde las derivadas parciales deben tomarse a $V$ y $N$ constantes. Calculamos la contribución de cada parte al calor específico:
+
+% \paragraph{Traslación:} La función de partición $Z_T$ es la de una partícula libre en tres dimensiones:
+
+% \begin{equation}
+%     Z_{T}=\frac{h^{3}}{\Lambda^{3}}, \quad \Lambda^{3}=\sqrt{2 \pi M k_{B} T}
+% \end{equation}
+
+% que da una contribución al calor específico:
+
+% \begin{equation}
+%     c_v^T = \frac{3}{2} k_B
+% \end{equation}
+
+% \paragraph{Rotación:} En la parte rotacional $Z_{rot}$ se incluye el operador de momento angular, $\mathbf{L}^2$. Las autofunciones de éste operador son los armónicos esféricos $Y_m^l$, y la ecuación de autovalores del hamiltoniano es $\epsilon_{rot} = l(l+1) \hbar^2 / 2 \mu r_0^2, l = 0,1,2, \cdots$, con degeneración $g(\epsilon) = 2l+1$ en cada autovalor. Así, podemos deducir que la función de partición será:
+
+% \begin{equation}\label{eq:diatZrot}
+%     Z_{r o t}=\sum_{l=0}^{\infty}(2 l+1) \exp \left(-l(l+1) \frac{\beta \hbar^{2}}{2 \mu r_{0}^{2}}\right)=\sum_{l=0}^{\infty}(2 l+1) \exp \left(-l(l+1) \frac{\Theta_R}{T}\right)
+% \end{equation}
+
+% donde hemos definido la \textbf{temperatura característica de rotación} como:
+
+% \begin{equation}\label{eq:diatTrot}
+%     \Theta_R \equiv \frac{\hbar^2}{2k_B\mu r_0^2}
+% \end{equation}
+
+% que normalmente toma valores entre décimas de kelvin y unos pocos kelvins (excepto en el hidrógeno). Para $T\ll \Theta_R$, podemos calcular $Z_{rot}$ usando sólo los primeros términos de la serie \eqref{eq:diatZrot}. Por el contrario, a temperaturas altas, $T\gg \Theta_R$, todos los términos en \eqref{eq:diatZrot} deben ser sumados.
+
+% Si calculamos las contribuciones del calor específico en éstos límites, usando las ecuaciones \eqref{eq:diatCtot}, obtenemos:
+
+% \begin{equation}\label{eq:diatCrot}
+%     c_{v}^{Rot}=\left\{\begin{array}{ll}
+%     12 k_{B}\left(\Theta_{R} / T\right)^{2} e^{-2 \Theta_{R} / T} & \text { si } T \ll \Theta_{R} \\
+%     k_{B} & \text { si } T \gg \Theta_{R}
+%     \end{array}\right.
+% \end{equation}
+
+% \paragraph{Vibración:} La parte vibracional $Z_{vib}$ incluye dos términos: el movimiento de los átomos respecto al centro de masas y el potencial de interacción $V(r)$ interatómico. En \eqref{eq:diatHtot} hemos asumido implícitamente que los átomos vibran alrededor de las posición de equilibrio $r_0$ con pequeña amplitud, así que podemos desarrollar el potencial en serie de potencias alrededor de $r = r_0$, obteniendo:
+
+% $$
+% V(r) \simeq V\left(r_{0}\right)+\frac{d V}{d r}\bigg\rvert_{r=r_0}\left(r-r_{0}\right)+\frac{1}{2} \frac{d^{2} V}{d r^{2}}\bigg\rvert_{r=r_0}\left(r-r_{0}\right)^{2}+\cdots
+% $$
+
+% El término en derivada primera, $dV/dr$ es nulo porque está evaluada en $r_0$, que es la posición de equilibrio en la que $V(r)$ es mínimo. Por tanto, se puede aproximar el potencial $V$ por un potencial armónico de frecuencia $\omega^2= \frac{d^2 V}{dr^2}\frac{1}{\mu}$, reduciendo así el hamiltoniano de rotación a:
+
+% $$
+% H_{r o t}=\frac{p^{2}}{2 \mu}+\frac{1}{2} \mu \omega^{2}\left(r-r_{0}\right)^{2}
+% $$
+
+% cuyos niveles de energía están cuantizados según $\epsilon_{vib}=\left(n+\frac{1}{2}\right) \hbar \omega,\quad n=0,1,2, \cdots$, y la función de partición es (que se puede calcular):
+
+% \begin{equation}\label{eq:diatZvib}
+%     Z_{vib}=\sum_{n=0}^{\infty} \exp \left(-\beta \hbar \omega\left(n+\frac{1}{2}\right)\right)=\frac{\exp \left(\Theta_{V} / 2 T\right)}{1-\exp \left(\Theta_{V} / T\right)}
+% \end{equation}
+
+% donde hemos definido la \textbf{temperatura característica de vibración} como:
+
+% \begin{equation}\label{eq:diatTvib}
+%     \Theta_V \equiv \frac{\hbar \omega}{k_B}
+% \end{equation}
+
+% que suele ser del orden de cientos a miles de kelvins. Finalmente, las contribuciones al calor específico son:
+
+% \begin{equation}\label{eq:diatCvib}
+%     c_{v}^{Vib}=\left\{\begin{array}{ll}
+%     k_{B}\left(\Theta_{V} / T\right)^{2} e^{\Theta_{V} / T} & \text { si } T \ll \Theta_{V} \\
+%     k_{B} & \text { si } T \gg \Theta_{V}
+%     \end{array}\right.
+% \end{equation}
+
+% Las temperaturas características para algunas moléculas diatómicas reales son:
+
+% $$
+% \begin{array}{c|cccccccc}
+%  &  H_2 &	N_2 &	CO &	NO &	O_2 &	Cl_2 &	Br_2 &	K_2 \\
+%  \hline
+% \Theta_R &  85 &	2.9 &	2.8 &	2.4 &	2.1 &	0.35 &	0.12 &	0.081 \\
+% \Theta_V  & 6200 &	3340 &	3070 &	2690 &	2230 &	810 &	470 &	140
+% \end{array}
+% $$
+
+% Hemos empezado considerando que los dos átomos que forman la molécula diatómica eran iguales, pero el desarrollo es igualmente válido haciendo $M = m_1 + m_2$ y $\mu = \frac{m_1 + m_2}{2}$.
+
+% \noindent\rule{\linewidth}{0.4pt}
+
+% En la simulación podemos introducir las temperaturas \button{De rotación} y \button{De vibración},  \eqref{eq:diatTrot} y \eqref{eq:diatTvib}, lo que es equivalente a elegir una masa reducida, distancia interatómica y frecuencia de vibración para las moléculas. El programa calcula el calor específico por partícula (en unidades de $k_B$ y lo representa frente a $\log T$. También dibuja dos líneas verticales, correspondientes a los valores $\Theta_R$ y $\Theta_V$, y tres horizontales, las contribuciones de las partes traslacional, rotacional y vibracional cuando las temperaturas son mucho mayores que las temperaturas de rotación y de vibración.
+
+% %%% APP 7 %%%
+% %%% APP 7 %%%
+% %%% APP 7 %%%
+% %%% APP 7 %%%
+% %%% APP 7 %%%
+% %%% APP 7 %%%
+% %%% APP 7 %%%
+% \subsubsection{Teoría de Debye: Vibraciones de sólidos cristalinos}\label{sec:debye}
+
+% La teoría de Debye solucionó un problema al que se enfrentaba la física del estado sólico a principios del siglo XX: Las desviaciones de la ley de Dulong-Petit respecto a las medidas experimentales para bajas temperaturas. Debye aplicó la teoría cuántica y resolvió exitosamente estas diferencias.
+
+% En física del estado sólido se considera, como primera aproximación, que los átomos no se separan demasiado de sus posiciones de equilibrio, dada por el potencial de interacción con resto de átomos del cristal. Para cada átomo $i$, este potencial será una suma de los potencial de todos los demás, que podemos expresar como $V_i = \sum_i V(|r_i - r_j|)$, y la posición de equilibrio $r_i^0$ será aquella en que $\partial V_i/\partial r_i = 0$. Si expandimos la energía de interacción como desarrollo de Taylor hasta segundo órden en torno a estas posiciones tenemos:
+
+% \begin{equation}\label{eq:debPhiexp}
+%     \Phi=\sum_{i<j} V\left(\left|\mathbf{r}_{i}^{0}-\mathbf{r}_{j}^{0}\right|\right)+\sum_{i<j} \frac{1}{2}\left(\mathbf{r}_{i}-\mathbf{r}_{i}^{0}\right) \frac{\partial^{2} V}{\partial \mathbf{r}_{i} \partial \mathbf{r}_{j}}\left(\mathbf{r}_{j}-\mathbf{r}_{j}^{0}\right)
+% \end{equation}
+
+% Podemos, entonces, planetar el hamiltoniano como la suma de la parte cinética y la potencial:
+
+% $$
+% H=\sum_{i} \frac{\mathbf{p}_{i}^{2}}{2 m}+\sum_{i<j} V\left(\left|\mathbf{r}_{i}-\mathbf{r}_{j}\right|\right) \equiv \sum_{i} \frac{\mathbf{p}_{i}^{2}}{2 m}+\Phi
+% $$
+
+% De igual manera que en el desarrollo en serie de potencias del potencial cuando estudiamos la energía de vibración de una molécula diatómica, en \eqref{eq:debPhiexp} el término en primera derivada no aparece, ya que está evaluado en $r_i^0$. Al tener forma cuadrática, como la de un oscilador armónico, decimos que esta energía está en aproximación armónica Igual que antes, podemos transformar el potencial a otra base, en la que la energía de interacción es diagonal. Es lo que se llama \textit{expansión en modos normales de vibración $\xi$}:
+
+% $$
+% \Phi=\sum_{i} \frac{1}{2} m \omega_{i}^{2} \xi_{i}^{2}
+% $$
+
+% Cuánticamente llamamos a estos modos \textit{fonones}, pues juegan un papel similar al de los fotones con el campo electromagnético: forman una base para las excitaciones de la red. Como esta transformación de las variables $r$ a las $\xi$ deja invariante la parte cinética del hamiltoniano podemos escribir:
+
+% \begin{equation}\label{eq:debHmode}
+%     H=\sum_{i}\left(\frac{1}{2} m \dot{\xi}_{i}^{2}+\frac{1}{2} m \omega_{i}^{2} \xi_{i}^{2}\right)
+% \end{equation}
+
+% que es el hamiltoniano de un conjunto de osciladores armónicos de frecuencias $\omega_i$, donde los niveles cuánticos de cada uno de los osciladores son:
+
+% $$
+% \epsilon_n = \hbar \omega_{i}\left(n+\frac{1}{2}\right),\quad n=0,1,2, \ldots
+% $$
+
+% El cálculo de la función de partición es ahora sencillo, como el hamiltoniano \eqref{eq:debHmode} se puede descomponer en una suma de $3N$ osciladores independientes, separamos la función de partición en:
+
+% $$
+% Z(T, N)=\prod_{i=1}^{3 N} Z\left(\omega_{i}, T\right)
+% $$
+
+% donde cada una de las funciones de partición es:
+
+% $$
+% Z\left(\omega_{i}, T\right)=\sum_{n=0}^{\infty} \exp \left[-\beta \hbar \omega_{i}(n+1 / 2)\right]=\frac{\exp \left(-\beta \hbar \omega_{i} / 2\right)}{1-\exp \left(-\beta \hbar \omega_{i}\right)}
+% $$
+
+% Podemos ahora calcular el logaritmo de la función de partición:
+
+% $$
+% \ln Z(T, N)=\sum_{i=1}^{3 N} \ln Z\left(\omega_{i}, T\right) \simeq \int d \omega g(\omega) \ln Z\left(\omega_{i}, T\right)
+% $$
+
+% donde hemos pasado de la suma sobre $\omega$ a una integral sobre las mismas. El factor $g(\omega) d \omega$ nos da el número de modos en \eqref{eq:debHmode} con frecuencias entre $\omega$ y $\omega+d \omega$. Debye supuso que $g(\omega)$ se podía calcular, suponiendo que la relación entre $\omega$ (frecuencia) con $k$ (vector de ondas) está dada por la relación de dispersión $\omega=c k,$ donde $c$ es la velocidad de propagación. Con esta hipótesis:
+
+% $$
+% g(\omega)=\frac{3 V}{2 \pi^{2} c^{3}} \omega^{2}
+% $$
+
+% Podemos calcular la frecuencia máxima imponiendo que el número total de modos coincida con el número de grados de libertad $(3 N)$:
+
+% $$
+% 3 N=\int_{0} \omega_{D} \frac{3 V}{2 \pi^{2} c^{3}} \omega^{2} d \omega=\frac{V \omega_{D}^{3}}{2 \pi^{2} c^{2}} \Rightarrow \omega_{D}^{2}=\frac{6 N \pi^{2} c^{2}}{V}
+% $$
+
+% Ésta frecuencia máxima, $\omega_{D}$ se denomina frcuencia de Debye. Consecuentemente, tenemos que la función de partición es:
+
+% $$
+% \ln Z(T, N)=\int_{0}^{\omega_{D}} \frac{3 V \omega^{2}}{2 \pi^{2} c^{3}} \frac{\exp (-\beta \hbar \omega / 2)}{1-\exp (-\beta \hbar \omega)}
+% $$
+
+% Con esta expresión obtenemos el calor específico con el mismo procedimiento que con las moléculas diatómicas: derivando $\ln Z$ respecto a $\beta$ obtenemos la energía, y derivando la energía respecto a $T$ tendremos el calor específico:
+
+% \begin{equation}\label{eq:debCvInt}
+% C_{V}=9 N k_{B}\left(\frac{T}{\Theta_{D}}\right)^{3} \int_{0}^{\Theta_{D} / T} d x \frac{x^{4} e^{x}}{\left(e^{x}-1\right)^{2}}
+% \end{equation}
+
+% donde $\Theta_{D}$ es la temperatura de Debye $\Theta_{D} \equiv \hbar \omega_{D} / k_{B}$. Es importante apreciar que la dependencia del calor específico en la temperatura siempre se da a través del cociente $T / \Theta_{D}$. Es por ello que en la expresión final debemos calcular los límites de altas y bajas temperaturas respecto a ${\Theta}_{D}$:
+
+% \begin{equation}\label{eq:debCvExact}
+%     C_{V} / N \simeq\left\{\begin{array}{ll}
+%     {\frac{12}{5} \pi^{4} k_{B}\left(\frac{T}{\Theta_{D}}\right)^{3},} & {\text { si } T \ll \Theta_{D}} \\
+%     {3 k_{B},} & {\text { si } T>\theta_{D}}
+%     \end{array}\right.
+% \end{equation}
+
+% Puede verse que, efectivamente, para temperaturas altas recuperamos el límite clásico: La ley de Dulong y Petit,  $C_V = 3Nk_B$, independiente de la temperatura.
+
+% \noindent\rule{\linewidth}{0.4pt}
+
+% En la práctica por ordenador realizada, dada una \button{Temperatura de Debye} se calcula y se representa el calor específico por partícula integrando \eqref{eq:debCvInt}.
+
+% A continuación se presentan las temperaturas de Debye para algunos sólidos:
+
+% $$
+% \begin{array}{c|cccccccc}
+%  &K &	Cu &	Al &	Fe &	B &	C(diamante) &	FLi &	ClNa \\ \hline
+% \Theta_D & 100 & 315 &	394 &	420 &	1250 &	1860 &	730 &	321
+% \end{array}
+% $$
+
+% \textcolor{blue}{TEXT}
+% \textcolor{orange}{SIM}
+% \textcolor{magenta}{REF}
+
+%%% APP 10 %%%
+\subsection{Estadísticas de bosones y fermiones}\label{sec:bosefermi}
+
+Al describir partículas cuánticas usamos un artificio matemático, la función de ondas. Aunque no haya interacción entre partículas en un conjunto de partículas cuánticas, las propiedades de simetría de dicha función conducen a comportamientos físicos muy diferentes.
+
+Llamamos fermiones a las partículas descritas con una función de ondas \textit{antisimétrica} bajo permutaciones de los argumentos de dicha función de ondas. Dichas partículas tienen espín semientero, como por ejemplo electrones, protones o neutrones. Debido a esta antisimetría, dos fermiones no pueden compartir los mismos números cuánticos, y por tanto se distribuyen en los niveles de energía, sin compartirlos. A este hecho se le llama \textit{principio de exclusión de Pauli}. Por otro lado, los bosones son aquellas partículas con función de ondas simétrica, y tienen espín entero. Algunos  ejemplos son los fotones, los núcleos de $He^4$ o cuasipartículas como los fonones. La función de ondas simétrica sí que permite que varios bosones comparan números cuánticos, y por tanto puede haber varios con la misma energía.
+
+En esta simulación estudiaremos dos sistemas, uno compuesto por $N$ bosones y el otro por $N$ fermiones, pero que no interaccionan entre sí más que por esta simetría o antisimetría de la función de ondas.
+
+En la descripción estadística de esos sistemas se utiliza la colectividad \textbf{macrocanónica}, en la que se construye la función de partición para un sistema con niveles de energía $\epsilon_i$, con $i=0,1,2,...$ como:
+
+$$
+\ln Q(\beta,V,z) = -\prod_i \sum_{n_i}[z \exp (-\beta \epsilon_i)]^{n_i}
+$$
+
+La variable $z$ es la fugacidad, que se determina por la condición de que el número de partículas $N$ ha de ser igual a: $N=z \frac{\partial \ln Q}{\partial z}$. Las variables $n_i$ marcan el número de partículas en el nivel $i$-ésimo, por tanto varían entre $0$ y el número maximo de partículas admitidas en dicho nivel:
+
+\paragraph{Para fermiones:} En virtud del principio de exclusión de Pauli, cada nivel puede estar vacío o contener $n_i = 1$ partícula:
+
+$$
+n_{i}=0,1 \quad \Longrightarrow \quad \ln Q_{F} = \prod\left[1+z \exp \left(-\beta \epsilon_{i}\right)\right]
+$$
+
+\paragraph{Para bosones:} No hay limitación en el número de partículas, así que tenemos:
+
+$$
+n_{i}=0,1,2, ... \quad \Longrightarrow \quad \ln Q_{B} =\prod_{i}^{i} \frac{1}{\left[1-z \exp \left(-\beta \epsilon_{i}\right)\right]}
+$$
+
+Usando estas expresiones podemos calcular el número medio de partículas en cada nivel:
+
+\begin{equation}
+\left\langle n_{i}\right\rangle=-\frac{1}{\beta} \frac{\partial \ln Q}{\partial \epsilon_{i}},
+\left\{\begin{array}{l}{\left\langle n_{i}\right\rangle_{F}=\frac{1}{z^{-1} \exp \left(\beta \epsilon_{i}\right)+1} \quad \text { fermiones }} \\ {\left\langle n_{i}\right\rangle_{B}=\frac{1}{z^{-1} \exp \left(\beta \epsilon_{i}\right)-1} \quad \text { bosones }}\end{array}\right.
+\end{equation}
+
+En estas expresiones puede comprobarse que la ocupación de un nivel fermiónico nunca puede superar $1$, ya que el denominador siempre es mayor que la unidad. Por el contrario, el factor $-1$ que aparece en los bosones permite ocupaciones (muy) superiores a la unidad.
+
+Para temperaturas suficientemente bajas los bosones se concentran en el estado fundamental, dando lugar a un pico de ocupación en dicho nivel, en un fenómeno llamado Condensación de Bose-Einstein.
+
+\textcolor{blue}{TEXT}
+
+\noindent\rule{\linewidth}{0.4pt}
+
+En este applet realizamos una simulación de Monte Carlo de dos sistemas usando el algoritmo de Metropolis (ver apéndice \ref{sec:metropolis}) en una dimensión (la de los niveles de energía). El primer sistema contiene $N$ bosones (izquierda) y el segundo $N$ fermiones (derecha).
+
+Podemos elegir dicho \button{N}, la \button{Temperatura} (donde se ha tomado $k_B=1$) y el \button{Número de niveles}. Pulsando \button{Inicia} se empieza la simulación. Inicialmente las partículas ocupan distintos niveles (esto es relevante para los bosones), y en cada paso de tiempo tienen cierta probabilidad de cambiar de nivel (proporcional a la temperatura) o de mantenerse en el mismo. Pulsando \button{Histograma Bosones} o \button{Histograma Fermiones} se muestra el histograma normalizado de las frecuencias de ocupación de cada nivel energético. \textcolor{red}{TODO} \textcolor{orange}{SIM} \textcolor{green}{IMG}
+
+%%% APP 5 y 11 %%%
+\subsection{Modelo de Ising}\label{sec:ising}
+
+El modelo de Ising es un modelo sencillo para el estudio de la transición ferromagnética que exhiben muchos metales ordinarios como el hierro o el níquel. El ferromagnetismo es la presencia de magnetización espontánea incluso cuando no hay campo magnético externo. Su causa es que una fracción importante de los momentos magnéticos de los átomos (o espines) se alinean en una misma dirección, debido a la interacción entre los mismos. Esto da lugar a que la muestra del metal se imane.
+
+Este alineamiento sólo se produce cuando la temperatura de la muestra está por debajo de una temperatura característica, llamada \textit{temperatura de Curie}, $T_C$. Por encima de esta temperatura, las fluctuaciones térmicas son más intensas que la interacción entre los momentos magnéticos, por lo que éstos se orientan al azar, resultando en un campo magnético neto nulo.
+
+Un aspecto muy interesante del modelo de Ising es que puede generalizarse fácilmente para estudiar muchos tipos de procesos. Así, vemos el modelo de Ising aplicado a sistemas de geofísica, neurociencia, o incluso en dinámica social.
+
+El modelo de Ising es uno de los más estudiados para ejemplificar conceptos como dimensión crítica, limite termodinámico y el concepto de transición de fase. En estas dos simulaciones veremos los tres.
+
+\subsubsection{Transiciones de fase y magnetización}\label{sec:transiciones}
+
+Una de las causas del éxito del modelo de Ising es que es uno de los pocos que presenta una transición de fase y admite una solución exacta.
+
+Una transición de fase se produce cuando, en un valor de la temperatura u otro parámetro (la temperatura de Curie en nuestro caso, también llamada temperatura crítica), algún potencial termodinamico es no analitico. Cuando esto ocurre, alguna magnitud medible (el calor específico en este caso) presenta una discontinuidad o una divergencia.
+
+En este modelo, la transición de fase ocurre entre una fase desordenada o paramagnética a altas temperaturas, y una fase ordenada o ferromagnética a bajas.
+
+En este caso, partimos de una red regular cuadrada, en la que cada sitio $i$ de la red está ocupado por un momento magnético $s_i$ que puede tomar los valores $+1$ ó $-1$, según estén alineados paralela o antiparalelamente a un campo magnético externo $B$. Entonces, el hamiltoniano del sistema viene dado por:
+
+\begin{equation}\label{eq:isingHam}
+H\left(\left\{s_{i}\right\}\right)=-J \sum_{\langle i, j\rangle} s_{i} s_{j} - B \sum_i s_i
+\end{equation}
+
+El símbolo $\langle i, j\rangle$ indica que sumamos sólo a los vecinos próximos y $J$ es la energía de interacción entre espines: Cuando $J > 1$ la interacción es ferromagnética y los espines tienden a alinearse paralelamente, mientras que si $J<1$ tienden a alinearse antiparalelamente, y decimos que la interacción es antiferromagnética. Cuando $J=0$ los espines no interaccionan entre sí. A lo largo de este trabajo consideraremos que $J>1$. También consideraremos el caso en que no hay campo magnético externo, por lo que el segundo término de \eqref{eq:isingHam} será $0$.
+
+La forma del hamiltoniano favorece que los espines estén alineados, ya que si $s_i = s_j$ la energía del sistema disminuye una cantidad $J$. Si sólo tuvieramos en cuenta la energía y tratáramos de minimizarla, entonces el sistema siempre llegaría a la fase perfectamente ordenada, pero, como hemos visto en la introducción, debemos tener en cuenta el efecto de la temperatura. La aleatoriedad que introduce la temperatura provoca que los espines puedan cambiar su valor al azar, de forma más intensa cuanto mayor es la temperatura. Este balance entre energía debida a la interacción magnética y temperatura es el que determina la fase del sistema.
+
+Para estudiar este efecto, empecemos con la magnetización del sistema. La magnetización total será la suma de los valores de todos los momentos magnéticos de la red:
+
+\begin{equation}\label{eq:isingMagDef}
+    M = \left \langle \sum_i s_i \right \rangle
+\end{equation}
+
+De forma estadística, utilizamos la colectividad canónica por medio de la función de partición:
+
+\begin{equation}\label{eq:isingPartic}
+    Z(T,B) = \sum_{s_1} \sum_{s_2}...\sum_{s_N} \exp \left( -\frac{H(\{s_i\})}{k_B T} \right)
+\end{equation}
+
+a partir de la cual se puede calcular la magnetización como \textcolor{magenta}{REF} \cite{}:
+
+\begin{equation}\label{eq:isingMagnet}
+    M = - \frac{1}{k_B T} \left( \frac{\partial \ln Z}{\partial B} \right)_ {B=0}
+\end{equation}
+
+Se puede comprobar fácilmente que la expresión \eqref{eq:isingMagnet} coincide con \eqref{eq:isingMagDef}.
+
+Si calculamos \eqref{eq:isingPartic} y \eqref{eq:isingMagnet} en el caso unidimensional, se puede comprobar que \textit{no existe transición de fase}, los efectos del desorden inducido por la temperatura son siempre dominantes. Sin embargo, en 2 o más dimensiones sí que existe la transición de fase. En dos dimensiones, el cálculo de \eqref{eq:isingPartic} y \eqref{eq:isingMagnet} es posible aunque complicado (ver \cite{huang}). Se encuentra que la temperatura de transición está en:
+
+$$
+\frac{J}{k_B T_C} \equiv j_C = 0.4407
+$$
+
+En esta ecuación hemos definido $j \equiv \frac{J}{k_B T_C}$, que es el único parámetro relevante al tomar $B=0$.
+
+\noindent\rule{\linewidth}{0.4pt}
+
+En esta simulación realizamos un cálculo de Monte-Carlo (ver apéndice \ref{sec:metropolis}) del modelo de Ising en dos dimensiones. Se puede elegir el \button{Tamaño de la red}, la \button{Configuración inicial de espines} y la \button{Constante de interacción $j$}, que equivale a fijar una temperatura para el sistema. Al pulsar \button{Start} comienza la simulación.
+
+En el panel de la izquierda se muestran los espines ($s_i = +1$ en amarillo y $s_i = -1$ en azul), y en el de la derecha la magnetización frente a la temperatura. La línea azul está localizada en la temperatura crítica $T_C$.
+
+Cuando la temperatura es alta ($j$ pequeño) la magnetización se relaja rápidamente a su valor de equilibrio, fluctuando alrededor de $0$. En temperaturas cercanas a la crítica, $T \simeq T_C$ ó $j \simeq j_C$, la relajación es más lenta, ya que se forman correlaciones de largo alcance y las fluctuaciones son más importantes, pero sigue tendiendo a un estado de equilibrio en que $M=0$. Para temperaturas muy por debajo de la crítica, sin embargo, el valor de la magnetización en el estado de equilibrio toma un valor definido, y para temperaturas muy bajas todos los espines tienden a alinearse en la misma dirección.
+
+\subsubsection{Dimensionalidad y límite termodinámico}\label{sec:lt}
+
+Este experimento quiere ilustrar dos conceptos muy importantes en física: el de \textbf{dimensionalidad} de un sistema, y el de \textbf{límite termodinámico}. Este último es muy relevante para la física estadística.
+
+El de dimensionalidad es relevante en el  Modelo de Ising ya que la transición de fase descrita antes no existe en sistemas unidimensionales, sólo aparece en 2 o más dimensiones.
+
+El límite termodinámico consiste en considerar que el número de grados de libertad tiende a infinito, pero manteniendo la densidad constante.
+Es necesario para la no analiticidad, una suma finita de términos analíticos siempre será analítica, pero en una suma infinita puede aparecer no analiticidad.
+
+Para ilustrar  estos conceptos calcularemos el calor específico del modelo de Ising de forma exacta en redes de tamaño $N_x \times N_y$. Variando estos parámetros podemos simular distintos aspectos: $N_x=1$ simula una red unidimensional, y cuanto más cercanos sean $N_x$ y $N_y$, más cerca estaremos de una red bidimensional perfecta. Aumentando ambos nos acercamos al límite termodinámico.
+
+Las redes más grandes permitidas son aquellas en que $N_x N_y \leq 25$.
+
+\noindent\rule{\linewidth}{0.4pt}
+
+Como el núer
+
+Podemos elegir \button{$N_x$} y \button{$N_y$}, y pulsando en \button{Calcular} se dibuja el calor específico por partícula. Por defecto se dibujan además los calores específicos exactos para las redes infinitas en $1$ y $2$ dimensiones. Se puede ver que para la red unidimensional, el calor específico es una función analítica (igual que en las simulaciones que realizamos para redes bidimensionales, ya que se trata de aproximaciones), mientras que para el caso bidimensional perfecto aparece una divergencia en $T_C \approx 2.269$. Las unidades de simulación son $J/k_B = 1$.
+
+Se sugiere hacer varias experiencias:
+
+\begin{enumerate}
+    \item Calcular todas las redes cuadradas, desde la $2\times 2$ a la $5\times 5$, para ver cómo el máximo de $c_V$ se aproxima a $T_C$.
+    \item Calcular distintas redes con un número similar de espines, por ejemplo $1 \times 24$, $2 \times 12$, $3 \times 8$, $4 \times 6$ y $5 \times 5$. Así se observa cómo se pasa de un comportamiento unidimensional a uno bidimensional.
+    \item Fijar $N_x$ e ir aumentando $N_y$ progresivamente.
+\end{enumerate}
+
+\textcolor{green}{IMG}
+
+%%%%%% CONCLUSIONES %%%%%%
+\section{Conclusiones}\label{sec:conclusiones}
+
+Las simulaciones interactivas son un buen recurso academico bl abla...
+
+A continuación, posibles expansiones de los applets o resultados de experiencias:
+conclusiones sobre la dificultad de realización de los applets y lo que he aprendido por el camino:
+
+Elección de lenguaje de programación
+
+ingeniería inversa
+
+Simulaciones interactivas en física
+
+Hemos visto que la realización de simulaciones es buen recurso didáctico
+
+%%%%%% APENDICES %%%%%%
+\newpage
+\appendix
+
+\section{Modelado computacional}\label{sec:modComp}
+
+Problemas a la hora de generar números aleatorios
+
+Discusión del método de Monte Carlo.
+
+Dinámica molecular.
+
+Integración numérica.
+
+\subsection{El algoritmo de Metropolis Monte Carlo}\label{sec:metropolis}
+
+El método de Monte-Carlo agrupa una serie de algoritmos para obtener números aleatorios según una distribución dada. Esta clase de métodos son especialmente útiles para la evaluación de integrales multidimensionales, ya que son más eficientes que los métodos numéricos convencionales.
+
+De entre estos métodos de Monte-Carlo, el algoritmo más comun en física estadística es el llamado algoritmo de Metrópolis. Es del tipo cadena de Markov (Markov chain), donde cada elemento $X_i$ se genera a partir del anterior $X_{i-1}$, de forma que se crea una secuencia ordenada de puntos, $\{X_i\}$. El procedimiento es el siguiente:
+
+\begin{namedtheorem}[Algoritmo de Metropolis Monte-Carlo]
+Se elige un punto de prueba, $X_{p}$, ``cercano'' al punto de partida $X_{n-1}$. Entonces, evaluamos el cociente:
+
+\begin{equation}\label{eq:metropCoci}
+r= \frac{f(X_p)}{f(X_{n-1})}
+\end{equation}
+
+Si $r$ es mayor que $1$, el punto de prueba se acepta, y lo añadimos a la secuencia: $X_{n} = X_p$.
+
+Si $r$ es menor que $1$, aceptaremos $X_p$ con probabilidad $r$: Es decir, Generamos otro número aleatorio $\xi$, distribuido uniformemente en $[0,1]$. Si $\xi < r$, aceptamos el punto de prueba: $X_{n} = X_p$, y si sucede lo contrario, tomamos como nuevo punto de la secuencia el anterior: $X_{n} = X_{n-1}$.
+
+Una vez que tenemos el nuevo punto repetimos el procedimiento partiendo del punto aceptado.
+
+El primer punto de la secuencia, $X_0$, puede elegirse de forma aleatoria. Su influencia será menor cuanto más larga sea la secuencia $\{X_i\}$.
+\end{namedtheorem}
+
+En Física Estadística, el método de Monte Carlo se utiliza para evaluar valores medios en alguna colectividad, usualmente la canónica. Se elige la función $f(X)$ (la distribución deseada) como:
+
+\begin{equation}\label{eq:metropDistr}
+f(X) = \frac{\exp(-\beta H(X))}{Z}
+\end{equation}
+
+donde $Z$ es la función de partición (es necesario incluirla para que $f$ esté debidamente normalizada, pero que en los cálculos no aparece porque $r$ es el cociente de dos funciones $f$, según la ecuación \eqref{eq:metropCoci}). Con la función definida en \eqref{eq:metropDistr} el factor $r$ es:
+
+\begin{equation}\label{eq:metropFactor}
+r = \exp (-\beta [H(X_p) - H(X_{n-1})])
+\end{equation}
+
+Según la ecuación \eqref{eq:metropDistr}, los puntos $X$ son las variables del hamiltoniano, y por tanto la secuencia $\{X_i\}$ es una trayectoria en el espacio de fases $\Gamma$. Y analizando \eqref{eq:metropFactor} se puede apreciar que el método de Monte-Carlo nos permite calcular una distribución de puntos en base a la contribución energética al sistema: Los puntos de prueba con menor energía que el de partida son aceptados automáticamente, y los puntos con mayor energía se aceptan con una probabilidad dependiente del incremento de energía y de la temperatura.
+
+\subsection{Problemas a la hora de generar números aleatorios}
+
+\subsection{Precisión finita de las simulaciones}\label{sec:precision}
+
+En las simulaciones originales de las transformaciones del espacio de fases al cabo de cierto número de iteraciones...
+
+%%%%%% BIBLIOGRAFIA %%%%%%
+\newpage
+\nocite{salcido}
+\nocite{haro}
+\nocite{gottwald}
+\nocite{schroeder}
+\nocite{pathria}
+\nocite{huang}
+\nocite{allen}
+\nocite{krauth}
+\nocite{greinier}
+\nocite{koonin}
+\nocite{wannier}
+\nocite{reif}
+\nocite{ashcroft}
+\nocite{dyson}
+
+\bibliographystyle{unsrt}
+\bibliography{bib}
+
+\end{document}

@@ -1,0 +1,67 @@
+body {
+  font: normal 16px Helvetica, Arial, sans-serif;
+}
+
+.ising-model {
+  margin: 0 auto;
+}
+
+#canvas {
+  display: inline-block;
+}
+
+a {
+  font-weight: bold;
+  color: #aaccaa;
+  text-decoration: none;
+}
+
+a:hover {
+  border-bottom: 2px solid #aaccaa;
+}
+
+.buttons {
+  display: inline-block;
+  width: 400px;
+  vertical-align: top;
+}
+
+.button-group {
+  margin: 10px;
+}
+
+.button-group label {
+  display: inline-block;
+  width: 120px;
+  margin-right: 10px;
+  text-align: right;
+}
+
+.button-group label::after {
+  content: ":";
+}
+
+.button-group button,
+.button-group input,
+.button-group select {
+  width: 80;
+  padding: 5px;
+  margin: 0 5px;
+  color: #333333;
+  background: #aaccaa;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+}
+
+.button-group button {
+  cursor: pointer;
+}
+
+.button-group input {
+  vertical-align: middle;
+}
+
+.button-group div span {
+  margin: 0 10px;
+}
