@@ -24,6 +24,10 @@ startBtnMacro.onclick = function() {
 
     var balls = [];
 
+    var NinSquare = [],
+        frames = [];
+    var f = 0;
+
     var palette = [
         // 'rgba(93, 211, 158, 1)',
         // 'rgba(52, 138, 167, 1)',
@@ -119,10 +123,6 @@ startBtnMacro.onclick = function() {
             balls.push(new Ball(x, y, radius, color));
         }
     };
-
-    var NinSquare = [],
-        frames = [];
-    var f = 0;
 
     function animate() {
         window.requestAnimationFrame(animate);

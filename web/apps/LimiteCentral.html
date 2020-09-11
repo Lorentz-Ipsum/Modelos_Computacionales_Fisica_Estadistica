@@ -81,24 +81,20 @@
             <!-- <li class="nav-item">
               <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
             </li> -->
-            <li class="nav-item dropdown active">
-              <a class="nav-link dropdown-toggle" href="#" id="dropdownApplets" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Applets <span class="sr-only">(current)</span></a>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="dropdownApplets" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Applets</a>
               <div class="dropdown-menu" aria-labelledby="dropdownApplets">
-                <a class="dropdown-item" href="../Apps.html">Índice de applets</a>
+                <a class="dropdown-item" href="Apps.html">Índice de applets</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item active" href="LimiteCentral.html">Teorema del límite central</a>
-                <div class="dropdown-divider"></div>
-                <h6 class="dropdown-header">Transformaciones sobre el espacio de fases</h6>
-                <a class="dropdown-item" href="Transformaciones.html#baker">Transformación del panadero</a>
-                <a class="dropdown-item" href="Transformaciones.html#arnold">Transformación de Arnold</a>
+                <a class="dropdown-item" href="LimiteCentral.html">Teorema del límite central</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="Kac.html">Anillo de Kac</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="Osciladores.html">Conjunto de osciladores armónicos</a>
                 <div class="dropdown-divider"></div>
-                <h6 class="dropdown-header">Vibraciones moleculares</h6>
-                <a class="dropdown-item" href="Vibraciones.html#diatomicas">Gas de moléculas diatómicas</a>
-                <a class="dropdown-item" href="Vibraciones.html#debye">Teoría de Debye de los sólidos cristalinos</a>
+                <h6 class="dropdown-header">Transformaciones sobre el espacio de fases</h6>
+                <a class="dropdown-item" href="Transformaciones.html#baker">Transformación del panadero</a>
+                <a class="dropdown-item" href="Transformaciones.html#arnold">Transformación de Arnold</a>
                 <div class="dropdown-divider"></div>
                 <h6 class="dropdown-header">Gas ideal</h6>
                 <a class="dropdown-item" href="Gas.html#fluctuaciones">Expansión libre de un gas</a>
@@ -107,10 +103,13 @@
                 <a class="dropdown-item" href="Bosefermi.html">Estadísticas de bosones y fermiones</a>
                 <div class="dropdown-divider"></div>
                 <h6 class="dropdown-header">Modelo de Ising</h6>
-                <a class="dropdown-item" href="Ising.html#lt">Dimensionalidad y límite termodinámico</a>
                 <a class="dropdown-item" href="Ising.html#magnet">Magnetización y transiciones de fase</a>
+                <a class="dropdown-item" href="Ising.html#lt">Dimensionalidad y límite termodinámico</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="Originales.html">Applets originales</a>
+                <h6 class="dropdown-header">Extra: Vibraciones moleculares</h6>
+                <a class="dropdown-item" href="Vibraciones.html#diatomicas">Gas de moléculas diatómicas</a>
+                <a class="dropdown-item" href="Vibraciones.html#debye">Teoría de Debye de los sólidos cristalinos</a>
+                <div class="dropdown-divider"></div>
               </div>
             </li>
             <li class="nav-item">
@@ -136,100 +135,89 @@
       <!-- Contenidos  ================================================== -->
       <div class="container" role="main">
         <div class="main-content">
-          <h1 id="bosefemi">Teorema del Límite Central</h1>
-          <div>
-            <p>
-              El teorema del límite central (CLT, por sus siglas en inglés) establece que la suma de variables aleatorias sigue una distribución normal (siempre que el número de variables sumadas sea suficientemente grande). La única condición es que
-              las variables que se suman sean independientes y generadas por la misma distribución de probabilidad, de valor esperado y varianza finitas.
-            </p>
+          <h2 id="central">Teorema del límite central</h2>
 
-            <blockquote class="blockquote">
-              <h3>Enunciado del teorema</h3>
-              <p>
-                Sean $X_i, i = 1,\dots, N$ un conjunto de $N$ variables aleatorias independientes, todas distribuidas según la misma distribución de probabilidad de media $\mu$ y varianza $\sigma^2 \neq 0$ finitas.
-                Entonces, cuando $N$ es suficientemente grande (de forma rigurosa, tendiendo a infinito), la probabilidad de que la variable aleatoria $Y$ definida como la suma de las anteriores ($Y = X_1 + X_2 + \dots + X_N$) tome el valor $y$ sigue
-                una
-                distribución gaussiana:
+          El teorema del límite central (CLT, por sus siglas en inglés) establece que la suma de variables aleatorias sigue una distribución normal <a href="Bibliografia.html#dorfman">dorfman</a> (siempre que el número de variables sumadas sea
+          suficientemente
+          grande). La única condición es
+          que las variables que se suman sean independientes y generadas por la misma distribución de probabilidad, de valor esperado y varianza finitas.
 
-                \begin{equation}\label{eq:Gauss}
-                P_{Y}(y)=\frac{1}{\sqrt{2 \pi N \sigma^{2}}} \exp \left[-\frac{(y-N \mu)^{2}}{2 N \sigma^{2}}\right]
-                \end{equation}
+          <blockquote class="blockquote w-75">
+            <h4>Teorema del límite central</h4>
+            Sean $X_i, i = 1,\dots, N$ un conjunto de $N$ variables aleatorias independientes, todas distribuidas según la misma distribución de probabilidad de media $\mu$ y varianza $\sigma^2 \neq 0$ finitas.
+            Entonces, cuando $N$ es suficientemente grande (de forma rigurosa, tendiendo a infinito), la probabilidad de que la variable aleatoria $Y$ definida como la suma de las anteriores ($Y = X_1 + X_2 + \dots + X_N$) tome el
+            valor $y$ sigue una
+            distribución gaussiana:
 
-                de media $\mu_Y = N \mu$ y varianza $\sigma_Y^2 = \sigma^2/n$.
-              </p>
-            </blockquote>
+            \begin{equation}\label{eq:Gauss}
+            P_{Y}(y)=\frac{1}{\sqrt{2 \pi N \sigma^{2}}} \exp \left[-\frac{(y-N \mu)^{2}}{2 N \sigma^{2}}\right]
+            \end{equation}
 
-            <p>
-              Hay otras versiones del teorema más generales. Por ejemplo en la de Lyapunov [añadir referencia] se permite que las variables $X_i$ no estén distribuidas idénticamente, pero se imponen ciertas condiciones sobre los momentos de órden
-              superior de las distribuciones individuales.
-            </p>
+            de media $\mu_Y = N \mu$ y varianza $\sigma_Y^2 = \sigma^2/n$.
+          </blockquote>
 
-            <p>
-              Interpretemos el resultado: da igual cuál sea la distribución con la que generamos variables aleatorias, su suma \textit{siempre sigue una distribución gaussiana}, y más estrecha cuantas más variables sumemos. Esta es la causa de que la
-              distribución gaussiana tenga un papel tan importante en física: \textit{el efecto cooperativo de muchos factores aleatorios da como resultado una distribución gaussiana}.
-            </p>
+          Hay otras versiones del teorema más generales. Por ejemplo en la de Lyapunov se permite que las variables $X_i$ no estén distribuidas idénticamente, pero se imponen ciertas condiciones sobre los momentos de órden superior de las
+          distribuciones
+          individuales.
 
-            <p>
-              Es un ejemplo de la aplicación de la ley de los grandes números de la teoría de la probabilidad. \textcolor{red}{TODO}
-            </p>
+          Interpretemos el resultado: da igual cuál sea la distribución con la que generamos variables aleatorias, su suma <i>siempre sigue una distribución gaussiana</i>, y más estrecha cuantas más variables sumemos. Esta es la
+          causa de que la distribución
+          gaussiana tenga un papel tan importante en física <a href="Bibliografia.html#sands">sands</a>: <i>el efecto cooperativo de muchas variables aleatorios independientes da como resultado una distribución gaussiana</i>.
 
-            <hr>
+          Es un ejemplo de la aplicación de la <i>ley de los grandes números</i> de la teoría de la probabilidad. Este conjunto de teoremas (entre los que se incluye el teorema del límite central) estudian el comportamiento
+          estadístico de una sucesión de
+          ensayos sobre una distribución, y por ello tiene especial significancia no sólo en Física Estadística, sino también para la física cuántica.
 
-            <p>
-              En el applet se puede elegir el número de variables aleatorias \button{N} y su \button{Distribución}, además de la velocidad con que éstas se generan, con el objetivo de que sea más fácil ver que la suma de éstas acaba siquiendo la
-              distribución gaussiana.
-            </p>
-
-            <p>
-              En la versión original se podía elegir la distribución con que se generan las variables aleatorias $X_i$ entre tres opciones: Como un dado (del 1 al 6), como una moneda (0 ó 1) y uniformemente distribuidas entre 0 y 1 (ambos incluidos).
-            </p>
-
-            <p>
-              En esta nueva versión he añadido otras dos opciones, para ilustrar que no importa que la distribución de partida no sea uniforme: una distribución triangular y una distribución de Poisson ambas normalizadas entre 0 y 1.
-            </p>
-
-            <p>
-              Pulsando \button{Inicia} se comienzan a generar variables $Y$, y se construye el histograma de frecuencias, normalizado a la unidad. Superpuesto al histograma, en azul, se muestra la distribución gaussiana predicha por la ecuación
-              \eqref{eq:Gauss}.
-            </p>
-
-            <p>
-              Se recomienda comprobar que cuando $N\gg1$, la distribución de $Y$ se aproxima a la curva de la distribución gaussiana, para todas las distribuciones individuales disponibles. Por el contrario, cuando $N$ es pequeño, no sucede así.
-            </p>
-          </div>
           <hr>
-          <!-- El applet empieza aqui -->
-          <div style="text-align: center">
-            <div class="card card-body bg-light">
-              <div id="myDiv" style="height: 400px;">
-                <!-- Plotly chart will be drawn inside this DIV -->
-              </div>
+
+          En el applet se puede elegir el número de variables aleatorias \button{N} y el \button{Tipo de distribución} de la que tomamos muestras: como un dado (del 1 al 6), como una moneda (0 ó 1) y uniformemente distribuidas entre
+          0 y 1 (incluidos). Con el
+          objetivo de que sea más fácil ver que la suma converge a la distribución gaussiana, también se puede modificar la velocidad de generación de variables.
+
+          Una posible ampliación de la simulación sería añadir la posibilidad de muestrear distribuciones asimétricas, como la distribución triangular y la distribución de Poisson, para ilustrar que no importa que la distribución de
+          partida no sea uniforme.
+
+          Pulsando \button{Inicia} se comienzan a generar variables $Y$, y se construye el histograma de frecuencias, normalizado a la unidad. Superpuesto al histograma, en rojo, se muestra la distribución gaussiana predicha por la
+          ecuación \eqref{eq:Gauss}.
+          Pulsando \button{Reset} se limpia la gráfica, que puede acabar siendo confusa si se cambia el número de variables o la distribución mientras la simulación se está ejecutando.
+
+          Se recomienda comprobar que cuando $N\gg1$, la distribución de $Y$ se aproxima a la curva de la distribución gaussiana, para todas las distribuciones individuales disponibles. Por el contrario, cuando $N$ es pequeño, no
+          sucede así.
+
+        </div>
+        <hr>
+        <!-- El applet empieza aqui -->
+        <div style="text-align: center">
+          <div class="card card-body bg-light">
+            <div id="myDiv" style="height: 400px;">
+              <!-- Plotly chart will be drawn inside this DIV -->
             </div>
-            <br>
-            <!-- BOTONERA -->
-            <form class="form-group card card-body bg-light">
-              <div class="col-md-12">
-                <label>Numero de variables: &nbsp;<span id="numeroLectura"> 20</span></label>
-                <input type="range" id="numeroSlider" class="slider custom-range" onchange="updateNum()" min="1" max="50" value="20" step="1">
-                <label>Velocidad: &nbsp;<span id="velocidadLectura"> 1</span></label>
-                <input type="range" id="velocidadSlider" class="slider custom-range" onchange="updateVel()" min="1" max="10" value="1" step="1">
-              </div>
-              <div class="form-group col-md-12">
-                <label for="stateSelect">Tipo de variable</label>
-                <select id="stateSelect" class="form-control" onchange="updateState()">
-                  <option value="0"> Dados (del 1 al 6)</option>
-                  <option value="1"> Moneda (0 ó 1)</option>
-                  <option value="2">Entre 0 y 1 de forma continua</option>
-                </select>
-              </div>
-              <div class="form-group col-md-12">
-                <input id="startButton" type="button" onclick="startStop()" value="  Start  " class="btn btn-primary">
-                <input id="resetButton" type="button" onclick="resetNums()" value="  Reset  " class="btn btn-danger">
-              </div>
-            </form>
           </div>
+          <br>
+          <!-- BOTONERA -->
+          <form class="form-group card card-body bg-light">
+            <div class="col-md-12">
+              <label>Numero de variables: &nbsp;<span id="numeroLectura"> 20</span></label>
+              <input type="range" id="numeroSlider" class="slider custom-range" onchange="updateNum()" min="1" max="50" value="20" step="1">
+              <label>Velocidad: &nbsp;<span id="velocidadLectura"> 1</span></label>
+              <input type="range" id="velocidadSlider" class="slider custom-range" onchange="updateVel()" min="1" max="10" value="1" step="1">
+            </div>
+            <div class="form-group col-md-12">
+              <label for="stateSelect">Tipo de variable</label>
+              <select id="stateSelect" class="form-control" onchange="updateState()">
+                <option value="0"> Dados (del 1 al 6)</option>
+                <option value="1"> Moneda (0 ó 1)</option>
+                <option value="2">Entre 0 y 1 de forma continua</option>
+              </select>
+            </div>
+            <div class="form-group col-md-12">
+              <input id="startButton" type="button" onclick="startStop()" value="  Start  " class="btn btn-primary">
+              <input id="resetButton" type="button" onclick="resetNums()" value="  Reset  " class="btn btn-danger">
+            </div>
+          </form>
         </div>
       </div>
+    </div>
     </div>
 
     <script type="text/javascript" src="LimiteCentral.js"></script>

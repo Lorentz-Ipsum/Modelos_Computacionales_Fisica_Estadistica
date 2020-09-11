@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="es">
+
+  <head>
+    <title>Memoria</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="./img/favicon.ico">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <!-- Activamos el código Javascript de Bootstrap y de jQuery -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <!-- Importamos MathJax para visualizar LaTeX -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+    <style type="text/css">
+      body {
+        padding: 45px 0 0 0;
+      }
+    </style>
+    <style media="screen">
+      .main-content {
+        padding: 3rem 1.5rem;
+      }
+    </style>
+
+  </head>
+
+  <body>
+    <!-- Contenedor
+    ================================================== -->
+    <div class="container">
+
+      <!-- Barra de navegación ======================= -->
+      <nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="index.html">\(\int f(x) dx\)</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Elementos que se agrupan al minimizar-->
+        <div class="collapse navbar-collapse" id="navbarsExample03">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="Memoria.html">Memoria</a>
+            </li>
+            <!-- <li class="nav-item">
+              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+            </li> -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="dropdownApplets" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Applets</a>
+              <div class="dropdown-menu" aria-labelledby="dropdownApplets">
+                <a class="dropdown-item" href="Apps.html">Índice de applets</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="Apps.LimiteCentral.html">Teorema del límite central</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="Apps/Kac.html">Anillo de Kac</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="Apps/Osciladores.html">Conjunto de osciladores armónicos</a>
+                <div class="dropdown-divider"></div>
+                <h6 class="dropdown-header">Transformaciones sobre el espacio de fases</h6>
+                <a class="dropdown-item" href="Apps/Transformaciones.html#baker">Transformación del panadero</a>
+                <a class="dropdown-item" href="Apps/Transformaciones.html#arnold">Transformación de Arnold</a>
+                <div class="dropdown-divider"></div>
+                <h6 class="dropdown-header">Gas ideal</h6>
+                <a class="dropdown-item" href="Apps/Gas.html#fluctuaciones">Expansión libre de un gas</a>
+                <a class="dropdown-item" href="Apps/Gas.html#macro">Colectividad macrocanónica</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="Apps/Bosefermi.html">Estadísticas de bosones y fermiones</a>
+                <div class="dropdown-divider"></div>
+                <h6 class="dropdown-header">Modelo de Ising</h6>
+                <a class="dropdown-item" href="Apps/Ising.html#magnet">Magnetización y transiciones de fase</a>
+                <a class="dropdown-item" href="Apps/Ising.html#lt">Dimensionalidad y límite termodinámico</a>
+                <div class="dropdown-divider"></div>
+                <h6 class="dropdown-header">Extra: Vibraciones moleculares</h6>
+                <a class="dropdown-item" href="Apps/Vibraciones.html#diatomicas">Gas de moléculas diatómicas</a>
+                <a class="dropdown-item" href="Apps/Vibraciones.html#debye">Teoría de Debye de los sólidos cristalinos</a>
+                <div class="dropdown-divider"></div>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Codigos.html">Códigos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Bibliografia.html">Bibliografía</a>
+            </li>
+            <li class="nav-item">
+            </li>
+          </ul>
+          <ul class="navbar-nav">
+            <li>
+              <a class="nav-link" href="About.html">About</a>
+            </li>
+          </ul>
+          <!-- <form class="form-inline my-2 my-md-0">
+            <input class="form-control" type="text" placeholder="Search">
+          </form> -->
+        </div>
+      </nav>
+
+      <!-- Contenidos
+      ================================================== -->
+      <main class="container" role="main">
+        <div class="main-content">
+          <h1 id="modelos-computacionales-en-fisica-estadistica" style="text-align:center;">Memoria del trabajo</h1>
+          <p style="text-align:center;">
+            <a href="pdf/Memoria.pdf">Última versión del PDF</a><br>
+          </p>
+          <h1 id="intro">Introducción</h1>
+
+          Presentamos aquí $10$ simulaciones interactivas, disponibles actualmente \href{http://funcionando.works/TFG/index.html}{en esta página web}, mostrando distintos modelos que resultan de ayuda para ilustrar conceptos fundamentales de la
+          Física
+          Estadística como la ireversibilidad, el acercamiento al equilibrio o la dimensionalidad.
+
+          Este es un trabajo con finalidad didáctica, en el cual se tratan de explicar los modelos de una forma global, que haga evidentes los fundamentos físicos que hay detrás de cada simulación. Las simulaciones y los textos que la acompañan están
+          desarrolladas pensando en la asignatura del Grado.
+          Empezamos con un breve repaso de los conceptos de Mecánica Estadística que queremos explicar a través las simulaciones, y una discusión y motivación de los métodos computacionales utilizados para realizarlas. A continuación, se detallan los
+          modelos
+          descritos, y se presentan experiencias recomendadas para familiarizarse con cada uno de ellos.
+
+          <h2 id="sims">Simulaciones interactivas</h2>
+
+          Los ordenadores son una herramienta fundamental en la ciencia moderna \cite{allen}. El tratamiento de datos y la simulación numérica son parte del día a día de muchos investigadores. La creciente potencia de los procesadores y la mayor
+          accesibilidad
+          de los lenguajes de programación facilitan estas tareas cada vez más, y permiten desarrollar teorías y modelos que de otro modo serían muy difíciles de plantear.
+          Además de esto, los ordenadores pueden usarse para presentar dichos modelos \cite{krauth}, y tantos otros, con mayor profundidad de lo que sería posible en la pizarra. Hay muchas webs en que se muestran conceptos de Física Estadística y de
+          otras
+          ramas de la ciencia, pero no tantas en español (en la web de este trabajo hay disponible una lista con varios ejemplos de este tipo de páginas).
+          Un ejemplo sería la programada por Ricardo Brito López y Francisco Domínguez-Adame Acosta, pero ha quedado desactualizada por los desarrollos de la web. Inspirado por ese trabajo, pretendemos actualizar los experimentos interactivos,
+          adaptarlos a la
+          nueva tecnología, y a la vez, mejorarlos, con el fin de desarrollar una herramienta interactiva actual, moderna, y accesible tanto desde ordenadores de sobremesa como desde móviles y tablets.
+
+
+          <h1 id="fises">Breve repaso de Mecánica Estadística</h1>
+
+          La Física Estadística del equilibrio se fundamenta en una serie de hipótesis, correctas para los sistemas que estudia, pero que no están demostradas de forma estrictamente matemática.
+          Con objeto de entender mejor los modelos que presentamos, es conveniente introducir algunos de estos conceptos de uso común en Física Estadística.
+
+          <h2 id="cinetica">Teoría cinética</h2>
+
+          La mecánica que gobierna los procesos microscópicos \cite{huang}(tanto aquellos de naturaleza cuántica como los que consideramos en la aproximación clásica) de la materia es reversible, es decir, invariante bajo inversión temporal. Sin
+          embargo, los
+          procesos macroscópicos que observamos son irreversibles. ¿Cómo puede emerger una dinámica irreversible a partir de ecuaciones reversibles? A esta aparente contradicción se le llama <i>Paradoja de Loschmidt</i>.
+
+          Ludwig Boltzmann reflexionó profundamente sobre este tema. Llegó a la conclusión de que el punto clave a tener en cuenta es que los sistemas de estudio de la Física Estadística están compuestos por un gran número de partículas. Planteó la
+          ecuación de
+          transporte que lleva su nombre e introdujo la <i>Hipótesis del Caos Molecular</i> o <i>Stosszahlansatz</i>, lo que le permitió encontrar una solución a su ecuación.
+          Esta hipótesis afirma que las colisiones entre moleculas cuando el sistema es suficientemente grande no están correlacionadas entre sí, lo cual implica que la probabilidad de que dos partículas choquen puede calcularse atendiendo
+          sólamente a la
+          probabilidad combinada de encontrar esas dos partículas en una región muy pequeña del espacio.
+          Con ésta hipótesis, pudo enunciar y demostrar el llamado <i>Teorema $H$</i>.
+          Este teorema es el fundamento estadístico de la segunda ley de la termodinámica, y en su forma general enuncia que para cualquier sistema compuesto por un gran número de grados de libertad podemos construir un funcional $H$ definido de
+          una forma
+          específica que tenderá a decrecer monótonamente en la evolución del sistema, sea cual sea la función de distribución inicial.
+
+          Esta cantidad $H$ se relacionó más tarde con la entropía \cite{huang}, y así cobró popularidad la Segunda ley de la Termodinámica. De hecho, ésta solución es la que condujo a la paradoja de Lochsmidt, que surgió como una crítica al
+          teorema $H$. Es
+          precisamente la hipótesis del caos molecular la que resuelve el problema: al eliminar las correlaciones, perdemos cierta cantidad de información del sistema, y esto es lo que elimina la reversibilidad.
+          Lo más curioso es que, según las leyes de la mecánica, el desarrollo de la ecuación de Boltzmann no es estríctamente correcto, y sin embargo describe los experimentos satisfactoriamente.
+
+          Este planteamiento desde la irreversibilidad plantea varios desafíos. El tratamiento moderno se basa en construir el <i>espacio de fases $\Gamma$</i> del sistema \cite{pathria}, en el cual se representan tanto las coordenadas canónicas
+          (por
+          ejemplo, las posiciones espaciales), y los momentos canónicos, de forma que cada punto de este espacio representa un estado microscópico del sistema. Entonces, se procede a estudiar la evolución (que debe mantener el volumen de $\Gamma$
+          invariante
+          para satisfacer el <i>Teorema de Liouville</i>) de las regiones de dicho espacio según evoluciona el sistema. En este contexto aparece el concepto de <i>ergodicidad</i>: la idea de que cualquier región del espacio de estados recorrerá
+          todo el
+          espacio de fases al evolucionar el sistema, aunque sea durante un tiempo ínfimo para los estados con menos probabilidad de ocurrir. Es decir, si pudieramos estudiar el sistema durante un tiempo infinito, observaríamos todas las posibles
+          configuraciones al menos una vez. Al tiempo necesario para que el sistema vuelva exactamente a la configuración inicial se le llama <i>Periodo de Recurrencia de Poincaré</i>.
+
+          Otro concepto importante, que tratamos indirectamente en varias simulaciones, es el de <i>Coarse-Graining</i> (Granulado Grueso), necesario para caracterizar la entropía. Si miramos un sistema con detalle infinito (conocemos posiciones
+          y
+          velocidades de todas y cada una de las partículas con infinita precisión), todas las configuraciones son equiprobables. Necesitamos tratar al sistema desde la distancia. Dejar de ver las partículas como instancias individuales, digamos,
+          numeradas,
+          sino verlas como conjuntos en ciertos estados. Por ejemplo, contar cuántas particulas tenemos en cierta región del espacio y no atender a <i>cuáles</i> elimina cierta información del sistema, lo que nos permite definir la entropía de
+          dicho estado.
+
+          <h2 id="colectividades">Colectividades</h2>
+
+          Cuando estudiamos sistemas como los de la Física Estadística, no hay un sólo enfoque para tratarlos. Podemos estudiar el sistema atendiendo a distintos tipos de variables según el estado macroscópico con el que lo caracterizemos.
+
+          Aquí es donde entran en juego las colectividades, la forma estandar de abordar problemas en Física Estadística. En cada colectividad usamos distintas variables para caracterizar los estados (en el espacio de fases) del sistema. Las más
+          comunes son la
+          microcanónica ($ V, E, N$), la canónica ($V, T, N$), y la macrocanónica ($V, T, \mu$), aunque hay otras, que tratan casos más específicos y son más efectivas en determinadas condiciones, como la isoterma-isobárica o la de Gibbs.
+
+          Este enfoque ha demostrado tener éxitos notables (como la explicación de la teoría del cuerpo negro de Planck, o el calor específico de los sólidos con la teoría de Debye, que fue una de las teorías que asentó las bases de la Física
+          Cuántica, y de la
+          cual íbamos a incluir una simulación que tuvimos que retirar por falta de espacio).
+
+          <h2 id="no-equilibrio">Física Estadística del no equilibrio</h2>
+
+          Todo el desarrollo de las secciones anteriores es relativo a la Física Estadística del equilibrio, en la cual el paradigma son las colectividades.
+
+          Sin embargo, hay otra parte fundamental, que en este trabajo se pone de manifiesto: la Física Estadística del no equilibrio, donde no hay un paradigma equivalente, esto es, no hay una teoría general y válida para todos los sistemas de no
+          equilibrio.
+          Se han desarrollado numerosas técnicas o formalismos: Por ejemplo, la hidrodinámica describe la evolución temporal de fluidos, y eventualmente su acercamiento al equilibrio. En otras situaciones, se aplica la teoría del movimiento
+          Browniano cuando se
+          selecciona un grado de libertad en un baño térmico. Otras técnicas se basan en el estudio de funciones de correlación y/o autocorrelación, o bien técnicas de proyectores sobre variables lentas, y muchas otras. En estas situaciones, las
+          simulaciones
+          numéricas pueden ser de vital relevancia para ayudar, ver o comprender cómo los sistemas relajan al equilibrio. En esta memoria abordamos varios ejemplos. Por ejemplo, la sección \ref{sec:ring} aborda el acercamiento al equilibrio de un
+          modelo
+          sencillo, o en \ref{sec:equilibrio} se aborda un experimento que puede ser explicado con teorı́a hidrodinámica.
+
+
+          <h1 id="programa">Programación de las simulaciones</h1>
+
+          Una de las condiciones imprescindibles para realizar este trabajo era que las simulaciones fueran fácilmente accesibles por cualquier persona interesada.
+          Para ello, nos basamos en el concepto, anterior al de las aplicaciones web modernas, de applet: Un pequeño programa dedicado, normalmente diseñado para funcionar dentro de un programa más grande. Comúnmente el término se aplica
+          específicamente al
+          lenguaje Java, ya que se popularizaron en la web gracias dicho lenguaje, pero no está restringido al mismo.
+
+
+          <h2 id="html">HTML y Javascript</h2>
+
+          A lo largo del Grado, varias asignaturas sirven de introducción a la programación, y no es difícil generalizar los conceptos aprendidos a cualquier otro lenguaje. Además, la UCM ofrece una serie de Cursos de Formación Informática,
+          gracias a varios de
+          los cuales se ha podido realizar esta memoria.
+
+          En un primer acercamiento, se intentó programar los applets en Python, utilizando Jupyter Notebooks. El problema que se encontró es que era necesario incluir muchas librerías distintas, y subirlo a la web se convirtió en una tarea
+          ardua. Finalmente
+          se decidió hacer las simulaciones con Javascript, el paradigma <i>open-source</i> de la web.
+          Todos los navegadores modernos incluyen un pequeño entorno de desarrollo más que suficiente para optimizar los programs y arreglar errores o <i>bugs</i>. Añadir librerías es muy sencillo y, en combinación con HTML, ofrece muchas
+          posibilidades de
+          personalización de la interfaz. Aunque no es el objetivo de este trabajo, se intentará dejar los pasos marcados para que quien esté interesado pueda realizar una página similar, o ampliar esta y añadir nuevas ideas.
+
+          El aspecto práctico de las simulaciones está basado en el paradigma de la <i>programacion funcional</i>, en el cual definimos las variables relevantes de forma global y las vamos tratando, haciéndolas pasar por funciones, hasta
+          obtener los datos
+          que podemos representar en la pantalla.
+
+          <h2 id="servidor">Servidor</h2>
+
+          Gracias a las herramientas que la UCM ofrece a los estudiantes a través del GitHub Student Developer Pack se ha podido crear un servidor en el que alojar estas simulaciones. Este paquete de programas y licencias es poco conocido
+          por los estudiantes,
+          y se facilitará un tutorial con los pasos necesarios para preparar un servidor similar.
+
+          <h1 id="apps">Los applets</h1>
+
+          Las explicaciones que vienen a continuación son una revisión de las originales. Los applets están alojados en \url{http://funcionando.works/TFG/index.html}.
+          Junto a cada simulación se incluye la descripción que aparece en este documento, así como una breve discusión de dificultades a la hora de programarla.
+
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="Apps.LimiteCentral.html">Teorema del límite central</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="Apps/Kac.html">Anillo de Kac</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="Apps/Osciladores.html">Conjunto de osciladores armónicos</a>
+          <div class="dropdown-divider"></div>
+          <h6 class="dropdown-header">Transformaciones sobre el espacio de fases</h6>
+          <a class="dropdown-item" href="Apps/Transformaciones.html#baker">Transformación del panadero</a>
+          <a class="dropdown-item" href="Apps/Transformaciones.html#arnold">Transformación de Arnold</a>
+          <div class="dropdown-divider"></div>
+          <h6 class="dropdown-header">Gas ideal</h6>
+          <a class="dropdown-item" href="Apps/Gas.html#fluctuaciones">Expansión libre de un gas</a>
+          <a class="dropdown-item" href="Apps/Gas.html#macro">Colectividad macrocanónica</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="Apps/Bosefermi.html">Estadísticas de bosones y fermiones</a>
+          <div class="dropdown-divider"></div>
+          <h6 class="dropdown-header">Modelo de Ising</h6>
+          <a class="dropdown-item" href="Apps/Ising.html#magnet">Magnetización y transiciones de fase</a>
+          <a class="dropdown-item" href="Apps/Ising.html#lt">Dimensionalidad y límite termodinámico</a>
+          <div class="dropdown-divider"></div>
+          <h6 class="dropdown-header">Extra: Vibraciones moleculares</h6>
+          <a class="dropdown-item" href="Apps/Vibraciones.html#diatomicas">Gas de moléculas diatómicas</a>
+          <a class="dropdown-item" href="Apps/Vibraciones.html#debye">Teoría de Debye de los sólidos cristalinos</a>
+          <div class="dropdown-divider"></div>
+
+          <h1 id="conclusiones">Conclusiones</h1>
+
+          Hemos intentado demostrar que la física computacional y la Física Estadística pueden ilustrar un monton de conceptos que a nivel de pizarra pueden quedar mal
+          entendidos, dejando a voluntad del estudiante leerlos o no.
+          Programar <i>toy-models</i> es una gran forma de introducirse en el mundo de las simulaciones por ordenador.
+
+          Además de para la enseñanza, este tipo de programas puede ser una gran herramienta a la hora de explorar modelos y desarrollar nuevas ideas. Investigar un sistema
+          pudiendo cambiar acoluntad los parámetros de un modelo puede llevar a
+          descubrimientos inesperados, así que poder desarrollar esta clase de programas puede ser especialmente útil.
+
+          <h2 id="didacticos">Recursos didácticos en física</h2>
+
+          Para el profesor puede ser mucho más fácil presentar los conceptos a través de programas con los que se puede jugar, y que son accesibles para el alumno en cualquier
+          momento, en cualquier lugar.
+          El aprendizaje interactivo también es una manera de hacer más accesibles conceptos complicados de ciencia para el público general.
+          La <i>gamificación</i> de modelos científicos como recurso divulgativo no es nueva, y queda patente que motiva a desarrollar el pensamiento y la pasión por las
+          ciencias.
+
+          Se ha utilizar HTML porque lo he aprendido recientemente, pero en principio no es un lenguaje intuitivo, aunque se tengan conocimientos previos de programación, al
+          tratarse de un <i>lenguaje de marcado</i>, el paradigma es distinto, acercándose
+          más a \LaTeX que a los lenguajes tradicionales. No pasa lo mismo con Javascript, que sí que posee todos los elementos comunes de un lenguaje de programación y cuya
+          sintaxis no es muy complicada si se es familiar con lenguajes como Python, C++ o
+          MatLab, por ejemplo.
+
+          <h2 id="futuro">Trabajo futuro</h2>
+
+          La Física Estadística del no equilibrio es un campo enorme, y hemos tenido que retirar varias simulaciones que estaban previstas para la versión final por falta
+          de espacio.
+          Hemos presentado $10$, pero las posibilidades son infinitas.
+          El punto al que hemos llegado es tener unos applets funcionales e ilustrativos, pero como extensión de este trabajo aún queda depurar el código para mejorar la
+          legibilidad y añadir una buena documentación, imprescindible si se quiere añadir
+          nuevas simulaciones.
+          La orientación del grado no es la informática, así que, aunque se ha hecho todo lo posible, aún se podría mejorar el rendimiento.
+
+          <hr>
+          <h1 id="modComp">Apéndice: Modelado computacional</h1>
+
+          Tareas como el analisis de una gran cantidad de datos, o las simulaciones numericas de un sistema forman parte del dia a dia de muchos investigadores.
+          Por ejemplo en la fisica de fluidos es de gran importancia este tipo de enfoque, ya que las ecuaciones de Navier-Stokes no tienen solucion exacta, hay que
+          recurrir a metodos computacionales para resolver la dinamica del sistema <a href="Bibliografia.html#allen">allen</a>.
+          En Física Estadística, existen dos modelos computacionales de gran importancia: el metodo de Monte-Carlo y la dinamica molecular <a href="Bibliografia.html#frenkel">frenkel</a>.
+
+          <h2 id="metropolis">El algoritmo de Metropolis Monte Carlo</h2>
+
+          El método de Monte-Carlo <a href="Bibliografia.html#barkema">barkema</a> agrupa una serie de algoritmos para obtener números aleatorios según una distribución dada. Esta clase de métodos
+          son especialmente útiles para la evaluación de integrales multidimensionales, ya que son más
+          eficientes que los métodos numéricos convencionales.
+
+          De entre estos métodos de Monte-Carlo, el algoritmo más comun en Física Estadística es el llamado algoritmo de Metrópolis. Es del tipo cadena de Markov
+          (Markov chain), donde cada elemento $X_i$ se genera a partir del anterior $X_{i-1}$, de forma
+          que se crea una secuencia ordenada de puntos, $\{X_i\}$. El procedimiento es el siguiente:
+
+          <blockquote class="blockquote w-75">
+            <h4>Algoritmo de Metropolis Monte-Carlo</h4>
+            Se elige un punto de prueba, $X_{p}$, ``cercano'' al punto de partida $X_{n-1}$. Entonces, evaluamos el cociente:
+
+            \begin{equation}\label{eq:metropCoci}
+            r= \frac{f(X_p)}{f(X_{n-1})}
+            \end{equation}
+
+            Si $r$ es mayor que $1$, el punto de prueba se acepta, y lo añadimos a la secuencia: $X_{n} = X_p$.
+
+            Si $r$ es menor que $1$, aceptaremos $X_p$ con probabilidad $r$: Es decir, Generamos otro número aleatorio $\xi$, distribuido uniformemente en $[0,1]$. Si
+            $\xi < r$, aceptamos el punto de prueba: $X_{n}=X_p$, y si sucede lo contrario, tomamos como nuevo punto de la secuencia el anterior: $X_{n}=X_{n-1}$. Una vez que tenemos el nuevo punto repetimos el procedimiento partiendo del punto
+                aceptado. El primer punto de la secuencia, $X_0$, puede elegirse de forma aleatoria. Su influencia será menor cuanto más larga sea la secuencia $\{X_i\}$. </blockquote>
+              En Física Estadística, el método de Monte Carlo se utiliza para evaluar valores
+              medios en alguna colectividad, usualmente la canónica. Se elige la función $f(X)$ (la distribución deseada) como: \begin{equation}\label{eq:metropDistr} f(X)=\frac{\exp(-\beta H(X))}{Z} \end{equation} donde $Z$ es la función de
+              partición (es
+              necesario incluirla para que $f$ esté debidamente normalizada, pero que en los cálculos no aparece porque $r$ es el cociente de dos funciones $f$, según la ecuación \eqref{eq:metropCoci}). Con la función definida en
+              \eqref{eq:metropDistr} el
+              factor $r$ es: \begin{equation}\label{eq:metropFactor} r=\exp (-\beta [H(X_p) - H(X_{n-1})]) \end{equation} Según la ecuación \eqref{eq:metropDistr}, los puntos $X$ son las variables del hamiltoniano, y por tanto la secuencia $\{X_i\}$
+              es una
+              trayectoria en el espacio de fases $\Gamma$. Y analizando \eqref{eq:metropFactor} se puede apreciar que el método de Monte-Carlo nos permite calcular una distribución de puntos en base a la contribución energética al sistema: Los puntos
+              de
+              prueba con menor energía que el de partida son aceptados automáticamente, y los puntos con mayor energía se aceptan con una probabilidad dependiente del incremento de energía y de la temperatura.
+
+        </div>
+      </main>
+    </div> <!-- Final del contenedor -->
+
+    <script type="text/javascript" src="Bosefermi.js"></script>
+    <!-- CODIGO DE DERIVATIVE BY MAURICIO POPP -->
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script>
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [
+            ['$', '$'],
+            ['\\(', '\\)']
+          ],
+          processEscapes: true,
+          processEnvironments: true,
+          tags: "ams",
+          macros: {
+            edge: '\\mathrel{-}',
+            notedge: '\\not\\edge',
+            deg: ['#1^°', 1],
+            tbold: ['\\textbf{#1}', 1],
+            mbold: ['\\mathbf{#1}', 1],
+            unit: ['\\widehat{\\mathbf{#1}}', 1],
+            v: ['\\overrightarrow{#1}', 1],
+            vnorm: ['\\norm{\\v{#1}}', 1],
+            overunder: ['\\overset{#2}{\\underset{#3}{#1}}', 3],
+            cuv: ['\\overunder{#1}{|}{|}', 1],
+            magnitude: ['\\left \\| #1 \\right \\|', 1],
+            norm: ['\\lvert #1 \\rvert', 1],
+            divides: ['\\,|\\,'],
+            cost: ['\\cos{\\theta}'],
+            sint: ['\\sin{\\theta}'],
+            sqrti: ['\\frac{1}{\\sqrt{2}}'],
+            ci: ['\\perp\\!\\!\\!\\perp'],
+            given: ['\\:\\vert\\:'],
+            bordermatrix: ['\\raise{0.7em}{\\begin{matrix} & \\begin{matrix}#1\\end{matrix} \\\\ \\begin{matrix}#2\\end{matrix} \\hspace{-1em} & #3 \\end{matrix}}', 3]
+          }
+        },
+        options: {
+          skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+          ignoreHtmlClass: 'tex2jax_ignore',
+          processHtmlClass: 'tex2jax_process'
+        }
+      };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" id="MathJax-script"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+    <style>
+      svg text {
+        font-size: 10px;
+      }
+
+      svg .title {
+        font-size: 25px;
+      }
+
+      .function-plot {
+        margin: 0px auto 20px;
+        display: block;
+      }
+
+      .function-plot text {
+        font-size: 15px;
+      }
+    </style>
+  </body>
+
+</html>

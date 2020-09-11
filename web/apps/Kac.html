@@ -57,36 +57,35 @@
             <!-- <li class="nav-item">
               <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
             </li> -->
-            <li class="nav-item dropdown active">
-              <a class="nav-link dropdown-toggle" href="#" id="dropdownApplets" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Applets <span class="sr-only">(current)</span></a>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="dropdownApplets" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Applets</a>
               <div class="dropdown-menu" aria-labelledby="dropdownApplets">
-                <a class="dropdown-item" href="../Apps.html">Índice de applets</a>
+                <a class="dropdown-item" href="Apps.html">Índice de applets</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="LimiteCentral.html">Teorema del límite central</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="Kac.html">Anillo de Kac</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="Osciladores.html">Conjunto de osciladores armónicos</a>
                 <div class="dropdown-divider"></div>
                 <h6 class="dropdown-header">Transformaciones sobre el espacio de fases</h6>
                 <a class="dropdown-item" href="Transformaciones.html#baker">Transformación del panadero</a>
                 <a class="dropdown-item" href="Transformaciones.html#arnold">Transformación de Arnold</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item active" href="Kac.html">Anillo de Kac</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="Osciladores.html">Conjunto de osciladores armónicos</a>
-                <div class="dropdown-divider"></div>
-                <h6 class="dropdown-header">Vibraciones moleculares</h6>
-                <a class="dropdown-item" href="Vibraciones.html#diatomicas">Gas de moléculas diatómicas</a>
-                <a class="dropdown-item" href="Vibraciones.html#debye">Teoría de Debye de los sólidos cristalinos</a>
-                <div class="dropdown-divider"></div>
                 <h6 class="dropdown-header">Gas ideal</h6>
                 <a class="dropdown-item" href="Gas.html#fluctuaciones">Expansión libre de un gas</a>
                 <a class="dropdown-item" href="Gas.html#macro">Colectividad macrocanónica</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item " href="Bosefermi.html">Estadísticas de bosones y fermiones</a>
+                <a class="dropdown-item" href="Bosefermi.html">Estadísticas de bosones y fermiones</a>
                 <div class="dropdown-divider"></div>
                 <h6 class="dropdown-header">Modelo de Ising</h6>
-                <a class="dropdown-item" href="Ising.html#lt">Dimensionalidad y límite termodinámico</a>
                 <a class="dropdown-item" href="Ising.html#magnet">Magnetización y transiciones de fase</a>
+                <a class="dropdown-item" href="Ising.html#lt">Dimensionalidad y límite termodinámico</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="Originales.html">Applets originales</a>
+                <h6 class="dropdown-header">Extra: Vibraciones moleculares</h6>
+                <a class="dropdown-item" href="Vibraciones.html#diatomicas">Gas de moléculas diatómicas</a>
+                <a class="dropdown-item" href="Vibraciones.html#debye">Teoría de Debye de los sólidos cristalinos</a>
+                <div class="dropdown-divider"></div>
               </div>
             </li>
             <li class="nav-item">
@@ -112,25 +111,80 @@
       <!-- Contenidos  ================================================== -->
       <div class="container" role="main">
         <div class="main-content">
-          <h1 id="bosefemi">Anillo de Kac</h1>
-          <p>Este es un texto de prueba para comprobar que Mathjax va bien.</p>
+          <h2 id="ring">Anillo de Kac</h2>
 
-          <p>
-            Si nombramos $M = 2m$ como la masa total de la molécula y $\mu = m/2$ como la masa reducida, el hamiltoniano se reescribe como:
-          </p>
+          El modelo del anillo de Kac <a href="Bibliografia.html#salcido">salcido</a> es un sencillo modelo matemático que ilustra la compatibilidad entre estados macroscópicos y microscópicos, el tiempo de recurrencia de Poincaré y otros aspectos de
+          teoría
+          cinética que en principio pueden
+          parecer paradójicos. Su dinámica es la siguiente:
 
-          \begin{equation}\label{eq:diatHtot}
-          \begin{array}{cc}
-          H_{12}&=\frac{\mathbf{P}^{2}}{2 M}+\frac{\mathbf{L}^{2}}{2 \mu r^{2}}+{\frac{p^{2}}{2 \mu}+V(r)} \\
-          &=H_{T}+H_{rot}+H_{vib}
-          \end{array}
+          <blockquote class="blockquote w-75">
+            <h4>Modelo del anillo de Kac</h4>
+            Disponemos $N$ casillas en un círculo. En cada casilla colocamos una bolita, que puede ser de color azul o rojo. También marcamos al azar $M$ sitios o ``túneles'' entre bolitas. En cada instante de tiempo las bolitas
+            saltan de su casilla a la
+            contigua, siguiendo el sentido de las agujas del reloj. Si en este salto una bolita pasa sobre uno de los $M$ sitios marcados, al llegar a la nueva casilla habrá cambiado de color.
+          </blockquote>
+
+          Con estas reglas, el modelo es reversible y periódico. Al cabo de $T = 2N$ iteraciones, cada partícula ha dado dos vueltas completas al círculo, y ha cambiado de color un número par de veces, $2M$. Es decir, habrá
+          vuelto a su color y posición
+          original. Si $M$ es par, con $T=N$ iteraciones es suficiente. Este periodo se corresponde con el tiempo de recurrencia de Poincaré <a href="Bibliografia.html#gottwald">gottwald</a>.
+
+          Podemos describir el sistema estudiando el <b>número de bolitas de cada color</b> que hay en cada instante de tiempo: $B(t)$ para las azules y $R(t)$ para las rojas. Definamos también la \textbf{cantidad de bolitas
+          que tienen un sitio marcado
+          delante} (y que por tanto cambiarán de color en el siguiente instante de tiempo) como $b(t)$ y $r(t)$. En estos términos las ecuaciones de evolución o ecuaciones de balance del sistema serán:
+
+          \begin{equation}\label{eq:kacEvol}
+          B(t+1) = B(t) - b(t) + r(t), \qquad
+          R(t+1) = R(t) - r(t) + b(t)
           \end{equation}
 
-          <p>Hay ecuaciones como \eqref{eq:diatHtot}, referencias... Etc</p>
+          Con estas ecuaciones no disponemos de información suficiente para resolver la dinámica del sistema. Necesitamos una hipótesis adicional, que consiste en considerar que la fracción de bolas <i>de un color</i> que
+          tiene delante un sitio marcado es la
+          misma que la fracción <i>total</i> de bolas con un sitio marcado delante:
+
+          \begin{equation}\label{eq:kacHip}
+          \frac{b(t)}{B(t)} = \frac{r(t)}{R(t)} = \frac{b(t) + r(t)}{B(t) + R(t)} = \frac{M}{N} \equiv \eta
+          \end{equation}
+
+          Gracias a esta hipótesis, podemos resolver las ecuaciones \eqref{eq:kacEvol}, restándolas entre sí, para obtener:
+
+          \begin{equation}\label{eq_kacSol}
+          \begin{aligned}
+          B(t)-R(t) &=\left(1-2 \frac{M}{N}\right)\left[B(t-1)-R(t-1)\right] \\
+          &=\left(1-2 \eta\right)^{t}\left[B(0)-R(0)\right]
+          \end{aligned}
+          \end{equation}
+
+          Esta solución nos dice que, pasado un número grande de iteraciones, la diferencia en el número de bolas de cada color tiende a cero, y que por tanto el sistema <i>no es periódico ni reversible</i>, lo cual contradice
+          nuestro modelo de partida. Esta
+          discrepancia viene de la hipótesis \eqref{eq:kacHip}.
+
+          Esta hipótesis juega un papel similar al de la hipótesis de caos molecular en la ecuación de Boltzmann <a href="Bibliografia.html#haro">haro</a>: elimina las correlaciones entre las componentes de nuestro sistema. Es por esto que puede
+          considerarse
+          una hipótesis que aplicamos a
+          la descripción <i>macroscópica</i> del sistema. Al eliminar las correlaciones que se crean en el sistema, perdemos la información de reversibilidad.
+
+          La realidad es que el modelo de Kac como lo hemos enunciado no satisface la condición \eqref{eq:kacHip}, aunque se aproxime a ella en el límite $N \rightarrow \infty$. Podríamos modificar el modelo, de forma que la
+          ubicación de los sitios marcados
+          cambie cada cierto número de iteraciones (menor que el tiempo de recurrencia), y así sí se satisfaría la hipótesis de caos molecular.
 
           <hr>
 
-          En la simulación podemos introducir las temperaturas \button{De rotación} y \button{De vibración},
+          En el primer panel de la simulación se visualiza el anillo, con los sitios marcados representados por líneas verdes. El anillo exterior representa la configuración inicial, y el interior la evolución temporal. El
+          segundo panel dibuja la diferencia
+          entre el número de bolas rojas y azules.
+
+          Se pueden elegir \button{N}, \button{M}, y la \button{Distribución de colores de las bolas}, así como la velocidad a la que evoluciona el sistema. Las distribuciones disponibles para elegir los colores son: azules y
+          rojas alternadas, aleatorios,
+          aleatorios con un $70\%$ de bolas azules y $30\%$ de rojas, o todas azules.
+
+          Para los dos últimos casos se dibuja además la solución \eqref{eq_kacSol} en azul. Se puede apreciar que para tiempos cortos es válida, pero a tiempos largos la recurrencia del sistema se hace evidente.
+
+          Como ya hemos dicho, una posible mejora del programa sería añadir la opción de recalcular los sitios marcados cada cierto tiempo, en cuyo caso la diferencia de colores sí que seguiría la curva azul antes mencionada.
+          Otra forma de ampliarlo sería
+          añadir una opción para elegir cómo se distribuyen los sitios marcados. Por ejemplo, cuando todos los sitios se sitúan en posiciones adyacentes, la diferencia de colores se mantendrá casi constante, salvo por pequeñas
+          fluctuaciones que ocurren
+          periódicamente. Se puede encontrar una discusión más detallada de este modelo en <a href="Bibliografia.html#haro">haro</a>.
 
           <hr>
           <!-- El applet empieza aqui -->

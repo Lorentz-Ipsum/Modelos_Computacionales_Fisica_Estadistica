@@ -1,0 +1,8 @@
+PWD C:\Users\Lorentz-Ipsum\Code\GitHub\Modelos_Computacionales_Fisica_Estadistica\tex
+INPUT C:\Users\Lorentz-Ipsum\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
+INPUT C:\Users\Lorentz-Ipsum\Code\GitHub\Modelos_Computacionales_Fisica_Estadistica\tex\main_html.tex
+OUTPUT main_html.log
+INPUT C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx10.tfm
+INPUT C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmti10.tfm
+OUTPUT main_html.pdf
+INPUT C:\Users\Lorentz-Ipsum\AppData\Local\MiKTeX\pdftex\config\pdftex.map

@@ -43,6 +43,12 @@ startBtnFluc.onclick = function() {
 
     var balls = [];
 
+    var Ndif = [],
+        Nleft = [],
+        Nright = [],
+        frames = [];
+    var f = 0;
+
     var palette = [
         // 'rgba(93, 211, 158, 1)',
         // 'rgba(52, 138, 167, 1)',
@@ -140,9 +146,43 @@ startBtnFluc.onclick = function() {
         }
     };
 
+    function plotPart(frames, Ndif) {
+        // Trazas
+        var numsTrace = {
+            x: frames,
+            y: Ndif,
+            mode: 'lines',
+            name: 'Diferencia',
+            line: {
+                color: 'rgb(0,0,255)',
+                width: 1,
+                opacity: 0.7
+            }
+        };
+        var data = [numsTrace];
+        var layout = {
+            autosize: true,
+            title: 'Diferencia de entre ambos lados',
+            font: {
+                size: 15
+            },
+            plot_bgcolor: 'rgb(223, 223, 223)'
+        };
+
+        var config = {
+            staticPlot: true,
+            responsive: true,
+        }
+
+        Plotly.newPlot('graphFluctuaciones', data, layout, config);
+    }
 
     function animate() {
         window.requestAnimationFrame(animate);
+        Ndif[f] = 0;
+        Nleft[f] = 0;
+        Nright[f] = 0;
+        frames[f] = f;
         ctx.clearRect(0, 0, w, h);
         drawMarco();
         // ctx.fillStyle = opts.bg;
@@ -150,9 +190,15 @@ startBtnFluc.onclick = function() {
         balls.forEach(function(ball) {
             ball.draw();
             ball.update();
+            if (ball.x + ball.radius / 2 <= w / 2) {
+                Nleft[f]++;
+            } else {
+                Nright[f]++;
+            }
         });
-
-
+        Ndif[f] = Nleft[f] - Nright[f];
+        plotPart(frames, Ndif);
+        f++;
     };
     init();
     animate();

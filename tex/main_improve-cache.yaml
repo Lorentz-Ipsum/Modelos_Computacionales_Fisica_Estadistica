@@ -73,7 +73,7 @@ options:
     2.9\miktex\bin\x64;%ProgramFiles(x86)%\MiKTeX 2.9\miktex\bin;$PATH
 files:
   dicy-instance.yaml-ParsedYAML:
-    timeStamp: 2020-09-10T16:56:24.712Z
+    timeStamp: 2020-09-11T18:29:20.643Z
     jobNames: []
     value:
       severity: info
@@ -134,20 +134,20 @@ files:
         2.9\miktex\bin\x64;%ProgramFiles(x86)%\MiKTeX 2.9\miktex\bin;$PATH
     type: ParsedYAML
   main_improve.tex:
-    timeStamp: 2020-09-10T16:56:59.812Z
+    timeStamp: 2020-09-11T18:37:28.553Z
     jobNames: []
     hash: W8v6CaBhO84zv6f49zJg70y2qG0VLZJ+xczetDlEmQ8=
     type: LaTeX
     subType: article
   'C:\Users\Lorentz-Ipsum\AppData\Roaming\dicy\config.yaml':
-    timeStamp: 2020-09-10T16:56:24.735Z
+    timeStamp: 2020-09-11T18:29:20.643Z
     jobNames: []
     type: YAML
   x.y-Nil:
     jobNames: []
     type: Nil
   main_improve.log:
-    timeStamp: 2020-09-10T16:57:10.696Z
+    timeStamp: 2020-09-11T18:37:44.208Z
     jobNames: []
     hash: /7EdY9/kv1NZrMfn3rSpOqZdIVwQw4FB6DY5GNecu+M=
     type: LaTeXLog
@@ -520,7 +520,7 @@ files:
       calls: []
     type: ParsedFileListing
   main_improve.log-ParsedLaTeXLog:
-    timeStamp: 2020-09-10T16:57:10.882Z
+    timeStamp: 2020-09-11T18:37:44.576Z
     jobNames: []
     value:
       messages:
@@ -2351,27 +2351,27 @@ files:
       calls: []
     type: ParsedLaTeXLog
   main_improve.pdf:
-    timeStamp: 2020-09-10T16:57:10.693Z
+    timeStamp: 2020-09-11T18:37:44.190Z
     jobNames: []
     hash: v22z6PSS2aS7fk1+GNraqAoNpvsNsNiFzm9aXWkgiNU=
     type: PortableDocumentFormat
   main_improve.aux:
-    timeStamp: 2020-09-10T16:57:10.558Z
+    timeStamp: 2020-09-11T18:37:44.029Z
     jobNames: []
     hash: nIu/NHhL5ZWAUNKt3RGwZx8uChAc4Qg+zlHjFeGlrhI=
     type: LaTeXAuxilary
   main_improve.fls:
-    timeStamp: 2020-09-10T16:57:10.699Z
+    timeStamp: 2020-09-11T18:37:44.218Z
     jobNames: []
     hash: j0KDhkNlv8gjhAhSXiWazMq6z2ROkYMmhCyTFObWqYE=
     type: FileListing
   main_improve.synctex.gz:
-    timeStamp: 2020-09-10T16:57:10.694Z
+    timeStamp: 2020-09-11T18:37:44.192Z
     jobNames: []
     hash: Fmbi4m4WSTT9n7OZbaFg9uhiYHARSGksxlKT7hofSVs=
     type: SyncTeX
   main_improve.aux-ParsedLaTeXAuxilary:
-    timeStamp: 2020-09-10T16:57:04.426Z
+    timeStamp: 2020-09-11T18:37:39.625Z
     jobNames: []
     value:
       commands:
@@ -2513,7 +2513,7 @@ files:
         - '@writefile'
     type: ParsedLaTeXAuxilary
   main_improve.blg-ParsedBibTeXLog:
-    timeStamp: 2020-09-10T16:56:33.328Z
+    timeStamp: 2020-09-11T18:37:36.045Z
     jobNames: []
     value:
       messages:
@@ -3181,25 +3181,25 @@ files:
     jobNames: []
     type: LaTeXStyle
   logo_UCM.png:
-    timeStamp: 2020-08-23T18:14:29.433Z
+    timeStamp: 2020-09-10T22:46:15.120Z
     jobNames: []
     hash: zYJ070DrNIv5W3Iczx11ROs2l+ID1QBn9k02Q+u1mUs=
   main_improve.out:
-    timeStamp: 2020-09-10T16:57:10.561Z
+    timeStamp: 2020-09-11T18:37:44.035Z
     jobNames: []
     hash: wEmDLpsd2wAsMMSpTvyrmTUKvgJocMoRZlYWXu/wm9E=
     type: OUT
   main_improve.toc:
-    timeStamp: 2020-09-10T16:57:10.577Z
+    timeStamp: 2020-09-11T18:37:44.087Z
     jobNames: []
     hash: Rzz9s9SxdrWaL4lphi9+a1rap8TnKNRYdrZ95AhLzBU=
     type: TableOfContents
   main_improve.bbl:
-    timeStamp: 2020-09-10T16:57:05.872Z
+    timeStamp: 2020-09-11T18:37:40.644Z
     jobNames: []
     hash: ZturzW6dM679+Vi24ZEcCcCRVP2XtDcYy0K589kjWlQ=
   main_improve.blg:
-    timeStamp: 2020-09-10T16:57:05.872Z
+    timeStamp: 2020-09-11T18:37:40.644Z
     jobNames: []
     hash: vLt625WezKC08GxErDH3Vm57JH8AOb62Oc56/WNNMAs=
     type: BibTeXLog

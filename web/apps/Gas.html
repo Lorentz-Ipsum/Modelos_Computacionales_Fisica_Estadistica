@@ -55,10 +55,10 @@
             <!-- <li class="nav-item">
               <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
             </li> -->
-            <li class="nav-item dropdown active">
-              <a class="nav-link dropdown-toggle" href="#" id="dropdownApplets" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Applets <span class="sr-only">(current)</span></a>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="dropdownApplets" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Applets</a>
               <div class="dropdown-menu" aria-labelledby="dropdownApplets">
-                <a class="dropdown-item" href="../Apps.html">Índice de applets</a>
+                <a class="dropdown-item" href="Apps.html">Índice de applets</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="LimiteCentral.html">Teorema del límite central</a>
                 <div class="dropdown-divider"></div>
@@ -70,22 +70,20 @@
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="Osciladores.html">Conjunto de osciladores armónicos</a>
                 <div class="dropdown-divider"></div>
-                <h6 class="dropdown-header">Vibraciones moleculares</h6>
-                <a class="dropdown-item" href="Vibraciones.html#diatomicas">Gas de moléculas diatómicas</a>
-                <a class="dropdown-item" href="Vibraciones.html#debye">Teoría de Debye de los sólidos cristalinos</a>
-                <div class="dropdown-divider"></div>
                 <h6 class="dropdown-header">Gas ideal</h6>
-                <a class="dropdown-item active" href="Gas.html#fluctuaciones">Expansión libre de un gas</a>
-                <a class="dropdown-item active" href="Gas.html#macro">Colectividad macrocanónica</a>
+                <a class="dropdown-item" href="Gas.html#fluctuaciones">Expansión libre de un gas</a>
+                <a class="dropdown-item" href="Gas.html#macro">Colectividad macrocanónica</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="Bosefermi.html">Estadísticas de bosones y fermiones</a>
                 <div class="dropdown-divider"></div>
                 <h6 class="dropdown-header">Modelo de Ising</h6>
-                <a class="dropdown-item" href="Ising.html#lt">Dimensionalidad y límite termodinámico</a>
                 <a class="dropdown-item" href="Ising.html#magnet">Magnetización y transiciones de fase</a>
-                <div class=" dropdown-divider">
-                </div>
-                <a class="dropdown-item" href="Originales.html">Applets originales</a>
+                <a class="dropdown-item" href="Ising.html#lt">Dimensionalidad y límite termodinámico</a>
+                <div class="dropdown-divider"></div>
+                <h6 class="dropdown-header">Extra: Vibraciones moleculares</h6>
+                <a class="dropdown-item" href="Vibraciones.html#diatomicas">Gas de moléculas diatómicas</a>
+                <a class="dropdown-item" href="Vibraciones.html#debye">Teoría de Debye de los sólidos cristalinos</a>
+                <div class="dropdown-divider"></div>
               </div>
             </li>
             <li class="nav-item">
@@ -111,25 +109,124 @@
       <!-- Contenidos  ================================================== -->
       <div class="container" role="main">
         <div class="main-content">
-          <h1 id="fluctuaciones">Irreversibilidad y fluctuaciones en el equilibrio</h1>
-          <p>Este es un texto de prueba para comprobar que Mathjax va bien.</p>
+          <h2 id="gases">Gas ideal bidimensional</h2>
 
-          <p>
-            Si nombramos $M = 2m$ como la masa total de la molécula y $\mu = m/2$ como la masa reducida, el hamiltoniano se reescribe como:
-          </p>
+          Con estas dos simulaciones estudiaremos el caso común de un gas ideal en dos dimensiones. Primero, la expansión libre ilustrará los conceptos de irreversibilidad y fluctuaciones en equilibrio, y
+          es un ejemplo claro de acercamiento al equilibrio. Y
+          segundo, el estudio de una región específica del gas sirve de ejemplo de sistema en contacto con un foco térmico y de partículas, cuyo análisis se lleva a cabo mediante la colectividad
+          macrocanónica.
 
-          \begin{equation}\label{eq:diatHtot}
-          \begin{array}{cc}
-          H_{12}&=\frac{\mathbf{P}^{2}}{2 M}+\frac{\mathbf{L}^{2}}{2 \mu r^{2}}+{\frac{p^{2}}{2 \mu}+V(r)} \\
-          &=H_{T}+H_{rot}+H_{vib}
-          \end{array}
+
+          <h3 id="equilibrio">Irreversibilidad y fluctuaciones en equilibrio</h3>
+
+          <blockquote class="blockquote w-75">
+            <h4>Expansión libre de un gas</h4>
+            Nuestro sistema es un recipiente dividido en dos por una pared. En una de las mitades hay un gas a temperatura $T$. El experimento empieza
+            cuando retiramos la pared (de forma instantánea). Entonces,
+            el gas se expande hasta ocupar todo el recipiente, y permanece en este estado de quilibrio. Nunca se observa lo contrario. Decimos que hay una secuencia de estados determinada, el proceso es
+            irreversible.
+          </blockquote>
+
+          Expresado en el lenguaje de la Física Estadística, partimos de un estado muy poco probable, por lo que en la evolución del sistema tendrá una dirección muy marcada: aquella en que los estados
+          sean más probables <a href="Bibliografia.html#huang">huang</a>. Para que esto ocurra,
+          necesitamos que haya un número grande de grados de libertad. Si el sistema está compuesto por pocas partículas, es más probable que todas acaben en sólo una mitad del recipiente, por tanto
+          podríamos ver la secuencia inversa. Las fluctuaciones de
+          densidad, en el caso de pocas partículas, tienen más peso a la hora de caracterizar el macroestado.
+          Veamos por qué.
+
+          Estudiemos la probabilidad de que haya $N_d$ partículas en el lado derecho y $N_i$ en el izquierdo, con $N = N_i + N_d$. Como ambas regiones tienen el mismo volumen, si consideramos que las
+          partículas son independientes entre sí (siguiendo la
+          <i>hipótesis del caos molecular</i>) la probabilidad de que una partícula cualquiera esté en uno de los lados es $p={1/2}$. La probabilidad de tener $N_d$ y $N_i$ viene dada por
+
+          \begin{equation}\label{eq:gasBinom}
+          p\left(N_{d}, N_{i}\right)=\left(\begin{array}{c}
+          {N_{d}+N_{i}} \\
+          {N_{d}}
+          \end{array}\right) p^{N_{d}}(1-p)^{N_{i}}=\left(\begin{array}{c}
+          {N} \\
+          {N_{d}}
+          \end{array}\right)\left(\frac{1}{2}\right)^{N}
           \end{equation}
 
-          <p>Hay ecuaciones como \eqref{eq:diatHtot}, referencias... Etc</p>
+          que es la distribución binomial. De esta expresión ya podemos extraer consecuencias importantes. El máximo de esta distribución ocurre cuando $N_d = N/2$, por lo que esta es la distribución
+          más probable. Las situaciones más improbables son aquellas
+          en que $N_i$ ó $N_d$ son cero.
+
+          ¿Cómo de grande es la diferencia entre estas probabilides? Calculemos el cociente entre $p(N, 0)$ y $p(N / 2, N / 2)$:
+
+          \begin{equation}
+          \frac{p(N, 0)}{p(N / 2, N / 2)}=\frac{N ! /(N ! 0 !)}{N ! /[(N / 2) !(N / 2) !]}=\frac{[(N / 2) !]^{2}}{N !}
+          \end{equation}
+
+          Para evaluar este cociente utilizamos la aproximación de Stirling para $n ! \simeq n^{n} e^{-n} \sqrt{2 \pi n},$ válida con un error menor del 1\% si $n \geq 5$. Obtenemos entonces que:
+
+          \begin{equation}
+          \frac{p(N, 0)}{p(N / 2, N / 2)} \simeq \sqrt{\frac{\pi N}{2}} 2^{-N}
+          \end{equation}
+
+          Es decir, la probabilidad de encontrar todas las partículas concentradas en una región disminuye <i>exponencialmente</i> con el número de partículas. Algunos ejemplos concretos:
+
+          $$
+          \begin{array}{llll}
+          \frac{p(6,0)}{p(3,3)} = 0.05 \qquad &
+          \frac{p(20,0)}{p(10,10)} = 5.54\times10^{-6} \qquad &
+          \frac{p(100,0)}{p(50,50)} = 9.9\times10^{-30} \qquad &
+          \frac{p(300,0)}{p(150,150)} = 6.8\times10^{-90}
+          \end{array}
+          $$
+
+          Es decir, para $6$ partículas, todas se concentran en el mismo lado del recipiente un $5\%$ de las veces. Y cuantas más partículas tengamos, más rápido decaerá esta probabilidad. Con sólo
+          $300$ partículas ya tenemos números extraordinariamente
+          pequeños, incluso cuando todavía estamos muy lejos del número de Avogadro de partículas $N=6.023 \times 10^{23}$. Con este cálculo se muestra que la irreversibilidad aparece como consecuencia
+          del enorme número de partículas que componen un sistema
+          macroscópico.
+
+          Calculemos las fluctuaciones respecto al estado más probable, $N_{d}=N_{i}=N / 2$.
+          Si definimos $x$ como la desviación relativa respecto a dicho estado $x=\left(N_{d}-N_{i}\right) / N$, podemos escribir que: $N_{d}=N(1+x) / 2$. Introduciendo esta expresión en la ecuación
+          \eqref{eq:gasBinom} y utilizando el desarrollo de Stirling
+          obtenemos que la probabilidad de encontrar una desviación $x$ sigue una distribución gaussiana:
+
+          \begin{equation}\label{eq:gasGauss}
+          p_{N}(x) \simeq \sqrt{\frac{2}{\pi N}} e^{-(N-1) z^{2} / 2}
+          \end{equation}
+
+          de dispersión $\sigma^{2}=1 /(N-1)$, esto es, más estrecha cuantas más particulas haya en el sistema. Por tanto, una fluctuación es más improbable cuanto más grande sea el sistema.
+          Si volvemos a escribir \eqref{eq:gasGauss} en función de $N_{d}-N_{i}=\Delta$, se obtiene que la dispersión en la variable $\Delta$ es $\sigma_{\Delta}^{2}=N$:
+
+          \begin{equation}
+          p_{N}(\Delta) \simeq \sqrt{\frac{2}{\pi N}} e^{-\Delta^{2} /(2 N)}
+          \end{equation}
+
+          Tenemos, en resumen, un sistema que se acerca al estado de equilibrio, específicamente, a un estado de equilibrio dinámico. Como en \ref{sec:osciladores}, la dinámica del sistema no se para,
+          sino que flutcúa en torno a su valor ideal. Esta es una
+          situación muy común en la Física Estadística.
 
           <hr>
 
-          En la simulación podemos introducir las temperaturas \button{De rotación} y \button{De vibración},
+          En el applet se puede elegir el \button{Número de partículas} y la \button{Temperatura} del gas. El botón \button{Histograma} muestra una gráfica con la distribución de la diferencia de
+          partículas en cada zona.
+
+          En el panel de la izquierda se dibuja el recipiente con el gas. La línea vertical marca la posición donde originalmente está la pared. Al pulsar \button{Start} empieza la evolución del
+          sistema, con todas las partículas en la mitad derecha del
+          recipiente. En el panel derecho se muestra la diferencia entre el número de partículas entre los lados izquierdo y derecho del recipiente. Las dos lineas horizontales representan el valor de
+          $\pm \sqrt{\sigma_{\Delta}^{2}}$ (entre el que $x$ se
+          encuentra el $68 \%$ de las veces) y el valor $\pm 3 \sqrt{\sigma_{\Delta}^{2}}$ ($99.7\%$).
+
+          También se puede elegir si queremos que puedan chocar unas con otras o no pulsando el botón de partículas \button{Con o Sin interacción} (cuando chocan lo hacen como discos duros), ya que todo
+          este desarrollo es válido en ambos casos.
+
+          De hecho, todo este desarrollo es válido para un modelo mucho más sencillo: El modelo de las urnas de Ehrenfest <a href="Bibliografia.html#dorfman">dorfman</a>, en el que las partículas no forman parte de un gas, sino que
+          consideramos cada lado del recipiente como una urna
+          independiente con partículas. En cada paso de tiempo cogemos al azar una partícula de una de las urnas y la movemos al otro lado de la caja. La dinámica de las fluctuaciones sigue la misma ley
+          que antes: se distribuye de forma gaussiana con
+          dispersión $\sigma^2 = 1/(N-1)$.
+
+          Cuando el gas está compuesto de $20$ partículas, por ejemplo, la diferencia de partículas entre ambas mitades del recipiente se equilibra rápidamente, y una vez en este estado comienza a
+          flutuar alrededor de $0$. La amplitud de estas fluctuaciones
+          puede llegar a ser de $10$ partículas, en cuyo caso hay $5$ partículas en una región y $15$ en la otra, pero es muy raro observar que las $20$ partículas se acumulen en la misma región. Sin
+          embargo, si disminuimos el número de partículas a $6$ no
+          es raro en absoluto ver que todas se concentren en un lado. Se observa en este caso un proceso imposible según las leyes de la termodinámica: un proceso en el que se invierte la evolución
+          temporal y la entropía crece.
 
           <hr>
           <!-- El applet empieza aqui -->
@@ -177,11 +274,68 @@
         <!-- CAMBIO DE APPLET -->
         <div class="main-content">
           <hr>
-          <h1 id="macro">Colectividad Macrocanónica</h1>
-          <p>
-            La teoría de Debye solucionó un problema al que se enfrentaba la física del estado sólico a principios del siglo XX: Las desviaciones de la ley de Dulong-Petit respecto a las medidas experimentales para bajas temperaturas. Debye aplicó la
-            teoría cuántica y resolvió exitosamente estas diferencias.
-          </p>
+          <h3 id="macrocanonica">Colectividad macrocanónica</h3>
+
+          Al estudiar termodinámica y Física Estadística es común hablar de sistemas aislados de los alrededores. Decimos que estos sistemas no intercambian energía ni partículas para simplificar
+          los cálculos, pero en realidad es extremadamente difícil
+          conseguir este tipo de estados.
+
+          En los casos en que este intercambio de energía y partículas es relevante decimos que tenemos un foco térmico y de partículas en contacto con nuestro sistema, y en Física Estadística
+          usamos la colectividad macrocanónica para describirlos
+          <a href="Bibliografia.html#pathria">pathria</a>, estudiando la probabilidad de que el sistema tenga una energía $E$ y $N$ partículas. Para ello, partimos del sistema total, incluyendo nuestro sistema (con $E$ y $N$), y
+          los alrededores (o <i>foco</i>), con $E_F\gg E$ y $N_F \gg
+          N$.
+
+          En este caso, si $H(q,p)$ es el hamiltoniano del sistema y $\omega$ es el volumen del espacio de fases de la hoja caracterizada por $E$, $N$ y $V$, la probabilidad de encontrar al sistema
+          con energía $E$ y $N$ partículas es:
+
+          \begin{equation}\label{eq:macroProb}
+          p(E, N) \sim \omega(E, N, V) z^{N} e^{-\beta E}=z^{N} e^{-\beta H\left(\theta_{0}\right)}
+          \end{equation}
+
+          Donde la constante $\beta$ es el inverso de la temperatura: $\beta=1 / k_{B} T$ y $z=\exp (\beta \mu)$ es la <i>fugacidad</i> del sistema, con $\mu$ el potencial quimico. La probabilidad
+          $p(E, N)$ no está debidamente normalizada, y por eso
+          escribimos el simbolo $\sim$. La constante de normalización se llama <i>función de partición macrocanónica o función de macropartición</i>:
+
+          \begin{equation}
+          Q(\beta, z, V)=\sum_{N} \int d E \omega(E, N, V) z^{N} e^{-\beta E}
+          \end{equation}
+
+          Integrando la probabilidad \eqref{eq:macroProb}, debidamente normalizada, a todas las energías posibles obtenemos la probabilidad de encontrar $N$ partículas en el sistema:
+
+          \begin{equation}
+          p(N)=\frac{1}{Q} z^{N} \int d E \omega(E, N, V) e^{e^{-\beta E}}=\frac{1}{Q} z^{N} Z(N, \beta, V)
+          \end{equation}
+
+          En esta ecuación, $Z(N, \beta, V)=\int d E \omega(E, N, V) e^{-\beta E}=\int d q \ d p \ e^{-\beta H(q,p)}$ es la <i>función de partición</i> del sistema.
+
+          Particularizando ahora a un gas ideal, tenemos:
+
+          \begin{equation}
+          Z(N, \beta, V)=\frac{1}{N !}\left(\frac{V}{\Lambda^{3}}\right)^{N}, \quad Q(z, \beta, V)=e^{x V / \Lambda^{3}}
+          \end{equation}
+
+          Y así, la probabilidad de encontrar $N$ partículas en el sistema resulta seguir una distribución de Poisson con parámetro $zV / \Lambda^3$:
+
+          \begin{equation}\label{eq:macroPoiss}
+          p(N)=\frac{1}{N !}\left(\frac{z V}{\Lambda^{3}}\right)^{N} e^{-z V / \Lambda^{2}}
+          \end{equation}
+
+          <hr>
+
+          Haciendo uso de esta simulación queremos demostrar que, efectivamente, un gas ideal satisface la distribución \eqref{eq:macroPoiss}. Para ello, se presenta un gas de partículas como el de
+          \ref{sec:equilibrio}, en este caso distribuido en todo el
+          recinto y sin interacción entre partículas.
+
+          \button{Pulsando y arrastrando con el ratón} se puede elegir una región del recinto, que será nuestro sistema. El área no seleccionada será el foco térmico y de partículas. En dicha área
+          seleccionada se verificará la relación \eqref{eq:macroPoiss}.
+          En el panel derecho se muestra el número de partículas en nuestro sistema en función del tiempo, y pulsando \button{Histograma} se muestra la distribución del número de partículas. La
+          línea roja representa la distribución de Poisson.
+
+          Para regiones pequeñas la distribución sigue correctamente la dada por \eqref{eq:macroPoiss}, mientras que para regiones grandes no es así. Esto se debe a que el desarrollo expuesto deja
+          de ser válido, ya que no se cumple la hipotesis de que $N_F
+          \gg N$. En el caso más extremo en que se selecciona todo el recinto, el sistema tendrá siempre el número de partículas total, u por tanto observaremos $p(N) = \delta(N - N_\text{part})$.
+
 
           <hr>
           <!-- El applet empieza aqui -->

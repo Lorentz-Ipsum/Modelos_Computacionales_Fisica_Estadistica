@@ -55,36 +55,35 @@
             <!-- <li class="nav-item">
               <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
             </li> -->
-            <li class="nav-item dropdown active">
-              <a class="nav-link dropdown-toggle" href="#" id="dropdownApplets" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Applets <span class="sr-only">(current)</span></a>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="dropdownApplets" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Applets</a>
               <div class="dropdown-menu" aria-labelledby="dropdownApplets">
-                <a class="dropdown-item" href="../Apps.html">Índice de applets</a>
+                <a class="dropdown-item" href="Apps.html">Índice de applets</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="LimiteCentral.html">Teorema del límite central</a>
-                <div class="dropdown-divider"></div>
-                <h6 class="dropdown-header">Transformaciones sobre el espacio de fases</h6>
-                <a class="dropdown-item" href="Transformaciones.html#baker">Transformación del panadero</a>
-                <a class="dropdown-item" href="Transformaciones.html#arnold">Transformación de Arnold</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="Kac.html">Anillo de Kac</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="Osciladores.html">Conjunto de osciladores armónicos</a>
                 <div class="dropdown-divider"></div>
-                <h6 class="dropdown-header">Vibraciones moleculares</h6>
-                <a class="dropdown-item" href="Vibraciones.html#diatomicas">Gas de moléculas diatómicas</a>
-                <a class="dropdown-item" href="Vibraciones.html#debye">Teoría de Debye de los sólidos cristalinos</a>
+                <h6 class="dropdown-header">Transformaciones sobre el espacio de fases</h6>
+                <a class="dropdown-item" href="Transformaciones.html#baker">Transformación del panadero</a>
+                <a class="dropdown-item" href="Transformaciones.html#arnold">Transformación de Arnold</a>
                 <div class="dropdown-divider"></div>
                 <h6 class="dropdown-header">Gas ideal</h6>
                 <a class="dropdown-item" href="Gas.html#fluctuaciones">Expansión libre de un gas</a>
                 <a class="dropdown-item" href="Gas.html#macro">Colectividad macrocanónica</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item active" href="Bosefermi.html">Estadísticas de bosones y fermiones</a>
+                <a class="dropdown-item" href="Bosefermi.html">Estadísticas de bosones y fermiones</a>
                 <div class="dropdown-divider"></div>
                 <h6 class="dropdown-header">Modelo de Ising</h6>
-                <a class="dropdown-item" href="Ising.html#lt">Dimensionalidad y límite termodinámico</a>
                 <a class="dropdown-item" href="Ising.html#magnet">Magnetización y transiciones de fase</a>
+                <a class="dropdown-item" href="Ising.html#lt">Dimensionalidad y límite termodinámico</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="Originales.html">Applets originales</a>
+                <h6 class="dropdown-header">Extra: Vibraciones moleculares</h6>
+                <a class="dropdown-item" href="Vibraciones.html#diatomicas">Gas de moléculas diatómicas</a>
+                <a class="dropdown-item" href="Vibraciones.html#debye">Teoría de Debye de los sólidos cristalinos</a>
+                <div class="dropdown-divider"></div>
               </div>
             </li>
             <li class="nav-item">
@@ -110,25 +109,77 @@
       <!-- Contenidos  ================================================== -->
       <div class="container" role="main">
         <div class="main-content">
-          <h1 id="bosefemi">Estadísticas de Bose-Einstein y Fermi-Dirac</h1>
-          <p>Este es un texto de prueba para comprobar que Mathjax va bien.</p>
+          <h2 id="bosefermi">Estadísticas de bosones y fermiones</h2>
 
           <p>
-            Si nombramos $M = 2m$ como la masa total de la molécula y $\mu = m/2$ como la masa reducida, el hamiltoniano se reescribe como:
+            Al describir partículas cuánticas usamos un artificio matemático, la función de ondas. Aunque no haya interacción entre partículas en un conjunto de partículas cuánticas, las
+            propiedades de simetría de dicha función conducen a comportamientos
+            colectivos, muy diferentes físicamente.
           </p>
 
-          \begin{equation}\label{eq:diatHtot}
-          \begin{array}{cc}
-          H_{12}&=\frac{\mathbf{P}^{2}}{2 M}+\frac{\mathbf{L}^{2}}{2 \mu r^{2}}+{\frac{p^{2}}{2 \mu}+V(r)} \\
-          &=H_{T}+H_{rot}+H_{vib}
-          \end{array}
+          <p>
+            Llamamos fermiones a las partículas descritas con una función de ondas <i>antisimétrica</i> bajo permutaciones de los argumentos de dicha función de ondas. Dichas partículas tienen
+            espín semientero, como por ejemplo electrones, protones o
+            neutrones. Debido a esta antisimetría, dos fermiones no pueden compartir los mismos números cuánticos, y por tanto se distribuyen en los niveles de energía, sin compartirlos. A este
+            hecho se le llama <i>principio de exclusión de Pauli</i>. Por
+            otro lado, los bosones son aquellas partículas con función de ondas simétrica, y tienen espín entero. Algunos ejemplos son los fotones, los núcleos de $He^4$ o cuasipartículas como los
+            fonones. La función de ondas simétrica sí que permite que
+            varios bosones comparan números cuánticos, y por tanto puede haber varios con la misma energía.
+          </p>
+
+          En esta simulación estudiaremos dos sistemas, uno compuesto por $N$ bosones y el otro por $N$ fermiones, pero que no interaccionan entre sí más que por esta simetría o antisimetría de
+          la función de ondas.
+
+          En la descripción estadística de esos sistemas se utiliza la colectividad <b>macrocanónica</b>, en la que se construye la función de partición para un sistema con niveles de energía
+          $\epsilon_i$, con $i=0,1,2,...$ como:
+
+          $$
+          \ln Q(\beta,V,z) = -\prod_i \sum_{n_i}[z \exp (-\beta \epsilon_i)]^{n_i}
+          $$
+
+          La variable $z$ es la fugacidad, que se determina por la condición de que el número de partículas $N$ ha de ser igual a: $N=z \frac{\partial \ln Q}{\partial z}$. Las variables $n_i$
+          marcan el número de partículas en el nivel $i$-ésimo, por tanto
+          varían entre $0$ y el número maximo de partículas admitidas en dicho nivel:
+
+          \paragraph{Para fermiones:} En virtud del principio de exclusión de Pauli, cada nivel puede estar vacío o contener $n_i = 1$ partícula:
+
+          $$
+          n_{i}=0,1 \quad \Longrightarrow \quad \ln Q_{F} = \prod\left[1+z \exp \left(-\beta \epsilon_{i}\right)\right]
+          $$
+
+          \paragraph{Para bosones:} No hay limitación en el número de partículas, así que tenemos:
+
+          $$
+          n_{i}=0,1,2, ... \quad \Longrightarrow \quad \ln Q_{B} =\prod_{i}^{i} \frac{1}{\left[1-z \exp \left(-\beta \epsilon_{i}\right)\right]}
+          $$
+
+          Usando estas expresiones podemos calcular el número medio de partículas en cada nivel:
+
+          \begin{equation}
+          \left\langle n_{i}\right\rangle=-\frac{1}{\beta} \frac{\partial \ln Q}{\partial \epsilon_{i}},
+          \left\{\begin{array}{l}{\left\langle n_{i}\right\rangle_{F}=\frac{1}{z^{-1} \exp \left(\beta \epsilon_{i}\right)+1} \quad \text { fermiones }} \\ {\left\langle
+          n_{i}\right\rangle_{B}=\frac{1}{z^{-1} \exp \left(\beta \epsilon_{i}\right)-1} \quad
+          \text { bosones }}\end{array}\right.
           \end{equation}
 
-          <p>Hay ecuaciones como \eqref{eq:diatHtot}, referencias... Etc</p>
+          En estas expresiones puede comprobarse que la ocupación de un nivel fermiónico nunca puede superar $1$, ya que el denominador siempre es mayor que la unidad. Por el contrario, el
+          factor $-1$ que aparece en los bosones permite ocupaciones (muy)
+          superiores a la unidad.
+
+          Para temperaturas suficientemente bajas los bosones se concentran en el estado fundamental, dando lugar a un pico de ocupación en dicho nivel, en un fenómeno llamado Condensación de
+          Bose-Einstein.
 
           <hr>
 
-          En la simulación podemos introducir las temperaturas \button{De rotación} y \button{De vibración},
+          En este applet realizamos una simulación de Monte Carlo de dos sistemas usando el algoritmo de Metropolis (ver apéndice \ref{sec:metropolis}) en una dimensión (la de los niveles de
+          energía). El primer sistema contiene $N$ bosones (izquierda) y el
+          segundo $N$ fermiones (derecha).
+
+          Podemos elegir dicho \button{N}, la \button{Temperatura} (donde se ha tomado $k_B=1$) y el \button{Número de niveles}. Pulsando \button{Inicia} se empieza la simulación. Inicialmente
+          las partículas ocupan distintos niveles (esto es relevante para
+          los bosones), y en cada paso de tiempo tienen cierta probabilidad de cambiar de nivel (proporcional a la temperatura) o de mantenerse en el mismo. Pulsando \button{Histograma Bosones}
+          o \button{Histograma Fermiones} se muestra el histograma
+          normalizado de las frecuencias de ocupación de cada nivel energético.
 
           <hr>
           <!-- El applet empieza aqui -->
