@@ -1,36 +1,32 @@
 \babel@toc {spanish}{}
-\contentsline {section}{\numberline {1}Introducción}{3}{section.1}%
-\contentsline {subsection}{\numberline {1.1}Simulaciones interactivas}{3}{subsection.1.1}%
-\contentsline {subsection}{\numberline {1.2}Recursos didácticos en física}{3}{subsection.1.2}%
-\contentsline {section}{\numberline {2}Breve repaso de mecánica estadística}{3}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Teoría cinética}{3}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}Colectividades}{4}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}Cuántica}{4}{subsection.2.3}%
-\contentsline {subsection}{\numberline {2.4}Física estadística fuera del equilibrio}{4}{subsection.2.4}%
+\contentsline {section}{\numberline {1}Introducción}{2}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Simulaciones interactivas}{2}{subsection.1.1}%
+\contentsline {section}{\numberline {2}Breve repaso de Mecánica Estadística}{2}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Teoría cinética}{2}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Colectividades}{3}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Física Estadística del no equilibrio}{4}{subsection.2.3}%
 \contentsline {section}{\numberline {3}Programación de las simulaciones}{4}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Java}{4}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}HTML y Javascript}{4}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Ingeniería inversa}{5}{subsection.3.3}%
-\contentsline {subsection}{\numberline {3.4}Servidor}{5}{subsection.3.4}%
-\contentsline {section}{\numberline {4}Los applets}{6}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Teorema del límite central}{6}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Anillo de Kac}{7}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Ergodicidad y entropía en un conjunto de osciladores armónicos}{8}{subsection.4.3}%
-\contentsline {subsection}{\numberline {4.4}Transformaciones sobre el espacio de fases}{10}{subsection.4.4}%
-\contentsline {subsubsection}{\numberline {4.4.1}Transformación del panadero}{10}{subsubsection.4.4.1}%
-\contentsline {subsubsection}{\numberline {4.4.2}Transformación de Arnold}{10}{subsubsection.4.4.2}%
-\contentsline {subsection}{\numberline {4.5}Gas ideal bidimensional}{12}{subsection.4.5}%
-\contentsline {subsubsection}{\numberline {4.5.1}Irreversibilidad y fluctuaciones en equilibrio}{12}{subsubsection.4.5.1}%
-\contentsline {subsubsection}{\numberline {4.5.2}Colectividad macrocanónica}{14}{subsubsection.4.5.2}%
-\contentsline {subsection}{\numberline {4.6}Estadísticas de bosones y fermiones}{15}{subsection.4.6}%
-\contentsline {paragraph}{Para fermiones:}{15}{section*.1}%
-\contentsline {paragraph}{Para bosones:}{15}{section*.2}%
-\contentsline {subsection}{\numberline {4.7}Modelo de Ising}{16}{subsection.4.7}%
-\contentsline {subsubsection}{\numberline {4.7.1}Transiciones de fase y magnetización}{16}{subsubsection.4.7.1}%
-\contentsline {subsubsection}{\numberline {4.7.2}Dimensionalidad y límite termodinámico}{18}{subsubsection.4.7.2}%
-\contentsline {section}{\numberline {5}Conclusiones}{19}{section.5}%
-\contentsline {section}{\numberline {A}Modelado computacional}{20}{appendix.Alph1}%
-\contentsline {subsection}{\numberline {A.1}El algoritmo de Metropolis Monte Carlo}{20}{subsection.Alph1.1}%
-\contentsline {subsection}{\numberline {A.2}Problemas a la hora de generar números aleatorios}{21}{subsection.Alph1.2}%
-\contentsline {subsection}{\numberline {A.3}Precisión finita de las simulaciones}{21}{subsection.Alph1.3}%
-\contentsline {section}{Referencias}{22}{section*.3}%
+\contentsline {subsection}{\numberline {3.1}HTML y Javascript}{4}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Servidor}{4}{subsection.3.2}%
+\contentsline {section}{\numberline {4}Los applets}{5}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Teorema del límite central}{5}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Anillo de Kac}{6}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Ergodicidad y entropía en un conjunto de osciladores armónicos}{7}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Transformaciones sobre el espacio de fases}{9}{subsection.4.4}%
+\contentsline {subsubsection}{\numberline {4.4.1}Transformación del panadero}{9}{subsubsection.4.4.1}%
+\contentsline {subsubsection}{\numberline {4.4.2}Transformación de Arnold}{9}{subsubsection.4.4.2}%
+\contentsline {subsection}{\numberline {4.5}Gas ideal bidimensional}{11}{subsection.4.5}%
+\contentsline {subsubsection}{\numberline {4.5.1}Irreversibilidad y fluctuaciones en equilibrio}{11}{subsubsection.4.5.1}%
+\contentsline {subsubsection}{\numberline {4.5.2}Colectividad macrocanónica}{13}{subsubsection.4.5.2}%
+\contentsline {subsection}{\numberline {4.6}Estadísticas de bosones y fermiones}{14}{subsection.4.6}%
+\contentsline {paragraph}{Para fermiones:}{14}{section*.1}%
+\contentsline {paragraph}{Para bosones:}{14}{section*.2}%
+\contentsline {subsection}{\numberline {4.7}Modelo de Ising}{15}{subsection.4.7}%
+\contentsline {subsubsection}{\numberline {4.7.1}Transiciones de fase y magnetización}{15}{subsubsection.4.7.1}%
+\contentsline {subsubsection}{\numberline {4.7.2}Dimensionalidad y límite termodinámico}{17}{subsubsection.4.7.2}%
+\contentsline {section}{\numberline {5}Conclusiones}{18}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Recursos didácticos en física}{18}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Trabajo futuro}{18}{subsection.5.2}%
+\contentsline {section}{\numberline {A}Modelado computacional}{19}{appendix.Alph1}%
+\contentsline {subsection}{\numberline {A.1}El algoritmo de Metropolis Monte Carlo}{19}{subsection.Alph1.1}%
+\contentsline {section}{Referencias}{20}{section*.3}%

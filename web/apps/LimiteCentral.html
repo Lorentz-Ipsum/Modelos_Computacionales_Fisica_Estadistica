@@ -81,7 +81,7 @@
             <!-- <li class="nav-item">
               <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
             </li> -->
-            <li class="nav-item dropdown">
+            <li class="nav-item dropdown active">
               <a class="nav-link dropdown-toggle" href="#" id="dropdownApplets" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Applets</a>
               <div class="dropdown-menu" aria-labelledby="dropdownApplets">
                 <a class="dropdown-item" href="Apps.html">Índice de applets</a>
@@ -137,53 +137,66 @@
         <div class="main-content">
           <h2 id="central">Teorema del límite central</h2>
 
-          El teorema del límite central (CLT, por sus siglas en inglés) establece que la suma de variables aleatorias sigue una distribución normal <a href="Bibliografia.html#dorfman">dorfman</a> (siempre que el número de variables sumadas sea
-          suficientemente
-          grande). La única condición es
-          que las variables que se suman sean independientes y generadas por la misma distribución de probabilidad, de valor esperado y varianza finitas.
-
-          <blockquote class="blockquote w-75">
+          <p class="text-justify">
+            El teorema del límite central (CLT, por sus siglas en inglés) establece que la suma de variables aleatorias sigue una distribución normal <a href="../Bibliografia.html#ref-dorfman">[dorfman]</a> (siempre que el número de variables sumadas
+            sea
+            suficientemente
+            grande). La única condición es
+            que las variables que se suman sean independientes y generadas por la misma distribución de probabilidad, de valor esperado y varianza finitas.
+          </p>
+          <blockquote class="blockquote w-100">
             <h4>Teorema del límite central</h4>
-            Sean $X_i, i = 1,\dots, N$ un conjunto de $N$ variables aleatorias independientes, todas distribuidas según la misma distribución de probabilidad de media $\mu$ y varianza $\sigma^2 \neq 0$ finitas.
-            Entonces, cuando $N$ es suficientemente grande (de forma rigurosa, tendiendo a infinito), la probabilidad de que la variable aleatoria $Y$ definida como la suma de las anteriores ($Y = X_1 + X_2 + \dots + X_N$) tome el
-            valor $y$ sigue una
-            distribución gaussiana:
 
+            <p class="text-justify">
+              Sean $X_i, i = 1,\dots, N$ un conjunto de $N$ variables aleatorias independientes, todas distribuidas según la misma distribución de probabilidad de media $\mu$ y varianza $\sigma^2 \neq 0$ finitas.
+              Entonces, cuando $N$ es suficientemente grande (de forma rigurosa, tendiendo a infinito), la probabilidad de que la variable aleatoria $Y$ definida como la suma de las anteriores ($Y = X_1 + X_2 + \dots + X_N$) tome el
+              valor $y$ sigue una
+              distribución gaussiana:
+            </p>
             \begin{equation}\label{eq:Gauss}
             P_{Y}(y)=\frac{1}{\sqrt{2 \pi N \sigma^{2}}} \exp \left[-\frac{(y-N \mu)^{2}}{2 N \sigma^{2}}\right]
             \end{equation}
 
-            de media $\mu_Y = N \mu$ y varianza $\sigma_Y^2 = \sigma^2/n$.
+            <p class="text-justify">
+              de media $\mu_Y = N \mu$ y varianza $\sigma_Y^2 = \sigma^2/n$.
+            </p>
           </blockquote>
 
-          Hay otras versiones del teorema más generales. Por ejemplo en la de Lyapunov se permite que las variables $X_i$ no estén distribuidas idénticamente, pero se imponen ciertas condiciones sobre los momentos de órden superior de las
-          distribuciones
-          individuales.
-
-          Interpretemos el resultado: da igual cuál sea la distribución con la que generamos variables aleatorias, su suma <i>siempre sigue una distribución gaussiana</i>, y más estrecha cuantas más variables sumemos. Esta es la
-          causa de que la distribución
-          gaussiana tenga un papel tan importante en física <a href="Bibliografia.html#sands">sands</a>: <i>el efecto cooperativo de muchas variables aleatorios independientes da como resultado una distribución gaussiana</i>.
-
-          Es un ejemplo de la aplicación de la <i>ley de los grandes números</i> de la teoría de la probabilidad. Este conjunto de teoremas (entre los que se incluye el teorema del límite central) estudian el comportamiento
-          estadístico de una sucesión de
-          ensayos sobre una distribución, y por ello tiene especial significancia no sólo en Física Estadística, sino también para la física cuántica.
-
+          <p class="text-justify">
+            Hay otras versiones del teorema más generales. Por ejemplo en la de Lyapunov se permite que las variables $X_i$ no estén distribuidas idénticamente, pero se imponen ciertas condiciones sobre los momentos de órden superior de las
+            distribuciones
+            individuales.
+          </p>
+          <p class="text-justify">
+            Interpretemos el resultado: da igual cuál sea la distribución con la que generamos variables aleatorias, su suma <i>siempre sigue una distribución gaussiana</i>, y más estrecha cuantas más variables sumemos. Esta es la
+            causa de que la distribución
+            gaussiana tenga un papel tan importante en física <a href="../Bibliografia.html#ref-sands">[sands]</a>: <i>el efecto cooperativo de muchas variables aleatorios independientes da como resultado una distribución gaussiana</i>.
+          </p>
+          <p class="text-justify">
+            Es un ejemplo de la aplicación de la <i>ley de los grandes números</i> de la teoría de la probabilidad. Este conjunto de teoremas (entre los que se incluye el teorema del límite central) estudian el comportamiento
+            estadístico de una sucesión de
+            ensayos sobre una distribución, y por ello tiene especial significancia no sólo en Física Estadística, sino también para la física cuántica.
+          </p>
           <hr>
 
-          En el applet se puede elegir el número de variables aleatorias \button{N} y el \button{Tipo de distribución} de la que tomamos muestras: como un dado (del 1 al 6), como una moneda (0 ó 1) y uniformemente distribuidas entre
-          0 y 1 (incluidos). Con el
-          objetivo de que sea más fácil ver que la suma converge a la distribución gaussiana, también se puede modificar la velocidad de generación de variables.
-
-          Una posible ampliación de la simulación sería añadir la posibilidad de muestrear distribuciones asimétricas, como la distribución triangular y la distribución de Poisson, para ilustrar que no importa que la distribución de
-          partida no sea uniforme.
-
-          Pulsando \button{Inicia} se comienzan a generar variables $Y$, y se construye el histograma de frecuencias, normalizado a la unidad. Superpuesto al histograma, en rojo, se muestra la distribución gaussiana predicha por la
-          ecuación \eqref{eq:Gauss}.
-          Pulsando \button{Reset} se limpia la gráfica, que puede acabar siendo confusa si se cambia el número de variables o la distribución mientras la simulación se está ejecutando.
-
-          Se recomienda comprobar que cuando $N\gg1$, la distribución de $Y$ se aproxima a la curva de la distribución gaussiana, para todas las distribuciones individuales disponibles. Por el contrario, cuando $N$ es pequeño, no
-          sucede así.
-
+          <p class="text-justify">
+            En el applet se puede elegir el número de variables aleatorias \button{N} y el \button{Tipo de distribución} de la que tomamos muestras: como un dado (del 1 al 6), como una moneda (0 ó 1) y uniformemente distribuidas entre
+            0 y 1 (incluidos). Con el
+            objetivo de que sea más fácil ver que la suma converge a la distribución gaussiana, también se puede modificar la velocidad de generación de variables.
+          </p>
+          <p class="text-justify">
+            Una posible ampliación de la simulación sería añadir la posibilidad de muestrear distribuciones asimétricas, como la distribución triangular y la distribución de Poisson, para ilustrar que no importa que la distribución de
+            partida no sea uniforme.
+          </p>
+          <p class="text-justify">
+            Pulsando \button{Inicia} se comienzan a generar variables $Y$, y se construye el histograma de frecuencias, normalizado a la unidad. Superpuesto al histograma, en rojo, se muestra la distribución gaussiana predicha por la
+            ecuación \eqref{eq:Gauss}.
+            Pulsando \button{Reset} se limpia la gráfica, que puede acabar siendo confusa si se cambia el número de variables o la distribución mientras la simulación se está ejecutando.
+          </p>
+          <p class="text-justify">
+            Se recomienda comprobar que cuando $N\gg1$, la distribución de $Y$ se aproxima a la curva de la distribución gaussiana, para todas las distribuciones individuales disponibles. Por el contrario, cuando $N$ es pequeño, no
+            sucede así.
+          </p>
         </div>
         <hr>
         <!-- El applet empieza aqui -->

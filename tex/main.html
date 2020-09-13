@@ -5,7 +5,7 @@ Junto a cada simulación se incluye la descripción que aparece en este document
 
 <h2 id="central">Teorema del límite central</h2>
 
-El teorema del límite central (CLT, por sus siglas en inglés) establece que la suma de variables aleatorias sigue una distribución normal <a href="Bibliografia.html#dorfman">dorfman</a> (siempre que el número de variables sumadas sea suficientemente
+El teorema del límite central (CLT, por sus siglas en inglés) establece que la suma de variables aleatorias sigue una distribución normal <a href="Bibliografia.html#ref-dorfman">[dorfman]</a> (siempre que el número de variables sumadas sea suficientemente
 grande). La única condición es
 que las variables que se suman sean independientes y generadas por la misma distribución de probabilidad, de valor esperado y varianza finitas.
 
@@ -28,7 +28,7 @@ individuales.
 
 Interpretemos el resultado: da igual cuál sea la distribución con la que generamos variables aleatorias, su suma <i>siempre sigue una distribución gaussiana</i>, y más estrecha cuantas más variables sumemos. Esta es la
 causa de que la distribución
-gaussiana tenga un papel tan importante en física <a href="Bibliografia.html#sands">sands</a>: <i>el efecto cooperativo de muchas variables aleatorios independientes da como resultado una distribución gaussiana</i>.
+gaussiana tenga un papel tan importante en física <a href="Bibliografia.html#ref-sands">[sands]</a>: <i>el efecto cooperativo de muchas variables aleatorios independientes da como resultado una distribución gaussiana</i>.
 
 Es un ejemplo de la aplicación de la <i>ley de los grandes números</i> de la teoría de la probabilidad. Este conjunto de teoremas (entre los que se incluye el teorema del límite central) estudian el comportamiento
 estadístico de una sucesión de
@@ -53,7 +53,7 @@ sucede así.
 
 <h2 id="ring">Anillo de Kac</h2>
 
-El modelo del anillo de Kac <a href="Bibliografia.html#salcido">salcido</a> es un sencillo modelo matemático que ilustra la compatibilidad entre estados macroscópicos y microscópicos, el tiempo de recurrencia de Poincaré y otros aspectos de teoría
+El modelo del anillo de Kac <a href="Bibliografia.html#ref-salcido">[salcido]</a> es un sencillo modelo matemático que ilustra la compatibilidad entre estados macroscópicos y microscópicos, el tiempo de recurrencia de Poincaré y otros aspectos de teoría
 cinética que en principio pueden
 parecer paradójicos. Su dinámica es la siguiente:
 
@@ -66,7 +66,7 @@ parecer paradójicos. Su dinámica es la siguiente:
 
 Con estas reglas, el modelo es reversible y periódico. Al cabo de $T = 2N$ iteraciones, cada partícula ha dado dos vueltas completas al círculo, y ha cambiado de color un número par de veces, $2M$. Es decir, habrá
 vuelto a su color y posición
-original. Si $M$ es par, con $T=N$ iteraciones es suficiente. Este periodo se corresponde con el tiempo de recurrencia de Poincaré <a href="Bibliografia.html#gottwald">gottwald</a>.
+original. Si $M$ es par, con $T=N$ iteraciones es suficiente. Este periodo se corresponde con el tiempo de recurrencia de Poincaré <a href="Bibliografia.html#ref-gottwald">[gottwald]</a>.
 
 Podemos describir el sistema estudiando el <b>número de bolitas de cada color</b> que hay en cada instante de tiempo: $B(t)$ para las azules y $R(t)$ para las rojas. Definamos también la \textbf{cantidad de bolitas
 que tienen un sitio marcado
@@ -98,7 +98,7 @@ Esta solución nos dice que, pasado un número grande de iteraciones, la diferen
 nuestro modelo de partida. Esta
 discrepancia viene de la hipótesis \eqref{eq:kacHip}.
 
-Esta hipótesis juega un papel similar al de la hipótesis de caos molecular en la ecuación de Boltzmann <a href="Bibliografia.html#haro">haro</a>: elimina las correlaciones entre las componentes de nuestro sistema. Es por esto que puede considerarse
+Esta hipótesis juega un papel similar al de la hipótesis de caos molecular en la ecuación de Boltzmann <a href="Bibliografia.html#ref-haro">[haro]</a>: elimina las correlaciones entre las componentes de nuestro sistema. Es por esto que puede considerarse
 una hipótesis que aplicamos a
 la descripción <i>macroscópica</i> del sistema. Al eliminar las correlaciones que se crean en el sistema, perdemos la información de reversibilidad.
 
@@ -122,12 +122,12 @@ Como ya hemos dicho, una posible mejora del programa sería añadir la opción d
 Otra forma de ampliarlo sería
 añadir una opción para elegir cómo se distribuyen los sitios marcados. Por ejemplo, cuando todos los sitios se sitúan en posiciones adyacentes, la diferencia de colores se mantendrá casi constante, salvo por pequeñas
 fluctuaciones que ocurren
-periódicamente. Se puede encontrar una discusión más detallada de este modelo en <a href="Bibliografia.html#haro">haro</a>.
+periódicamente. Se puede encontrar una discusión más detallada de este modelo en <a href="Bibliografia.html#ref-haro">[haro]</a>.
 
 
 <h2 id="osciladores">Ergodicidad y entropía en un conjunto de osciladores armónicos</h2>
 
-Esta simulación servirá para ilustrar el concepto de ergodicidad y de <i>coarse graining</i> <a href="Bibliografia.html#groot">groot</a>.
+Esta simulación servirá para ilustrar el concepto de ergodicidad y de <i>coarse graining</i> <a href="Bibliografia.html#ref-groot">[groot]</a>.
 
 <blockquote class="blockquote w-75">
   <h4>Conjunto de osciladores independientes</h4>
@@ -155,7 +155,7 @@ $$
 
 Si $\omega_1 / \omega_2$ es irracional, esto no puede cumplirse, así que el sistema nunca volverá al estado inicial, y por tanto, será ergódico.
 
-Volvamos al sistema de estudio, si es ergódico tenemos que la distribución de probabilidad microcanónica equivale al volumen del toro $N$-dimensional donde se mueven las variables $\phi$ <a href="Bibliografia.html#dyson">dyson</a>:
+Volvamos al sistema de estudio, si es ergódico tenemos que la distribución de probabilidad microcanónica equivale al volumen del toro $N$-dimensional donde se mueven las variables $\phi$ <a href="Bibliografia.html#ref-dyson">[dyson]</a>:
 
 $$
 \rho (x) = \frac{1}{(2\pi)^N}
@@ -178,7 +178,7 @@ De esta expresión podemos deducir que la entropía máxima posible será:
 S_{\mathrm{max}}=N k_{B} \ln M
 \end{equation}
 
-Que corresponde con el macroestado en que $\alpha_j = 1/M$ para todo $j$. Como hemos dicho, este macroestado de entropía máxima sólo se alcanzará si el sistema es ergódico <a href="Bibliografia.html#groot">groot</a>. Si no lo es, el sistema será
+Que corresponde con el macroestado en que $\alpha_j = 1/M$ para todo $j$. Como hemos dicho, este macroestado de entropía máxima sólo se alcanzará si el sistema es ergódico <a href="Bibliografia.html#ref-groot">[groot]</a>. Si no lo es, el sistema será
 periódico y su entropía puede
 crecer o decrecer.
 
@@ -208,7 +208,7 @@ Esta periodicidad es más difícil de observar cuando las fases iniciales son al
 sean las frecuencias. Con esto se
 confirma una de las ideas de Boltzmann acerca de la irreversibilidad: La evolución temporal a estados de desorden se produce porque partimos de sistemas muy ordenados.
 
-El botón \button{Histograma} calcula el histograma de la distribución del logaritmo de las frecuencias, mostrando que se comportan de manera exponencial <a href="Bibliografia.html#groot">groot</a> según la fórmula de Einstein: $N(S) =
+El botón \button{Histograma} calcula el histograma de la distribución del logaritmo de las frecuencias, mostrando que se comportan de manera exponencial <a href="Bibliografia.html#ref-groot">[groot]</a> según la fórmula de Einstein: $N(S) =
 \exp{S/k_B}.$
 
 La simulación original fue desarrollada sobre una idea y material de Juan M.R. Parrondo.
@@ -219,9 +219,9 @@ así comportamientos colectivos.
 
 <h2 id="transformations">Transformaciones sobre el espacio de fases</h2>
 
-Las transformaciones que presentamos en esta sección pertenecen a una clase llamada mapas o transformaciones caóticas <a href="Bibliografia.html#dyson">dyson</a>. Su relevancia en Física Estadística aparece en el contexto del estudio de la
+Las transformaciones que presentamos en esta sección pertenecen a una clase llamada mapas o transformaciones caóticas <a href="Bibliografia.html#ref-dyson">[dyson]</a>. Su relevancia en Física Estadística aparece en el contexto del estudio de la
 evolución del espacio de fases $\Gamma$
-de un sistema dinámico, ya que pueden verse como un tipo de función de evolución de sistemas dinámicos <a href="Bibliografia.html#dorfman">dorfman</a>. Ambas tienen además otras aplicaciones en el contexto de la criptografía y en teoría de la
+de un sistema dinámico, ya que pueden verse como un tipo de función de evolución de sistemas dinámicos <a href="Bibliografia.html#ref-dorfman">[dorfman]</a>. Ambas tienen además otras aplicaciones en el contexto de la criptografía y en teoría de la
 información.
 
 Veremos los casos particulaes en que las transformaciones actúan sobre el espacio de dos dimensiones, aunque es posible generalizarlas a un número mayor. La primera es la <i>Transformación del panadero</i>
@@ -255,7 +255,7 @@ y^{\prime}=\left\{
   inicial se han distribuido por todo el
   espacio formando una imagen homogénea.
 
-  Una de las opciones es el <i>invariante de Ising-Tartan</i> <a href="Bibliografia.html#linas">linas</a>, un patrón fractal que queda invariante bajo la acción de la transformación del panadero. Debido a la naturaleza discreta de las
+  Una de las opciones es el <i>invariante de Ising-Tartan</i> <a href="Bibliografia.html#ref-linas">[linas]</a>, un patrón fractal que queda invariante bajo la acción de la transformación del panadero. Debido a la naturaleza discreta de las
   simulaciones por ordenador, esto no ocurre
   en el applet que presentamos. Si bien es cierto que en las primeras iteraciones la imagen se mantiene casi idéntica, pero al cabo de unas pocas se mezcla como las demás opciones.
 
@@ -263,7 +263,7 @@ y^{\prime}=\left\{
 
   La visión moderna de la mecánica hamiltoniana es que aplicamos transformaciones al espacio de fases que conserven el volumen (por el teorema de Liouville). Citando a Arnold: "\textit{La mecánica
   hamiltoniana es geometría en el espacio de fases}"
-  <a href="Bibliografia.html#arnold">arnold</a>.
+  <a href="Bibliografia.html#ref-arnold">[arnold]</a>.
   Un aspecto interesante de esta teoría es que, cuando tenemos un sistema con tantas cantidades conservadas como grados de libertad (en cuyo caso decimos que es integrable), podemos reducir la geometría
   del espacio de fases a la de un toro
   hiperdimensional, usando las llamadas <i>variables acción-ángulo</i>. En estos casos, estudiar la dinámica del sistema se reduce a comprobar si la periodicidad de estas variables acción-ángulo es
@@ -325,7 +325,7 @@ y^{\prime}=\left\{
   \end{pmatrix}
   $$
 
-  Hay que hacer notar otra característica de este modelo, y es que la transformación de Arnold sólo puede ser ergódica para el caso continuo <a href="Bibliografia.html#dyson">dyson</a>. En el mapa discreto, aunque se cumplan las
+  Hay que hacer notar otra característica de este modelo, y es que la transformación de Arnold sólo puede ser ergódica para el caso continuo <a href="Bibliografia.html#ref-dyson">[dyson]</a>. En el mapa discreto, aunque se cumplan las
   condiciones enunciadas, siempre habrá periodicidad
   (excepto en las matrices patológicas antes mencionadas).
 
@@ -369,7 +369,7 @@ y^{\prime}=\left\{
   </blockquote>
 
   Expresado en el lenguaje de la Física Estadística, partimos de un estado muy poco probable, por lo que en la evolución del sistema tendrá una dirección muy marcada: aquella en que los estados
-  sean más probables <a href="Bibliografia.html#huang">huang</a>. Para que esto ocurra,
+  sean más probables <a href="Bibliografia.html#ref-huang">[huang]</a>. Para que esto ocurra,
   necesitamos que haya un número grande de grados de libertad. Si el sistema está compuesto por pocas partículas, es más probable que todas acaben en sólo una mitad del recipiente, por tanto
   podríamos ver la secuencia inversa. Las fluctuaciones de
   densidad, en el caso de pocas partículas, tienen más peso a la hora de caracterizar el macroestado.
@@ -456,7 +456,7 @@ y^{\prime}=\left\{
   También se puede elegir si queremos que puedan chocar unas con otras o no pulsando el botón de partículas \button{Con o Sin interacción} (cuando chocan lo hacen como discos duros), ya que todo
   este desarrollo es válido en ambos casos.
 
-  De hecho, todo este desarrollo es válido para un modelo mucho más sencillo: El modelo de las urnas de Ehrenfest <a href="Bibliografia.html#dorfman">dorfman</a>, en el que las partículas no forman parte de un gas, sino que
+  De hecho, todo este desarrollo es válido para un modelo mucho más sencillo: El modelo de las urnas de Ehrenfest <a href="Bibliografia.html#ref-dorfman">[dorfman]</a>, en el que las partículas no forman parte de un gas, sino que
   consideramos cada lado del recipiente como una urna
   independiente con partículas. En cada paso de tiempo cogemos al azar una partícula de una de las urnas y la movemos al otro lado de la caja. La dinámica de las fluctuaciones sigue la misma ley
   que antes: se distribuye de forma gaussiana con
@@ -477,7 +477,7 @@ y^{\prime}=\left\{
 
   En los casos en que este intercambio de energía y partículas es relevante decimos que tenemos un foco térmico y de partículas en contacto con nuestro sistema, y en Física Estadística
   usamos la colectividad macrocanónica para describirlos
-  <a href="Bibliografia.html#pathria">pathria</a>, estudiando la probabilidad de que el sistema tenga una energía $E$ y $N$ partículas. Para ello, partimos del sistema total, incluyendo nuestro sistema (con $E$ y $N$), y
+  <a href="Bibliografia.html#ref-pathria">[pathria]</a>, estudiando la probabilidad de que el sistema tenga una energía $E$ y $N$ partículas. Para ello, partimos del sistema total, incluyendo nuestro sistema (con $E$ y $N$), y
   los alrededores (o <i>foco</i>), con $E_F\gg E$ y $N_F \gg
   N$.
 
@@ -662,7 +662,7 @@ y^{\prime}=\left\{
   Z(T,B) = \sum_{s_1} \sum_{s_2}...\sum_{s_N} \exp \left( -\frac{H(\{s_i\})}{k_B T} \right)
   \end{equation}
 
-  a partir de la cual se puede calcular la magnetización como <a href="Bibliografia.html#allen">allen</a>:
+  a partir de la cual se puede calcular la magnetización como <a href="Bibliografia.html#ref-allen">[allen]</a>:
 
   \begin{equation}\label{eq:isingMagnet}
   M = - \frac{1}{k_B T} \left( \frac{\partial \ln Z}{\partial B} \right)_ {B=0}
@@ -673,7 +673,7 @@ y^{\prime}=\left\{
   Si calculamos \eqref{eq:isingPartic} y \eqref{eq:isingMagnet} en el caso unidimensional, se puede comprobar que <i>no existe transición de fase</i>, los efectos del
   desorden inducido por la temperatura son siempre dominantes. Sin embargo, en 2
   o más dimensiones sí que existe la transición de fase. En dos dimensiones, el cálculo de \eqref{eq:isingPartic} y \eqref{eq:isingMagnet} es posible aunque complicado
-  <a href="Bibliografia.html#huang">huang</a>. Se encuentra que la temperatura de transición está en:
+  <a href="Bibliografia.html#ref-huang">[huang]</a>. Se encuentra que la temperatura de transición está en:
 
   $$
   \frac{J}{k_B T_C} \equiv j_C = 0.4407
@@ -710,8 +710,8 @@ y^{\prime}=\left\{
   cuanto más cercanos sean $N_x$ y $N_y$, más cerca estaremos de una red bidimensional perfecta. Aumentando ambos nos acercamos al límite termodinámico.
 
   Hay que hacer notar, que el código de esta simulación no calcula directamente el calor específico: Los datos han sido calculados previamente con un programa más potente
-  en C <a href="Bibliografia.html#recipesC">recipesC</a>, proporcionado por el tutor y muy similar a uno
-  utilizado en la asignatura de Transiciones de Fase y Fenómenos Críticos <a href="Bibliografia.html#barkema">barkema</a>, y luego tratados para que el programa los dibuje. La causa de esto es que se trata
+  en C <a href="Bibliografia.html#ref-recipesC">[recipesC]</a>, proporcionado por el tutor y muy similar a uno
+  utilizado en la asignatura de Transiciones de Fase y Fenómenos Críticos <a href="Bibliografia.html#ref-barkema">[barkema]</a>, y luego tratados para que el programa los dibuje. La causa de esto es que se trata
   de un cálculo extremadamente costoso, incluso para redes pequeñas como las
   presentadas aquí. Hay que sumar las $2^{(NxN)}$ configuraciones del sistema para calcular la función de partición, e iterar hasta llegar al equilibrio. Entonces es cuando
   podremos calcular el calor específico, pero el proceso no acaba ahí: habrá
@@ -783,12 +783,12 @@ y^{\prime}=\left\{
 
   Tareas como el analisis de una gran cantidad de datos, o las simulaciones numericas de un sistema forman parte del dia a dia de muchos investigadores.
   Por ejemplo en la fisica de fluidos es de gran importancia este tipo de enfoque, ya que las ecuaciones de Navier-Stokes no tienen solucion exacta, hay que
-  recurrir a metodos computacionales para resolver la dinamica del sistema <a href="Bibliografia.html#allen">allen</a>.
-  En Física Estadística, existen dos modelos computacionales de gran importancia: el metodo de Monte-Carlo y la dinamica molecular <a href="Bibliografia.html#frenkel">frenkel</a>.
+  recurrir a metodos computacionales para resolver la dinamica del sistema <a href="Bibliografia.html#ref-allen">[allen]</a>.
+  En Física Estadística, existen dos modelos computacionales de gran importancia: el metodo de Monte-Carlo y la dinamica molecular <a href="Bibliografia.html#ref-frenkel">[frenkel]</a>.
 
   <h2 id="metropolis">El algoritmo de Metropolis Monte Carlo</h2>
 
-  El método de Monte-Carlo <a href="Bibliografia.html#barkema">barkema</a> agrupa una serie de algoritmos para obtener números aleatorios según una distribución dada. Esta clase de métodos
+  El método de Monte-Carlo <a href="Bibliografia.html#ref-barkema">[barkema]</a> agrupa una serie de algoritmos para obtener números aleatorios según una distribución dada. Esta clase de métodos
   son especialmente útiles para la evaluación de integrales multidimensionales, ya que son más
   eficientes que los métodos numéricos convencionales.
 

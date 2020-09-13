@@ -55,7 +55,7 @@
             <!-- <li class="nav-item">
               <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
             </li> -->
-            <li class="nav-item dropdown">
+            <li class="nav-item dropdown active">
               <a class="nav-link dropdown-toggle" href="#" id="dropdownApplets" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Applets</a>
               <div class="dropdown-menu" aria-labelledby="dropdownApplets">
                 <a class="dropdown-item" href="Apps.html">Índice de applets</a>
@@ -111,13 +111,13 @@
         <div class="main-content">
           <h2 id="bosefermi">Estadísticas de bosones y fermiones</h2>
 
-          <p>
+          <p class="text-justify">
             Al describir partículas cuánticas usamos un artificio matemático, la función de ondas. Aunque no haya interacción entre partículas en un conjunto de partículas cuánticas, las
             propiedades de simetría de dicha función conducen a comportamientos
             colectivos, muy diferentes físicamente.
           </p>
 
-          <p>
+          <p class="text-justify">
             Llamamos fermiones a las partículas descritas con una función de ondas <i>antisimétrica</i> bajo permutaciones de los argumentos de dicha función de ondas. Dichas partículas tienen
             espín semientero, como por ejemplo electrones, protones o
             neutrones. Debido a esta antisimetría, dos fermiones no pueden compartir los mismos números cuánticos, y por tanto se distribuyen en los niveles de energía, sin compartirlos. A este
@@ -127,22 +127,26 @@
             varios bosones comparan números cuánticos, y por tanto puede haber varios con la misma energía.
           </p>
 
-          En esta simulación estudiaremos dos sistemas, uno compuesto por $N$ bosones y el otro por $N$ fermiones, pero que no interaccionan entre sí más que por esta simetría o antisimetría de
-          la función de ondas.
-
-          En la descripción estadística de esos sistemas se utiliza la colectividad <b>macrocanónica</b>, en la que se construye la función de partición para un sistema con niveles de energía
-          $\epsilon_i$, con $i=0,1,2,...$ como:
-
+          <p class="text-justify">
+            En esta simulación estudiaremos dos sistemas, uno compuesto por $N$ bosones y el otro por $N$ fermiones, pero que no interaccionan entre sí más que por esta simetría o antisimetría de
+            la función de ondas.
+          </p>
+          <p class="text-justify">
+            En la descripción estadística de esos sistemas se utiliza la colectividad <b>macrocanónica</b>, en la que se construye la función de partición para un sistema con niveles de energía
+            $\epsilon_i$, con $i=0,1,2,...$ como:
+          </p>
           $$
           \ln Q(\beta,V,z) = -\prod_i \sum_{n_i}[z \exp (-\beta \epsilon_i)]^{n_i}
           $$
 
-          La variable $z$ es la fugacidad, que se determina por la condición de que el número de partículas $N$ ha de ser igual a: $N=z \frac{\partial \ln Q}{\partial z}$. Las variables $n_i$
-          marcan el número de partículas en el nivel $i$-ésimo, por tanto
-          varían entre $0$ y el número maximo de partículas admitidas en dicho nivel:
-
-          \paragraph{Para fermiones:} En virtud del principio de exclusión de Pauli, cada nivel puede estar vacío o contener $n_i = 1$ partícula:
-
+          <p class="text-justify">
+            La variable $z$ es la fugacidad, que se determina por la condición de que el número de partículas $N$ ha de ser igual a: $N=z \frac{\partial \ln Q}{\partial z}$. Las variables $n_i$
+            marcan el número de partículas en el nivel $i$-ésimo, por tanto
+            varían entre $0$ y el número maximo de partículas admitidas en dicho nivel:
+          </p>
+          <p class="text-justify">
+            \paragraph{Para fermiones:} En virtud del principio de exclusión de Pauli, cada nivel puede estar vacío o contener $n_i = 1$ partícula:
+          </p>
           $$
           n_{i}=0,1 \quad \Longrightarrow \quad \ln Q_{F} = \prod\left[1+z \exp \left(-\beta \epsilon_{i}\right)\right]
           $$
@@ -153,8 +157,9 @@
           n_{i}=0,1,2, ... \quad \Longrightarrow \quad \ln Q_{B} =\prod_{i}^{i} \frac{1}{\left[1-z \exp \left(-\beta \epsilon_{i}\right)\right]}
           $$
 
-          Usando estas expresiones podemos calcular el número medio de partículas en cada nivel:
-
+          <p class="text-justify">
+            Usando estas expresiones podemos calcular el número medio de partículas en cada nivel:
+          </p>
           \begin{equation}
           \left\langle n_{i}\right\rangle=-\frac{1}{\beta} \frac{\partial \ln Q}{\partial \epsilon_{i}},
           \left\{\begin{array}{l}{\left\langle n_{i}\right\rangle_{F}=\frac{1}{z^{-1} \exp \left(\beta \epsilon_{i}\right)+1} \quad \text { fermiones }} \\ {\left\langle
@@ -162,25 +167,29 @@
           \text { bosones }}\end{array}\right.
           \end{equation}
 
-          En estas expresiones puede comprobarse que la ocupación de un nivel fermiónico nunca puede superar $1$, ya que el denominador siempre es mayor que la unidad. Por el contrario, el
-          factor $-1$ que aparece en los bosones permite ocupaciones (muy)
-          superiores a la unidad.
-
-          Para temperaturas suficientemente bajas los bosones se concentran en el estado fundamental, dando lugar a un pico de ocupación en dicho nivel, en un fenómeno llamado Condensación de
-          Bose-Einstein.
-
+          <p class="text-justify">
+            En estas expresiones puede comprobarse que la ocupación de un nivel fermiónico nunca puede superar $1$, ya que el denominador siempre es mayor que la unidad. Por el contrario, el
+            factor $-1$ que aparece en los bosones permite ocupaciones (muy)
+            superiores a la unidad.
+          </p>
+          <p class="text-justify">
+            Para temperaturas suficientemente bajas los bosones se concentran en el estado fundamental, dando lugar a un pico de ocupación en dicho nivel, en un fenómeno llamado Condensación de
+            Bose-Einstein.
+          </p>
           <hr>
 
-          En este applet realizamos una simulación de Monte Carlo de dos sistemas usando el algoritmo de Metropolis (ver apéndice \ref{sec:metropolis}) en una dimensión (la de los niveles de
-          energía). El primer sistema contiene $N$ bosones (izquierda) y el
-          segundo $N$ fermiones (derecha).
-
-          Podemos elegir dicho \button{N}, la \button{Temperatura} (donde se ha tomado $k_B=1$) y el \button{Número de niveles}. Pulsando \button{Inicia} se empieza la simulación. Inicialmente
-          las partículas ocupan distintos niveles (esto es relevante para
-          los bosones), y en cada paso de tiempo tienen cierta probabilidad de cambiar de nivel (proporcional a la temperatura) o de mantenerse en el mismo. Pulsando \button{Histograma Bosones}
-          o \button{Histograma Fermiones} se muestra el histograma
-          normalizado de las frecuencias de ocupación de cada nivel energético.
-
+          <p class="text-justify">
+            En este applet realizamos una simulación de Monte Carlo de dos sistemas usando el algoritmo de Metropolis (ver apéndice \ref{sec:metropolis}) en una dimensión (la de los niveles de
+            energía). El primer sistema contiene $N$ bosones (izquierda) y el
+            segundo $N$ fermiones (derecha).
+          </p>
+          <p class="text-justify">
+            Podemos elegir dicho \button{N}, la \button{Temperatura} (donde se ha tomado $k_B=1$) y el \button{Número de niveles}. Pulsando \button{Inicia} se empieza la simulación. Inicialmente
+            las partículas ocupan distintos niveles (esto es relevante para
+            los bosones), y en cada paso de tiempo tienen cierta probabilidad de cambiar de nivel (proporcional a la temperatura) o de mantenerse en el mismo. Pulsando \button{Histograma Bosones}
+            o \button{Histograma Fermiones} se muestra el histograma
+            normalizado de las frecuencias de ocupación de cada nivel energético.
+          </p>
           <hr>
           <!-- El applet empieza aqui -->
           <div style="text-align: center">
@@ -228,7 +237,7 @@
               </div>
               <div class="modal-body">
                 <!-- Here is the inside of the modal -->
-                <p>Some text in the modal.</p>
+                <p class="text-justify">Some text in the modal.</p>
 
                 <div style="max-height:300px">
                   <!-- <div id="graphBos" style="width: 300px; height: 300px; position: relative;"> -->
@@ -253,7 +262,7 @@
               </div>
               <div class="modal-body">
                 <!-- Here is the inside of the modal -->
-                <p>Some text in the modal.</p>
+                <p class="text-justify">Some text in the modal.</p>
 
                 <div style="max-height:300px">
                   <!-- <div id="graphFer" style="width: 300px; height: 300px; position: relative;"> -->

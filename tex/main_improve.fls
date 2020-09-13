@@ -245,8 +245,7 @@ INPUT C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\c
 INPUT C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
 INPUT C:\Users\Lorentz-Ipsum\AppData\Local\MiKTeX\pdftex\config\pdftex.map
 INPUT C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
-INPUT C:\Users\Lorentz-Ipsum\Code\GitHub\Modelos_Computacionales_Fisica_Estadistica\tex\main_improve.toc
-INPUT C:\Users\Lorentz-Ipsum\Code\GitHub\Modelos_Computacionales_Fisica_Estadistica\tex\main_improve.toc
+INPUT C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmtt10.tfm
 INPUT C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr8.tfm
 INPUT C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr6.tfm
 INPUT C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmmi10.tfm
@@ -268,9 +267,10 @@ INPUT C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\um
 INPUT C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
 INPUT C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
 INPUT C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm7.tfm
+INPUT C:\Users\Lorentz-Ipsum\Code\GitHub\Modelos_Computacionales_Fisica_Estadistica\tex\main_improve.toc
+INPUT C:\Users\Lorentz-Ipsum\Code\GitHub\Modelos_Computacionales_Fisica_Estadistica\tex\main_improve.toc
 OUTPUT main_improve.toc
 INPUT C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmti10.tfm
-INPUT C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmtt10.tfm
 INPUT C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmss8.tfm
 INPUT C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
 INPUT C:\Users\Lorentz-Ipsum\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam5.tfm

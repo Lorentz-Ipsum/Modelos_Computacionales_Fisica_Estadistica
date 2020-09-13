@@ -73,7 +73,7 @@ options:
     2.9\miktex\bin\x64;%ProgramFiles(x86)%\MiKTeX 2.9\miktex\bin;$PATH
 files:
   dicy-instance.yaml-ParsedYAML:
-    timeStamp: 2020-09-11T18:29:20.643Z
+    timeStamp: 2020-09-13T14:48:26.963Z
     jobNames: []
     value:
       severity: info
@@ -134,22 +134,22 @@ files:
         2.9\miktex\bin\x64;%ProgramFiles(x86)%\MiKTeX 2.9\miktex\bin;$PATH
     type: ParsedYAML
   main_improve.tex:
-    timeStamp: 2020-09-11T18:37:28.553Z
+    timeStamp: 2020-09-13T14:48:26.288Z
     jobNames: []
-    hash: W8v6CaBhO84zv6f49zJg70y2qG0VLZJ+xczetDlEmQ8=
+    hash: GY9y+MfgNaPmIlLBY37bcsiAOrtl+YYo2QcOsvvu+kg=
     type: LaTeX
     subType: article
   'C:\Users\Lorentz-Ipsum\AppData\Roaming\dicy\config.yaml':
-    timeStamp: 2020-09-11T18:29:20.643Z
+    timeStamp: 2020-09-13T14:48:27.191Z
     jobNames: []
     type: YAML
   x.y-Nil:
     jobNames: []
     type: Nil
   main_improve.log:
-    timeStamp: 2020-09-11T18:37:44.208Z
+    timeStamp: 2020-09-13T14:48:48.337Z
     jobNames: []
-    hash: /7EdY9/kv1NZrMfn3rSpOqZdIVwQw4FB6DY5GNecu+M=
+    hash: yqkHnn7YpwJTu2X8Yev4g2tsI54JawfoJ7jkOKwBmLs=
     type: LaTeXLog
     subType: pdfTeX
   main_improve.fls-ParsedFileListing:
@@ -520,7 +520,7 @@ files:
       calls: []
     type: ParsedFileListing
   main_improve.log-ParsedLaTeXLog:
-    timeStamp: 2020-09-11T18:37:44.576Z
+    timeStamp: 2020-09-13T14:48:48.957Z
     jobNames: []
     value:
       messages:
@@ -1858,22 +1858,22 @@ files:
               end: 755
         - severity: info
           name: pdfTeX
-          category: LaTeX
-          text: Redefining \.
+          category: Package hyperref
+          text: Option `colorlinks' set `true'
           source:
-            file: main_improve.aux
+            file: main_improve.tex
             range:
-              start: 25
-              end: 25
+              start: 35
+              end: 35
           log:
             file: main_improve.log
             range:
-              start: 770
-              end: 770
+              start: 760
+              end: 760
         - severity: info
           name: pdfTeX
           category: LaTeX
-          text: Redefining \%
+          text: Redefining \.
           source:
             file: main_improve.aux
             range:
@@ -1886,18 +1886,32 @@ files:
               end: 771
         - severity: info
           name: pdfTeX
+          category: LaTeX
+          text: Redefining \%
+          source:
+            file: main_improve.aux
+            range:
+              start: 25
+              end: 25
+          log:
+            file: main_improve.log
+            range:
+              start: 772
+              end: 772
+        - severity: info
+          name: pdfTeX
           category: LaTeX Font
           text: Checking defaults for OML/cmm/m/it ... okay
           source:
             file: main_improve.tex
             range:
-              start: 60
-              end: 60
+              start: 67
+              end: 67
           log:
             file: main_improve.log
             range:
-              start: 775
-              end: 776
+              start: 776
+              end: 777
         - severity: info
           name: pdfTeX
           category: LaTeX Font
@@ -1905,13 +1919,13 @@ files:
           source:
             file: main_improve.tex
             range:
-              start: 60
-              end: 60
+              start: 67
+              end: 67
           log:
             file: main_improve.log
             range:
-              start: 777
-              end: 778
+              start: 778
+              end: 779
         - severity: info
           name: pdfTeX
           category: LaTeX Font
@@ -1919,13 +1933,13 @@ files:
           source:
             file: main_improve.tex
             range:
-              start: 60
-              end: 60
+              start: 67
+              end: 67
           log:
             file: main_improve.log
             range:
-              start: 779
-              end: 780
+              start: 780
+              end: 781
         - severity: info
           name: pdfTeX
           category: LaTeX Font
@@ -1933,13 +1947,13 @@ files:
           source:
             file: main_improve.tex
             range:
-              start: 60
-              end: 60
+              start: 67
+              end: 67
           log:
             file: main_improve.log
             range:
-              start: 781
-              end: 782
+              start: 782
+              end: 783
         - severity: info
           name: pdfTeX
           category: LaTeX Font
@@ -1947,13 +1961,13 @@ files:
           source:
             file: main_improve.tex
             range:
-              start: 60
-              end: 60
+              start: 67
+              end: 67
           log:
             file: main_improve.log
             range:
-              start: 783
-              end: 784
+              start: 784
+              end: 785
         - severity: info
           name: pdfTeX
           category: LaTeX Font
@@ -1961,13 +1975,13 @@ files:
           source:
             file: main_improve.tex
             range:
-              start: 60
-              end: 60
+              start: 67
+              end: 67
           log:
             file: main_improve.log
             range:
-              start: 785
-              end: 786
+              start: 786
+              end: 787
         - severity: info
           name: pdfTeX
           category: LaTeX Font
@@ -1975,13 +1989,13 @@ files:
           source:
             file: main_improve.tex
             range:
-              start: 60
-              end: 60
+              start: 67
+              end: 67
           log:
             file: main_improve.log
             range:
-              start: 787
-              end: 788
+              start: 788
+              end: 789
         - severity: info
           name: pdfTeX
           category: LaTeX Font
@@ -1989,13 +2003,13 @@ files:
           source:
             file: main_improve.tex
             range:
-              start: 60
-              end: 60
+              start: 67
+              end: 67
           log:
             file: main_improve.log
             range:
-              start: 789
-              end: 790
+              start: 790
+              end: 791
         - name: pdfTeX
           severity: info
           text: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -2005,8 +2019,8 @@ files:
           log:
             file: main_improve.log
             range:
-              start: 809
-              end: 809
+              start: 810
+              end: 810
         - severity: info
           name: pdfTeX
           category: Package epstopdf-base
@@ -2020,8 +2034,8 @@ files:
           log:
             file: main_improve.log
             range:
-              start: 810
-              end: 811
+              start: 811
+              end: 812
         - severity: info
           name: pdfTeX
           category: LaTeX
@@ -2029,22 +2043,8 @@ files:
           source:
             file: main_improve.tex
             range:
-              start: 60
-              end: 60
-          log:
-            file: main_improve.log
-            range:
-              start: 813
-              end: 813
-        - severity: info
-          name: pdfTeX
-          category: LaTeX
-          text: Redefining \%
-          source:
-            file: main_improve.tex
-            range:
-              start: 60
-              end: 60
+              start: 67
+              end: 67
           log:
             file: main_improve.log
             range:
@@ -2052,18 +2052,32 @@ files:
               end: 814
         - severity: info
           name: pdfTeX
-          category: Package hyperref
-          text: Link coloring OFF
+          category: LaTeX
+          text: Redefining \%
           source:
             file: main_improve.tex
             range:
-              start: 60
-              end: 60
+              start: 67
+              end: 67
           log:
             file: main_improve.log
             range:
-              start: 816
-              end: 816
+              start: 815
+              end: 815
+        - severity: info
+          name: pdfTeX
+          category: Package hyperref
+          text: Link coloring ON
+          source:
+            file: main_improve.tex
+            range:
+              start: 67
+              end: 67
+          log:
+            file: main_improve.log
+            range:
+              start: 817
+              end: 817
         - name: pdfTeX
           severity: info
           text: nameref 2019/09/16 v2.46 Cross-referencing by name of section
@@ -2073,8 +2087,8 @@ files:
           log:
             file: main_improve.log
             range:
-              start: 820
-              end: 820
+              start: 821
+              end: 821
         - name: pdfTeX
           severity: info
           text: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
@@ -2084,8 +2098,8 @@ files:
           log:
             file: main_improve.log
             range:
-              start: 824
-              end: 824
+              start: 825
+              end: 825
         - name: pdfTeX
           severity: info
           text: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
@@ -2095,8 +2109,8 @@ files:
           log:
             file: main_improve.log
             range:
-              start: 828
-              end: 828
+              start: 829
+              end: 829
         - severity: info
           name: pdfTeX
           category: LaTeX
@@ -2104,22 +2118,8 @@ files:
           source:
             file: main_improve.tex
             range:
-              start: 60
-              end: 60
-          log:
-            file: main_improve.log
-            range:
-              start: 832
-              end: 832
-        - severity: info
-          name: pdfTeX
-          category: LaTeX
-          text: Redefining \pageref
-          source:
-            file: main_improve.tex
-            range:
-              start: 60
-              end: 60
+              start: 67
+              end: 67
           log:
             file: main_improve.log
             range:
@@ -2128,12 +2128,12 @@ files:
         - severity: info
           name: pdfTeX
           category: LaTeX
-          text: Redefining \nameref
+          text: Redefining \pageref
           source:
             file: main_improve.tex
             range:
-              start: 60
-              end: 60
+              start: 67
+              end: 67
           log:
             file: main_improve.log
             range:
@@ -2141,18 +2141,60 @@ files:
               end: 834
         - severity: info
           name: pdfTeX
+          category: LaTeX
+          text: Redefining \nameref
+          source:
+            file: main_improve.tex
+            range:
+              start: 67
+              end: 67
+          log:
+            file: main_improve.log
+            range:
+              start: 835
+              end: 835
+        - severity: info
+          name: pdfTeX
           category: Package pdftex.def
           text: 'logo_UCM.png used Requested size: 164.31752pt x 191.52466pt.'
           source:
             file: main_improve.tex
             range:
-              start: 74
-              end: 74
+              start: 81
+              end: 81
           log:
             file: main_improve.log
             range:
-              start: 847
-              end: 848
+              start: 848
+              end: 849
+        - severity: info
+          name: pdfTeX
+          category: LaTeX Font
+          text: Trying to load font information for U+msa
+          source:
+            file: main_improve.tex
+            range:
+              start: 114
+              end: 114
+          log:
+            file: main_improve.log
+            range:
+              start: 855
+              end: 856
+        - severity: info
+          name: pdfTeX
+          category: LaTeX Font
+          text: Trying to load font information for U+msb
+          source:
+            file: main_improve.tex
+            range:
+              start: 114
+              end: 114
+          log:
+            file: main_improve.log
+            range:
+              start: 862
+              end: 863
         - severity: info
           name: pdfTeX
           category: LaTeX
@@ -2165,8 +2207,8 @@ files:
           log:
             file: main_improve.log
             range:
-              start: 861
-              end: 861
+              start: 873
+              end: 873
         - severity: info
           name: pdfTeX
           category: LaTeX
@@ -2179,50 +2221,36 @@ files:
           log:
             file: main_improve.log
             range:
-              start: 862
-              end: 862
-        - severity: info
+              start: 874
+              end: 874
+        - severity: error
           name: pdfTeX
-          category: LaTeX Font
-          text: Trying to load font information for U+msa
-          source:
-            file: main_improve.toc
-            range:
-              start: 2
-              end: 2
+          text: Unicode character ́ (U+0301) not set up for use with LaTeX.
           log:
             file: main_improve.log
             range:
-              start: 863
-              end: 863
-        - severity: info
-          name: pdfTeX
-          category: LaTeX Font
-          text: Trying to load font information for U+msb
-          source:
-            file: main_improve.toc
-            range:
-              start: 2
-              end: 2
-          log:
-            file: main_improve.log
-            range:
-              start: 869
-              end: 869
-        - severity: warning
-          name: pdfTeX
-          category: LaTeX
-          text: Citation `dyson' undefined
+              start: 886
+              end: 888
           source:
             file: main_improve.tex
             range:
-              start: 1092
-              end: 1092
+              start: 184
+              end: 184
+          category: Package inputenc
+        - severity: warning
+          name: pdfTeX
+          category: LaTeX
+          text: Citation `newmann' undefined
+          source:
+            file: main_improve.tex
+            range:
+              start: 1068
+              end: 1068
           log:
             file: main_improve.log
             range:
-              start: 881
-              end: 881
+              start: 906
+              end: 906
         - severity: info
           name: pdfTeX
           category: Package atveryend
@@ -2230,13 +2258,13 @@ files:
           source:
             file: main_improve.tex
             range:
-              start: 1097
-              end: 1097
+              start: 1081
+              end: 1081
           log:
             file: main_improve.log
             range:
-              start: 886
-              end: 886
+              start: 911
+              end: 911
         - severity: info
           name: pdfTeX
           category: Package atveryend
@@ -2244,13 +2272,13 @@ files:
           source:
             file: main_improve.tex
             range:
-              start: 1097
-              end: 1097
+              start: 1081
+              end: 1081
           log:
             file: main_improve.log
             range:
-              start: 887
-              end: 887
+              start: 912
+              end: 912
         - severity: info
           name: pdfTeX
           category: LaTeX
@@ -2263,8 +2291,8 @@ files:
           log:
             file: main_improve.log
             range:
-              start: 891
-              end: 891
+              start: 916
+              end: 916
         - severity: info
           name: pdfTeX
           category: LaTeX
@@ -2277,8 +2305,8 @@ files:
           log:
             file: main_improve.log
             range:
-              start: 892
-              end: 892
+              start: 917
+              end: 917
         - severity: info
           name: pdfTeX
           category: Package atveryend
@@ -2286,13 +2314,13 @@ files:
           source:
             file: main_improve.tex
             range:
-              start: 1097
-              end: 1097
+              start: 1081
+              end: 1081
           log:
             file: main_improve.log
             range:
-              start: 894
-              end: 894
+              start: 919
+              end: 919
         - severity: info
           name: pdfTeX
           category: Package atveryend
@@ -2300,26 +2328,26 @@ files:
           source:
             file: main_improve.tex
             range:
-              start: 1097
-              end: 1097
+              start: 1081
+              end: 1081
           log:
             file: main_improve.log
             range:
-              start: 895
-              end: 895
+              start: 920
+              end: 920
         - severity: info
           name: pdfTeX
           category: Package rerunfilecheck
           text: >-
             File `main_improve.out' has not changed. Checksum:
-            65C4437C36B367B4D2C5C0ABBE7E989A;2557.
+            93330FC5FAEFD061D2A822C4DD611E4F;2223.
           source:
             file: main_improve.tex
           log:
             file: main_improve.log
             range:
-              start: 897
-              end: 898
+              start: 922
+              end: 923
         - severity: warning
           name: pdfTeX
           category: LaTeX
@@ -2329,8 +2357,8 @@ files:
           log:
             file: main_improve.log
             range:
-              start: 900
-              end: 900
+              start: 925
+              end: 925
         - severity: info
           name: pdfTeX
           category: Package atveryend
@@ -2338,40 +2366,40 @@ files:
           source:
             file: main_improve.tex
             range:
-              start: 1097
-              end: 1097
+              start: 1081
+              end: 1081
           log:
             file: main_improve.log
             range:
-              start: 902
-              end: 902
+              start: 927
+              end: 927
       inputs: []
       outputs:
         - main_improve.pdf
       calls: []
     type: ParsedLaTeXLog
   main_improve.pdf:
-    timeStamp: 2020-09-11T18:37:44.190Z
+    timeStamp: 2020-09-13T14:48:48.334Z
     jobNames: []
-    hash: v22z6PSS2aS7fk1+GNraqAoNpvsNsNiFzm9aXWkgiNU=
+    hash: Ttjyae7taaeSdwBOrggbfAku5EbyxM1nF21ewgl7rIo=
     type: PortableDocumentFormat
   main_improve.aux:
-    timeStamp: 2020-09-11T18:37:44.029Z
+    timeStamp: 2020-09-13T14:48:48.200Z
     jobNames: []
-    hash: nIu/NHhL5ZWAUNKt3RGwZx8uChAc4Qg+zlHjFeGlrhI=
+    hash: eyCE4Teb3TFsT/9c7v6J7xnIxAg+loEHs36rVyyuPz0=
     type: LaTeXAuxilary
   main_improve.fls:
-    timeStamp: 2020-09-11T18:37:44.218Z
+    timeStamp: 2020-09-13T14:48:48.340Z
     jobNames: []
-    hash: j0KDhkNlv8gjhAhSXiWazMq6z2ROkYMmhCyTFObWqYE=
+    hash: 7o7LrxDfp7UceY2llY04bwPUHfhmHwxdJgkdVMWyep0=
     type: FileListing
   main_improve.synctex.gz:
-    timeStamp: 2020-09-11T18:37:44.192Z
+    timeStamp: 2020-09-13T14:48:48.336Z
     jobNames: []
-    hash: Fmbi4m4WSTT9n7OZbaFg9uhiYHARSGksxlKT7hofSVs=
+    hash: cgXW7ckDvyaIuylcQ/0Je+SVHy193WDn9cg3IWs/Jpg=
     type: SyncTeX
   main_improve.aux-ParsedLaTeXAuxilary:
-    timeStamp: 2020-09-11T18:37:39.625Z
+    timeStamp: 2020-09-13T14:48:43.164Z
     jobNames: []
     value:
       commands:
@@ -2401,55 +2429,70 @@ files:
         - providecommand
         - babel@aux
         - citation
-        - '@writefile'
-        - newlabel
-        - '@writefile'
-        - newlabel
-        - '@writefile'
-        - '@writefile'
-        - newlabel
-        - '@writefile'
-        - citation
-        - '@writefile'
-        - '@writefile'
-        - '@writefile'
-        - '@writefile'
-        - newlabel
-        - '@writefile'
-        - '@writefile'
-        - newlabel
-        - '@writefile'
-        - newlabel
-        - '@writefile'
-        - '@writefile'
-        - newlabel
-        - '@writefile'
-        - newlabel
-        - newlabel
         - citation
         - citation
         - '@writefile'
         - newlabel
+        - '@writefile'
+        - newlabel
+        - '@writefile'
+        - newlabel
+        - '@writefile'
+        - citation
+        - citation
+        - '@writefile'
+        - '@writefile'
+        - '@writefile'
+        - newlabel
+        - '@writefile'
+        - newlabel
+        - '@writefile'
+        - citation
+        - citation
+        - citation
+        - '@writefile'
+        - newlabel
+        - '@writefile'
         - newlabel
         - newlabel
-        - newlabel
+        - citation
         - citation
         - '@writefile'
         - newlabel
         - newlabel
         - newlabel
+        - newlabel
+        - citation
+        - citation
+        - citation
+        - '@writefile'
+        - newlabel
+        - citation
+        - citation
+        - citation
+        - citation
+        - newlabel
+        - newlabel
+        - citation
+        - citation
         - '@writefile'
         - newlabel
         - '@writefile'
         - newlabel
+        - newlabel
+        - '@writefile'
+        - newlabel
+        - citation
+        - newlabel
+        - citation
         - '@writefile'
         - newlabel
         - '@writefile'
         - newlabel
-        - '@writefile'
         - newlabel
+        - citation
         - newlabel
-        - newlabel
+        - citation
         - '@writefile'
         - newlabel
         - newlabel
@@ -2463,24 +2506,26 @@ files:
         - '@writefile'
         - newlabel
         - citation
+        - citation
         - newlabel
         - newlabel
         - newlabel
         - newlabel
+        - citation
+        - citation
         - '@writefile'
         - newlabel
         - '@writefile'
         - newlabel
         - '@writefile'
-        - newlabel
         - '@writefile'
         - newlabel
-        - newlabel
-        - newlabel
-        - newlabel
-        - '@writefile'
-        - '@writefile'
-        - newlabel
+        - citation
+        - citation
+        - citation
+        - citation
+        - citation
+        - citation
         - citation
         - citation
         - citation
@@ -2498,6 +2543,21 @@ files:
         - bibstyle
         - bibdata
         - bibcite
+        - '@writefile'
+        - newlabel
+        - '@writefile'
+        - newlabel
+        - newlabel
+        - newlabel
+        - newlabel
+        - bibcite
+        - bibcite
+        - bibcite
+        - bibcite
+        - bibcite
+        - bibcite
+        - bibcite
+        - bibcite
         - bibcite
         - bibcite
         - bibcite
@@ -2513,18 +2573,26 @@ files:
         - '@writefile'
     type: ParsedLaTeXAuxilary
   main_improve.blg-ParsedBibTeXLog:
-    timeStamp: 2020-09-11T18:37:36.045Z
+    timeStamp: 2020-09-13T14:48:38.794Z
     jobNames: []
     value:
       messages:
         - severity: warning
           name: BibTeX
-          text: I didn't find a database entry for "dyson"
+          text: I didn't find a database entry for "newmann"
           log:
             file: main_improve.blg
             range:
               start: 8
               end: 8
+        - severity: warning
+          name: BibTeX
+          text: empty booktitle in linas
+          log:
+            file: main_improve.blg
+            range:
+              start: 9
+              end: 9
       inputs:
         - "main_improve.aux\r"
         - "C:\\Users\\Lorentz-Ipsum\\AppData\\Local\\Programs\\MiKTeX\\bibtex\\bst\\bibtex\\unsrt.bst\r"
@@ -3185,23 +3253,23 @@ files:
     jobNames: []
     hash: zYJ070DrNIv5W3Iczx11ROs2l+ID1QBn9k02Q+u1mUs=
   main_improve.out:
-    timeStamp: 2020-09-11T18:37:44.035Z
+    timeStamp: 2020-09-13T14:48:48.203Z
     jobNames: []
-    hash: wEmDLpsd2wAsMMSpTvyrmTUKvgJocMoRZlYWXu/wm9E=
+    hash: GYzumspzd1TDUJiq9/4QeLOTy+czDWUDTp1I/91heqM=
     type: OUT
   main_improve.toc:
-    timeStamp: 2020-09-11T18:37:44.087Z
+    timeStamp: 2020-09-13T14:48:48.221Z
     jobNames: []
-    hash: Rzz9s9SxdrWaL4lphi9+a1rap8TnKNRYdrZ95AhLzBU=
+    hash: lWGwtOviKgygcOB32Y1tSW4WgAJRlqiNNGChPdxNg/E=
     type: TableOfContents
   main_improve.bbl:
-    timeStamp: 2020-09-11T18:37:40.644Z
+    timeStamp: 2020-09-13T14:48:44.192Z
     jobNames: []
-    hash: ZturzW6dM679+Vi24ZEcCcCRVP2XtDcYy0K589kjWlQ=
+    hash: nw7+m4g1vajcmK2aP2YYeVv+K4GL8zyN8l/spdzLDeQ=
   main_improve.blg:
-    timeStamp: 2020-09-11T18:37:40.644Z
+    timeStamp: 2020-09-13T14:48:44.193Z
     jobNames: []
-    hash: vLt625WezKC08GxErDH3Vm57JH8AOb62Oc56/WNNMAs=
+    hash: MwaeauEuFv/dcUdW2jOvesmd7P/UpaerjYn0NPhbpSM=
     type: BibTeXLog
     subType: BibTeX
 rules:

@@ -1,39 +1,5 @@
 \begin{thebibliography}{10}
 
-\bibitem{schroeder}
-Daniel~V. Schroeder.
-\newblock
-  \href{https://physics.weber.edu/schroeder/html5/TutorialPacket.pdf}{Creating
-  Interactive Web Simulations Using HTML5 and JavaScript}.
-
-\bibitem{salcido}
-A.~Calles A.~Salcido, R.~Rechtman.
-\newblock \href{https://rmf.smf.mx/ojs/rmf/article/view/2101/2069}{Simulaciones
-  de modelos de teoría cinética como recursos didácticos}.
-\newblock {\em Revista Mexicana de Física}, 36(1):131--145, 1989.
-
-\bibitem{haro}
-A.~Santos M.~López~de Haro.
-\newblock
-  \href{http://www.eweb.unex.es/eweb/fisteor/andres/publications/Boltzmann_ms.pdf}{Boltzmann
-  y la Segunda Ley}.
-
-\bibitem{gottwald}
-M.~Oliver G.~A.~Gottwald.
-\newblock
-  {\href{http://www.maths.usyd.edu.au/u/gottwald/preprints/kac-ring.pdf}{Boltzmann’s
-  dilemma – an introduction to statistical mechanics via the Kac ring}}.
-
-\bibitem{huang}
-Paul Adrien~Maurice Dirac.
-\newblock {\em The Principles of Quantum Mechanics}.
-\newblock International series of monographs on physics. Clarendon Press, 1981.
-
-\bibitem{pathria}
-PD~Beale RK~Pathria, Rogel-Salazar.
-\newblock {\em Statistical Mechanics, 3rd edn.}
-\newblock Taylor \& Francis, 2011.
-
 \bibitem{allen}
 Michael~P Allen and Dominic~J Tildesley.
 \newblock {\em Computer simulation of liquids}.
@@ -41,8 +7,86 @@ Michael~P Allen and Dominic~J Tildesley.
 
 \bibitem{krauth}
 Werner Krauth.
-\newblock {\em Statistical mechanics: algorithms and computations}, volume~13.
+\newblock {\em Statistical mechanics: algorithms and computations}.
 \newblock OUP Oxford, 2006.
+
+\bibitem{huang}
+Kerson Huang.
+\newblock {\em Statistical Mechanics}.
+\newblock John Wiley \& Sons, 1987.
+
+\bibitem{pathria}
+PD~Beale RK~Pathria, Rogel-Salazar.
+\newblock {\em Statistical Mechanics,}.
+\newblock Taylor \& Francis, 2011.
+
+\bibitem{dorfman}
+J.~R. Dorfman.
+\newblock {\em An Introduction to Chaos in Nonequilibrium Statistical
+  Mechanics}.
+\newblock Cambridge Lecture Notes in Physics. Cambridge University Press, 1999.
+
+\bibitem{sands}
+D~Sands and J~Dunning-Davies.
+\newblock The canonical ensemble and the central limit theorem.
+\newblock {\em arXiv preprint arXiv:0706.0978}, 2007.
+
+\bibitem{salcido}
+A.~Calles A.~Salcido, R.~Rechtman.
+\newblock Simulaciones de modelos de teoría cinética como recursos
+  didácticos.
+\newblock {\em Revista Mexicana de Física}, 36(1):131--145, 1989.
+
+\bibitem{gottwald}
+M.~Oliver G.~A.~Gottwald.
+\newblock Boltzmann’s dilemma – an introduction to statistical mechanics
+  via the kac ring.
+
+\bibitem{haro}
+A.~Santos M.~López~de Haro.
+\newblock Boltzmann y la segunda ley.
+
+\bibitem{groot}
+S.R. De~Groot and P.~Mazur.
+\newblock {\em Non-Equilibrium Thermodynamics}.
+\newblock Dover Books on Physics. Dover Publications, 2013.
+
+\bibitem{dyson}
+Freeman~J. Dyson and Harold Falk.
+\newblock Period of a discrete cat mapping.
+\newblock {\em The American Mathematical Monthly}, 99(7):603--614, 1992.
+
+\bibitem{linas}
+Linas Vepstas.
+\newblock Lattice models and fractal measures.
+\newblock 2008.
+
+\bibitem{arnold}
+V.I. Arnold, K.~Vogtmann, and A.~Weinstein.
+\newblock {\em Mathematical Methods of Classical Mechanics}.
+\newblock Graduate Texts in Mathematics. Springer New York, 2013.
+
+\bibitem{recipesC}
+William~H. Press, Brian~P. Flannery, Saul~A. Teukolsky, and William~T.
+  Vetterling.
+\newblock {\em Numerical Recipes in C: The Art of Scientific Computing}.
+\newblock Cambridge University Press, USA, 1988.
+
+\bibitem{barkema}
+M.E.J. Newman and G.T. Barkema.
+\newblock {\em Monte Carlo Methods in Statistical Physics}.
+\newblock Clarendon Press, 1999.
+
+\bibitem{frenkel}
+Daan Frenkel and Berend Smit.
+\newblock {\em Understanding molecular simulation: from algorithms to
+  applications}, volume~1.
+\newblock Elsevier, 2001.
+
+\bibitem{tejeroProb}
+Carlos~Fern{\'a}ndez Tejero and Juan M~Rodr{\'\i}guez Parrondo.
+\newblock {\em 100 problemas de F{\'\i}sica Estad{\'\i}stica}.
+\newblock Alianza, 1996.
 
 \bibitem{greinier}
 Walter Greiner, Ludwig Neise, and Horst St{\"o}cker.
@@ -61,12 +105,7 @@ G.H. Wannier.
 
 \bibitem{reif}
 F.~Reif.
-\newblock {\em F{\'\i}sica estad{\'\i}stica}.
+\newblock {\em Física estadística}.
 \newblock Number v. 5 in Berkeley physics course. Revert{\'e}, 1996.
-
-\bibitem{ashcroft}
-Neil~W Ashcroft, N~David Mermin, et~al.
-\newblock Solid state physics [by] neil w. ashcroft [and] n. david mermin.,
-  1976.
 
 \end{thebibliography}

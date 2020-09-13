@@ -32,7 +32,7 @@ startBtnMacro.onclick = function() {
         // 'rgba(93, 211, 158, 1)',
         // 'rgba(52, 138, 167, 1)',
         // 'rgba(82, 81, 116, 1)',
-        'rgba(81, 59, 86, 1)'
+        'blue'
     ];
 
     function randomIntFromRange(min, max) {
@@ -128,8 +128,9 @@ startBtnMacro.onclick = function() {
         window.requestAnimationFrame(animate);
         NinSquare[f] = 0;
         frames[f] = f;
-        ctx.fillStyle = opts.bg;
-        ctx.fillRect(0, 0, w, h);
+        // ctx.fillStyle = opts.bg;
+        // ctx.fillRect(0, 0, w, h);
+        ctx.clearRect(0, 0, w, h);
         balls.forEach(function(ball) {
             ball.draw();
             ball.update();
@@ -205,8 +206,26 @@ startBtnMacro.onclick = function() {
 var canvasRect = document.getElementById('canvasMacroCuadrado'),
     ctx2 = canvasRect.getContext('2d'),
     rect = {},
-    drag = false;
+    drag = false,
+    w = canvasRect.width,
+    h = canvasRect.height,
+    client = canvasRect.getBoundingClientRect();
 
+
+drawMarco();
+initRect();
+
+function drawMarco() {
+    ctx2.fillStyle = 'gray';
+    ctx2.fillRect(0, 0, w, h);
+    ctx2.beginPath();
+    ctx2.moveTo(w / 2, 0);
+    ctx2.lineTo(w / 2, h);
+    ctx2.setLineDash([5, 15]);
+    ctx2.lineWidth = 3;
+    ctx2.strokeStyle = 'black';
+    ctx2.stroke();
+}
 
 function initRect() {
     // ctx2.fillStyle = "grey";
@@ -215,13 +234,16 @@ function initRect() {
     canvasRect.addEventListener('mouseup', mouseUp, false);
     canvasRect.addEventListener('mousemove', mouseMove, false);
 
-    // canvasRect.addEventListener('mouseenter', entra);
-    // canvasRect.addEventListener('mouseout', sale);
+    canvasRect.addEventListener('mouseenter', entra);
+    canvasRect.addEventListener('mouseout', sale);
 }
 
 function mouseDown(e) {
-    rect.startX = e.pageX - this.offsetLeft;
-    rect.startY = e.pageY - this.offsetTop;
+    rect.startX = e.offsetX - client.x;
+    rect.startY = e.offsetY - client.y;
+    console.log(rect.startX + ", " + rect.startY);
+    // rect.startX = e.pageX - this.offsetLeft;
+    // rect.startY = e.pageY - this.offsetTop;
     drag = true;
 }
 
@@ -232,11 +254,14 @@ function mouseUp() {
 
 function mouseMove(e) {
     if (drag) {
-        rect.w = (e.pageX - this.offsetLeft) - rect.startX;
-        rect.h = (e.pageY - this.offsetTop) - rect.startY;
-        ctx2.clearRect(0, 0, canvasRect.width, canvasRect.height);
+        rect.w = e.offsetX - client.x;
+        rect.h = e.offsetY - client.y;
+        // rect.w = (e.pageX - this.offsetLeft) - rect.startX;
+        // rect.h = (e.pageY - this.offsetTop) - rect.startY;
+        // ctx2.clearRect(0, 0, canvasRect.width, canvasRect.height);
         draw();
     }
+    console.log(rect.w + ", " + rect.h);
 }
 
 function draw() {

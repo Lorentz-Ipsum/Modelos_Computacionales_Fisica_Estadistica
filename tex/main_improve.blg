@@ -5,46 +5,47 @@ Reallocating 'name_of_file' (item size: 1) to 6 items.
 The style file: unsrt.bst
 Reallocating 'name_of_file' (item size: 1) to 4 items.
 Database file #1: bib.bib
-Warning--I didn't find a database entry for "dyson"
-You've used 13 entries,
+Warning--I didn't find a database entry for "newmann"
+Warning--empty booktitle in linas
+You've used 21 entries,
             1791 wiz_defined-function locations,
-            512 strings with 5181 characters,
-and the built_in function-call counts, 2007 in all, are:
-= -- 165
-> -- 70
+            554 strings with 5763 characters,
+and the built_in function-call counts, 3482 in all, are:
+= -- 294
+> -- 136
 < -- 2
-+ -- 31
-- -- 18
-* -- 65
-:= -- 319
-add.period$ -- 38
-call.type$ -- 13
-change.case$ -- 5
++ -- 56
+- -- 35
+* -- 131
+:= -- 562
+add.period$ -- 66
+call.type$ -- 21
+change.case$ -- 6
 chr.to.int$ -- 0
-cite$ -- 13
-duplicate$ -- 109
-empty$ -- 249
-format.name$ -- 18
-if$ -- 470
+cite$ -- 22
+duplicate$ -- 197
+empty$ -- 407
+format.name$ -- 35
+if$ -- 813
 int.to.chr$ -- 0
-int.to.str$ -- 13
-missing$ -- 17
-newline$ -- 64
-num.names$ -- 13
-pop$ -- 72
+int.to.str$ -- 21
+missing$ -- 34
+newline$ -- 106
+num.names$ -- 21
+pop$ -- 116
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 44
+skip$ -- 62
 stack$ -- 0
-substring$ -- 25
-swap$ -- 15
+substring$ -- 50
+swap$ -- 23
 text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 0
-while$ -- 15
-width$ -- 15
-write$ -- 126
-(There was 1 warning)
+warning$ -- 1
+while$ -- 25
+width$ -- 23
+write$ -- 214
+(There were 2 warnings)

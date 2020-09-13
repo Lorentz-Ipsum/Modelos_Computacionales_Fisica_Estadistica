@@ -55,7 +55,7 @@
             <!-- <li class="nav-item">
               <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
             </li> -->
-            <li class="nav-item dropdown">
+            <li class="nav-item dropdown active">
               <a class="nav-link dropdown-toggle" href="#" id="dropdownApplets" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Applets</a>
               <div class="dropdown-menu" aria-labelledby="dropdownApplets">
                 <a class="dropdown-item" href="Apps.html">Índice de applets</a>
@@ -111,100 +111,122 @@
         <div class="main-content">
           <h2 id="ising">Modelo de Ising</h2>
 
-          El modelo de Ising es un modelo sencillo originalmente propuesto para el estudio de la transición ferromagnética que exhiben muchos metales ordinarios como el hierro o el níquel.
-
-          El ferromagnetismo es la presencia de magnetización espontánea incluso cuando no hay campo magnético externo. Su causa es que una fracción importante de los \textit{momentos
-          magnéticos de los átomos} (o espines) se alinean en una misma dirección,
-          debido a las interacciones entre ellos. Esto provoca que la muestra se imane.
-          Este alineamiento sólo se produce cuando la temperatura de la muestra es inferior a una temperatura característica, llamada <i>temperatura de Curie</i>, $T_C$. Por encima de esta
-          temperatura, las fluctuaciones térmicas son más intensas que la
-          interacción entre momentos magnéticos, por lo que estos se orientan al azar, resultando en un campo magnético neto nulo.
-
-          Un aspecto muy interesante del modelo de Ising es que puede generalizarse fácilmente para estudiar muchos tipos de procesos. Así, no es difícil encontrar el modelo de Ising
-          aplicado a campos como la geofísica, neurociencia, aprendizaje automático
-          (machine-learning) e incluso dinámica social, en el contexto de la sociofísica.
-
-          Este modelo es uno de los mejores ejemplos para empezar a estudiar los conceptos de dimensión crítica, limite termodinámico y transición de fase. En estas simulaciones veremos los
-          tres.
-
+          <p class="text-justify">
+            El modelo de Ising es un modelo sencillo originalmente propuesto para el estudio de la transición ferromagnética que exhiben muchos metales ordinarios como el hierro o el níquel.
+          </p>
+          <p class="text-justify">
+            El ferromagnetismo es la presencia de magnetización espontánea incluso cuando no hay campo magnético externo. Su causa es que una fracción importante de los \textit{momentos
+            magnéticos de los átomos} (o espines) se alinean en una misma dirección,
+            debido a las interacciones entre ellos. Esto provoca que la muestra se imane.
+            Este alineamiento sólo se produce cuando la temperatura de la muestra es inferior a una temperatura característica, llamada <i>temperatura de Curie</i>, $T_C$. Por encima de esta
+            temperatura, las fluctuaciones térmicas son más intensas que la
+            interacción entre momentos magnéticos, por lo que estos se orientan al azar, resultando en un campo magnético neto nulo.
+          </p>
+          <p class="text-justify">
+            Un aspecto muy interesante del modelo de Ising es que puede generalizarse fácilmente para estudiar muchos tipos de procesos. Así, no es difícil encontrar el modelo de Ising
+            aplicado a campos como la geofísica, neurociencia, aprendizaje automático
+            (machine-learning) e incluso dinámica social, en el contexto de la sociofísica.
+          </p>
+          <p class="text-justify">
+            Este modelo es uno de los mejores ejemplos para empezar a estudiar los conceptos de dimensión crítica, limite termodinámico y transición de fase. En estas simulaciones veremos los
+            tres.
+          </p>
           <h3 id="transiciones">Transiciones de fase y magnetización</h3>
 
-          Una transición de fase se produce cuando, en cierto valor de la temperatura (la temperatura crítica, también llamada, en la transición ferro-paramagnético, temperatura de
-          Curie) u otro parámetro, algún potencial termodinamico es no analitico.
-          Cuando esto ocurre, alguna magnitud medible (el calor específico en este caso) presenta una discontinuidad o una divergencia.
-
-          Una de las causas del éxito del modelo de Ising es que es uno de los pocos modelos que presentan una transición de fase que además admite una solución exacta. En este modelo,
-          la transición de fase ocurre entre una fase desordenada o paramagnética a
-          altas temperaturas, y una fase ordenada o ferromagnética a bajas.
-
-          <blockquote class="blockquote w-75">
+          <p class="text-justify">
+            Una transición de fase se produce cuando, en cierto valor de la temperatura (la temperatura crítica, también llamada, en la transición ferro-paramagnético, temperatura de
+            Curie) u otro parámetro, algún potencial termodinamico es no analitico.
+            Cuando esto ocurre, alguna magnitud medible (el calor específico en este caso) presenta una discontinuidad o una divergencia.
+          </p>
+          <p class="text-justify">
+            Una de las causas del éxito del modelo de Ising es que es uno de los pocos modelos que presentan una transición de fase que además admite una solución exacta. En este modelo,
+            la transición de fase ocurre entre una fase desordenada o paramagnética a
+            altas temperaturas, y una fase ordenada o ferromagnética a bajas.
+          </p>
+          <blockquote class="blockquote w-100">
             <h4>Modelo de Ising</h4>
-            Partimos de una red regular cuadrada, en la que cada sitio $i$ de la red está ocupado por un momento magnético $s_i$ que puede tomar los valores $+1$ ó $-1$, según estén
-            alineados paralela o antiparalelamente a un campo magnético externo $B$.
-            Entonces, el hamiltoniano del sistema viene dado por:
 
+            <p class="text-justify">
+              Partimos de una red regular cuadrada, en la que cada sitio $i$ de la red está ocupado por un momento magnético $s_i$ que puede tomar los valores $+1$ ó $-1$, según estén
+              alineados paralela o antiparalelamente a un campo magnético externo $B$.
+              Entonces, el hamiltoniano del sistema viene dado por:
+            </p>
             \begin{equation}\label{eq:isingHam}
             H\left(\left\{s_{i}\right\}\right)=-J \sum_{\langle i, j\rangle} s_{i} s_{j} - B \sum_i s_i
             \end{equation}
 
-            El símbolo $\langle i, j\rangle$ indica que sumamos sólo a los vecinos próximos y $J$ es la energía de interacción entre espines: Cuando $J > 1$ la interacción es
-            ferromagnética y los espines tienden a alinearse paralelamente, mientras que si $J1$ tienden a alinearse antiparalelamente, y decimos que la interacción es antiferromagnética. Cuando $J=0$ los espines no interaccionan entre sí.
+            <p class="text-justify">
+              El símbolo $\langle i, j\rangle$ indica que sumamos sólo a los vecinos próximos y $J$ es la energía de interacción entre espines: Cuando $J > 1$ la interacción es
+              ferromagnética y los espines tienden a alinearse paralelamente, mientras que si $J1$ tienden a alinearse antiparalelamente, y decimos que la interacción es antiferromagnética. Cuando $J=0$ los espines no interaccionan entre sí.
+            </p>
           </blockquote>
-          A lo largo de este trabajo consideraremos que $J>1$. También consideraremos el
-          caso en que no hay campo magnético externo, por lo que el segundo término de \eqref{eq:isingHam} será $0$.
 
-          La forma del hamiltoniano favorece que los espines estén alineados, ya que si $s_i = s_j$ la energía del sistema disminuye una cantidad $J$. Si sólo tuvieramos en cuenta la
-          energía y tratáramos de minimizarla, entonces el sistema siempre llegaría
-          a la fase perfectamente ordenada, pero, como hemos visto en la introducción, debemos tener en cuenta el efecto de la temperatura. La aleatoriedad que introduce la temperatura
-          provoca que los espines puedan cambiar su valor al azar, de forma más
-          intensa cuanto mayor es la temperatura. Este balance entre energía debida a la interacción magnética y temperatura es el que determina la fase del sistema.
-
-          Para estudiar este efecto, empecemos con la magnetización del sistema. La magnetización total será la suma de los valores de todos los momentos magnéticos de la red:
-
+          <p class="text-justify">
+            A lo largo de este trabajo consideraremos que $J>1$. También consideraremos el
+            caso en que no hay campo magnético externo, por lo que el segundo término de \eqref{eq:isingHam} será $0$.
+          </p>
+          <p class="text-justify">
+            La forma del hamiltoniano favorece que los espines estén alineados, ya que si $s_i = s_j$ la energía del sistema disminuye una cantidad $J$. Si sólo tuvieramos en cuenta la
+            energía y tratáramos de minimizarla, entonces el sistema siempre llegaría
+            a la fase perfectamente ordenada, pero, como hemos visto en la introducción, debemos tener en cuenta el efecto de la temperatura. La aleatoriedad que introduce la temperatura
+            provoca que los espines puedan cambiar su valor al azar, de forma más
+            intensa cuanto mayor es la temperatura. Este balance entre energía debida a la interacción magnética y temperatura es el que determina la fase del sistema.
+          </p>
+          <p class="text-justify">
+            Para estudiar este efecto, empecemos con la magnetización del sistema. La magnetización total será la suma de los valores de todos los momentos magnéticos de la red:
+          </p>
           \begin{equation}\label{eq:isingMagDef}
           M = \left \langle \sum_i s_i \right \rangle
           \end{equation}
 
-          De forma estadística, utilizamos la colectividad canónica por medio de la función de partición:
-
+          <p class="text-justify">
+            De forma estadística, utilizamos la colectividad canónica por medio de la función de partición:
+          </p>
           \begin{equation}\label{eq:isingPartic}
           Z(T,B) = \sum_{s_1} \sum_{s_2}...\sum_{s_N} \exp \left( -\frac{H(\{s_i\})}{k_B T} \right)
           \end{equation}
 
-          a partir de la cual se puede calcular la magnetización como <a href="Bibliografia.html#allen">allen</a>:
-
+          <p class="text-justify">
+            a partir de la cual se puede calcular la magnetización como <a href="../Bibliografia.html#ref-allen">[allen]</a>:
+          </p>
           \begin{equation}\label{eq:isingMagnet}
           M = - \frac{1}{k_B T} \left( \frac{\partial \ln Z}{\partial B} \right)_ {B=0}
           \end{equation}
 
-          Se puede comprobar fácilmente que la expresión \eqref{eq:isingMagnet} coincide con \eqref{eq:isingMagDef}.
-
-          Si calculamos \eqref{eq:isingPartic} y \eqref{eq:isingMagnet} en el caso unidimensional, se puede comprobar que <i>no existe transición de fase</i>, los efectos del
-          desorden inducido por la temperatura son siempre dominantes. Sin embargo, en 2
-          o más dimensiones sí que existe la transición de fase. En dos dimensiones, el cálculo de \eqref{eq:isingPartic} y \eqref{eq:isingMagnet} es posible aunque complicado
-          <a href="Bibliografia.html#huang">huang</a>. Se encuentra que la temperatura de transición está en:
-
+          <p class="text-justify">
+            Se puede comprobar fácilmente que la expresión \eqref{eq:isingMagnet} coincide con \eqref{eq:isingMagDef}.
+          </p>
+          <p class="text-justify">
+            Si calculamos \eqref{eq:isingPartic} y \eqref{eq:isingMagnet} en el caso unidimensional, se puede comprobar que <i>no existe transición de fase</i>, los efectos del
+            desorden inducido por la temperatura son siempre dominantes. Sin embargo, en 2
+            o más dimensiones sí que existe la transición de fase. En dos dimensiones, el cálculo de \eqref{eq:isingPartic} y \eqref{eq:isingMagnet} es posible aunque complicado
+            <a href="../Bibliografia.html#ref-huang">[huang]</a>. Se encuentra que la temperatura de transición está en:
+          </p>
           $$
           \frac{J}{k_B T_C} \equiv j_C = 0.4407
           $$
 
-          En esta ecuación hemos definido $j \equiv \frac{J}{k_B T_C}$, que es el único parámetro relevante al tomar $B=0$.
-
+          <p class="text-justify">
+            En esta ecuación hemos definido $j \equiv \frac{J}{k_B T_C}$, que es el único parámetro relevante al tomar $B=0$.
+          </p>
           <hr>
 
-          En esta simulación realizamos un cálculo de Monte-Carlo (ver apéndice \ref{sec:metropolis}) del modelo de Ising en dos dimensiones. Se puede elegir el \button{Tamaño de la
-          red}, la \button{Configuración inicial de espines} y la \button{Constante
-          de interacción $j$}, que equivale a fijar una temperatura para el sistema. Al pulsar \button{Start} comienza la simulación.
-
-          En el panel de la izquierda se muestran los espines ($s_i = +1$ en amarillo y $s_i = -1$ en azul), y en el de la derecha la magnetización frente a la temperatura. La línea
-          azul está localizada en la temperatura crítica $T_C$.
-
-          Cuando la temperatura es alta ($j$ pequeño) la magnetización se relaja rápidamente a su valor de equilibrio, fluctuando alrededor de $0$. En temperaturas cercanas a la
-          crítica, $T \simeq T_C$ ó $j \simeq j_C$, la relajación es más lenta, ya que
-          se forman correlaciones de largo alcance y las fluctuaciones son más importantes, pero sigue tendiendo a un estado de equilibrio en que $M=0$. Para temperaturas muy por
-          debajo de la crítica, sin embargo, el valor de la magnetización en el estado
-          de equilibrio toma un valor definido, y para temperaturas muy bajas todos los espines tienden a alinearse en la misma dirección.
-
+          <p class="text-justify">
+            En esta simulación realizamos un cálculo de Monte-Carlo (ver apéndice \ref{sec:metropolis}) del modelo de Ising en dos dimensiones. Se puede elegir el \button{Tamaño de la
+            red}, la \button{Configuración inicial de espines} y la \button{Constante
+            de interacción $j$}, que equivale a fijar una temperatura para el sistema. Al pulsar \button{Start} comienza la simulación.
+          </p>
+          <p class="text-justify">
+            En el panel de la izquierda se muestran los espines ($s_i = +1$ en amarillo y $s_i = -1$ en azul), y en el de la derecha la magnetización frente a la temperatura. La línea
+            azul está localizada en la temperatura crítica $T_C$.
+          </p>
+          <p class="text-justify">
+            Cuando la temperatura es alta ($j$ pequeño) la magnetización se relaja rápidamente a su valor de equilibrio, fluctuando alrededor de $0$. En temperaturas cercanas a la
+            crítica, $T \simeq T_C$ ó $j \simeq j_C$, la relajación es más lenta, ya que
+            se forman correlaciones de largo alcance y las fluctuaciones son más importantes, pero sigue tendiendo a un estado de equilibrio en que $M=0$. Para temperaturas muy por
+            debajo de la crítica, sin embargo, el valor de la magnetización en el estado
+            de equilibrio toma un valor definido, y para temperaturas muy bajas todos los espines tienden a alinearse en la misma dirección.
+          </p>
           <hr>
           <!-- El applet empieza aqui -->
           <div style="text-align: center">
@@ -305,35 +327,41 @@
             <hr>
             <h3 id="lt">Dimensionalidad y límite termodinámico</h3>
 
-            Este experimento quiere ilustrar dos conceptos muy importantes en física: el de <b>dimensionalidad</b> de un sistema, y el de <b>límite termodinámico</b>.
-
-            La dimensionalidad es relevante en el Modelo de Ising porque la transición de fase descrita antes no existe en sistemas unidimensionales, sólo aparece en 2 o más
-            dimensiones.
-            El límite termodinámico consiste en considerar que el número de grados de libertad tiende a infinito, pero manteniendo la densidad constante.
-            Es necesario para la no analiticidad, una suma finita de términos analíticos siempre será analítica, pero en una suma infinita puede aparecer no analiticidad.
-
-            Para ilustrar estos conceptos queremos calcular el calor específico del modelo de Ising de forma exacta en redes de tamaño $N_x \times N_y$. Variando estos parámetros
-            podemos simular distintos aspectos: $N_x=1$ simula una red unidimensional, y
-            cuanto más cercanos sean $N_x$ y $N_y$, más cerca estaremos de una red bidimensional perfecta. Aumentando ambos nos acercamos al límite termodinámico.
-
-            Hay que hacer notar, que el código de esta simulación no calcula directamente el calor específico: Los datos han sido calculados previamente con un programa más potente
-            en C <a href="Bibliografia.html#recipesC">recipesC</a>, proporcionado por el tutor y muy similar a uno
-            utilizado en la asignatura de Transiciones de Fase y Fenómenos Críticos <a href="Bibliografia.html#barkema">barkema</a>, y luego tratados para que el programa los dibuje. La causa de esto es que se trata
-            de un cálculo extremadamente costoso, incluso para redes pequeñas como las
-            presentadas aquí. Hay que sumar las $2^{(NxN)}$ configuraciones del sistema para calcular la función de partición, e iterar hasta llegar al equilibrio. Entonces es cuando
-            podremos calcular el calor específico, pero el proceso no acaba ahí: habrá
-            que repetir todo el cálculo para cada temperatura para obtener la gráfica.
-
+            <p class="text-justify">
+              Este experimento quiere ilustrar dos conceptos muy importantes en física: el de <b>dimensionalidad</b> de un sistema, y el de <b>límite termodinámico</b>.
+            </p>
+            <p class="text-justify">
+              La dimensionalidad es relevante en el Modelo de Ising porque la transición de fase descrita antes no existe en sistemas unidimensionales, sólo aparece en 2 o más
+              dimensiones.
+              El límite termodinámico consiste en considerar que el número de grados de libertad tiende a infinito, pero manteniendo la densidad constante.
+              Es necesario para la no analiticidad, una suma finita de términos analíticos siempre será analítica, pero en una suma infinita puede aparecer no analiticidad.
+            </p>
+            <p class="text-justify">
+              Para ilustrar estos conceptos queremos calcular el calor específico del modelo de Ising de forma exacta en redes de tamaño $N_x \times N_y$. Variando estos parámetros
+              podemos simular distintos aspectos: $N_x=1$ simula una red unidimensional, y
+              cuanto más cercanos sean $N_x$ y $N_y$, más cerca estaremos de una red bidimensional perfecta. Aumentando ambos nos acercamos al límite termodinámico.
+            </p>
+            <p class="text-justify">
+              Hay que hacer notar, que el código de esta simulación no calcula directamente el calor específico: Los datos han sido calculados previamente con un programa más potente
+              en C <a href="../Bibliografia.html#ref-recipesC">[recipesC]</a>, proporcionado por el tutor y muy similar a uno
+              utilizado en la asignatura de Transiciones de Fase y Fenómenos Críticos <a href="../Bibliografia.html#ref-barkema">[barkema]</a>, y luego tratados para que el programa los dibuje. La causa de esto es que se trata
+              de un cálculo extremadamente costoso, incluso para redes pequeñas como las
+              presentadas aquí. Hay que sumar las $2^{(NxN)}$ configuraciones del sistema para calcular la función de partición, e iterar hasta llegar al equilibrio. Entonces es cuando
+              podremos calcular el calor específico, pero el proceso no acaba ahí: habrá
+              que repetir todo el cálculo para cada temperatura para obtener la gráfica.
+            </p>
             <hr>
 
-            Podemos elegir \button{$N_x$} y \button{$N_y$}, y pulsando en \button{Calcular} se dibuja el calor específico por partícula. Por defecto se dibujan además los calores
-            específicos exactos para las redes infinitas en $1$ y $2$ dimensiones. Se puede
-            ver que para la red unidimensional, el calor específico es una función analítica (igual que en las simulaciones que realizamos para redes bidimensionales, ya que se trata
-            de aproximaciones), mientras que para el caso bidimensional perfecto
-            aparece una divergencia en $T_C \approx 2.269$. Las unidades de simulación son $J/k_B = 1$.
-
-            Se sugiere hacer varias experiencias:
-
+            <p class="text-justify">
+              Podemos elegir \button{$N_x$} y \button{$N_y$}, y pulsando en \button{Calcular} se dibuja el calor específico por partícula. Por defecto se dibujan además los calores
+              específicos exactos para las redes infinitas en $1$ y $2$ dimensiones. Se puede
+              ver que para la red unidimensional, el calor específico es una función analítica (igual que en las simulaciones que realizamos para redes bidimensionales, ya que se trata
+              de aproximaciones), mientras que para el caso bidimensional perfecto
+              aparece una divergencia en $T_C \approx 2.269$. Las unidades de simulación son $J/k_B = 1$.
+            </p>
+            <p class="text-justify">
+              Se sugiere hacer varias experiencias:
+            </p>
             <ul class="list-group">
               <li class="list-group-item">Calcular todas las redes cuadradas, desde la $2\times 2$ a la $5\times 5$, para ver cómo el máximo de $c_V$ se aproxima a $T_C$.</li>
               <li class="list-group-item">Calcular distintas redes con un número similar de espines, por ejemplo $1 \times 24$, $2 \times 12$, $3 \times 8$, $4 \times 6$ y $5 \times 5$. Así se observa cómo</li>
