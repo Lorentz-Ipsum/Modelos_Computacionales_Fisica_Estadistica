@@ -28,36 +28,9 @@
         padding: 45px 0 0 0;
       }
 
-      /* Create three equal columns that floats next to each other */
-      .column {
-        float: left;
-        width: 50%;
-      }
-
-      /* Clear floats after the columns */
-      .row:after {
-        content: "";
-        display: table;
-        clear: both;
-      }
-
-      /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
-      @media screen and (max-width: 600px) {
-        .column {
-          width: 100%;
-        }
-
-        .container {
-          display: flex;
-        }
-
-        .fixed {
-          width: 300px;
-        }
-
-        .flex-item {
-          flex-grow: 1;
-        }
+      blockquote {
+        font-size: 16px !important;
+        font-style: italic;
       }
     </style>
     <style media="screen">
@@ -95,7 +68,7 @@
             <li class="nav-item dropdown active">
               <a class="nav-link dropdown-toggle" href="#" id="dropdownApplets" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Applets</a>
               <div class="dropdown-menu" aria-labelledby="dropdownApplets">
-                <a class="dropdown-item" href="Apps.html">Índice de applets</a>
+
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="LimiteCentral.html">Teorema del límite central</a>
                 <div class="dropdown-divider"></div>
@@ -108,8 +81,8 @@
                 <a class="dropdown-item" href="Transformaciones.html#arnold">Transformación de Arnold</a>
                 <div class="dropdown-divider"></div>
                 <h6 class="dropdown-header">Gas ideal</h6>
-                <a class="dropdown-item" href="Gas.html#fluctuaciones">Expansión libre de un gas</a>
-                <a class="dropdown-item" href="Gas.html#macro">Colectividad macrocanónica</a>
+                <a class="dropdown-item" href="Fluctuaciones.html">Expansión libre de un gas</a>
+                <a class="dropdown-item" href="Macrocanonica.html">Colectividad macrocanónica</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="Bosefermi.html">Estadísticas de bosones y fermiones</a>
                 <div class="dropdown-divider"></div>
@@ -156,13 +129,13 @@
             teoría de
             la
             información.
-
+          </p>
           <p class="text-justify">
             Veremos los casos particulaes en que las transformaciones actúan sobre el espacio de dos dimensiones, aunque es posible generalizarlas a un número mayor. La primera es la <i>Transformación del panadero</i>
             (llamada así porque es similar a una
             técnica usada para estirar la masa de la harina). La segunda es la <i>transformación de Arnold</i> (<i>Arnold's Cat Map</i>, ya que Arnold ejemplificó su modelo con la imagen de un gato). Ambas son ejemplos
             de caos determinista y son ergódicas.
-
+          </p>
           <h3 id="panadero">Transformación del panadero</h3>
 
           <p class="text-justify">
@@ -170,58 +143,69 @@
             región $[0,1/2] \times [0,2]$. Entonces, la
             parte de la imagen que sale del cuadrado unidad ($x >1$) se corta y se coloca en la parte superior del intervalo $[0,1]$, restableciendo el cuadrado. La expresión matemática de la transformación para un
             punto $(x,y)$ es:
+          </p>
+          \begin{equation}\label{eq:panadero}
+          \begin{array}{l}
+          {x^{\prime}=2 x(\bmod 1)} \\
+          y^{\prime}=\left\{
+          \begin{array}{ll}
+          {y / 2} & {\text { si } x<1 / 2} \\ {y / 2+1 / 2} & {\text { si } x>1 / 2}
+            \end{array}\right.
+            \end{array}
+            \end{equation}
 
-            \begin{equation}\label{eq:panadero}
-            \begin{array}{l}
-            {x^{\prime}=2 x(\bmod 1)} \\
-            y^{\prime}=\left\{
-            \begin{array}{ll}
-            {y / 2} & {\text { si } x<1 / 2} \\ {y / 2+1 / 2} & {\text { si } x>1 / 2}
-              \end{array}\right.
-              \end{array}
-              \end{equation}
+            <p class="text-justify">
+              Puede verificarse de manera sencilla que esta transformación conserva el área del espacio $\Gamma$.
+              Esta transformación es ergódica y <i>strong mixing</i>, que quiere decir que al cabo de pocas iteraciones los puntos del espacio de fases se han redistribuido uniformemente.
+            </p>
+            <hr>
 
-              <p class="text-justify">
-                Puede verificarse de manera sencilla que esta transformación conserva el área del espacio $\Gamma$.
-                Esta transformación es ergódica y <i>strong mixing</i>, que quiere decir que al cabo de pocas iteraciones los puntos del espacio de fases se han redistribuido uniformemente.
-
-                <hr>
-
-              <p class="text-justify">
-                El funcionamiento applet es muy sencillo, se puede elegir la \button{Imagen} inicial y pulsando el botón \button{Itera} se aplica la transformación. Tras unas cuantas iteraciones, los puntos de la figura
-                inicial se han distribuido por todo el
-                espacio formando una imagen homogénea.
-
-              <p class="text-justify">
-                Una de las opciones es el <i>invariante de Ising-Tartan</i> <a href="../Bibliografia.html#ref-linas">[linas]</a>, un patrón fractal que queda invariante bajo la acción de la transformación del panadero. Debido a la naturaleza discreta
-                de
-                las
-                simulaciones por ordenador, esto no ocurre
-                en el applet que presentamos. Si bien es cierto que en las primeras iteraciones la imagen se mantiene casi idéntica, pero al cabo de unas pocas se mezcla como las demás opciones.
-
-                <hr>
-                <!-- El applet empieza aqui -->
-              <form class=" form-group card card-body bg-light" style="text-align: center">
-                <div class="container">
-                  <canvas id="canvasBaker" width="400" height="400" style="position:absolute"></canvas>
-                  <canvas id="canvasBaker2" width="400" height="400" style="position:relative"></canvas>
-                </div>
-                <!-- BOTONERA -->
-                <div class="container">
-                  <div class="form-group col-md-12">
-                    <label for="imageSelect">Imagen:</label>
+            <p class="text-justify">
+              El funcionamiento applet es muy sencillo, se puede elegir la <button type="button" class="btn btn-info btn-sm">Imagen</button> inicial y pulsando el botón <button type="button" class="btn btn-primary btn-sm">Itera</button> se aplica
+              la transformación. Tras unas cuantas iteraciones, los puntos de la figura
+              inicial se han distribuido por todo el
+              espacio formando una imagen homogénea.
+            </p>
+            <p class="text-justify">
+              Una de las opciones es el <i>invariante de Ising-Tartan</i> <a href="../Bibliografia.html#ref-linas">[linas]</a>, un patrón fractal que queda invariante bajo la acción de la transformación del panadero. Debido a la naturaleza discreta
+              de
+              las
+              simulaciones por ordenador, esto no ocurre
+              en el applet que presentamos. Si bien es cierto que en las primeras iteraciones la imagen se mantiene casi idéntica, pero al cabo de unas pocas se mezcla como las demás opciones.
+            </p>
+            <hr>
+            <!-- El applet empieza aqui -->
+            <form class="form-group card card-body bg-light" style="text-align: center">
+              <div class="container">
+                <canvas id="canvasBaker" width="400" height="400" style="position:absolute"></canvas>
+                <canvas id="canvasBaker2" width="400" height="400" style="position:relative"></canvas>
+              </div>
+            </form>
+            <!-- BOTONERA -->
+            <form name="botonera" class="card card-body bg-light">
+              <div data-name="imagen" class="form-group">
+                <div class="row" style="text-align: right">
+                  <div class="col-md-2">
+                    <label class="font-weight-bold" for="imageSelect">Imagen:</label>
+                  </div>
+                  <div class="col-md-10">
                     <select id="imageSelect" name="imageSelect" onchange="reImage()" class="form-control">
                       <option value="0">f(x)</option>
                       <option value="1">Invariante Ising-Tartan</option>
                       <option value="2">Gato</option>
                     </select>
                   </div>
-                  <div>
+                </div>
+              </div>
+              <div data-name="botones" class="form-group">
+                <div class="row" style="text-align: center">
+                  <div class="col-md-12">
                     <input id="bakerBtn" value="Itera" type="button" class="btn btn-primary">
                     <input id="remapBtnBaker" value="Reset" type="button" class="btn btn-danger">
                   </div>
                 </div>
-              </form>
+              </div>
+            </form>
         </div>
 
         <!-- CAMBIO DE APPLET -->
@@ -306,10 +290,11 @@
           <hr>
 
           <p class="text-justify">
-            En este applet, además de la \button{Imagen}, se pueden elegir tres de los cuatro \button{Elementos de matriz} de $T$. El cuarto se determina automáticamente a partir de la condición de $\det{T} = 1$.
+            En este applet, además de la <button type="button" class="btn btn-info btn-sm">Imagen</button>, se pueden elegir tres de los cuatro <button type="button" class="btn btn-info btn-sm">Elementos de matriz</button> de $T$. El cuarto se
+            determina automáticamente a partir de la condición de $\det{T} = 1$.
             Los valores elegidos por defecto son los que
             aparecen en la mayoría de referencias y los que usó Arnold.
-            Pulsando en las \button{Flechas} se aplica o se deshace la transformación.
+            Pulsando en las <button type="button" class="btn btn-primary btn-sm">Flechas</button> se aplica o se deshace la transformación.
             Se recomienda probar con todas las matrices presentadas, y comprobar sus efectos sobre la imágen.
           </p>
           <p class="text-justify">
@@ -318,7 +303,8 @@
             temprano se volverá a obtener la imagen original, a no ser que se aplique una matriz problemática como las comentadas. Hay que tener cuidado, ya que al no poder controlar el cuarto elemento de matriz,
             puede ser que se elijan valores que den un
             comportamiento patológico sin saberlo.
-            Si la matriz elegida lo permite, se puede ver la aplicación repetida de la transformación hasta obtener la imagen original pulsando el botón \button{Itera hasta restablecer la imágen original}.
+            Si la matriz elegida lo permite, se puede ver la aplicación repetida de la transformación hasta obtener la imagen original pulsando el botón <button type="button" class="btn btn-warning btn-sm">Itera hasta restablecer la imágen
+              original</button>.
           </p>
           <p class="text-justify">
             De todas las simulaciones de este trabajo, esta es la que más problemas ha dado a la hora de corregir <i>bugs</i>, e incluso en el día de presentar esta memoria no se han podido resolver todos. Una
@@ -333,31 +319,77 @@
             <div style="margin: 20px 0">
               <canvas id="vis" width="400" height="400"></canvas>
             </div>
-            <!-- BOTONERA -->
-            <div id="controls">
-              <p class="text-justify">Iteration currently showing: <span id="iteration-count">1</span></p>
-              <p class="text-justify">
-                <input type="button" value="&lt;&lt;" id="step-back" class="btn btn-primary" />
-                <input type="button" value="&gt;&gt;" id="step-forward" class="btn btn-primary" />
-                <input type="button" value="Itera hasta restablecer la imágen original" id="play" class="btn btn-warning" />
-                <input type="button" value="Reset" id="reset" onclick="resetData()" class="btn btn-danger" />
-              </p>
-            </div>
-            <div class="form-group col-md-12">
-              <label for="imageSelectArnold">Imagen:</label>
-              <select id="imageSelectArnold" name="imageSelectArnold" onchange="resetData()" class="form-control">
-                <option value="0">f(x)</option>
-                <option value="1">Invariante Ising-Tartan</option>
-                <option value="2">Gato</option>
-              </select>
-            </div>
-            <label for="t11">T11:</label>
-            <input type="number" id="t11" class="form-control" name="t11" value="2" step="0.1" onchange="changeValsT()"></br>
-            <label for="t12">T12:</label>
-            <input type="number" id="t12" class="form-control" name="t12" value="1" step="0.1" onchange="changeValsT()"></br>
-            <label for="t21">T21:</label>
-            <input type="number" id="t21" class="form-control" name="t21" value="1" step="0.1" onchange="changeValsT()"></br>
+            <p class="text-center font-weight-bold">Iteración actual: <span id="iteration-count">1</span></p>
           </form>
+          <!-- BOTONERA -->
+          <form name="botonera" class="card card-body bg-light">
+            <div data-name="sector" class="form-group">
+              <div class="row" style="text-align: center">
+                <div class="col-md-12">
+                  <input type="button" value="&lt;&lt;" id="step-back" class="btn btn-primary" />
+                  <input type="button" value="&gt;&gt;" id="step-forward" class="btn btn-primary" />
+                  <input type="button" value="Reset" id="reset" onclick="resetData()" class="btn btn-danger" />
+                  <input type="button" value="Itera hasta restablecer la imágen original" id="play" class="btn btn-warning" />
+                </div>
+              </div>
+            </div>
+            <div data-name="imagen" class="form-group">
+              <div class="row" style="text-align: right">
+                <div class="col-md-2">
+                  <label class="font-weight-bold" for="imageSelectArnold">Imagen:</label>
+                </div>
+                <div class="col-md-10">
+                  <select id="imageSelectArnold" name="imageSelectArnold" onchange="resetData()" class="form-control">
+                    <option value="0">f(x)</option>
+                    <option value="1">Invariante Ising-Tartan</option>
+                    <option value="2">Gato</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div data-name="t11" class="form-group">
+              <div class="row" style="text-align: right">
+                <div class="col-md-3">
+                  <label class="font-weight-bold" for="t11">T11:</label>
+                </div>
+                <div class="col-md-9">
+                  <input type="number" id="t11" class="form-control" name="t11" value="2" step="0.1" onchange="changeValsT()"></br>
+                </div>
+              </div>
+            </div>
+            <div data-name="t12" class="form-group">
+              <div class="row" style="text-align: right">
+                <div class="col-md-3">
+                  <label class="font-weight-bold" for="t12">T12:</label>
+                </div>
+                <div class="col-md-9">
+                  <input type="number" id="t12" class="form-control" name="t12" value="1" step="0.1" onchange="changeValsT()"></br>
+                </div>
+              </div>
+            </div>
+            <div data-name="t22" class="form-group">
+              <div class="row" style="text-align: right">
+                <div class="col-md-3">
+                  <label class="font-weight-bold" for="t21">T21:</label>
+                </div>
+                <div class="col-md-9">
+                  <input type="number" id="t21" class="form-control" name="t21" value="1" step="0.1" onchange="changeValsT()"></br>
+                </div>
+              </div>
+            </div>
+          </form>
+          <!-- Controles para siguiente y anterior simulacion -->
+          <hr>
+          <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+              <li class="page-item">
+                <a class="page-link previous" href="Osciladores.html" tabindex="-1">Anterior</a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="Fluctuaciones.html">Siguiente</a>
+              </li>
+            </ul>
+          </nav>
         </div>
       </div>
     </div> <!-- Final del contenedor -->

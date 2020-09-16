@@ -22,6 +22,11 @@
       body {
         padding: 45px 0 0 0;
       }
+
+      blockquote {
+        font-size: 16px !important;
+        font-style: italic;
+      }
     </style>
     <style media="screen">
       .main-content {
@@ -57,7 +62,7 @@
             <li class="nav-item dropdown active">
               <a class="nav-link dropdown-toggle" href="#" id="dropdownApplets" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Applets</a>
               <div class="dropdown-menu" aria-labelledby="dropdownApplets">
-                <a class="dropdown-item" href="Apps.html">Índice de applets</a>
+
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="LimiteCentral.html">Teorema del límite central</a>
                 <div class="dropdown-divider"></div>
@@ -70,8 +75,8 @@
                 <a class="dropdown-item" href="Transformaciones.html#arnold">Transformación de Arnold</a>
                 <div class="dropdown-divider"></div>
                 <h6 class="dropdown-header">Gas ideal</h6>
-                <a class="dropdown-item" href="Gas.html#fluctuaciones">Expansión libre de un gas</a>
-                <a class="dropdown-item" href="Gas.html#macro">Colectividad macrocanónica</a>
+                <a class="dropdown-item" href="Fluctuaciones.html">Expansión libre de un gas</a>
+                <a class="dropdown-item" href="Macrocanonica.html">Colectividad macrocanónica</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="Bosefermi.html">Estadísticas de bosones y fermiones</a>
                 <div class="dropdown-divider"></div>
@@ -184,7 +189,8 @@
           <hr>
 
           <p class="text-justify">
-            En el applet podemos elegir \button{N} y \button{M}. También las \button{Fases iniciales}, todas iguales o aleatorias, y la \button{Distribución de frecuencias}:
+            En el applet podemos elegir <button type="button" class="btn btn-info btn-sm">N</button> y <button type="button" class="btn btn-info btn-sm">M</button>. También las <button type="button" class="btn btn-info btn-sm">Fases
+              iniciales</button>, todas iguales o aleatorias, y la <button type="button" class="btn btn-info btn-sm">Distribución de frecuencias</button>:
           </p>
           <ul class="list-group">
             <li class="list-group-item">Aleatorias, de forma que $r_{ij}$ es en buena medida inconmensurable.</li>
@@ -198,7 +204,8 @@
             entropía normalizada del sistema, según la fórmula \eqref{eq:oscS}, con un factor de normalización dado por la entropía máxima \eqref{eq:oscSmax}, de forma que dicha entropía máxima corresponde al valor $1$.
           </p>
           <p class="text-justify">
-            Una vez ajustados los parámetros deseados, hay que pulsar \button{Reset} para inicializarlos antes de pulsar \button{Inicia} para iniciar la simulación. Cuando partimos de fases iniciales nulas la entropía empieza
+            Una vez ajustados los parámetros deseados, hay que pulsar <button type="button" class="btn btn-danger btn-sm">Reset</button> para inicializarlos antes de pulsar <button type="button" class="btn btn-primary btn-sm">Inicia</button> para
+            iniciar la simulación. Cuando partimos de fases iniciales nulas la entropía empieza
             siendo baja, y aumenta según los
             osciladores se distribuyen por la circunferencia. Cuando las frecuencias son aleatorias, llega a un valor máximo y no decrece salvo pequeñas fluctuaciones, que son más pequeñas cuanto mayor es el número de
             osciladores. Por otro lado, cuando las
@@ -212,7 +219,8 @@
             confirma una de las ideas de Boltzmann acerca de la irreversibilidad: La evolución temporal a estados de desorden se produce porque partimos de sistemas muy ordenados.
           </p>
           <p class="text-justify">
-            El botón \button{Histograma} calcula el histograma de la distribución del logaritmo de las frecuencias, mostrando que se comportan de manera exponencial <a href="../Bibliografia.html#ref-groot">[groot]</a> según la fórmula de Einstein:
+            El botón <button type="button" class="btn btn-warning btn-sm">Histograma</button> calcula el histograma de la distribución del logaritmo de las frecuencias, mostrando que se comportan de manera exponencial <a
+                href="../Bibliografia.html#ref-groot">[groot]</a> según la fórmula de Einstein:
             $N(S) =
             \exp{S/k_B}.$
           </p>
@@ -223,10 +231,10 @@
             Una posible ampliación a este modelo es el Modelo de Kuramoto, en el que se introduce cierto acoplo entre osciladores, de forma que cuando dos de ellos están cerca sus frecuencias tienden a igualarse, induciéndose
             así comportamientos colectivos.
           </p>
-
+          <hr>
           <!-- El applet empieza aqui -->
           <div style="text-align: center">
-            <div class="class= card card-body bg-light">
+            <div class="card card-body bg-light">
               <div class="row">
                 <div class="col-md">
                   <canvas id="canvasSec" width="400" height="400" style="position:absolute;">
@@ -243,42 +251,89 @@
             </div>
             <br>
             <!-- BOTONERA -->
-            <form class="class= card card-body bg-light">
-              <div class="form-group col-md-12">
-                <label>Numero de osciladores: &nbsp;<span id="numeroLectura">20</span></label>
-                <input type="range" id="numeroSlider" class="slider custom-range" name="numeroSlider" onchange="updateNum()" min="1" max="100" value="20" step="1">
+            <form name="botonera" class="card card-body bg-light">
+              <div data-name="numero" class="form-group">
+                <div class="row" style="text-align: right">
+                  <div class="col-md-4">
+                    <label class="font-weight-bold">Numero de osciladores: &nbsp;<span id="numeroLectura">20</span></label>
+                  </div>
+                  <div class="col-md-8">
+                    <input id="numeroSlider" type="range" class="slider custom-range" name="numeroSlider" onchange="updateNum()" min="1" max="100" value="20" step="1">
+                  </div>
+                </div>
               </div>
-              <div class="form-group col-md-12">
-                <label>Numero de sectores: &nbsp;<span id="sectorLectura">5</span></label>
-                <input type="range" id="sectorSlider" class="slider custom-range" name="sectorSlider" onchange="updateSec()" min="1" max="100" value="5" step="1">
+              <div data-name="sector" class="form-group">
+                <div class="row" style="text-align: right">
+                  <div class="col-md-4">
+                    <label class="font-weight-bold">Numero de sectores: &nbsp;<span id="sectorLectura">5</span></label>
+                  </div>
+                  <div class="col-md-8">
+                    <input id="sectorSlider" type="range" class="slider custom-range" name="sectorSlider" onchange="updateSec()" min="1" max="100" value="5" step="1">
+                  </div>
+                </div>
               </div>
-              <div class="form-group col-md-12">
-                <label for="freqSelect">Frecuencias iniciales:</label>
-                <select id="freqSelect" name="freqSelect" onchange="updateFreq()" class="form-control">
-                  <option value="0">Aleatorias</option>
-                  <option value="1">Casi iguales</option>
-                  <option value="2">Equiespaciadas</option>
-                </select>
+              <div data-name="frecuencias" class="form-group">
+                <div class="row" style="text-align: right">
+                  <div class="col-md-4">
+                    <label class="font-weight-bold" for="freqSelect">Frecuencias iniciales:</label>
+                  </div>
+                  <div class="col-md-8">
+                    <select id="freqSelect" name="freqSelect" onchange="updateFreq()" class="form-control">
+                      <option value="0">Aleatorias</option>
+                      <option value="1">Casi iguales</option>
+                      <option value="2">Equiespaciadas</option>
+                    </select>
+                  </div>
+                </div>
               </div>
-              <div class="form-group col-md-12">
-                <label for="faseSelect">Fases iniciales:</label>
-                <select id="faseSelect" name="faseSelect" onchange="updateFase()" class="form-control">
-                  <option value="0">Aleatorias</option>
-                  <option value="1">Nulas</option>
-                </select>
+              <div data-name="fases" class="form-group">
+                <div class="row" style="text-align: right">
+                  <div class="col-md-4">
+                    <label class="font-weight-bold" for="faseSelect">Fases iniciales:</label>
+                  </div>
+                  <div class="col-md-8">
+                    <select id="faseSelect" name="faseSelect" onchange="updateFase()" class="form-control">
+                      <option value="0">Aleatorias</option>
+                      <option value="1">Nulas</option>
+                    </select>
+                  </div>
+                </div>
               </div>
-              <div class="form-group col-md-12">
-                <label>Velocidad: &nbsp;<span id="velocidadLectura">1</span></label>
-                <input type="range" id="velocidadSlider" class="slider custom-range" name="velocidadSlider" onchange="updateVel()" min="1" max="10" value="1" step="1">
+              <div data-name="velocidad" class="form-group">
+                <div class="row" style="text-align: right">
+                  <div class="col-md-4">
+                    <label class="font-weight-bold">Velocidad: &nbsp;<span id="velocidadLectura">1</span></label>
+                  </div>
+                  <div class="col-md-8">
+                    <input type="range" id="velocidadSlider" class="slider custom-range" name="velocidadSlider" onchange="updateVel()" min="1" max="10" value="1" step="1">
+                  </div>
+                </div>
               </div>
-              <div class="form-group col-md-12">
-                <input id="startButton" type="button" onclick="startStop()" value="  Start  " class="btn btn-primary">
-                <input id="resetButton" type="button" onclick="resetPlot()" value="  Reset  " class="btn btn-danger">
-                <!-- Boton que abra el modal de bootstrap -->
-                <button class="btn btn-warning" type="button" data-toggle="modal" data-target="#myModal" id="histBtn" onclick="plotHist()">Histograma</button>
+              <div data-name="botones" class="form-group">
+                <div class="row" style="text-align: center">
+                  <div class="col-md-12">
+                    <input id="startButton" type="button" onclick="startStop()" value="  Start  " class="btn btn-primary">
+                    <input id="resetButton" type="button" onclick="resetPlot()" value="  Reset  " class="btn btn-danger">
+                    <!-- Boton que abra el modal de bootstrap -->
+                    <button class="btn btn-warning" type="button" data-toggle="modal" data-target="#myModal" id="histBtn" onclick="plotHist()">Histograma</button>
+                  </div>
+                </div>
               </div>
             </form>
           </div>
+
+          <!-- Controles para siguiente y anterior simulacion -->
+          <hr>
+          <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+              <li class="page-item">
+                <a class="page-link previous" href="Kac.html" tabindex="-1">Anterior</a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="Transformaciones.html">Siguiente</a>
+              </li>
+            </ul>
+          </nav>
         </div>
       </div>
       <!-- Modal -->
@@ -304,7 +359,6 @@
               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
           </div>
-
         </div>
       </div>
     </div>

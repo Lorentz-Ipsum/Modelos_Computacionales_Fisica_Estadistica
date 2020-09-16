@@ -33,9 +33,12 @@ var i = 0,
     ring = [],
     S = [],
     X0 = [],
-    X = [];
+    X = [],
+    addSolution = false,
+    Xsolution = [];
 
 var numsTrace = [],
+    solutionTrace = [],
     data = [],
     layout = [],
     config = [];
@@ -66,7 +69,20 @@ function simulate() {
                 opacity: 0.7
             }
         };
-        data = [numsTrace];
+        if (addSolution) {
+            Xsolution.push(Math.pow(1 - 2 * m / n, i + 1) * dif[0]);
+        };
+        solutionTrace = {
+            x: frames,
+            y: Xsolution,
+            mode: 'lines',
+            line: {
+                color: 'rgb(255,0,0)',
+                width: 1,
+                opacity: 0.7
+            }
+        };
+        data = [numsTrace, solutionTrace];
         Plotly.newPlot(graph, data, layout, config);
 
         X = anilloStep(X, S);
@@ -290,6 +306,12 @@ function resetPlot() {
     drawExt(S, X0);
     drawInt(X0);
     X = X0;
+    if (Number(state) == 1 || Number(state) == 2 || Number(state) == 3) {
+        addSolution = true;
+    } else {
+        addSolution = false;
+    };
+    Xsolution = [];
     // Generar el anillo externo y las divisiones, dibujarlos
 }
 

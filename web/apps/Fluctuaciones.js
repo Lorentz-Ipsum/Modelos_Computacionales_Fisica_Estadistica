@@ -1,92 +1,87 @@
-// Variables del canvas
-var canvas = document.getElementById('canvasFluctuaciones'),
-    ctx = canvas.getContext('2d'),
-    canvasMarco = document.getElementById('canvasFluctuacionesMarco'),
-    ctxMarco = canvasMarco.getContext('2d'),
-    w = canvas.width = window.innerWidth,
-    h = canvas.height = window.innerHeight,
-    wMarco = canvasMarco.width,
-    hMarco = canvasMarco.height,
+// Variables del canvasFluc
+var canvasFluc = document.getElementById('canvasFluctuaciones'),
+    ctxFluc = canvasFluc.getContext('2d'),
+    canvasFlucMarco = document.getElementById('canvasFluctuacionesMarco'),
+    ctxFlucMarco = canvasFlucMarco.getContext('2d'),
+    w = canvasFluc.width,
+    h = canvasFluc.height,
+    wMarco = canvasFluc.width,
+    hMarco = canvasFluc.height,
     defRadius = document.getElementById('defradius');
 
-var running = false;
+var kTFluc = tempFluctuaciones.value,
+    checkBoxFluc = conInterFluc.checked;
 
-var kT = tempFluctuaciones.value;
+var runningFluc = false;
 
-var balls = [];
+var ballsFluc = [];
 
 var Ndif = [],
     Nleft = [],
     Nright = [],
-    frames = [];
-var f = 0;
-var vel = 0;
+    FramesFluc = [];
+var tFluc = 0;
+var vel = 10;
 
-var opts = {
+var optsFluc = {
     // bg: "white",
-    ballsAmount: nFluctuaciones.value,
+    ballsFlucAmount: nFluctuaciones.value,
     lineWidth: 3
 };
 
 Ball.prototype = {
-    draw: function() {
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
-        ctx.fillStyle = this.color;
-        ctx.strokeStyle = this.color;
-        ctx.lineWidth = opts.lineWidth;
-        ctx.fill();
-        // ctx.stroke();
-        ctx.closePath();
+    drawFluc: function() {
+        ctxFluc.beginPath();
+        ctxFluc.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
+        ctxFluc.fillStyle = this.color;
+        ctxFluc.strokeStyle = this.color;
+        ctxFluc.lineWidth = optsFluc.lineWidth;
+        ctxFluc.fill();
+        // ctxFluc.stroke();
+        ctxFluc.closePath();
     },
     update: function() {
         this.x += this.direction.x * this.speed;
         this.y += this.direction.y * this.speed;
-        for (var i = 0; i < balls.length; i++) {
-            if (balls[i] === this) continue;
-            var distance = getDistance(this.x, this.y, balls[i].x, balls[i].y);
-            if (distance - (this.radius + balls[i].radius) < 0) {
-                this.direction.x = (this.x - balls[i].x) / distance; //get new cosinus
-                this.direction.y = (this.y - balls[i].y) / distance; //get new sinus
+
+        if (checkBoxFluc) {
+            for (var i = 0; i < ballsFluc.length; i++) {
+                if (ballsFluc[i] === this) continue;
+                var distance = getDistance(this.x, this.y, ballsFluc[i].x, ballsFluc[i].y);
+                if (distance - (this.radius + ballsFluc[i].radius) < 0) {
+                    this.direction.x = (this.x - ballsFluc[i].x) / distance; //get new cosinus
+                    this.direction.y = (this.y - ballsFluc[i].y) / distance; //get new sinus
+                }
             }
-        }
+        };
         if (this.x - this.radius < 0 || this.x + this.radius > w) {
             this.direction.x = -this.direction.x;
-        }
+        };
         if (this.y - this.radius < 0 || this.y + this.radius > h) {
             this.direction.y = -this.direction.y;
-        }
+        };
     }
 };
 
-drawMarco();
-plotPart(frames, Ndif);
-init();
-animate();
-simulate();
+resetFluc();
+simulateFluc();
+
+
+
+
+
+
+
+
 
 /////////////////////////////
 // DEFINICION DE FUNCIONES //
 /////////////////////////////
 
-// Funcion para dibujar el marco
-function drawMarco() {
-    ctxMarco.fillStyle = 'white';
-    ctxMarco.fillRect(0, 0, wMarco, hMarco);
-    ctxMarco.beginPath();
-    ctxMarco.moveTo(wMarco / 2, 0);
-    ctxMarco.lineTo(wMarco / 2, hMarco);
-    ctxMarco.setLineDash([5, 15]);
-    ctxMarco.lineWidth = 3;
-    ctxMarco.strokeStyle = 'black';
-    ctxMarco.stroke();
-}
-
-
 // Funcion para empezar o pausar la simulacion
 function startStopFluc() {
-    running = !running;
-    if (running) {
+    runningFluc = !runningFluc;
+    if (runningFluc) {
         console.log("START");
         i = 0;
         startBtnFluc.value = " Pause ";
@@ -98,84 +93,76 @@ function startStopFluc() {
 
 // Funcion para restaurar la grafica
 function resetFluc() {
-    running = false;
+    kTFluc = tempFluctuaciones.value;
+    checkBoxFluc = conInterFluc.checked;
+    runningFluc = false;
     startBtnFluc.value = " Start ";
-    opts.ballsAmount = nFluctuaciones.value;
-    frames = [];
-    balls = [];
+    optsFluc.ballsFlucAmount = nFluctuaciones.value;
+    ballsFluc = [];
+
     Ndif = [];
     Nleft = [];
     Nright = [];
-    plotPart(frames, Ndif);
-    drawMarco();
-    init();
-    animate();
-}
-
-
-function init() {
-    for (var i = 0; i < opts.ballsAmount; i++) {
-        var radius = 10; // randomIntFromRange(10, h / 10);
-        var x = randomIntFromRange(radius, w / 2 - radius);
-        var y = randomIntFromRange(radius, h - radius);
-        var color = 'rgba(81, 59, 86, 1)';
+    FramesFluc = [];
+    tFluc = 0;
+    for (var i = 0; i < optsFluc.ballsFlucAmount; i++) {
+        var radius = 6; // randomIntFromRangeFluc(10, h / 10);
+        var x = randomIntFromRangeFluc(radius, w / 2 - radius);
+        var y = randomIntFromRangeFluc(radius, h - radius);
+        var color = 'blue';
 
         if (i !== 0) {
-            for (var j = 0; j < balls.length; j++) {
-                // console.log(j);
-                if (getDistance(x, y, balls[j].x, balls[j].y) - (radius + balls[j].radius) < 0) {
-                    x = randomIntFromRange(radius, w / 2 - radius);
-                    y = randomIntFromRange(radius, h - radius);
+            for (var j = 0; j < ballsFluc.length; j++) {
+                if (getDistance(x, y, ballsFluc[j].x, ballsFluc[j].y) - (radius + ballsFluc[j].radius) < 0) {
+                    x = randomIntFromRangeFluc(radius, w / 2 - radius);
+                    y = randomIntFromRangeFluc(radius, h - radius);
                     j = -1;
                 }
             }
         }
-        balls.push(new Ball(x, y, radius, color));
-    }
-};
-
-function animate() {
-    Ndif[f] = 0;
-    Nleft[f] = 0;
-    Nright[f] = 0;
-    frames[f] = f;
-    ctx.clearRect(0, 0, w, h);
-    // ctx.fillStyle = opts.bg;
-    // ctx.fillRect(0, 0, w, h);
-    balls.forEach(function(ball) {
-        ball.draw();
-        ball.update();
-        if (ball.x + ball.radius / 2 <= w / 2) {
-            Nleft[f]++;
-        } else {
-            Nright[f]++;
-        }
-    });
-    Ndif[f] = Nleft[f] - Nright[f];
-    plotPart(frames, Ndif);
-    f++;
-};
+        ballsFluc.push(new Ball(x, y, radius, color));
+    };
+    drawBackFluc();
+    plotPart(FramesFluc, Ndif);
+}
 
 // Funcion del bucle de la simulacion
-function simulate() {
-    if (running) {
-        animate();
+function simulateFluc() {
+    if (runningFluc) {
+        animateFluc();
     }
-    window.setTimeout(simulate, 0.1); //Aqui iria el ajuste de velocidad
+    window.setTimeout(simulateFluc, vel); //Aqui iria el ajuste de velocidad
 }
 
-function randomIntFromRange(min, max) {
-    return Math.floor(min + Math.random() * (max - min + 1));
-}
+function animateFluc() {
+    Ndif[tFluc] = 0;
+    Nleft[tFluc] = 0;
+    Nright[tFluc] = 0;
+    FramesFluc[tFluc] = tFluc;
 
-function getDistance(x1, y1, x2, y2) {
-    return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
-}
+    ctxFluc.clearRect(0, 0, w, h);
 
-function Boltzmann(kT) {
-    vel = Math.sqrt(-2.0 * Math.log(1.0 - Math.random()));
-    return vel * Math.sqrt(kT);
-}
+    ballsFluc.forEach(function(ball) {
+        ball.drawFluc();
+        ball.update();
+        if (ball.x < w / 2) {
+            Nleft[tFluc]++;
+        } else {
+            Nright[tFluc]++;
+        }
+    });
+    Ndif[tFluc] = Nleft[tFluc] - Nright[tFluc];
+    plotPart(FramesFluc, Ndif);
+    tFluc++;
+};
+
+
+
+
+
+
+
+
 
 function Ball(x, y, radius, color) {
     this.x = x;
@@ -187,14 +174,48 @@ function Ball(x, y, radius, color) {
     };
     this.radius = radius;
     this.color = color;
-    this.speed = Boltzmann(kT); //5; //randomIntFromRange(1, 2) / 2;
+    this.speed = Boltzmann(kTFluc); //5; //randomIntFromRangeFluc(1, 2) / 2;
+}
+
+function randomIntFromRangeFluc(min, max) {
+    return Math.floor(min + Math.random() * (max - min + 1));
+}
+
+function getDistance(x1, y1, x2, y2) {
+    return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+}
+
+function Boltzmann(kTFluc) {
+    vel = Math.sqrt(-2.0 * Math.log(1.0 - Math.random()));
+    return vel * Math.sqrt(kTFluc);
+}
+
+
+
+
+
+
+
+
+
+// Funcion para dibujar el marco
+function drawBackFluc() {
+    ctxFlucMarco.fillStyle = 'lightgray';
+    ctxFlucMarco.fillRect(0, 0, w, h);
+    ctxFlucMarco.beginPath();
+    ctxFlucMarco.moveTo(w / 2, 0);
+    ctxFlucMarco.lineTo(w / 2, h);
+    ctxFlucMarco.setLineDash([5, 15]);
+    ctxFlucMarco.lineWidth = 3;
+    ctxFlucMarco.strokeStyle = 'black';
+    ctxFlucMarco.stroke();
 }
 
 // Funcion para plotear la diferencia de particulas en graphFluctuaciones
-function plotPart(frames, Ndif) {
+function plotPart(FramesFluc, Ndif) {
     // Trazas
     var numsTrace = {
-        x: frames,
+        x: FramesFluc,
         y: Ndif,
         mode: 'lines',
         name: 'Diferencia',
@@ -211,7 +232,58 @@ function plotPart(frames, Ndif) {
         font: {
             size: 15
         },
-        plot_bgcolor: 'rgb(223, 223, 223)'
+        plot_bgcolor: 'rgb(223, 223, 223)',
+        shapes: [
+            //Line Horizontal
+            {
+                type: 'line',
+                x0: 0,
+                y0: Math.sqrt(optsFluc.ballsFlucAmount),
+                x1: FramesFluc.length,
+                y1: Math.sqrt(optsFluc.ballsFlucAmount),
+                line: {
+                    color: 'rgb(50,50,50,)',
+                    width: 1,
+                    dash: 'dashdot'
+                }
+            },
+            {
+                type: 'line',
+                x0: 0,
+                y0: -Math.sqrt(optsFluc.ballsFlucAmount),
+                x1: FramesFluc.length,
+                y1: -Math.sqrt(optsFluc.ballsFlucAmount),
+                line: {
+                    color: 'rgb(50,50,50,)',
+                    width: 1,
+                    dash: 'dashdot'
+                }
+            },
+            {
+                type: 'line',
+                x0: 0,
+                y0: 3 * Math.sqrt(optsFluc.ballsFlucAmount),
+                x1: FramesFluc.length,
+                y1: 3 * Math.sqrt(optsFluc.ballsFlucAmount),
+                line: {
+                    color: 'rgb(50,50,50,)',
+                    width: 1,
+                    dash: 'dot'
+                }
+            },
+            {
+                type: 'line',
+                x0: 0,
+                y0: -3 * Math.sqrt(optsFluc.ballsFlucAmount),
+                x1: FramesFluc.length,
+                y1: -3 * Math.sqrt(optsFluc.ballsFlucAmount),
+                line: {
+                    color: 'rgb(50,50,50,)',
+                    width: 1,
+                    dash: 'dot'
+                }
+            },
+        ],
     };
     var config = {
         staticPlot: true,
@@ -219,4 +291,30 @@ function plotPart(frames, Ndif) {
     }
 
     Plotly.newPlot('graphFluctuaciones', data, layout, config);
+}
+
+function plotHistFluc() {
+    // Trazas
+    var numsTrace = {
+        x: Ndif,
+        type: "histogram",
+        histnorm: 'probability',
+        name: 'Diferencia',
+    };
+    var data = [numsTrace];
+    var layout = {
+        autosize: true,
+        title: 'Diferencia de números',
+        font: {
+            size: 15
+        },
+        plot_bgcolor: 'rgb(223, 223, 223)'
+    };
+
+    var config = {
+        staticPlot: true,
+        responsive: true,
+    }
+
+    Plotly.newPlot('graphHistFluc', data, layout, config);
 }

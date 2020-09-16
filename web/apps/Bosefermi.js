@@ -7,88 +7,72 @@ var ctxBackFer = canvasBackFer.getContext("2d");
 var canvasFrontFer = document.getElementById("canvasFrontFermi");
 var ctxFrontFer = canvasFrontFer.getContext("2d");
 
+var running = false;
+var marginVert = 20,
+    marginHor = 20,
+    anchura = canvasBackBos.width,
+    altura = canvasBackBos.height,
+    paso = 100;
+var f, N, beta, Niv, radio, occB, occF, hisB, hisF, levelshift, maxHistB, maxHistF, sumB, sumF;
 
-$('input[type=checkbox][name=test]').change(function(e) {
-    if (this.checked) {
+resetSim();
+simulate();
+
+function simulate() {
+    if (running) {
         /* START */
         console.log("START");
-        var f = 0;
+        var coord = montecarlo(Niv, occB, occF, hisB, hisF, sumB, sumF, maxHistB, maxHistF, beta, levelshift, radio, anchura, altura, marginVert);
+        plotFront(coord, radio);
+        plotHist(hisB, hisF)
+    }
+    window.setTimeout(simulate, 10);
+}
 
-        // Variables de los sliders
-        var N = n.value,
-            beta = 2 / temperatura.value,
-            Niv = niveles.value;
-
-        var corriendo = false;
-        var activo = true;
-        var kT = 0.5;
-        var radio = 7;
-        var velocidad = 1;
-        // var Niv = 20;
-        var occB = []; // Ocupación de los niveles bosónicos. 0, 1, 2 ... partículas
-        var occF = [];
-        var hisB = [];
-        var hisF = [];
-
-
-        var marginVert = 30,
-            marginHor = 20;
-        var anchura = canvasBackBos.width;
-        var altura = canvasBackBos.height;
-        var levelshift = (canvasBackBos.height - 2 * marginVert) / Niv;
-
-        plotBack(Niv, anchura, levelshift, marginHor, marginVert);
-
-        // Inicializa
-        var maxHistB = 0.0;
-        var maxHistF = 0.0;
-        var sumB = 0.0;
-        var sumF = 0.0;
-        for (var i = 0; i < Niv; i++) {
-            if (i < N) {
-                occF[i] = 1;
-                occB[i] = 1;
-            } else {
-                occF[i] = 0;
-                occB[i] = 0;
-            }
-            hisF[i] = 0;
-            hisB[i] = 0;
-        }
-
-        var sumB = 0.0;
-        var sumF = 0.0;
-        var paso = 100;
-
-        // LOOP DE PLOT
-        ///////////////
-        interval = setInterval(function() {
-
-            // Botón del histograma. Cuando se pulsa debe pausarse la simulación
-            var coord = montecarlo(Niv, occB, occF, hisB, hisF, sumB, sumF, maxHistB, maxHistF, beta, levelshift, radio, anchura, altura, marginVert);
-            plotFront(coord, radio);
-            // histBosBtn.onclick = function() {
-            //     plotHistBos(hisB);
-            // };
-            // plotHistBos(hisB);
-            // histFerBtn.onclick = function() {
-            //     plotHistFer(hisF);
-            // };
-            // plotHistFer(hisF);
-            plotHist(hisB, hisF)
-
-            // Repite
-            console.log("Fin de iteración " + f++);
-        }, vel);
+// Funcion para empezar o pausar la simulacion
+function startStop() {
+    running = !running;
+    if (running) {
+        console.log("START");
+        startButton.value = " Pause ";
+        // reset();
     } else {
-        console.log("STOP");
-        clearInterval(interval);
-    };
+        startButton.value = "Resume";
+    }
+}
 
-});
+function resetSim() {
+    f = 0;
+    N = n.value;
+    beta = 2 / temperatura.value;
+    Niv = niveles.value;
+    radio = 7;
+    occB = []; // Ocupación de los niveles bosónicos. 0, 1, 2 ... partículas
+    occF = [];
+    hisB = [];
+    hisF = [];
+    levelshift = (canvasBackBos.height - 2 * marginVert) / Niv;
+    plotBack(Niv, anchura, levelshift, marginHor, marginVert);
+    // Inicializa
+    maxHistB = 0.0;
+    maxHistF = 0.0;
+    sumB = 0.0;
+    sumF = 0.0;
+    for (var i = 0; i < Niv; i++) {
+        if (i < N) {
+            occF[i] = 1;
+            occB[i] = 1;
+        } else {
+            occF[i] = 0;
+            occB[i] = 0;
+        }
+        hisF[i] = 0;
+        hisB[i] = 0;
+    }
+    plotHist(hisB, hisF);
+}
 
-
-// Funciones de plot
+// Funcion para dibujar los histogramas
 function plotHist(hisB, hisF) {
     var freqB = [],
         freqF = [],
@@ -104,176 +88,98 @@ function plotHist(hisB, hisF) {
     var traceB = {
         x: levels,
         y: freqB,
-        type: "markers",
+        type: "lines",
     };
     var traceF = {
         x: levels,
         y: freqF,
-        xaxis: 'x2',
-        yaxis: 'y2',
-        type: "markers",
+        type: "lines",
+        line: {
+            color: "orange",
+        }
     };
-    var data = [traceB, traceF];
-    var layout = {
-        grid: {
-            rows: 1,
-            columns: 2,
-            pattern: 'independent'
-        },
-        title: "Histogramas de ocupación",
-        xaxis: {
-            title: "Nivel de energía"
-        },
-        yaxis: {
-            title: "Frecuencia Bosones"
-        },
-        yaxis2: {
-            title: "Frecuencia Fermiones"
-        },
-        xaxis2: {
-            title: "Nivel de energía"
-        },
-        // autosize: true,
-        annotations: [{
-                text: "Histograma Bosones",
-                font: {
-                    size: 16,
-                    color: 'blue',
-                },
-                showarrow: false,
-                align: 'center',
-                x: 0.2,
-                y: 1.4,
-                xref: 'paper',
-                yref: 'paper',
-            },
-            {
-                text: "Histograma Fermiones",
-                font: {
-                    size: 16,
-                    color: 'orange',
-                },
-                showarrow: false,
-                align: 'center',
-                x: 0.8,
-                y: 1.4,
-                xref: 'paper',
-                yref: 'paper',
-            }
-        ],
-    };
-    var dataB = [traceB];
-    var dataF = [traceF];
+    var dataB = [traceB],
+        dataF = [traceF];
 
     var layoutB = {
-        title: "Histogramas de ocupación",
+        title: "Ocupación de bosones",
         xaxis: {
             title: "Nivel de energía"
         },
         yaxis: {
             title: "Frecuencia Bosones"
+        },
+        margin: {
+            l: 40,
+            r: 10,
+            t: 40,
+            b: 30,
+        },
+    };
+    var layoutF = {
+        title: "Ocupación de fermiones",
+        xaxis: {
+            title: "Nivel de energía"
+        },
+        yaxis: {
+            title: "Frecuencia Fermiones"
+        },
+        margin: {
+            l: 40,
+            r: 10,
+            t: 40,
+            b: 30,
         },
     };
     var config = {
         staticPlot: true,
         responsive: true,
-    }
+    };
 
     // Plotly.newPlot("graph", data, layout, config);
     Plotly.newPlot("graphBos", dataB, layoutB, config);
-}
-
-function plotHistBos(hisB) {
-    var freq = [],
-        levels = [],
-        max = Math.max.apply(Math, hisB);
-    for (var i = 0; i < hisB.length; i++) {
-        levels[i] = i + 1;
-        freq[i] = hisB[i] / max;
-    }
-    var trace = {
-        x: levels,
-        y: freq,
-        type: "markers",
-    };
-    var data = [trace];
-
-    var layout = {
-        title: "Histograma Bosones"
-    };
-
-    Plotly.newPlot("graphBos", data, layout);
-}
-
-function plotHistFer(hisF) {
-    var freq = [],
-        levels = [],
-        max = Math.max.apply(Math, hisF);
-    for (var i = 0; i < hisF.length; i++) {
-        levels[i] = i + 1;
-        freq[i] = hisF[i] / max;
-    }
-    var trace = {
-        x: levels,
-        y: hisF,
-        type: "markers",
-        histnorm: 'probability',
-    };
-    var data = [trace];
-
-    var layout = {
-        title: "histograma Fermiones"
-    };
-
-    Plotly.newPlot("graphFer", data, layout);
+    Plotly.newPlot("graphFer", dataF, layoutF, config);
 }
 
 function plotBack(Niv, anchura, levelshift, marginHor, marginVert) {
+
 
     ctxBackBos.setTransform(1, 0, 0, 1, 0, 0);
     ctxBackBos.clearRect(0, 0, canvasBackBos.width, canvasBackBos.height);
     ctxBackBos.fillStyle = "white";
     ctxBackBos.fillRect(0, 0, canvasBackBos.width, canvasBackBos.height);
 
-    ctxBackBos.font = "14px Times";
+    ctxBackBos.font = "12px Times";
     ctxBackBos.fillStyle = "black";
 
     ctxBackFer.setTransform(1, 0, 0, 1, 0, 0);
     ctxBackFer.clearRect(0, 0, canvasBackFer.width, canvasBackFer.height);
     ctxBackFer.fillStyle = "white";
     ctxBackFer.fillRect(0, 0, canvasBackFer.width, canvasBackFer.height);
+    ctxBackFer.font = "12px Times";
+    ctxBackFer.fillStyle = "black";
 
     for (var i = 0; i < Niv; i++) {
-
-        var levelHeight = levelshift * i + marginVert;
-
-        // bosones.Recta(70.0, n3, (anchura - 70), n3);
-        // fermiones.Recta(80.0, n3, (anchura - 80), n3);
-
-        var x1b = marginHor;
-        var y1b = levelHeight;
-        var x2b = anchura - 2 * marginHor;
-        var y2b = levelHeight;
-
-        var x1f = marginHor;
-        var y1f = levelHeight;
-        var x2f = anchura - 2 * marginHor;
-        var y2f = levelHeight;
-
-        ctxBackBos.beginPath();
-        ctxBackBos.moveTo(x1b, y1b);
-        ctxBackBos.lineTo(x2b, y2b);
+        var step = levelshift * i + 2 * marginVert;
+        var levelHeight = levelshift * (i - 1 / 3) + marginVert;
+        var x1 = marginHor;
+        var y1 = altura - step + radio;
+        var x2 = anchura - 2 * marginHor;
+        var y2 = altura - step + radio;
+        ctxBackBos.beginPath(); // Bosones
+        ctxBackBos.moveTo(x1, y1);
+        ctxBackBos.lineTo(x2, y2);
         ctxBackBos.lineWidth = 3;
         ctxBackBos.strokeStyle = 'black';
         ctxBackBos.stroke();
-        ctxBackBos.fillText(Niv - i, x1b + 5, y1b + levelshift / 2);
-
-        ctxBackFer.beginPath();
-        ctxBackFer.moveTo(x1f, y1f);
-        ctxBackFer.lineTo(x2f, y2f);
+        ctxBackBos.fillText(i, x2 + 10, y1 + levelshift / 4);
+        ctxBackFer.beginPath(); // Fermiones
+        ctxBackFer.moveTo(x1, y1);
+        ctxBackFer.lineTo(x2, y2);
         ctxBackFer.lineWidth = 3;
         ctxBackFer.strokeStyle = 'black';
         ctxBackFer.stroke();
+        ctxBackFer.fillText(i, x2 + 10, y1 + levelshift / 4);
     }
 }
 
@@ -346,13 +252,11 @@ function montecarlo(Niv, occB, occF, hisB, hisF, sumB, sumF, maxHistB, maxHistF,
             for (var j = 1; j <= occB[i]; ++j) {
                 Xbos.push(anchura / 2 + xpos * (j - 1) - radio - occB[i] * xpos / 2);
                 Ybos.push(altura - step + radio);
-                // bosones.Imagen(bolaB, (anchura / 2 + n4 * (j - 1) - radio - occB[i] * n4 / 2), (step + 2 * radio));
             }
         }
         if (occF[i] != 0) {
             Xfer.push(anchura / 2 - 1.5 * radio);
             Yfer.push(altura - step + radio);
-            // fermiones.Imagen(bolaF, anchura / 2 - 1.5 * radio, (step + 2 * radio));
         }
     };
     return [Xbos, Ybos, Xfer, Yfer, hisB, hisF];

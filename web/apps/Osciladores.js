@@ -9,7 +9,7 @@ var freqSelect = document.getElementById('freqSelect');
 var faseSelect = document.getElementById('faseSelect');
 var n = nSlider.value,
     m = mSlider.value,
-    vel = 1000;
+    vel = velocidadSlider.value;
 var freq = faseSelect.value;
 var fase = faseSelect.value;
 
@@ -23,6 +23,7 @@ var faseSelect = document.querySelector('#faseSelect');
 var speedSelect = document.querySelector('#speedSelect');
 var w = canvasSec.width;
 
+// Variables de la simulacion
 var frames = [],
     dif = [];
 var f = 0;
@@ -34,35 +35,40 @@ var freqArr = osc[0],
     faseArr = osc[1],
     arrS = [],
     histo = [];
-for (var i = 0; i < barras; i++) {
+
+// Inicializar variables
+for (var i = 0; i < barras + 1; i++) {
     histo[i] = 0;
 }
 var maxHist = 0;
 arrS.push(getEntropy(m, faseArr));
 histo[Math.floor(arrS[0] * barras)]++;
 
+// Empieza la
+updateNum();
+updateSec();
+updateVel();
 drawSec(m);
 plotNormEntropy(f, arrS);
-
 simulate();
 
-//////////////////////////
-// FUNCIONES DE CALCULO //
-//////////////////////////
 
+
+/////////////////////////////
+// FUNCIONES DE SIMULACION //
+/////////////////////////////
+
+// Funcion del bucle principal
 function simulate() {
     if (running) {
         drawOsc(faseArr);
         plotNormEntropy(f, arrS);
         faseArr = stepOsc(freqArr, faseArr);
         arrS.push(getEntropy(m, faseArr));
-        histo[Math.floor(arrS[f] * barras)]++;
-        if (histo[f] > maxHist) {
-            maxHist = histo[f];
-        };
-        console.log("Fin de iteración " + f++);
+        histo[Math.floor(arrS[f] * barras)]++; // Suma 1 en histo, en el valor de entropia correspondiente
+        f++;
     }
-    window.setTimeout(simulate, vel); //Aqui iria el ajuste de velocidad
+    window.setTimeout(simulate, vel); // Ajuste de velocidad
 }
 
 // Funcion para empezar o pausar la simulacion
@@ -95,42 +101,25 @@ function resetPlot() {
     for (var i = 0; i < barras; i++) {
         histo[i] = 0;
     }
-    var maxHist;
+    maxHist = 0;
     arrS.push(getEntropy(m, faseArr));
     histo[Math.floor(arrS[0] * barras)]++;
-
     drawSec(m);
     drawOsc(faseArr);
     plotNormEntropy(f, arrS);
 }
 
-// Funcion para actualizar la lectura de N
-function updateNum() {
-    nLectura.textContent = Number(nSlider.value);
-    n = nSlider.value;
-}
 
-// Funcion para actualizar la lectura de M
-function updateSec() {
-    mLectura.textContent = Number(mSlider.value);
-    m = mSlider.value;
-}
 
-// Funcion para actualizar la lectura de la velocidad
-function updateVel() {
-    vLectura.textContent = Number(vSlider.value);
-    vel = (1 / Math.pow(vSlider.value, 5)) * 1000;
-}
 
-// Funcion para actualizar el tipo de distribucion de frecuencias
-function updateFreq() {
-    freq = freqSelect.value;
-}
 
-// Funcion para actualizar el tipo de distribucion de fases
-function updateFase() {
-    fase = faseSelect.value;
-}
+
+
+
+
+//////////////////////////
+// FUNCIONES DE CALCULO //
+//////////////////////////
 
 // Funcion que genera el array de osciladores
 function generaOsc(n, freq, fase) {
@@ -206,6 +195,14 @@ function getEntropy(m, faseArr) {
     S = -S / Smax;
     return S;
 }
+
+
+
+
+
+
+
+
 
 ///////////////////////
 // FUNCIONES DE PLOT //
@@ -317,7 +314,8 @@ function plotHist() {
         Ns = [];
     for (var i = threshold; i < barras; i++) {
         S.push(i / barras);
-        Ns.push(Math.log(histo[i]));
+        Ns.push(histo[i] / maxHist);
+        // NsForm.push(Math.exp(S));
     }
     var numsTrace = {
         x: S,
@@ -325,7 +323,11 @@ function plotHist() {
         mode: 'markers',
         name: 'Diferencia',
     };
-    var data = [numsTrace];
+    var solTrace = {
+        x: arrS,
+        type: 'histogram',
+    };
+    var data = [solTrace];
     var layout = {
         width: 450,
         title: 'Logaritmo',
@@ -345,4 +347,41 @@ function plotHist() {
         responsive: true,
     }
     Plotly.newPlot('graphHist', data, layout, config);
+}
+
+
+
+
+
+
+///////////////////////////
+// FUNCIONES DE INTERFAZ //
+///////////////////////////
+
+// Funcion para actualizar la lectura de N
+function updateNum() {
+    nLectura.textContent = Number(nSlider.value);
+    n = nSlider.value;
+}
+
+// Funcion para actualizar la lectura de M
+function updateSec() {
+    mLectura.textContent = Number(mSlider.value);
+    m = mSlider.value;
+}
+
+// Funcion para actualizar la lectura de la velocidad
+function updateVel() {
+    vLectura.textContent = Number(vSlider.value);
+    vel = (1 / Math.pow(vSlider.value, 5)) * 1000;
+}
+
+// Funcion para actualizar el tipo de distribucion de frecuencias
+function updateFreq() {
+    freq = freqSelect.value;
+}
+
+// Funcion para actualizar el tipo de distribucion de fases
+function updateFase() {
+    fase = faseSelect.value;
 }

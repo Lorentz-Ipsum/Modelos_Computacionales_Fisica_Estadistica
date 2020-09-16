@@ -57,14 +57,15 @@ for (var i = 0; i < sizeX; i++) {
 }
 // Inizializar la magnetizacion
 var imanacion = Array(2);
-var imanacionX = [],
-    imanacionY = [];
+var imanacionX = [], // Esto sera la temperatura
+    imanacionY = []; // Esto sera el valor total de la imanacion
 imanacion = [imanacionX, imanacionY];
-for (var i = 0; i < 50; i++) {
-    imanacion[0][i] = i / 50;
+for (var i = 0; i < 1001; i++) {
+    imanacion[0][i] = i / 100;
     imanacion[1][i] = 0;
 }
 
+plotMag();
 simulate(); // let 'er rip!
 
 // Function to carry out the simulation:
@@ -79,23 +80,23 @@ function simulate() {
             if ((eDiff <= 0) || (Math.random() < Math.exp(-eDiff / T))) { // Metropolis algorithm
                 s[i][j] *= -1;
                 colorSquare(i, j);
-            }
-        }
+            };
+        };
         for (var i = 0; i < sizeX; i++) {
             for (var j = 0; j < sizeY; j++) {
                 if (s[i][j] == 1) {
-                    imanacion[1][Math.floor(T * 10)]++;
+                    imanacion[1][Math.floor(T * 100)]++;
                 } else {
-                    imanacion[1][Math.floor(T * 10)]--;
-                }
-            }
-        }
+                    imanacion[1][Math.floor(T * 100)]--;
+                };
+            };
+        };
         if (pixelGraphics) context.putImageData(image, 0, 0); // blast the image to the screen
-        plotMag(imanacion);
+        plotMag();
         stepCount += stepsPerFrame;
         var elapsedTime = ((new Date()).getTime() - startTime) / 1000; // time in seconds
         // speedReadout.innerHTML = Number(stepCount / elapsedTime).toFixed(0);
-    }
+    };
     window.setTimeout(simulate, 1); // come back in 1 ms
 }
 
@@ -256,14 +257,22 @@ function reset() {
     startTime = (new Date()).getTime();
 }
 
-function plotMag(magnetizacion) {
-    for (var i = 0; i < magnetizacion[0].length; i++) {
-        magnetizacion[1][i] /= sizeX * sizeY;
-    }
+
+
+
+
+
+
+
+
+function plotMag() {
+    for (var i = 0; i < imanacion[0].length; i++) {
+        imanacion[1][i] /= sizeX * sizeY;
+    };
     // Trazas
     var trace = {
-        x: magnetizacion[0],
-        y: magnetizacion[1],
+        x: imanacion[0],
+        y: imanacion[1],
         mode: 'lines',
         name: 'Magnetización',
         line: {
@@ -292,7 +301,21 @@ function plotMag(magnetizacion) {
             d: 20,
         },
         showlegend: false,
-        plot_bgcolor: 'rgb(223, 223, 223)'
+        plot_bgcolor: 'rgb(223, 223, 223)',
+        shapes: [
+            //line vertical
+            {
+                type: 'line',
+                x0: 2.27,
+                y0: -1,
+                x1: 2.27,
+                y1: 1,
+                line: {
+                    color: 'rgb(255,0,0)',
+                    width: 1,
+                }
+            },
+        ],
     };
 
     var config = {

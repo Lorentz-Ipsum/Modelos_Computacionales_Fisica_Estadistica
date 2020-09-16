@@ -15,9 +15,9 @@
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <style type="text/css">
-  body {
-    padding: 45px 0 0 0;
-  }
+      body {
+        padding: 45px 0 0 0;
+      }
 
       /* Create three equal columns that floats next to each other */
       .column {
@@ -66,17 +66,17 @@
     </div>
 
     <div style="text-align:right; margin-right:100px; line-height:160%;">
-      <label>Numero de osciladores:</label>
+      <label class="font-weight-bold">Numero de osciladores:</label>
       <span id="numeroOut" style="display:inline-block; width:1em;">20</span>
       <input type="range" id="numero" class="slider" name="numero" min="1" max="100" value="20" step="1">
 
       <br>
-      <label>Número de sectores:</label>
+      <label class="font-weight-bold">Número de sectores:</label>
       <span id="sectoresOut" style="display:inline-block; width:1em;">5</span>
       <input type="range" id="sectores" class="slider" name="sectores" min="1" max="100" value="5" step="1">
 
       <br>
-      <label>Frecuencias iniciales:</label>
+      <label class="font-weight-bold">Frecuencias iniciales:</label>
       <select id="freqSelect" name="freqSelect">
         <option value="0">Aleatorias</option>
         <option value="1">Casi iguales</option>
@@ -84,14 +84,14 @@
       </select>
 
       <br>
-      <label>Fases iniciales:</label>
+      <label class="font-weight-bold">Fases iniciales:</label>
       <select id="faseSelect" name="faseSelect">
         <option value="0">Aleatorias</option>
         <option value="1">Nulas</option>
       </select>
 
       <br>
-      <label>Velocidad:</label>
+      <label class="font-weight-bold">Velocidad:</label>
       <select id="speedSelect" name="speedSelect">
         <option value="0">Lenta</option>
         <option value="1">Media</option>
@@ -103,7 +103,7 @@
 
     <br>
 
-    <label class="input-check"><input type="checkbox" value="something" name="test" /> Start / Stop </label>
+    <label class="font-weight-bold input-check"><input type="checkbox" value="something" name="test" /> Start / Stop </label>
     <div class="col-lg-4">
       <!-- Boton para abrir otra ventana -->
       <button class="btn btn-primary" type="button" name="histogram" id="histogram">Abrir otra ventana</button>

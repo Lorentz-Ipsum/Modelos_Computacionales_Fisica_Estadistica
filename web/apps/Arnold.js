@@ -2,7 +2,7 @@ var canvas = document.getElementById('vis');
 var preview = document.getElementById('preview');
 var ctx = canvas.getContext("2d");
 
-var imageSelect = document.querySelector('#imageSelectArnold');
+var imageSelectArnold = document.querySelector('#imageSelectArnold');
 var w = 0;
 
 var iterations = 0,
@@ -12,6 +12,21 @@ var play = false;
 
 var t11, t12, t21, t22;
 changeValsT();
+
+setInterval(iteration, 1);
+resetData();
+$('#play').click(function() {
+    play = true;
+    stopIteration = 3 * w;
+    $('#step-back, #step-forward').attr('disabled', 'disabled');
+});
+$('#step-back').click(function() {
+    stopIteration--;
+});
+$('#step-forward').click(function() {
+    stopIteration++;
+});
+
 
 function redondea(num, places) {
     return +(Math.round(num + "e+" + places) + "e-" + places);
@@ -61,19 +76,6 @@ function iteration() {
     var diff = Math.abs(iterations - stopIteration);
     if (diff < 10 || diff % 10 == 0) ctx.putImageData(imageData, 0, 0);
 }
-setInterval(iteration, 1);
-resetData();
-$('#play').click(function() {
-    play = true;
-    stopIteration = 3 * w;
-    $('#step-back, #step-forward').attr('disabled', 'disabled');
-});
-$('#step-back').click(function() {
-    stopIteration--;
-});
-$('#step-forward').click(function() {
-    stopIteration++;
-});
 
 function createImage() {
     var img = new Image();

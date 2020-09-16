@@ -2,34 +2,40 @@ var canvasBak = document.getElementById('canvasBaker');
 var ctxBak = canvasBak.getContext('2d');
 var canvas2 = document.getElementById('canvasBaker2');
 var ctx2 = canvas2.getContext('2d');
-var img = new Image();
-img.crossOrigin = "Anonymous";
+var imgBaker = new Image();
+imgBaker.crossOrigin = "Anonymous";
 
 var imageSelect = document.querySelector('#imageSelect');
-
-function reImage() {
-    switch (Number(imageSelect.value)) {
-        case 0:
-            img.src = 'imagen.png';
-            break;
-        case 1:
-            img.src = 'Ising-tartan.png';
-            break;
-        case 2:
-            img.src = 'catmap.jpg';
-            break;
-    };
-    img.onload = function() {
-        draw(img);
-    };
-};
+var bakerbtn = document.getElementById('bakerBtn');
+bakerBtn.addEventListener('click', baker);
+var remapbtn = document.getElementById('remapBtnBaker');
+remapBtnBaker.addEventListener('click', reImage);
 reImage();
 
-function draw(img) {
+function reImage() {
+    var imgBaker = new Image();
+    switch (Number(imageSelect.value)) {
+        case 0:
+            imgBaker.src = 'imagen.png';
+            break;
+        case 1:
+            imgBaker.src = 'Ising-tartan.png';
+            break;
+        case 2:
+            imgBaker.src = 'catmap.jpg';
+            break;
+    };
+    imgBaker.onload = function() {
+        draw(imgBaker);
+        imgBaker.style.display = 'none';
+    };
+};
+
+function draw(imgBaker) {
     ctxBak.clearRect(0, 0, canvasBak.width, canvasBak.height);
     ctx2.clearRect(0, 0, canvas2.width, canvas2.height);
-    ctxBak.drawImage(img, 0, 0, img.width, img.height, 0, 0, canvasBak.width, canvasBak.height);
-    img.style.display = 'none';
+    ctxBak.drawImage(imgBaker, 0, 0, imgBaker.width, imgBaker.height, 0, 0, canvasBak.width, canvasBak.height);
+    imgBaker.style.display = 'none';
     var imageData = ctxBak.getImageData(0, 0, canvasBak.width, canvasBak.height);
     var data = imageData.data;
 };
@@ -47,13 +53,9 @@ function baker() {
 };
 
 function remap() {
-    draw(img);
-    img.style.display = 'none';
+    draw(imgBaker);
+    imgBaker.style.display = 'none';
 }
-var bakerbtn = document.getElementById('bakerBtn');
-bakerBtn.addEventListener('click', baker);
-var remapbtn = document.getElementById('remapBtnBaker');
-remapBtnBaker.addEventListener('click', remap);
 
 // var remap = function() {
 //     var remapImageData = stretchctxBak.getImageData(0, 0, stretch.width, stretch.height);
@@ -88,8 +90,8 @@ remapBtnBaker.addEventListener('click', remap);
 //     var x = event.layerX;
 //     var y = event.layerY;
 //     zoomctxBak.drawImage(canvas,
-//         Math.min(Math.max(0, x - 5), img.width - 10),
-//         Math.min(Math.max(0, y - 5), img.height - 10),
+//         Math.min(Math.max(0, x - 5), imgBaker.width - 10),
+//         Math.min(Math.max(0, y - 5), imgBaker.height - 10),
 //         10, 10,
 //         0, 0,
 //         200, 200);

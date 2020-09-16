@@ -20,6 +20,15 @@ var Y = [],
 emptyPlot();
 simulate();
 
+
+
+
+
+
+/////////////////////////////
+// FUNCIONES DE SIMULACION //
+/////////////////////////////
+
 // Funcion para realizar la simulacion
 function simulate() {
     if (running) {
@@ -44,6 +53,39 @@ function simulate() {
     window.setTimeout(simulate, 1); //Aqui iria el ajuste de velocidad
 }
 
+// Funcion para empezar o pausar la simulacion
+function startStop() {
+    running = !running;
+    if (running) {
+        console.log("START");
+        i = 0;
+        startButton.value = " Pause ";
+        // reset();
+    } else {
+        startButton.value = "Resume";
+    }
+}
+
+// Funcion para restaurar la grafica
+function resetNums() {
+    running = false;
+    startButton.value = " Start ";
+    Y = [];
+    emptyPlot();
+}
+
+
+
+
+
+
+
+
+
+//////////////////////////
+// FUNCIONES DE CALCULO //
+//////////////////////////
+
 // Funcion para calcular el numero compuesto Y
 function randomCompound(n, tipo) {
     var X, Y = 0;
@@ -66,7 +108,7 @@ function randomCompound(n, tipo) {
             X = Math.random();
             Y += X;
         }
-        binsSize = "0.5";
+        binsSize = "1";
         return Y;
     };
 }
@@ -80,22 +122,22 @@ function gaussiana(n, state) {
         mu = 3.5;
         s2 = 105 / 36; //Esta fraccion es la varianza de un solo dado
         max = 6 * n;
-        scale = 6;
+        scale = 5;
     } else if (state == "1") {
         mu = 0.5;
-        s2 = 1 / 2;
+        s2 = 1 / 4;
         max = n;
-        scale = 1;
+        scale = 5;
     } else {
         mu = 0.5;
         s2 = 1 / 12;
-        max = n;
-        scale = 1;
+        max = 2 * n / 3;
+        scale = 5;
     };
     Ymu = mu * n;
     Ys2 = s2 / n;
     k = 0;
-    for (var i = 0; i < max; i++) {
+    for (var i = -3; i < max; i++) {
         for (var j = 0; j < scale; j++) {
             X.push(i + (j + 1) / scale);
             Y.push((1 / Math.sqrt(2 * n * n * Math.PI * Ys2)) / Math.pow(Math.E, Math.pow(X[k] - Ymu, 2) / (2 * n * n * Ys2)));
@@ -115,44 +157,16 @@ function gaussiana(n, state) {
     return traceGauss
 }
 
-// Funcion para empezar o pausar la simulacion
-function startStop() {
-    running = !running;
-    if (running) {
-        console.log("START");
-        i = 0;
-        startButton.value = " Pause ";
-        // reset();
-    } else {
-        startButton.value = "Resume";
-    }
-}
 
-// Funcion para restaurar la grafica
-function resetNums() {
-    running = false;
-    startButton.value = " Start ";
-    Y = [];
-    emptyPlot();
-}
 
-// Funcion para actualizar la lectura de N
-function updateNum() {
-    nLectura.textContent = Number(nSlider.value);
-    n = nSlider.value;
-}
 
-// Funcion para actualizar la lectura de la velocidad
-function updateVel() {
-    vLectura.textContent = Number(vSlider.value);
-    vel = vSlider.value;
-    spf = Math.pow(vel, 2)
-}
 
-// Funcion para actualizar el tipo de distribucion
-function updateState() {
-    state = selectElement.value;
-}
+
+
+
+///////////////////////
+// FUNCIONES DE PLOT //
+///////////////////////
 
 function emptyPlot() {
     nums = [];
@@ -179,4 +193,34 @@ function emptyPlot() {
         responsive: true,
     };
     Plotly.react("myDiv", data, layout, config);
+}
+
+
+
+
+
+
+
+
+
+///////////////////////////
+// FUNCIONES DE INTERFAZ //
+///////////////////////////
+
+// Funcion para actualizar la lectura de N
+function updateNum() {
+    nLectura.textContent = Number(nSlider.value);
+    n = nSlider.value;
+}
+
+// Funcion para actualizar la lectura de la velocidad
+function updateVel() {
+    vLectura.textContent = Number(vSlider.value);
+    vel = vSlider.value;
+    spf = Math.pow(vel, 2)
+}
+
+// Funcion para actualizar el tipo de distribucion
+function updateState() {
+    state = selectElement.value;
 }

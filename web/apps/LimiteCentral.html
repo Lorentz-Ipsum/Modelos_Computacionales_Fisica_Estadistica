@@ -29,25 +29,6 @@
         font-size: 16px !important;
         font-style: italic;
       }
-
-      /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
-      @media screen and (max-width: 600px) {
-        .column {
-          width: 100%;
-        }
-
-        .container {
-          display: flex;
-        }
-
-        .fixed {
-          width: 300px;
-        }
-
-        .flex-item {
-          flex-grow: 1;
-        }
-      }
     </style>
     <style media="screen">
       .main-content {
@@ -84,7 +65,7 @@
             <li class="nav-item dropdown active">
               <a class="nav-link dropdown-toggle" href="#" id="dropdownApplets" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Applets</a>
               <div class="dropdown-menu" aria-labelledby="dropdownApplets">
-                <a class="dropdown-item" href="Apps.html">Índice de applets</a>
+
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="LimiteCentral.html">Teorema del límite central</a>
                 <div class="dropdown-divider"></div>
@@ -97,8 +78,8 @@
                 <a class="dropdown-item" href="Transformaciones.html#arnold">Transformación de Arnold</a>
                 <div class="dropdown-divider"></div>
                 <h6 class="dropdown-header">Gas ideal</h6>
-                <a class="dropdown-item" href="Gas.html#fluctuaciones">Expansión libre de un gas</a>
-                <a class="dropdown-item" href="Gas.html#macro">Colectividad macrocanónica</a>
+                <a class="dropdown-item" href="Fluctuaciones.html">Expansión libre de un gas</a>
+                <a class="dropdown-item" href="Macrocanonica.html">Colectividad macrocanónica</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="Bosefermi.html">Estadísticas de bosones y fermiones</a>
                 <div class="dropdown-divider"></div>
@@ -178,9 +159,9 @@
             ensayos sobre una distribución, y por ello tiene especial significancia no sólo en Física Estadística, sino también para la física cuántica.
           </p>
           <hr>
-
           <p class="text-justify">
-            En el applet se puede elegir el número de variables aleatorias \button{N} y el \button{Tipo de distribución} de la que tomamos muestras: como un dado (del 1 al 6), como una moneda (0 ó 1) y uniformemente distribuidas entre
+            En el applet se puede elegir el número de variables aleatorias <button type="button" class="btn btn-info btn-sm">N</button> y el <button type="button" class="btn btn-info btn-sm">Tipo de distribución</button> de la que tomamos
+            muestras: como un dado (del 1 al 6), como una moneda (0 ó 1) y uniformemente distribuidas entre
             0 y 1 (incluidos). Con el
             objetivo de que sea más fácil ver que la suma converge a la distribución gaussiana, también se puede modificar la velocidad de generación de variables.
           </p>
@@ -189,48 +170,88 @@
             partida no sea uniforme.
           </p>
           <p class="text-justify">
-            Pulsando \button{Inicia} se comienzan a generar variables $Y$, y se construye el histograma de frecuencias, normalizado a la unidad. Superpuesto al histograma, en rojo, se muestra la distribución gaussiana predicha por la
+            Pulsando <button type="button" class="btn btn-primary btn-sm">Inicia</button> se comienzan a generar variables $Y$, y se construye el histograma de frecuencias, normalizado a la unidad. Superpuesto al histograma, en rojo, se muestra la
+            distribución gaussiana predicha por la
             ecuación \eqref{eq:Gauss}.
-            Pulsando \button{Reset} se limpia la gráfica, que puede acabar siendo confusa si se cambia el número de variables o la distribución mientras la simulación se está ejecutando.
+            Pulsando <button type="button" class="btn btn-danger btn-sm">Reset</button> se limpia la gráfica, que puede acabar siendo confusa si se cambia el número de variables o la distribución mientras la simulación se está ejecutando.
           </p>
           <p class="text-justify">
             Se recomienda comprobar que cuando $N\gg1$, la distribución de $Y$ se aproxima a la curva de la distribución gaussiana, para todas las distribuciones individuales disponibles. Por el contrario, cuando $N$ es pequeño, no
             sucede así.
           </p>
-        </div>
-        <hr>
-        <!-- El applet empieza aqui -->
-        <div style="text-align: center">
-          <div class="card card-body bg-light">
-            <div id="myDiv" style="height: 400px;">
-              <!-- Plotly chart will be drawn inside this DIV -->
+          <hr>
+          <!-- El applet empieza aqui -->
+          <div class="container" style="text-align: center">
+            <div class="card card-body bg-light">
+              <div class="row">
+                <div class="col-md">
+                  <div id="myDiv" style="height: 400px;width:100%">
+                    <!-- Plotly chart will be drawn inside this DIV -->
+                  </div>
+                </div>
+              </div>
             </div>
+            <br>
+            <!-- BOTONERA -->
+            <form name="botonera" class="form-group card card-body bg-light">
+              <div data-name="numero" class="form-group">
+                <div class="row" style="text-align: right">
+                  <div class="col-md-4">
+                    <label class="font-weight-bold">Numero de variables: &nbsp;<span id="numeroLectura"> 20</span></label>
+                  </div>
+                  <div class="col-md-8">
+                    <input type="range" id="numeroSlider" class="slider custom-range" onchange="updateNum()" min="1" max="50" value="20" step="1">
+                  </div>
+                </div>
+              </div>
+              <div data-name="tipo" class="form-group">
+                <div class="row" style="text-align: right">
+                  <div class="col-md-4">
+                    <label class="font-weight-bold" for="stateSelect">Tipo de variable:</label>
+                  </div>
+                  <div class="col-md-8">
+                    <select id="stateSelect" class="form-control" onchange="updateState()">
+                      <option value="0"> Dados (del 1 al 6)</option>
+                      <option value="1"> Moneda (0 ó 1)</option>
+                      <option value="2">Entre 0 y 1 de forma continua</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div data-name="velocidad" class="form-group">
+                <div class="row" style="text-align: right">
+                  <div class="col-md-4">
+                    <label class="font-weight-bold">Velocidad: &nbsp;<span id="velocidadLectura"> 1</span></label>
+                  </div>
+                  <div class="col-md-8">
+                    <input type="range" id="velocidadSlider" class="slider custom-range" onchange="updateVel()" min="1" max="10" value="1" step="1">
+                  </div>
+                </div>
+              </div>
+              <div data-name="botones" class="form-group">
+                <div class="row" style="text-align: center">
+                  <div class="col-md-12">
+                    <input id="startButton" type="button" onclick="startStop()" value="  Start  " class="btn btn-primary">
+                    <input id="resetButton" type="button" onclick="resetNums()" value="  Reset  " class="btn btn-danger">
+                  </div>
+                </div>
+              </div>
+            </form>
           </div>
-          <br>
-          <!-- BOTONERA -->
-          <form class="form-group card card-body bg-light">
-            <div class="col-md-12">
-              <label>Numero de variables: &nbsp;<span id="numeroLectura"> 20</span></label>
-              <input type="range" id="numeroSlider" class="slider custom-range" onchange="updateNum()" min="1" max="50" value="20" step="1">
-              <label>Velocidad: &nbsp;<span id="velocidadLectura"> 1</span></label>
-              <input type="range" id="velocidadSlider" class="slider custom-range" onchange="updateVel()" min="1" max="10" value="1" step="1">
-            </div>
-            <div class="form-group col-md-12">
-              <label for="stateSelect">Tipo de variable</label>
-              <select id="stateSelect" class="form-control" onchange="updateState()">
-                <option value="0"> Dados (del 1 al 6)</option>
-                <option value="1"> Moneda (0 ó 1)</option>
-                <option value="2">Entre 0 y 1 de forma continua</option>
-              </select>
-            </div>
-            <div class="form-group col-md-12">
-              <input id="startButton" type="button" onclick="startStop()" value="  Start  " class="btn btn-primary">
-              <input id="resetButton" type="button" onclick="resetNums()" value="  Reset  " class="btn btn-danger">
-            </div>
-          </form>
+          <!-- Controles para siguiente y anterior simulacion -->
+          <hr>
+          <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+              <li class="page-item disabled">
+                <a class="page-link previous" href="#" tabindex="-1">Anterior</a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="Kac.html">Siguiente</a>
+              </li>
+            </ul>
+          </nav>
         </div>
       </div>
-    </div>
     </div>
 
     <script type="text/javascript" src="LimiteCentral.js"></script>
