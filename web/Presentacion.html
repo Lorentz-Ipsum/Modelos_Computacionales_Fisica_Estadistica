@@ -1,0 +1,551 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>reveal.js – The HTML Presentation Framework</title>
+
+    <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+    <meta name="author" content="Hakim El Hattab">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="reveal/dist/reset.css">
+    <link rel="stylesheet" href="reveal/dist/reveal.css">
+    <link rel="stylesheet" href="reveal/dist/theme/serif.css" id="theme">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+    <style media="screen">
+      .reveal .slide-number {
+        font-size: 16pt;
+        color: #ffffff;
+      }
+
+      .reveal section p {
+        display: inline-block;
+        font-size: 1em;
+        line-height: 1.2em;
+        vertical-align: top;
+        text-align: justify;
+        margin: 30px;
+      }
+
+      .reveal section li {
+        font-size: 0.8em;
+        line-height: 1.2em;
+        vertical-align: top;
+        text-align: justify;
+        margin: 30px;
+      }
+
+      .reveal section li.emptybullet {
+        list-style-type: circle;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <div class="reveal">
+
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+
+        <section>
+          <h1 style="font-size: 88px;">Modelos Computacionales <br> en <br> Física Estadística</h1>
+          <p>
+            Autor: <b style="text-align:right">Manuel Fernández-Arroyo Soriano</b>
+          </p>
+          <p>
+            Supervisor: <b>Ricardo Brito López</b>
+          </p>
+        </section>
+
+        <!-- INTRODUCCIÓN -->
+        <section>
+          <section data-auto-animate>
+            <h2 data-id="INTRO-title">Introducción</h2>
+            <blockquote cite="">
+              <p>
+                &ldquo;One of the principal objects of theoretical research is to find the point of view from which the subject appears in the greatest simplicity.&rdquo;
+              </p>
+              <footer>- Josiah Willard Gibbs</footer>
+            </blockquote>
+          </section>
+          <section data-auto-animate>
+            <h2 data-id="INTRO-title">Introducción</h2>
+            <ul>
+              <li>
+                En Física Estadística se utilizan modelos computacionales constantemente.
+              </li>
+              <li>
+                El gran número de grados de libertad de los sistemas que estudia hacen difícil visualizar los conceptos directamente *de cabeza*, y hacen los cálculos *bastante difíciles*.
+              </li>
+            </ul>
+          </section>
+          <section data-auto-animate>
+            <h2 data-id="INTRO-title">Introducción</h2>
+            <ul>
+              <li>
+                Además de resolución numérica, las simulaciones por ordenador pueden ayudar a comprender los entresijos de ciertos modelos.
+              </li>
+              <li>
+                Esto puede ser una gran ayuda, tanto para el estudiante como para el docente, a la hora de comprender los conceptos más complicados.
+              </li>
+              <li>
+                Presentamos 10 simulaciones que ayudan a la visualizacion....
+              </li>
+            </ul>
+          </section>
+        </section>
+
+
+        <section>
+          <section data-auto-animate>
+            <h2 data-id="MOTIV-title">Motivación</h2>
+          </section>
+          <section data-auto-animate>
+            <h2 data-id="MOTIV-title">Motivación</h2>
+            <h3 data-id="MOTIV-subtitle">Simulaciones interactivas</h3>
+            <p>Queremos realizar una web en la que estén disponibles explicaciones de física estadística, acompañadas de simulaciones interactivas que ayuden a comprender los conceptos.</p>
+          </section>
+          <section data-auto-animate>
+            <h2 data-id="MOTIV-title">Motivación</h2>
+            <h3 data-id="MOTIV-subtitle">Requerimientos</h3>
+            <ul>
+              <li>
+                Portabilidad
+              </li>
+              <li>
+                Código abierto
+              </li>
+              <li>
+                Accesibilidad (no muchas librerias)
+              </li>
+            </ul>
+          </section>
+          <section data-auto-animate>
+            <h3 data-id="MOTIV-subtitle">Posibilidades</h3>
+            <!-- <ul style="width: 60%;float:left;padding:40px; max-width:50%"> -->
+            <ul>
+              <li>
+                Jupyter Notebook
+                <ul>
+                  <li>Estándar en ciencia computacional.</li>
+                  <li>Fácil de usar.</li>
+                </ul>
+              </li>
+              <li>
+                Python + Flask
+                <ul>
+                  <li>Más general y flexible.</li>
+                  <li>Más difícil de preparar.</li>
+                </ul>
+              </li>
+              <li>
+                JS + HTML
+                <ul>
+                  <li>Estándar en la web moderna.</li>
+                  <li>Sintaxis relativamente sencilla.</li>
+                  <li>Preparar la interfaz y el código principal a la vez.</li>
+                </ul>
+              </li>
+            </ul>
+          </section>
+          <section data-auto-animate>
+            <h3 data-id="MOTIV-subtitle">Solución</h3>
+            <img class="r-frame" style="float: center;padding:10px;margin-bottom:30px" data-src="img/installing.png" alt="https://xkcd.com/1367/">
+          </section>
+          <section data-background-iframe="http://funcionando.works/TFG/index.html" data-background-interactive>
+            <div style="position: absolute; width: 40%; right: 0; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.6); color: #fff; padding: 20px; font-size: 30px; text-align: left;">
+              <h3 style="color:#fff">En la web</h3>
+              <p>Montar un servidor y crear una página web para alojar las simulaciones.</p>
+            </div>
+          </section>
+        </section>
+
+
+
+        <!-- REPASO FISES -->
+        <!-- REPASO FISES -->
+        <!-- REPASO FISES -->
+
+
+        <section>
+          <section data-auto-animate>
+            <h2 data-id="REPASO-title">Repaso de Física Estadística</h2>
+          </section>
+          <section data-auto-animate>
+            <h2 data-id="REPASO-title">Repaso de Física Estadística</h2>
+            <p>¿Cómo pueden emerger fenómenos irreversibles a partir de modelos microscópicos reversibles?</p>
+            <p>La Física Estadística se fundamenta en varias hipótesis, válidas experimentalmente, pero cuya demostración estrictamente teórica *aún no existe*.</p>
+            <p>Veamos algunas de ellas.</p>
+          </section>
+          <section data-auto-animate>
+            <h3 data-id="REPASO-subtitle">Teoría cinética I</h3>
+            <p>Micro Reversible + Macro Irreversible = Paradoja de Lochsmidt.</p>
+            <p>Boltzmann: Hipótesis del Caos Molecular.</p>
+            <p>Teorema H.</p>
+            <p>Coarse-Graining.</p>
+            <p>Segunda Ley de la Termodinámica.</p>
+          </section>
+          <section data-auto-animate>
+            <h3 data-id="REPASO-subtitle">Teoría cinética II</h3>
+            <p>Espacio de Fases.</p>
+            <p>Teorema de Liouville.</p>
+            <p>Ergodicidad.</p>
+            <p>Periodo de Recurrencia de Poincaré.</p>
+          </section>
+          <section data-auto-animate>
+            <h3 data-id="REPASO-subtitle">Física Estadística del Equilibrio</h3>
+            <p>Colectividades.</p>
+          </section>
+          <section data-auto-animate>
+            <h3 data-id="REPASO-subtitle">Física Estadística del No Equilibrio</h3>
+            <p>Colectividades.</p>
+          </section>
+        </section>
+
+
+
+
+        <!-- INTRO SIMULACIONES -->
+
+        <section>
+          <section data-auto-animate>
+            <h2 data-id="SIMS-title">Las simulaciones</h2>
+          </section>
+          <section data-auto-animate>
+            <h2 data-id="SIMS-title">Las simulaciones</h2>
+            <p>Cada simulación sigue una estructura muy marcada:</p>
+            <ol>
+              <li>
+                Fundamento teórico. Enunciado del modelo. Conceptos que ayuda a explicar.
+              </li>
+              <li>
+                Simulación interactiva. Explicación de uso. Aspectos técnicos de código.
+              </li>
+              <li>
+                Conclusiones. Casos particulares. Posible extensión de la simulación.
+              </li>
+            </ol>
+          </section>
+          <section data-auto-animate>
+            <h2 data-id="SIMS-title">Adelanto</h2>
+            <ol>
+              <li> Teorema del Límite Central.
+                <ul>
+                  <li>Comportamiento colectivo.</li>
+                </ul>
+              </li>
+              <li> Modelo del Anillo de Kac.
+                <ul>
+                  <li>Ergodicidad.</li>
+                  <li>Periodo de recurrencia de Poincaré.</li>
+                </ul>
+              </li>
+              <li> Conjunto de Osciladores Armónicos.
+                <ul>
+                  <li>Entropía.</li>
+                  <li>Coarse-Graining.</li>
+                  <li>Tendencia al equilibrio.</li>
+                </ul>
+              </li>
+            </ol>
+          </section>
+          <section data-auto-animate>
+            <ol start="4">
+              <li> Transformaciones del Espacio de Fases.
+                <ol>
+                  <li>Transformación del panadero.</li>
+                  <li>Transformación de Baker.</li>
+                </ol>
+                <ul>
+                  <li>Función de Evolución.</li>
+                  <li>Caos Determinista.</li>
+                </ul>
+              </li>
+              <li> Gas Ideal.
+                <ol>
+                  <li> Expansión Libre de un Gas. </li>
+                  <li> Colectividad macrocanónica. </li>
+                </ol>
+                <ul>
+                  <li>Irreversibilidad.</li>
+                  <li>Fluctuaciones en el Equilibrio.</li>
+                  <li>Intercambio de Energía y Partículas con el Entorno.</li>
+                </ul>
+              </li>
+            </ol>
+          </section>
+          <section data-auto-animate>
+            <ol start="6">
+              <li>
+                Estadísticas de Bosones y Fermiones. <ul>
+                  <li>Comportamiento Colectivo.</li>
+                  <li>Condensación de Bose-Einstein.</li>
+                  <li class="emptybullet">Método de Monte Carlo.</li>
+                </ul>
+              </li>
+              <li>Modelo de Ising.
+                <ol>
+                  <li>Transición Ferro-Paramagnética. </li>
+                  <li>Estudio del Calor Específico. </li>
+                </ol>
+                <ul>
+                  <li>Transición de Fase.</li>
+                  <li>Acercamiento al equilibrio.</li>
+                  <li>Dimensionalidad y Límite Termodinámico.</li>
+                </ul>
+              </li>
+            </ol>
+          </section>
+        </section>
+
+
+
+
+        <!-- APPLETS -->
+        <!-- APPLETS -->
+        <!-- APPLETS -->
+
+        <!-- LIMITE CENTRAL -->
+
+        <section>
+          <section data-auto-animate data-background-video="img/app-webm/tlc.webm">
+            <h2 data-id="TLC-title" style="box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.6); color: #fff;">Teorema del Límite Central</h2>
+          </section>
+          <section data-auto-animate>
+            <h2 data-id="TLC-title">Teorema del Límite Central</h2>
+            <h3 data-id="TLC-title">Enunciado</h3>
+            <ul>
+              <li>
+                $N$ variables aleatorias independientes: $X_i, i = 1,\dots, N$
+              </li>
+              <li>
+                Misma distribución de probabilidad de media $\mu$ y varianza $\sigma^2 \neq 0$ finitas.
+              </li>
+              <li>
+                Definimos $Y = X_1 + X_2 + \dots + X_N$
+              </li>
+            </ul>
+          </section>
+          <section data-auto-animate>
+            <h3 data-id="TLC-title">Enunciado</h3>
+            <p>
+              Entonces, cuando $N$ es suficientemente grande,
+              la probabilidad de que $Y$ tome el valor $y$ sigue una distribución gaussiana de media $\mu_Y = N \mu$ y varianza $\sigma_Y^2 = \sigma^2/n$.:
+            </p>
+            \begin{equation}\label{eq:Gauss}
+            P_{Y}(y)=\frac{1}{\sqrt{2 \pi N \sigma^{2}}} \exp \left[-\frac{(y-N \mu)^{2}}{2 N \sigma^{2}}\right]
+            \end{equation}
+          </section>
+        </section>
+
+
+
+
+        <!-- KAC -->
+
+        <section>
+          <section data-auto-animate data-background-video="img/app-webm/kac.webm">
+            <h2 data-id="KAC-title" style="box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.6); color: #fff;">El Anillo de Kac</h2>
+          </section>
+          <section data-auto-animate>
+            <h2 data-id="KAC-title">El Anillo de Kac</h2>
+            <ul>
+              <li>
+                Anillo con $N$ sitios.
+              </li>
+              <li>
+                $M$ marcas entre sitios.
+              </li>
+            </ul>
+          </section>
+        </section>
+
+
+
+
+        <!-- OSCILADORES -->
+
+        <section>
+          <section data-auto-animate data-background-video="img/app-webm/osciladores.webm">
+            <h2 data-id="OSC-title" style="box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.6); color: #fff;">Conjunto de Osciladores Armónicos</h2>
+          </section>
+          <section data-auto-animate>
+            <h2 data-id="OSC-title">Conjunto de Osciladores Armónicos</h2>
+          </section>
+        </section>
+
+
+
+
+        <!-- TRANSFORMACIONES -->
+
+        <section>
+          <section data-auto-animate data-background-video="img/app-webm/arnold.webm">
+            <h2 data-id="TRANS-title" style="box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.6); color: #fff;">Transformaciones en el Espacio de Fases</h2>
+          </section>
+          <section data-auto-animate>
+            <h2 data-id="TRANS-title">Transformaciones en el Espacio de Fases</h2>
+            <p>Teorema de Liouville.</p>
+            <p>
+              Citando a Arnold: <q cite="">La mecánica hamiltoniana es geometría en el espacio de fases.</q>.
+            </p>
+          </section>
+          <section data-auto-animate>
+            <h3 data-id="BAKER-title">Transformación del panadero</h3>
+          </section>
+          <section data-auto-animate>
+            <h3 data-id="ARNOLD-title">Transformación de Arnold</h3>
+          </section>
+        </section>
+
+
+
+
+        <!-- GASES -->
+
+        <section>
+          <section data-auto-animate data-background-video="img/app-webm/fluctuaciones.webm">
+            <h2 data-id="FLUC-title" style="box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.6); color: #fff;">Estudio de un Gas Ideal</h2>
+          </section>
+          <section data-auto-animate>
+            <h2 data-id="FLUC-title">Expansión Libre de un Gas</h2>
+          </section>
+          <section data-auto-animate>
+            <h2 data-id="FLUC-title">Colectividad Macrocanónica</h2>
+          </section>
+        </section>
+
+
+
+
+        <!-- BOSEFERMI -->
+
+        <section>
+          <section data-auto-animate data-background-video="img/app-webm/bosefermi.webm">
+            <h2 data-id="BF-title" style="box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.6); color: #fff;">Estadísticas de Bosones y Fermiones</h2>
+          </section>
+          <section data-auto-animate>
+            <h2 data-id="BF-title">Estadísticas de Bosones y Fermiones</h2>
+          </section>
+        </section>
+
+
+
+
+        <!-- ISING -->
+
+        <section>
+          <section data-auto-animate data-background-video="img/app-webm/ising.webm">
+            <h2 data-id="ISING-title" style="box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.6); color: #fff;">Modelo de Ising</h2>
+          </section>
+          <section data-auto-animate>
+            <h2 data-id="ISING-title">Modelo de Ising</h2>
+            \begin{equation}\label{eq:isingMagDef}
+            M = \left \langle \sum_i s_i \right \rangle
+            \end{equation}
+          </section>
+          <section data-auto-animate>
+            <h2 data-id="ISING-title">Modelo de Ising</h2>
+            <p>
+              Función de partición:
+            </p>
+            \begin{equation}\label{eq:isingPartic}
+            Z(T,B) = \sum_{s_1} \sum_{s_2}...\sum_{s_N} \exp \left( -\frac{H(\{s_i\})}{k_B T} \right)
+            \end{equation}
+          </section>
+        </section>
+
+
+
+
+        <!-- CONCLUSIONES -->
+        <!-- CONCLUSIONES -->
+        <!-- CONCLUSIONES -->
+
+        <!-- CONCLUSIONES -->
+
+        <section data-auto-animate>
+          <h2 data-id="CONCLUSIONES-title">Conclusiones</h2>
+          <p data-id="eq-anim">
+            Métodos computacionales no sólo son buenos para cálculo numérico, sino para la docencia.
+          </p>
+          <p>También pueden ayudar al investigador a descubrir nuevos aspectos de los modelos.</p>
+        </section>
+
+
+
+
+        <!-- ASPECTOS TECNICOS / BIBLIO -->
+
+        <section data-auto-animate>
+          <h2 data-id="TECNICOS-title">Algunos aspectos técnicos</h2>
+          <p>
+            La página web se ha creado usando los estilos de <a href="https://getbootstrap.com/">Bootstrap</a>.
+          </p>
+          <p>
+            Estas diapositivas se han hecho usando <a href="https://revealjs.com/">reveal.js</a>.
+          </p>
+        </section>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- CODIGOS DE REVEAL.JS -->
+    <script src="reveal/dist/reveal.js"></script>
+    <script src="reveal/plugin/zoom/zoom.js"></script>
+    <script src="reveal/plugin/notes/notes.js"></script>
+    <script src="reveal/plugin/search/search.js"></script>
+    <script src="reveal/plugin/markdown/markdown.js"></script>
+    <script src="reveal/plugin/highlight/highlight.js"></script>
+    <script>
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        center: true,
+        hash: true,
+        slideNumber: 'h.v',
+        mouseWheel: true,
+        plugins: [RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight]
+      });
+    </script>
+
+
+
+    <!-- CODIGO DE DERIVATIVE BY MAURICIO POPP -->
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script>
+    <script src="js/mathjax-config.js"> </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" id="MathJax-script"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+    <style>
+      svg text {
+        font-size: 10px;
+      }
+
+      svg .title {
+        font-size: 25px;
+      }
+
+      .function-plot {
+        margin: 0px auto 20px;
+        display: block;
+      }
+
+      .function-plot text {
+        font-size: 15px;
+      }
+    </style>
+  </body>
+
+</html>
