@@ -61,13 +61,18 @@
       <div class="slides">
 
         <section>
-          <h1 style="font-size: 88px;">Modelos Computacionales <br> en <br> Física Estadística</h1>
+          <h1 style="font-size: 66px;">Modelos Computacionales <br> en <br> Física Estadística</h1>
+          <h5 style="font-style: italic;">Simulaciones interactivas en Javascript como <br> recurso didáctico</h5>
+          <br>
           <p>
             Autor: <b style="text-align:right">Manuel Fernández-Arroyo Soriano</b>
           </p>
           <p>
             Supervisor: <b>Ricardo Brito López</b>
           </p>
+          <br>
+          <p style="font-size: 28px;">22 de septiembre, 2020</p>
+          <!-- <img class="r-frame" style="background: rgba(255,255,255,0.1);" width="178" height="238" data-src="https://www.ucm.es/data/cont/docs/3-2016-07-21-Marca%20UCM%20logo%20negro.png" alt="Up arrow"> -->
 
           <!-- NOTAS DEL PRESENTADOR -->
           <aside class="notes">
@@ -288,79 +293,33 @@
 
 
 
-        <!-- INTRO SIMULACIONES -->
+        <!-- INDEX SIMULACIONES -->
 
         <section>
-          <section data-auto-animate>
-            <h2 data-id="SIMS-title">Las simulaciones</h2>
-          </section>
           <section>
-            <h2>Adelanto</h2>
-            <ol>
-              <li> Teorema del Límite Central.
-                <ul>
-                  <li>Comportamiento colectivo.</li>
-                </ul>
-              </li>
-              <li> Modelo del Anillo de Kac.
-                <ul>
-                  <li>Ergodicidad.</li>
-                  <li>Periodo de recurrencia de Poincaré.</li>
-                </ul>
-              </li>
-              <li> Conjunto de Osciladores Armónicos.
-                <ul>
-                  <li>Entropía.</li>
-                  <li>Coarse-Graining.</li>
-                  <li>Tendencia al equilibrio.</li>
-                </ul>
-              </li>
-            </ol>
-          </section>
-          <section>
-            <ol start="4">
-              <li> Transformaciones del Espacio de Fases.
+            <h3>Índice</h3>
+            <ol style="font-size: 38px;">
+              <li style="margin: 10px 0;"> <a href="#tlc">Teorema del Límite Central. </a></li>
+              <li style="margin: 10px 0;"> <a href="#kac">Modelo del Anillo de Kac. </a></li>
+              <li style="margin: 10px 0;"> <a href="#osc">Conjunto de Osciladores Armónicos. </a></li>
+              <li style="margin: 10px 0;"> <a href="#transf">Transformaciones del Espacio de Fases. </a>
                 <ol>
-                  <li>Transformación del panadero.</li>
-                  <li>Transformación de Arnold.</li>
+                  <li style="margin: 10px 0;"> <a href="#baker">Transformación del panadero.</a></li>
+                  <li style="margin: 10px 0;"> <a href="#arnold">Transformación de Arnold.</a></li>
                 </ol>
-                <ul>
-                  <li>Función de Evolución.</li>
-                  <li>Caos Determinista.</li>
-                </ul>
               </li>
-              <li> Gas Ideal.
+              <li style="margin: 10px 0;"> <a href="#gas">Gas Ideal.</a>
                 <ol>
-                  <li> Expansión Libre de un Gas. </li>
-                  <li> Colectividad macrocanónica. </li>
+                  <li style="margin: 10px 0;"> <a href="#fluc">Expansión Libre de un Gas. </a></li>
+                  <li style="margin: 10px 0;"> <a href="#macro">Colectividad macrocanónica. </a></li>
                 </ol>
-                <ul>
-                  <li>Irreversibilidad.</li>
-                  <li>Fluctuaciones en el Equilibrio.</li>
-                  <li>Intercambio de Energía y Partículas con el Entorno.</li>
-                </ul>
               </li>
-            </ol>
-          </section>
-          <section>
-            <ol start="6">
-              <li>
-                Estadísticas de Bosones y Fermiones. <ul>
-                  <li>Comportamiento Colectivo.</li>
-                  <li>Condensación de Bose-Einstein.</li>
-                  <li class="emptybullet">Método de Monte Carlo.</li>
-                </ul>
-              </li>
-              <li>Modelo de Ising.
+              <li style="margin: 10px 0;"> <a href="#bosefermi">Estadísticas de Bosones y Fermiones. </a></li>
+              <li style="margin: 10px 0;"> <a href="#ising">Modelo de Ising.</a>
                 <ol>
-                  <li>Transición Ferro-Paramagnética. </li>
-                  <li>Estudio del Calor Específico. </li>
+                  <li style="margin: 10px 0;"> <a href="#magnet">Transición Ferro-Paramagnética. </a></li>
+                  <li style="margin: 10px 0;"> <a href="#lt">Estudio del Calor Específico. </a></li>
                 </ol>
-                <ul>
-                  <li>Transición de Fase.</li>
-                  <li>Acercamiento al equilibrio.</li>
-                  <li>Dimensionalidad y Límite Termodinámico.</li>
-                </ul>
               </li>
             </ol>
           </section>
@@ -375,7 +334,7 @@
 
         <!-- LIMITE CENTRAL -->
 
-        <section>
+        <section id="tlc">
           <section data-auto-animate data-background-video="img/app-webm/tlc.webm">
             <h2 data-id="TLC-title" style="box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.6); color: #fff;">Teorema del Límite Central</h2>
             <div class="fragment fade-up" style="box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.6); color: #fff;">
@@ -438,7 +397,7 @@
 
         <!-- KAC -->
 
-        <section>
+        <section id="kac">
           <section data-auto-animate data-background-video="img/app-webm/kac.webm">
             <h2 data-id="KAC-title" style="box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.6); color: #fff;">El Anillo de Kac</h2>
             <div class="fragment fade-up" style="box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.6); color: #fff;">
@@ -475,7 +434,7 @@
 
         <!-- OSCILADORES -->
 
-        <section>
+        <section id="osc">
           <section data-auto-animate data-background-video="img/app-webm/osciladores.webm">
             <h2 data-id="OSC-title" style="box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.6); color: #fff;">Conjunto de Osciladores Armónicos</h2>
             <div class="fragment fade-up" style="box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.6); color: #fff;">
@@ -507,7 +466,7 @@
 
         <!-- TRANSFORMACIONES -->
 
-        <section>
+        <section id="transf">
           <section data-auto-animate data-background-video="img/app-webm/arnold.webm">
             <h2 data-id="TRANS-title" style="box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.6); color: #fff;">Transformaciones en el Espacio de Fases</h2>
             <div class="fragment fade-up" style="box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.6); color: #fff;">
@@ -522,7 +481,7 @@
               Citando a Arnold: <q cite="">La mecánica hamiltoniana es geometría en el espacio de fases.</q>.
             </p>
           </section>
-          <section data-auto-animate>
+          <section data-auto-animate id="baker">
             <h3 data-id="BAKER-title">Transformación del panadero</h3>
             <ul>
               <li>
@@ -538,7 +497,7 @@
               </li>
             </ul>
           </section>
-          <section data-auto-animate>
+          <section data-auto-animate id="arnold">
             <h3 data-id="ARNOLD-title">Transformación de Arnold</h3>
           </section>
         </section>
@@ -548,7 +507,7 @@
 
         <!-- GASES -->
 
-        <section>
+        <section id="gas">
           <section data-auto-animate data-background-video="img/app-webm/fluctuaciones.webm">
             <h2 data-id="FLUC-title" style="box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.6); color: #fff;">Estudio de un Gas Ideal</h2>
             <div class="fragment fade-up" style="box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.6); color: #fff;">
@@ -557,10 +516,10 @@
               <p>Intercambio de Energía y Partículas con el Entorno.</p>
             </div>
           </section>
-          <section data-auto-animate>
+          <section data-auto-animate id="fluc">
             <h2 data-id="FLUC-title">Expansión Libre de un Gas</h2>
           </section>
-          <section data-auto-animate>
+          <section data-auto-animate id="macro">
             <h2 data-id="FLUC-title">Colectividad Macrocanónica</h2>
           </section>
         </section>
@@ -570,7 +529,7 @@
 
         <!-- BOSEFERMI -->
 
-        <section>
+        <section id="bosefermi">
           <section data-auto-animate data-background-video="img/app-webm/bosefermi.webm">
             <h2 data-id="BF-title" style="box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.6); color: #fff;">Estadísticas de Bosones y Fermiones</h2>
             <div class="fragment fade-up" style="box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.6); color: #fff;">
@@ -602,7 +561,7 @@
 
         <!-- ISING -->
 
-        <section>
+        <section id="ising">
           <section data-auto-animate data-background-video="img/app-webm/magnet.webm">
             <h2 data-id="ISING-title" style="box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.6); color: #fff;">Modelo de Ising</h2>
             <div class="fragment fade-up" style="box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.6); color: #fff;">
@@ -611,13 +570,13 @@
               <p>Dimensionalidad y Límite Termodinámico.</p>
             </div>
           </section>
-          <section data-auto-animate>
+          <section data-auto-animate id="magnet">
             <h2 data-id="ISING-title">Modelo de Ising</h2>
             \begin{equation}\label{eq:isingMagDef}
             M = \left \langle \sum_i s_i \right \rangle
             \end{equation}
           </section>
-          <section data-auto-animate>
+          <section data-auto-animate id="lt">
             <h2 data-id="ISING-title">Modelo de Ising</h2>
             <p>
               Función de partición:
