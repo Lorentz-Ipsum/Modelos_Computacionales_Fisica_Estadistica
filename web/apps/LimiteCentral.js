@@ -48,7 +48,7 @@ function simulate() {
         };
         data = [trace, traceGauss];
         Plotly.react(myDiv, data, layout, config);
-        console.log(i++ + ": " + j);
+        i++;
     }
     window.setTimeout(simulate, 1); //Aqui iria el ajuste de velocidad
 }
@@ -103,12 +103,23 @@ function randomCompound(n, tipo) {
         }
         binsSize = "1";
         return Y;
-    } else {
+    } else if (tipo == "2") {
         for (var i = 0; i < n; i++) {
             X = Math.random();
             Y += X;
         }
         binsSize = "1";
+        return Y;
+    } else {
+        for (var i = 0; i < n; i++) {
+            X = Math.sin(Math.pow(Math.random() * Math.PI, 2));
+            Y += X * X;
+        }
+        if (n < 4) {
+            binsSize = "0.1";
+        } else {
+            binsSize = "1";
+        }
         return Y;
     };
 }
@@ -126,18 +137,23 @@ function gaussiana(n, state) {
     } else if (state == "1") {
         mu = 0.5;
         s2 = 1 / 4;
-        max = n;
+        max = 2 * n;
         scale = 5;
-    } else {
+    } else if (state == "2") {
         mu = 0.5;
         s2 = 1 / 12;
         max = 2 * n / 3;
+        scale = 5;
+    } else {
+        mu = 0.4;
+        s2 = 1 / 8;
+        max = 2 * n;
         scale = 5;
     };
     Ymu = mu * n;
     Ys2 = s2 / n;
     k = 0;
-    for (var i = -3; i < max; i++) {
+    for (var i = -1; i < max; i++) {
         for (var j = 0; j < scale; j++) {
             X.push(i + (j + 1) / scale);
             Y.push((1 / Math.sqrt(2 * n * n * Math.PI * Ys2)) / Math.pow(Math.E, Math.pow(X[k] - Ymu, 2) / (2 * n * n * Ys2)));

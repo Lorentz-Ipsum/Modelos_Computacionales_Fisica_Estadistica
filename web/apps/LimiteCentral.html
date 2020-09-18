@@ -179,7 +179,7 @@
             Se recomienda comprobar que cuando $N\gg1$, la distribución de $Y$ se aproxima a la curva de la distribución gaussiana, para todas las distribuciones individuales disponibles. Por el contrario, cuando $N$ es pequeño, no
             sucede así.
           </p>
-          <hr>
+          <hr id="simulacion">
           <!-- El applet empieza aqui -->
           <div class="container" style="text-align: center">
             <div class="card card-body bg-light">
@@ -214,6 +214,7 @@
                       <option value="0"> Dados (del 1 al 6)</option>
                       <option value="1"> Moneda (0 ó 1)</option>
                       <option value="2">Entre 0 y 1 de forma continua</option>
+                      <option value="3">[EXPERIMENTAL] Distribución Beta con $\alpha = \beta = 0.5$</option>
                     </select>
                   </div>
                 </div>
@@ -237,6 +238,10 @@
                 </div>
               </div>
             </form>
+          </div>
+          <hr>
+          <div class="alert alert-info" role="alert">
+            Se ha añadido una opción adicional asimétrica: <a href="https://en.wikipedia.org/wiki/Beta_distribution">La distribución beta</a>. ¡Pruébala con $N=1$!
           </div>
           <!-- Controles para siguiente y anterior simulacion -->
           <hr>

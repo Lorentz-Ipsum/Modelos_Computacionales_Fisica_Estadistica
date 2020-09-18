@@ -108,13 +108,19 @@ function resetData() {
     $('#iteration-count').text(iterations);
     switch (Number(imageSelectArnold.value)) {
         case 0:
-            img.src = 'imagen.png';
+            img.src = '../img/imagen.png';
             break;
         case 1:
-            img.src = 'Ising-tartan.png';
+            img.src = '../img/Ising-tartan.png';
             break;
         case 2:
-            img.src = 'catmap.jpg';
+            img.src = '../img/cat1.jpg';
+            break;
+        case 3:
+            img.src = '../img/cat2.jpg';
+            break;
+        case 4:
+            img.src = '../img/cat3.jpg';
             break;
     };
 }

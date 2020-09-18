@@ -16,13 +16,19 @@ function reImage() {
     var imgBaker = new Image();
     switch (Number(imageSelect.value)) {
         case 0:
-            imgBaker.src = 'imagen.png';
+            imgBaker.src = '../img/imagen.png';
             break;
         case 1:
-            imgBaker.src = 'Ising-tartan.png';
+            imgBaker.src = '../img/Ising-tartan.png';
             break;
         case 2:
-            imgBaker.src = 'catmap.jpg';
+            imgBaker.src = '../img/cat1.jpg';
+            break;
+        case 3:
+            imgBaker.src = '../img/cat2.jpg';
+            break;
+        case 4:
+            imgBaker.src = '../img/cat3.jpg';
             break;
     };
     imgBaker.onload = function() {

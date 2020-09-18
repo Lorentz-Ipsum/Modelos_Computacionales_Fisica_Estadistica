@@ -75,7 +75,7 @@ simulateFluc();
 
 
 /////////////////////////////
-// DEFINICION DE FUNCIONES //
+// FUNCIONES DE SIMULACION //
 /////////////////////////////
 
 // Funcion para empezar o pausar la simulacion
@@ -163,6 +163,9 @@ function animateFluc() {
 
 
 
+//////////////////////////
+// FUNCIONES DE CALCULO //
+//////////////////////////
 
 function Ball(x, y, radius, color) {
     this.x = x;
@@ -191,12 +194,45 @@ function Boltzmann(kTFluc) {
 }
 
 
+// Funcion para calcular la curva
+function gaussiana() {
+    var mu = 0,
+        s2 = optsFluc.ballsFlucAmount,
+        scale = 5,
+        max = 4 * Math.sqrt(s2),
+        X = [],
+        Y = [];
+    var k = 0;
+    for (var i = -max; i < max; i++) {
+        for (var j = 0; j < scale; j++) {
+            X.push(i + (j + 1) / scale);
+            Y.push((Math.sqrt(2 / (Math.PI * s2))) / Math.exp(Math.pow(X[k], 2) / (2 * s2)));
+            k++;
+        };
+    };
+    var traceGauss = {
+        x: X,
+        y: Y,
+        mode: 'lines',
+        line: {
+            color: 'rgb(255,0,0)',
+            width: 1,
+            opacity: 0.7
+        }
+    }
+    return traceGauss
+}
 
 
 
 
 
 
+
+
+///////////////////////
+// FUNCIONES DE PLOT //
+///////////////////////
 
 // Funcion para dibujar el marco
 function drawBackFluc() {
@@ -294,6 +330,7 @@ function plotPart(FramesFluc, Ndif) {
 }
 
 function plotHistFluc() {
+    var traceGauss = gaussiana();
     // Trazas
     var numsTrace = {
         x: Ndif,
@@ -301,7 +338,7 @@ function plotHistFluc() {
         histnorm: 'probability',
         name: 'Diferencia',
     };
-    var data = [numsTrace];
+    var data = [numsTrace, traceGauss];
     var layout = {
         autosize: true,
         title: 'Diferencia de números',

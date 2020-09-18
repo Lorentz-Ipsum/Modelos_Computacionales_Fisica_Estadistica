@@ -32,6 +32,16 @@
         font-size: 16px !important;
         font-style: italic;
       }
+
+      /* Este bloque para los h3 es para que los enlaces que nos llevan a dicho header no ajusten la página por debajo del  mismo */
+      h3::before {
+        display: block;
+        content: " ";
+        margin-top: -100px;
+        height: 100px;
+        visibility: hidden;
+        pointer-events: none;
+      }
     </style>
     <style media="screen">
       .main-content {
@@ -192,7 +202,9 @@
                     <select id="imageSelect" name="imageSelect" onchange="reImage()" class="form-control">
                       <option value="0">f(x)</option>
                       <option value="1">Invariante Ising-Tartan</option>
-                      <option value="2">Gato</option>
+                      <option value="2">Gato 1</option>
+                      <option value="3">Gato 2</option>
+                      <option value="4">Gato 3</option>
                     </select>
                   </div>
                 </div>
@@ -342,7 +354,9 @@
                   <select id="imageSelectArnold" name="imageSelectArnold" onchange="resetData()" class="form-control">
                     <option value="0">f(x)</option>
                     <option value="1">Invariante Ising-Tartan</option>
-                    <option value="2">Gato</option>
+                    <option value="2">Gato 1</option>
+                    <option value="3">Gato 2</option>
+                    <option value="4">Gato 3</option>
                   </select>
                 </div>
               </div>
