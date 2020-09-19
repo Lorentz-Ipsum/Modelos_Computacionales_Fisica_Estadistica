@@ -122,28 +122,34 @@
             <h4>Conjunto de osciladores independientes</h4>
 
             <p class="text-justify">
-              Tenemos un sistema de $N$ osciladores independientes, cada uno con su frecuencia $\omega_i$, $i = 1,2,...,N$. Podemos describir el estado de cada oscilador con una variable ángulo $\phi_i (t) \in [0,2\pi)$, de
-              forma que la evolución de cada oscilador
-              viene dada por $\phi_i (t) = \phi_i (0) + \omega_i t$, donde $\phi_i(0)$ es la fase incial del oscilador. La evolución de cada oscilador está determinada por su frecuencia y su fase.
+              Tenemos un sistema de $N$ osciladores independientes, cada uno con su frecuencia $\omega_i$, $i = 1,2,...,N$.
+              Podemos describir el estado de cada oscilador con una variable ángulo $\phi_i (t) \in [0,2\pi)$,
+              de forma que la evolución de cada oscilador viene dada por $\phi_i (t) = \phi_i (0) + \omega_i t$,
+              donde $\phi_i(0)$ es la fase incial del oscilador.
+              La evolución de cada oscilador está determinada por su frecuencia y su fase.
             </p>
           </blockquote>
 
           <p class="text-justify">
-            En principio puede parecer que el sistema siempre será periódico, ya que comportamiento individual de cada oscilador armónico es predecible. Un análisis más detallado nos permite entender que, eligiendo
-            adecuadamente las frecuencias, podemos preparar
-            un estado no periódico. En este caso aparecerá un comportamiento ergódico, llegando a un estado de entropía máxima, de equilibrio.
+            En principio puede parecer que el sistema siempre será periódico, ya que comportamiento individual de cada oscilador armónico es predecible.
+            Un análisis más detallado nos permite entender que, eligiendo adecuadamente las frecuencias,
+            podemos preparar un estado no periódico.
+            En este caso aparecerá un comportamiento ergódico, llegando a un estado de entropía máxima, de equilibrio.
           </p>
           <p class="text-justify">
-            La condición que ha de cumplirse es que las frecuencias de los osciladores sean inconmensurables. Matemáticamente esto quiere decir que $r_{ij}={\omega_i}/{\omega_j}$ debe ser irracional para todo $i, j$. Así, no
-            importa cuanto tiempo pase, nunca
-            volverán a estar en sus posiciones iniciales con la misma diferencia entre las fases. Demostrémoslo con dos osciladores:
+            La condición que ha de cumplirse es que las frecuencias de los osciladores sean inconmensurables.
+            Matemáticamente esto quiere decir que $r_{ij}={\omega_i}/{\omega_j}$ debe ser irracional para todo $i, j$.
+            Así, no importa cuanto tiempo pase, nunca volverán a estar en sus posiciones iniciales con la misma diferencia entre las fases.
+            Demostrémoslo con dos osciladores:
           </p>
           <p class="text-justify">
-            Asumiendo fases iniciales nulas por simplicidad, y frecuencias $\omega_1$ y $\omega_2$, para un tiempo $t$ el estado de los osciladores será $\phi_1(t) = \omega_1 t$ y $\phi_2(t) = \omega_2 t$. Cada oscilador
-            volverá a su posición inicial en un
-            periodo $T_i = 2\pi / \omega_i$. Supongamos que para que ambos estén en dicha posición a la vez, el primero debe haber pasado $n$ periodos, y el segundo, $m$. La condición de que estén sincronizados implica que $T
-            = nT_1 = mT_2$, entonces:
+            Asumiendo fases iniciales nulas por simplicidad, y frecuencias $\omega_1$ y $\omega_2$,
+            para un tiempo $t$ el estado de los osciladores será $\phi_1(t) = \omega_1 t$ y $\phi_2(t) = \omega_2 t$.
+            Cada oscilador volverá a su posición inicial en un periodo $T_i = 2\pi / \omega_i$.
+            Supongamos que para que ambos estén en dicha posición a la vez, el primero debe haber pasado $n$ periodos, y el segundo, $m$.
+            La condición de que estén sincronizados implica que $T = nT_1 = mT_2$, entonces:
           </p>
+
           $$
           \frac{nT_1}{mT_2} = \frac{n \omega_2}{m \omega_1} = 1
           $$
@@ -152,8 +158,8 @@
             Si $\omega_1 / \omega_2$ es irracional, esto no puede cumplirse, así que el sistema nunca volverá al estado inicial, y por tanto, será ergódico.
           </p>
           <p class="text-justify">
-            Volvamos al sistema de estudio, si es ergódico tenemos que la distribución de probabilidad microcanónica equivale al volumen del toro $N$-dimensional donde se mueven las variables $\phi$ <a
-                href="../Bibliografia.html#ref-dyson">[dyson]</a>:
+            Volvamos al sistema de estudio, si es ergódico tenemos que la distribución de probabilidad microcanónica
+            equivale al volumen del toro $N$-dimensional donde se mueven las variables $\phi$ <a href="../Bibliografia.html#ref-dyson">[dyson]</a>:
           </p>
           $$
           \rho (x) = \frac{1}{(2\pi)^N}
@@ -187,50 +193,53 @@
             Si no lo es, el sistema será periódico y su entropía puede crecer o decrecer.
           </p>
           <hr>
+          <!-- EXPLICACION DE LA INTERFAZ -->
+          <div class="alert alert-dark bg-light" role="alert">
+            <p class="text-justify">
+              En el applet podemos elegir <button type="button" class="btn btn-dark btn-sm py-0">N</button> y <button type="button" class="btn btn-dark btn-sm py-0">M</button>. También las <button type="button" class="btn btn-dark btn-sm py-0">Fases
+                iniciales</button>, todas iguales o aleatorias, y la <button type="button" class="btn btn-dark btn-sm py-0">Distribución de frecuencias</button>:
+            </p>
+            <ul class="list-group">
+              <li class="list-group-item">Aleatorias, de forma que $r_{ij}$ es en buena medida inconmensurable.</li>
+              <li class="list-group-item">Casi iguales, aleatorias pero próximas entre sí.</li>
+              <li class="list-group-item">Equiespaciadas, de forma que $r_{ij} = i/j$, y por tanto el sistema no es ergódico.</li>
+            </ul>
 
-          <p class="text-justify">
-            En el applet podemos elegir <button type="button" class="btn btn-info btn-sm">N</button> y <button type="button" class="btn btn-info btn-sm">M</button>. También las <button type="button" class="btn btn-info btn-sm">Fases
-              iniciales</button>, todas iguales o aleatorias, y la <button type="button" class="btn btn-info btn-sm">Distribución de frecuencias</button>:
-          </p>
-          <ul class="list-group">
-            <li class="list-group-item">Aleatorias, de forma que $r_{ij}$ es en buena medida inconmensurable.</li>
-            <li class="list-group-item">Casi iguales, aleatorias pero próximas entre sí.</li>
-            <li class="list-group-item">Equiespaciadas, de forma que $r_{ij} = i/j$, y por tanto el sistema no es ergódico.</li>
-          </ul>
-
-          <p class="text-justify">
-            En el panel izquierdo aparecen representados los osciladores como manecillas de reloj, el ángulo de la manecilla es el estado del oscilador, $\phi_i(t)$. Los sectores aparecen dividiendo el círculo externo. En el
-            panel derecho se representa la
-            entropía normalizada del sistema, según la fórmula \eqref{eq:oscS}, con un factor de normalización dado por la entropía máxima \eqref{eq:oscSmax}, de forma que dicha entropía máxima corresponde al valor $1$.
-          </p>
-          <p class="text-justify">
-            Una vez ajustados los parámetros deseados, hay que pulsar <button type="button" class="btn btn-danger btn-sm">Reset</button> para inicializarlos antes de pulsar <button type="button" class="btn btn-primary btn-sm">Inicia</button> para
-            iniciar la simulación. Cuando partimos de fases iniciales nulas la entropía empieza
-            siendo baja, y aumenta según los
-            osciladores se distribuyen por la circunferencia. Cuando las frecuencias son aleatorias, llega a un valor máximo y no decrece salvo pequeñas fluctuaciones, que son más pequeñas cuanto mayor es el número de
-            osciladores. Por otro lado, cuando las
-            frecuencias son conmensurables, las fluctuaciones son mucho más grandes y el comportamiento periódico se hace patente, al cabo de cierto número de iteraciones tenemos una fluctuación muy grande de entropía que
-            corresponde al retorno al estado
-            inicial.
-          </p>
-          <p class="text-justify">
-            Esta periodicidad es más difícil de observar cuando las fases iniciales son aleatorias, ya que entonces estamos partiendo de un estado de entropía máxima, y es difícil que las fluctuaciones sean grandes, sean como
-            sean las frecuencias. Con esto se
-            confirma una de las ideas de Boltzmann acerca de la irreversibilidad: La evolución temporal a estados de desorden se produce porque partimos de sistemas muy ordenados.
-          </p>
-          <p class="text-justify">
-            El botón <button type="button" class="btn btn-warning btn-sm">Histograma</button> calcula el histograma de la distribución del logaritmo de las frecuencias, mostrando que se comportan de manera exponencial <a
-                href="../Bibliografia.html#ref-groot">[groot]</a> según la fórmula de Einstein:
-            $N(S) =
-            \exp{S/k_B}.$
-          </p>
-          <p class="text-justify">
-            La simulación original fue desarrollada sobre una idea y material de Juan M.R. Parrondo.
-          </p>
-          <p class="text-justify">
-            Una posible ampliación a este modelo es el Modelo de Kuramoto, en el que se introduce cierto acoplo entre osciladores,
-            de forma que cuando dos de ellos están cerca sus frecuencias tienden a igualarse, induciéndose así comportamientos colectivos.
-          </p>
+            <p class="text-justify">
+              En el panel izquierdo aparecen representados los osciladores como manecillas de reloj, el ángulo de la manecilla es el estado del oscilador, $\phi_i(t)$. Los sectores aparecen dividiendo el círculo externo. En el
+              panel derecho se representa la
+              entropía normalizada del sistema, según la fórmula \eqref{eq:oscS}, con un factor de normalización dado por la entropía máxima \eqref{eq:oscSmax}, de forma que dicha entropía máxima corresponde al valor $1$.
+            </p>
+            <p class="text-justify">
+              Una vez ajustados los parámetros deseados, hay que pulsar <button type="button" class="btn btn-danger btn-sm py-0">Reset</button> para inicializarlos antes de pulsar <button type="button"
+                  class="btn btn-primary btn-sm py-0">Start</button> para
+              iniciar la simulación. Cuando partimos de fases iniciales nulas la entropía empieza
+              siendo baja, y aumenta según los
+              osciladores se distribuyen por la circunferencia. Cuando las frecuencias son aleatorias, llega a un valor máximo y no decrece salvo pequeñas fluctuaciones, que son más pequeñas cuanto mayor es el número de
+              osciladores. Por otro lado, cuando las
+              frecuencias son conmensurables, las fluctuaciones son mucho más grandes y el comportamiento periódico se hace patente, al cabo de cierto número de iteraciones tenemos una fluctuación muy grande de entropía que
+              corresponde al retorno al estado
+              inicial.
+            </p>
+            <p class="text-justify">
+              Esta periodicidad es más difícil de observar cuando las fases iniciales son aleatorias, ya que entonces estamos partiendo de un estado de entropía máxima, y es difícil que las fluctuaciones sean grandes, sean como
+              sean las frecuencias. Con esto se
+              confirma una de las ideas de Boltzmann acerca de la irreversibilidad: La evolución temporal a estados de desorden se produce porque partimos de sistemas muy ordenados.
+            </p>
+            <p class="text-justify">
+              El botón <button type="button" class="btn btn-warning btn-sm py-0">Histograma</button> calcula el histograma de la distribución del logaritmo de las frecuencias, mostrando que se comportan de manera exponencial <a
+                  href="../Bibliografia.html#ref-groot">[groot]</a> según la fórmula de Einstein:
+              $N(S) =
+              \exp{S/k_B}.$
+            </p>
+            <p class="text-justify">
+              La simulación original fue desarrollada sobre una idea y material de Juan M.R. Parrondo.
+            </p>
+            <p class="text-justify">
+              Una posible ampliación a este modelo es el Modelo de Kuramoto, en el que se introduce cierto acoplo entre osciladores,
+              de forma que cuando dos de ellos están cerca sus frecuencias tienden a igualarse, induciéndose así comportamientos colectivos.
+            </p>
+          </div>
           <hr>
           <!-- El applet empieza aqui -->
           <div style="text-align: center">

@@ -174,27 +174,29 @@
           \begin{equation}\label{eq:macroPoiss}
           p(N)=\frac{1}{N !}\left(\frac{z V}{\Lambda^{3}}\right)^{N} e^{-z V / \Lambda^{2}}
           \end{equation}
-
-          <!-- Texto de la simulacion -->
           <hr>
-          <p class="text-justify">
-            Haciendo uso de esta simulación queremos demostrar que, efectivamente, un gas ideal satisface la distribución \eqref{eq:macroPoiss}. Para ello, se presenta un gas de partículas como el de
-            <a href="Fluctuaciones.html">[Fluctuaciones]</a>, en este caso distribuido en todo el
-            recinto y sin interacción entre partículas.
-          </p>
-          <p class="text-justify">
-            <button type="button" class="btn btn-info btn-sm">Pulsando y arrastrando con el ratón</button> se puede elegir una región del recinto, que será nuestro sistema. El área no seleccionada será el foco térmico y de partículas. En dicha
-            área
-            seleccionada se verificará la relación \eqref{eq:macroPoiss}.
-            En el panel derecho se muestra el número de partículas en nuestro sistema en función del tiempo, y pulsando <button type="button" class="btn btn-warning btn-sm">Histograma</button> se muestra la distribución del número de partículas. La
-            línea roja representa la distribución de Poisson.
-          </p>
-          <p class="text-justify">
-            Para regiones pequeñas la distribución sigue correctamente la dada por \eqref{eq:macroPoiss}, mientras que para regiones grandes no es así. Esto se debe a que el desarrollo expuesto deja
-            de ser válido, ya que no se cumple la hipotesis de que $N_F
-            \gg N$. En el caso más extremo en que se selecciona todo el recinto, el sistema tendrá siempre el número de partículas total, u por tanto observaremos $p(N) = \delta(N - N_\text{part})$.
-          </p>
-
+          <!-- EXPLICACION DE LA INTERFAZ -->
+          <div class="alert alert-dark bg-light" role="alert">
+            <p class="text-justify">
+              Haciendo uso de esta simulación queremos demostrar que, efectivamente, un gas ideal satisface la distribución \eqref{eq:macroPoiss}. Para ello, se presenta un gas de partículas como el de
+              <a href="Fluctuaciones.html">[Fluctuaciones]</a>, en este caso distribuido en todo el
+              recinto y sin interacción entre partículas.
+            </p>
+            <p class="text-justify">
+              <button type="button" class="btn btn-dark btn-sm py-0">Pulsando y arrastrando con el ratón</button> se puede elegir una región del recinto, que será nuestro sistema. El área no seleccionada será el foco térmico y de partículas. En dicha
+              área
+              seleccionada se verificará la relación \eqref{eq:macroPoiss}.
+              En el panel derecho se muestra el número de partículas en nuestro sistema en función del tiempo, y pulsando <button type="button" class="btn btn-warning btn-sm py-0">Histograma</button> se muestra la distribución del número de
+              partículas.
+              La
+              línea roja representa la distribución de Poisson.
+            </p>
+            <p class="text-justify">
+              Para regiones pequeñas la distribución sigue correctamente la dada por \eqref{eq:macroPoiss}, mientras que para regiones grandes no es así. Esto se debe a que el desarrollo expuesto deja
+              de ser válido, ya que no se cumple la hipotesis de que $N_F
+              \gg N$. En el caso más extremo en que se selecciona todo el recinto, el sistema tendrá siempre el número de partículas total, u por tanto observaremos $p(N) = \delta(N - N_\text{part})$.
+            </p>
+          </div>
           <hr>
           <!-- El applet empieza aqui -->
           <div style="text-align: center">

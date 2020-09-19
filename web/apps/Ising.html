@@ -127,15 +127,17 @@
           <h2 id="ising">Modelo de Ising</h2>
 
           <p class="text-justify">
-            El modelo de Ising es un modelo sencillo originalmente propuesto para el estudio de la transición ferromagnética que exhiben muchos metales ordinarios como el hierro o el níquel.
+            El modelo de Ising es un modelo sencillo originalmente propuesto para el estudio de la transición ferromagnética
+            que exhiben muchos metales ordinarios como el hierro o el níquel.
           </p>
           <p class="text-justify">
-            El ferromagnetismo es la presencia de magnetización espontánea incluso cuando no hay campo magnético externo. Su causa es que una fracción importante de los \textit{momentos
-            magnéticos de los átomos} (o espines) se alinean en una misma dirección,
+            El ferromagnetismo es la presencia de magnetización espontánea incluso cuando no hay campo magnético externo.
+            Su causa es que una fracción importante de los <i>momentos magnéticos de los átomos</i> (o espines) se alinean en una misma dirección,
             debido a las interacciones entre ellos. Esto provoca que la muestra se imane.
-            Este alineamiento sólo se produce cuando la temperatura de la muestra es inferior a una temperatura característica, llamada <i>temperatura de Curie</i>, $T_C$. Por encima de esta
-            temperatura, las fluctuaciones térmicas son más intensas que la
-            interacción entre momentos magnéticos, por lo que estos se orientan al azar, resultando en un campo magnético neto nulo.
+            Este alineamiento sólo se produce cuando la temperatura de la muestra es inferior a una temperatura característica,
+            llamada <i>temperatura de Curie</i>, $T_C$.
+            Por encima de esta temperatura, las fluctuaciones térmicas son más intensas que la interacción entre momentos magnéticos,
+            por lo que estos se orientan al azar, resultando en un campo magnético neto nulo.
           </p>
           <p class="text-justify">
             Un aspecto muy interesante del modelo de Ising es que puede generalizarse fácilmente para estudiar muchos tipos de procesos. Así, no es difícil encontrar el modelo de Ising
@@ -225,23 +227,28 @@
             En esta ecuación hemos definido $j \equiv \frac{J}{k_B T_C}$, que es el único parámetro relevante al tomar $B=0$.
           </p>
           <hr>
-
-          <p class="text-justify">
-            En esta simulación realizamos un cálculo de Monte-Carlo (ver apéndice \ref{sec:metropolis}) del modelo de Ising en dos dimensiones. Se puede elegir el <button type="button" class="btn btn-info btn-sm">Tamaño de la red</button>, la <button
-                type="button" class="btn btn-info btn-sm">Configuración inicial de espines</button> y la <button type="button" class="btn btn-info btn-sm">Constante de interacción $j$</button>, que equivale a fijar una temperatura para el sistema. Al
-            pulsar <button type="button" class="btn btn-primary btn-sm">Start</button> comienza la simulación.
-          </p>
-          <p class="text-justify">
-            En el panel de la izquierda se muestran los espines ($s_i = +1$ en amarillo y $s_i = -1$ en azul), y en el de la derecha la magnetización frente a la temperatura. La línea
-            azul está localizada en la temperatura crítica $T_C$.
-          </p>
-          <p class="text-justify">
-            Cuando la temperatura es alta ($j$ pequeño) la magnetización se relaja rápidamente a su valor de equilibrio, fluctuando alrededor de $0$. En temperaturas cercanas a la
-            crítica, $T \simeq T_C$ ó $j \simeq j_C$, la relajación es más lenta, ya que
-            se forman correlaciones de largo alcance y las fluctuaciones son más importantes, pero sigue tendiendo a un estado de equilibrio en que $M=0$. Para temperaturas muy por
-            debajo de la crítica, sin embargo, el valor de la magnetización en el estado
-            de equilibrio toma un valor definido, y para temperaturas muy bajas todos los espines tienden a alinearse en la misma dirección.
-          </p>
+          <!-- EXPLICACION DE LA INTERFAZ -->
+          <div class="alert alert-dark bg-light" role="alert">
+            <p class="text-justify">
+              En esta simulación realizamos un cálculo de Monte-Carlo (ver apéndice <a href="../Memoria.html#metropolis">[Metropolis]</a> ) del modelo de Ising en dos dimensiones. Se puede elegir el <button type="button"
+                  class="btn btn-dark btn-sm py-0">Tamaño de la red</button>, la
+              <button type="button" class="btn btn-dark btn-sm py-0">Configuración inicial de espines</button> y la <button type="button" class="btn btn-dark btn-sm py-0">Constante de interacción $j$</button>, que equivale a fijar una temperatura
+              para
+              el sistema. Al
+              pulsar <button type="button" class="btn btn-primary btn-sm py-0">Start</button> comienza la simulación.
+            </p>
+            <p class="text-justify">
+              En el panel de la izquierda se muestran los espines ($s_i = +1$ en amarillo y $s_i = -1$ en azul), y en el de la derecha la magnetización frente a la temperatura. La línea
+              azul está localizada en la temperatura crítica $T_C$.
+            </p>
+            <p class="text-justify">
+              Cuando la temperatura es alta ($j$ pequeño) la magnetización se relaja rápidamente a su valor de equilibrio, fluctuando alrededor de $0$. En temperaturas cercanas a la
+              crítica, $T \simeq T_C$ ó $j \simeq j_C$, la relajación es más lenta, ya que
+              se forman correlaciones de largo alcance y las fluctuaciones son más importantes, pero sigue tendiendo a un estado de equilibrio en que $M=0$. Para temperaturas muy por
+              debajo de la crítica, sin embargo, el valor de la magnetización en el estado
+              de equilibrio toma un valor definido, y para temperaturas muy bajas todos los espines tienden a alinearse en la misma dirección.
+            </p>
+          </div>
           <hr>
           <!-- El applet empieza aqui -->
           <div style="text-align: center">
@@ -335,6 +342,10 @@
                     <input id="startButton" type="button" onclick="startStop()" value="  Start  " class="btn btn-primary">
                     <input id="resetButton" type="button" onclick="resetSim()" value="  Reset  " class="btn btn-danger">
                     <!-- <input id="pixelCheck" type="checkbox" onchange="selectGraphicsMode()">Use pixel graphics -->
+                    <div class="form-check form-check-inline">
+                      <input type="checkbox" class="form-check-input" id="showMaxMag">
+                      <label class="font-weight-bold" class="form-check-label" for="showMaxMag">Mostrar magnetización máxima</label>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -344,21 +355,26 @@
             <h3 id="lt">Dimensionalidad y límite termodinámico</h3>
 
             <p class="text-justify">
-              Este experimento quiere ilustrar dos conceptos muy importantes en física: el de <b>dimensionalidad</b> de un sistema, y el de <b>límite termodinámico</b>.
+              Este experimento quiere ilustrar dos conceptos muy importantes en física: el de <b>dimensionalidad</b> de un sistema,
+              y el de <b>límite termodinámico</b>.
             </p>
             <p class="text-justify">
-              La dimensionalidad es relevante en el Modelo de Ising porque la transición de fase descrita antes no existe en sistemas unidimensionales, sólo aparece en 2 o más
-              dimensiones.
+              La dimensionalidad es relevante en el Modelo de Ising porque la transición de fase descrita antes
+              no existe en sistemas unidimensionales, sólo aparece en 2 o más dimensiones.
               El límite termodinámico consiste en considerar que el número de grados de libertad tiende a infinito, pero manteniendo la densidad constante.
-              Es necesario para la no analiticidad, una suma finita de términos analíticos siempre será analítica, pero en una suma infinita puede aparecer no analiticidad.
+              Es necesario para la no analiticidad, una suma finita de términos analíticos siempre será analítica,
+              pero en una suma infinita puede aparecer no analiticidad.
             </p>
             <p class="text-justify">
-              Para ilustrar estos conceptos queremos calcular el calor específico del modelo de Ising de forma exacta en redes de tamaño $N_x \times N_y$. Variando estos parámetros
-              podemos simular distintos aspectos: $N_x=1$ simula una red unidimensional, y
-              cuanto más cercanos sean $N_x$ y $N_y$, más cerca estaremos de una red bidimensional perfecta. Aumentando ambos nos acercamos al límite termodinámico.
+              Para ilustrar estos conceptos queremos calcular el calor específico del modelo de Ising
+              de forma exacta en redes de tamaño $N_x \times N_y$.
+              Variando estos parámetros podemos simular distintos aspectos: $N_x=1$ simula una red unidimensional,
+              y cuanto más cercanos sean $N_x$ y $N_y$, más cerca estaremos de una red bidimensional perfecta.
+              Aumentando ambos nos acercamos al límite termodinámico.
             </p>
             <p class="text-justify">
-              Hay que hacer notar, que el código de esta simulación no calcula directamente el calor específico: Los datos han sido calculados previamente con un programa más potente
+              Hay que hacer notar, que el código de esta simulación no calcula directamente el calor específico:
+              Los datos han sido calculados previamente con un programa más potente
               en C <a href="../Bibliografia.html#ref-recipesC">[recipesC]</a>, proporcionado por el tutor y muy similar a uno
               utilizado en la asignatura de Transiciones de Fase y Fenómenos Críticos <a href="../Bibliografia.html#ref-barkema">[barkema]</a>, y luego tratados para que el programa los dibuje. La causa de esto es que se trata
               de un cálculo extremadamente costoso, incluso para redes pequeñas como las
@@ -367,32 +383,36 @@
               que repetir todo el cálculo para cada temperatura para obtener la gráfica.
             </p>
             <hr>
-
-            <p class="text-justify">
-              Podemos elegir <button type="button" class="btn btn-info btn-sm">$N_x$</button> y <button type="button" class="btn btn-info btn-sm">$N_y$</button>, y pulsando en <button type="button" class="btn btn-primary btn-sm">Calcular</button> se
-              dibuja el calor específico por partícula. Por defecto se dibujan además los calores
-              específicos exactos para las redes infinitas en $1$ y $2$ dimensiones. Se puede
-              ver que para la red unidimensional, el calor específico es una función analítica (igual que en las simulaciones que realizamos para redes bidimensionales, ya que se trata
-              de aproximaciones), mientras que para el caso bidimensional perfecto
-              aparece una divergencia en $T_C \approx 2.269$. Las unidades de simulación son $J/k_B = 1$.
-            </p>
-            <p class="text-justify">
-              Se sugiere hacer varias experiencias:
-            </p>
-            <ul class="list-group">
-              <li class="list-group-item">Calcular todas las redes cuadradas, desde la $2\times 2$ a la $5\times 5$, para ver cómo el máximo de $c_V$ se aproxima a $T_C$.</li>
-              <li class="list-group-item">Calcular distintas redes con un número similar de espines, por ejemplo $1 \times 24$, $2 \times 12$, $3 \times 8$, $4 \times 6$ y $5 \times 5$. Así se observa cómo</li>
-              se pasa de un comportamiento unidimensional a uno bidimensional.
-              <li class="list-group-item">Fijar $N_x$ e ir aumentando $N_y$ progresivamente.</li>
-            </ul>
-
-            Las redes más grandes permitidas son aquellas en que $N_x N_y \leq 25$, además, es necesario que el eje más pequeño sea el $X$, o si no la simulación no funcionará.
-
-            Siguiendo estas pautas, es más fácil comprender el comportamiento del sistema para distintos tipos de red. Según nos alejamos del caso unidimensional el máximo del calor
-            específico se hace más evidente, y cuanto más grande es la red, más crece la
-            pendiente y más cerca estamos de la no analiticidad. Hasta que, finalmente, en el límite termodinámico, aparece una divergencia y el calor específico deja de estar bien
-            definido en la temperatura crítica.
-
+            <!-- EXPLICACION DE LA INTERFAZ -->
+            <div class="alert alert-dark bg-light" role="alert">
+              <p class="text-justify">
+                Podemos elegir <button type="button" class="btn btn-dark btn-sm py-0">$N_x$</button> y <button type="button" class="btn btn-dark btn-sm py-0">$N_y$</button>, y pulsando en <button type="button"
+                    class="btn btn-primary btn-sm py-0">Calcula</button> se
+                dibuja el calor específico por partícula. Por defecto se dibujan además los calores
+                específicos exactos para las redes infinitas en $1$ y $2$ dimensiones. Se puede
+                ver que para la red unidimensional, el calor específico es una función analítica (igual que en las simulaciones que realizamos para redes bidimensionales, ya que se trata
+                de aproximaciones), mientras que para el caso bidimensional perfecto
+                aparece una divergencia en $T_C \approx 2.269$. Las unidades de simulación son $J/k_B = 1$.
+              </p>
+              <p class="text-justify">
+                Se sugiere hacer varias experiencias:
+              </p>
+              <ul class="list-group">
+                <li class="list-group-item">Calcular todas las redes cuadradas, desde la $2\times 2$ a la $5\times 5$, para ver cómo el máximo de $c_V$ se aproxima a $T_C$.</li>
+                <li class="list-group-item">Calcular distintas redes con un número similar de espines, por ejemplo $1 \times 24$, $2 \times 12$, $3 \times 8$, $4 \times 6$ y $5 \times 5$. Así se observa cómo
+                  se pasa de un comportamiento unidimensional a uno bidimensional.</li>
+                <li class="list-group-item">Fijar $N_x$ e ir aumentando $N_y$ progresivamente.</li>
+              </ul>
+              <p>
+                Las redes más grandes permitidas son aquellas en que $N_x N_y \leq 25$, además, es necesario que el eje más pequeño sea el $X$, o si no la simulación no funcionará.
+              </p>
+              <p>
+                Siguiendo estas pautas, es más fácil comprender el comportamiento del sistema para distintos tipos de red. Según nos alejamos del caso unidimensional el máximo del calor
+                específico se hace más evidente, y cuanto más grande es la red, más crece la
+                pendiente y más cerca estamos de la no analiticidad. Hasta que, finalmente, en el límite termodinámico, aparece una divergencia y el calor específico deja de estar bien
+                definido en la temperatura crítica.
+              </p>
+            </div>
             <hr>
             <!-- El applet empieza aqui -->
             <div style="text-align: center">

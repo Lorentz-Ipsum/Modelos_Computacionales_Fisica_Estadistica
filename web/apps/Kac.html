@@ -119,42 +119,51 @@
           <h2 id="ring">Anillo de Kac</h2>
 
           <p class="text-justify">
-            El modelo del anillo de Kac <a href="../Bibliografia.html#ref-salcido">[salcido]</a> es un sencillo modelo matemático que ilustra la compatibilidad entre estados macroscópicos y microscópicos, el tiempo de recurrencia de Poincaré y otros
-            aspectos de
-            teoría
-            cinética que en principio pueden
-            parecer paradójicos. Su dinámica es la siguiente:
+            El modelo del anillo de Kac <a href="../Bibliografia.html#ref-salcido">[salcido]</a> es un sencillo modelo matemático
+            que ilustra la compatibilidad entre estados macroscópicos y microscópicos,
+            el tiempo de recurrencia de Poincaré y otros aspectos de teoría cinética
+            que en principio pueden parecer paradójicos.
+            Su dinámica es la siguiente:
           </p>
           <blockquote class="blockquote w-100">
             <h4>Modelo del anillo de Kac</h4>
 
             <p class="text-justify">
-              Disponemos $N$ casillas en un círculo. En cada casilla colocamos una bolita, que puede ser de color azul o rojo. También marcamos al azar $M$ sitios o ``túneles'' entre bolitas. En cada instante de tiempo las bolitas
-              saltan de su casilla a la
-              contigua, siguiendo el sentido de las agujas del reloj. Si en este salto una bolita pasa sobre uno de los $M$ sitios marcados, al llegar a la nueva casilla habrá cambiado de color.
+              Disponemos $N$ casillas en un círculo. En cada casilla colocamos una bolita, que puede ser de color azul o rojo.
+              También marcamos al azar $M$ sitios o ``túneles'' entre bolitas.
+              En cada instante de tiempo las bolitas saltan de su casilla a la contigua,
+              siguiendo el sentido de las agujas del reloj.
+              Si en este salto una bolita pasa sobre uno de los $M$ sitios marcados, al llegar a la nueva casilla habrá cambiado de color.
             </p>
           </blockquote>
 
           <p class="text-justify">
-            Con estas reglas, el modelo es reversible y periódico. Al cabo de $T = 2N$ iteraciones, cada partícula ha dado dos vueltas completas al círculo, y ha cambiado de color un número par de veces, $2M$. Es decir, habrá
-            vuelto a su color y posición
-            original. Si $M$ es par, con $T=N$ iteraciones es suficiente. Este periodo se corresponde con el tiempo de recurrencia de Poincaré <a href="../Bibliografia.html#ref-gottwald">[gottwald]</a>.
+            Con estas reglas, el modelo es reversible y periódico.
+            Al cabo de $T = 2N$ iteraciones, cada partícula ha dado dos vueltas completas al círculo,
+            y ha cambiado de color un número par de veces, $2M$.
+            Es decir, habrá vuelto a su color y posición original.
+            Si $M$ es par, con $T=N$ iteraciones es suficiente.
+            Este periodo se corresponde con el tiempo de recurrencia de Poincaré <a href="../Bibliografia.html#ref-gottwald">[gottwald]</a>.
           </p>
           <p class="text-justify">
-            Podemos describir el sistema estudiando el <b>número de bolitas de cada color</b> que hay en cada instante de tiempo: $B(t)$ para las azules y $R(t)$ para las rojas. Definamos también la \textbf{cantidad de bolitas
-            que tienen un sitio marcado
-            delante} (y que por tanto cambiarán de color en el siguiente instante de tiempo) como $b(t)$ y $r(t)$. En estos términos las ecuaciones de evolución o ecuaciones de balance del sistema serán:
+            Podemos describir el sistema estudiando el <i>número de bolitas de cada color</i> que hay en cada instante de tiempo:
+            $B(t)$ para las azules y $R(t)$ para las rojas.
+            Definamos también la <i>cantidad de bolitas que tienen un sitio marcado delante</i>
+            (y que por tanto cambiarán de color en el siguiente instante de tiempo) como $b(t)$ y $r(t)$.
+            En estos términos las ecuaciones de evolución o ecuaciones de balance del sistema serán:
           </p>
+
           \begin{equation}\label{eq:kacEvol}
           B(t+1) = B(t) - b(t) + r(t), \qquad
           R(t+1) = R(t) - r(t) + b(t)
           \end{equation}
 
           <p class="text-justify">
-            Con estas ecuaciones no disponemos de información suficiente para resolver la dinámica del sistema. Necesitamos una hipótesis adicional, que consiste en considerar que la fracción de bolas <i>de un color</i> que
-            tiene delante un sitio marcado es la
-            misma que la fracción <i>total</i> de bolas con un sitio marcado delante:
+            Con estas ecuaciones no disponemos de información suficiente para resolver la dinámica del sistema.
+            Necesitamos una hipótesis adicional, que consiste en considerar que la fracción de bolas <i>de un color</i>
+            que tiene delante un sitio marcado es la misma que la fracción <i>total</i> de bolas con un sitio marcado delante:
           </p>
+
           \begin{equation}\label{eq:kacHip}
           \frac{b(t)}{B(t)} = \frac{r(t)}{R(t)} = \frac{b(t) + r(t)}{B(t) + R(t)} = \frac{M}{N} \equiv \eta
           \end{equation}
@@ -162,6 +171,7 @@
           <p class="text-justify">
             Gracias a esta hipótesis, podemos resolver las ecuaciones \eqref{eq:kacEvol}, restándolas entre sí, para obtener:
           </p>
+
           \begin{equation}\label{eq_kacSol}
           \begin{aligned}
           B(t)-R(t) &=\left(1-2 \frac{M}{N}\right)\left[B(t-1)-R(t-1)\right] \\
@@ -170,45 +180,52 @@
           \end{equation}
 
           <p class="text-justify">
-            Esta solución nos dice que, pasado un número grande de iteraciones, la diferencia en el número de bolas de cada color tiende a cero, y que por tanto el sistema <i>no es periódico ni reversible</i>, lo cual contradice
-            nuestro modelo de partida. Esta
-            discrepancia viene de la hipótesis \eqref{eq:kacHip}.
+            Esta solución nos dice que, pasado un número grande de iteraciones, la diferencia en el número de bolas de cada color tiende a cero,
+            y que por tanto el sistema <i>no es periódico ni reversible</i>,
+            lo cual contradice nuestro modelo de partida.
+            Esta discrepancia viene de la hipótesis \eqref{eq:kacHip}.
           </p>
           <p class="text-justify">
-            Esta hipótesis juega un papel similar al de la hipótesis de caos molecular en la ecuación de Boltzmann <a href="../Bibliografia.html#ref-haro">[haro]</a>: elimina las correlaciones entre las componentes de nuestro sistema. Es por esto que
-            puede
-            considerarse
-            una hipótesis que aplicamos a
-            la descripción <i>macroscópica</i> del sistema. Al eliminar las correlaciones que se crean en el sistema, perdemos la información de reversibilidad.
+            Esta hipótesis juega un papel similar al de la hipótesis de caos molecular
+            en la ecuación de Boltzmann <a href="../Bibliografia.html#ref-haro">[haro]</a>:
+            elimina las correlaciones entre las componentes de nuestro sistema.
+            Es por esto que puede considerarse una hipótesis que aplicamos a la descripción <i>macroscópica</i> del sistema.
+            Al eliminar las correlaciones que se crean en el sistema, perdemos la información de reversibilidad.
           </p>
           <p class="text-justify">
-            La realidad es que el modelo de Kac como lo hemos enunciado no satisface la condición \eqref{eq:kacHip}, aunque se aproxime a ella en el límite $N \rightarrow \infty$. Podríamos modificar el modelo, de forma que la
-            ubicación de los sitios marcados
-            cambie cada cierto número de iteraciones (menor que el tiempo de recurrencia), y así sí se satisfaría la hipótesis de caos molecular.
+            La realidad es que el modelo de Kac como lo hemos enunciado no satisface la condición \eqref{eq:kacHip},
+            aunque se aproxime a ella en el límite $N \rightarrow \infty$.
+            Podríamos modificar el modelo, de forma que la ubicación de los sitios marcados cambie cada cierto número de iteraciones
+            (menor que el tiempo de recurrencia), y así sí se satisfaría la hipótesis de caos molecular.
           </p>
           <hr>
-
-          <p class="text-justify">
-            En el primer panel de la simulación se visualiza el anillo, con los sitios marcados representados por líneas verdes. El anillo exterior representa la configuración inicial, y el interior la evolución temporal. El
-            segundo panel dibuja la diferencia
-            entre el número de bolas rojas y azules.
-          </p>
-          <p class="text-justify">
-            Se pueden elegir <button type="button" class="btn btn-info btn-sm">N</button>, <button type="button" class="btn btn-info btn-sm">M</button>, y la <button type="button" class="btn btn-info btn-sm">Distribución de colores de las
-              bolas</button>, así como la velocidad a la que evoluciona el sistema. Las distribuciones disponibles para elegir los colores son: azules y
-            rojas alternadas, aleatorios,
-            aleatorios con un $70\%$ de bolas azules y $30\%$ de rojas, o todas azules.
-          </p>
-          <p class="text-justify">
-            Para los dos últimos casos se dibuja además la solución \eqref{eq_kacSol} en azul. Se puede apreciar que para tiempos cortos es válida, pero a tiempos largos la recurrencia del sistema se hace evidente.
-          </p>
-          <p class="text-justify">
-            Como ya hemos dicho, una posible mejora del programa sería añadir la opción de recalcular los sitios marcados cada cierto tiempo, en cuyo caso la diferencia de colores sí que seguiría la curva azul antes mencionada.
-            Otra forma de ampliarlo sería
-            añadir una opción para elegir cómo se distribuyen los sitios marcados. Por ejemplo, cuando todos los sitios se sitúan en posiciones adyacentes, la diferencia de colores se mantendrá casi constante, salvo por pequeñas
-            fluctuaciones que ocurren
-            periódicamente. Se puede encontrar una discusión más detallada de este modelo en <a href="../Bibliografia.html#ref-haro">[haro]</a>.
-          </p>
+          <!-- EXPLICACION DE LA INTERFAZ -->
+          <div class="alert alert-dark bg-light" role="alert">
+            <p class="text-justify">
+              En el primer panel de la simulación se visualiza el anillo, con los sitios marcados representados por líneas verdes.
+              El anillo exterior representa la configuración inicial, y el interior la evolución temporal.
+              El segundo panel dibuja la diferencia entre el número de bolas rojas y azules.
+            </p>
+            <p class="text-justify">
+              Se pueden elegir <button type="button" class="btn btn-dark btn-sm py-0">N</button>, <button type="button" class="btn btn-dark btn-sm py-0">M</button>,
+              y la <button type="button" class="btn btn-dark btn-sm py-0">Distribución de colores de las bolas</button>,
+              así como la velocidad a la que evoluciona el sistema.
+              Las distribuciones disponibles para elegir los colores son: azules y rojas alternadas, aleatorios,
+              aleatorios con un $70\%$ de bolas azules y $30\%$ de rojas, o todas azules.
+            </p>
+            <p class="text-justify">
+              Para los dos últimos casos se dibuja además la solución \eqref{eq_kacSol} en azul.
+              Se puede apreciar que para tiempos cortos es válida, pero a tiempos largos la recurrencia del sistema se hace evidente.
+            </p>
+            <p class="text-justify">
+              Como ya hemos dicho, una posible mejora del programa sería añadir la opción de recalcular los sitios marcados cada cierto tiempo,
+              en cuyo caso la diferencia de colores sí que seguiría la curva azul antes mencionada.
+              Otra forma de ampliarlo sería añadir una opción para elegir cómo se distribuyen los sitios marcados.
+              Por ejemplo, cuando todos los sitios se sitúan en posiciones adyacentes, la diferencia de colores se mantendrá casi constante,
+              salvo por pequeñas fluctuaciones que ocurren periódicamente.
+              Se puede encontrar una discusión más detallada de este modelo en <a href="../Bibliografia.html#ref-haro">[haro]</a>.
+            </p>
+          </div>
           <hr>
           <!-- El applet empieza aqui -->
           <div style="text-align: center">

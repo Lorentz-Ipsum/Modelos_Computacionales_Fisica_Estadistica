@@ -49,14 +49,16 @@ for (var i = 0; i < sizeX; i++) {
 }
 var Imanacion = Array(2);
 var ArrayTemp = [], // Esto sera la temperatura
-    ArrImanacion = []; // Esto sera el valor total de la Imanacion
+    ArrImanacion = [], // Esto sera el valor total de la Imanacion
+    ArrMaxImanacion = []; // Esto sera el valor máximo de la Imanacion
 resetSim();
 
 // Inizializar la magnetizacion
-Imanacion = [ArrayTemp, ArrImanacion];
+Imanacion = [ArrayTemp, ArrImanacion, ArrMaxImanacion];
 for (var i = 0; i < 1001; i++) {
     Imanacion[0][i] = i / 100;
     Imanacion[1][i] = 0;
+    Imanacion[2][i] = 0;
 }
 
 plotMag();
@@ -91,6 +93,10 @@ function simulate() {
                 };
             };
         };
+        if (Imanacion[1][Math.floor(T * 100)] > Imanacion[2][Math.floor(T * 100)]) {
+            Imanacion[2][Math.floor(T * 100)] = Imanacion[1][Math.floor(T * 100)];
+            Imanacion[2][Math.floor(T * 100)] /= sizeX * sizeY;
+        };
         if (pixelGraphics) context.putImageData(image, 0, 0); // blast the image to the screen
         plotMag();
         stepCount += stepsPerFrame;
@@ -101,6 +107,13 @@ function simulate() {
 }
 
 function resetSim() {
+    // Inizializar la magnetizacion
+    Imanacion = [ArrayTemp, ArrImanacion, ArrMaxImanacion];
+    for (var i = 0; i < 1001; i++) {
+        Imanacion[0][i] = i / 100;
+        Imanacion[1][i] = 0;
+        Imanacion[2][i] = 0;
+    }
     if (initConfig == 0) {
         for (var i = 0; i < sizeX; i++) {
             for (var j = 0; j < sizeY; j++) {
@@ -313,7 +326,21 @@ function plotMag() {
             opacity: 0.7
         }
     };
-    var data = [trace];
+    var traceMax = {};
+    if (showMaxMag.checked) {
+        traceMax = {
+            x: Imanacion[0],
+            y: Imanacion[2],
+            mode: 'markers',
+            name: 'Magnetización Maxima',
+            markers: {
+                color: 'rgb(255,0,0)',
+                width: 0.5,
+                opacity: 0.7
+            }
+        };
+    }
+    var data = [trace, traceMax];
     var layout = {
         height: 400,
         title: 'Magnetización',

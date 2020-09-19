@@ -169,20 +169,24 @@
               Esta transformación es ergódica y <i>strong mixing</i>, que quiere decir que al cabo de pocas iteraciones los puntos del espacio de fases se han redistribuido uniformemente.
             </p>
             <hr>
-
-            <p class="text-justify">
-              El funcionamiento applet es muy sencillo, se puede elegir la <button type="button" class="btn btn-info btn-sm">Imagen</button> inicial y pulsando el botón <button type="button" class="btn btn-primary btn-sm">Itera</button> se aplica
-              la transformación. Tras unas cuantas iteraciones, los puntos de la figura
-              inicial se han distribuido por todo el
-              espacio formando una imagen homogénea.
-            </p>
-            <p class="text-justify">
-              Una de las opciones es el <i>invariante de Ising-Tartan</i> <a href="../Bibliografia.html#ref-linas">[linas]</a>, un patrón fractal que queda invariante bajo la acción de la transformación del panadero. Debido a la naturaleza discreta
-              de
-              las
-              simulaciones por ordenador, esto no ocurre
-              en el applet que presentamos. Si bien es cierto que en las primeras iteraciones la imagen se mantiene casi idéntica, pero al cabo de unas pocas se mezcla como las demás opciones.
-            </p>
+            <!-- EXPLICACION DE LA INTERFAZ -->
+            <div class="alert alert-dark bg-light" role="alert">
+              <p class="text-justify">
+                El funcionamiento applet es muy sencillo, se puede elegir la <button type="button" class="btn btn-dark btn-sm py-0">Imagen</button> inicial y pulsando el botón <button type="button" class="btn btn-primary btn-sm py-0">Itera</button>
+                se
+                aplica
+                la transformación. Tras unas cuantas iteraciones, los puntos de la figura
+                inicial se han distribuido por todo el
+                espacio formando una imagen homogénea.
+              </p>
+              <p class="text-justify">
+                Una de las opciones es el <i>invariante de Ising-Tartan</i> <a href="../Bibliografia.html#ref-linas">[linas]</a>, un patrón fractal que queda invariante bajo la acción de la transformación del panadero. Debido a la naturaleza discreta
+                de
+                las
+                simulaciones por ordenador, esto no ocurre
+                en el applet que presentamos. Si bien es cierto que en las primeras iteraciones la imagen se mantiene casi idéntica, pero al cabo de unas pocas se mezcla como las demás opciones.
+              </p>
+            </div>
             <hr>
             <!-- El applet empieza aqui -->
             <form class="form-group card card-body bg-light" style="text-align: center">
@@ -300,30 +304,34 @@
             (excepto en las matrices patológicas antes mencionadas).
           </p>
           <hr>
-
-          <p class="text-justify">
-            En este applet, además de la <button type="button" class="btn btn-info btn-sm">Imagen</button>, se pueden elegir tres de los cuatro <button type="button" class="btn btn-info btn-sm">Elementos de matriz</button> de $T$. El cuarto se
-            determina automáticamente a partir de la condición de $\det{T} = 1$.
-            Los valores elegidos por defecto son los que
-            aparecen en la mayoría de referencias y los que usó Arnold.
-            Pulsando en las <button type="button" class="btn btn-primary btn-sm">Flechas</button> se aplica o se deshace la transformación.
-            Se recomienda probar con todas las matrices presentadas, y comprobar sus efectos sobre la imágen.
-          </p>
-          <p class="text-justify">
-            Se puede observar cómo al cabo de cierto número de iteraciones, dependiente de los valores de los elementos de $T$ y de la resolución de la imagen, esta se distribuye uniformemente, como en la
-            transformación del panadero. Sin embargo, tarde o
-            temprano se volverá a obtener la imagen original, a no ser que se aplique una matriz problemática como las comentadas. Hay que tener cuidado, ya que al no poder controlar el cuarto elemento de matriz,
-            puede ser que se elijan valores que den un
-            comportamiento patológico sin saberlo.
-            Si la matriz elegida lo permite, se puede ver la aplicación repetida de la transformación hasta obtener la imagen original pulsando el botón <button type="button" class="btn btn-warning btn-sm">Itera hasta restablecer la imágen
-              original</button>.
-          </p>
-          <p class="text-justify">
-            De todas las simulaciones de este trabajo, esta es la que más problemas ha dado a la hora de corregir <i>bugs</i>, e incluso en el día de presentar esta memoria no se han podido resolver todos. Una
-            de las razones de esto es la precisión finita
-            con que se realizan los cálculos. El programa introduce cierto error de redondeo al tratar con números muy pequeños, lo cual produce errores. Por ejemplo, en ciertos casos al pulsar la flecha hacia
-            atrás no se recupera la imagen previa.
-          </p>
+          <!-- EXPLICACION DE LA INTERFAZ -->
+          <div class="alert alert-dark bg-light" role="alert">
+            <p class="text-justify">
+              En este applet, además de la <button type="button" class="btn btn-dark btn-sm py-0">Imagen</button>, se pueden elegir tres de los cuatro <button type="button" class="btn btn-dark btn-sm py-0">Elementos de matriz</button> de $T$. El
+              cuarto
+              se
+              determina automáticamente a partir de la condición de $\det{T} = 1$.
+              Los valores elegidos por defecto son los que
+              aparecen en la mayoría de referencias y los que usó Arnold.
+              Pulsando en las <button type="button" class="btn btn-primary btn-sm py-0">Flechas</button> se aplica o se deshace la transformación.
+              Se recomienda probar con todas las matrices presentadas, y comprobar sus efectos sobre la imágen.
+            </p>
+            <p class="text-justify">
+              Se puede observar cómo al cabo de cierto número de iteraciones, dependiente de los valores de los elementos de $T$ y de la resolución de la imagen, esta se distribuye uniformemente, como en la
+              transformación del panadero. Sin embargo, tarde o
+              temprano se volverá a obtener la imagen original, a no ser que se aplique una matriz problemática como las comentadas. Hay que tener cuidado, ya que al no poder controlar el cuarto elemento de matriz,
+              puede ser que se elijan valores que den un
+              comportamiento patológico sin saberlo.
+              Si la matriz elegida lo permite, se puede ver la aplicación repetida de la transformación hasta obtener la imagen original pulsando el botón <button type="button" class="btn btn-warning btn-sm py-0">Itera hasta restablecer la imágen
+                original</button>.
+            </p>
+            <p class="text-justify">
+              De todas las simulaciones de este trabajo, esta es la que más problemas ha dado a la hora de corregir <i>bugs</i>, e incluso en el día de presentar esta memoria no se han podido resolver todos. Una
+              de las razones de esto es la precisión finita
+              con que se realizan los cálculos. El programa introduce cierto error de redondeo al tratar con números muy pequeños, lo cual produce errores. Por ejemplo, en ciertos casos al pulsar la flecha hacia
+              atrás no se recupera la imagen previa.
+            </p>
+          </div>
           <hr>
           <!-- El applet empieza aqui -->
           <form class=" form-group card card-body bg-light" style="text-align: center">

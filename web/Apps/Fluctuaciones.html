@@ -236,40 +236,45 @@
             Como en <a href="Osciladores.html">[Osciladores]</a>, la dinámica del sistema no se para,
             sino que fluctúa en torno a su valor ideal. Esta es una situación muy común en la Física Estadística.
           </p>
-          <!-- Texto de la simulacion -->
           <hr>
-          <p class="text-justify">
-            En el applet se puede elegir el <button type="button" class="btn btn-info btn-sm">Número de partículas</button> y la <button type="button" class="btn btn-info btn-sm">Temperatura</button> del gas. El botón <button type="button"
-                class="btn btn-warning btn-sm">Histograma</button> muestra una gráfica con la distribución de la diferencia de
-            partículas en cada zona.
-          </p>
-          <p class="text-justify">
-            En el panel de la izquierda se dibuja el recipiente con el gas. La línea vertical marca la posición donde originalmente está la pared. Al pulsar <button type="button" class="btn btn-primary btn-sm">Start</button> empieza la evolución del
-            sistema, con todas las partículas en la mitad derecha del
-            recipiente. En el panel derecho se muestra la diferencia entre el número de partículas entre los lados izquierdo y derecho del recipiente. Las dos lineas horizontales representan el valor de
-            $\pm \sqrt{\sigma_{\Delta}^{2}}$ (entre el que $x$ se
-            encuentra el $68 \%$ de las veces) y el valor $\pm 3 \sqrt{\sigma_{\Delta}^{2}}$ ($99.7\%$).
-          </p>
-          <p class="text-justify">
-            También se puede elegir si queremos que puedan chocar unas con otras o no pulsando el botón de partículas <button type="button" class="btn btn-info btn-sm">Con o Sin interacción</button> (cuando chocan lo hacen como discos duros), ya
-            que todo
-            este desarrollo es válido en ambos casos.
-          </p>
-          <p class="text-justify">
-            De hecho, todo este desarrollo es válido para un modelo mucho más sencillo: El modelo de las urnas de Ehrenfest <a href="../Bibliografia.html#ref-huang">[huang]</a>, en el que las partículas no forman parte de un gas, sino que
-            consideramos cada lado del recipiente como una urna
-            independiente con partículas. En cada paso de tiempo cogemos al azar una partícula de una de las urnas y la movemos al otro lado de la caja. La dinámica de las fluctuaciones sigue la misma ley
-            que antes: se distribuye de forma gaussiana con
-            dispersión $\sigma^2 = 1/(N-1)$.
-          </p>
-          <p class="text-justify">
-            Cuando el gas está compuesto de $20$ partículas, por ejemplo, la diferencia de partículas entre ambas mitades del recipiente se equilibra rápidamente, y una vez en este estado comienza a
-            flutuar alrededor de $0$. La amplitud de estas fluctuaciones
-            puede llegar a ser de $10$ partículas, en cuyo caso hay $5$ partículas en una región y $15$ en la otra, pero es muy raro observar que las $20$ partículas se acumulen en la misma región. Sin
-            embargo, si disminuimos el número de partículas a $6$ no
-            es raro en absoluto ver que todas se concentren en un lado. Se observa en este caso un proceso imposible según las leyes de la termodinámica: un proceso en el que se invierte la evolución
-            temporal y la entropía crece.
-          </p>
+          <!-- EXPLICACION DE LA INTERFAZ -->
+          <div class="alert alert-dark bg-light" role="alert">
+            <p class="text-justify">
+              En el applet se puede elegir el <button type="button" class="btn btn-dark btn-sm py-0">Número de partículas</button> y la <button type="button" class="btn btn-dark btn-sm py-0">Temperatura</button> del gas. El botón <button
+                  type="button" class="btn btn-warning btn-sm py-0">Histograma</button> muestra una gráfica con la distribución de la diferencia de
+              partículas en cada zona.
+            </p>
+            <p class="text-justify">
+              En el panel de la izquierda se dibuja el recipiente con el gas. La línea vertical marca la posición donde originalmente está la pared. Al pulsar <button type="button" class="btn btn-primary btn-sm py-0">Start</button> empieza la
+              evolución
+              del
+              sistema, con todas las partículas en la mitad derecha del
+              recipiente. En el panel derecho se muestra la diferencia entre el número de partículas entre los lados izquierdo y derecho del recipiente. Las dos lineas horizontales representan el valor de
+              $\pm \sqrt{\sigma_{\Delta}^{2}}$ (entre el que $x$ se
+              encuentra el $68 \%$ de las veces) y el valor $\pm 3 \sqrt{\sigma_{\Delta}^{2}}$ ($99.7\%$).
+            </p>
+            <p class="text-justify">
+              También se puede elegir si queremos que puedan chocar unas con otras o no pulsando el botón de partículas <button type="button" class="btn btn-dark btn-sm py-0">Con o Sin interacción</button> (cuando chocan lo hacen como discos duros),
+              ya
+              que todo
+              este desarrollo es válido en ambos casos.
+            </p>
+            <p class="text-justify">
+              De hecho, todo este desarrollo es válido para un modelo mucho más sencillo: El modelo de las urnas de Ehrenfest <a href="../Bibliografia.html#ref-huang">[huang]</a>, en el que las partículas no forman parte de un gas, sino que
+              consideramos cada lado del recipiente como una urna
+              independiente con partículas. En cada paso de tiempo cogemos al azar una partícula de una de las urnas y la movemos al otro lado de la caja. La dinámica de las fluctuaciones sigue la misma ley
+              que antes: se distribuye de forma gaussiana con
+              dispersión $\sigma^2 = 1/(N-1)$.
+            </p>
+            <p class="text-justify">
+              Cuando el gas está compuesto de $20$ partículas, por ejemplo, la diferencia de partículas entre ambas mitades del recipiente se equilibra rápidamente, y una vez en este estado comienza a
+              flutuar alrededor de $0$. La amplitud de estas fluctuaciones
+              puede llegar a ser de $10$ partículas, en cuyo caso hay $5$ partículas en una región y $15$ en la otra, pero es muy raro observar que las $20$ partículas se acumulen en la misma región. Sin
+              embargo, si disminuimos el número de partículas a $6$ no
+              es raro en absoluto ver que todas se concentren en un lado. Se observa en este caso un proceso imposible según las leyes de la termodinámica: un proceso en el que se invierte la evolución
+              temporal y la entropía crece.
+            </p>
+          </div>
           <hr>
           <!-- El applet empieza aqui -->
           <div style="text-align: center">

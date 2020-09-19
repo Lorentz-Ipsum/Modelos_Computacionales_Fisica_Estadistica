@@ -186,22 +186,24 @@
             Para temperaturas suficientemente bajas los bosones se concentran en el estado fundamental,
             dando lugar a un pico de ocupación en dicho nivel, en un fenómeno llamado Condensación de Bose-Einstein.
           </p>
-          <!-- Texto de la simulacion -->
           <hr>
-          <p class="text-justify">
-            En este applet realizamos una simulación de Monte Carlo de dos sistemas usando el algoritmo de Metropolis
-            (ver apéndice <a href="../Memoria.html#metropolis">[Metrópolis]</a>) en una dimensión (la de los niveles de energía).
-            El primer sistema contiene $N$ bosones (izquierda) y el segundo $N$ fermiones (derecha).
-          </p>
-          <p class="text-justify">
-            Podemos elegir dicho <button type="button" class="btn btn-info btn-sm">N</button>,
-            la <button type="button" class="btn btn-info btn-sm">Temperatura</button> (donde se ha tomado $k_B=1$)
-            y el <button type="button" class="btn btn-info btn-sm">Número de niveles</button>.
-            Pulsando <button type="button" class="btn btn-primary btn-sm">Inicia</button> se empieza la simulación.
-            Inicialmente las partículas ocupan distintos niveles (esto es relevante para los bosones),
-            y en cada paso de tiempo tienen cierta probabilidad de cambiar de nivel (proporcional a la temperatura) o de mantenerse en el mismo.
-            Además, se muestra el histograma normalizado de las frecuencias de ocupación de cada nivel energético.
-          </p>
+          <!-- EXPLICACION DE LA INTERFAZ -->
+          <div class="alert alert-dark bg-light" role="alert">
+            <p class="text-justify">
+              En este applet realizamos una simulación de Monte Carlo de dos sistemas usando el algoritmo de Metropolis
+              (ver apéndice <a href="../Memoria.html#metropolis">[Metrópolis]</a>) en una dimensión (la de los niveles de energía).
+              El primer sistema contiene $N$ bosones (izquierda) y el segundo $N$ fermiones (derecha).
+            </p>
+            <p class="text-justify">
+              Podemos elegir dicho <button type="button" class="btn btn-dark btn-sm py-0">N</button>,
+              la <button type="button" class="btn btn-dark btn-sm py-0">Temperatura</button> (donde se ha tomado $k_B=1$)
+              y el <button type="button" class="btn btn-dark btn-sm py-0">Número de niveles</button>.
+              Pulsando <button type="button" class="btn btn-primary btn-sm py-0">Start</button> se empieza la simulación.
+              Startlmente las partículas ocupan distintos niveles (esto es relevante para los bosones),
+              y en cada paso de tiempo tienen cierta probabilidad de cambiar de nivel (proporcional a la temperatura) o de mantenerse en el mismo.
+              Además, se muestra el histograma normalizado de las frecuencias de ocupación de cada nivel energético.
+            </p>
+          </div>
           <hr>
           <!-- El applet empieza aqui -->
           <div class="container" style="text-align: center">
@@ -263,7 +265,7 @@
               <div data-name="botones" class="form-group">
                 <div class="row" style="text-align: center">
                   <div class="col-md-12">
-                    <input type="button" id="startButton" value="Inicia" onclick="startStop()" class="btn btn-primary">
+                    <input type="button" id="startButton" value="Start" onclick="startStop()" class="btn btn-primary">
                     <input type="button" id="resetButton" value="Reset" onclick="resetSim()" class="btn btn-danger">
                   </div>
                 </div>

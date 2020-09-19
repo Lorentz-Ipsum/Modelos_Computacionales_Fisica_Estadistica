@@ -93,43 +93,49 @@
               </p>
               <footer>- David Goodstein, States of Matter</footer>
             </blockquote>
-            <!-- NOTAS DEL PRESENTADOR -->
             <aside class="notes">
+              <!-- NOTAS DEL PRESENTADOR -->
               El objetivo de este trabajo es crear una serie de herramientas que puedan ayudar a estudiantes a visualizar conceptos de Física Estadística que la primera vez que se estudian pueden ser difíciles de seguir.
               Esta clase de herramientas pueden ser especialmente útiles en Física Estadística ya que es un campo de la física complicado, con muchos matices sutiles.
             </aside>
           </section>
+
           <section data-auto-animate>
             <h2 data-id="INTRO-title">Introducción</h2>
             <ul>
               <li>
-                El gran número de grados de libertad de los sistemas que estudia hacen difícil visualizar los conceptos directamente *de cabeza*, y hacen los cálculos *bastante difíciles*.
+                El gran número de grados de libertad de los sistemas que estudia la Física Estadística hacen difícil visualizar los conceptos directamente <i>de cabeza</i>,
+                y hacen los cálculos *bastante difíciles*.
               </li>
               <li>
                 En Física Estadística se utilizan modelos computacionales constantemente. Por ello, familiarizarse con el entorno informático es imprescindible.
               </li>
+              <li>
+                Además de resolución numérica, las simulaciones por ordenador ayudan a comprender los entresijos de ciertos modelos.
+              </li>
             </ul>
-            <!-- NOTAS DEL PRESENTADOR -->
             <aside class="notes">
+              <!-- NOTAS DEL PRESENTADOR -->
               Este enfoque entronca además con una de las herramientas principales en la Física Estadística y Física de los Sistemas Complejos moderna, la simulación computacional.
             </aside>
           </section>
+
           <section data-auto-animate>
             <h2 data-id="INTRO-title">Introducción</h2>
             <ul>
               <li>
-                Además de resolución numérica, las simulaciones por ordenador pueden ayudar a comprender los entresijos de ciertos modelos.
+                Esto puede ser una gran ayuda, tanto para el estudiante como para el docente, a la hora de comprender los conceptos más complicados.
               </li>
               <li>
-                Esto puede ser una gran ayuda, tanto para el estudiante como para el docente, a la hora de comprender los conceptos más complicados. Más allá de explicar con pizarra y tiza, usar herramientas de este tipo para que el estudiante, ya
+                Más allá de explicar con pizarra y tiza, usar herramientas de este tipo para que el estudiante, ya
                 sea desde casa o en clase, se familiarice con los modelo, es algo cada vez más interesante. Queda patente con los sucesos de este año.
               </li>
               <li>
                 Planteamos 10 simulaciones en las que se ilustran algunos conceptos que hemos considerado más delicados.
               </li>
             </ul>
-            <!-- NOTAS DEL PRESENTADOR -->
             <aside class="notes">
+              <!-- NOTAS DEL PRESENTADOR -->
               Por ello, además el hecho de programar estas simulaciones y entender la física, y los códigos que hay detrás, sirve para aprender.
             </aside>
           </section>
@@ -146,16 +152,18 @@
               <footer>- Josiah Willard Gibbs</footer>
             </blockquote>
           </section>
+
           <section>
             <h3 data-id="MOTIV-subtitle">Objetivos</h3>
-            <p>Queremos realizar una serie de <b>simulaciones interactivas</b> que ejemplifiquen conceptos fundamentales de Física Estadística,
-              acompañadas por breves explicaciones que ayuden a comprenderlos e interiorizarlos.</p>
-            <!-- NOTAS DEL PRESENTADOR -->
+            <p>Realizar una serie de <b>simulaciones interactivas</b> que ejemplifiquen <b>conceptos de Física Estadística</b>,
+              acompañadas por <b>breves explicaciones</b> que ayuden a comprenderlos e interiorizarlos.</p>
             <aside class="notes">
-              Como hemos dicho, el objetivo es crear 10 simulaciones a las que cualquiera pueda acceder desde casa. Complementadas por explicaciones, casi divulgativas, pero con suficiente nivel para que los estudiantes tengan que reflexionar sobre
-              ellas.
+              <!-- NOTAS DEL PRESENTADOR -->
+              Como hemos dicho, el objetivo es crear 10 simulaciones a las que cualquiera pueda acceder desde casa.
+              Complementadas por explicaciones, casi divulgativas, pero con suficiente nivel para que los estudiantes tengan que reflexionar sobre ellas.
             </aside>
           </section>
+
           <section>
             <h3 data-id="MOTIV-subtitle">Requerimientos</h3>
             <ul>
@@ -163,13 +171,24 @@
                 Facilidad de acceso y de uso.
               </li>
               <li>
-                Código libre, q
+                Código libre (no utilizar muchas librerias).
               </li>
               <li>
-                Accesibilidad (no muchas librerias)
+                Que sea sencillo de ampliar, añadiendo nuevas simulaciones y explicaciones.
+              </li>
+              <li>
+                Explicaciones introductorias, pero exhaustivas.
               </li>
             </ul>
+            <aside class="notes">
+              La motivación detrás de este trabajo es que el resultado sea una herramienta accesible y fácil de usar.
+              Por ello, es preferible que no haga falta instalarla, ni tener conocimientos previos de programación.
+              Las condiciones que pusimos fueron que a ser posible no hubiera que descargar ni instalar ningún programa.
+              Que el código fuente fuera libre y accesible.
+              Y que fuera relativamente sencillo para cualquiera continuar con el proyecto y añadir nuevas simulaciones.
+            </aside>
           </section>
+
           <section>
             <h3 data-id="MOTIV-subtitle">Posibilidades</h3>
             <!-- <ul style="width: 60%;float:left;padding:40px; max-width:50%"> -->
@@ -193,41 +212,38 @@
                 <ul>
                   <li>Estándar en la web moderna.</li>
                   <li>Sintaxis relativamente sencilla.</li>
-                  <li>Preparar la interfaz y el código principal a la vez.</li>
+                  <li>Permite desarrollar la interfaz y el código principal a la vez.</li>
                 </ul>
               </li>
             </ul>
+            <aside class="notes">
+              Barajamos varias posibilidades, empezando con Jupyter Notebooks. Pero nos encontramos con que no estaban preparados para manejar simulaciones y animaciones en tiempo real.
+              Lo bueno de HTML+JS es que permite desarrollar la interfaz y el código principal a la vez, sin que interfieran.
+              Además, era una oportunidad para poner en práctica lo aprendido en los CFI de la UCM.
+            </aside>
           </section>
+
           <section>
             <h3 data-id="MOTIV-title">Solución</h3>
             <img class="r-frame" style="float: center;padding:10px;margin-bottom:30px" data-src="img/installing.png" alt="https://xkcd.com/1367/">
-            <!-- NOTAS DEL PRESENTADOR -->
+            <div>
+              <p>
+                Fuente: <a href="https://xkcd.com/1367/">xkcd #1367</a>
+              </p>
+            </div>
             <aside class="notes">
-              La motivación detrás de este trabajo es que el resultado sea una herramienta accesible y fácil de usar.
-              Por ello, es preferible que no haga falta instalarla, ni tener conocimientos previos de programación.
+              <!-- NOTAS DEL PRESENTADOR -->
+              Así que finalmente se decidió hacerlas en Javascript, preparando un servidor con las propias herramientas que ofrece la UCM a los estudiantes.
             </aside>
           </section>
+
           <section data-background-iframe="index.html" data-background-interactive>
             <div style="position: absolute; width: 40%; right: 0; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.6); color: #fff; padding: 20px; font-size: 30px; text-align: left;">
               <h3 style="color:#fff">En la web</h3>
-              <p>Montar un servidor y crear una página web para alojar las simulaciones.</p>
+              <p>Preparar un servidor y crear una página web utilizando estilos prefabricados de Bootstrap no requiere conocimientos extensos de programación y el resultado es bastante satisfactorio.</p>
             </div>
           </section>
-          <section>
-            <h3 data-id="SIMS-title">Estructura</h3>
-            <p>Cada simulación sigue una estructura muy marcada:</p>
-            <ol>
-              <li>
-                Fundamento teórico. Enunciado del modelo. Conceptos que ayuda a explicar.
-              </li>
-              <li>
-                Simulación interactiva. Explicación de uso. Aspectos técnicos de código.
-              </li>
-              <li>
-                Conclusiones. Casos particulares. Posible extensión de la simulación.
-              </li>
-            </ol>
-          </section>
+
           <section>
             <h3 data-id="SIMS-title">Programación funcional</h3>
             <p>Un paradigma de programación (otros serían Programación Orientada a Objetos):</p>
@@ -240,6 +256,22 @@
               </li>
               <li>
                 Una vez obtenidos los datos, los dibujamos en pantalla.
+              </li>
+            </ol>
+          </section>
+
+          <section>
+            <h3 data-id="SIMS-title">Estructura</h3>
+            <p>Cada simulación sigue una estructura muy marcada:</p>
+            <ol>
+              <li>
+                Fundamento teórico. Enunciado del modelo. Conceptos que ayuda a explicar.
+              </li>
+              <li>
+                Simulación interactiva. Explicación de uso. Aspectos técnicos de código.
+              </li>
+              <li>
+                Conclusiones. Casos particulares. Posible extensión de la simulación.
               </li>
             </ol>
           </section>
@@ -265,31 +297,33 @@
           <section data-auto-animate>
             <h2 data-id="REPASO-title">Repaso de Física Estadística</h2>
             <p>¿Cómo pueden emerger fenómenos irreversibles a partir de modelos microscópicos reversibles?</p>
-            <p>La Física Estadística se fundamenta en varias hipótesis, válidas experimentalmente, pero cuya demostración estrictamente teórica *aún no existe*.</p>
+            <p>La Física Estadística se fundamenta en varias hipótesis, válidas experimentalmente, pero cuya demostración estrictamente teórica y universalmente aplicable <i>aún no existe</i>.</p>
             <p>Veamos algunas de ellas.</p>
           </section>
           <section>
             <h3>Teoría cinética I</h3>
             <p>Micro Reversible + Macro Irreversible = Paradoja de Lochsmidt.</p>
             <p>Boltzmann: Hipótesis del Caos Molecular.</p>
-            <p>Teorema H.</p>
-            <p>Coarse-Graining.</p>
+            <p>Teorema H: Precursor de la entropía.</p>
+            <p>El desarrollo de Boltzmann no es estrictamente correcto: Coarse-Graining.</p>
             <p>Segunda Ley de la Termodinámica.</p>
           </section>
           <section>
             <h3>Teoría cinética II</h3>
-            <p>Espacio de Fases.</p>
-            <p>Teorema de Liouville.</p>
-            <p>Ergodicidad.</p>
-            <p>Periodo de Recurrencia de Poincaré.</p>
+            <p>Tratamiento desde la irreversibilidad: Espacio de Fases, Teorema de Liouville.</p>
+            <p>Ergodicidad: Periodo de Recurrencia de Poincaré.</p>
           </section>
           <section>
             <h3>Física Estadística del Equilibrio</h3>
             <p>Paradigma: Colectividades.</p>
+            <p>Consideramos la naturaleza de los sistemas en función de las variables macroscópicas relevantes.</p>
+            <p>Enfoque muy prolífico: Cuerpo negro, teoría de Debye... Asentaron Física Cuántica.</p>
           </section>
           <section>
             <h3>Física Estadística del No Equilibrio</h3>
             <p>Colectividades dejan de ser efectivas.</p>
+            <p>No hay paradigma general. Cada problema se estudia de forma distinta.</p>
+            <p>Es donde la Física Computacional toma mayor relevancia, permitiendo por ejemplo encontrar solución a ecuaciones que de otro modo serían imposibles de resolver.</p>
           </section>
         </section>
 
@@ -345,20 +379,18 @@
             <div class="fragment fade-up" style="box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.6); color: #fff;">
               <p>Comportamiento colectivo.</p>
             </div>
-          </section>
-
-          <section data-auto-animate>
-            <h2 data-id="TLC-title">Teorema del Límite Central</h2>
-            <p>Teorema matemático de teoría de la probabilidad.</p>
-            <p>Muchas aplicaciones en Física.</p>
-            <p>Comportamiento colectivo de muchas variables aleatorias.</p>
+            <div class="fragment fade-up" style="margin-top:20px;box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.6); color: #fff;">
+              <p>Teorema matemático de teoría de la probabilidad.</p>
+              <p>Muchas aplicaciones en Física.</p>
+              <p>La razón por la que la distribución gaussiana tiene un papel tan importante en física.</p>
+            </div>
           </section>
 
           <section>
             <h3>Enunciado</h3>
             <ul>
               <li>
-                $N$ variables aleatorias independientes: $$X_i, i = 1,\dots, N$$
+                $N$ (suficientemente grande) variables aleatorias independientes: $X_i, i = 1,\dots, N$
               </li>
               <li>
                 Misma distribución de probabilidad de media $\mu$ y varianza $\sigma^2 \neq 0$ finitas.
@@ -366,37 +398,40 @@
               <li>
                 Definimos $Y = X_1 + X_2 + \dots + X_N$
               </li>
-            </ul>
-          </section>
-
-          <section>
-            <h3>Enunciado</h3>
-            <ul>
               <li class="arrow">
-                Entonces, cuando $N$ es suficientemente grande,
-                la probabilidad de que $Y$ tome el valor $y$ sigue una distribución gaussiana de media $\mu_Y = N \mu$ y varianza $\sigma_Y^2 = \sigma^2/n$.:
+                Entonces, la probabilidad de que $Y$ tome el valor $y$ sigue una distribución gaussiana de media $\mu_Y = N \mu$ y varianza $\sigma_Y^2 = \sigma^2/n$.:
               </li>
               <li class="arrow">
-                \begin{equation}\label{eq:Gauss}
+                $$
                 P_{Y}(y)=\frac{1}{\sqrt{2 \pi N \sigma^{2}}} \exp \left[-\frac{(y-N \mu)^{2}}{2 N \sigma^{2}}\right]
-                \end{equation}
+                $$
               </li>
             </ul>
           </section>
 
-          <section data-background-iframe="Apps/LimiteCentral.html#simulacion" data-background-interactive>
+          <section data-auto-animate data-background-video="img/app-webm/tlc.webm">
             <div style="position: absolute; width: 40%; right: 0; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.6); color: #fff; padding: 20px; font-size: 30px; text-align: left;">
-              <h3 style="color:#fff">En la web</h3>
-              <p>Podemos elegir $N$ y el tipo de distribución individual con que se generan las variables $X$.</p>
+              <h3 style="color:#fff">En la simulación...</h3>
+              <p>
+                Podemos elegir $N$ y el tipo de distribución individual con que se generan las variables $X$.
+              </p>
+              <p>
+                Para distribuciones equiprobables el teorema puede no ser tan sorprendente.
+              </p>
+              <p>
+                No es difícil añadir una distribución asimétrica para comprobar que efectivamente, la suma es gaussiana.
+              </p>
             </div>
+            <aside class="notes">
+              <!-- NOTAS DEL PRESENTADOR -->
+              <p>De fondo podemos ver el ejemplo de una moneda frente a 30 monedas.</p>
+            </aside>
           </section>
 
           <section>
             <h3>Conclusiones</h3>
-            <p>No importa la distribución con la que generamos variables aleatorias, su suma <b>siempre es gaussiana</b>.</p>
+            <p>Ver cómo se acumulan las variables es la mejor forma de cerciorarse de que no importa la distribución con la que generamos variables aleatorias, su suma <b>siempre es gaussiana</b>.</p>
             <p>En otras palabras: El efecto cooperativo de muchas variables aleatorias independientes da como resultado una distribución gaussiana.</p>
-            <p>Es la razón por la que dicha distribución tiene un papel importante en física.</p>
-            <p>añadir algunos ejemplos</p>
           </section>
         </section>
 
@@ -415,11 +450,9 @@
               <p>Periodo de recurrencia de Poincaré.</p>
               <p>Hipótesis del Caos Molecular.</p>
             </div>
-          </section>
-
-          <section data-auto-animate>
-            <h2 data-id="KAC-title">El Anillo de Kac</h2>
-            <p>Propuesto por Marc Kac.</p>
+            <div class="fragment fade-up" style="margin-top:20px;box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.6); color: #fff;">
+              <p>Ilustra la compatiblidad entre estados macroscópicos irreversibles y estados microscópicos reversibles.</p>
+            </div>
           </section>
 
           <section>
@@ -455,7 +488,7 @@
                 Donde $b(t)$ y $r(t)$ son el número de bolas de cada color con un sitio marcado delante.
               </li>
               <li>
-                Estas ecuaciones no son resolubles. Necesitamos una hipótesis adicional para poder
+                Estas ecuaciones no son resolubles. Necesitamos una hipótesis adicional encontrar una solución explícita.
               </li>
             </ul>
           </section>
@@ -463,13 +496,13 @@
           <section>
             <ul>
               <li>
-                Consideramos
+                Hipótesis: De forma macroscópica:
                 $$
                 \frac{b(t)}{B(t)} = \frac{r(t)}{R(t)} = \frac{b(t) + r(t)}{B(t) + R(t)} = \frac{M}{N} \equiv \eta
                 $$
               </li>
               <li>
-                Y así:
+                Podemos resolver las ecuaciones de evolución:
                 $$
                 \begin{aligned}
                 B(t)-R(t) &=\left(1-2 \frac{M}{N}\right)\left[B(t-1)-R(t-1)\right] \\
@@ -483,9 +516,18 @@
             </ul>
           </section>
 
+          <section data-auto-animate data-background-video="img/app-webm/kac.webm">
+            <div style="position: absolute; width: 40%; right: 0; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.6); color: #fff; padding: 20px; font-size: 30px; text-align: left;">
+              <h3 style="color:#fff">En la simulación...</h3>
+              <p>Podemos elegir $N$ y el tipo de distribución individual con que se generan las variables $X$.</p>
+            </div>
+          </section>
+
           <section>
+            <h3>Conclusiones</h3>
             <ul>
               <li>El problema es la hipótesis que hemos tomado, que elimina las correlaciones en el sistema, del mismo modo que la hipótesis del Caos Molecular.</li>
+              <li>Microscópicamente, el sistema es periódico, pero bajo la hipótesis del Caos Molecular, resulta ser irreversible y aperiódico.</li>
               <li>Cuanto más grande es el sistema, más cerca estamos de la validez de la hipótesis.</li>
             </ul>
           </section>
@@ -506,11 +548,9 @@
               <p>Coarse-Graining.</p>
               <p>Acercamiento al equilibrio.</p>
             </div>
-          </section>
-
-          <section data-auto-animate>
-            <h2 data-id="OSC-title">Conjunto de Osciladores Armónicos</h2>
-            <p>Basado en una idea de Juan Parrondo.</p>
+            <div class="fragment fade-up" style="margin-top:20px;box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.6); color: #fff;">
+              <p>Basado en una idea de Juan Parrondo.</p>
+            </div>
           </section>
 
           <section>
@@ -558,10 +598,25 @@
             </ul>
           </section>
 
+          <section data-auto-animate data-background-video="img/app-webm/osciladores.webm">
+            <div style="position: absolute; width: 40%; right: 0; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.6); color: #fff; padding: 20px; font-size: 30px; text-align: left;">
+              <h3 style="color:#fff">En la simulación...</h3>
+              <p>Podemos elegir $N$, $M$ y la distribución de frecuencias y fases.</p>
+              <p>Para $M$ grande es fácil ver el máximo de entropía.</p>
+              <p>Para frecuencias aleatorias las fluctuaciones son pequeñas, para frecuencias equiespaciadas se aprecia el comportamiento periódico.</p>
+            </div>
+          </section>
+
           <section>
             <ul>
               <li>
+                Ilustra cómo la caracterización macroscópica del sistema que estudiemos afecta a los resultados teóricos.
+              </li>
+              <li>
                 Si el sistema es periódico no llegará a un estado de equilibrio, correspondiente a la entropía máxima.
+              </li>
+              <li>
+                Si añadimos acoplos entre los osciladores, el modelo se complica, y tenemos el modelo de Kuramoto, aplicable a....
               </li>
             </ul>
           </section>
@@ -581,13 +636,15 @@
               <p>Función de Evolución.</p>
               <p>Caos Determinista.</p>
             </div>
+            <div class="fragment fade-up" style="margin-top:20px;box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.6); color: #fff;">
+              <p>
+                Citando a Arnold: <q cite="">La mecánica hamiltoniana es geometría en el espacio de fases.</q>.
+              </p>
+            </div>
           </section>
 
           <section data-auto-animate>
             <h2 data-id="TRANS-title">Transformaciones en el Espacio de Fases</h2>
-            <p>
-              Citando a Arnold: <q cite="">La mecánica hamiltoniana es geometría en el espacio de fases.</q>.
-            </p>
             <ul>
               <li>Actúan sobre el cuadrado unidad $[0,1] \times [0,1]$.</li>
               <li>Conservan el área (Teorema de Liouville).</li>
@@ -615,6 +672,13 @@
               \end{array}\right.
               \end{array}
               \end{equation}
+          </section>
+
+          <section data-auto-animate data-background-video="img/app-webm/baker.webm">
+            <div style="position: absolute; width: 40%; right: 0; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.6); color: #fff; padding: 20px; font-size: 30px; text-align: left;">
+              <h3 style="color:#fff">En la simulación...</h3>
+              <p>Podemos elegir $N$ y el tipo de distribución individual con que se generan las variables $X$.</p>
+            </div>
           </section>
 
           <section>
@@ -659,6 +723,13 @@
             </ul>
           </section>
 
+          <section data-auto-animate data-background-video="img/app-webm/arnold.webm">
+            <div style="position: absolute; width: 40%; right: 0; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.6); color: #fff; padding: 20px; font-size: 30px; text-align: left;">
+              <h3 style="color:#fff">En la simulación...</h3>
+              <p>Podemos elegir $N$ y el tipo de distribución individual con que se generan las variables $X$.</p>
+            </div>
+          </section>
+
           <section>
             <h3>Aplicaciones</h3>
             <ul>
@@ -688,11 +759,9 @@
               <p>Intercambio de Energía y Partículas con el Entorno.</p>
               <p>Acercamiento al equilibrio.</p>
             </div>
-          </section>
-
-          <section data-auto-animate>
-            <h2 data-id="FLUC-title">Estudio de un Gas Ideal</h2>
-            <p>Ejemplo típico en las clases de introducción.</p>
+            <div class="fragment fade-up" style="margin-top:20px;box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.6); color: #fff;">
+              <p>Ejemplo típico en las clases de introducción.</p>
+            </div>
           </section>
 
           <section id="fluc">
@@ -748,7 +817,16 @@
             </ul>
           </section>
 
+          <section data-auto-animate data-background-video="img/app-webm/fluctuaciones.webm">
+            <div style="position: absolute; width: 40%; right: 0; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.6); color: #fff; padding: 20px; font-size: 30px; text-align: left;">
+              <h3 style="color:#fff">En la simulación...</h3>
+              <p>Podemos elegir $N$, la temperatura, lo que equivale a elegir la distribución de velocidades, y si queremos que sean partículas con o sin interacción.</p>
+              <p>Para pocas partículas se aprecia, más fácilmente las fluctuaciones.</p>
+            </div>
+          </section>
+
           <section>
+            <h3>Conclusiones</h3>
             <ul>
               <li>
                 la irreversibilidad aparece como consecuencia
@@ -762,9 +840,29 @@
               <li>Equilibrio dinámico, fluctuaciones.</li>
             </ul>
           </section>
+        </section>
 
-          <section id="macro">
-            <h3>Colectividad Macrocanónica</h3>
+
+
+
+        <!-- MACRO -->
+
+        <section id="macro">
+          <section data-auto-animate data-background-video="img/app-webm/macro.webm">
+            <h2 data-id="MACRO-title" style="box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.6); color: #fff;">
+              Colectividad Macrocanónica
+            </h2>
+            <div class="fragment fade-up" style="box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.6); color: #fff;">
+              <p>Comportamiento Colectivo.</p>
+              <p>Sistema en contacto con los alrededores.</p>
+            </div>
+            <div class="fragment fade-up" style="margin-top:20px;box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.6); color: #fff;">
+              <p>Elegir explícitamente el tamaño del sistema ayuda a visualizar el cambio de un sistema aislado a uno un foco térmico o de partículas.</p>
+            </div>
+          </section>
+
+          <section>
+            <h3>Enunciado</h3>
             <ul>
               <li>
                 Sistema separado de los alrededores.
@@ -776,6 +874,19 @@
                 $$
               </li>
             </ul>
+          </section>
+
+          <section data-auto-animate data-background-video="img/app-webm/macro.webm">
+            <div style="position: absolute; width: 40%; right: 0; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.6); color: #fff; padding: 20px; font-size: 30px; text-align: left;">
+              <h3 style="color:#fff">En la simulación...</h3>
+              <p>Podemos elegir $N$ y el tipo de distribución individual con que se generan las variables $X$.</p>
+              <p>Se recomienda comprobar el comportamiento del sistema empezando por todo el recinto, e ir reduciendo progresivamente el área.</p>
+            </div>
+          </section>
+
+          <section>
+            <h3>Conclusiones</h3>
+            <p>Para sistemas pequeños las fluctuaciones son mayores.</p>
           </section>
         </section>
 
@@ -794,16 +905,10 @@
               <p>Condensación de Bose-Einstein.</p>
               <p>Método de Monte Carlo.</p>
             </div>
-          </section>
-
-          <section data-auto-animate>
-            <h2 data-id="BF-title">Estadísticas de Bosones y Fermiones</h2>
-            <p>
-              Muy confuso la primera vez que se ve.
-            </p>
-            <p>
-              No tratamos de deducir el comportamiento desde las funciones de onda.
-            </p>
+            <div class="fragment fade-up" style="margin-top:20px;box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.6); color: #fff;">
+              <p> Muy confuso la primera vez que se ve. </p>
+              <p> No tratamos de deducir el comportamiento desde las funciones de onda. </p>
+            </div>
           </section>
 
           <section>
@@ -842,11 +947,16 @@
                 Entonces, elegimos un sitio (en este caso, un nivel de energía) al azar (que no sea aquel en el que está la partícula).
               </li>
               <li>
-                Si la energía del nivel escogido es mayor que el
-              </li>
-              <li>
+                Si la energía del nivel escogido es mayor que....
               </li>
             </ul>
+          </section>
+
+          <section data-auto-animate data-background-video="img/app-webm/bosefermi.webm">
+            <div style="position: absolute; width: 40%; right: 0; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.6); color: #fff; padding: 20px; font-size: 30px; text-align: left;">
+              <h3 style="color:#fff">En la simulación...</h3>
+              <p>Podemos elegir $N$ y el tipo de distribución individual con que se generan las variables $X$.</p>
+            </div>
           </section>
 
           <section>
@@ -878,16 +988,17 @@
             <div class="fragment fade-up" style="box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.6); color: #fff;">
               <p>Transición de Fase.</p>
               <p>Acercamiento al equilibrio.</p>
-              <p>Dimensionalidad y Límite Termodinámico.</p>
+            </div>
+            <div class="fragment fade-up" style="margin-top:20px;box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.6); color: #fff;">
+              <p>Modelo ideal para explicar las transiciones de fase.</p>
+              <p>Aplicaciones en muchos campos.</p>
             </div>
           </section>
 
           <section data-auto-animate>
-            <h2 data-id="ISING-title">Modelo de Ising</h2>
-            <p>Modelo ideal para explicar las transiciones de fase.</p>
+            <h3>Enunciado</h3>
             <p>Modelizamos los átomos de un metal como una red de espines magnéticos.</p>
             <p>Ferromagnetismo, paramagnetismo.</p>
-            <p>Aplicaciones en muchos campos.</p>
           </section>
 
           <section id="magnet">
@@ -905,13 +1016,45 @@
             </ul>
           </section>
 
-          <section id="lt">
-            <h3>Estudio del calor específico</h3>
-            <p>El modelo de Ising sólo tiene solución exacta a partir de dimensión 2 y superiores.</p>
-            <p></p>
+          <section data-auto-animate data-background-video="img/app-webm/magnet.webm">
+            <div style="position: absolute; width: 40%; right: 0; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.6); color: #fff; padding: 20px; font-size: 30px; text-align: left;">
+              <h3 style="color:#fff">En la simulación...</h3>
+              <p>Podemos elegir el tamaño de la red y cambiar la temperatura en tiempo real.</p>
+              <p>Una vez elegida una temperatura, se recomienda esperar un momento para simular el proceso de templado.</p>
+              <p>Si se sigue este proceso, empezando a la menor temperatura posible, y se va aumentando progresivamente, se aprecia cómo la magnetización máxima disminuye al acercarse a la temperatura crítica.</p>
+            </div>
           </section>
 
           <section>
+            <h3>Conclusiones</h3>
+            <ul>
+              <li>Con esta simulación se puede apreciar el proceso de termalización, necesario en simulaciones de este tipo para poder medir el valor de observables.</li>
+              <li>Es una de las simulaciones más entretenidas.</li>
+            </ul>
+          </section>
+        </section>
+
+
+
+
+        <!-- LT -->
+
+        <section id="lt">
+          <section data-auto-animate data-background-video="img/app-webm/lt.webm">
+            <h2 data-id="LT-title" style="box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.6); color: #fff;">
+              Estudio del calor específico en el modelo de Ising
+            </h2>
+            <div class="fragment fade-up" style="box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.6); color: #fff;">
+              <p>Dimensionalidad.</p>
+              <p>Límite Termodinámico.</p>
+            </div>
+            <div class="fragment fade-up" style="margin-top:20px;box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.6); color: #fff;">
+              <p>El modelo de Ising sólo tiene solución exacta a partir de dimensión 2 y superiores.</p>
+            </div>
+          </section>
+
+          <section>
+            <h3>Enunciado</h3>
             <ul>
               <li>
                 Función de partición:
@@ -929,6 +1072,20 @@
           </section>
 
           <section>
+            <ul>
+              <li>No se realiza la simulación explícita, ya que es muy costosa computacionalmente.</li>
+              <li>Se podrían añadir datos de una simulación con redes más grandes.</li>
+            </ul>
+          </section>
+
+          <section data-auto-animate data-background-video="img/app-webm/lt.webm">
+            <div style="position: absolute; width: 40%; right: 0; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.6); color: #fff; padding: 20px; font-size: 30px; text-align: left;">
+              <h3 style="color:#fff">En la simulación...</h3>
+              <p>Podemos elegir $N_x$ y $N_y$.</p>
+            </div>
+          </section>
+
+          <section>
             <h3>Experiencias recomendadas</h3>
             <ul>
               <li>
@@ -938,6 +1095,9 @@
                 Aumentar ambos a la vez.
               </li>
             </ul>
+          </section>
+
+          <section>
             <h3>Conclusiones</h3>
             <ul>
               <li>
@@ -948,19 +1108,64 @@
 
 
 
-
         <!-- CONCLUSIONES -->
         <!-- CONCLUSIONES -->
         <!-- CONCLUSIONES -->
 
         <!-- CONCLUSIONES -->
 
-        <section data-auto-animate>
-          <h2 data-id="CONCLUSIONES-title">Conclusiones</h2>
-          <p data-id="eq-anim">
-            Métodos computacionales no sólo son buenos para cálculo numérico, sino para la docencia.
-          </p>
-          <p>También pueden ayudar al investigador a descubrir nuevos aspectos de los modelos.</p>
+        <section id="conclusiones">
+          <section data-auto-animate>
+            <h2 data-id="CONCLUSIONES-title">Consecución de los objetivos</h2>
+            <p>
+              Implementar simulaciones sencillas para el navegador es fácil.
+              Si bien puede ocasionar problemas el implementarlas a dispositivos como tablets o smartphones,
+              con una buena explicación de los pasos a seguir no debería ser una tarea muy difícil.
+            </p>
+            <p>
+              Documentar bien el código lleva tiempo, pero hacerlo accesible y libre es inmediato.
+            </p>
+            <p>
+              Añadir nuevo contenido es más fácil que encontrar a gente dispuesta a crearlo.
+            </p>
+            <p>
+              Formular explicaciones adecuadas para el nivel justo de conocimientos es estimulante intelectualmente, y necesario para interiorizar conceptos.
+              Por en la carrera muchas de las actividades requeridas por el estudiante consisten exactamente en eso.
+              Podría utilizarse ese esfuerzo para ayudar a los estudiantes de los cursos posteriores, y crear así una base de datos de conocimientos creados específicamente para el grado.
+            </p>
+          </section>
+
+          <section data-auto-animate>
+            <h2 data-id="CONCLUSIONES-title">Conclusiones</h2>
+            <p>
+              Este tipo de herramientas son muy buenas para visualizar procesos más alla de pizarra y tiza.
+            </p>
+            <p>
+              Construirlas también puede ser muy didáctico.
+            </p>
+            <p>
+              Amplia las posibilidades de exploración para el estudiante, que en principio no sabe hacer desarrollos matemáticos o teóricos complicados.
+            </p>
+            <p>
+              En matemáticas, por ejemplo, la mayoría del avance moderno tiene que ver con la computación.
+            </p>
+          </section>
+
+          <section data-auto-animate>
+            <h2 data-id="CONCLUSIONES-title">Conclusiones</h2>
+            <p>
+              Métodos computacionales no sólo son buenos para cálculo numérico, sino para la docencia.
+            </p>
+            <p>
+              También pueden ayudar al investigador a descubrir nuevos aspectos de los modelos.
+            </p>
+            <p>
+              Posibilidades en otros campos de física: Cuántica, Geo y Atmo, Óptica...
+            </p>
+            <p>
+              Por falta de espacio y tiempo no hemos podido añadir más, pero me gustaría ampliar los contenidos.
+            </p>
+          </section>
         </section>
 
 
@@ -968,14 +1173,37 @@
 
         <!-- ASPECTOS TECNICOS / BIBLIO -->
 
-        <section data-auto-animate>
-          <h2 data-id="TECNICOS-title">Algunos aspectos técnicos</h2>
-          <p>
-            La página web se ha creado usando los estilos de <a href="https://getbootstrap.com/">Bootstrap</a>.
-          </p>
-          <p>
-            Estas diapositivas se han hecho usando <a href="https://revealjs.com/">reveal.js</a>.
-          </p>
+        <section>
+          <section id="tecnicos" data-auto-animate>
+            <h2 data-id="TECNICOS-title">Algunos aspectos técnicos</h2>
+            <p>
+              Para preparar el servidor se ha utilizado DigitalOcean, usando las licencias del Github Student Developer Pack ofrecidas por la UCM.
+            </p>
+            <p>
+              La página web se ha creado usando los estilos de <a href="https://getbootstrap.com/">Bootstrap</a>.
+            </p>
+            <p>
+              Estas diapositivas se han hecho usando <a href="https://revealjs.com/">reveal.js</a>.
+            </p>
+          </section>
+
+          <section id="tecnicos" data-auto-animate>
+            <p>
+              En el futuro se realizarán tutoriales explicando estos procesos, para que cualquiera interesado pueda repetirlos.
+            </p>
+          </section>
+        </section>
+
+        <section id="biblio" data-auto-animate>
+          <section data-auto-animate>
+            <h2 data-id="BIBLIO-title">Bibliografía</h2>
+            <h3>Libros más importantes</h3>
+          </section>
+
+          <section data-auto-animate>
+            <h2 data-id="BIBLIO-title">Bibliografía</h2>
+            <h3>Recursos informáticos</h3>
+          </section>
         </section>
 
       </div>
