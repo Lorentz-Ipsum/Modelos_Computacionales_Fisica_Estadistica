@@ -5,23 +5,40 @@ $(document).ready(function() {
     var unaD = exactas[0],
         dosD = exactas[1];
     plotExacto(unaD, dosD);
+    showNx();
+    showNy();
 
     calculaBtn.onclick = function() {
         /* START */
         console.log("START");
 
         // Variables de los sliders
-        var Nx = nx.value,
-            Ny = ny.value;
+        var Nx = nxSlider.value,
+            Ny = nySlider.value;
 
         var indice = generaindice();
         var matriz = generamatriz();
 
-
-        cv = calcula(Nx, Ny, indice, matriz);
-        plotCv(cv);
+        try {
+            cv = calcula(Nx, Ny, indice, matriz);
+            plotCv(cv);
+        } catch (e) {
+            console.log("Eeeeeeeeroooooor");
+            $('#myModal').modal('show');
+        };
+    };
+    limpiaBtn.onclick = function() {
+        plotExacto(unaD, dosD);
     };
 });
+
+function showNx() {
+    nxLectura.textContent = Number(nxSlider.value);
+}
+
+function showNy() {
+    nyLectura.textContent = Number(nySlider.value);
+}
 
 
 // Funciones de plot
@@ -67,12 +84,23 @@ function plotExacto(unaD, dosD) {
     var data = [oneD, twoD];
 
     var layout = {
+        height: 400,
         title: "Exactas",
         xaxis: {
+            title: 'T',
             range: [0, 5]
         },
         yaxis: {
+            title: 'C_v',
             range: [0, 2]
+        },
+        font: {
+            size: 18,
+        },
+        margin: {
+            l: 60,
+            r: 30,
+            d: 20,
         },
         shapes: [
             //line vertical
@@ -109,7 +137,7 @@ function plotCv(cv) {
         x: cv[0],
         y: cv[1],
         type: "lines",
-        name: nx.value + 'x' + ny.value,
+        name: nxSlider.value + 'x' + nySlider.value,
     };
     var data = [trace];
 

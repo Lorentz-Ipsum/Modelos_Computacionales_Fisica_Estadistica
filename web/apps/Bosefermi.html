@@ -118,41 +118,44 @@
           <h2 id="bosefermi">Estadísticas de bosones y fermiones</h2>
 
           <p class="text-justify">
-            Al describir partículas cuánticas usamos un artificio matemático, la función de ondas. Aunque no haya interacción entre partículas en un conjunto de partículas cuánticas, las
-            propiedades de simetría de dicha función conducen a comportamientos
-            colectivos, muy diferentes físicamente.
+            Al describir partículas cuánticas usamos un artificio matemático, la función de ondas.
+            Aunque no haya interacción entre partículas en un conjunto de partículas cuánticas,
+            las propiedades de simetría de dicha función conducen a comportamientos colectivos, muy diferentes físicamente.
           </p>
 
           <p class="text-justify">
-            Llamamos fermiones a las partículas descritas con una función de ondas <i>antisimétrica</i> bajo permutaciones de los argumentos de dicha función de ondas. Dichas partículas tienen
-            espín semientero, como por ejemplo electrones, protones o
-            neutrones. Debido a esta antisimetría, dos fermiones no pueden compartir los mismos números cuánticos, y por tanto se distribuyen en los niveles de energía, sin compartirlos. A este
-            hecho se le llama <i>principio de exclusión de Pauli</i>. Por
-            otro lado, los bosones son aquellas partículas con función de ondas simétrica, y tienen espín entero. Algunos ejemplos son los fotones, los núcleos de $He^4$ o cuasipartículas como los
-            fonones. La función de ondas simétrica sí que permite que
-            varios bosones comparan números cuánticos, y por tanto puede haber varios con la misma energía.
+            Llamamos fermiones a las partículas descritas con una función de ondas <i>antisimétrica</i> bajo permutaciones de los argumentos de dicha función de ondas.
+            Dichas partículas tienen espín semientero, como por ejemplo electrones, protones o neutrones.
+            Debido a esta antisimetría, dos fermiones no pueden compartir los mismos números cuánticos,
+            y por tanto se distribuyen en los niveles de energía, sin compartirlos.
+            A este hecho se le llama <i>principio de exclusión de Pauli</i>.
+            Por otro lado, los bosones son aquellas partículas con función de ondas simétrica, y tienen espín entero.
+            Algunos ejemplos son los fotones, los núcleos de $He^4$ o cuasipartículas como los fonones.
+            La función de ondas simétrica sí que permite que varios bosones comparan números cuánticos, y por tanto puede haber varios con la misma energía.
           </p>
 
           <p class="text-justify">
-            En esta simulación estudiaremos dos sistemas, uno compuesto por $N$ bosones y el otro por $N$ fermiones, pero que no interaccionan entre sí más que por esta simetría o antisimetría de
-            la función de ondas.
+            En esta simulación estudiaremos dos sistemas, uno compuesto por $N$ bosones y el otro por $N$ fermiones,
+            pero que no interaccionan entre sí más que por esta simetría o antisimetría de la función de ondas.
           </p>
           <p class="text-justify">
-            En la descripción estadística de esos sistemas se utiliza la colectividad <b>macrocanónica</b>, en la que se construye la función de partición para un sistema con niveles de energía
-            $\epsilon_i$, con $i=0,1,2,...$ como:
+            En la descripción estadística de esos sistemas se utiliza la colectividad <b>macrocanónica</b>,
+            en la que se construye la función de partición para un sistema con niveles de energía $\epsilon_i$, con $i=0,1,2,...$ como:
           </p>
           $$
           \ln Q(\beta,V,z) = -\prod_i \sum_{n_i}[z \exp (-\beta \epsilon_i)]^{n_i}
           $$
 
           <p class="text-justify">
-            La variable $z$ es la fugacidad, que se determina por la condición de que el número de partículas $N$ ha de ser igual a: $N=z \frac{\partial \ln Q}{\partial z}$. Las variables $n_i$
-            marcan el número de partículas en el nivel $i$-ésimo, por tanto
-            varían entre $0$ y el número maximo de partículas admitidas en dicho nivel:
+            La variable $z$ es la fugacidad, que se determina por la condición de que el número de partículas $N$ ha de ser igual a:
+            $N=z \frac{\partial \ln Q}{\partial z}$.
+            Las variables $n_i$ marcan el número de partículas en el nivel $i$-ésimo,
+            por tanto varían entre $0$ y el número maximo de partículas admitidas en dicho nivel:
           </p>
           <p class="text-justify">
             \paragraph{Para fermiones:} En virtud del principio de exclusión de Pauli, cada nivel puede estar vacío o contener $n_i = 1$ partícula:
           </p>
+
           $$
           n_{i}=0,1 \quad \Longrightarrow \quad \ln Q_{F} = \prod\left[1+z \exp \left(-\beta \epsilon_{i}\right)\right]
           $$
@@ -166,6 +169,7 @@
           <p class="text-justify">
             Usando estas expresiones podemos calcular el número medio de partículas en cada nivel:
           </p>
+
           \begin{equation}
           \left\langle n_{i}\right\rangle=-\frac{1}{\beta} \frac{\partial \ln Q}{\partial \epsilon_{i}},
           \left\{\begin{array}{l}{\left\langle n_{i}\right\rangle_{F}=\frac{1}{z^{-1} \exp \left(\beta \epsilon_{i}\right)+1} \quad \text { fermiones }} \\ {\left\langle
@@ -174,26 +178,28 @@
           \end{equation}
 
           <p class="text-justify">
-            En estas expresiones puede comprobarse que la ocupación de un nivel fermiónico nunca puede superar $1$, ya que el denominador siempre es mayor que la unidad. Por el contrario, el
-            factor $-1$ que aparece en los bosones permite ocupaciones (muy)
-            superiores a la unidad.
+            En estas expresiones puede comprobarse que la ocupación de un nivel fermiónico nunca puede superar $1$,
+            ya que el denominador siempre es mayor que la unidad.
+            Por el contrario, el factor $-1$ que aparece en los bosones permite ocupaciones (muy) superiores a la unidad.
           </p>
           <p class="text-justify">
-            Para temperaturas suficientemente bajas los bosones se concentran en el estado fundamental, dando lugar a un pico de ocupación en dicho nivel, en un fenómeno llamado Condensación de
-            Bose-Einstein.
+            Para temperaturas suficientemente bajas los bosones se concentran en el estado fundamental,
+            dando lugar a un pico de ocupación en dicho nivel, en un fenómeno llamado Condensación de Bose-Einstein.
           </p>
           <!-- Texto de la simulacion -->
           <hr>
           <p class="text-justify">
-            En este applet realizamos una simulación de Monte Carlo de dos sistemas usando el algoritmo de Metropolis (ver apéndice <a href="../Memoria.html#metropolis">[Metrópolis]</a>) en una dimensión (la de los niveles de
-            energía). El primer sistema contiene $N$ bosones (izquierda) y el
-            segundo $N$ fermiones (derecha).
+            En este applet realizamos una simulación de Monte Carlo de dos sistemas usando el algoritmo de Metropolis
+            (ver apéndice <a href="../Memoria.html#metropolis">[Metrópolis]</a>) en una dimensión (la de los niveles de energía).
+            El primer sistema contiene $N$ bosones (izquierda) y el segundo $N$ fermiones (derecha).
           </p>
           <p class="text-justify">
-            Podemos elegir dicho <button type="button" class="btn btn-info btn-sm">N</button>, la <button type="button" class="btn btn-info btn-sm">Temperatura</button> (donde se ha tomado $k_B=1$) y el <button type="button"
-                class="btn btn-info btn-sm">Número de niveles</button>. Pulsando <button type="button" class="btn btn-primary btn-sm">Inicia</button> se empieza la simulación. Inicialmente
-            las partículas ocupan distintos niveles (esto es relevante para
-            los bosones), y en cada paso de tiempo tienen cierta probabilidad de cambiar de nivel (proporcional a la temperatura) o de mantenerse en el mismo.
+            Podemos elegir dicho <button type="button" class="btn btn-info btn-sm">N</button>,
+            la <button type="button" class="btn btn-info btn-sm">Temperatura</button> (donde se ha tomado $k_B=1$)
+            y el <button type="button" class="btn btn-info btn-sm">Número de niveles</button>.
+            Pulsando <button type="button" class="btn btn-primary btn-sm">Inicia</button> se empieza la simulación.
+            Inicialmente las partículas ocupan distintos niveles (esto es relevante para los bosones),
+            y en cada paso de tiempo tienen cierta probabilidad de cambiar de nivel (proporcional a la temperatura) o de mantenerse en el mismo.
             Además, se muestra el histograma normalizado de las frecuencias de ocupación de cada nivel energético.
           </p>
           <hr>

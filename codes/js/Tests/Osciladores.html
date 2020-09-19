@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+
+  <head>
+    <title>Osciladores</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="../img/favicon.ico">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <!-- Activamos el código Javascript de Bootstrap y de jQuery -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="../js/bootstrap.js"></script>
+    <!-- Numeric.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/numeric/1.2.6/numeric.min.js"></script>
+    <!-- Plotly.js -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"> </script>
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <!-- Importamos MathJax para visualizar LaTeX -->
+
+    <style type="text/css">
+      body {
+        padding: 45px 0 0 0;
+      }
+
+      blockquote {
+        font-size: 16px !important;
+        font-style: italic;
+      }
+    </style>
+    <style media="screen">
+      .main-content {
+        padding: 3rem 1.5rem;
+      }
+    </style>
+
+  </head>
+
+  <body>
+    <!-- Contenedor
+    ================================================== -->
+    <div class="container">
+      <hr>
+      <!-- El applet empieza aqui -->
+      <div style="text-align: center">
+        <div class="card card-body bg-light">
+          <div class="row">
+            <div class="col-md">
+              <canvas id="canvasSec" width="400" height="400" style="position:absolute;">
+                Please update your browser
+              </canvas>
+              <canvas id="canvasOsc" width="400" height="400" style="position:relative;"> </canvas>
+            </div>
+            <div class="col-md" style="max-height:400px">
+              <div id="graph" style="height: 400px;">
+                <!-- Plotly chart will be drawn inside this DIV -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
+        <!-- BOTONERA -->
+        <form name="botonera" class="card card-body bg-light">
+          <div data-name="numero" class="form-group">
+            <div class="row" style="text-align: right">
+              <div class="col-md-4">
+                <label class="font-weight-bold">Numero de osciladores: &nbsp;<span id="numeroLectura">20</span></label>
+              </div>
+              <div class="col-md-8">
+                <input id="numeroSlider" type="range" class="slider custom-range" name="numeroSlider" onchange="updateNum()" min="1" max="100" value="20" step="1">
+              </div>
+            </div>
+          </div>
+          <div data-name="sector" class="form-group">
+            <div class="row" style="text-align: right">
+              <div class="col-md-4">
+                <label class="font-weight-bold">Numero de sectores: &nbsp;<span id="sectorLectura">5</span></label>
+              </div>
+              <div class="col-md-8">
+                <input id="sectorSlider" type="range" class="slider custom-range" name="sectorSlider" onchange="updateSec()" min="1" max="100" value="5" step="1">
+              </div>
+            </div>
+          </div>
+          <div data-name="frecuencias" class="form-group">
+            <div class="row" style="text-align: right">
+              <div class="col-md-4">
+                <label class="font-weight-bold" for="freqSelect">Frecuencias iniciales:</label>
+              </div>
+              <div class="col-md-8">
+                <select id="freqSelect" name="freqSelect" onchange="updateFreq()" class="form-control">
+                  <option value="0">Aleatorias</option>
+                  <option value="1">Casi iguales</option>
+                  <option value="2">Equiespaciadas</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div data-name="fases" class="form-group">
+            <div class="row" style="text-align: right">
+              <div class="col-md-4">
+                <label class="font-weight-bold" for="faseSelect">Fases iniciales:</label>
+              </div>
+              <div class="col-md-8">
+                <select id="faseSelect" name="faseSelect" onchange="updateFase()" class="form-control">
+                  <option value="0">Aleatorias</option>
+                  <option value="1">Nulas</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div data-name="velocidad" class="form-group">
+            <div class="row" style="text-align: right">
+              <div class="col-md-4">
+                <label class="font-weight-bold">Velocidad: &nbsp;<span id="velocidadLectura">1</span></label>
+              </div>
+              <div class="col-md-8">
+                <input type="range" id="velocidadSlider" class="slider custom-range" name="velocidadSlider" onchange="updateVel()" min="1" max="10" value="1" step="1">
+              </div>
+            </div>
+          </div>
+          <div data-name="botones" class="form-group">
+            <div class="row" style="text-align: center">
+              <div class="col-md-12">
+                <input id="startButton" type="button" onclick="startStop()" value="  Start  " class="btn btn-primary">
+                <input id="resetButton" type="button" onclick="resetPlot()" value="  Reset  " class="btn btn-danger">
+                <!-- Boton que abra el modal de bootstrap -->
+                <button class="btn btn-warning" type="button" data-toggle="modal" data-target="#myModal" id="histBtn" onclick="plotHist()">Histograma</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="Osciladores.js"></script>
+    <!-- CODIGO DE DERIVATIVE BY MAURICIO POPP -->
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script>
+    <script src="../js/mathjax-config.js"> </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" id="MathJax-script"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+    <style>
+      svg text {
+        font-size: 10px;
+      }
+
+      svg .title {
+        font-size: 25px;
+      }
+
+      .function-plot {
+        margin: 0px auto 20px;
+        display: block;
+      }
+
+      .function-plot text {
+        font-size: 15px;
+      }
+    </style>
+  </body>
+
+</html>

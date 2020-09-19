@@ -159,26 +159,32 @@
             ensayos sobre una distribución, y por ello tiene especial significancia no sólo en Física Estadística, sino también para la física cuántica.
           </p>
           <hr>
-          <p class="text-justify">
-            En el applet se puede elegir el número de variables aleatorias <button type="button" class="btn btn-info btn-sm">N</button> y el <button type="button" class="btn btn-info btn-sm">Tipo de distribución</button> de la que tomamos
-            muestras: como un dado (del 1 al 6), como una moneda (0 ó 1) y uniformemente distribuidas entre
-            0 y 1 (incluidos). Con el
-            objetivo de que sea más fácil ver que la suma converge a la distribución gaussiana, también se puede modificar la velocidad de generación de variables.
-          </p>
-          <p class="text-justify">
-            Una posible ampliación de la simulación sería añadir la posibilidad de muestrear distribuciones asimétricas, como la distribución triangular y la distribución de Poisson, para ilustrar que no importa que la distribución de
-            partida no sea uniforme.
-          </p>
-          <p class="text-justify">
-            Pulsando <button type="button" class="btn btn-primary btn-sm">Inicia</button> se comienzan a generar variables $Y$, y se construye el histograma de frecuencias, normalizado a la unidad. Superpuesto al histograma, en rojo, se muestra la
-            distribución gaussiana predicha por la
-            ecuación \eqref{eq:Gauss}.
-            Pulsando <button type="button" class="btn btn-danger btn-sm">Reset</button> se limpia la gráfica, que puede acabar siendo confusa si se cambia el número de variables o la distribución mientras la simulación se está ejecutando.
-          </p>
-          <p class="text-justify">
-            Se recomienda comprobar que cuando $N\gg1$, la distribución de $Y$ se aproxima a la curva de la distribución gaussiana, para todas las distribuciones individuales disponibles. Por el contrario, cuando $N$ es pequeño, no
-            sucede así.
-          </p>
+
+          <div class="alert alert-dark bg-light" role="alert">
+            <p class="text-justify">
+              En el applet se puede elegir el número de variables aleatorias <button type="button" class="btn btn-info btn-sm">N</button> y el <button type="button" class="btn btn-info btn-sm">Tipo de distribución</button> de la que tomamos
+              muestras: como un dado (del 1 al 6), como una moneda (0 ó 1) y uniformemente distribuidas entre
+              0 y 1 (incluidos). Con el
+              objetivo de que sea más fácil ver que la suma converge a la distribución gaussiana, también se puede modificar la velocidad de generación de variables.
+            </p>
+            <p class="text-justify">
+              Una posible ampliación de la simulación sería añadir la posibilidad de muestrear distribuciones asimétricas, como la distribución triangular y la distribución de Poisson, para ilustrar que no importa que la distribución de
+              partida no sea uniforme.
+            </p>
+            <p class="text-justify">
+              Pulsando <button type="button" class="btn btn-primary btn-sm">Inicia</button> se comienzan a generar variables $Y$, y se construye el histograma de frecuencias, normalizado a la unidad. Superpuesto al histograma, en rojo, se muestra la
+              distribución gaussiana predicha por la
+              ecuación \eqref{eq:Gauss}.
+              Pulsando <button type="button" class="btn btn-danger btn-sm">Reset</button> se limpia la gráfica, que puede acabar siendo confusa si se cambia el número de variables o la distribución mientras la simulación se está ejecutando.
+            </p>
+            <p class="text-justify">
+              Se recomienda comprobar que cuando $N\gg1$, la distribución de $Y$ se aproxima a la curva de la distribución gaussiana, para todas las distribuciones individuales disponibles. Por el contrario, cuando $N$ es pequeño, no
+              sucede así.
+            </p>
+          </div>
+          <div class="alert alert-danger" role="alert">
+            Se ha añadido una opción adicional asimétrica: <a href="https://en.wikipedia.org/wiki/Beta_distribution">La distribución beta</a>. ¡Pruébala con $N=1$!
+          </div>
           <hr id="simulacion">
           <!-- El applet empieza aqui -->
           <div class="container" style="text-align: center">
@@ -238,10 +244,6 @@
                 </div>
               </div>
             </form>
-          </div>
-          <hr>
-          <div class="alert alert-info" role="alert">
-            Se ha añadido una opción adicional asimétrica: <a href="https://en.wikipedia.org/wiki/Beta_distribution">La distribución beta</a>. ¡Pruébala con $N=1$!
           </div>
           <!-- Controles para siguiente y anterior simulacion -->
           <hr>

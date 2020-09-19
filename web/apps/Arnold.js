@@ -13,7 +13,7 @@ var play = false;
 var t11, t12, t21, t22;
 changeValsT();
 
-setInterval(iteration, 1);
+setInterval(iteration, 10);
 resetData();
 $('#play').click(function() {
     play = true;
@@ -80,7 +80,7 @@ function iteration() {
 function createImage() {
     var img = new Image();
     img.onload = function() {
-        w = 400;
+        w = 100;
         ctx.width = canvas.width;
         ctx.height = canvas.height;
         ctx.drawImage(img, 0, 0, ctx.width, ctx.height);

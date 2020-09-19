@@ -142,7 +142,7 @@ function generaAnillo(n, m, tipo) {
     switch (Number(tipo)) {
         case 0:
             for (var i = 0; i < n; i++) {
-                var j = (Math.random() >= 0.5);
+                var j = (i % 2 == 0);
                 X.push(j);
             }
             break;
@@ -159,14 +159,20 @@ function generaAnillo(n, m, tipo) {
             }
             break;
         case 3:
-            var j = true;
             for (var i = 0; i < n; i++) {
+                var j = (Math.random() >= 0.5);
                 X.push(j);
             }
             break;
         case 4:
+            var j = true; // Todas azules
             for (var i = 0; i < n; i++) {
-                var j = (i % 2 == 0);
+                X.push(j);
+            }
+            break;
+        case 5:
+            var j = false; // Todas rojas
+            for (var i = 0; i < n; i++) {
                 X.push(j);
             }
             break;
@@ -287,7 +293,6 @@ function startStop() {
     running = !running;
     if (running) {
         console.log("START");
-        i = 0;
         startButton.value = " Pause ";
         // reset();
     } else {
@@ -297,6 +302,7 @@ function startStop() {
 
 // Funcion para restaurar la grafica
 function resetPlot() {
+    i = 0;
     running = false;
     startButton.value = " Start ";
     emptyPlot();
@@ -306,7 +312,7 @@ function resetPlot() {
     drawExt(S, X0);
     drawInt(X0);
     X = X0;
-    if (Number(state) == 1 || Number(state) == 2 || Number(state) == 3) {
+    if (Number(state) == 1 || Number(state) == 2 || Number(state) == 3 || Number(state) == 4 || Number(state) == 5) {
         addSolution = true;
     } else {
         addSolution = false;

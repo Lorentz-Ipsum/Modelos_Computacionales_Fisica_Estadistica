@@ -8,8 +8,7 @@ var tempSlider = document.getElementById('tempSlider');
 var tempLectura = document.getElementById('tempLectura');
 var sizeSelectX = document.getElementById('sizeSelectX');
 var sizeSelectY = document.getElementById('sizeSelectX');
-// var sizeSelectY = document.getElementById('sizeSelectY');
-// var speedReadout = document.getElementById('speedReadout');
+var initSelect = document.getElementById('initSelect');
 var spfSlider = document.getElementById('spfSlider');
 var spfLectura = document.getElementById('spfLectura');
 var pixelCheck = document.getElementById('pixelCheck');
@@ -31,6 +30,7 @@ var sizeY = Number(sizeSelectX.options[sizeSelectX.selectedIndex].text);
 // var sizeY = Number(sizeSelectY.options[sizeSelectY.selectedIndex].text);
 var squareWidth = canvas.width / sizeX; // width of each lattice site in pixels
 var squareHeight = canvas.height / sizeY;
+var initConfig = Number(initSelect.value);
 
 var stepsPerFrame;
 if (mobile) spfSlider.value = 9;
@@ -42,31 +42,31 @@ var pixelGraphics = false;
 var stepCount = 0;
 var startTime = 0;
 
-// Create the 2D array of dipoles, initially random (1 for up, -1 for down):
+// Inicializar el array de dipolos
 var s = new Array(sizeX);
 for (var i = 0; i < sizeX; i++) {
     s[i] = new Array(sizeY); // a 2D array is just an array of arrays
-    for (var j = 0; j < sizeY; j++) {
-        if (Math.random() < 0.5) {
-            s[i][j] = 1;
-        } else {
-            s[i][j] = -1;
-        }
-        colorSquare(i, j);
-    }
 }
+var Imanacion = Array(2);
+var ArrayTemp = [], // Esto sera la temperatura
+    ArrImanacion = []; // Esto sera el valor total de la Imanacion
+resetSim();
+
 // Inizializar la magnetizacion
-var imanacion = Array(2);
-var imanacionX = [], // Esto sera la temperatura
-    imanacionY = []; // Esto sera el valor total de la imanacion
-imanacion = [imanacionX, imanacionY];
+Imanacion = [ArrayTemp, ArrImanacion];
 for (var i = 0; i < 1001; i++) {
-    imanacion[0][i] = i / 100;
-    imanacion[1][i] = 0;
+    Imanacion[0][i] = i / 100;
+    Imanacion[1][i] = 0;
 }
 
 plotMag();
 simulate(); // let 'er rip!
+
+
+
+
+
+
 
 // Function to carry out the simulation:
 function simulate() {
@@ -85,9 +85,9 @@ function simulate() {
         for (var i = 0; i < sizeX; i++) {
             for (var j = 0; j < sizeY; j++) {
                 if (s[i][j] == 1) {
-                    imanacion[1][Math.floor(T * 100)]++;
+                    Imanacion[1][Math.floor(T * 100)]++;
                 } else {
-                    imanacion[1][Math.floor(T * 100)]--;
+                    Imanacion[1][Math.floor(T * 100)]--;
                 };
             };
         };
@@ -99,6 +99,50 @@ function simulate() {
     };
     window.setTimeout(simulate, 1); // come back in 1 ms
 }
+
+function resetSim() {
+    if (initConfig == 0) {
+        for (var i = 0; i < sizeX; i++) {
+            for (var j = 0; j < sizeY; j++) {
+                if (Math.random() < 0.5) {
+                    s[i][j] = 1;
+                } else {
+                    s[i][j] = -1;
+                }
+                colorSquare(i, j);
+            }
+        }
+    } else if (initConfig == 1) {
+        for (var i = 0; i < sizeX; i++) {
+            for (var j = 0; j < sizeY; j++) {
+                s[i][j] = 1;
+                colorSquare(i, j);
+            }
+        }
+    }
+}
+
+
+// Function to start or pause the simulation:
+function startStop() {
+    running = !running;
+    if (running) {
+        startButton.value = " Pause ";
+        resetTimer();
+    } else {
+        startButton.value = "Resume";
+    }
+}
+// Function to update the temperature readout:
+function showTemp() {
+    tempLectura.textContent = Number(tempSlider.value).toFixed(2);
+}
+
+
+
+
+
+
 
 // Given a lattice site, compute energy change from hypothetical flip; note pbc:
 function deltaU(i, j) {
@@ -146,22 +190,6 @@ function colorSquare(i, j) {
     }
 }
 
-// Function to start or pause the simulation:
-function startStop() {
-    running = !running;
-    if (running) {
-        startButton.value = " Pause ";
-        reset();
-    } else {
-        startButton.value = "Resume";
-    }
-}
-
-// Function to update the temperature readout:
-function showTemp() {
-    tempLectura.textContent = Number(tempSlider.value).toFixed(2);
-}
-
 // Resize the lattice (block-spin transformaiton):
 function resize() {
     context.setTransform(1, 0, 0, 1, 0, 0);
@@ -206,7 +234,11 @@ function resize() {
             colorSquare(iNew, jNew);
         }
     }
-    reset();
+    resetTimer();
+}
+
+function reconfig() {
+    initConfig = Number(initSelect.value);
 }
 
 // Function to adjust the number of steps per frame according to slider position:
@@ -223,7 +255,7 @@ function adjustSPF() {
     }
     stepsPerFrame = spf;
     spfLectura.textContent = spf;
-    reset();
+    resetTimer();
 }
 
 function adjustJ() {
@@ -248,11 +280,11 @@ function selectGraphicsMode() {
             colorSquare(i, j);
         }
     }
-    reset();
+    resetTimer();
 }
 
-// Function to reset the step count and start time, for accurate benchmarking:
-function reset() {
+// Function to resetTimer the step count and start time, for accurate benchmarking:
+function resetTimer() {
     stepCount = 0;
     startTime = (new Date()).getTime();
 }
@@ -266,13 +298,13 @@ function reset() {
 
 
 function plotMag() {
-    for (var i = 0; i < imanacion[0].length; i++) {
-        imanacion[1][i] /= sizeX * sizeY;
+    for (var i = 0; i < Imanacion[0].length; i++) {
+        Imanacion[1][i] /= sizeX * sizeY;
     };
     // Trazas
     var trace = {
-        x: imanacion[0],
-        y: imanacion[1],
+        x: Imanacion[0],
+        y: Imanacion[1],
         mode: 'lines',
         name: 'Magnetización',
         line: {

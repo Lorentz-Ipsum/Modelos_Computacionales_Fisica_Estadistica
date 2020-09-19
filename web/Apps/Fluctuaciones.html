@@ -123,10 +123,11 @@
           <h2 id="gases">Gas ideal bidimensional</h2>
 
           <p class="text-justify">
-            Con estas dos simulaciones estudiaremos el caso común de un gas ideal en dos dimensiones. Primero, la expansión libre ilustrará los conceptos de irreversibilidad y fluctuaciones en equilibrio, y
-            es un ejemplo claro de acercamiento al equilibrio. Y
-            segundo, el estudio de una región específica del gas sirve de ejemplo de sistema en contacto con un foco térmico y de partículas, cuyo análisis se lleva a cabo mediante la colectividad
-            macrocanónica.
+            Con estas dos simulaciones estudiaremos el caso común de un gas ideal en dos dimensiones.
+            Primero, la expansión libre ilustrará los conceptos de irreversibilidad y fluctuaciones en equilibrio, y
+            es un ejemplo claro de acercamiento al equilibrio.
+            Y segundo, el estudio de una región específica del gas sirve de ejemplo de sistema en contacto con un foco térmico y de partículas,
+            cuyo análisis se lleva a cabo mediante la colectividad macrocanónica.
 
 
           <h3 id="equilibrio">Irreversibilidad y fluctuaciones en equilibrio</h3>
@@ -135,25 +136,28 @@
             <h4>Expansión libre de un gas</h4>
 
             <p class="text-justify">
-              Nuestro sistema es un recipiente dividido en dos por una pared. En una de las mitades hay un gas a temperatura $T$. El experimento empieza
-              cuando retiramos la pared (de forma instantánea). Entonces,
-              el gas se expande hasta ocupar todo el recipiente, y permanece en este estado de quilibrio. Nunca se observa lo contrario. Decimos que hay una secuencia de estados determinada, el proceso es
-              irreversible.
+              Nuestro sistema es un recipiente dividido en dos por una pared. En una de las mitades hay un gas a temperatura $T$.
+              El experimento empieza cuando retiramos la pared (de forma instantánea).
+              Entonces, el gas se expande hasta ocupar todo el recipiente, y permanece en este estado de quilibrio.
+              Nunca se observa lo contrario. Decimos que hay una secuencia de estados determinada, el proceso es irreversible.
             </p>
           </blockquote>
 
           <p class="text-justify">
-            Expresado en el lenguaje de la Física Estadística, partimos de un estado muy poco probable, por lo que en la evolución del sistema tendrá una dirección muy marcada: aquella en que los estados
-            sean más probables <a href="../Bibliografia.html#ref-huang">[huang]</a>. Para que esto ocurra,
-            necesitamos que haya un número grande de grados de libertad. Si el sistema está compuesto por pocas partículas, es más probable que todas acaben en sólo una mitad del recipiente, por tanto
-            podríamos ver la secuencia inversa. Las fluctuaciones de
-            densidad, en el caso de pocas partículas, tienen más peso a la hora de caracterizar el macroestado.
+            Expresado en el lenguaje de la Física Estadística, partimos de un estado muy poco probable,
+            por lo que en la evolución del sistema tendrá una dirección muy marcada:
+            aquella en que los estados sean más probables <a href="../Bibliografia.html#ref-huang">[huang]</a>.
+            Para que esto ocurra, necesitamos que haya un número grande de grados de libertad.
+            Si el sistema está compuesto por pocas partículas, es más probable que todas acaben en sólo una mitad del recipiente, por tanto
+            podríamos ver la secuencia inversa.
+            Las fluctuaciones de densidad, en el caso de pocas partículas, tienen más peso a la hora de caracterizar el macroestado.
             Veamos por qué.
           </p>
           <p class="text-justify">
-            Estudiemos la probabilidad de que haya $N_d$ partículas en el lado derecho y $N_i$ en el izquierdo, con $N = N_i + N_d$. Como ambas regiones tienen el mismo volumen, si consideramos que las
-            partículas son independientes entre sí (siguiendo la
-            <i>hipótesis del caos molecular</i>) la probabilidad de que una partícula cualquiera esté en uno de los lados es $p={1/2}$. La probabilidad de tener $N_d$ y $N_i$ viene dada por
+            Estudiemos la probabilidad de que haya $N_d$ partículas en el lado derecho y $N_i$ en el izquierdo, con $N = N_i + N_d$.
+            Como ambas regiones tienen el mismo volumen, si consideramos que las partículas son independientes entre sí
+            (siguiendo la <i>hipótesis del caos molecular</i>) la probabilidad de que una partícula cualquiera
+            esté en uno de los lados es $p={1/2}$. La probabilidad de tener $N_d$ y $N_i$ viene dada por
           </p>
           \begin{equation}\label{eq:gasBinom}
           p\left(N_{d}, N_{i}\right)=\left(\begin{array}{c}
@@ -166,9 +170,9 @@
           \end{equation}
 
           <p class="text-justify">
-            que es la distribución binomial. De esta expresión ya podemos extraer consecuencias importantes. El máximo de esta distribución ocurre cuando $N_d = N/2$, por lo que esta es la distribución
-            más probable. Las situaciones más improbables son aquellas
-            en que $N_i$ ó $N_d$ son cero.
+            que es la distribución binomial. De esta expresión ya podemos extraer consecuencias importantes.
+            El máximo de esta distribución ocurre cuando $N_d = N/2$, por lo que esta es la distribución más probable.
+            Las situaciones más improbables son aquellas en que $N_i$ ó $N_d$ son cero.
           </p>
           <p class="text-justify">
             ¿Cómo de grande es la diferencia entre estas probabilides? Calculemos el cociente entre $p(N, 0)$ y $p(N / 2, N / 2)$:
@@ -178,14 +182,16 @@
           \end{equation}
 
           <p class="text-justify">
-            Para evaluar este cociente utilizamos la aproximación de Stirling para $n ! \simeq n^{n} e^{-n} \sqrt{2 \pi n},$ válida con un error menor del 1\% si $n \geq 5$. Obtenemos entonces que:
+            Para evaluar este cociente utilizamos la aproximación de Stirling para $n ! \simeq n^{n} e^{-n} \sqrt{2 \pi n}$,
+            válida con un error menor del 1\% si $n \geq 5$. Obtenemos entonces que:
           </p>
           \begin{equation}
           \frac{p(N, 0)}{p(N / 2, N / 2)} \simeq \sqrt{\frac{\pi N}{2}} 2^{-N}
           \end{equation}
 
           <p class="text-justify">
-            Es decir, la probabilidad de encontrar todas las partículas concentradas en una región disminuye <i>exponencialmente</i> con el número de partículas. Algunos ejemplos concretos:
+            Es decir, la probabilidad de encontrar todas las partículas concentradas en una región disminuye <i>exponencialmente</i> con el número de partículas.
+            Algunos ejemplos concretos:
           </p>
           $$
           \begin{array}{llll}
@@ -197,16 +203,18 @@
           $$
 
           <p class="text-justify">
-            Es decir, para $6$ partículas, todas se concentran en el mismo lado del recipiente un $5\%$ de las veces. Y cuantas más partículas tengamos, más rápido decaerá esta probabilidad. Con sólo
-            $300$ partículas ya tenemos números extraordinariamente
-            pequeños, incluso cuando todavía estamos muy lejos del número de Avogadro de partículas $N=6.023 \times 10^{23}$. Con este cálculo se muestra que la irreversibilidad aparece como consecuencia
-            del enorme número de partículas que componen un sistema
-            macroscópico.
+            Es decir, para $6$ partículas, todas se concentran en el mismo lado del recipiente un $5\%$ de las veces.
+            Y cuantas más partículas tengamos, más rápido decaerá esta probabilidad.
+            Con sólo $300$ partículas ya tenemos números extraordinariamente pequeños,
+            incluso cuando todavía estamos muy lejos del número de Avogadro de partículas $N=6.023 \times 10^{23}$.
+            Con este cálculo se muestra que la irreversibilidad aparece como consecuencia
+            del enorme número de partículas que componen un sistema macroscópico.
           </p>
           <p class="text-justify">
             Calculemos las fluctuaciones respecto al estado más probable, $N_{d}=N_{i}=N / 2$.
-            Si definimos $x$ como la desviación relativa respecto a dicho estado $x=\left(N_{d}-N_{i}\right) / N$, podemos escribir que: $N_{d}=N(1+x) / 2$. Introduciendo esta expresión en la ecuación
-            \eqref{eq:gasBinom} y utilizando el desarrollo de Stirling
+            Si definimos $x$ como la desviación relativa respecto a dicho estado $x=\left(N_{d}-N_{i}\right) / N$,
+            podemos escribir que: $N_{d}=N(1+x) / 2$.
+            Introduciendo esta expresión en la ecuación \eqref{eq:gasBinom} y utilizando el desarrollo de Stirling
             obtenemos que la probabilidad de encontrar una desviación $x$ sigue una distribución gaussiana:
           </p>
           \begin{equation}\label{eq:gasGauss}
@@ -214,15 +222,18 @@
           \end{equation}
 
           <p class="text-justify">
-            de dispersión $\sigma^{2}=1 /(N-1)$, esto es, más estrecha cuantas más particulas haya en el sistema. Por tanto, una fluctuación es más improbable cuanto más grande sea el sistema.
-            Si volvemos a escribir \eqref{eq:gasGauss} en función de $N_{d}-N_{i}=\Delta$, se obtiene que la dispersión en la variable $\Delta$ es $\sigma_{\Delta}^{2}=N$:
+            de dispersión $\sigma^{2}=1 /(N-1)$, esto es, más estrecha cuantas más particulas haya en el sistema.
+            Por tanto, una fluctuación es más improbable cuanto más grande sea el sistema.
+            Si volvemos a escribir \eqref{eq:gasGauss} en función de $N_{d}-N_{i}=\Delta$,
+            se obtiene que la dispersión en la variable $\Delta$ es $\sigma_{\Delta}^{2}=N$:
           </p>
           \begin{equation}
           p_{N}(\Delta) \simeq \sqrt{\frac{2}{\pi N}} e^{-\Delta^{2} /(2 N)}
           \end{equation}
 
           <p class="text-justify">
-            Tenemos, en resumen, un sistema que se acerca al estado de equilibrio, específicamente, a un estado de equilibrio dinámico. Como en <a href="Osciladores.html">[Osciladores]</a>, la dinámica del sistema no se para,
+            Tenemos, en resumen, un sistema que se acerca al estado de equilibrio, específicamente, a un estado de equilibrio dinámico.
+            Como en <a href="Osciladores.html">[Osciladores]</a>, la dinámica del sistema no se para,
             sino que fluctúa en torno a su valor ideal. Esta es una situación muy común en la Física Estadística.
           </p>
           <!-- Texto de la simulacion -->
