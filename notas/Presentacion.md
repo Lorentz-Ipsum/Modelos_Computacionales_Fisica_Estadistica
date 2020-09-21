@@ -23,6 +23,17 @@ Queda patente con los sucesos de este año.
 
 Planteamos 10 simulaciones en las que se ilustran algunos conceptos que hemos considerado más delicados.
 
+---
+
+
+El gran número de grados de libertad de los sistemas que estudia la Física Estadística hacen difícil visualizar los conceptos directamente,
+y hacen los cálculos más complicados.
+En Física Estadística se utilizan modelos computacionales constantemente. Por ello, familiarizarse con el entorno informático es imprescindible.
+Además de resolución numérica, las simulaciones por ordenador ayudan a comprender los entresijos de ciertos modelos.
+Esto puede ser una gran ayuda, tanto para el estudiante como para el docente, a la hora de comprender los conceptos más complicados.
+Más allá de explicar con pizarra y tiza, usar herramientas de este tipo para que el estudiante, ya
+sea desde casa o en clase, se familiarice con los modelo, es algo cada vez más interesante. Queda patente con los sucesos de este año.
+Planteamos 10 simulaciones en las que se ilustran algunos conceptos que hemos considerado adecuados, y susceptibles de simular sin muchas dificultades por un estudiante interesado en la programación.
 
 
 
@@ -88,6 +99,12 @@ Bueno, antes de pasar a las simulaciones se ha considerado conveniente hacer un 
 
 ¿Cómo pueden emerger fenómenos irreversibles a partir de modelos microscópicos reversibles?
 De los primeros modelos estudiados, el gas ideal es el que primero en que se produjeron avances en este tema.
+
+### Características de la Física Estadística<
+
+- Muchas partículas
+- Aproximaciones complicadas
+- Hipótesis complejas
 
 ---
 ### Física Estadística del Equilibrio
@@ -325,3 +342,31 @@ Si comparamos la posibilidad de encontrar todas las partículas concentradas en 
 
 ---
 ### Modelo de Ising
+
+- Modelo ideal para explicar las transiciones de fase.
+
+
+
+
+
+
+
+
+
+
+# Conclusiones
+
+
+## Trabajo futuro
+
+Implementar simulaciones para el navegador es fácil. Sin embargo, adaptarlas para que sean funcionales en todo tipo de dispositivos es más complicado.
+Por ello, aunque algunas funcionan en móviles o tablets, presentan numerosos errores que habría que arreglar.
+
+
+
+
+
+
+# Cosas
+
+(Si tardo mucho) Bueno, es la primera vez que hago una presentación de esta forma telemática así que quizá me haya trabado un poco.
