@@ -352,7 +352,7 @@ function plotMag() {
             range: [-1, 1],
         },
         font: {
-            size: 18,
+            size: 15,
         },
         margin: {
             l: 60,

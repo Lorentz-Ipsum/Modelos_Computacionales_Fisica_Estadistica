@@ -218,7 +218,7 @@
             obtenemos que la probabilidad de encontrar una desviación $x$ sigue una distribución gaussiana:
           </p>
           \begin{equation}\label{eq:gasGauss}
-          p_{N}(x) \simeq \sqrt{\frac{2}{\pi N}} e^{-(N-1) z^{2} / 2}
+          p_{N}(x) \simeq \sqrt{\frac{2}{\pi N}} e^{-(N-1) x^{2} / 2}
           \end{equation}
 
           <p class="text-justify">
@@ -355,10 +355,10 @@
             </div>
             <div class="modal-body">
               <!-- Here is the inside of the modal -->
-              <p class="text-justify">Some text in the modal.</p>
 
-              <div style="max-width: 500;max-height:400px;width: 400px;">
-                <div id="graphHistFluc" style="height: 400px;width: 100%; position: relative;">
+
+              <div style="max-width: 500;max-height:400px;">
+                <div id="graphHistFluc" style="height: 400px; position: relative;">
                   <!-- Plotly chart will be drawn inside this DIV -->
                 </div>
               </div>

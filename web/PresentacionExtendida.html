@@ -103,8 +103,11 @@
             <h2 data-id="INTRO-title">Introducción</h2>
             <ul>
               <li>
-                El gran número de grados de libertad de los sistemas que estudia la Física Estadística hacen difícil visualizar los conceptos directamente,
-                y hacen los cálculos más complicados.
+                Física Estadística = Muchos grados de libertad <br> $\rightarrow$ Aproximaciones
+              </li>
+              <li>
+                El gran número de grados de libertad de los sistemas que estudia la Física Estadística hacen difícil visualizar los conceptos directamente <i>de cabeza</i>,
+                y hacen los cálculos *bastante difíciles*.
               </li>
               <li>
                 En Física Estadística se utilizan modelos computacionales constantemente. Por ello, familiarizarse con el entorno informático es imprescindible.
@@ -207,22 +210,6 @@
           </section>
 
           <section>
-            <h3 data-id="SIMS-title">Programación funcional</h3>
-            <p>Un paradigma de programación (otros serían Programación Orientada a Objetos):</p>
-            <ol>
-              <li>
-                Las variables se definen de forma global.
-              </li>
-              <li>
-                Les vamos aplicando funciones, tratándolas.
-              </li>
-              <li>
-                Una vez obtenidos los datos, los dibujamos en pantalla.
-              </li>
-            </ol>
-          </section>
-
-          <section>
             <h3 data-id="MOTIV-subtitle">Posibilidades</h3>
             <!-- <ul style="width: 60%;float:left;padding:40px; max-width:50%"> -->
             <ul>
@@ -263,27 +250,38 @@
             </div>
           </section>
 
-          <section id="tecnicos" data-auto-animate>
-            <h3 data-id="TECNICOS-title">Algunos aspectos técnicos</h3>
-            <p>
-              Las gráficas de datos se hacen con <a href="https://plotly.com/">Plotly</a>, la única librería externa que se ha usado.
-            </p>
-            <p>
-              El servidor se ha preparado con DigitalOcean, usando las licencias del Github Student Developer Pack ofrecidas por la UCM.
-            </p>
-            <p>
-              Por su facilidad de uso, los estilos de la página web son de <a href="https://getbootstrap.com/">Bootstrap</a>, y estas diapositivas se han hecho usando <a href="https://revealjs.com/">reveal.js</a>.
-            </p>
+          <section>
+            <h3 data-id="SIMS-title">Programación funcional</h3>
+            <p>Un paradigma de programación (otros serían Programación Orientada a Objetos):</p>
+            <ol>
+              <li>
+                Las variables se definen de forma global.
+              </li>
+              <li>
+                Les vamos aplicando funciones, tratándolas.
+              </li>
+              <li>
+                Una vez obtenidos los datos, los dibujamos en pantalla.
+              </li>
+            </ol>
           </section>
 
-          <section id="tecnicos" data-auto-animate>
-            <h3 data-id="TECNICOS-title">Algunos aspectos técnicos</h3>
-            <p>
-              Aunque no es el objetivo de este trabajo, en el futuro se realizarán varias guías explicando estos procesos, para que cualquier persona interesada pueda repetirlos.
-            </p>
+          <section>
+            <h3 data-id="SIMS-title">Estructura</h3>
+            <p>Cada simulación sigue una estructura muy marcada:</p>
+            <ol>
+              <li>
+                Fundamento teórico. Enunciado del modelo. Conceptos que ayuda a explicar.
+              </li>
+              <li>
+                Simulación interactiva. Explicación de uso. Aspectos técnicos de código.
+              </li>
+              <li>
+                Conclusiones. Casos particulares. Posible extensión de la simulación.
+              </li>
+            </ol>
           </section>
         </section>
-
 
 
 
@@ -304,22 +302,34 @@
           </section>
           <section data-auto-animate>
             <h2 data-id="REPASO-title">Repaso de Física Estadística</h2>
+            <p>¿Cómo pueden emerger fenómenos irreversibles a partir de modelos microscópicos reversibles?</p>
             <p>La Física Estadística se fundamenta en varias hipótesis, válidas experimentalmente, pero cuya demostración estrictamente teórica y universalmente aplicable <i>aún no existe</i>.</p>
-            <p>¿Cómo pueden emerger fenómenos irreversibles a partir de modelos microscópicos reversibles? (Paradoja de Lochsmidt)</p>
+            <p>Veamos algunas de ellas.</p>
           </section>
           <section>
-            <h3>Teoría cinética</h3>
+            <h3>Teoría cinética I</h3>
+            <p>Micro Reversible + Macro Irreversible = Paradoja de Lochsmidt.</p>
             <p>Boltzmann: Hipótesis del Caos Molecular.</p>
-            <p>Este desarrollo no es estrictamente correcto: Coarse-Graining.</p>
+            <p>Teorema H: Precursor de la entropía.</p>
+            <p>El desarrollo de Boltzmann no es estrictamente correcto: Coarse-Graining.</p>
+            <p>Segunda Ley de la Termodinámica.</p>
+          </section>
+          <section>
+            <h3>Teoría cinética II</h3>
             <p>Tratamiento desde la irreversibilidad: Espacio de Fases, Teorema de Liouville.</p>
+            <p>Ergodicidad: Periodo de Recurrencia de Poincaré.</p>
           </section>
           <section>
             <h3>Física Estadística del Equilibrio</h3>
             <p>Paradigma: Colectividades.</p>
             <p>Consideramos la naturaleza de los sistemas en función de las variables macroscópicas relevantes.</p>
+            <p>Enfoque muy prolífico: Cuerpo negro, teoría de Debye... Asentaron Física Cuántica.</p>
+          </section>
+          <section>
             <h3>Física Estadística del No Equilibrio</h3>
             <p>Colectividades dejan de ser efectivas.</p>
             <p>No hay paradigma general. Cada problema se estudia de forma distinta.</p>
+            <p>Es donde la Física Computacional toma mayor relevancia, permitiendo por ejemplo encontrar solución a ecuaciones que de otro modo serían imposibles de resolver.</p>
           </section>
         </section>
 
@@ -353,22 +363,6 @@
                   <li style="margin: 10px 0;"> <a href="#magnet">Transición Ferro-Paramagnética. </a></li>
                   <li style="margin: 10px 0;"> <a href="#lt">Estudio del Calor Específico. </a></li>
                 </ol>
-              </li>
-            </ol>
-          </section>
-
-          <section>
-            <h3 data-id="SIMS-title">Estructura</h3>
-            <p>Cada simulación sigue una estructura muy marcada:</p>
-            <ol>
-              <li>
-                Fundamento teórico. Enunciado del modelo. Conceptos que ayuda a explicar.
-              </li>
-              <li>
-                Simulación interactiva. Explicación de uso. Aspectos técnicos de código.
-              </li>
-              <li>
-                Conclusiones. Casos particulares. Posible extensión de la simulación.
               </li>
             </ol>
           </section>
@@ -411,7 +405,7 @@
                 Definimos $Y = X_1 + X_2 + \dots + X_N$
               </li>
               <li class="arrow">
-                Entonces, la probabilidad de que $Y$ tome el valor $y$ sigue una distribución gaussiana de media $\mu_Y = N \mu$ y varianza $\sigma_Y^2 = \sigma^2/N$.:
+                Entonces, la probabilidad de que $Y$ tome el valor $y$ sigue una distribución gaussiana de media $\mu_Y = N \mu$ y varianza $\sigma_Y^2 = \sigma^2/n$.:
               </li>
               <li class="arrow">
                 $$
@@ -422,10 +416,17 @@
           </section>
 
           <section data-auto-animate data-background-video="img/app-webm/tlc.webm">
-            <div style="position: absolute; width: 50%; left: 0; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.6); color: #fff; padding: 20px; font-size: 30px; text-align: left;">
+            <div style="position: absolute; width: 40%; right: 0; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.6); color: #fff; padding: 20px; font-size: 30px; text-align: left;">
               <h3 style="color:#fff">En la simulación...</h3>
-              <p> Podemos elegir $N$ y la distribución individual con que se generan las variables $X$. </p>
-              <p>Con sólo una variable tenemos una distribución equiprobable, si aumentamos el número de variables la distribución se aproxima a una gaussiana.</p>
+              <p>
+                Podemos elegir $N$ y el tipo de distribución individual con que se generan las variables $X$.
+              </p>
+              <p>
+                Para distribuciones equiprobables el teorema puede no ser tan sorprendente.
+              </p>
+              <p>
+                No es difícil añadir una distribución asimétrica para comprobar que efectivamente, la suma es gaussiana.
+              </p>
             </div>
             <aside class="notes">
               <!-- NOTAS DEL PRESENTADOR -->
@@ -435,9 +436,8 @@
 
           <section>
             <h3>Conclusiones</h3>
-            <p>El efecto cooperativo de muchas variables aleatorias independientes da como resultado una distribución gaussiana.</p>
             <p>Ver cómo se acumulan las variables es la mejor forma de cerciorarse de que no importa la distribución con la que generamos variables aleatorias, su suma <b>siempre es gaussiana</b>.</p>
-            <p> No es difícil añadir una distribución asimétrica para añadir más complejidad a la simulación.</p>
+            <p>En otras palabras: El efecto cooperativo de muchas variables aleatorias independientes da como resultado una distribución gaussiana.</p>
           </section>
         </section>
 
@@ -452,9 +452,9 @@
               El Anillo de Kac
             </h2>
             <div class="fragment fade-up" style="box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.6); color: #fff;">
-              <p>Hipótesis del Caos Molecular.</p>
               <p>Ergodicidad.</p>
               <p>Periodo de recurrencia de Poincaré.</p>
+              <p>Hipótesis del Caos Molecular.</p>
             </div>
             <div class="fragment fade-up" style="margin-top:20px;box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.6); color: #fff;">
               <p>Ilustra la compatiblidad entre estados macroscópicos irreversibles y estados microscópicos reversibles.</p>
@@ -465,7 +465,7 @@
             <h3>Enunciado</h3>
             <ul>
               <li>
-                Anillo con $N$ casillas. En cada casilla ponemos una bolita roja o azul.
+                Anillo con $N$ casillas. En cada casilla ponemos una bolita roja o azul, de forma aleatoria o no.
               </li>
               <li>
                 Elegimos $M$ sitios entre casillas, y los marcamos.
@@ -523,18 +523,19 @@
           </section>
 
           <section data-auto-animate data-background-video="img/app-webm/kac.webm">
-            <div style="position: absolute; width: 50%; left: 0; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.6); color: #fff; padding: 20px; font-size: 30px; text-align: left;">
+            <div style="position: absolute; width: 40%; right: 0; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.6); color: #fff; padding: 20px; font-size: 30px; text-align: left;">
               <h3 style="color:#fff">En la simulación...</h3>
               <p>Podemos elegir $N$ y el tipo de distribución individual con que se generan las variables $X$.</p>
-              <p>Para tiempos cortos, la solución obtenida es válida. Según evoluciona el sistema, aparece el comportamiento periódico..</p>
             </div>
           </section>
 
           <section>
             <h3>Conclusiones</h3>
-            <p>La hipótesis que hemos tomado elimina las correlaciones en el sistema, del mismo modo que la hipótesis del Caos Molecular.</p>
-            <p>Microscópicamente, el sistema es periódico, pero bajo la hipótesis del Caos Molecular, resulta ser irreversible y aperiódico.</p>
-            <p>Cuanto más grande es el sistema, más cerca estamos de la validez de la hipótesis.</p>
+            <ul>
+              <li>El problema es la hipótesis que hemos tomado, que elimina las correlaciones en el sistema, del mismo modo que la hipótesis del Caos Molecular.</li>
+              <li>Microscópicamente, el sistema es periódico, pero bajo la hipótesis del Caos Molecular, resulta ser irreversible y aperiódico.</li>
+              <li>Cuanto más grande es el sistema, más cerca estamos de la validez de la hipótesis.</li>
+            </ul>
           </section>
         </section>
 
@@ -604,18 +605,26 @@
           </section>
 
           <section data-auto-animate data-background-video="img/app-webm/osciladores.webm">
-            <div style="position: absolute; width: 50%; left: 0; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.6); color: #fff; padding: 20px; font-size: 30px; text-align: left;">
+            <div style="position: absolute; width: 40%; right: 0; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.6); color: #fff; padding: 20px; font-size: 30px; text-align: left;">
               <h3 style="color:#fff">En la simulación...</h3>
               <p>Podemos elegir $N$, $M$ y la distribución de frecuencias y fases.</p>
-              <p>Para frecuencias equiespaciadas se aprecia el comportamiento periódico, y para frecuencias aleatorias las fluctuaciones son pequeñas.</p>
+              <p>Para $M$ grande es fácil ver el máximo de entropía.</p>
+              <p>Para frecuencias aleatorias las fluctuaciones son pequeñas, para frecuencias equiespaciadas se aprecia el comportamiento periódico.</p>
             </div>
           </section>
 
           <section>
-            <h3>Conclusiones</h3>
-            <p> Ilustra cómo la caracterización macroscópica del sistema que estudiemos afecta a los resultados teóricos. </p>
-            <p> Si el sistema es periódico no llegará a un estado de equilibrio, y la entropía fluctuará drásticamente. </p>
-            <p> Si añadimos acoplos entre los osciladores, el modelo se complica drásticamente, y tenemos llamado el modelo de Kuramoto. </p>
+            <ul>
+              <li>
+                Ilustra cómo la caracterización macroscópica del sistema que estudiemos afecta a los resultados teóricos.
+              </li>
+              <li>
+                Si el sistema es periódico no llegará a un estado de equilibrio, correspondiente a la entropía máxima.
+              </li>
+              <li>
+                Si añadimos acoplos entre los osciladores, el modelo se complica, y tenemos el modelo de Kuramoto, aplicable a....
+              </li>
+            </ul>
           </section>
         </section>
 
@@ -656,84 +665,84 @@
 
           <section id="baker">
             <h3>Transformación del panadero</h3>
-            <ul>
-              <li> Expandimos el eje $x$ al doble de su tamaño y comprimimos el $y$ a la mitad,
-                cortamos la parte $x>1$ y la colocamos sobre el hueco que ha quedado para cubrir otra vez el cuadrado unidad: </li>
-              $$
-              \begin{array}{l}
-              {x^{\prime}=2 x(\bmod 1)} \\
-              y^{\prime}=\left\{
-              \begin{array}{ll}
-              {y / 2} & {\text { si } x<1 / 2} \\ {y / 2+1 / 2} & {\text { si } x>1 / 2}
-                \end{array}\right.
-                \end{array}
-                $$
-            </ul>
+            <p>
+              Expandir el eje $x$ al doble de su tamaño y comprimir el $y$ a la mitad,
+              cortar la parte que $x>1$ y ponerla sobre el hueco que ha quedado para cubrir otra vez el cuadrado unidad.
+            </p>
+            \begin{equation}\label{eq:panadero}
+            \begin{array}{l}
+            {x^{\prime}=2 x(\bmod 1)} \\
+            y^{\prime}=\left\{
+            \begin{array}{ll}
+            {y / 2} & {\text { si } x<1 / 2} \\ {y / 2+1 / 2} & {\text { si } x>1 / 2}
+              \end{array}\right.
+              \end{array}
+              \end{equation}
           </section>
 
           <section data-auto-animate data-background-video="img/app-webm/baker.webm">
-            <div style="position: absolute; width: 50%; left: 0; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.6); color: #fff; padding: 20px; font-size: 30px; text-align: left;">
+            <div style="position: absolute; width: 40%; right: 0; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.6); color: #fff; padding: 20px; font-size: 30px; text-align: left;">
               <h3 style="color:#fff">En la simulación...</h3>
-              <p>Podemos la imagen inicial.</p>
-              <p>Pasadas pocas iteraciones, la imagen se ha mezclado uniformemente. </p>
+              <p>Podemos elegir $N$ y el tipo de distribución individual con que se generan las variables $X$.</p>
             </div>
+          </section>
+
+          <section>
+            <h3>Transformación del panadero</h3>
+            <p>
+              Pasadas pocas iteraciones, la imagen se ha mezclado uniformemente.
+            </p>
           </section>
 
           <section id="arnold">
             <h3>Transformación de Arnold</h3>
+            <p>
+              Comprimir ambos ejes a la vez según una matriz.
+            </p>
+            <div style="margin-left:-100px;">
+              \begin{equation}\label{eq:arnold}
+              \left(\begin{array}{l}
+              {x^{\prime}} \\
+              {y^{\prime}}
+              \end{array}\right)=T\left(\begin{array}{l}
+              {x} \\
+              {y}
+              \end{array}\right)=\left(\begin{array}{ll}
+              {t_{11}} & {t_{12}} \\
+              {t_{21}} & {t_{22}}
+              \end{array}\right)\left(\begin{array}{l}
+              {x} \\
+              {y}
+              \end{array}\right) \quad(\bmod 1)
+              \end{equation}
+            </div>
+          </section>
+
+          <section>
             <ul>
-              <li> Comprimir y exmpandimos según una matriz $T$. </li>
-              <div style="margin-left:0px;">
-                $$
-                \left(\begin{array}{l}
-                {x^{\prime}} \\
-                {y^{\prime}}
-                \end{array}\right)=T\left(\begin{array}{l}
-                {x} \\
-                {y}
-                \end{array}\right)=\left(\begin{array}{ll}
-                {t_{11}} & {t_{12}} \\
-                {t_{21}} & {t_{22}}
-                \end{array}\right)\left(\begin{array}{l}
-                {x} \\
-                {y}
-                \end{array}\right) \quad(\bmod 1)
-                $$
-              </div>
-              <li>$T$ debe cumplir ciertas condiciones:
-                <ul class="list-group">
-                  <li class="list-group-item">$det(T) = 1$. Para que se conserve el área.</li>
-                  <li class="list-group-item">Autovalores reales y distintos de $1$, para que el mapa sea ergódico.</li>
-                </ul>
+              <li>
+                En su versión discreta no es ergódica, y el perido tiene ciertas propiedades muy curiosas.
               </li>
               <li>
-                En su versión discreta nunca es ergódica, pasado cierto número de iteraciones obtenemos la imagen original.
+                La que más problemas ha dado para programarla.
               </li>
             </ul>
           </section>
 
           <section data-auto-animate data-background-video="img/app-webm/arnold.webm">
-            <div style="position: absolute; width: 50%; left: 0; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.6); color: #fff; padding: 20px; font-size: 30px; text-align: left;">
+            <div style="position: absolute; width: 40%; right: 0; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.6); color: #fff; padding: 20px; font-size: 30px; text-align: left;">
               <h3 style="color:#fff">En la simulación...</h3>
-              <p>Además de la imagen inicial, podemos elegir tres de las 4 entradas de $T$.</p>
-              <p>La imagen se mezcla hasta cubrir el plano, y entonces se repite el proceso de forma inversa hasta obtener la imagen inicial.</p>
+              <p>Podemos elegir $N$ y el tipo de distribución individual con que se generan las variables $X$.</p>
             </div>
           </section>
-
-          <section data-auto-animate data-background-video="img/app-webm/arnold.webm">
-            <div style="position: absolute; width: 50%; left: 0; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.6); color: #fff; padding: 20px; font-size: 30px; text-align: left;">
-              <h3 style="color:#fff">Observaciones</h3>
-              <p>Las matrices con autovalores complejos no son ergódicas incluso en el caso continuo.</p>
-              <p>Aunque se cumplan las condiciones, las matrices no diagonalizables dan lugar a comportamientos patológicos.</p>
-            </div>
-          </section>
-
 
           <section>
-            <h3>Conclusiones</h3>
-            <p>Aunque con una simulación no podemos obtener el caso ergódico, se puede ver cómo, efectivamente, se mezcla la imagen para cubrir todo el espacio de fases. </p>
-            <p>El periodo podría compararse al tiempo de recurrencia de Poincaré.</p>
-            <p>Aplicaciones en difusión de fluidos, procesado de señales y compresión de imagenes. </p>
+            <h3>Aplicaciones</h3>
+            <ul>
+              <li>Difusión de fluidos.</li>
+              <li>Procesado de señales.</li>
+              <li>Compresión de imagenes.</li>
+            </ul>
             <aside class="notes">
               En física se suelen usar para modelar la difusión, pero también tienen aplicaciones en procesado de señales o compresión de imagen.
             </aside>
@@ -753,6 +762,7 @@
             <div class="fragment fade-up" style="box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.6); color: #fff;">
               <p>Irreversibilidad.</p>
               <p>Fluctuaciones en el Equilibrio.</p>
+              <p>Intercambio de Energía y Partículas con el Entorno.</p>
               <p>Acercamiento al equilibrio.</p>
             </div>
             <div class="fragment fade-up" style="margin-top:20px;box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.6); color: #fff;">
@@ -767,10 +777,10 @@
                 Recipiente dividido en dos mitades. En el instante inicial tenemos $N$ partículas en una de ellas.
               </li>
               <li>
-                Inicializamos las partículas con una distribución de velocidades boltzmanniana.
+                Se libera el pistón y las partículas son libres de moverse por todo el recipiente.
               </li>
               <li>
-                Se libera el pistón y las partículas son libres de moverse por todo el recipiente.
+                Inicializamos las partículas con una distribución de velocidades boltzmanniana.
               </li>
               <li>
                 El choque entre partículas y con las paredes conserva la energía cinética, es reversible.
@@ -802,25 +812,13 @@
                 $$
               </li>
               <li>
-                Aproximación de Stirling, si $N$ es grande:
+                Aproximación de Stirling:
                 $$
                 \frac{p(N, 0)}{p(N / 2, N / 2)} \simeq \sqrt{\frac{\pi N}{2}} 2^{-N}
                 $$
               </li>
-            </ul>
-          </section>
-
-          <section>
-            <ul>
               <li>
-                La probabilidad de encontrar todas las partículas concentradas en una región disminuye exponencialmente con el número de partículas.
-              </li>
-              <li>
-                Si definimos $\Delta = N_d - N_i$ podemos calcular la probabilidad de que ocurra una fluctuación de dicha magnitud:
-                $$
-                p_{N}(\Delta) \simeq \sqrt{\frac{2}{\pi N}} e^{-\Delta^{2} /(2 N)}
-                $$
-                Que sigue una distribución gaussiana de varianza $N$.
+                * la probabilidad de encontrar todas las partículas concentradas en una región disminuye <i>exponencialmente</i> con el número de partículas.*
               </li>
             </ul>
           </section>
@@ -829,8 +827,7 @@
             <div style="position: absolute; width: 40%; right: 0; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.6); color: #fff; padding: 20px; font-size: 30px; text-align: left;">
               <h3 style="color:#fff">En la simulación...</h3>
               <p>Podemos elegir $N$, la temperatura, lo que equivale a elegir la distribución de velocidades, y si queremos que sean partículas con o sin interacción.</p>
-              <p>Para pocas partículas se aprecian más fácilmente las fluctuaciones.</p>
-              <p>Con más partículas se ve mejor que la distribución de las fluctuaciones sigue una gaussiana.</p>
+              <p>Para pocas partículas se aprecia, más fácilmente las fluctuaciones.</p>
             </div>
           </section>
 
@@ -838,9 +835,15 @@
             <h3>Conclusiones</h3>
             <ul>
               <li>
-                La irreversibilidad aparece como consecuencia del enorme número de partículas que componen un sistema macroscópico.
+                la irreversibilidad aparece como consecuencia
+                del enorme número de partículas que componen un sistema macroscópico.
               </li>
-              <li>Tenemos un ejemplo de equilibrio dinámico, con fluctuaciones alrededor del estado más probable, y cuya magnitud además depende del tamaño del sistema.</li>
+              <li>
+                $$
+                p_{N}(\Delta) \simeq \sqrt{\frac{2}{\pi N}} e^{-\Delta^{2} /(2 N)}
+                $$
+              </li>
+              <li>Equilibrio dinámico, fluctuaciones.</li>
             </ul>
           </section>
         </section>
@@ -860,7 +863,7 @@
               <p>Sistema en contacto con los alrededores.</p>
             </div>
             <div class="fragment fade-up" style="margin-top:20px;box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.6); color: #fff;">
-              <p>Elegir explícitamente el tamaño del sistema ayuda a visualizar el cambio de un sistema aislado a uno con un foco térmico o de partículas.</p>
+              <p>Elegir explícitamente el tamaño del sistema ayuda a visualizar el cambio de un sistema aislado a uno un foco térmico o de partículas.</p>
             </div>
           </section>
 
@@ -868,10 +871,10 @@
             <h3>Enunciado</h3>
             <ul>
               <li>
-                Un gas ideal como el del apartado anterior.
+                Sistema separado de los alrededores.
               </li>
-              <li>Elegimos cierta parte del recinto, que diremos que es nuestro sistema. El resto del recipiente actúa como foco térmico y de partículas.</li>
-              <li>Haciendo uso del formalismo macrocanónico se obtiene que la probabilidad de encontrar $N$ partículas en el sistema sigue una distribución de Poisson con parámetro $zV / \Lambda^3$:
+              <li>
+                la probabilidad de encontrar $N$ partículas en el sistema resulta seguir una distribución de Poisson con parámetro $zV / \Lambda^3$:
                 $$
                 p(N)=\frac{1}{N !}\left(\frac{z V}{\Lambda^{3}}\right)^{N} e^{-z V / \Lambda^{2}}
                 $$
@@ -880,17 +883,16 @@
           </section>
 
           <section data-auto-animate data-background-video="img/app-webm/macro.webm">
-            <div style="position: absolute; width: 50%; left: 0; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.6); color: #fff; padding: 20px; font-size: 30px; text-align: left;">
+            <div style="position: absolute; width: 40%; right: 0; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.6); color: #fff; padding: 20px; font-size: 30px; text-align: left;">
               <h3 style="color:#fff">En la simulación...</h3>
-              <p>Haciendo clic y arrastrando sobre el recinto elegimos la región que será nuestro sistema.</p>
-              <p>Es conveniente esperar cierto tiempo antes de pulsar el botón para visualizar el histograma, para que así se distinga mejor la distribución.</p>
+              <p>Podemos elegir $N$ y el tipo de distribución individual con que se generan las variables $X$.</p>
+              <p>Se recomienda comprobar el comportamiento del sistema empezando por todo el recinto, e ir reduciendo progresivamente el área.</p>
             </div>
           </section>
 
           <section>
             <h3>Conclusiones</h3>
-            <p>Se recomienda comprobar el comportamiento del sistema empezando por todo el recinto, e ir reduciendo progresivamente el área. </p>
-            <p>Para sistemas pequeños se cumple que la distribución es poissoniana, en sistemas grandes no se cumple la condición impuesta en el formalismo macrocanónico de que $N_F\gg N$.</p>
+            <p>Para sistemas pequeños las fluctuaciones son mayores.</p>
           </section>
         </section>
 
@@ -922,13 +924,12 @@
                 $N$ bosones y $N$ fermiones.
               </li>
               <li>
-                Partimos de la función de partición de la colectividad macrocanónica:
+                Partimos de que puede haber $N$ bosones en un nivel de energía, pero sólo un fermión por nivel.
+              </li>
+              <li>
                 $$
                 \ln Q(\beta,V,z) = -\prod_i \sum_{n_i}[z \exp (-\beta \epsilon_i)]^{n_i}
                 $$
-              </li>
-              <li>
-                Sabemos que puede haber muchos bosones en un nivel de energía, pero sólo un fermión por nivel.
               </li>
               <li>
                 Número medio de partículas por nivel:
@@ -943,37 +944,40 @@
           </section>
 
           <section>
-            <h4>Metropolis Monte Carlo en una dimensión</h4>
+            <h3>Metropolis Monte Carlo en una dimensión</h3>
             <ul>
-              <li>Para visualizar estas estadísticas, usaremos el método de Monte Carlo, muy común en Física computacional, en su variante de Metropolis.</li>
               <li>
-                En cada iteración recorremos cada nivel de energía, $E_i$.
+                En cada iteración cogemos una partícula al azar, $i$, situada en el nivel $E_i$.
               </li>
               <li>
-                Para cada $i$, elegimos al azar otro nivel, $E_p$.
+                Entonces, elegimos un sitio (en este caso, un nivel de energía) al azar (que no sea aquel en el que está la partícula).
               </li>
               <li>
-                Estudiamos el cociente $r = Q_p / Q_i = e^{-\beta( E_p - E_i)}$ (deducido usando la función de partición individual, $Q_i = e^{-\beta E_i }$):
-                <ul>
-                  <li>Si $r>1$, cambiamos la partícula de de $E_i$ a $E_p$.</li>
-                  <li>Si $r<1$, generamos un número aleatorio $\xi \in [0,1]$ y evaluamos: Si $r>\xi$ , también cambiamos la partícula, y si no, la dejamos como está.</li>
-                </ul>
+                Si la energía del nivel escogido es mayor que....
               </li>
             </ul>
           </section>
 
           <section data-auto-animate data-background-video="img/app-webm/bosefermi.webm">
-            <div style="position: absolute; width: 50%; left: 0; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.6); color: #fff; padding: 20px; font-size: 30px; text-align: left;">
+            <div style="position: absolute; width: 40%; right: 0; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.6); color: #fff; padding: 20px; font-size: 30px; text-align: left;">
               <h3 style="color:#fff">En la simulación...</h3>
-              <p>Ajustando el algoritmo para tener en cuenta las condiciones de ocupación de bosones y fermiones, tenemos el comportamiento deseado.</p>
-              <p>Podemos cambiar el número de partículas, de niveles, y la temperatura.</p>
+              <p>Podemos elegir $N$ y el tipo de distribución individual con que se generan las variables $X$.</p>
             </div>
           </section>
 
           <section>
             <h3>Conclusiones</h3>
-            <p>Se obtienen las mismas estadísticas que las calculadas para los números medios de ocupación, sin tener que derivar la función de partición en ningún momento.</p>
-            <p> Si la temperatura es suficientemente baja, tenemos condensación de Bose-Fermi. </p>
+            <ul>
+              <li>
+                Si la temperatura es suficientemente baja, tenemos condensación de Bose-Fermi.
+              </li>
+              <li>
+                A mayor energía más tiempo se tarda en llegar a la distribución correspondiente.
+              </li>
+              <li>
+                Es una de las simulaciones más vistosas.
+              </li>
+            </ul>
           </section>
         </section>
 
@@ -992,60 +996,47 @@
               <p>Acercamiento al equilibrio.</p>
             </div>
             <div class="fragment fade-up" style="margin-top:20px;box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.6); color: #fff;">
+              <p>Modelo ideal para explicar las transiciones de fase.</p>
               <p>Aplicaciones en muchos campos.</p>
-              <p>Ferromagnetismo, paramagnetismo.</p>
             </div>
+          </section>
+
+          <section data-auto-animate>
+            <h3>Enunciado</h3>
+            <p>Modelizamos los átomos de un metal como una red de espines magnéticos.</p>
+            <p>Ferromagnetismo, paramagnetismo.</p>
           </section>
 
           <section id="magnet">
             <h3>Estudio de la magnetización</h3>
             <ul>
-              <li>Modelizamos los átomos de un metal como una red de espines magnéticos. Cada espin afecta a los de alrededor, por lo que tienden a alinearse.</li>
               <li>
-                Cada espín puede tomar el valor $+1$ ó $-1$, de forma estadística la magnetización total es:
+                Cada espín puede tomar el valor $+1$ ó $-1$.
                 $$
-                M = - \frac{1}{k_B T} \left( \frac{\partial \ln Z}{\partial B} \right)_ {B=0}
+                M = \left \langle \sum_i s_i \right \rangle
                 $$
-                $$
-                Z(T,B) = \sum_{s_1} \sum_{s_2}...\sum_{s_N} \exp \left( -\frac{H(\{s_i\})}{k_B T} \right)
-                $$
+              </li>
+              <li>
+                Temperatura crítica
               </li>
             </ul>
           </section>
 
-          <section>
-            <ul>
-              <li>La expresión de la magnetización se calcula mediante métodos numéricos..</li>
-              <li>
-                Para dimensión 2 y superiores, se encuentra que por debajo de cierta <b>temperatura crítica</b> el magnetismo entre espines vence a las fluctuaciones térmicas y aparece una <b>magnetización espontánea</b>. Tenemos una transición de
-                fase.
-              </li>
-              <li>El valor de dicha temperatura crítica o temperatura de Curie depende de la constante de acoplo entre espines, que determina la fuerza con la que tienden a alinearse.</li>
-            </ul>
-          </section>
-
           <section data-auto-animate data-background-video="img/app-webm/magnet.webm">
-            <div style="position: absolute; width: 50%; left: 0; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.6); color: #fff; padding: 20px; font-size: 30px; text-align: left;">
-              <h3 style="color:#fff">En la simulación...</h3>
-              <p>Realizamos una simulación de Metropolis Monte Carlo similar a la del apartado anterior, pero en dos dimensiones.</p>
-              <p>Cuantos más espines haya alineados, menor es la energía del sistema.</p>
-              <p>Por debajo de la temperatura crítica observamos que, efectivamente, aparece una magnetización espontánea.</p>
-            </div>
-          </section>
-
-          <section data-auto-animate data-background-video="img/app-webm/magnet.webm">
-            <div style="position: absolute; width: 50%; left: 0; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.6); color: #fff; padding: 20px; font-size: 30px; text-align: left;">
+            <div style="position: absolute; width: 40%; right: 0; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.6); color: #fff; padding: 20px; font-size: 30px; text-align: left;">
               <h3 style="color:#fff">En la simulación...</h3>
               <p>Podemos elegir el tamaño de la red y cambiar la temperatura en tiempo real.</p>
-              <p>Empezando a la menor temperatura posible, y aumentándola progresivamente, se aprecia cómo la magnetización disminuye al acercarse a la temperatura crítica.</p>
+              <p>Una vez elegida una temperatura, se recomienda esperar un momento para simular el proceso de templado.</p>
+              <p>Si se sigue este proceso, empezando a la menor temperatura posible, y se va aumentando progresivamente, se aprecia cómo la magnetización máxima disminuye al acercarse a la temperatura crítica.</p>
             </div>
           </section>
 
           <section>
             <h3>Conclusiones</h3>
-            <p>Una vez elegida una temperatura, se recomienda esperar un momento para simular el proceso de templado.</p>
-            <p>De esta forma, se puede apreciar el proceso de termalización, necesario en simulaciones de este tipo para poder medir el valor de observables.</p>
-            <p>Eligir la velocidad más pequeña ayuda a entender el proceso seguido en el algoritmo de Monte Carlo.</p>
+            <ul>
+              <li>Con esta simulación se puede apreciar el proceso de termalización, necesario en simulaciones de este tipo para poder medir el valor de observables.</li>
+              <li>Es una de las simulaciones más entretenidas.</li>
+            </ul>
           </section>
         </section>
 
@@ -1069,32 +1060,55 @@
           </section>
 
           <section>
-            <h3>Cálculo del calor específico</h3>
+            <h3>Enunciado</h3>
             <ul>
-              <li>Siguiendo el proceso de termalización nombrado en la sección anterior, podemos medir observables del sistema en una simulación</li>
-              <li>En esta simulación no se realiza dicha computación de forma explícita, ya que es muy costosa computacionalmente, sino que nos limitamos a dibujar los datos obtenidos. El proceso sería el siguiente:
-                <ul>
-                  <li>Elegimos una temperatura.</li>
-                  <li> Calculamos la energía del macroestado e iteramos cierto número de pasos. </li>
-                  <li> Cuando el sistema termaliza calculamos el calor específico. </li>
-                </ul>
+              <li>
+                Función de partición:
+                $$
+                Z(T,B) = \sum_{s_1} \sum_{s_2}...\sum_{s_N} \exp \left( -\frac{H(\{s_i\})}{k_B T} \right)
+                $$
+              </li>
+              <li>
+                Calculamos la energía de un macroestado, iteramos.
+              </li>
+              <li>
+                Cuando el sistema termaliza calculamos el calor específico.
               </li>
             </ul>
           </section>
 
+          <section>
+            <ul>
+              <li>No se realiza la simulación explícita, ya que es muy costosa computacionalmente.</li>
+              <li>Se podrían añadir datos de una simulación con redes más grandes.</li>
+            </ul>
+          </section>
+
           <section data-auto-animate data-background-video="img/app-webm/lt.webm">
-            <div style="position: absolute; width: 50%; left: 0; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.6); color: #fff; padding: 20px; font-size: 30px; text-align: left;">
+            <div style="position: absolute; width: 40%; right: 0; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.6); color: #fff; padding: 20px; font-size: 30px; text-align: left;">
               <h3 style="color:#fff">En la simulación...</h3>
-              <p>Podemos elegir $N_x$ y $N_y$, de forma que podemos simular tanto el caso unidimensional como casos con redes cada vez más grandes.</p>
+              <p>Podemos elegir $N_x$ y $N_y$.</p>
             </div>
           </section>
 
           <section>
+            <h3>Experiencias recomendadas</h3>
+            <ul>
+              <li>
+                Dejar fijo $N_x$ y aumentar progresivamente $N_y$.
+              </li>
+              <li>
+                Aumentar ambos a la vez.
+              </li>
+            </ul>
+          </section>
+
+          <section>
             <h3>Conclusiones</h3>
-            <p>Si aumentamos $N_x$ y $N_y$ a la vez es equivalente a tomar el límite termodinámico de forma gradual.</p>
-            <p> Dejar fijo $N_x$ y aumentar progresivamente $N_y$ equivale a aproximarnos al caso unidimensional.</p>
-            <p>Se podrían añadir datos de una simulación con redes más grandes.</p>
-            <p>Una visualización como esta es ideal para sistemas de este tipo, en los que es difícil transmitir todos los matices.</p>
+            <ul>
+              <li>
+                Según nos alejamos de la linearidad, más pronunciado se hace el máximo.</li>
+            </ul>
           </section>
         </section>
 
@@ -1128,25 +1142,34 @@
           </section>
 
           <section data-auto-animate>
-            <h2 data-id="CONCLUSIONES-title">Conclusiones generales</h2>
+            <h2 data-id="CONCLUSIONES-title">Conclusiones</h2>
             <p>
               Este tipo de herramientas son muy buenas para visualizar procesos más alla de pizarra y tiza.
             </p>
             <p>
-              Amplían las posibilidades de exploración para el estudiante, que en principio no sabe hacer desarrollos matemáticos o teóricos complicados.
+              Construirlas también puede ser muy didáctico.
             </p>
             <p>
-              Construirlas también puede ser muy didáctico.
+              Amplia las posibilidades de exploración para el estudiante, que en principio no sabe hacer desarrollos matemáticos o teóricos complicados.
+            </p>
+            <p>
+              En matemáticas, por ejemplo, la mayoría del avance moderno tiene que ver con la computación.
             </p>
           </section>
 
           <section data-auto-animate>
             <h2 data-id="CONCLUSIONES-title">Conclusiones</h2>
             <p>
+              Métodos computacionales no sólo son buenos para cálculo numérico, sino para la docencia.
+            </p>
+            <p>
               También pueden ayudar al investigador a descubrir nuevos aspectos de los modelos.
             </p>
             <p>
-              Posibilidades en otros campos de física: Cuántica, Óptica, Astrofísica...
+              Posibilidades en otros campos de física: Cuántica, Geo y Atmo, Óptica...
+            </p>
+            <p>
+              Por falta de espacio y tiempo no hemos podido añadir más, pero me gustaría ampliar los contenidos.
             </p>
           </section>
         </section>
@@ -1154,7 +1177,32 @@
 
 
 
-        <!-- BIBLIO -->
+        <!-- ASPECTOS TECNICOS / BIBLIO -->
+
+        <section>
+          <section id="tecnicos" data-auto-animate>
+            <h2 data-id="TECNICOS-title">Algunos aspectos técnicos</h2>
+            <p>
+              Los dibujos de las simulaciones en sí se han hecho directamente sobre un marco de HTML especificando las posiciones.
+              Las gráficas donde se dibujan los datos se hacen con <a href="https://plotly.com/">Plotly</a>.
+            </p>
+            <p>
+              Para preparar el servidor se ha utilizado DigitalOcean, usando las licencias del Github Student Developer Pack ofrecidas por la UCM.
+            </p>
+            <p>
+              La página web se ha creado usando los estilos de <a href="https://getbootstrap.com/">Bootstrap</a>.
+            </p>
+            <p>
+              Estas diapositivas se han hecho usando <a href="https://revealjs.com/">reveal.js</a>.
+            </p>
+          </section>
+
+          <section id="tecnicos" data-auto-animate>
+            <p>
+              En el futuro se realizarán tutoriales explicando estos procesos, para que cualquiera interesado pueda repetirlos.
+            </p>
+          </section>
+        </section>
 
         <section id="biblio" data-auto-animate>
           <section data-auto-animate>

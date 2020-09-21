@@ -194,8 +194,14 @@ function emptyPlot() {
     data = [trace];
     layout = {
         title: "Histograma de Y",
+        xaxis: {
+            title: 'y',
+        },
+        yaxis: {
+            title: 'P(y)',
+        },
         font: {
-            size: 18,
+            size: 15,
         },
         margin: {
             l: 60,

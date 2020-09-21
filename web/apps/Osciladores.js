@@ -284,7 +284,7 @@ function plotNormEntropy(frames, arrS) {
             range: [0, 1],
         },
         font: {
-            size: 18,
+            size: 15,
         },
         margin: {
             u: 30,

@@ -114,6 +114,7 @@ Ball.prototype = {
 
 
 resetMacro();
+plotPartInSquare(FramesMacro, NinSquare);
 simulateMacro();
 
 drawBackMacro();
@@ -296,8 +297,23 @@ function plotPartInSquare(FramesMacro, NinSquare) {
     var layout = {
         autosize: true,
         title: 'Partículas en el recinto',
+        xaxis: {
+            title: 't',
+        },
+        yaxis: {
+            title: 'N',
+        },
         font: {
-            size: 15
+            size: 15,
+        },
+        margin: {
+            u: 30,
+            l: 60,
+            r: 30,
+            d: 20,
+        },
+        font: {
+            size: 15,
         },
         plot_bgcolor: 'rgb(223, 223, 223)'
     };
@@ -320,11 +336,27 @@ function plotHistMacro() {
     var poissonTrace = poisson();
     var data = [numsTrace, poissonTrace];
     var layout = {
-        autosize: true,
-        title: 'Diferencia de números',
-        font: {
-            size: 15
+        width: 450,
+        title: 'Distribución de partículas',
+        xaxis: {
+            title: 'N',
         },
+        yaxis: {
+            title: 'P(N)',
+        },
+        font: {
+            size: 15,
+        },
+        margin: {
+            u: 30,
+            l: 60,
+            r: 30,
+            d: 20,
+        },
+        font: {
+            size: 15,
+        },
+        showlegend: false,
         plot_bgcolor: 'rgb(223, 223, 223)'
     };
 

@@ -361,8 +361,14 @@ function emptyPlot() {
     data = [numsTrace];
     layout = {
         title: 'Diferencia de números',
+        xaxis: {
+            title: 't',
+        },
+        yaxis: {
+            title: 'B(t) - R(t)',
+        },
         font: {
-            size: 18,
+            size: 15,
         },
         margin: {
             l: 60,

@@ -85,7 +85,7 @@ function plotExacto(unaD, dosD) {
 
     var layout = {
         height: 400,
-        title: "Exactas",
+        title: "Calor específico",
         xaxis: {
             title: 'T',
             range: [0, 5]
@@ -95,7 +95,7 @@ function plotExacto(unaD, dosD) {
             range: [0, 2]
         },
         font: {
-            size: 18,
+            size: 15,
         },
         margin: {
             l: 60,

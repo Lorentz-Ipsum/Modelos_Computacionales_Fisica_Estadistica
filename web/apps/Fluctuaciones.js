@@ -265,8 +265,20 @@ function plotPart(FramesFluc, Ndif) {
     var layout = {
         autosize: true,
         title: 'Diferencia de entre ambos lados',
+        xaxis: {
+            title: 't',
+        },
+        yaxis: {
+            title: 'Ni - Nd',
+        },
         font: {
-            size: 15
+            size: 15,
+        },
+        margin: {
+            u: 30,
+            l: 60,
+            r: 30,
+            d: 20,
         },
         plot_bgcolor: 'rgb(223, 223, 223)',
         shapes: [
@@ -340,11 +352,27 @@ function plotHistFluc() {
     };
     var data = [numsTrace, traceGauss];
     var layout = {
-        autosize: true,
-        title: 'Diferencia de números',
-        font: {
-            size: 15
+        width: 450,
+        title: 'Distribución de partículas',
+        xaxis: {
+            title: 'Ni - Nd',
         },
+        yaxis: {
+            title: 'P(Ni - Nd)',
+        },
+        font: {
+            size: 15,
+        },
+        margin: {
+            u: 30,
+            l: 60,
+            r: 30,
+            d: 20,
+        },
+        font: {
+            size: 15,
+        },
+        showlegend: false,
         plot_bgcolor: 'rgb(223, 223, 223)'
     };
 

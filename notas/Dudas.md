@@ -1,5 +1,49 @@
 
-# Ruegos y Preguntas 
+
+
+- Si me preguntan por la razón por la cual hemos elegido estos modelos y conceptos, ¿Hablo sobre la web original?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---
+
+# Ruegos y Preguntas
 
 ## Dudas generales
 
