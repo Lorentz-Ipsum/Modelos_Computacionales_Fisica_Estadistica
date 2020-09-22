@@ -62,7 +62,9 @@
 
         <section>
           <h1 style="font-size: 66px;">Modelos Computacionales <br> en <br> Física Estadística</h1>
-          <h5 style="font-style: italic;">Simulaciones interactivas en Javascript como <br> recurso didáctico</h5>
+          <h5 style="font-style: italic;margin-bottom: 1px">Simulaciones interactivas en Javascript como <br> recurso didáctico</h5>
+          <br>
+          <p style="margin-top: -40px; font-size: 0.6em; text-align: center"><a href="http://funcionando.works/TFG/index.html">http://funcionando.works/TFG/index.html</a></p>
           <br>
           <p>
             Autor: <b style="text-align:right">Manuel Fernández-Arroyo Soriano</b>
@@ -73,7 +75,7 @@
           <br>
           <p style="font-size: 28px;">22 de septiembre, 2020</p>
           <!-- <img class="r-frame" style="background: rgba(255,255,255,0.1);" width="178" height="238" data-src="https://www.ucm.es/data/cont/docs/3-2016-07-21-Marca%20UCM%20logo%20negro.png" alt="Up arrow"> -->
-
+          </p>
         </section>
 
 
@@ -113,7 +115,7 @@
                 Código libre (no utilizar muchas librerias).
               </li>
               <li>
-                Que sea sencillo de ampliar, añadiendo nuevas simulaciones y explicaciones.
+                Que sea sencillo de ampliar, añadiendo nuevas simulaciones o explicaciones más extensas.
               </li>
               <li>
                 Explicaciones introductorias, pero exhaustivas.
@@ -182,22 +184,6 @@
               <p>Crear las simulaciones sí que plantea cierto reto, pero con las habilidades obtenidas en la carrera es más que posible salvarlo.</p>
             </div>
           </section>
-
-          <section id="tecnicos" data-auto-animate>
-            <h3 data-id="TECNICOS-title">Algunos aspectos técnicos</h3>
-            <p style="font-size: 0.7em">
-              Las gráficas de datos se hacen con <a href="https://plotly.com/">Plotly</a>, la única librería externa que se ha usado.
-            </p>
-            <p style="font-size: 0.7em">
-              El servidor se ha preparado con DigitalOcean, usando las licencias del Github Student Developer Pack ofrecidas por la UCM.
-            </p>
-            <p style="font-size: 0.7em">
-              Por su facilidad de uso, los estilos de la página web son de <a href="https://getbootstrap.com/">Bootstrap</a>, y estas diapositivas se han hecho usando <a href="https://revealjs.com/">reveal.js</a>.
-            </p>
-            <p style="font-size: 0.8em">
-              Aunque no es el objetivo de este trabajo, en el futuro se realizarán varias guías explicando estos procesos, para que cualquier persona interesada pueda crear una web similar.
-            </p>
-          </section>
         </section>
 
 
@@ -223,12 +209,40 @@
             <div style="position:absolute; width: 50%;left:0;">
               <h5>Física Estadística del Equilibrio</h5>
               <p>Consideramos la naturaleza de los sistemas en función de las variables macroscópicas.</p>
-              <p>Los podemos agrupar por clases o colectividades.</p>
+              <p>Podemos agrupar dichos sistemas segun clases o colectividades.</p>
+              <p></p>
             </div>
             <div style="position:absolute; width: 50%;right:0;">
               <h4>Física Estadística del <br> No Equilibrio</h4>
               <p>No hay paradigma general. Cada problema se estudia de forma distinta.</p>
-              <p>Las colectividades dejan de ser efectivas.</p>
+              <p>El paradigma de las colectividades deja de ser efectivo.</p>
+              <p>Se hace imprescindible recurrir a modelos computacionales.</p>
+            </div>
+          </section>
+
+          <section>
+            <h4>Algunos de los temas que queremos tratar</h4>
+            <p>Todos estos conceptos pueden plantear dificultades al estudiarlos por primera vez.</p>
+            <div style="position:absolute; width: 50%;left:0;">
+              <ul>
+                <li>Irreversibilidad.</li>
+                <li>Hipótesis del Caos molecular.</li>
+                <li>Definición de entropía.</li>
+                <li>Maximización de entropía.</li>
+                <li>Espacio de fases.</li>
+                <li>Ergodicidad.</li>
+                <li>Tiempo de recurrencia de Poincaré.</li>
+              </ul>
+            </div>
+            <div style="position:absolute; width: 50%;right:0;">
+              <ul>
+                <li>Acercamiento al equilibrio.</li>
+                <li>Límite Termodinámico.</li>
+                <li>Caos determinista.</li>
+                <li>Comportamiento colectivo.</li>
+                <li>Transición de fase.</li>
+                <li>Dimensionalidad.</li>
+              </ul>
             </div>
           </section>
         </section>
@@ -269,18 +283,26 @@
 
           <section>
             <h3 data-id="SIMS-title">Estructura</h3>
-            <p>Cada simulación sigue una estructura muy marcada:</p>
+            <p>En la web cada simulación sigue una estructura muy marcada:</p>
             <ol>
               <li>
                 Fundamento teórico. Enunciado del modelo. Conceptos que ayuda a explicar.
               </li>
               <li>
-                Simulación interactiva. Explicación de uso. Aspectos técnicos de código.
+                Simulación interactiva. Explicación de uso.
               </li>
               <li>
                 Conclusiones. Casos particulares. Posible extensión de la simulación.
               </li>
             </ol>
+          </section>
+
+          <section>
+            <p>En esta presentación no analizaremos exhaustivamente todas, nos limitaremos a dar unas pinceladas generales de cada una. Daremos una explicación con más profundidad de dos:</p>
+            <ul>
+              <li>Conunto de Osciladores Armónicos.</li>
+              <li>Estadísticas de Bosones y Fermiones.</li>
+            </ul>
           </section>
         </section>
 
@@ -404,7 +426,7 @@
                 Donde $b(t)$ y $r(t)$ son el número de bolas de cada color con un sitio marcado delante.
               </li>
               <li>
-                Estas ecuaciones no son resolubles. Necesitamos una hipótesis adicional encontrar una solución explícita.
+                Estas ecuaciones no son resolubles conociendo tan sólo $N$ y $M$. Necesitamos una hipótesis adicional para encontrar una solución.
               </li>
             </ul>
           </section>
@@ -414,7 +436,7 @@
               <li>
                 Hipótesis: De forma macroscópica:
                 $$
-                \frac{b(t)}{B(t)} = \frac{r(t)}{R(t)} = \frac{b(t) + r(t)}{B(t) + R(t)} = \frac{M}{N} \equiv \eta
+                \frac{b(t)}{B(t)} \sim \frac{r(t)}{R(t)} \sim \frac{b(t) + r(t)}{B(t) + R(t)} = \frac{M}{N} \equiv \eta
                 $$
               </li>
               <li>
@@ -427,7 +449,7 @@
                 $$
               </li>
               <li>
-                Esta solución no es periódica ni reversible. Al cabo de cierto número de iteraciones la diferencia entre colores tiende a cero. ¿Cómo es posible?
+                Esta solución no es periódica ni reversible. Pasado cierto tiempo la diferencia entre colores tiende a cero. ¿Cómo es posible?
               </li>
             </ul>
           </section>
@@ -435,8 +457,8 @@
           <section data-auto-animate data-background-video="img/app-webm/kac.webm">
             <div style="position: absolute; width: 50%; left: 0; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.6); color: #fff; padding: 20px; font-size: 30px; text-align: left;">
               <h3 style="color:#fff">En la simulación...</h3>
-              <p>Podemos elegir $N$ y el tipo de distribución individual con que se generan las variables $X$.</p>
-              <p>Para tiempos cortos, la solución obtenida es válida. Según evoluciona el sistema, aparece el comportamiento periódico..</p>
+              <p>Podemos elegir $N$, $M$ y el tipo de distribución con que se inicializa el anillo.</p>
+              <p>Para tiempos cortos, la solución obtenida es válida. Según evoluciona el sistema, aparece el comportamiento periódico.</p>
             </div>
           </section>
 
@@ -444,7 +466,7 @@
             <h3>Conclusiones</h3>
             <p>La hipótesis que hemos tomado elimina las correlaciones en el sistema, del mismo modo que la hipótesis del Caos Molecular.</p>
             <p>Microscópicamente, el sistema es periódico, pero bajo la hipótesis del Caos Molecular, resulta ser irreversible y aperiódico.</p>
-            <p>Cuanto más grande es el sistema, más cerca estamos de la validez de la hipótesis.</p>
+            <p>Cuanto más grande es el sistema, más cerca estamos de la validez de la hipótesis. Si recolocáramos las marcas del anillo pasado cierto tiempo (menor que el periodo) podríamos empezar a simular el caso infinito.</p>
           </section>
         </section>
 
@@ -461,10 +483,11 @@
             <div class="fragment fade-up" style="box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.6); color: #fff;">
               <p>Entropía.</p>
               <p>Coarse-Graining.</p>
-              <p>Acercamiento al equilibrio.</p>
+              <p>Tendencia al equilibrio.</p>
+              <p>Maximización de entropía.</p>
             </div>
             <div class="fragment fade-up" style="margin-top:20px;box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.6); color: #fff;">
-              <p>Basado en una idea de Juan Parrondo.</p>
+              <p> Ilustra cómo la caracterización macroscópica del sistema que estudiemos afecta a los resultados teóricos a la hora de calcular la entropía. </p>
             </div>
           </section>
 
@@ -495,11 +518,11 @@
                 Para poder analizar la entropía necesitamos distinguir estados macroscópicos.
               </li>
               <li>
-                Dividimos la circunferencia en $M$ sectores equiespaciados, al número de osciladores en el sector $i$-ésimo lo denotamos $\alpha_i$.
+                Dividimos la circunferencia en $M$ sectores equiespaciados, a la fracción de osciladores en el sector $i$-ésimo la denotamos $\alpha_i$. <br>
                 $\{\alpha_i\}_{i=1}^M$ será nuestro macroestado.
               </li>
               <li>
-                Si $N \gg 1, M \gg 1$ y $N \gg M$, tenemos:
+                Si $N \gg 1, M \gg 1$ y $N \gg M$, se puede demostrar que:
                 $$
                 S=-N k_{B} \sum_{j} \alpha_{j} \ln \alpha_{j}
                 $$
@@ -514,18 +537,31 @@
           </section>
 
           <section data-auto-animate data-background-video="img/app-webm/osciladores.webm">
-            <div style="position: absolute; width: 50%; left: 0; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.6); color: #fff; padding: 20px; font-size: 30px; text-align: left;">
+            <div style="position: absolute; width: 40%; left: 0; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.6); color: #fff; padding: 20px; font-size: 30px; text-align: left;">
               <h3 style="color:#fff">En la simulación...</h3>
               <p>Podemos elegir $N$, $M$ y la distribución de frecuencias y fases.</p>
-              <p>Para frecuencias equiespaciadas se aprecia el comportamiento periódico, y para frecuencias aleatorias las fluctuaciones son pequeñas.</p>
+              <p>Si las fases iniciales son aleatorias:</p>
+              <ul>
+                <li>Sean como sean las frecuencias, conmensurables (equiespaciadas) o no, la entropía fluctúa poco.</li>
+            </div>
+            <div class="fragment fade-left"
+                style="position: absolute; width: 40%; right: 0; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.6); color: #fff; padding: 20px; font-size: 30px; text-align: left;">
+              </ul>
+              <p>Sin embargo, para fases iniciales nulas la entropía crece rápidamente y...</p>
+              <ul>
+                <li>Para frecuencias equiespaciadas es fácil apreciar el comportamiento periódico. La entropía crece y decrece bruscamente.</li>
+                <li>Con frecuencias aleatorias (inconmensurables) la entropía fluctúa muy poco.</li>
+              </ul>
             </div>
           </section>
 
           <section>
             <h3>Conclusiones</h3>
-            <p> Ilustra cómo la caracterización macroscópica del sistema que estudiemos afecta a los resultados teóricos. </p>
-            <p> Si el sistema es periódico no llegará a un estado de equilibrio, y la entropía fluctuará drásticamente. </p>
-            <p> Si añadimos acoplos entre los osciladores, el modelo se complica drásticamente, y tenemos llamado el modelo de Kuramoto. </p>
+            <p> Efectivamente, se comprueba la forma en que estudiamos el sistema afecta a la entropía máxima. </p>
+            <p>Oscilaciones colectivas dependientes de $M$ para frecuencias conmensurables.</p>
+            <p> Si partimos de un estado de entropía mínima (fases nulas), ésta aumenta rápidamente. Fluctuando poco. </p>
+            <p>Confirma una de las ideas fundamentales de Bolzmann: <br>
+              La entropía crece porque partimos de estados muy ordenados. </p>
           </section>
         </section>
 
@@ -592,7 +628,7 @@
           <section id="arnold">
             <h3>Transformación de Arnold</h3>
             <ul>
-              <li> Comprimir y exmpandimos según una matriz $T$. </li>
+              <li> Comprimimos y expandimos según una matriz $T$. </li>
               <div style="margin-left:0px;">
                 $$
                 \left(\begin{array}{l}
@@ -658,7 +694,7 @@
         <section id="gas">
           <section data-auto-animate data-background-video="img/app-webm/fluctuaciones.webm">
             <h2 data-id="FLUC-title" style="box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.6); color: #fff;">
-              Estudio de un Gas Ideal
+              Expansión Libre de un Gas Ideal
             </h2>
             <div class="fragment fade-up" style="box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.6); color: #fff;">
               <p>Irreversibilidad.</p>
@@ -671,7 +707,7 @@
           </section>
 
           <section id="fluc">
-            <h3>Expansión libre de un gas</h3>
+            <h3>Enunciado</h3>
             <ul>
               <li>
                 Recipiente dividido en dos mitades. En el instante inicial tenemos $N$ partículas en una de ellas.
@@ -766,11 +802,10 @@
               Colectividad Macrocanónica
             </h2>
             <div class="fragment fade-up" style="box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.6); color: #fff;">
-              <p>Comportamiento Colectivo.</p>
               <p>Sistema en contacto con los alrededores.</p>
             </div>
             <div class="fragment fade-up" style="margin-top:20px;box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.6); color: #fff;">
-              <p>Elegir explícitamente el tamaño del sistema ayuda a visualizar el cambio de un sistema aislado a uno con un foco térmico o de partículas.</p>
+              <p>Elegir explícitamente el tamaño del sistema ayuda a visualizar el cambio de un sistema aislado a un sistema con un foco térmico o de partículas.</p>
             </div>
           </section>
 
@@ -815,13 +850,11 @@
               Estadísticas de Bosones y Fermiones
             </h2>
             <div class="fragment fade-up" style="box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.6); color: #fff;">
-              <p>Comportamiento Colectivo.</p>
-              <p>Condensación de Bose-Einstein.</p>
               <p>Método de Monte Carlo.</p>
+              <p>Condensación de Bose-Einstein.</p>
             </div>
             <div class="fragment fade-up" style="margin-top:20px;box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.6); color: #fff;">
-              <p> Muy confuso la primera vez que se ve. </p>
-              <p> No tratamos de deducir el comportamiento desde las funciones de onda. </p>
+              <p> No tratamos de deducir el comportamiento desde las funciones de onda, sino comprobar computacionalmente las estadísticas. </p>
             </div>
           </section>
 
@@ -855,7 +888,7 @@
           <section>
             <h4>Metropolis Monte Carlo en una dimensión</h4>
             <ul>
-              <li>Para visualizar estas estadísticas, usaremos el método de Monte Carlo, muy común en Física computacional, en su variante de Metropolis.</li>
+              <li>Usaremos el método de Monte Carlo en su variante de Metropolis.</li>
               <li>
                 En cada iteración recorremos cada nivel de energía, $E_i$.
               </li>
@@ -875,7 +908,6 @@
           <section data-auto-animate data-background-video="img/app-webm/bosefermi.webm">
             <div style="position: absolute; width: 50%; left: 0; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.6); color: #fff; padding: 20px; font-size: 30px; text-align: left;">
               <h3 style="color:#fff">En la simulación...</h3>
-              <p>Ajustando el algoritmo para tener en cuenta las condiciones de ocupación de bosones y fermiones, tenemos el comportamiento deseado.</p>
               <p>Podemos cambiar el número de partículas, de niveles, y la temperatura.</p>
             </div>
           </section>
@@ -883,7 +915,7 @@
           <section>
             <h3>Conclusiones</h3>
             <p>Se obtienen las mismas estadísticas que las calculadas para los números medios de ocupación, sin tener que derivar la función de partición en ningún momento.</p>
-            <p> Si la temperatura es suficientemente baja, tenemos condensación de Bose-Fermi. </p>
+            <p> Si la temperatura es suficientemente baja, podemos observar la condensación de Bose-Fermi. </p>
           </section>
         </section>
 
@@ -925,10 +957,10 @@
 
           <section>
             <ul>
-              <li>La expresión de la magnetización se calcula mediante métodos numéricos..</li>
+              <li>La función de partición se puede calcular mediante métodos numéricos, sumando a todas las configuraciones. </li>
               <li>
-                Para dimensión 2 y superiores, se encuentra que por debajo de cierta <b>temperatura crítica</b> el magnetismo entre espines vence a las fluctuaciones térmicas y aparece una <b>magnetización espontánea</b>. Tenemos una transición de
-                fase.
+                En la resolución exacta se encuentra que para dimensión 2 y superiores, por debajo de cierta <b>temperatura crítica</b> el magnetismo entre espines vence a las fluctuaciones térmicas y aparece una <b>magnetización
+                  espontánea</b>. Tenemos una transición de fase.
               </li>
               <li>El valor de dicha temperatura crítica o temperatura de Curie depende de la constante de acoplo entre espines, que determina la fuerza con la que tienden a alinearse.</li>
             </ul>
@@ -937,25 +969,17 @@
           <section data-auto-animate data-background-video="img/app-webm/magnet.webm">
             <div style="position: absolute; width: 50%; left: 0; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.6); color: #fff; padding: 20px; font-size: 30px; text-align: left;">
               <h3 style="color:#fff">En la simulación...</h3>
-              <p>Realizamos una simulación de Metropolis Monte Carlo similar a la del apartado anterior, pero en dos dimensiones.</p>
-              <p>Cuantos más espines haya alineados, menor es la energía del sistema.</p>
-              <p>Por debajo de la temperatura crítica observamos que, efectivamente, aparece una magnetización espontánea.</p>
-            </div>
-          </section>
-
-          <section data-auto-animate data-background-video="img/app-webm/magnet.webm">
-            <div style="position: absolute; width: 50%; left: 0; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.6); color: #fff; padding: 20px; font-size: 30px; text-align: left;">
-              <h3 style="color:#fff">En la simulación...</h3>
               <p>Podemos elegir el tamaño de la red y cambiar la temperatura en tiempo real.</p>
-              <p>Empezando a la menor temperatura posible, y aumentándola progresivamente, se aprecia cómo la magnetización disminuye al acercarse a la temperatura crítica.</p>
+              <p>Realizamos una simulación de Metropolis Monte Carlo similar a la del apartado anterior, pero en dos dimensiones y con condiciones de contorno periódicas.</p>
+              <p>Empezando a la menor temperatura posible, y aumentándola poco a poco, se aprecia cómo la magnetización disminuye al acercarse a la temperatura crítica, y después el promedio temporal es nulo.</p>
             </div>
           </section>
 
           <section>
             <h3>Conclusiones</h3>
-            <p>Una vez elegida una temperatura, se recomienda esperar un momento para simular el proceso de templado.</p>
-            <p>De esta forma, se puede apreciar el proceso de termalización, necesario en simulaciones de este tipo para poder medir el valor de observables.</p>
+            <p>Una vez elegida una temperatura, se recomienda esperar un momento para simular el proceso de termalización, necesario en simulaciones de este tipo para poder medir el valor de observables.</p>
             <p>Eligir la velocidad más pequeña ayuda a entender el proceso seguido en el algoritmo de Monte Carlo.</p>
+            <p>Visualizar el modelo microscópico junto al valor medido macroscópicamente </p>
           </section>
         </section>
 
@@ -1031,46 +1055,78 @@
             <p style="font-size: 0.8em">
               También pueden ayudar al propio investigador o docente a descubrir nuevos aspectos de los modelos.
             </p>
-            <p style="font-size: 0.8em">
-              Posibilidades en otros campos de física: Cuántica, Física del Estado Sólido, Óptica, Astrofísica...
-            </p>
           </section>
 
           <section data-auto-animate>
             <h3 data-id="CONCLUSIONES-title">Trabajo futuro</h3>
             <p style="font-size: 0.7em">
-              Adaptar las simulaciones para que sean funcionales en todo tipo de dispositivos
+              Hacer que sean funcionales en todo tipo de dispositivos.
             </p>
             <p style="font-size: 0.7em">
-              Documentar los códigos de forma clara. Se ha intentado añadir unos pseudocódigos de las simulaciones, pero por falta de tiempo no se han podido completar satisfactoriamente aún.
+              Documentar los códigos de forma clara. Añadir los pseudocódigos.
             </p>
             <p style="font-size: 0.7em">
-              Realizar una serie de guías explicando los pasos a seguir para hacer una página web similar.
+              Ampliar las desarrollos, incluyendo explicaciones más detalladas.
             </p>
             <p style="font-size: 0.7em">
-              Formular explicaciones adecuadas para el nivel justo de conocimientos de un tema que tiene la audiencia es complicado.
-              En este trabajo las hemos pasado muy por encima, pero podrían ampliarse extas explicaciones para incluir explicaciones más rigurosas y acorde con los contenidos de la asignatura.
+              Extender las simulaciones a otros campos de física: Estado Sólido, Óptica, Cuántica, Astrofísica...
             </p>
           </section>
         </section>
 
 
 
+
+        <section id="tecnicos" data-auto-animate>
+          <h3 data-id="TECNICOS-title">Algunos aspectos técnicos</h3>
+          <p style="font-size: 0.7em">
+            Las gráficas de datos se hacen con <a href="https://plotly.com/">Plotly</a>, la única librería externa que se ha usado.
+          </p>
+          <p style="font-size: 0.7em">
+            El servidor se ha preparado con <a href="https://www.digitalocean.com/">DigitalOcean</a>, usando las licencias del <a href="https://education.github.com/pack/offers">Github Student Developer Pack</a> ofrecidas por la UCM.
+          </p>
+          <p style="font-size: 0.7em">
+            Por su facilidad de uso, los estilos de la página web son de <a href="https://getbootstrap.com/">Bootstrap</a>, y estas diapositivas se han hecho usando <a href="https://revealjs.com/">reveal.js</a>.
+          </p>
+          <p style="font-size: 0.8em">
+            Aunque no es el objetivo de este trabajo, en el futuro se realizarán varias guías explicando estos procesos, para que cualquier persona interesada pueda crear una web similar.
+          </p>
+        </section>
 
         <!-- BIBLIO -->
 
         <section id="biblio" data-auto-animate>
           <section data-auto-animate>
-            <h2 data-id="BIBLIO-title">Bibliografía</h2>
-            <h3>Libros más importantes</h3>
-          </section>
+            <h3 data-id="BIBLIO-title">Bibliografía</h3>
 
-          <section data-auto-animate>
-            <h2 data-id="BIBLIO-title">Bibliografía</h2>
-            <h3>Recursos informáticos</h3>
+            <div style="position:absolute; width: 50%;left:0;">
+              <h4>Libros más importantes</h4>
+              <ul>
+                <li style="font-size:0.4em;margin: 10px 0">Huang, Kerson. 1987. <em>Statistical Mechanics</em>. John Wiley &amp; Sons.</li>
+                <li style="font-size:0.4em;margin: 10px 0">RK Pathria, PD Beale, Rogel-Salazar. 2011. <em>Statistical Mechanics,</em> Taylor &amp; Francis.</li>
+                <li style="font-size:0.4em;margin: 10px 0">Allen, Michael P, and Dominic J Tildesley. 2017. <em>Computer Simulation of Liquids</em>. Oxford university press.</li>
+                <li style="font-size:0.4em;margin: 10px 0">Krauth, Werner. 2006. <em>Statistical Mechanics: Algorithms and Computations</em>. OUP Oxford.</li>
+                <li style="font-size:0.4em;margin: 10px 0">De Groot, S.R., and P. Mazur. 2013. <em>Non-Equilibrium Thermodynamics</em>. Dover Books on Physics.</li>
+                <li style="font-size:0.4em;margin: 10px 0">Dyson, Freeman J., and Harold Falk. 1992. “Period of a Discrete Cat Mapping.” <em>The American Mathematical Monthly</em> 99 (7). Mathematical Association of America.</li>
+                <li style="font-size:0.4em;margin: 10px 0">Tejero, Carlos Fernández, and Juan M Rodríguez Parrondo. 1996. <em>100 Problemas de Física Estadística</em>. Alianza.</li>
+                <li style="font-size:0.4em;margin: 10px 0">G. A. Gottwald, M. Oliver. n.d. “Boltzmann’s Dilemma – an Introduction to Statistical Mechanics via the Kac Ring.”</li>
+                <li style="font-size:0.4em;margin: 10px 0">Frenkel, Daan, and Berend Smit. 2001. <em>Understanding Molecular Simulation: From Algorithms to Applications</em>. Vol. 1. Elsevier.</li>
+                <li style="font-size:0.4em;margin: 10px 0">Newman, M.E.J., and G.T. Barkema. 1999. <em>Monte Carlo Methods in Statistical Physics</em>. Clarendon Press.</li>
+              </ul>
+            </div>
+            <div style="position:absolute; width: 50%;right:0;">
+              <h4>Recursos online</h4>
+              <ul>
+                <li style="font-size:0.4em;margin: 10px 0"><a href="http://physics.weber.edu/schroeder/html5/">Creating Interactive Web Simulations Using HTML5 and JavaScript - Daniel V. Schroeder</a></li>
+                <li style="font-size:0.4em;margin: 10px 0"><a href="http://valbuena.fis.ucm.es/expint/html/frame.html">Experimentos Interactivos en Sistemas Físicos Complejos - Ricardo Brito y Francisco Dominguez Adame</a></li>
+                <li style="font-size:0.4em;margin: 10px 0"><a href="http://physics.weber.edu/schroeder/software/">Physics Educational Software for Your Browser - Daniel V. Schroeder</a></li>
+                <li style="font-size:0.4em;margin: 10px 0"><a href="https://www.complexity-explorables.org/">Complexity Explorables - Dirk Brockmann</a></li>
+                <li style="font-size:0.4em;margin: 10px 0"><a href="http://gerdbreitenbach.de/arnold_cat/cat.html">Arnold's Cat Map - Gerd Breitenbach</a> </li>
+                <li style="font-size:0.4em;margin: 10px 0"><a href="https://www.falstad.com/mathphysics.html">Math and Physics Applets - Paul Falstad</a> </li>
+              </ul>
+            </div>
           </section>
         </section>
-
       </div>
 
     </div>

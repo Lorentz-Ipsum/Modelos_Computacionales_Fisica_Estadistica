@@ -189,8 +189,8 @@ function getDistance(x1, y1, x2, y2) {
 }
 
 function Boltzmann(kTFluc) {
-    vel = Math.sqrt(-2.0 * Math.log(1.0 - Math.random()));
-    return vel * Math.sqrt(kTFluc);
+    speed = Math.sqrt(-2.0 * Math.log(1.0 - Math.random()));
+    return speed * Math.sqrt(kTFluc);
 }
 
 
