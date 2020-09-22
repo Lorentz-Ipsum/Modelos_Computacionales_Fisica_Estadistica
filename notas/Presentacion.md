@@ -1,84 +1,41 @@
 
----
-## Introducción
-
-La física Estadística es un campo de estudio de especial dificultad. Para tratar los sistemas que
-
-  El problema que queremos tratar en este trabajo tiene que ver con ciertas dificultades que pueden presentarse al estudiante a la hora de estudiar por primera vez los conceptos la Física Estadística.
-
----
-
-Estos problemas tienen que ver con el enfoque que se toma en Física Estdística: Al tratar sistemas con muchos grados de libertad hay que introducir aproximaciones muy específicas.
-
-El gran número de grados de libertad de los sistemas que estudia hacen difícil visualizar los conceptos directamente *de cabeza*, y hacen los cálculos *bastante difíciles*.
-
-En Física Estadística se utilizan modelos computacionales constantemente. Por ello, familiarizarse con el entorno informático es imprescindible.
-
-Además de resolución numérica, las simulaciones por ordenador ayudan a comprender los entresijos de ciertos modelos.
-
-Esto puede ser una gran ayuda, tanto para el estudiante como para el docente, a la hora de comprender los conceptos más complicados.
-
-Más allá de explicar con pizarra y tiza, usar herramientas de este tipo para que el estudiante, ya sea desde casa o en clase, se familiarice con los modelo, es algo cada vez más interesante.
-Queda patente con los sucesos de este año.
-
-Planteamos 10 simulaciones en las que se ilustran algunos conceptos que hemos considerado más delicados.
-
----
-
-
-El gran número de grados de libertad de los sistemas que estudia la Física Estadística hacen difícil visualizar los conceptos directamente,
-y hacen los cálculos más complicados.
-En Física Estadística se utilizan modelos computacionales constantemente. Por ello, familiarizarse con el entorno informático es imprescindible.
-Además de resolución numérica, las simulaciones por ordenador ayudan a comprender los entresijos de ciertos modelos.
-Esto puede ser una gran ayuda, tanto para el estudiante como para el docente, a la hora de comprender los conceptos más complicados.
-Más allá de explicar con pizarra y tiza, usar herramientas de este tipo para que el estudiante, ya
-sea desde casa o en clase, se familiarice con los modelo, es algo cada vez más interesante. Queda patente con los sucesos de este año.
-Planteamos 10 simulaciones en las que se ilustran algunos conceptos que hemos considerado adecuados, y susceptibles de simular sin muchas dificultades por un estudiante interesado en la programación.
-
-
-
 
 
 ---
-## Motivación
+## Objetivos
+El objetivo de este trabajo es investigar la posibilidad de utilizar herramientas computacionales como un apoyo docente para transmitir ciertos conceptos de una forma más clara.
 
-Es decir, lo que queremos es investigar la posibilidad de utilizar herramientas computacionales para ayudar a los docentes a transmitir ciertos conceptos de una forma más clara.
+Para ello, se han realizado 10 simulaciones o experimentos interactivos que profundizan
+sobre ciertos conceptos de Física Estadística.
 
----
-### Objetivos
-
-Para ello, se han realizado una serie de simulaciones interactivas que ilustran algunos de estos conceptos que se han considerado de mayor dificultad.
-
----
 ### Requerimientos
+Estos son los requisitos mínimos que se han  considerado importantes para determinar que las
+se han completado satisfactoriamente:
 
-Estos son requisitos mínimos que consideramos importantes.
+Facilidad de uso, y que sean accesibles desde cualquier ordenador.
 
-Facilidad de uso, que no sea necesario instalar nada.
+Codigo libre o abierto, para que sea sencillo complementar el aprendizaje con los aspectos técnicos en caso de que fuera necesario.
 
-Codigo libre, para que sea sencillo ver el comportamiento de las simulaciones usando el código.
+Tambien queríamos desarrollar un método fácilmente ampliable, por si en el futuro alguien quisiera continuar con el proyecto.
 
-Queríamos desarrollar un método sencillo de ampliar y extender una vez listo, por si en el futuro alguien quisiera continuar con el proyecto.
+Y finalmente que las explicaciones sean claras y sencillas, pero con suficiente nivel para que los estudiantes tengan que reflexionar sobre las ideas presentadas.
 
-Y que las explicaciones sean claras y sencillas, pero con suficiente nivel para que los estudiantes tuvieran que reflexionar sobre las ideas presentadas.
+### Funcional
+En cuanto al aspecto técnico del código, elegimos programación funcional, por ser uno de los paradigmas más sencillosy que más similitudes tiene con la física:
 
-El paso evidente era crear una página web en la cual alojar las simulaciones. De esta forma estarían accesibles siempre y desde cualquier tipo de dispositivo.
+Definimos unas variables, disponibles en todo momento, que vamos tratando, haciéndolas pasar por funciones, hasta obtener unos datos que podemos representar gráficamente.
 
----
 ### Posibilidades
-Con el avance de las tecnolgías, el número de posibilidades para programar unas simulaciones de este tipo era enorme, así que nos restringimos a estas:
+Con el avance de las tecnolgías, el número de posibilidades para programar unas simulaciones de este tipo era enorme,
 
-Los Jupyter Notebooks son una herramienta muy común actualmente. Inicialmente empezamos a programar en Python con ellos, pero
- nos encontramos con varias dificultades. Aunque hay formas de subirlos a la web, es difícil hacerlos interactivos,
- y requieren de cierto conocimiento técnico para usarlos correctamente.
+Inicialmente empezamos a programarlas en Jupyter Notebooks, que son una herramienta muy común actualmente, pero nos encontramos con varias dificultades. Es difícil hacerlos interactivos, y requieren de cierto conocimiento técnico para usarlos correctamente.
 
-Entonces se pensó en subir directamente los códigos de Python usando Flask, una librería que permite crear una interfazz gráfica y desplegarla en un servidor, pero eso chocaba con uno de los objetivos del proyecto, el de usar el menor número de librerías posible.
-
-Finalmente, se decidió portar los códigos a JavaScript y realizar la página y las explicaciones en HTML.
+Así que, se decidió portar los códigos a JavaScript y acabar de realizar la página y las explicaciones en HTML.
 
 ### En la web
 
-El resultado está disponible en la URL que se incluye en la memoria.
+El resultado está disponible en la URL que se incluye en la memoria, y creemos que es lo suficientemente atractivo
+como para despertar el cierto interés en los estudiantes.
 
 ---
 ## Aspectos técnicos
@@ -93,31 +50,30 @@ Los dibujos de las simulaciones en sí se han hecho directamente sobre un marco 
 
 ---
 ## Repaso de Física Estadística
-Bueno, antes de pasar a las simulaciones es conveniente hablar de cuál es la motivación detrás
-de la creación de estas simulaciones
+La motivación detrásde la creación de estas simulaciones esta directamente relacionado con algunas de las caracteristicas fundamentales de la física estadística:
 
-¿Cómo pueden emerger fenómenos irreversibles a partir de modelos microscópicos reversibles?
+El gran número de grados de libertad de los sistemas que estudia la Física Estadística hacen difícil visualizar los conceptos directamente, y además requiere introducir ciertas aproximaciones e hipótesis complejas que pueden resultar difícil de entender, por ejemplo:
 
-### Características de la Física Estadística<
+Como se compatibilizan las descripciones microscópica reversible y macroscópica irreversible.
 
-- Muchas partículas
-- Aproximaciones complicadas
-- Hipótesis complejas
+Que impllica introducir la hipotesis del caos molecular
 
----
-### Física Estadística del Equilibrio
+Como afecta la manera de tratar macroscopicamente un sistema a la forma en que se expresa la entropía
 
-### Física Estadística del No Equilibrio
-Colectividades dejan de ser efectivas
-Es donde la Física Computacional toma mayor relevancia, permitiendo por ejemplo encontrar solución a ecuaciones que de otro modo serían imposibles de resolver.
+### eq vs no eq
+Tenemos, además, otra capa de complejidad, y es que es diferente la fises del eq y la del no eq
 
+Por un lado, en el eq, que es la que se estudia en la carrera, tenemos un paradigma general con el que tratar los problemas,
+atendiendo a la manera en que podemos expresar las variables macroscópicas, pudiendo estudiarlos según ciertas colectividades.
 
-
+Por otro lado, en la físes del no eq, dicho paradigma deja de ser efectivo, haciendose necesario tratar cada problema de forma
+distinta. Es donde la Física Computacional toma mayor relevancia.
 
 
+### conceptos
+Con todo esto, Estos son algunos de los conceptos que consideramos susceptibles de confundir a un estudiante novel.
 
-
-
+La hippótesis del caos molecular, La definición y maximización de entropía, la ergodicidad, el límite termodinámico...
 
 
 
@@ -127,12 +83,15 @@ Es donde la Física Computacional toma mayor relevancia, permitiendo por ejemplo
 
 ---
 ## Applets
-
-Estos son los modelos que se han simulado finalmente. He tenido que quitar dos que en principio iba a incluir por falta de espacio.
+Estos son los modelos que se han simulado finalmente. Los he agrupado por temática general y en cierta medida por la dificultad que plantea, pero podrían ordenarse de otras formas.
 
 Para asegurarme de que funcionen, estas diapositivas usan gifs, al final de la presentación están las simulaciones pra ejecutarlas en directo y probar parámetros.
 
+### estructura
+Hemos estructurado las explicaciones de forma que la simulación esté al final, para que se pueda empezar a usarla con conocimiento de causa.
 
+### Pres
+en esta presentación no daría tiempo de explicar cada modelo en profundidad, así que hemos elegido dos que son característicos, mientras que los demás nos limitaremos a dar unas pinceladas generales.
 
 
 
@@ -144,108 +103,114 @@ Para asegurarme de que funcionen, estas diapositivas usan gifs, al final de la p
 ---
 ### Limite Central
 El teorema del límite central se usa ampliamente en física y es la razón por la que la distribución gaussiana tiene un papel tan importante.
-Nos servirá para ilustrar cómo el comportamiento colectivo de muchas variables puede llevar a comportamientos contraintuitivos.
 
-Este es el enunciado del teorema: Tenemos N variables aleatorias, todas siguiendo la misma distribución de probabilidad, de media y varianza finitas.
-El teorema del limite central nos dice que una variable Y definidad como la suma de las anteriores seguirá una distribución gaussiana de media $\mu N$ y varianza $\sigma^2 /N$.
+Con él, ilustramos cómo el comportamiento colectivo de muchas variables puede llevar a comportamientos en principio contraintuitivos.
 
-En la simulación podemos elegir N y la distribución con que se generan las variables X.
-Si sólo tenemos una variable se puede ver cómo la distribución individual es equiprobable, y al aumentar N obtenemos, efectivamente, una gaussiana.
-
-Una simulación como esta es la mejor forma de comprobar la efectividad del teorema.
-
-Es posible ampliar la simulación añadiendo distribuciones asimétricas.
-
+Ver cómo las variables se acumulan literalmente en la gráica es una buena forma de cerciorarse de la efectividad del teorema.
 
 ### Anillo de Kac
-El Anillo de Kac es un modelo sencillo con el que bocetaremos una primera idea de la irreversibilidad macroscópica y la hipótesis del caos molecular, así como una introducción al periodo de recurrencia de Poincaré.
+El Anillo de Kac es un modelo sencillo con el que bocetamos una primera idea de la irreversibilidad macroscópica y la hipótesis del caos molecular, ademas sirve como una introducción a la ergodicidad y al periodo de recurrencia de Poincaré.
 
-El modelo consiste en un anillo dividido en N casillas, cada una ocupada por una bolita roja o azul. En cada paso temporal movemos las bolitas a la casilla contigua en el sentido de las agujas del reloj. Entre las casillas elejimos M sitios y los marcamos, de forma que cuando una bolita pasa por uno de estas marcas, cambia de color.
-
-La dinámica es, entonces, reversible y periódica. Pasados 2N instantes, cada bolita ha cambiado de color un número par de veces y ha vuelto a su posición inicial.
-
-Para estudiar el sistema, definimos unas funciones que cuantifican el número de bolitas de cada color, expresadas por letra mayúscula, y el número de bolitas de cada color que tienen un sitio marcado delante, y por tanto que cambiarán de color en el siguiente instante de tiempo.
-
-Obtenemos estas ecuaciones de evolución, que no son resolubles.
-
-Para resolverlas necesitamos una solución adicional: Como la fracción total de bolitas con un sitio marcado delante permanece constante, consideraremos que esta fracción será constante también si sólo miramos a las bolitas de un color específico.
-
-Así, podemos resolver las ecuaciones restandolas entre sí y obtenemos una solución que no es periódica ni reversible, en contradicción con el modelo de partida.
-
-Antes de resolver esta cuestión veamos la simulación.
-
-Podemos elegir N y M, así como los colores iniciales de las bolitas.
-
-Al principio de la evolución el sistema sigue la solución obtenida, pero al dejarlo evolucionar aparece la solución periódica.
+Hace especial hincapié em cómo se resuelve la paradoja de Lochsmidt antes mencionada, ilustrando la compatibilidad macroirrev microrrev, ya que la dinamica micro es periodica pero para resolver el movimiento debemos introducir una hipotesis macro, que nos da una solucion irrevers.
 
 El problema es la hipótesis que hemos tomado, que elimina las correlaciones en el sistema, del mismo modo que la hipótesis del Caos Molecular, nos permite obtener una solución a las ecuaciones de evolución, pero en este caso deja de ser válida al cabo de poco tiempo. Para mantener su validez necesitaríamos un sistema mucho más grande, o deberíamos modificar el modelo, por ejemplo haciendo que las marcas cambien de posición pasado cierto tiempo.
 
 
 ### Osciladores Armónicos
+Con esta simulación ilustraremos el concepto de entropía, y veremos que depende de la elección macroscópica con que estudiamos nuestro sistema, el llamado coarse-graining. Además, ilustra la causa de la tendencia al equilibrio y a estados de máxima entropía
 
-la forma en que estudiamos el sistema afecta a la entropía máxima. para frecuencias equiespaciadas variar M no cambia la entropía máxima, sino la forma de la oscilación colectiva.
+veamoslo en profundidad:
 
 ---
 
-Con esta simulación ilustraremos el concepto de entropía, y veremos que depende de la elección macroscópica con que estudiamos nuestro sistema, el llamado coarse-graining.
-
 Tenemos N osciladores armónicos, cada uno determinado por su frecuencia y su fase inicial.
 
-Si las frecuencias son inconmensurables, es decir, su fracción no es un número racional, el sistema no será periódico, tendiendo por tanto a un estado de equilibrio o entropía máxima, en el que las fluctuaciones de entropía serán mínimas.
+Si las frecuencias son conmensurables, es decir, su fracción es un número racional, el sistema será periódico. Nos interesa el caso ergódico, de forma que el sistema tienda a un estado de equilibrio o de entropía máxima, en el que las fluctuaciones de entropía serán mínimas. Por ello, nos importa que las freq sean inconmensurable
 
-Para definir la entropía de un sistema necesitamos observarlo con cierto grado de incertidumbre. Si todos los estados son únicos, no habrá ninguno con mayor entropía que otro.
+Para analizar la entropía del sistema necesitamos observarlo con cierto grado de incertidumbre. ya que Si todos los estados son únicos, no habrá ninguno con mayor entropía que otro.
 
-Para ello, en este caso, dividimos la circunferencia en que se mueven los osciladores en M sectores, y contabilizamos cúantos osciladores hay en cada uno en cada instanste de tiempo. El marcoestado de nuestro sistema serán los M números que nos indican la concentración de osciladores.
+Entonces, en este caso, dividimos la circunferencia en que se mueven los osciladores en M sectores, y contabilizamos cúantos osciladores hay en cada uno en cada instanste de tiempo. El marcoestado de nuestro sistema serán los M números alpha_i que nos indican la concentración o densidad por sectores de osciladores.
 
 Así, podemos definir la entropía en función de estas variables alfa, y sabiendo que el estado de entropía máxima será aquel en que los osciladores están uniformememente deistribuidos, deducimos que dependerá de  N y M.
 
+---
+
 La simulación nos permite ilustrar esto perfectamente.
 
-Si las frecuencias son conmensurables el sistema es periódico, y las fluctuaciones de entropía son muy grandes.
+Si partimos de un estado de entropía máxima haciendo las fases aleatorias, no importa cómo elijamos las frecuencias, las fluctuaciones de la entropía serán pequeñas.
 
-Elegir frecuancias aleatorias es en buena medida equivalente a tomarlas inconmensurables, y así vemos que efectivamente el sistema evoluciona hasta un estado de equilibrio con fluctuaciones no muy grandes.
+Por otro lado, si partimos de un estado ordenado en que las fases son nulas, tenemos dos comportamientos muy marcados:
 
+Si las frecuencias son conmensurables el sistema es periódico, y las fluctuaciones de entropía son muy grandes. Además, el máximo de entropía no se manifiesta, pudiendo distribuirse todos los osciladores uniformemente digamos, de forma perfecta.
+
+Elegir frecuancias aleatorias es en buena medida equivalente a tomarlas inconmensurables, y así vemos que efectivamente el sistema evoluciona hasta un estado de equilibrio con fluctuaciones pequeñas.
+
+---
+
+la forma en que estudiamos el sistema afecta a la entropía máxima.
 Para ver mejor el máximo de entropía es conveniente elegir M grande.
 
+para frecuencias equiespaciadas variar M no cambia la entropía máxima, sino la forma de la oscilación colectiva.
+
+Se confirma una de las ideas de bolzman sobre la entropía: la tendencia a estados de más entropía es consecuencia de partir de estados ordenados.
 
 ### Transformaciones en el Espacio de Fases
-Las dos simulaciones siguientes son muy similares, y por eso las hemos agrupado en la misma sección.
+Estas dos simulaciones siguientes son muy similares, y por eso las hemos agrupado en la misma sección.
 
-Ambas ilustran el concepto de caos determinista, relativo a las funciones de evolución en el espacio de fases.---
+Ambas ilustran el concepto de caos determinista, y funciones de evolución en el espacio de fases.
 
-Los casos que veremos consisten en transformaciones que actúan sobre el cuadrado unidad y conservan el area. Además, son mixing, lo que quiere decir que redistribuyen los puntos el estado inicial hasta llegar a un estado homogéneo.
+Los casos que veremos consisten en transformaciones que actúan sobre el cuadrado unidad y conservan el area. Además, son mixing, es decir, redistribuyen los puntos el estado inicial hasta llegar a un estado homogéneo.
 
-#### Transformación del panadero
-La primera, y más sencilla, es la transformación del panadero.
-#### Transformación de Arnold
-
-
+En la transformacion de arnold, además, al tener el caso discreto, aparece una periodicidad, que podría relacionarse con el per de recurr de Poin
 
 
 ### Gas ideal
-De los primeros modelos estudiados, el gas ideal es el que primero en que se produjeron avances en este tema.
+Pasamos ahora a otras dos simulaciones similares, que tratan de uno De los primeros modelos estudiados por la fises, el gas ideal.
 
 #### Irreversibilidad
+Este en especial, de la expansion libre, es un ejemplo típico de las clases de termodinámica.
+
 El modelo es por todos conocido, un recipiente dividido en dos mitades por una pared. Una de las mitades contiene un gas, que a partir del instante inicial es libre de moverse por todo el recinto.
 
-La experiencia nos dice que el gas se expande hasta llenar todo el recipiente y nunca ocurre la secuencia inversa. Pero, ¿por qué? Lo demostraremos usando combinatoria.
+La experiencia nos dice que el gas se expande hasta llenar todo el recipiente y nunca ocurre la secuencia inversa. Pero, ¿por qué? aquí Lo demostramos usando combinatoria.
 
-Empezamos considerando la probabilidad general de encontrar Nd particulas en el lado derecho y Ni en el izquierdo. Esta probabilidad sigue una distribución binomial.
-
-Si comparamos la posibilidad de encontrar todas las partículas concentradas en una región frente al estado más probable de la mitad de partículas en cada lado tenemos, usando la aproximación de Stirling, que la probabilidad de encontrar todas las partículas en la misma mitad disminuye exponencialmente con el número de partículas.
+Los resultados que deducimos son que la irrevesibilidad macroscópica también es consecuencia del gran número de grados de libertad que tenemos en un sistema. Para un gas de pocas partñiculas es más probable encontrarlas todas en un lado del recipiente, es decir, las fluctuaciones en el equilibrio dependen del tamaño del sistema.
 
 #### Colectividad Macrocanónica
+Esta simulación ayuda a comprender cómo el tamaño de un sistema en contacto con un foco térmico o de partículas afecta a su dinámica. Si no se cumple la condición de N>>NF, el formalismo macrocanónico no es aplicable.
 
 
 ### Bosones y fermiones
+Con esta simulación introducimos explicitamente un método computacional de uso común, el de Monte Carlo. Y gracias a él podemos deducir el comportamiento de un conjunto de partículas cuánticas sin recurrir en nigún momento a la física estadística.
 
+Es un ejemplo de cómo los métodos computacionales sirven para complementar los resultados teóricos y experimentales.
+
+---
+
+Tenemos dos sistemas, uno con bosones y otro con  fermiones.
+
+Por las propiedades de simetría de la funcion de onda, sabemos que los niveles de energía bosónicos pueden estar ocupados por muchas partículas, y los fermiçónicos, solo por una.
+
+La físes nos dice que la función de partición macrocanónica tiene esta forma, y podemos deducir que las estadísticas en los números de ocupación siguen estas distribuciones.
+
+El algoritmo de metrópolis nos permite obener este comportamiento:
+- Iteramos sobre las partículas, y comparamos el nivel de energía de una aprtícula con el de otro nivel elegido al azar.
+- Si la energía es menor, cambiamos la partícula de sitio, si es menor, la cambiamos de sitio con probabilidad proporcional a la diferencia de energía, teniendo en cuenta la temperatura.
+
+De esta forma, podemos cambiar el número de partícualas y niveles,
+
+Y obtenemos la misma distribución de los niveles de ocupación que la calculada usando el formalismo.
+Además, se reproduce el fenómeno de condensación de BE, sin necesitar añadir ningún codigo adicional.
 
 ### Modelo de Ising
-Modelo ideal para explicar las transiciones de fase.
+El mod ising es un Modelo ideal para explicar las transiciones de fase.
+Modelizamos un metal como una red de espines, y estudiamos la magnetización macroscópica del sistema. La física estadística nos dice que por debajo de cierta temperatura, aparecerá una magnetización espontánea, ya que el magnetismo entre espines será mas fuerte que las fluctuaciones térmicas, que tienden a desordenar los espines de la red.
+
 #### Magnet
+En este primer experimento presentamos explícitamente la simulación microscópica junto a la medición macroscópica, lo cual permite hacerse una buena idea de lo que ocurre en el modelo.
 
 #### LT
-
+Esta segunda experiencia del modelo de ising quiere analizar más a fondo dicha transición de fase. Resulta que para una dimensión, no existe. Lo ejemplificamos viendo que el calor específico en ese caso es contínuo. Para redes finitas, esto también es así. Sólo cuando tomamos el l´miite termodinámico, acercándonos a sistemas cada vez mas grandes, empieza a aparecer la discontinuidad característica de una transicion de fase.
 
 
 
@@ -260,6 +225,8 @@ las herramientas interactivas de este tipo son muy útiles para transmitir conce
 De hecho, ya que gran parte, por no decir todos, de los avances que se realizan en física actualmente
 tienen que ver de alguna forma con la computación, sería interesante ver papers o libros de física interactivos
 que vayan más allá del simple movimiento en caida libre, tan comúnmente extendido.
+
+Más allá de explicar con pizarra y tiza, usar herramientas de este tipo para que el estudiante, ya sea desde casa o en clase, se familiarice con los modelo usando el ordenador, es algo cada vez más interesante. Queda patente por ejemplo con los sucesos de este año.
 
 Como queda demostrado por la relativa abundancia de este tipo de simulaciones, permiten extender la imaginación
 del estudiante, y por tanto, la aumentar su comprensión del tema.
